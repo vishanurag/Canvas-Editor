@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.1s linear;
+}
+
+body {
+    height: 100vh !important;
+}
+
+#mainCanvas {
+    width: 70% !important;
+}
+
+
+
+/* Custom CSS that, looks like Bootstrap... */
+
+.h-80 {
+    height: 80vh !important;
+}

@@ -1,0 +1,13 @@
+@media screen and (max-width: 500px) {
+    .fullWidth {
+        width: 100% !important;
+    }
+    #mainCanvas {
+        width: 95% !important;
+    }
+
+    .h-80-responsive {
+        max-height: 45vh !important;
+        max-width: 350px !important;
+    }
+}
