@@ -1,5 +1,5 @@
 <!-- This is a web text editor that is made using canvas element of Html. -->
-
+....
 # <p align="center" id="top">✨Canvas Editor✨</p>
 <p align="center">
    
