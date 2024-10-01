@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
 </head>
 <body>
-    <div class="container pt-2 ">
+    <div class="container pt-2">
         <div class="mt-2 mb-5">
-            <button class="btn btn-outline-danger " id="undoButton" title="Undo">
+            <button class="btn btn-outline-danger" id="undoButton" title="Undo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
                     <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
@@ -25,32 +25,29 @@
             </button>
         </div>
         
-        <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 align-items-center ">
+        <div class="d-md-flex justify-content-center gap-3 align-items-center flex-column flex-md-row">
 
             <canvas id="mainCanvas" class="h-80 h-80-responsive border border-gray shadow rounded" onclick="dragContentStart(event)" onmousemove="dragContent(event)">
                 Canvas Not Supported by the Browser...
             </canvas>
             
-            
             <div class="h-80 h-80-responsive p-1 bg-dark rounded w-100 shadow">
-                <form id="userForm" class="h-80 h-80-responsive d-flex flex-column justify-content-evenly ">
+                <form id="userForm" class="h-80 h-80-responsive d-flex flex-column justify-content-evenly">
                     <div class="d-flex gap-3 px-3">
                         <label for="textSize" class="text-light">Size :</label>
-                        <select  name="tSize"  class="rounded " id="textSize" required>
-                            
-                        </select>
+                        <select name="tSize" class="rounded" id="textSize" required></select>
                         <label for="colorPicker" class="text-light">Color :</label>
-                        <input type="color" name="colorPicker" class="rounded " id="colorPicker">
+                        <input type="color" name="colorPicker" class="rounded" id="colorPicker">
                     </div>
                     <div class="d-md-flex justify-content-center gap-1">
-                        <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth">
-                        <button class="btn btn-primary">Save</button>
+                        <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control fullWidth">
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <script  src="./src/Scripts/Canvas.js"></script>
+    <script src="./src/Scripts/Canvas.js"></script>
 </body>
 </html>
