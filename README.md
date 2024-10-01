@@ -129,11 +129,6 @@ git push origin YourBranchName
 
 
 
-## Contributing is fun🧡
-<p align ="center">
-  <img src="https://github.com/vishanurag/Canvas-Editor/assets/115914670/d544fd3b-aed2-4a05-a2f8-0b7a2ff9014f" width="700" height= "250" />
-</p>
-
 ## Acknowledgements
 
 Thank you to all the amazing contributors who have made this project possible! 💝
