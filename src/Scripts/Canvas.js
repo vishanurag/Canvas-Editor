@@ -287,4 +287,49 @@ bgImageUpload.addEventListener('change', function(event) {
         reader.readAsDataURL(file);
     }
 });
+// Function to draw a rectangle
+const drawRectangle = (x, y) => {
+    myCanvas.fillStyle = defaultColor; // Use the selected color
+    myCanvas.fillRect(x - 50, y - 25, 100, 50); // Adjust size and position as needed
+};
+
+// Function to draw a circle
+const drawCircle = (x, y) => {
+    myCanvas.fillStyle = defaultColor; // Use the selected color
+    myCanvas.beginPath();
+    myCanvas.arc(x, y, 30, 0, Math.PI * 2); // Adjust radius as needed
+    myCanvas.fill();
+};
+
+// Function to draw a line
+const drawLine = (x1, y1, x2, y2) => {
+    myCanvas.strokeStyle = defaultColor; // Use the selected color
+    myCanvas.lineWidth = 2; // Adjust line width as needed
+    myCanvas.beginPath();
+    myCanvas.moveTo(x1, y1);
+    myCanvas.lineTo(x2, y2);
+    myCanvas.stroke();
+};
+
+// Event listeners for shape buttons
+document.getElementById('rectangleBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    // Draw a rectangle at the current position
+    drawRectangle(posX, posY);
+    addToSnapSorts('Rectangle', canvasFont, defaultColor, posX, posY);
+});
+
+document.getElementById('circleBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    // Draw a circle at the current position
+    drawCircle(posX, posY);
+    addToSnapSorts('Circle', canvasFont, defaultColor, posX, posY);
+});
+
+document.getElementById('lineBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    // Draw a line from the current position to a new position
+    drawLine(posX, posY, posX + 50, posY + 50); // Example coordinates, adjust as needed
+    addToSnapSorts('Line', canvasFont, defaultColor, posX, posY);
+});
 

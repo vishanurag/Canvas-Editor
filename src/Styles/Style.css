@@ -55,3 +55,11 @@ body {
     display: flex;
     gap: 1rem;
 }
+/* Shape pallette */
+.palette {
+margin-left: 30px;
+color: rgb(255, 255, 255);
+}
+.palette button{
+    padding: 5px;
+}
