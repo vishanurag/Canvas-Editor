@@ -1,20 +1,28 @@
 <!-- This is a web text editor that is made using canvas element of Html. -->
 
-# <p align="center" id="top">✨Canvas Editor✨</p>
+# <p align="center" id="top">🎨 Canvas Editor 🖌️</p>
 <p align="center">
    
-<center>
-<img  src="https://readme-typing-svg.herokuapp.com?color=45ffaa&size=40&width=900&height=80&lines=Welcome-to-CanvasEditor"/>
-</center>
+<div align="center"> 
+<img  src="https://readme-typing-svg.herokuapp.com?color=45ffaa&center=true&vCenter=true&size=40&width=900&height=80&lines=Welcome+to+Canvas+Editor!"/>
+</div>
 
- <h2>Hi there👋, Enjoy the World of Open source contribution </h2>
+ <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
 
 <p>Hello Coders!!👨‍💻<br> I am Aanurag Vishwakarma, an aspiring Web developer🤖. Here is the project on front-end Web Development.</p>
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 <h2>Overview📌</h2>
-<p>This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap and JavaScript. It conatins a webpage with a canvas element which can be used to style the text content according to our need (Made for fun pupose). We welcome all contributions to make this a fantastic resource for other users. Jump in and contribute to this grand project! Read the guidelines📚 and get started building!</p>
+<ul>
+  <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
+  <li>🖼️ It includes a webpage with a canvas element that allows you to style text content as needed (made for fun purposes 🎉).</li>
+  <li>🚀 We welcome all contributions to make this a fantastic resource for other users.</li>
+  <li>💻 Jump in and contribute to this grand project!</li>
+  <li>📚 Read the guidelines and get started building! 🛠️</li>
+</ul>
 
-<h2>Technology Used🚀</h2>
+<h2><img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 30px height="38"> Technology Used</h2>
 
 <p>
   <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
@@ -31,10 +39,14 @@
   <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSOC" width="80%">
 </div>
 
+<br>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 <h2>Getting Started💥</h2>
 
-
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 ## How to make a Pull Request?
 
 **1.** Start by forking the [**Canvas-Editor**](https://github.com/vishanurag/Canvas-Editor) repository. Click on the <a href="https://github.com/vishanurag/Canvas-Editor/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a> symbol at the top right corner.
@@ -120,7 +132,7 @@ git push origin YourBranchName
 <tr>
 <td align="center"><a href="https://github.com/vishanurag"><img src="https://avatars.githubusercontent.com/u/126074487?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Anurag Vishwakarma</h4>
  <a href="https://www.linkedin.com/in/anuragvishwakarma/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
-   </td>
+</td>
 
 </tr>
 </table>
