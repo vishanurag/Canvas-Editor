@@ -27,9 +27,11 @@
         </div>
         
         <div class="d-md-flex justify-content-center gap-3 align-items-center flex-column flex-md-row">
+
             <canvas id="mainCanvas" class="h-80 h-80-responsive border border-gray shadow rounded" onclick="dragContentStart(event)" onmousemove="dragContent(event)">
                 Canvas Not Supported by the Browser...
             </canvas>
+            
             <div class="h-80 h-80-responsive p-1 bg-dark rounded w-100 shadow">
                 <form id="userForm" class="h-80 h-80-responsive d-flex flex-column justify-content-evenly">
                     <div class="d-flex gap-3 px-3">
@@ -38,9 +40,12 @@
                         <label for="colorPicker" class="text-light">Color :</label>
                         <input type="color" name="colorPicker" class="rounded" id="colorPicker">
                     </div>
+                    <!-- added feature - Background -->
                     <div class="d-flex gap-3 px-3">
+                        <!-- Background Image Upload -->
                         <label for="bgImageUpload" class="text-light">Background Image:</label>
                         <input type="file" id="bgImageUpload" accept="image/*">
+                        <!-- Background Color Picker -->
                         <label for="bgColorPicker" class="text-light">Background Color:</label>
                         <input type="color" id="bgColorPicker" class="rounded">
                     </div>                    
@@ -60,12 +65,15 @@
                     </div>
                     <div class="d-md-flex justify-content-center gap-1">
                         <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth">
+
                         <button type="submit" class="btn btn-primary">Save</button>
+                        <!-- added features -->
+
                         <button class="btn btn-primary" id="clear">clear</button>
                         <button type="button" class="btn btn-primary" id="download" title="Download">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
                                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L4.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
                             </svg>
                         </button>
                     </div>
@@ -73,7 +81,8 @@
             </div>
         </div>
     </div>
-    <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./src/scripts/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./src/Scripts/Canvas.js"></script>
 </body>
 </html>
