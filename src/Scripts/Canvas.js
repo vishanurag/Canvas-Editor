@@ -243,3 +243,49 @@ bgImageUpload.addEventListener('change', function(event) {
     }
 });
 
+
+// Update the routing logic at the end of your file
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = {
+        home: document.getElementById('home-page'),
+        about: document.getElementById('about-page'),
+        designs: document.getElementById('designs-page'),
+        help: document.getElementById('help-page'),
+        suggestions: document.getElementById('suggestions-page')
+    };
+
+    function showPage(pageId) {
+        Object.values(pages).forEach(page => page.style.display = 'none');
+        pages[pageId].style.display = 'block';
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const route = e.target.getAttribute('data-route');
+            showPage(route);
+            
+            // Update active state
+            navLinks.forEach(l => l.classList.remove('active'));
+            e.target.classList.add('active');
+        });
+    });
+
+    // Handle suggestion form submission
+    const suggestionForm = document.getElementById('suggestionForm');
+    if (suggestionForm) {
+        suggestionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            // For now, we'll just log it to the console
+            console.log('Suggestion submitted:', {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                suggestion: document.getElementById('suggestion').value
+            });
+            alert('Thank you for your suggestion!');
+            suggestionForm.reset();
+        });
+    }
+});
