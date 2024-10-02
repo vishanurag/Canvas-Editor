@@ -33,7 +33,7 @@ body {
     padding: 10px;              
     border: 1px solid #ced4da; 
     border-radius: 5px;        
-    font-size: 1rem;           
+    font-size: 1rem;         
 }
 
 /* Style for the Save button */
@@ -55,3 +55,112 @@ body {
     display: flex;
     gap: 1rem;
 }
+
+
+/* Button styling with new colors */
+.boton-elegante {
+  padding: 10px 10px;
+  border: 2px solid #2c2c2c;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  margin-left: 15px;
+  width: 110px; /* Increased button width slightly */
+  text-align: center;
+}
+
+.boton-elegante#Save {
+  background-color: #15B392; /* Green color for Save button */
+}
+
+.boton-elegante#clear {
+  background-color: #dc3545; /* Red color for Clear button */
+}
+
+.boton-elegante#download {
+  background-color: #007bff; /* Blue color for Download button */
+}
+
+.boton-elegante::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.boton-elegante:hover::after {
+  transform: scale(4);
+}
+
+.boton-elegante:hover {
+  border-color: #666666;
+  background: #292929;
+}
+
+/* Input styling improvements */
+input#textData {
+  margin-right: 15px;
+  height: 45px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+}
+
+
+/* Specific hover tooltips for Uppercase, Lowercase, Bold, and Italic buttons */
+button#bold:hover::after {
+    content: 'Bold';
+}
+
+button#italic:hover::after {
+    content: 'Italic';
+}
+
+button#capital:hover::after {
+    content: 'Uppercase';
+}
+
+button#small:hover::after {
+    content: 'Lowercase';
+}
+
+/* Add a specific class to avoid applying to other buttons */
+button#bold:hover::after,
+button#italic:hover::after,
+button#capital:hover::after,
+button#small:hover::after {
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    transform: translateY(-30px);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Avoid applying to other buttons like Save, Clear, and Download */
+button#save:hover::after,
+button#clear:hover::after,
+button#download:hover::after {
+    content: none;
+}
+
+
