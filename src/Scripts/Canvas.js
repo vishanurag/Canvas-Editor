@@ -210,3 +210,31 @@ italicButton.addEventListener('click', (e) => {
     isItalic = !isItalic; // Toggle italic
     updateCanvas(textVal, fontSize, defaultColor, posX, posY); // Update the canvas
 });
+let bgColorPicker = document.getElementById('bgColorPicker');
+
+bgColorPicker.addEventListener('input', function() {
+    const bgColor = bgColorPicker.value;
+    myCanvas.clearRect(0, 0, cWidth, cHeight);  // Clear previous background
+    myCanvas.fillStyle = bgColor;
+    myCanvas.fillRect(0, 0, cWidth, cHeight);  // Apply new background color
+});
+
+
+// Handle background image upload
+bgImageUpload.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const img = new Image();
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            img.src = e.target.result;
+            img.onload = function() {
+                myCanvas.clearRect(0, 0, mainCanvas.width, mainCanvas.height);  // Clear previous background
+                myCanvas.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);  // Draw the image on canvas
+            };
+        };
+        reader.readAsDataURL(file);
+    }
+});
+

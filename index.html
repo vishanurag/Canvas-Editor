@@ -39,6 +39,15 @@
                         <label for="colorPicker" class="text-light">Color :</label>
                         <input type="color" name="colorPicker" class="rounded" id="colorPicker">
                     </div>
+                    <!-- added feature - Background -->
+                    <div class="d-flex gap-3 px-3">
+                        <!-- Background Image Upload -->
+                        <label for="bgImageUpload" class="text-light">Background Image:</label>
+                        <input type="file" id="bgImageUpload" accept="image/*">
+                        <!-- Background Color Picker -->
+                        <label for="bgColorPicker" class="text-light">Background Color:</label>
+                        <input type="color" id="bgColorPicker" class="rounded">
+                    </div>                    
                     <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">A</button>
                         <button class="btn btn-primary" id="small">a</button>
@@ -55,8 +64,10 @@
                     </div>
                     <div class="d-md-flex justify-content-center gap-1">
                         <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth">
+
                         <button type="submit" class="btn btn-primary">Save</button>
                         <!-- added features -->
+
                         <button class="btn btn-primary" id="clear">clear</button>
                         <button type="button" class="btn btn-primary" id="download" title="Download">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
