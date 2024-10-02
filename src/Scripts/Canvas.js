@@ -2,9 +2,9 @@ class SnapSortsClass {
     textVal;
     color;
     canvasFont;
-    x ;
+    x;
     y;
-    
+
     constructor(textVal, canvasFont, color, x, y) {
         this.textVal = textVal;
         this.canvasFont = canvasFont;
@@ -14,14 +14,9 @@ class SnapSortsClass {
     }
 }
 
-
-let print = ((val) => {
+let print = (val) => {
     console.log(val);
-});
-
-
-
-
+};
 
 let mainCanvas = document.getElementById('mainCanvas');
 let textSize = document.getElementById('textSize');
@@ -32,84 +27,68 @@ let redo = document.getElementById('redoButton');
 let myCanvas = mainCanvas.getContext("2d");
 
 for (let i = 10; i <= 72; i++) {
-    let isSelected = (i == 20)? 'selected': '';
-    textSize.innerHTML = textSize.innerHTML + `<option value="${i}" ${isSelected}>${i}</option>`;
+    let isSelected = (i == 20) ? 'selected' : '';
+    textSize.innerHTML += `<option value="${i}" ${isSelected}>${i}</option>`;
 }
 
-
-
 const fontName = "Verdana, Geneva, Tahoma, sans-serif";
-let fontSize = (localStorage.getItem('font-size') != null)? localStorage.getItem('font-size'): "20";
-let defaultColor = (localStorage.getItem('font-color') != null)? localStorage.getItem('font-color'): "#00000";
-let canvasFont = (localStorage.getItem('font-size') != null)? localStorage.getItem('font-size') + "px " + fontName: fontSize + "px " + fontName;
-
-
-
-
-
+let fontSize = localStorage.getItem('font-size') || "20";
+let defaultColor = localStorage.getItem('font-color') || "#000000";
+let canvasFont = `${fontSize}px ${fontName}`;
 
 const cWidth = mainCanvas.width;
 const cHeight = mainCanvas.height;
-let posX = (localStorage.getItem('pos-x') != null)? localStorage.getItem('pos-x'): cWidth/2 - 50;
-let posY = (localStorage.getItem('pos-y') != null)? localStorage.getItem('pos-y'): cHeight/2;
+let posX = localStorage.getItem('pos-x') || cWidth / 2 - 50;
+let posY = localStorage.getItem('pos-y') || cHeight / 2;
 
 let textVal = "Hello World";
 let isDragging = false;
+
+// New variables for bold and italic
+let isBold = false;
+let isItalic = false;
 
 let firstElement = new SnapSortsClass("Hello World", canvasFont, defaultColor, posX, posY);
 let SnapSorts = [firstElement];
 
 let index = 0;
 
-let addToSnapSorts = ((textVal, font, defaultColor, x, y) => {
+let addToSnapSorts = (textVal, font, defaultColor, x, y) => {
     let SnapElement = new SnapSortsClass(textVal, font, defaultColor, x, y);
     SnapSorts.push(SnapElement);
     index++;
-});
+};
 
-
-
-
-let updateCanvas = ((text, tSize,  color, x, y) => {
-    fontSize = tSize ;
+let updateCanvas = (text, tSize, color, x, y) => {
+    fontSize = tSize;
     defaultColor = color;
-    canvasFont = fontSize + "px " + fontName;
+    // Update canvasFont to include bold and italic if selected
+    canvasFont = `${isBold ? 'bold ' : ''}${isItalic ? 'italic ' : ''}${fontSize}px ${fontName}`;
 
     myCanvas.clearRect(0, 0, cWidth, cHeight);
     myCanvas.font = canvasFont;
     myCanvas.fillStyle = defaultColor;
     myCanvas.fillText(text, x, y);
 
-
     localStorage.setItem('pos-x', x);
     localStorage.setItem('pos-y', y);
     localStorage.setItem('font-size', fontSize);
     localStorage.setItem('font-color', defaultColor);
-});
+};
 
-
-let updatePositions = ((x, y) => {
+let updatePositions = (x, y) => {
     posX = x - 200;
     posY = y - 200;
 
-    if(x >= cWidth ) {
-        posX = posX - cWidth;
-    }
-    if(y >= cWidth ) {
-        posY = posY - cHeight;
-    }
-    if(x < cWidth ) {
-        posX = posX + cWidth;
-    }
-    if(y < cWidth ) {
-        posY = posY + cHeight;
-    }
-});
+    if (x >= cWidth) posX -= cWidth;
+    if (y >= cHeight) posY -= cHeight;
+    if (x < 0) posX += cWidth;
+    if (y < 0) posY += cHeight;
+};
 
-
-let dragContent = ((e) => {
-    if(!isDragging ) {
-        if (posX != SnapSorts[index].x) {
+let dragContent = (e) => {
+    if (!isDragging) {
+        if (posX !== SnapSorts[index].x) {
             addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
         }
         return;
@@ -117,23 +96,23 @@ let dragContent = ((e) => {
 
     updatePositions(e.x, e.y);
     updateCanvas(textVal, fontSize, defaultColor, posX, posY);
-});
+};
 
-let dragContentStart = ((e) => {
-    isDragging = (!isDragging);
-});
+let dragContentStart = (e) => {
+    isDragging = !isDragging;
+};
 
 colorPicker.addEventListener('input', (e) => {
     defaultColor = colorPicker.value;
     updateCanvas(textVal, fontSize, defaultColor, posX, posY);
     addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts)
+    print(SnapSorts);
 });
 
 textSize.addEventListener('input', (e) => {
     updateCanvas(textVal, textSize.value, defaultColor, posX, posY);
     addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts)
+    print(SnapSorts);
 });
 
 userForm.addEventListener('submit', (e) => {
@@ -143,37 +122,91 @@ userForm.addEventListener('submit', (e) => {
     defaultColor = e.target.colorPicker.value;
     updateCanvas(textVal, fontSize, defaultColor, posX, posY);
     addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts)
+    print(SnapSorts);
 });
 
-
-let updateSnapShortList = ((i)=> {
+let updateSnapShortList = (i) => {
     let currentCanvas = SnapSorts[i];
     updateCanvas(currentCanvas.textVal, currentCanvas.canvasFont, currentCanvas.color, currentCanvas.x, currentCanvas.y);
-});
-
-
+};
 
 updateCanvas(textVal, fontSize, defaultColor, posX, posY);
 
-
-
-
-// Undo & Redo functions for good user experience..
-
+// Undo & Redo functions
 undo.addEventListener('click', (e) => {
     e.preventDefault();
-    if (index <= 0) {
-        return;
-    }
-
+    if (index <= 0) return;
     updateSnapShortList(--index);
 });
 redo.addEventListener('click', (e) => {
     e.preventDefault();
-    if (index >= (SnapSorts.length-1)) {
-        return;
-    }
-    
+    if (index >= (SnapSorts.length - 1)) return;
     updateSnapShortList(++index);
+});
+
+
+/*added some feature to it*/
+// Capitalize and lowercase functions
+let capitalizeButton = document.getElementById('capital');
+let lowercaseButton = document.getElementById('small');
+
+capitalizeButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    textVal = textVal.toUpperCase();
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
+    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
+    print(SnapSorts);
+});
+
+lowercaseButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    textVal = textVal.toLowerCase();
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
+    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
+    print(SnapSorts);
+});
+
+// Clear text function
+// Clear text function
+let clearButton = document.getElementById('clear');
+
+clearButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    textVal = ""; 
+    // Clear the input field
+    document.getElementById('textData').value = ""; 
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
+    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
+    print(SnapSorts);
+});
+
+
+// PDF Download functionality
+let downloadButton = document.getElementById('download');
+
+downloadButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+    const imgData = mainCanvas.toDataURL('image/png');
+    
+    pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
+    pdf.save('canvas.pdf');
+});
+
+// Bold button functionality
+let boldButton = document.getElementById('bold');
+boldButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    isBold = !isBold; // Toggle bold
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY); // Update the canvas
+});
+
+// Italic button functionality
+let italicButton = document.getElementById('italic');
+italicButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    isItalic = !isItalic; // Toggle italic
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY); // Update the canvas
 });
