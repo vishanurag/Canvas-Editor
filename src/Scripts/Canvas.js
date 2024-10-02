@@ -214,11 +214,16 @@ let bgColorPicker = document.getElementById('bgColorPicker');
 
 bgColorPicker.addEventListener('input', function() {
     const bgColor = bgColorPicker.value;
-    myCanvas.clearRect(0, 0, cWidth, cHeight);  // Clear previous background
+    // Clear the entire canvas and fill it with the new background color
+    myCanvas.clearRect(0, 0, cWidth, cHeight);  
     myCanvas.fillStyle = bgColor;
     myCanvas.fillRect(0, 0, cWidth, cHeight);  // Apply new background color
+    
+    // Redraw the text on top of the new background color
+    myCanvas.font = canvasFont; // Ensure the font is set again
+    myCanvas.fillStyle = defaultColor; // Set text color
+    myCanvas.fillText(textVal, posX, posY); // Draw the text at the last position
 });
-
 
 // Handle background image upload
 bgImageUpload.addEventListener('change', function(event) {
