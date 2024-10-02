@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,127 @@
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+
 </head>
+<style>
+    body {
+        background: linear-gradient(to bottom, rgb(235, 158, 158), rgb(221, 139, 139));
+
+    }
+
+    .Heading {
+        font-family: 'Arial', sans-serif;
+        /* Set your desired font family */
+        font-size: 2.5rem;
+        /* Adjust size as needed */
+        color: white;
+        /* Change the text color */
+        text-align: center;
+        /* Center the text */
+    }
+
+
+    #undoButton,
+    #redoButton {
+        background-color: white;
+    }
+
+    .maincontent .canva {
+        background-color: white;
+        margin: 0;
+        border: 1px solid #ccc;
+        /* Added border for better visibility */
+    }
+
+    .text-light {
+        border-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .maincontent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0px;
+    }
+
+    .maincontent>* {
+        margin: 0;
+        /* Remove margins from all direct child elements */
+    }
+
+    #mainCanvas,
+    #entryBox {
+        margin: 0;
+        padding: 0;
+        border: 1px solid #ccc;
+        background-color: white;
+    }
+
+    .h-100 {
+        height: 80vh;
+        /* Ensure full height in flex context */
+    }
+
+    #mainpart {
+        background: linear-gradient(to bottom, rgb(235, 158, 158), rgb(221, 139, 139));
+
+    }
+</style>
+
 <body>
-    <div class="container pt-2 ">
+    <h1 class="Heading">Canvas Editor </h1>
+    <div class="container pt-2 " id="mainpart">
         <div class="mt-2 mb-5">
             <button class="btn btn-outline-danger " id="undoButton" title="Undo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
-                    <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
+                    <path
+                        d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
                 </svg>
             </button>
             <button class="btn btn-outline-primary mx-2" id="redoButton" title="Redo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
                 </svg>
             </button>
         </div>
-        
-        <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 align-items-center ">
-
-            <canvas id="mainCanvas" class="h-80 h-80-responsive border border-gray shadow rounded" onclick="dragContentStart(event)" onmousemove="dragContent(event)">
+        <div class="maincontent">
+            <canvas id="mainCanvas" class="h-80 h-80-responsive border border-gray shadow rounded"
+                onclick="dragContentStart(event)" onmousemove="dragContent(event)" class="canva">
                 Canvas Not Supported by the Browser...
             </canvas>
-            
-            
-            <div class="h-80 h-80-responsive p-1 bg-dark rounded w-100 shadow">
-                <form id="userForm" class="h-80 h-80-responsive d-flex flex-column justify-content-evenly ">
+            <div class="h-80 h-80-responsive p-1 bg-dark rounded w-100 shadow" id="entrybox">
+                <form id="userForm" class="h-80 h-80-responsive d-flex flex-column justify-content-evenly "
+                    class="forms">
                     <div class="d-flex gap-3 px-3">
                         <label for="textSize" class="text-light">Size :</label>
-                        <select  name="tSize"  class="rounded " id="textSize" required>
-                            
+                        <select name="tSize" class="rounded " id="textSize" required>
                         </select>
                         <label for="colorPicker" class="text-light">Color :</label>
                         <input type="color" name="colorPicker" class="rounded " id="colorPicker">
                     </div>
-                    <div class="d-md-flex justify-content-center gap-1">
-                        <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth">
+                    <div class="d-md-flex justify-content-center gap-1" id="textArea">
+                        <input type="text" placeholder="Enter Text " name="textData" id="textData"
+                            class="form-control mw-100 w-75 fullWidth">
                         <button class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
         </div>
+
     </div>
 
-    <script  src="./src/Scripts/Canvas.js"></script>
+    <script src="./src/Scripts/Canvas.js"></script>
 </body>
+
 </html>
