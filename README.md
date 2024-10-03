@@ -29,7 +29,7 @@
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
 
-### How to Use:
+### How to Use
 To change the background color or image:
 
 <li> Navigate to the canvas options on the webpage!</li>
