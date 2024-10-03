@@ -121,6 +121,15 @@ addTextButton.addEventListener('click', (e) => {
     addToSnapSorts();
 });
 
+// Update the text size selection behavior to immediately reflect changes
+textSize.addEventListener('input', (e) => {
+    // Update the global fontSize variable before updating the canvas
+    fontSize = e.target.value; // Get the selected font size from the input
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY); // Apply the updated font size to the canvas
+    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY); // Save the snapshot
+    print(SnapSorts);
+});
+
 let updatePositions = (x, y) => {
     posX = x - 200;
     posY = y - 200;
@@ -154,12 +163,6 @@ colorPicker.addEventListener('input', (e) => {
     print(SnapSorts);
 });
 
-textSize.addEventListener('input', (e) => {
-    updateCanvas(textVal, textSize.value, defaultColor, posX, posY);
-    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts);
-});
-
 userForm.addEventListener('submit', (e) => {
     e.preventDefault();
     textVal = e.target.textData.value;
@@ -189,7 +192,6 @@ redo.addEventListener('click', (e) => {
     updateSnapShortList(++index);
 });
 
-
 /*added some feature to it*/
 // Capitalize and lowercase functions
 let capitalizeButton = document.getElementById('capital');
@@ -212,7 +214,6 @@ lowercaseButton.addEventListener('click', (e) => {
 });
 
 // Clear text function
-// Clear text function
 let clearButton = document.getElementById('clear');
 
 clearButton.addEventListener('click', (e) => {
@@ -224,7 +225,6 @@ clearButton.addEventListener('click', (e) => {
     addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
     print(SnapSorts);
 });
-
 
 // PDF Download functionality
 let downloadButton = document.getElementById('download');
@@ -255,6 +255,7 @@ italicButton.addEventListener('click', (e) => {
     isItalic = !isItalic; // Toggle italic
     updateCanvas(textVal, fontSize, defaultColor, posX, posY); // Update the canvas
 });
+
 let bgColorPicker = document.getElementById('bgColorPicker');
 
 bgColorPicker.addEventListener('input', function() {
@@ -270,23 +271,46 @@ bgColorPicker.addEventListener('input', function() {
     myCanvas.fillText(textVal, posX, posY); // Draw the text at the last position
 });
 
-// Handle background image upload
+// Handle background image upload with error handling
 bgImageUpload.addEventListener('change', function(event) {
     const file = event.target.files[0];
-    if (file) {
-        const img = new Image();
-        const reader = new FileReader();
 
-        reader.onload = function(e) {
-            img.src = e.target.result;
-            img.onload = function() {
-                myCanvas.clearRect(0, 0, mainCanvas.width, mainCanvas.height);  // Clear previous background
-                myCanvas.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);  // Draw the image on canvas
-            };
-        };
-        reader.readAsDataURL(file);
+    if (!file) {
+        alert('No file selected. Please select an image file.');
+        return;
     }
+
+    // Validate if the selected file is an image
+    if (!file.type.startsWith('image/')) {
+        alert('Please upload a valid image file (jpg, png, etc.).');
+        return;
+    }
+
+    // Limit file size to 5MB
+    const maxSizeInMB = 5;
+    if (file.size > maxSizeInMB * 1024 * 1024) {
+        alert(`File size exceeds the ${maxSizeInMB}MB limit. Please upload a smaller file.`);
+        return;
+    }
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        img.src = e.target.result;
+        img.onload = function() {
+            myCanvas.clearRect(0, 0, mainCanvas.width, mainCanvas.height);  // Clear previous background
+            myCanvas.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);  // Draw the image on canvas
+        };
+    };
+
+    reader.onerror = function() {
+        alert('There was an error reading the file.');
+    };
+
+    reader.readAsDataURL(file);
 });
+
 // Function to draw a rectangle
 const drawRectangle = (x, y) => {
     myCanvas.fillStyle = defaultColor; // Use the selected color
@@ -333,29 +357,20 @@ document.getElementById('lineBtn').addEventListener('click', (e) => {
     addToSnapSorts('Line', canvasFont, defaultColor, posX, posY);
 });
 
-    window.onload = function () {
-       
-        gsap.from(".btn", {
-            duration: 1,  
-            y: -50,      
-            opacity: 0,   
-            stagger: 0.2, 
-            ease: "bounce"
-        });
+window.onload = function () {
+    gsap.from(".btn", {
+        duration: 1,  
+        y: -50,      
+        opacity: 0,   
+        stagger: 0.2, 
+        ease: "bounce"
+    });
 
-       
-        
-
-        // Animate the canvas
-        gsap.from("#mainCanvas", {
-            duration: 2,
-            scale: 0.5,    
-            opacity: 0,
-            ease: "elastic.out(1, 0.3)" 
-        });
-    };
-
-    
-
-    
-    
+    // Animate the canvas
+    gsap.from("#mainCanvas", {
+        duration: 2,
+        scale: 0.5,    
+        opacity: 0,
+        ease: "elastic.out(1, 0.3)" 
+    });
+};
