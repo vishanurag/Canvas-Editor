@@ -7,9 +7,45 @@
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container{
+            max-width: 100%;
+            margin: auto;
+            color: black;
+        }
+     
+    </style>
 </head>
 <body>
     <div class="container pt-2">
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Review</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#">Blog</a>
+                </li>
+              </ul>
+        </div>
+        <div class="row text-center p-5" style="background-color: cornflowerblue;">
+            <h2 style="color: white;">Welcome to the Canvas Editor !</h2>
+            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+        </div>
+        <div class="row p-5 text-center" >
+            <h2 style=" font-weight: 600;">From drawing shapes to adding text and images, we provide you with the freedom to craft amazing designs. </h2>
+            <div class="btn">
+                <a href="#" class="btn" style=" background-color: rgb(0, 110, 255); color: white; transition: none; border: none;">Get Started Now</a>    
+            </div>
+        </div>
+        <div class="row pb-5">
         <div class="mt-2 mb-5">
             <button class="btn btn-outline-danger" id="undoButton" title="Undo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
@@ -24,6 +60,7 @@
                 </svg>
             </button>
             <button class="btn btn-primary" id="addText">Add Text</button>
+            <a href="Canvas-Editor/edition.html"><button class="btn btn-primary">Draw</button></a>
         </div>
         
         <div class="d-md-flex justify-content-center gap-3 align-items-center flex-column flex-md-row">
@@ -32,21 +69,24 @@
                 Canvas Not Supported by the Browser...
             </canvas>
             
-            <div class="h-80 h-80-responsive p-1 bg-dark rounded w-100 shadow">
+            <div class="h-80 h-80-responsive p-1 bg-body-tertiary rounded w-100 shadow">
                 <form id="userForm" class="h-80 h-80-responsive d-flex flex-column justify-content-evenly">
-                    <div class="d-flex gap-3 px-3">
-                        <label for="textSize" class="text-light">Size :</label>
+                    <div class="d-flex gap-3 px-3 pt-2">
+                        <label for="textSize" class="text-dark">Size :</label>
                         <select name="tSize" class="rounded" id="textSize" required></select>
-                        <label for="colorPicker" class="text-light">Color :</label>
+                        <label for="colorPicker" class="text-dark">Color :</label>
                         <input type="color" name="colorPicker" class="rounded" id="colorPicker">
                     </div>
                     <!-- added feature - Background -->
-                    <div class="d-flex gap-3 px-3">
+                    <div class=" row d-flex gap-3 px-3">
+                        <div class="col-sm-6">
                         <!-- Background Image Upload -->
-                        <label for="bgImageUpload" class="text-light">Background Image:</label>
+                        <label for="bgImageUpload" class="text-dark">Background Image:</label>
                         <input type="file" id="bgImageUpload" accept="image/*">
+                        </div>
+                        <div class="col-sm-6" style="border: 1px solidd blue;">
                         <!-- Background Color Picker -->
-                        <label for="bgColorPicker" class="text-light">Background Color:</label>
+                        <label for="bgColorPicker" class="text-dark">Background Color:</label>
                         <input type="color" id="bgColorPicker" class="rounded">
                     </div>                    
                     <div class="d-md-flex justify-content-evenly gap-1">
@@ -65,13 +105,13 @@
                     </div>
                    <!-- <p >Shape Pallete</p> -->
                     <div class="palette">
-                        <p >Shape Palette : </p>
-                        <button id="rectangleBtn">Rectangle</button>
-                        <button id="circleBtn">Circle</button>
-                        <button id="lineBtn">Line</button>
+                        <p style="color: black;">Shape Palette : </p>
+                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                        <button id="circleBtn" class="btn btn-success">Circle</button>
+                        <button id="lineBtn" class="btn btn-success">Line</button>
                     </div>
                     <div class="d-md-flex justify-content-center gap-1">
-                        <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth">
+                        <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth mb-3" class="">
 
                         <button type="submit" class="btn btn-primary boton-elegante" id = "Save">Save</button>
                         <!-- added features -->
@@ -87,7 +127,9 @@
                 </form>
             </div>
         </div>
-    </div>
+        </div>
+        </div>     
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
