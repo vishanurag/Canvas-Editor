@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   transition: all 0.1s linear;
+  justify-content: space-evenly;
 }
 
 body {
@@ -160,6 +161,7 @@ input#textData {
   font-size: 1rem;
   border-radius: 30px;
   border: 2px solid #ccc;
+ 
 }
 
 /* Specific hover tooltips for Uppercase, Lowercase, Bold, and Italic buttons */
