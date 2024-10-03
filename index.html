@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
 </head>
 <body>
+
     <div class="nav-bar">
 
         <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/photo-editor-app-icon-design-template-4422455fe13e1c4e7008958f0b058eb5_screen.jpg?ts=1577021462" style="max-width: 690px; margin-left: 30px; height:90px; width:100px;">
@@ -22,10 +23,11 @@
         </div>
     </div>
 
-    <div class="container pt-2 ">
+    <div class="container ">
         <div class="mt-4 mb-3 buttons">
             <button class="btn btn-outline-danger " id="undoButton" title="Undo" style=" font-size: 20px; font-weight: bold;" > UNDO
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 20 20">
+
                     <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
                     <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
                 </svg>
@@ -38,17 +40,17 @@
             </button>
         </div>
         
-        <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 align-items-center ">
+        <div class="d-flex justify-content-center gap-3 main-sec m-0">
 
-            <canvas id="mainCanvas" class="h-80 h-80-responsive border border-gray shadow rounded" onclick="dragContentStart(event)" onmousemove="dragContent(event)">
+            <canvas id="mainCanvas" class="m-0 h-80-responsive border border-gray shadow rounded" onclick="dragContentStart(event)" onmousemove="dragContent(event)">
                 Canvas Not Supported by the Browser...
             </canvas>
             
-            
-            <div class="h-80 h-80-responsive p-1 bg-dark rounded w-100 shadow">
+            <div class=" h-80-responsive  bg-dark rounded w-100 shadow designing-area ">
+
                 <h2 class="txt">DESIGNING AREA</h2>
-                <form id="userForm" class="h-80 h-80-responsive  flex-column justify-content-evenly  ">
-                    <div class="gap-3 px-3 ">
+                <form id="userForm" class=" h-80-responsive  flex-column justify-content-evenly  ">
+                    <div class="gap-3 px-3  ">
                         
                         <label for="textSize" class=" text-light p-0" style="font-size:larger" >Size    : </label>
                         <select  name="tSize"  class="rounded w-50 " id="textSize" required>
@@ -56,9 +58,18 @@
                         </select>
                         <label for="colorPicker" class="text text-light p-0" style="font-size:larger">Color :</label>
                         <input type="color" name="colorPicker" class="rounded mt-2 w-40" id="colorPicker">
+
                     </div>
+                    <!-- added feature - Background -->
+                    <div class="d-flex gap-3 px-3">
+                        <!-- Background Image Upload -->
+                        <label for="bgImageUpload" class="text-light p-0" style="font-size:larger">Background Image:</label>
+                        <input type="file" id="bgImageUpload" accept="image/*">
+                        <!-- Background Color Picker -->
+                        <label for="bgColorPicker" class="text-light p-0" style="font-size:larger">Background Color:</label>
+                        <input type="color" id="bgColorPicker" class="rounded">
+                    </div>                    
                     <div class="d-md-flex justify-content-evenly gap-1">
-                        <!-- added features -->
                         <button class="btn btn-primary" id="capital">A</button>
                         <button class="btn btn-primary" id="small">a</button>
                         <button class="btn btn-primary" id="bold">
@@ -72,6 +83,7 @@
                             </svg>
                         </button>
                     </div>
+
                     <div class=" justify-content-center gap-1">
                         <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-100 fullWidth h-50">
                         
@@ -80,18 +92,19 @@
                         <button class="btn btn-primary mt-3" id="clear" style="width:30%">clear</button>
                         <button type="button" class="btn btn-primary mt-3" id="download" title="Download" style="width:20%">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+
                                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
                                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
                             </svg>
                         </button>
-                        
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script  src="./src/Scripts/Canvas.js"></script>
+    <script src="./src/Scripts/Canvas.js"></script>
 </body>
 </html>
