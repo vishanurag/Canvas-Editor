@@ -78,11 +78,39 @@ document.addEventListener('DOMContentLoaded', function () {
 canvas.width = 400; // Set the canvas width (you can modify this as per your layout)
 canvas.height = 300; // Set the canvas height (you can modify this as per your layout)
 
+
+// Clear text function
+let clearButton = document.getElementById('clear');
+
+clearButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    textVal = ""; 
+    // Clear the input field
+    document.getElementById('textData').value = ""; 
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
+    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
+    print(SnapSorts);
+});
+
+// PDF Download functionality
+let downloadButton = document.getElementById('download');
+
+downloadButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+    const imgData = mainCanvas.toDataURL('image/png');
+    
+    pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
+    pdf.save('canvas.pdf');
+=======
 // Clear button to reset the canvas
 let clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     textElements = []; // Clear all text elements
+
 });
 
 // Bold button functionality
@@ -100,6 +128,7 @@ italicButton.addEventListener('click', (e) => {
     isItalic = !isItalic; // Toggle italic
     updateCanvas(textVal, fontSize, defaultColor, posX, posY); // Update the canvas
 });
+
 let bgColorPicker = document.getElementById('bgColorPicker');
 
 bgColorPicker.addEventListener('input', function() {
@@ -115,23 +144,46 @@ bgColorPicker.addEventListener('input', function() {
     myCanvas.fillText(textVal, posX, posY); // Draw the text at the last position
 });
 
-// Handle background image upload
+// Handle background image upload with error handling
 bgImageUpload.addEventListener('change', function(event) {
     const file = event.target.files[0];
-    if (file) {
-        const img = new Image();
-        const reader = new FileReader();
 
-        reader.onload = function(e) {
-            img.src = e.target.result;
-            img.onload = function() {
-                myCanvas.clearRect(0, 0, mainCanvas.width, mainCanvas.height);  // Clear previous background
-                myCanvas.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);  // Draw the image on canvas
-            };
-        };
-        reader.readAsDataURL(file);
+    if (!file) {
+        alert('No file selected. Please select an image file.');
+        return;
     }
+
+    // Validate if the selected file is an image
+    if (!file.type.startsWith('image/')) {
+        alert('Please upload a valid image file (jpg, png, etc.).');
+        return;
+    }
+
+    // Limit file size to 5MB
+    const maxSizeInMB = 5;
+    if (file.size > maxSizeInMB * 1024 * 1024) {
+        alert(`File size exceeds the ${maxSizeInMB}MB limit. Please upload a smaller file.`);
+        return;
+    }
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        img.src = e.target.result;
+        img.onload = function() {
+            myCanvas.clearRect(0, 0, mainCanvas.width, mainCanvas.height);  // Clear previous background
+            myCanvas.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);  // Draw the image on canvas
+        };
+    };
+
+    reader.onerror = function() {
+        alert('There was an error reading the file.');
+    };
+
+    reader.readAsDataURL(file);
 });
+
 // Function to draw a rectangle
 const drawRectangle = (x, y) => {
     myCanvas.fillStyle = defaultColor; // Use the selected color
@@ -177,6 +229,24 @@ document.getElementById('lineBtn').addEventListener('click', (e) => {
     drawLine(posX, posY, posX + 50, posY + 50); // Example coordinates, adjust as needed
     addToSnapSorts('Line', canvasFont, defaultColor, posX, posY);
 });
+
+window.onload = function () {
+    gsap.from(".btn", {
+        duration: 1,  
+        y: -50,      
+        opacity: 0,   
+        stagger: 0.2, 
+        ease: "bounce"
+    });
+
+    // Animate the canvas
+    gsap.from("#mainCanvas", {
+        duration: 2,
+        scale: 0.5,    
+        opacity: 0,
+        ease: "elastic.out(1, 0.3)" 
+    });
+};
 
     window.onload = function () {
        
