@@ -156,3 +156,11 @@ Thank you to all the amazing contributors who have made this project possible! ð
 
 
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
+
+
+## Contributing ðŸ’¡
+
+We welcome all contributions to improve **Canvas Editor**! If you'd like to contribute, please follow the [Contributing.md](./CONTRIBUTING.md) to get started.
+
+---
+
