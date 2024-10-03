@@ -63,14 +63,21 @@
                             </svg>
                         </button>
                     </div>
+                   <p >Shape Pallete</p>
+                    <div class="palette">
+                        <p >Shape Palette : </p>
+                        <button id="rectangleBtn">Rectangle</button>
+                        <button id="circleBtn">Circle</button>
+                        <button id="lineBtn">Line</button>
+                    </div>
                     <div class="d-md-flex justify-content-center gap-1">
                         <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth">
 
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary boton-elegante" id = "Save">Save</button>
                         <!-- added features -->
 
-                        <button class="btn btn-primary" id="clear">clear</button>
-                        <button type="button" class="btn btn-primary" id="download" title="Download">
+                        <button class="btn btn-primary boton-elegante" id="clear">clear</button>
+                        <button type="button" class="btn btn-primary boton-elegante" id="download" title="Download">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
                                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
                                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
@@ -81,6 +88,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/Canvas.js"></script>
