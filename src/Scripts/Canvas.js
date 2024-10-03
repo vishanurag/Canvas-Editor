@@ -1,217 +1,84 @@
-class SnapSortsClass {
-    textVal;
-    color;
-    canvasFont;
-    x;
-    y;
-
-    constructor(textVal, canvasFont, color, x, y) {
-        this.textVal = textVal;
-        this.canvasFont = canvasFont;
-        this.color = color;
-        this.x = x;
-        this.y = y;
-    }
-}
-
-let print = (val) => {
-    console.log(val);
-};
-
-let mainCanvas = document.getElementById('mainCanvas');
-let textSize = document.getElementById('textSize');
-let colorPicker = document.getElementById('colorPicker');
-let userForm = document.getElementById('userForm');
-let undo = document.getElementById('undoButton');
-let redo = document.getElementById('redoButton');
-let myCanvas = mainCanvas.getContext("2d");
-
-for (let i = 10; i <= 72; i++) {
-    let isSelected = (i == 20) ? 'selected' : '';
-    textSize.innerHTML += `<option value="${i}" ${isSelected}>${i}</option>`;
-}
-
-const fontName = "Verdana, Geneva, Tahoma, sans-serif";
-let fontSize = localStorage.getItem('font-size') || "20";
-let defaultColor = localStorage.getItem('font-color') || "#000000";
-let canvasFont = `${fontSize}px ${fontName}`;
-
-const cWidth = mainCanvas.width;
-const cHeight = mainCanvas.height;
-let posX = localStorage.getItem('pos-x') || cWidth / 2 - 50;
-let posY = localStorage.getItem('pos-y') || cHeight / 2;
-
-let textVal = "Hello World";
-let isDragging = false;
-
-// New variables for bold and italic
+// Initialize variables
+let canvas = document.getElementById('mainCanvas');
+let ctx = canvas.getContext('2d');
+let textElements = []; // Array to store text elements
+let fontSize = 20;
+let fontName = 'Arial'; // Default font
+let defaultColor = '#000000';
 let isBold = false;
 let isItalic = false;
+let posX = 50;
+let posY = 50;
 
-let firstElement = new SnapSortsClass("Hello World", canvasFont, defaultColor, posX, posY);
-let SnapSorts = [firstElement];
-
-let index = 0;
-
-// New array to store multiple text elements
-let textElements = [];
-
-// Modify addToSnapSorts to handle multiple elements
-let addToSnapSorts = () => {
-    let snapshot = textElements.map(el => new SnapSortsClass(el.text, el.font, el.color, el.x, el.y));
-    SnapSorts.push(snapshot);
-    index++;
-};
-
-// New function to add text element
-let addTextElement = (text, font, color, x, y) => {
+// Function to add text element to the array
+function addTextElement(text, font, color, x, y) {
     textElements.push({ text, font, color, x, y });
-    renderAllElements();
-};
+}
 
-// New function to render all elements
-let renderAllElements = () => {
-    myCanvas.clearRect(0, 0, cWidth, cHeight);
-    textElements.forEach(el => {
-        myCanvas.font = el.font;
-        myCanvas.fillStyle = el.color;
-        myCanvas.fillText(el.text, el.x, el.y);
+// Function to render all text elements on the canvas
+function renderAllElements() {
+    // Clear the canvas before re-drawing
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Render each text element
+    textElements.forEach((element) => {
+        ctx.font = element.font;
+        ctx.fillStyle = element.color;
+        ctx.fillText(element.text, element.x, element.y);
     });
-};
+}
 
-// Modify updateCanvas to use renderAllElements
+// Update canvas when the form is submitted
 let updateCanvas = (text, tSize, color, x, y) => {
     fontSize = tSize;
     defaultColor = color;
-    canvasFont = `${isBold ? 'bold ' : ''}${isItalic ? 'italic ' : ''}${fontSize}px ${fontName}`;
+    // Apply bold and italic styles based on the toggled values
+    let canvasFont = `${isBold ? 'bold ' : ''}${isItalic ? 'italic ' : ''}${fontSize}px ${fontName}`;
 
-    // Update the current text element or add a new one
-    if (textElements.length > 0) {
-        textElements[textElements.length - 1] = { text, font: canvasFont, color, x, y };
-    } else {
-        addTextElement(text, canvasFont, color, x, y);
-    }
+    // Add a new text element or update the existing one
+    addTextElement(text, canvasFont, color, x, y);
 
+    // Render all elements including the newly added one
     renderAllElements();
 
+    // Store the canvas data in local storage (optional)
     localStorage.setItem('pos-x', x);
     localStorage.setItem('pos-y', y);
     localStorage.setItem('font-size', fontSize);
     localStorage.setItem('font-color', defaultColor);
 };
 
-// Modify userForm event listener
+// Fix the userForm submit event
+let userForm = document.getElementById('userForm');
 userForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    textVal = e.target.textData.value;
-    canvasFont = `${isBold ? 'bold ' : ''}${isItalic ? 'italic ' : ''}${fontSize}px ${fontName}`;
-    defaultColor = e.target.colorPicker.value;
-    addTextElement(textVal, canvasFont, defaultColor, posX, posY);
-    addToSnapSorts();
-    print(SnapSorts);
+    // Fetch the text input value
+    let textVal = e.target.textData.value;
+
+    // Fetch font size and color from the form
+    let textSize = parseInt(e.target.tSize.value);
+    let color = e.target.colorPicker.value;
+
+    // Update the text on the canvas at the specified position
+    updateCanvas(textVal, textSize, color, posX, posY);
 });
 
-// New button for adding text
-let addTextButton = document.getElementById('addText');
-addTextButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    textVal = document.getElementById('textData').value;
-    canvasFont = `${isBold ? 'bold ' : ''}${isItalic ? 'italic ' : ''}${fontSize}px ${fontName}`;
-    addTextElement(textVal, canvasFont, defaultColor, posX, posY);
-    addToSnapSorts();
-});
-
-let updatePositions = (x, y) => {
-    posX = x - 200;
-    posY = y - 200;
-
-    if (x >= cWidth) posX -= cWidth;
-    if (y >= cHeight) posY -= cHeight;
-    if (x < 0) posX += cWidth;
-    if (y < 0) posY += cHeight;
-};
-
-let dragContent = (e) => {
-    if (!isDragging) {
-        if (posX !== SnapSorts[index].x) {
-            addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-        }
-        return;
+// Ensure the DOM is fully loaded before populating the textSize options
+document.addEventListener('DOMContentLoaded', function () {
+    let textSize = document.getElementById('textSize');
+    // Populate the dropdown with sizes
+    for (let i = 10; i <= 72; i++) {
+        let isSelected = (i == 20) ? 'selected' : ''; // Select 20 by default
+        let option = `<option value="${i}" ${isSelected}>${i}</option>`;
+        textSize.innerHTML += option;
     }
-
-    updatePositions(e.x, e.y);
-    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
-};
-
-let dragContentStart = (e) => {
-    isDragging = !isDragging;
-};
-
-colorPicker.addEventListener('input', (e) => {
-    defaultColor = colorPicker.value;
-    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
-    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts);
 });
 
-textSize.addEventListener('input', (e) => {
-    updateCanvas(textVal, textSize.value, defaultColor, posX, posY);
-    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts);
-});
-
-userForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    textVal = e.target.textData.value;
-    canvasFont = e.target.tSize.value;
-    defaultColor = e.target.colorPicker.value;
-    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
-    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts);
-});
-
-let updateSnapShortList = (i) => {
-    let currentCanvas = SnapSorts[i];
-    updateCanvas(currentCanvas.textVal, currentCanvas.canvasFont, currentCanvas.color, currentCanvas.x, currentCanvas.y);
-};
-
-updateCanvas(textVal, fontSize, defaultColor, posX, posY);
-
-// Undo & Redo functions
-undo.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (index <= 0) return;
-    updateSnapShortList(--index);
-});
-redo.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (index >= (SnapSorts.length - 1)) return;
-    updateSnapShortList(++index);
-});
+// Make the canvas responsive
+canvas.width = 400; // Set the canvas width (you can modify this as per your layout)
+canvas.height = 300; // Set the canvas height (you can modify this as per your layout)
 
 
-/*added some feature to it*/
-// Capitalize and lowercase functions
-let capitalizeButton = document.getElementById('capital');
-let lowercaseButton = document.getElementById('small');
-
-capitalizeButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    textVal = textVal.toUpperCase();
-    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
-    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts);
-});
-
-lowercaseButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    textVal = textVal.toLowerCase();
-    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
-    addToSnapSorts(textVal, canvasFont, defaultColor, posX, posY);
-    print(SnapSorts);
-});
-
-// Clear text function
 // Clear text function
 let clearButton = document.getElementById('clear');
 
@@ -225,7 +92,6 @@ clearButton.addEventListener('click', (e) => {
     print(SnapSorts);
 });
 
-
 // PDF Download functionality
 let downloadButton = document.getElementById('download');
 
@@ -238,6 +104,13 @@ downloadButton.addEventListener('click', (e) => {
     
     pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
     pdf.save('canvas.pdf');
+=======
+// Clear button to reset the canvas
+let clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    textElements = []; // Clear all text elements
+
 });
 
 // Bold button functionality
@@ -255,6 +128,7 @@ italicButton.addEventListener('click', (e) => {
     isItalic = !isItalic; // Toggle italic
     updateCanvas(textVal, fontSize, defaultColor, posX, posY); // Update the canvas
 });
+
 let bgColorPicker = document.getElementById('bgColorPicker');
 
 bgColorPicker.addEventListener('input', function() {
@@ -270,23 +144,46 @@ bgColorPicker.addEventListener('input', function() {
     myCanvas.fillText(textVal, posX, posY); // Draw the text at the last position
 });
 
-// Handle background image upload
+// Handle background image upload with error handling
 bgImageUpload.addEventListener('change', function(event) {
     const file = event.target.files[0];
-    if (file) {
-        const img = new Image();
-        const reader = new FileReader();
 
-        reader.onload = function(e) {
-            img.src = e.target.result;
-            img.onload = function() {
-                myCanvas.clearRect(0, 0, mainCanvas.width, mainCanvas.height);  // Clear previous background
-                myCanvas.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);  // Draw the image on canvas
-            };
-        };
-        reader.readAsDataURL(file);
+    if (!file) {
+        alert('No file selected. Please select an image file.');
+        return;
     }
+
+    // Validate if the selected file is an image
+    if (!file.type.startsWith('image/')) {
+        alert('Please upload a valid image file (jpg, png, etc.).');
+        return;
+    }
+
+    // Limit file size to 5MB
+    const maxSizeInMB = 5;
+    if (file.size > maxSizeInMB * 1024 * 1024) {
+        alert(`File size exceeds the ${maxSizeInMB}MB limit. Please upload a smaller file.`);
+        return;
+    }
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        img.src = e.target.result;
+        img.onload = function() {
+            myCanvas.clearRect(0, 0, mainCanvas.width, mainCanvas.height);  // Clear previous background
+            myCanvas.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);  // Draw the image on canvas
+        };
+    };
+
+    reader.onerror = function() {
+        alert('There was an error reading the file.');
+    };
+
+    reader.readAsDataURL(file);
 });
+
 // Function to draw a rectangle
 const drawRectangle = (x, y) => {
     myCanvas.fillStyle = defaultColor; // Use the selected color
@@ -333,6 +230,24 @@ document.getElementById('lineBtn').addEventListener('click', (e) => {
     addToSnapSorts('Line', canvasFont, defaultColor, posX, posY);
 });
 
+window.onload = function () {
+    gsap.from(".btn", {
+        duration: 1,  
+        y: -50,      
+        opacity: 0,   
+        stagger: 0.2, 
+        ease: "bounce"
+    });
+
+    // Animate the canvas
+    gsap.from("#mainCanvas", {
+        duration: 2,
+        scale: 0.5,    
+        opacity: 0,
+        ease: "elastic.out(1, 0.3)" 
+    });
+};
+
     window.onload = function () {
        
         gsap.from(".btn", {
@@ -355,7 +270,3 @@ document.getElementById('lineBtn').addEventListener('click', (e) => {
         });
     };
 
-    
-
-    
-    

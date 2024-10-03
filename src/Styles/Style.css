@@ -1,60 +1,100 @@
 /* Global styles */
 * {
-    margin: 0;
-    padding: 0;
-    transition: all 0.1s linear;
+  margin: 0;
+  padding: 0;
+  transition: all 0.1s linear;
 }
 
 body {
-    width: 100vw;
+   height: 100vh !important;
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   width: 100vw;
     height: 100vh !important;
 }
 
 /* Main canvas styles */
 #mainCanvas {
-    width: 60% !important;
+   width: 70% !important;
+  height: auto;
+  border: 1px solid gray;
+  background: #e0eafc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #cfdef3,
+    #e0eafc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #cfdef3,
+    #e0eafc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 60% !important;
     height: auto;
     border: 1px solid gray;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+
 }
 
 /* Custom height class */
 .h-80 {
-    height: 80vh !important;
+  height: 80vh !important;
+  background: #F0F2F0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #000C40, #151615);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 /* Full width for form controls */
 .fullWidth {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 /* Style for input field */
 #textData {
-    padding: 10px;              
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+   padding: 10px;              
     border: 1px solid #ced4da; 
     border-radius: 5px;        
-    font-size: 1rem;         
+    font-size: 1rem;  
 }
 
 /* Style for the Save button */
 .btn-primary {
-    padding: 10px 20px;        
-    font-size: 1rem;           
-    border-radius: 5px;        
-    transition: background-color 0.3s; 
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 /* Hover effect for button */
 .btn-primary:hover {
-    background-color: #0056b3; 
-    color: white;               
+  background-color: #0056b3;
+  color: white;
 }
 
 /* Flex container adjustments */
 .d-flex {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 /* Button styling with new colors */

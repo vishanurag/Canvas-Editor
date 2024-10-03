@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/Styles/Style.css">
+    <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             background-color: #eef1f5;
@@ -13,6 +17,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            color: black;
         }
         .header {
             text-align: center;
@@ -34,7 +39,7 @@
             border: 2px solid #007bff;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Default background color */
+            background-color-color: #f0f0f0; /* Default background color */
         }
         .btn {
             margin: 5px;
@@ -63,10 +68,28 @@
             <h1 class="display-4">Creative Canvas Tool</h1>
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
-        
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Review</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row text-center p-5" style="background-color: cornflowerblue;">
+            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
+            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+        </div>
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
-            
             <div class="p-3 bg-light rounded shadow">
                 <form id="userForm" class="d-flex flex-column">
                     <div class="d-flex gap-3 mb-2">
@@ -79,33 +102,33 @@
                         <label for="colorPicker" class="text-dark">Color:</label>
                         <input type="color" name="colorPicker" class="form-control" id="colorPicker">
                     </div>
-                    <div class="d-flex gap-3 mb-2">
-                        <label for="bgColorPicker" class="text-dark">Canvas Background:</label>
-                        <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
-                        <button type="button" class="btn btn-outline-info" id="uploadImage">Upload Image</button>
+                    <div class="d-flex row gap-3">
+                        <div class="col-sm-6">
+                            <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                            <input type="file" id="bgImageUpload" accept="image/*">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                            <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <button class="btn btn-outline-primary" id="capital">A</button>
-                        <button class="btn btn-outline-primary" id="small">a</button>
-                        <button class="btn btn-outline-primary" id="bold">B</button>
-                        <button class="btn btn-outline-primary" id="italic">I</button>
-                        <button type="button" class="btn btn-info" id="addText">Add Text</button>
+                    <div class="d-md-flex justify-content-evenly gap-1">
+                        <button class="btn btn-primary" id="capital">A</button>
+                        <button class="btn btn-primary" id="small">a</button>
+                        <button class="btn btn-primary" id="bold">B</button>
+                        <button class="btn btn-primary" id="italic">I</button>
                     </div>
                     <p class="text-center">Shape Palette</p>
                     <div class="palette">
-                        <button id="rectangleBtn" class="btn btn-secondary">Rectangle</button>
-                        <button id="circleBtn" class="btn btn-secondary">Circle</button>
-                        <button id="lineBtn" class="btn btn-secondary">Line</button>
+                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                        <button id="circleBtn" class="btn btn-success">Circle</button>
+                        <button id="lineBtn" class="btn btn-success">Line</button>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75">
-                        <div>
-                            <button type="button" class="btn btn-primary" id="save">Save</button>
-                            <button class="btn btn-danger" id="clear">Clear</button>
-                            <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                            <button type="button" class="btn btn-warning" id="undo">Undo</button>
-                            <button type="button" class="btn btn-warning" id="redo">Redo</button>
-                        </div>
+                    <div class="d-md-flex justify-content-center gap-1">
+                        <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                        <button type="button" class="btn btn-primary" id="save">Save</button>
+                        <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                        <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
                     </div>
                 </form>
             </div>
@@ -170,37 +193,4 @@
             input.accept = 'image/*';
             input.onchange = e => {
                 const file = e.target.files[0];
-                const reader = new FileReader();
-                reader.onload = readerEvent => {
-                    const img = new Image();
-                    img.onload = () => {
-                        saveState(); // Save current state before drawing image
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Draw image on canvas
-                    }
-                    img.src = readerEvent.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-            input.click();
-        });
-
-        document.getElementById('clear').addEventListener('click', function() {
-            saveState(); // Save state before clearing
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            setCanvasBackgroundColor(document.getElementById('bgColorPicker').value); // Reset background color
-        });
-
-        document.getElementById('download').addEventListener('click', function() {
-            const link = document.createElement('a');
-            link.download = 'canvas.png';
-            link.href = canvas.toDataURL();
-            link.click();
-        });
-
-        // Undo and redo functionality
-        document.getElementById('undo').addEventListener('click', restoreState);
-        document.getElementById('redo').addEventListener('click', redoState);
-    </script>
-</body>
-</html>
-
+                const reader = new File
