@@ -28,17 +28,31 @@ function renderAllElements() {
     });
 }
 
-// Update canvas when the form is submitted
+
 let updateCanvas = (text, tSize, color, x, y) => {
+  
     fontSize = tSize;
     defaultColor = color;
-    // Apply bold and italic styles based on the toggled values
+
+   
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+   
     let canvasFont = `${isBold ? 'bold ' : ''}${isItalic ? 'italic ' : ''}${fontSize}px ${fontName}`;
 
-    // Add a new text element or update the existing one
-    addTextElement(text, canvasFont, color, x, y);
+  
+    let existingElement = findTextElementAtPosition(x, y); 
+    
+    if (existingElement) {
+      
+        existingElement.text = text;
+        existingElement.font = canvasFont;
+        existingElement.color = color;
+    } else {
+      
+        addTextElement(text, canvasFont, color, x, y);
+    }
 
-    // Render all elements including the newly added one
     renderAllElements();
 
     // Store the canvas data in local storage (optional)
@@ -47,6 +61,11 @@ let updateCanvas = (text, tSize, color, x, y) => {
     localStorage.setItem('font-size', fontSize);
     localStorage.setItem('font-color', defaultColor);
 };
+
+let findTextElementAtPosition = (x, y) => {
+    return textElements.find(el => el.x === x && el.y === y);
+};
+
 
 // Fix the userForm submit event
 let userForm = document.getElementById('userForm');
@@ -104,7 +123,6 @@ downloadButton.addEventListener('click', (e) => {
     
     pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
     pdf.save('canvas.pdf');
-=======
 // Clear button to reset the canvas
 let clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', function () {
@@ -198,6 +216,18 @@ const drawCircle = (x, y) => {
     myCanvas.fill();
 };
 
+document.getElementById('textSize').addEventListener('change', function () {
+    // Get the selected font size value
+    let selectedFontSize = parseInt(this.value);
+
+    // Update the canvas with the new font size
+    fontSize = selectedFontSize;
+
+    // Re-render the canvas with the updated font size
+    updateCanvas(textVal, fontSize, defaultColor, posX, posY);
+});
+
+
 // Function to draw a line
 const drawLine = (x1, y1, x2, y2) => {
     myCanvas.strokeStyle = defaultColor; // Use the selected color
@@ -269,4 +299,4 @@ window.onload = function () {
             ease: "elastic.out(1, 0.3)" 
         });
     };
-
+})
