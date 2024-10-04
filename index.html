@@ -133,7 +133,36 @@
                 </form>
             </div>
         </div>
-    </div>
+
+        </div>
+        <div class="row mt-5 d-flex justify-content-center">
+            <!-- Contact Us Section -->
+            <section id="contact" class="contact-section">
+                <h2>Contact Us</h2>
+                <form id="contactForm">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+              
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+              
+                  <label for="subject">Subject:</label>
+                  <input type="text" id="subject" name="subject" placeholder="Subject" required>
+              
+                  <label for="message">Message:</label>
+                  <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+              
+                  <button type="submit">Submit</button>
+                </form>
+              </section>
+        </div>
+    </div>   
+        
+        
+
+  
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -144,6 +173,7 @@
         // Set canvas size
         canvas.width = 800;
         canvas.height = 400;
+
 
         let history = [];
         let redoStack = [];
