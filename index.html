@@ -60,6 +60,12 @@
         .form-control {
             border-radius: 5px;
         }
+        .edit{
+            display: flex;
+        }
+        .toolbar-item{
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +94,7 @@
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
         </div>
+        
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
             <div class="p-3 bg-light rounded shadow">
@@ -101,6 +108,20 @@
                         </select>
                         <label for="colorPicker" class="text-dark">Color:</label>
                         <input type="color" name="colorPicker" class="form-control" id="colorPicker">
+                    </div>
+                    <div class="edit">
+                        <div class="toolbar-item">
+                            <label class="tool-label" for="brightness">Brightness</label>
+                            <input class="tool-input" type="range" id="brightness" min="0" max="200">
+                          </div>
+                          <div class="toolbar-item">
+                            <label class="tool-label" for="saturation">Saturation</label>
+                            <input class="tool-input" type="range" id="saturation" min="0" max="200">
+                          </div>
+                          <div class="toolbar-item">
+                            <label class="tool-label" for="blur">Blur</label>
+                            <input class="tool-input" type="range" id="blur" min="0" max="25">
+                          </div>  
                     </div>
                     <div class="d-flex row gap-3">
                         <div class="col-sm-6">
@@ -137,6 +158,7 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./src/Scripts/edit.js"></script>
     <script>
         const canvas = document.getElementById('mainCanvas');
         const ctx = canvas.getContext('2d');
