@@ -18,9 +18,24 @@
   <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
   <li>🖼️ It includes a webpage with a canvas element that allows you to style text content as needed (made for fun purposes 🎉).</li>
   <li>🚀 We welcome all contributions to make this a fantastic resource for other users.</li>
-  <li>💻 Jump in and contribute to this grand project!</li>
+  <li>💻 Jump in and contribute to this grand project</li>
   <li>📚 Read the guidelines and get started building! 🛠️</li>
+  <li>🚀 The project now supports setting background images and colors, enhancing the customization options for your canvas!</li>
+  <li>🎉 This project is open to contributions from the community. Jump in and help make it a great resource!</li>
+     
 </ul>
+
+### New Features ✨
+<li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
+<li> Background Color: You can now add a custom background color to the canvas with ease!</li>
+
+### How to Use
+To change the background color or image:
+
+<li> Navigate to the canvas options on the webpage!</li>
+<li> For background color: Select a color from the color picker to apply it to the canvas!</li>
+<li> For background image: Upload an image file, and it will be displayed as the canvas background!</li>
+
 
 <h2><img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 30px height="38"> Technology Used</h2>
 
