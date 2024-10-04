@@ -6,7 +6,7 @@
 }
 
 body {
-   height: 100vh !important;
+  height: 100vh !important;
   background: #2980b9; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -20,8 +20,8 @@ body {
     #6dd5fa,
     #2980b9
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   width: 100vw;
-    height: 100vh !important;
+  width: 100vw;
+  height: 100vh !important;
 }
 
 
@@ -37,7 +37,6 @@ body {
 
 /* Canvas Styles */
 #mainCanvas {
-<<<<<<< HEAD
   width: 60% !important;
   height: auto;
   max-height: 500px;
@@ -92,8 +91,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
-=======
    width: 70% !important;
+  width: 70% !important;
   height: auto;
   border: 1px solid gray;
   background: #e0eafc; /* fallback for old browsers */
@@ -111,20 +110,26 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   width: 60% !important;
-    height: auto;
-    border: 1px solid gray;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-
+  height: auto;
+  border: 1px solid gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 /* Custom height class */
 .h-80 {
   height: 80vh !important;
-  background: #F0F2F0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #000C40, #151615);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #f0f2f0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #000c40,
+    #151615
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #000c40,
+    #374137
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* Full width for form controls */
@@ -138,10 +143,10 @@ background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, F
   border: 1px solid #ced4da;
   border-radius: 5px;
   font-size: 1rem;
-   padding: 10px;              
-    border: 1px solid #ced4da; 
-    border-radius: 5px;        
-    font-size: 1rem;  
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 /* Style for the Save button */
@@ -162,7 +167,6 @@ background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, F
 .d-flex {
   display: flex;
   gap: 1rem;
->>>>>>> 4afcc87fd18bba3b1e850f5a57d241ed8bc46aa6
 }
 
 button {
@@ -231,6 +235,7 @@ input[type="text"], #textData input {
 
 .boton-elegante#Save {
   background-color: #15B392;
+  background-color: #15b392; /* Green color for Save button */
 }
 
 .boton-elegante#clear {
@@ -300,6 +305,44 @@ button#small::after {
 /* Full Width for Form Controls */
 .fullWidth {
   width: 100% !important;
+/* Specific hover tooltips for Uppercase, Lowercase, Bold, and Italic buttons */
+button#bold:hover::after {
+  content: "Bold";
+}
+
+button#italic:hover::after {
+  content: "Italic";
+}
+
+button#capital:hover::after {
+  content: "Uppercase";
+}
+
+button#small:hover::after {
+  content: "Lowercase";
+}
+
+/* Add a specific class to avoid applying to other buttons */
+button#bold:hover::after,
+button#italic:hover::after,
+button#capital:hover::after,
+button#small:hover::after {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  transform: translateY(-30px);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Avoid applying to other buttons like Save, Clear, and Download */
+button#save:hover::after,
+button#clear:hover::after,
+button#download:hover::after {
+  content: none;
 }
 
 /* Custom Height */
@@ -316,4 +359,56 @@ button#small::after {
 /* Center Alignment */
 .d-md-flex.justify-content-center {
   margin-top: 15px;
+}
+/* Contact Us Section */
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+  max-width: 650px;
+  border-radius: 15px;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section label {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-section button {
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-section button:hover {
+  background-color: #555;
 }
