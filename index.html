@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            background-color: #eef1f5;
+            background-color: #ffffff;
             font-family: 'Arial', sans-serif;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            color: black;
+            color: rgb(0, 0, 0);
         }
         .header {
             text-align: center;
@@ -29,6 +29,7 @@
             align-items: center;
             justify-content: center;
             background: #000000;
+            color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -36,10 +37,10 @@
         #mainCanvas {
             max-width: 100%;
             height: 400px; /* Set a fixed height */
-            border: 2px solid #a5a5a5;
+            border: 2px solid #000000;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Default background color */
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+            background-color: #ffffff; /* Default background color */
 
         }
         .btn {
@@ -47,7 +48,7 @@
             transition: background-color 0.3s, transform 0.2s;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #3abe57;
             color: white;
             transform: scale(1.05);
         }
@@ -94,28 +95,33 @@
         <div class="canvas-palette">
             <form id="userForm" class="d-flex flex-column">
                 <div class="d-flex gap-3 mb-2">
-                    <label for="textSize" class="text-dark">Size:</label>
-                    <select name="tSize" class="form-select" id="textSize">
+                    <label for="brushSize" class="text-dark">Brush Size:</label>
+                    <select name="brushSize" class="form-select" id="brushSize">
+                        <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
                         <option value="20">20</option>
                         <option value="25">25</option>
-                        <option value="30">30</option>
-                        <option value="35">35</option>
                     </select>
                     <label for="colorPicker" class="text-dark">Color:</label>
                     <input type="color" name="colorPicker" class="form-control" id="colorPicker">
                 </div>
-                <div class="d-flex row gap-3">
+                <div class="d-flex row gap-3 mb-2">
                     <div class="col-sm-6">
                         <label for="bgImageUpload" class="text-dark">Background Image:</label>
                         <input type="file" id="bgImageUpload" accept="image/*">
                     </div>
                     <div class="col-sm-6">
                         <label for="bgColorPicker" class="text-dark">Background Color:</label>
-                        <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
+                        <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
                     </div>
                 </div>
+                <div class="edit">
+                    <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                    <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
+                    <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
+                </div>
+            </form>
                 <div class="d-md-flex justify-content-evenly gap-1">
                     <button class="btn btn-primary" id="capital">A</button>
                     <button class="btn btn-primary" id="small">a</button>
@@ -142,148 +148,136 @@
             <section id="contact" class="contact-section">
                 <h2>Contact Us</h2>
                 <form id="contactForm">
-                  <label for="name">Name:</label>
-                  <input type="text" id="name" name="name" placeholder="Your Name" required>
-              
-                  <label for="email">Email:</label>
-                  <input type="email" id="email" name="email" placeholder="Your Email" required>
-              
-                  <label for="subject">Subject:</label>
-                  <input type="text" id="subject" name="subject" placeholder="Subject" required>
-              
-                  <label for="message">Message:</label>
-                  <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-              
-                  <button type="submit">Submit</button>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            
+                <button type="submit">Submit</button>
                 </form>
-              </section>
+            </section>
         </div>
-    </div>   
+    </div>
         
         
 
-  
- 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/edit.js"></script>
+    
     <script>
-        const mainCanvas = document.getElementById('mainCanvas');
-        const ctx = mainCanvas.getContext('2d');
+        const canvas = document.getElementById('mainCanvas');
+        const ctx = canvas.getContext('2d');
+
         let drawing = false;
-        let eraserMode = false;
-        let currentColor = '#000000'; // Default color
+        let brushColor = '#000000';
+        let brushSize = 5;
 
-        // Resize the canvas to fit the container
-        function resizeCanvas() {
-            mainCanvas.width = mainCanvas.offsetWidth;
-            mainCanvas.height = mainCanvas.offsetHeight;
+        // Set initial canvas dimensions
+        function setCanvasDimensions() {
+            canvas.width = window.innerWidth - 40; // Adjust width
+            canvas.height = 400; // Keep height fixed
         }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        setCanvasDimensions();
 
-        // Function to get the mouse or touch position
-        function getPosition(event) {
-            const rect = mainCanvas.getBoundingClientRect();
-            const x = (event.clientX || event.touches[0].clientX) - rect.left;
-            const y = (event.clientY || event.touches[0].clientY) - rect.top;
-            return { x, y };
-        }
+        // Brush size change
+        document.getElementById('brushSize').addEventListener('change', function() {
+            brushSize = this.value;
+        });
 
+        // Color picker change
+        document.getElementById('colorPicker').addEventListener('change', function() {
+            brushColor = this.value;
+        });
 
-        // Start drawing or erasing when the mouse or touch is pressed
-        function startDrawing(event) {
+        // Background color change
+        document.getElementById('bgColorPicker').addEventListener('change', function() {
+            canvas.style.backgroundColor = this.value;
+        });
+
+        // Background image upload
+        document.getElementById('bgImageUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // Drawing on canvas
+        canvas.addEventListener('mousedown', (e) => {
             drawing = true;
-            const { x, y } = getPosition(event);
             ctx.beginPath();
-            ctx.moveTo(x, y);
-        }
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
 
-
-        // Draw on the canvas or erase as the mouse moves or touch moves
-        function draw(event) {
+        canvas.addEventListener('mousemove', (e) => {
             if (drawing) {
-                const { x, y } = getPosition(event);
-                if (eraserMode) {
-                    // Erase by clearing a small area
-                    ctx.clearRect(x - 10, y - 10, 20, 20);
-                } else {
-                    // Set the stroke color and draw
-                    ctx.strokeStyle = currentColor; // Use the selected color
-                    ctx.lineWidth = 5; // Set a line width
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                }
+                ctx.lineWidth = brushSize;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = brushColor;
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
             }
-            event.preventDefault(); // Prevent scrolling when touching the canvas
-        }
+        });
 
-        // Stop drawing or erasing when the mouse is released or touch ends
-        function stopDrawing() {
+        canvas.addEventListener('mouseup', () => {
             drawing = false;
             ctx.closePath();
-        }
-
-        // Event listeners for mouse interactions
-        mainCanvas.addEventListener('mousedown', startDrawing);
-        mainCanvas.addEventListener('mousemove', draw);
-        mainCanvas.addEventListener('mouseup', stopDrawing);
-
-        // Event listeners for touch interactions
-        mainCanvas.addEventListener('touchstart', (event) => {
-            startDrawing(event);
-        });
-        mainCanvas.addEventListener('touchmove', (event) => {
-            draw(event);
-        });
-        mainCanvas.addEventListener('touchend', stopDrawing);
-
-        // Clear the entire canvas
-        document.getElementById('clearCanvas').addEventListener('click', () => {
-            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
         });
 
-        // Toggle eraser mode
-        document.getElementById('eraserMode').addEventListener('click', () => {
-            eraserMode = !eraserMode;
-            mainCanvas.classList.toggle('eraser', eraserMode);
-            document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
+        canvas.addEventListener('mouseout', () => {
+            drawing = false;
         });
 
-
-        // Change the current color when the color picker changes
-        document.getElementById('colorPicker').addEventListener('input', (event) => {
-            currentColor = event.target.value;
+        // Clear canvas button
+        document.getElementById('clearCanvasBtn').addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.style.backgroundColor = '#f0f0f0'; // Reset background color
         });
 
-        // Download the canvas as an image
-        document.getElementById('downloadCanvas').addEventListener('click', () => {
-            const link = document.createElement('a');
-            link.download = 'canvas-drawing.png';
-            link.href = mainCanvas.toDataURL('image/png');
-            link.click();
+        // Eraser button
+        document.getElementById('eraserBtn').addEventListener('click', () => {
+            brushColor = '#ffffff'; // Set brush color to white
         });
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', setCanvasDimensions);
+    </script>
     </script>
     <section class="footer" id="footer">
 
         <div class="share">
-          <a href="#" class="fab fa-facebook-f"></a>
-          <a href="#" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon-->
-          <a href="#" class="fab fa-instagram"></a>
-          <a href="#" class="fa-brands fa-linkedin-in"></a>
-          <a href="#" class="fa-brands fa-pinterest"></a>
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon-->
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fa-brands fa-linkedin-in"></a>
+        <a href="#" class="fa-brands fa-pinterest"></a>
         </div>
 
         <div class="credit" style="font-size: 0.6rem;">
-          <p> 
+        <p>
             Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
-          </p>
-          <br>
+        </p>
+        <br>
         </div>
-  
-      </section>
+
+    </section>
 </body>
 </html>
 
