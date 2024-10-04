@@ -2,47 +2,79 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   transition: all 0.1s linear;
 }
 
 body {
   height: 100vh !important;
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: black;
   width: 100vw;
-  height: 100vh !important;
 }
+ 
 
 /* Main canvas styles */
 #mainCanvas {
   width: 70% !important;
   height: auto;
   border: 1px solid gray;
-  background: #e0eafc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #cfdef3,
-    #e0eafc
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #cfdef3,
-    #e0eafc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background-color: #ced4da;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+.title {
+  display: flex;
+  align-items: left;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  justify-content: center;
+}
+
+/* General Navbar Styling */
+.navbar {
+  background-color: #333; /* Dark background */
+  padding: 10px 20px; /* Space around the links */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Spacing between links */
+  border-bottom: none;
+}
+
+/* Styling individual links in the navbar */
+.navbar a {
+  color: white; /* Link color */
+  font-size: 1.2rem; /* Font size */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; /* Add padding around the text */
+  border-radius: 0.5rem; /* Rounded corners for hover effect */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+/* Hover effect for navbar links */
+.navbar a:hover {
+  background-color: #474747; /* Background color on hover */
+  color: #fff; /* White text on hover */
+
   width: 60% !important;
   height: auto;
   border: 1px solid gray;
@@ -50,21 +82,8 @@ body {
   border-radius: 5px;
 }
 
-/* Custom height class */
-.h-80 {
-  height: 80vh !important;
-  background: #f0f2f0; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #000c40,
-    #151615
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #000c40,
-    #374137
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+
+
 
 /* Full width for form controls */
 .fullWidth {
@@ -73,16 +92,64 @@ body {
 
 /* Style for input field */
 #textData {
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
+  height: 45px;
+  padding: 10px 20px;
   font-size: 1rem;
+  border: 2px solid #ced4da;
+  border-radius: 30px;
+  margin-right: 15px; 
+}
+
+.canvas-palette {
+  border: 2px solid #a5a5a5; /* Adding a border for definition */
+  border-radius: 10px; /* Rounded corners */
+  background: #ffffff; /* White background for clarity */
+  padding: 20px; /* Padding around content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 20px; /* Space above the palette */
+}
+
+.canvas-palette label {
+  font-weight: bold; /* Bold labels for emphasis */
+}
+
+.canvas-palette .form-select,
+.canvas-palette .form-control {
+  border: 1px solid #ccc; /* Soft border for inputs */
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 5px; /* Padding inside inputs */
+  transition: border-color 0.3s; /* Smooth transition on focus */
+}
+
+.canvas-palette .form-select:focus,
+.canvas-palette .form-control:focus {
+  border-color: #0056b3; /* Highlight border color on focus */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Soft glow effect */
   padding: 10px;
   border: 1px solid #ced4da;
   border-radius: 5px;
   font-size: 1rem;
 }
 
+.canvas-palette .btn {
+  border-radius: 5px; /* Rounded button corners */
+  padding: 10px 15px; /* Ample padding for buttons */
+  font-weight: bold; /* Bold text for buttons */
+}
+
+.canvas-palette .btn:hover {
+  transform: translateY(-2px); /* Subtle lift on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.palette {
+  margin-top: 15px; /* Space above shape buttons */
+}
+
+.palette .btn {
+  margin: 5px; /* Space between shape buttons */
+}
+  
 /* Style for the Save button */
 .btn-primary {
   padding: 10px 20px;
@@ -116,9 +183,9 @@ body {
   position: relative;
   overflow: hidden;
   font-weight: bold;
-  margin-left: 15px;
-  width: 110px; /* Increased button width slightly */
+  width: 110px;
   text-align: center;
+
 }
 
 .boton-elegante#Save {
@@ -218,6 +285,71 @@ button#download:hover::after {
   padding: 5px;
 }
 
+.footer{
+	background: black;
+	text-align: center;
+}
+.footer .share{
+	padding: 1rem 0;
+}
+
+.footer .icon-class {
+    border: none;
+    background: none;
+}
+.footer .share a{
+	height: 2.5rem;
+	width: 2.5rem;
+	line-height: 2.5rem;
+	font-size: 1.0rem;
+	color: #ffffff;
+	border: 0.1rem solid rgba(255, 255, 255, 0.3);
+	margin: .2rem;
+	border-radius: 50%;
+  text-decoration: none;
+}
+
+.footer .share a:hover{
+	background-color: #837667;
+}
+
+.footer .links{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 10px 0;
+	gap:10px;
+}
+
+.footer .links a{
+	padding: .7rem 2rem;
+	color:#fff;
+	border: 0.1rem solid rgba(255, 255, 255, 0.3);
+	font-size:2rem;
+}
+
+.footer .links a:hover{
+	background-color:#837667;
+}
+
+footer .credit{
+	font-size: 2rem;
+	font-weight: lighter;
+	padding: 1.5rem;
+}
+
+.footer .credit p{
+	color:#f5f5f1;
+}
+.footer .credit span{
+	color: #ffcc92;
+}
+
+@media (max-width: 768px) {
+  #mainCanvas {
+      width: 90%;
+  }
+=======
 /* Contact Us Section */
 .contact-section {
   background-color: #f9f9f9;
