@@ -278,25 +278,4 @@ window.onload = function () {
     });
 };
 
-    window.onload = function () {
-       
-        gsap.from(".btn", {
-            duration: 1,  
-            y: -50,      
-            opacity: 0,   
-            stagger: 0.2, 
-            ease: "bounce"
-        });
 
-       
-        
-
-        // Animate the canvas
-        gsap.from("#mainCanvas", {
-            duration: 2,
-            scale: 0.5,    
-            opacity: 0,
-            ease: "elastic.out(1, 0.3)" 
-        });
-    };
-})
