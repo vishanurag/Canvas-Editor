@@ -3,22 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celebrases Assignment by ANURAG VISHWAKARMA</title>
+    <title>Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .container{
-            max-width: 100%;
-            margin: auto;
+        body {
+            background-color: #eef1f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             color: black;
         }
-     
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .canvas-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        #mainCanvas {
+            max-width: 100%;
+            height: 400px; /* Set a fixed height */
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            background-color-color: #f0f0f0; /* Default background color */
+        }
+        .btn {
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+            color: white;
+            transform: scale(1.05);
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .palette {
+            margin: 15px 0;
+            text-align: center;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container pt-2">
+        <div class="header">
+            <h1 class="display-4">Creative Canvas Tool</h1>
+            <p class="lead">Design and create stunning visuals effortlessly!</p>
+        </div>
         <div class="row">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -31,102 +80,60 @@
                   <a class="nav-link" href="#">Review</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="#">Blog</a>
+                  <a class="nav-link" href="#">Blog</a>
                 </li>
-              </ul>
+            </ul>
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
-            <h2 style="color: white;">Welcome to the Canvas Editor !</h2>
+            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
         </div>
-        <div class="row p-5 text-center" >
-            <h2 style=" font-weight: 600;">From drawing shapes to adding text and images, we provide you with the freedom to craft amazing designs. </h2>
-            <div class="btn">
-                <a href="#" class="btn" style=" background-color: rgb(0, 110, 255); color: white; transition: none; border: none;">Get Started Now</a>    
-            </div>
-        </div>
-        <div class="row pb-5">
-        <div class="mt-2 mb-5">
-            <button class="btn btn-outline-danger" id="undoButton" title="Undo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
-                    <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
-                </svg>
-            </button>
-            <button class="btn btn-outline-primary mx-2" id="redoButton" title="Redo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-                </svg>
-            </button>
-            <button class="btn btn-primary" id="addText">Add Text</button>
-            <a href="Canvas-Editor/edition.html"><button class="btn btn-primary">Draw</button></a>
-        </div>
-        
-        <div class="d-md-flex justify-content-center gap-3 align-items-center flex-column flex-md-row">
-
-            <canvas id="mainCanvas" class="h-80 h-80-responsive border border-gray shadow rounded" onclick="dragContentStart(event)" onmousemove="dragContent(event)">
-                Canvas Not Supported by the Browser...
-            </canvas>
-            
-            <div class="h-80 h-80-responsive p-1 bg-body-tertiary rounded w-100 shadow">
-                <form id="userForm" class="h-80 h-80-responsive d-flex flex-column justify-content-evenly">
-                    <div class="d-flex gap-3 px-3 pt-2">
-                        <label for="textSize" class="text-dark">Size :</label>
-                        <select name="tSize" class="rounded" id="textSize" required></select>
-                        <label for="colorPicker" class="text-dark">Color :</label>
-                        <input type="color" name="colorPicker" class="rounded" id="colorPicker">
+        <div class="canvas-container">
+            <canvas id="mainCanvas"></canvas>
+            <div class="p-3 bg-light rounded shadow">
+                <form id="userForm" class="d-flex flex-column">
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textSize" class="text-dark">Size:</label>
+                        <select name="tSize" class="form-select" id="textSize">
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                        </select>
+                        <label for="colorPicker" class="text-dark">Color:</label>
+                        <input type="color" name="colorPicker" class="form-control" id="colorPicker">
                     </div>
-                    <!-- added feature - Background -->
-                    <div class=" row d-flex gap-3 px-3">
+                    <div class="d-flex row gap-3">
                         <div class="col-sm-6">
-                        <!-- Background Image Upload -->
-                        <label for="bgImageUpload" class="text-dark">Background Image:</label>
-                        <input type="file" id="bgImageUpload" accept="image/*">
+                            <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                            <input type="file" id="bgImageUpload" accept="image/*">
                         </div>
-                        <div class="col-sm-6" style="border: 1px solidd blue;">
-                        <!-- Background Color Picker -->
-                        <label for="bgColorPicker" class="text-dark">Background Color:</label>
-                        <input type="color" id="bgColorPicker" class="rounded">
-                    </div>                    
+                        <div class="col-sm-6">
+                            <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                            <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
+                        </div>
+                    </div>
                     <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">A</button>
                         <button class="btn btn-primary" id="small">a</button>
-                        <button class="btn btn-primary" id="bold">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-type-bold" viewBox="0 0 16 16">
-                                <path d="M8.21 13c2.106 0 3.412-1.087 3.412-2.823 0-1.306-.984-2.283-2.324-2.386v-.055a2.176 2.176 0 0 0 1.852-2.14c0-1.51-1.162-2.46-3.014-2.46H3.843V13zM5.908 4.674h1.696c.963 0 1.517.451 1.517 1.244 0 .834-.629 1.32-1.73 1.32H5.908V4.673zm0 6.788V8.598h1.73c1.217 0 1.88.492 1.88 1.415 0 .943-.643 1.449-1.832 1.449H5.907z"/>
-                            </svg>
-                        </button>
-                        <button class="btn btn-primary" id="italic">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-type-italic" viewBox="0 0 16 16">
-                                <path d="M7.991 11.674 9.53 4.455c.123-.595.246-.71 1.347-.807l.11-.52H7.211l-.11.52c1.06.096 1.128.212 1.005.807L6.57 11.674c-.123.595-.246.71-1.346.806l-.11.52h3.774l.11-.52c-1.06-.095-1.129-.211-1.006-.806z"/>
-                            </svg>
-                        </button>
+                        <button class="btn btn-primary" id="bold">B</button>
+                        <button class="btn btn-primary" id="italic">I</button>
                     </div>
-                   <p >Shape Pallete</p>
+                    <p class="text-center">Shape Palette</p>
                     <div class="palette">
-                        <p style="color: black;">Shape Palette : </p>
                         <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
                     </div>
                     <div class="d-md-flex justify-content-center gap-1">
-                        <input type="text" placeholder="Enter Text " name="textData" id="textData" class="form-control mw-100 w-75 fullWidth mb-3" class="">
-
-                        <button type="submit" class="btn btn-primary boton-elegante" id = "Save">Save</button>
-                        <!-- added features -->
-
-                        <button class="btn btn-primary boton-elegante" id="clear">clear</button>
-                        <button type="button" class="btn btn-primary boton-elegante" id="download" title="Download">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                            </svg>
-                        </button>
+                        <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                        <button type="button" class="btn btn-primary" id="save">Save</button>
+                        <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                        <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
                     </div>
                 </form>
             </div>
         </div>
+
         </div>
         <div class="row mt-5 d-flex justify-content-center">
             <!-- Contact Us Section -->
@@ -156,8 +163,64 @@
   
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/Canvas.js"></script>
-</body>
-</html>
+    <script>
+        const canvas = document.getElementById('mainCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.width = 800;
+        canvas.height = 400;
+
+
+        let history = [];
+        let redoStack = [];
+
+        function saveState() {
+            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            redoStack = []; // Clear redo stack on new action
+            if (history.length > 10) history.shift(); // Limit history size
+        }
+
+        function setCanvasBackgroundColor(color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Set initial background color
+        const initialBgColor = document.getElementById('bgColorPicker').value;
+        setCanvasBackgroundColor(initialBgColor);
+
+        // Background color change
+        document.getElementById('bgColorPicker').addEventListener('input', function() {
+            const color = this.value;
+            setCanvasBackgroundColor(color);
+        });
+
+        // Add text functionality
+        document.getElementById('addText').addEventListener('click', function() {
+            const textData = document.getElementById('textData').value;
+            const textSize = document.getElementById('textSize').value;
+            const textColor = document.getElementById('colorPicker').value;
+
+            if (textData) {
+                saveState(); // Save state before adding text
+                ctx.fillStyle = textColor;
+                ctx.font = `${textSize}px Arial`;
+                ctx.fillText(textData, 50, 50); // Set text position
+                document.getElementById('textData').value = ''; // Clear input field
+            } else {
+                alert('Please enter some text!');
+            }
+        });
+
+        // Upload image functionality
+        document.getElementById('uploadImage').addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new File
