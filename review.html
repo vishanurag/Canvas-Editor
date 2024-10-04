@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Page</title>
+    <link rel="stylesheet" href="src\Styles\review.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/Styles/Style.css">
+    <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #eef1f5;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+    
+    
+</head>
+<body>
+     
+        <div class="header">
+            <h1 class="display-4">Creative Canvas Tool</h1>
+            <p class="lead">Design and create stunning visuals effortlessly!</p>
+        </div>
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="review.html">Review</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+            </ul>
+        </div>
+    
+
+
+    <div class="container" style="background-color: cornflowerblue;">
+        <h1 style="color: white;">Leave a Review</h1>
+        <form id="reviewForm">
+            <div class="input-group">
+                <label for="name" style="color: white;">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="rating" style="color: white;">Rating:</label>
+                <select id="rating" required>
+                    <option value="" disabled selected>Select a rating</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Good</option>
+                    <option value="3">3 - Average</option>
+                    <option value="2">2 - Below Average</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="review" style="color: white;">Your Review:</label>
+                <textarea id="review" rows="5" required></textarea>
+            </div>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+    <div>
+        <h2 style="padding-top: 30px;">Customer Reviews</h2>
+        <div id="reviewsList" class="review-list"></div>
+    </div>
+
+    
+     <script src="src\Scripts\review.js"></script>
+    
+    
+</body>
+</html>
