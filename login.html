@@ -9,10 +9,38 @@
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
+
+        .nav {
+            width: 100%;
+            background-color: #007bff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-item {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            background-color: #0056b3;
+        }
+
         .container {
             background-color: white;
             border-radius: 8px;
@@ -21,10 +49,12 @@
             max-width: 400px;
             width: 100%;
         }
+
         h2 {
             text-align: center;
             margin-bottom: 20px;
         }
+
         input[type="text"], input[type="password"] {
             width: 100%;
             padding: 10px;
@@ -32,6 +62,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
         button {
             width: 100%;
             padding: 10px;
@@ -41,23 +72,29 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         .or {
             text-align: center;
             margin: 20px 0;
         }
+
         .google-btn {
             background-color: #db4437;
             color: white;
         }
+
         .google-btn:hover {
             background-color: #c23321;
         }
+
         p {
             text-align: center;
         }
+
         a {
             color: #007bff;
             text-decoration: none;
@@ -65,28 +102,29 @@
     </style>
 </head>
 <body>
-    <div class="row">
-        <ul class="nav nav-tabs">
+    <div class="nav">
+        <ul class="nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
+                <a class="nav-link" href="#">Review</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
+                <a class="nav-link" href="signup.html">Sign Up</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Login</a>
-
             </li>
         </ul>
     </div>
+
     <div class="container">
         <h2>Log In</h2>
         <form action="/login" method="POST">
@@ -96,8 +134,7 @@
         </form>
         <div class="or">- OR -</div>
         <button class="google-btn">Continue with Google</button>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
-
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
     </div>
 </body>
 </html>
