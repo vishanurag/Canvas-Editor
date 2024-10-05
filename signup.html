@@ -65,12 +65,27 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="signup.html">Sign Up</a> <!-- Link to Sign-Up page -->
-        <a href="login.html">Log In</a> <!-- Link to Login page -->
-     </nav>     
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+
+            </li>
+        </ul>    
     <div class="container">
         <h2>Create Your Account</h2>
         <form action="/signup" method="POST" onsubmit="return validatePassword()">
