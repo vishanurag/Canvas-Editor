@@ -18,11 +18,20 @@
             align-items: center;
             height: 100vh;
         }
-        .container-fluid {
-            width: 100vw;
-            padding: 0;
-            margin: 0;
-            color: rgb(0, 0, 0);
+        .header-container {
+            width: 100vw; /* Full width of the viewport */
+            background-color: #f8f9fa; /* Optional: Adds a background color to the header */
+            padding: 20px 0; /* Adjust the padding as needed */
+            text-align: center;
+            margin-bottom: 20px; /* Space between header and form */
+        }
+        .form-container {
+            max-width: 400px; /* Set a max width for the form */
+            margin: 0 auto; /* Center the form on the page */
+            padding: 20px;
+            border: 1px solid #dee2e6; /* Optional: Adds a border to the form */
+            border-radius: 8px; /* Optional: Adds rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
         }
         h2 {
             text-align: center;
@@ -65,10 +74,30 @@
             color: #007bff;
             text-decoration: none;
         }
+        .nav-tabs {
+            justify-content: center;
+            background-color: #ffffff;
+            border-bottom: 2px solid #dee2e6; /* Border for the nav-tabs */
+        }
+        .nav-item .nav-link {
+            color: #000;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-link.active {
+            background-color: #3abe57;
+            color: white;
+        }
+        .nav-link:hover {
+            background-color: #3abe57;
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <div class="container pt-2">
+    <div class="header-container">
         <!-- Header section copied from main page -->
         <div class="header">
             <h1 class="display-4">Creative Canvas Tool</h1>
@@ -96,7 +125,7 @@
             </li>
         </ul>
     </div>
-    <div class="container">
+    <div class="form-container">
         <h2>Log In</h2>
         <form action="/login" method="POST">
             <input type="text" name="username_email" placeholder="Email or Username" required>
