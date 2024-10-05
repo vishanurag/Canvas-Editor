@@ -65,6 +65,12 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="signup.html">Sign Up</a> <!-- Link to Sign-Up page -->
+        <a href="login.html">Log In</a> <!-- Link to Login page -->
+     </nav>     
     <div class="container">
         <h2>Create Your Account</h2>
         <form action="/signup" method="POST" onsubmit="return validatePassword()">
@@ -76,7 +82,7 @@
         </form>
         <div class="or">- OR -</div>
         <button class="google-btn">Continue with Google</button>
-        <p>Already have an account? <a href="/login">Log in</a></p>
+        <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
     </div>
 
     <script>
