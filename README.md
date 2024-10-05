@@ -175,7 +175,7 @@ Thank you to all the amazing contributors who have made this project possible! ð
 
 ## Contributing ðŸ’¡
 
-We welcome all contributions to improve **Canvas Editor**! If you'd like to contribute, please follow the [Contributing.md](./CONTRIBUTING.md) to get started.
-
+We welcome all contributions to improve **Canvas Editor**! If you'd like to contribute, please follow the [Contributing.md](./Contributing.md) to get started.
+<!-- Comment: The file name provided here was wrong(CONTRIBUTING.md instead of Contributing.md) due to which the redirect was showing an error. -->
 ---
 
