@@ -375,6 +375,40 @@
         document.getElementById('bgColorPicker').addEventListener('change', function() {
             canvas.style.backgroundColor = this.value;
         });
+        // Function to set up the canvas background image
+     function setBackgroundImage(file) {
+                 const reader = new FileReader();
+                 reader.onload = function (e) {
+                 const img = new Image();
+                 img.onload = function () {
+                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                 };
+                     img.src = e.target.result;
+                 };
+                 reader.readAsDataURL(file);
+                 }
+
+                    // Drag and Drop Event Listeners for the Canvas
+    canvas.addEventListener('dragover', (event) => {
+              event.preventDefault(); 
+              canvas.style.border = '2px dashed #000';
+            });
+
+    canvas.addEventListener('dragleave', () => {
+               canvas.style.border = '1px solid #000'; 
+        });
+
+      canvas.addEventListener('drop', (event) => {
+                  event.preventDefault(); 
+                  canvas.style.border = '1px solid #000';
+                  const file = event.dataTransfer.files[0];
+                  if (file && file.type.startsWith('image/')) {
+                          setBackgroundImage(file); 
+                        } else {
+                            alert('Please drop a valid image file.');
+                        }
+                    });
+        
 
         // Background image upload
         document.getElementById('bgImageUpload').addEventListener('change', function(event) {
