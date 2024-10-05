@@ -89,6 +89,71 @@
     </style>
 </head>
 <body>
+
+    <div class="container pt-2">
+        <div class="header">
+            <h1 class="display-4">Creative Canvas Tool</h1>
+            <p class="lead">Design and create stunning visuals effortlessly!</p>
+        </div>
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Review</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row text-center p-5" style="background-color: cornflowerblue;">
+            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
+            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+        </div>
+        <div class="canvas-container">
+            <canvas id="mainCanvas"></canvas>
+            <div class="p-3 bg-light rounded shadow">
+                <form id="userForm" class="d-flex flex-column">
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textSize" class="text-dark">Size:</label>
+                        <select name="tSize" class="form-select" id="textSize">
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                        </select>
+                        <label for="colorPicker" class="text-dark">Color:</label>
+                        <input type="color" name="colorPicker" class="form-control" id="colorPicker">
+                    </div>
+                    <div class="d-flex row gap-3">
+                        <div class="col-sm-6">
+                            <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                            <input type="file" id="bgImageUpload" accept="image/*">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                            <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
+                        </div>
+                    </div>
+                    <div class="d-md-flex justify-content-evenly gap-1">
+                        <button class="btn btn-primary" id="capital">A</button>
+                        <button class="btn btn-primary" id="small">a</button>
+                        <button class="btn btn-primary" id="bold">B</button>
+                        <button class="btn btn-primary" id="italic">I</button>
+                    </div>
+
+                   <!-- <p >Shape Pallete</p> -->
+
+                    <p class="text-center">Shape Palette</p
+                    <div class="palette">
+                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                        <button id="circleBtn" class="btn btn-success">Circle</button>
+                        <button id="lineBtn" class="btn btn-success">Line</button>
+
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -150,6 +215,7 @@
                     <div class="col-sm-6">
                         <label for="bgImageUpload" class="text-dark">Background Image:</label>
                         <input type="file" id="bgImageUpload" accept="image/*">
+
                     </div>
                     <div class="col-sm-6">
                         <label for="bgColorPicker" class="text-dark">Background Color:</label>

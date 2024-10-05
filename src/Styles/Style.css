@@ -13,8 +13,77 @@ body {
 }
 
 
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Canvas Styles */
+
 /* Main canvas styles */
+
 #mainCanvas {
+  width: 60% !important;
+  height: auto;
+  max-height: 500px;
+  margin: 68px;
+  border: 1px solid gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Control Panel (Form) Styles */
+#userForm {
+  margin-top: 5px;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin-left: 20px;
+  max-height: 90%;
+}
+
+/* Flexbox for control panel alignment */
+.d-md-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Shape Palette */
+.palette {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.palette button {
+  padding: 5px;
+}
+
+#rectangleBtn, #circleBtn, #lineBtn {
+  width: 100px;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Button Styles */
+.mt-2.mb-5 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+   width: 70% !important;
   width: 70% !important;
   height: auto;
   border: 1px solid gray;
@@ -172,7 +241,53 @@ body {
   gap: 1rem;
 }
 
-/* Button styling with new colors */
+button {
+  margin: 5px;
+}
+
+.btn {
+  margin: 10px 15px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+/* Input Field Styles */
+input[type="text"], #textData input {
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 10px;
+  height: 45px;
+  width: 10%;
+}
+
+/* .d-flex select{
+
+} */
+
+
+
+/* input#textData {
+  margin-right: 15px;
+  height: 45px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid #ced4da;
+  width: 20%;
+} */
+
+/* Group related inputs */
+.input-group {
+  margin-bottom: 10px;
+}
+
+/* Elegant Button */
 .boton-elegante {
   padding: 10px 10px;
   border: 2px solid #2c2c2c;
@@ -185,21 +300,24 @@ body {
   position: relative;
   overflow: hidden;
   font-weight: bold;
+
+  margin-left: 15px;
   width: 110px;
   text-align: center;
 
 }
 
 .boton-elegante#Save {
+  background-color: #15B392;
   background-color: #15b392; /* Green color for Save button */
 }
 
 .boton-elegante#clear {
-  background-color: #dc3545; /* Red color for Clear button */
+  background-color: #dc3545;
 }
 
 .boton-elegante#download {
-  background-color: #007bff; /* Blue color for Download button */
+  background-color: #007bff;
 }
 
 .boton-elegante::after {
@@ -209,11 +327,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
+  background: radial-gradient(circle, rgba(15, 245, 107, 0.886) 0%, rgba(255, 255, 255, 0) 70%);
   transform: scale(0);
   transition: transform 0.5s ease;
 }
@@ -227,16 +341,44 @@ body {
   background: #292929;
 }
 
-/* Input styling improvements */
-input#textData {
-  margin-right: 15px;
-  height: 45px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 30px;
-  border: 2px solid #ccc;
+/* Hover Tooltips for Formatting Buttons */
+button#bold:hover::after, button#italic:hover::after, button#capital:hover::after, button#small:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  transform: translateY(-30px);
+  white-space: nowrap;
+  z-index: 10;
 }
 
+button#save:hover::after, button#clear:hover::after, button#download:hover::after {
+  content: none;
+}
+
+/* Specific Tooltip Texts */
+button#bold::after {
+  content: 'Bold';
+}
+
+button#italic::after {
+  content: 'Italic';
+}
+
+button#capital::after {
+  content: 'Uppercase';
+}
+
+button#small::after {
+  content: 'Lowercase';
+}
+
+/* Full Width for Form Controls */
+.fullWidth {
+  width: 100% !important;
 /* Specific hover tooltips for Uppercase, Lowercase, Bold, and Italic buttons */
 button#bold:hover::after {
   content: "Bold";
@@ -277,14 +419,21 @@ button#download:hover::after {
   content: none;
 }
 
-/* Shape palette */
-.palette {
-  margin-left: 30px;
-  color: rgb(255, 255, 255);
+/* Custom Height */
+.h-80 {
+  height: 80vh !important;
 }
 
-.palette button {
-  padding: 5px;
+/* Flex Container Adjustments */
+.d-flex {
+  display: flex;
+  gap: 1rem;
+}
+
+
+/* Center Alignment */
+.d-md-flex.justify-content-center {
+  margin-top: 15px;
 }
 
 .footer{
@@ -351,7 +500,6 @@ footer .credit{
   #mainCanvas {
       width: 90%;
   }
-=======
 /* Contact Us Section */
 .contact-section {
   background-color: #f9f9f9;
