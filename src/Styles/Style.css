@@ -32,7 +32,7 @@ body {
   display: flex;
   align-items: left;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   justify-content: center;
 }
@@ -40,7 +40,7 @@ body {
 /* General Navbar Styling */
 .navbar {
   background-color: #333; /* Dark background */
-  padding: 10px 20px; /* Space around the links */
+  padding: 10px 10px; /* Space around the links */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,9 @@ body {
 }
 .nav-links {
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-links a {
@@ -75,7 +77,7 @@ body {
   background-color: #474747; /* Background color on hover */
   color: #fff; /* White text on hover */
 
-  width: 60% !important;
+  /* width: 60% !important; */
   height: auto;
   border: 1px solid gray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
