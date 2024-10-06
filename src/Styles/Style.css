@@ -359,42 +359,7 @@ button#save:hover::after, button#clear:hover::after, button#download:hover::afte
   content: none;
 }
 
-/* Specific Tooltip Texts */
-button#bold::after {
-  content: 'Bold';
-}
-
-button#italic::after {
-  content: 'Italic';
-}
-
-button#capital::after {
-  content: 'Uppercase';
-}
-
-button#small::after {
-  content: 'Lowercase';
-}
-
-/* Full Width for Form Controls */
-.fullWidth {
-  width: 100% !important;
-/* Specific hover tooltips for Uppercase, Lowercase, Bold, and Italic buttons */
-button#bold:hover::after {
-  content: "Bold";
-}
-
-button#italic:hover::after {
-  content: "Italic";
-}
-
-button#capital:hover::after {
-  content: "Uppercase";
-}
-
-button#small:hover::after {
-  content: "Lowercase";
-}
+ 
 
 /* Add a specific class to avoid applying to other buttons */
 button#bold:hover::after,
