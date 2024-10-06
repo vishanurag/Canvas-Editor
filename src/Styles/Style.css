@@ -1,554 +1,257 @@
-/* Global styles */
+
+/* Reset some default styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.1s linear;
+    margin: 0;
+    /* padding-left: 5%; */
+    box-sizing: border-box;
+  
 }
 
-body {
-  height: 100vh !important;
-  background: black;
-  width: 100vw;
-}
-
-
-
-/* Main Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Canvas Styles */
-
-/* Main canvas styles */
-
-#mainCanvas {
-  width: 60% !important;
-  height: auto;
-  max-height: 500px;
-  margin: 68px;
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
-
-/* Control Panel (Form) Styles */
-#userForm {
-  margin-top: 5px;
-  padding: 15px;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  margin-left: 20px;
-  max-height: 90%;
-}
-
-/* Flexbox for control panel alignment */
-.d-md-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-/* Shape Palette */
-.palette {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
-  margin-left: 30px;
-  color: rgb(255, 255, 255);
-}
-
-.palette button {
-  padding: 5px;
-}
-
-#rectangleBtn, #circleBtn, #lineBtn {
-  width: 100px;
-  padding: 5px;
-  text-align: center;
-}
-
-/* Button Styles */
-.mt-2.mb-5 {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-   width: 70% !important;
-  width: 70% !important;
-  height: auto;
-  border: 1px solid gray;
-  background-color: #ced4da;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+/* Navbar Styles */
+header {
+    background-color: #9d8189;
+    height:10vh;
+    color: #fff;
+    padding: 3% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-  width: 50px;
-  height: auto;
-  margin-right: 10px;
-}
-.title {
-  display: flex;
-  align-items: left;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  justify-content: center;
+    font-size: 1.7em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
-/* General Navbar Styling */
-.navbar {
-  background-color: #333; /* Dark background */
-  padding: 10px 10px; /* Space around the links */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* Spacing between links */
-  border-bottom: none;
+nav ul {
+    list-style: none;
+    display: flex;
 }
 
-/* Styling individual links in the navbar */
-.navbar a {
-  color: white; /* Link color */
-  font-size: 1.2rem; /* Font size */
-  text-decoration: none; /* Remove underline */
-  padding: 0.5rem 1rem; /* Add padding around the text */
-  border-radius: 0.5rem; /* Rounded corners for hover effect */
-  transition: background-color 0.3s ease; /* Smooth hover transition */
-}
-.nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+nav ul li {
+    margin-left: 60px;
 }
 
-.nav-links a {
-  color: white;
-  font-size: 1.2rem;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
-}
-/* Hover effect for navbar links */
-.navbar a:hover {
-  background-color: #474747; /* Background color on hover */
-  color: #fff; /* White text on hover */
-
-  /* width: 60% !important; */
-  height: auto;
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+nav ul li a {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: color 0.3s;
 }
 
-
-
-
-/* Full width for form controls */
-.fullWidth {
-  width: 100% !important;
+nav ul li a:hover {
+    color: #f0a500;
 }
 
-/* Style for input field */
-#textData {
-  height: 45px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: 2px solid #ced4da;
-  border-radius: 30px;
-  margin-right: 15px; 
+/* Main Content Styles */
+main {
+    padding: 20px;
+    display: flex;
+    background-color: #f8edeb;
+    /* flex-wrap: wrap;
+     */
+     flex: 1;
+    gap:20px;
+}
+.controls .row {
+    display: flex;
+    gap: 15px;
+    flex: 1; /* Allow rows to grow equally */
 }
 
-.canvas-palette {
-  border: 2px solid #a5a5a5; /* Adding a border for definition */
-  border-radius: 10px; /* Rounded corners */
-  background: #ffffff; /* White background for clarity */
-  padding: 20px; /* Padding around content */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  margin-top: 20px; /* Space above the palette */
+.right {
+    flex: 2 1 500px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.canvas-palette label {
-  font-weight: bold; /* Bold labels for emphasis */
-}
-
-.canvas-palette .form-select,
-.canvas-palette .form-control {
-  border: 1px solid #ccc; /* Soft border for inputs */
-  border-radius: 5px; /* Slightly rounded corners */
-  padding: 5px; /* Padding inside inputs */
-  transition: border-color 0.3s; /* Smooth transition on focus */
-}
-
-.canvas-palette .form-select:focus,
-.canvas-palette .form-control:focus {
-  border-color: #0056b3; /* Highlight border color on focus */
-  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Soft glow effect */
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.canvas-palette .btn {
-  border-radius: 5px; /* Rounded button corners */
-  padding: 10px 15px; /* Ample padding for buttons */
-  font-weight: bold; /* Bold text for buttons */
-}
-
-.canvas-palette .btn:hover {
-  transform: translateY(-2px); /* Subtle lift on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-}
-
-.palette {
-  margin-top: 15px; /* Space above shape buttons */
-}
-
-.palette .btn {
-  margin: 5px; /* Space between shape buttons */
-}
-  
-/* Style for the Save button */
-.btn-primary {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-/* Hover effect for button */
-.btn-primary:hover {
-  background-color: #0056b3;
-  color: white;
-}
-
-/* Flex container adjustments */
-.d-flex {
-  display: flex;
-  gap: 1rem;
-}
-
-button {
-  margin: 5px;
-}
-
-.btn {
-  margin: 10px 15px;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-/* Input Field Styles */
-input[type="text"], #textData input {
-  padding: 10px;
-  border-radius: 30px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  margin-right: 10px;
-  height: 45px;
-  width: 10%;
-}
-
-/* .d-flex select{
-
-} */
-
-
-
-/* input#textData {
-  margin-right: 15px;
-  height: 45px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 30px;
-  border: 2px solid #ced4da;
-  width: 20%;
-} */
-
-/* Group related inputs */
-.input-group {
-  margin-bottom: 10px;
-}
-
-/* Elegant Button */
-.boton-elegante {
-  padding: 10px 10px;
-  border: 2px solid #2c2c2c;
-  color: #ffffff;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.4s ease;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-  font-weight: bold;
-
-  margin-left: 15px;
-  width: 110px;
-  text-align: center;
-
-}
-
-.boton-elegante#Save {
-  background-color: #15B392;
-  background-color: #15b392; /* Green color for Save button */
-}
-
-.boton-elegante#clear {
-  background-color: #dc3545;
-}
-
-.boton-elegante#download {
-  background-color: #007bff;
-}
-
-.boton-elegante::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(15, 245, 107, 0.886) 0%, rgba(255, 255, 255, 0) 70%);
-  transform: scale(0);
-  transition: transform 0.5s ease;
-}
-
-.boton-elegante:hover::after {
-  transform: scale(4);
-}
-
-.boton-elegante:hover {
-  border-color: #666666;
-  background: #292929;
-}
-
-/* Hover Tooltips for Formatting Buttons */
-button#bold:hover::after, button#italic:hover::after, button#capital:hover::after, button#small:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  background-color: #000;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  transform: translateY(-30px);
-  white-space: nowrap;
-  z-index: 10;
-}
-
-button#save:hover::after, button#clear:hover::after, button#download:hover::after {
-  content: none;
-}
-
-/* Specific Tooltip Texts */
-button#bold::after {
-  content: 'Bold';
-}
-
-button#italic::after {
-  content: 'Italic';
-}
-
-button#capital::after {
-  content: 'Uppercase';
-}
-
-button#small::after {
-  content: 'Lowercase';
-}
-
-/* Full Width for Form Controls */
-.fullWidth {
-  width: 100% !important;
-/* Specific hover tooltips for Uppercase, Lowercase, Bold, and Italic buttons */
-button#bold:hover::after {
-  content: "Bold";
-}
-
-button#italic:hover::after {
-  content: "Italic";
-}
-
-button#capital:hover::after {
-  content: "Uppercase";
-}
-
-button#small:hover::after {
-  content: "Lowercase";
-}
-
-/* Add a specific class to avoid applying to other buttons */
-button#bold:hover::after,
-button#italic:hover::after,
-button#capital:hover::after,
-button#small:hover::after {
-  position: absolute;
-  background-color: #000;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  transform: translateY(-30px);
-  white-space: nowrap;
-  z-index: 10;
-}
-
-/* Avoid applying to other buttons like Save, Clear, and Download */
-button#save:hover::after,
-button#clear:hover::after,
-button#download:hover::after {
-  content: none;
-}
-
-/* Custom Height */
-.h-80 {
-  height: 80vh !important;
-}
-
-/* Flex Container Adjustments */
-.d-flex {
-  display: flex;
-  gap: 1rem;
+/* Canvas Container */
+.canvas-container {
+    background-color: #fff;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
-/* Center Alignment */
-.d-md-flex.justify-content-center {
-  margin-top: 15px;
+.controls {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    background-color: #fff;
+    padding: 20px;
+    /* margin-top:2%; */
+    margin-left: 4%;
+    margin-right: 4%;
+    height:425px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.footer{
-	background: black;
-	text-align: center;
+.controls .left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    /* width: 60%; */
+    padding-right: 10%;
+    padding-left: 10%;
 }
-.footer .share{
-	padding: 1rem 0;
+.control-group {
+    display: flex;
+    flex-direction: column;
+
 }
 
-.footer .icon-class {
+.control-group label {
+    margin: 5px;
+    font-weight: bold;
+}
+.control-group input[type="text"],
+.control-group input[type="number"],
+.control-group input[type="color"],
+.control-group select,
+.control-group input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.control-group button {
+    padding: 10px;
+    width: 40%;
+    ;
+    margin-left: 30%;
+    background-color: #4CAF50; /* Green */
+    color: white;
     border: none;
-    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
 }
-.footer .share a{
-	height: 2.5rem;
-	width: 2.5rem;
-	line-height: 2.5rem;
-	font-size: 1.0rem;
-	color: #ffffff;
-	border: 0.1rem solid rgba(255, 255, 255, 0.3);
-	margin: .2rem;
-	border-radius: 50%;
-  text-decoration: none;
+.control-group button:hover {
+    background-color: #45a049;
 }
-
-.footer .share a:hover{
-	background-color: #837667;
+.instructions {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.footer .links{
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding: 10px 0;
-	gap:10px;
+/* Footer Styles */
+footer {
+    background-color: #9d8189;
+    color: #fff;
+    /* padding: 20px;
+     */
+     height:20%;
+     padding: 3% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.footer .links a{
-	padding: .7rem 2rem;
-	color:#fff;
-	border: 0.1rem solid rgba(255, 255, 255, 0.3);
-	font-size:2rem;
+.footer-info, .review-form {
+
+    flex: 1 1 500px;
+    /* align-items: space-between; */
+    margin: 20px;
+}
+.footer-info h3{
+  font-size: 1.7em;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
-.footer .links a:hover{
-	background-color:#837667;
+.footer-info p{
+  font-size: 1.1em;
+  font-family: Arial, Helvetica, sans-serif;
+  /* padding-top: 5%; */
+  padding-bottom: 5%;
+}
+.review-form form {
+  height: 40vh ;
+  background-color: #f8edeb;
+    display: flex;
+    border-radius: 5%;
+    padding:5% 10%;
+    flex-direction: column;
 }
 
-footer .credit{
-	font-size: 2rem;
-	font-weight: lighter;
-	padding: 1.5rem;
+.review-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    
+    border-radius: 4px;
+}
+.review-form textarea{
+    height:50%;
+    padding-top: 10px;
+    resize: none;
+
 }
 
-.footer .credit p{
-	color:#f5f5f1;
+.review-form button {
+    padding: 10px;
+    background-color: #f0a500;
+    border: none;
+    border-radius: 4px;
+    margin-left: 30%;
+    width:40%;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    margin-top: 2%;
+    transition: background-color 0.3s;
 }
-.footer .credit span{
-	color: #ffcc92;
+.button_download{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.downloadbtn{
+  padding: 10px;
+    background-color: #f0a500;
+    border: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    /* margin-left: 20%; */
+    width:50%;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    /* margin-top: 2%; */
+    margin-bottom: 2%;
+    transition: background-color 0.3s;
 }
 
+.review-form button:hover {
+    background-color: #cf8500;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  #mainCanvas {
-      width: 90%;
-  }
-/* Contact Us Section */
-.contact-section {
-  background-color: #f9f9f9;
-  padding: 50px;
-  text-align: center;
-  max-width: 650px;
-  border-radius: 15px;
-}
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.contact-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #333;
-}
+    nav ul li {
+        margin: 10px 0;
+    }
 
-.contact-section form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.contact-section label {
-  text-align: left;
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #333;
-}
-
-.contact-section input,
-.contact-section textarea {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.contact-section button {
-  padding: 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.contact-section button:hover {
-  background-color: #555;
+    .footer-info, .review-form {
+        margin: 20px 0;
+    }
 }
