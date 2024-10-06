@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        *{
-            /* overflow-x: hidden; */
-        }
+        
         body {
             overflow-x: hidden;
             background-color: #ffffff;
@@ -46,6 +44,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
             background-color: #ffffff; /* Default background color */
+            cursor: crosshair;
 
         }
         .btn {
@@ -73,6 +72,7 @@
         .toolbar-item{
             padding: 10px;
         }
+
         /* Footer Styling */
 .footer {
     background-color: #1e1e1e;
@@ -136,8 +136,7 @@
     }
 }
 
-    </style>
-    <style>
+   
         /* Circle styles */
         .circle {
             height: 24px;
@@ -160,19 +159,25 @@
             <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
-        <div class="row">
+       <div class="row">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="/about-us.html">About Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Review</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+
                 </li>
             </ul>
         </div>
@@ -182,25 +187,25 @@
         </div>
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
-            <div class="p-3 bg-light rounded shadow">
+            <!-- <div class="p-3 bg-light rounded shadow">
                 <form id="userForm" class="d-flex flex-column">
                     <div class="d-flex gap-3 mb-2">
-                        <label for="textSize" class="text-dark">Size:</label>
+                        <label for="textSize" class="text-white">Size:</label>
                         <select name="tSize" class="form-select" id="textSize">
                             <option value="20">20</option>
                             <option value="30">30</option>
                             <option value="40">40</option>
                         </select>
-                        <label for="colorPicker" class="text-dark">Color:</label>
+                        <label for="colorPicker" class="text-white">Color:</label>
                         <input type="color" name="colorPicker" class="form-control" id="colorPicker">
                     </div>
                     <div class="d-flex row gap-3">
                         <div class="col-sm-6">
-                            <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                            <label for="bgImageUpload" class="text-white">Background Image:</label>
                             <input type="file" id="bgImageUpload" accept="image/*">
                         </div>
                         <div class="col-sm-6">
-                            <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                            <label for="bgColorPicker" class="text-white">Background Color:</label>
                             <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
                         </div>
                     </div>
@@ -215,13 +220,9 @@
                     </div>
                     
 
-                   <!-- <p >Shape Pallete</p> -->
+                    <p >Shape Pallete</p> -->
 
-                    <p class="text-center">Shape Palette</p
-                    <div class="palette">
-                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
-                        <button id="circleBtn" class="btn btn-success">Circle</button>
-                        <button id="lineBtn" class="btn btn-success">Line</button>
+                    
 
     <!-- Circles -->
     <div class="circle"></div>
@@ -245,7 +246,7 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
-    <header class="header">
+    <!-- <header class="header">
         <nav class="navbar">
             <div class="title">
                 <h1 class="site-name">Canvas Editor</h1>
@@ -253,7 +254,7 @@
             </div>
             <div class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
+                <a href="/about-us.html">About Us</a>
                 <a href="#blogs">Blogs</a>
                 <a href="./edition.html">Draw</a>
             </div>
@@ -262,9 +263,9 @@
     <div class="row text-center p-5" style="background-color: rgb(0, 0, 0);">
         <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
         <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-    </div>
+    </div> -->
     <div class="canvas-container">
-        <canvas id="mainCanvas"></canvas>
+        <!-- <canvas id="mainCanvas"></canvas> -->
 
         <div class="canvas-palette">
             <form id="userForm" class="d-flex flex-column">
@@ -298,10 +299,10 @@
                 </div>
             </form>
                 <div class="d-md-flex justify-content-evenly gap-1">
-                    <button class="btn btn-primary" id="capital">A</button>
-                    <button class="btn btn-primary" id="small">a</button>
-                    <button class="btn btn-primary" id="bold">B</button>
-                    <button class="btn btn-primary" id="italic">I</button>
+                    <button class="btn btn-primary" id="capital">Uppercase</button>
+                    <button class="btn btn-primary" id="small">Lowercase</button>
+                    <button class="btn btn-primary" id="bold">Bold</button>
+                    <button class="btn btn-primary" id="italic">Italic</button>
                 </div>
                 <div class="palette">
                     <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
@@ -361,14 +362,30 @@
           
     </div>
         
-        
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/edit.js"></script>
+    <script src="./src/Scripts/edit.js"></script> -->
+
+    <section class="footer" id="footer">
+
+        <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon-->
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fa-brands fa-linkedin-in"></a>
+        <a href="#" class="fa-brands fa-pinterest"></a>
+        </div>
+
+        <div class="credit" style="font-size: 0.6rem;">
+        <p>
+            Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
+        </p>
+        <br>
+        </div>
+
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -405,22 +422,107 @@
             });
         });
     });
-    </script>
     
-
-    
-    <script>
-        const canvas = document.getElementById('mainCanvas');
-        const ctx = canvas.getContext('2d');
-
+        const mainCanvas = document.getElementById('mainCanvas');
+        const ctx = mainCanvas.getContext('2d');
         let drawing = false;
+        let eraserMode = false;
+        let currentColor = '#000000'; // Default color
+
+        // Resize the canvas to fit the container
+        function resizeCanvas() {
+            mainCanvas.width = mainCanvas.offsetWidth;
+            mainCanvas.height = mainCanvas.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Function to get the mouse or touch position
+        function getPosition(event) {
+            const rect = mainCanvas.getBoundingClientRect();
+            const x = (event.clientX || event.touches[0].clientX) - rect.left;
+            const y = (event.clientY || event.touches[0].clientY) - rect.top;
+            return { x, y };
+        }
+
+        // Start drawing or erasing when the mouse or touch is pressed
+        function startDrawing(event) {
+            drawing = true;
+            const { x, y } = getPosition(event);
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        // Draw on the canvas or erase as the mouse moves or touch moves
+        function draw(event) {
+            if (drawing) {
+                const { x, y } = getPosition(event);
+                if (eraserMode) {
+                    // Erase by clearing a small area
+                    ctx.clearRect(x - 10, y - 10, 20, 20);
+                } else {
+                    // Set the stroke color and draw
+                    ctx.strokeStyle = currentColor; // Use the selected color
+                    ctx.lineWidth = 5; // Set a line width
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                }
+            }
+            event.preventDefault(); // Prevent scrolling when touching the canvas
+        }
+
+        // Stop drawing or erasing when the mouse is released or touch ends
+        function stopDrawing() {
+            drawing = false;
+            ctx.closePath();
+        }
+
+        //Event listeners for mouse interactions
+        mainCanvas.addEventListener('mousedown', startDrawing);
+        mainCanvas.addEventListener('mousemove', draw);
+        mainCanvas.addEventListener('mouseup', stopDrawing);
+
+        // Event listeners for touch interactions
+        mainCanvas.addEventListener('touchstart', (event) => {
+            startDrawing(event);
+        });
+        mainCanvas.addEventListener('touchmove', (event) => {
+            draw(event);
+        });
+        mainCanvas.addEventListener('touchend', stopDrawing);
+
+        // Clear the entire canvas
+        document.getElementById('clearCanvas').addEventListener('click', () => {
+            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+        });
+
+        // Toggle eraser mode
+        document.getElementById('eraserMode').addEventListener('click', () => {
+            eraserMode = !eraserMode;
+            mainCanvas.classList.toggle('eraser', eraserMode);
+            document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
+        });
+
+        // Change the current color when the color picker changes
+        document.getElementById('colorPicker').addEventListener('input', (event) => {
+            currentColor = event.target.value;
+        });
+
+        // Download the canvas as an image
+        document.getElementById('mainCanvas').addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'canvas-drawing.png';
+            link.href = mainCanvas.toDataURL('image/png');
+            link.click();
+        });
+
         let brushColor = '#000000';
         let brushSize = 5;
 
         // Set initial canvas dimensions
         function setCanvasDimensions() {
-            canvas.width = window.innerWidth - 40; // Adjust width
-            canvas.height = 400; // Keep height fixed
+            mainCanvas.width = window.innerWidth - 40; // Adjust width
+            mainCanvas.height = 400; // Keep height fixed
         }
         setCanvasDimensions();
 
@@ -436,7 +538,7 @@
 
         // Background color change
         document.getElementById('bgColorPicker').addEventListener('change', function() {
-            canvas.style.backgroundColor = this.value;
+            mainCanvas.style.backgroundColor = this.value;
         });
         // Function to set up the canvas background image
      function setBackgroundImage(file) {
@@ -480,43 +582,17 @@
             reader.onload = function(e) {
                 const img = new Image();
                 img.onload = function() {
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
                 };
                 img.src = e.target.result;
             };
             reader.readAsDataURL(file);
         });
 
-        // Drawing on canvas
-        canvas.addEventListener('mousedown', (e) => {
-            drawing = true;
-            ctx.beginPath();
-            ctx.moveTo(e.offsetX, e.offsetY);
-        });
-
-        canvas.addEventListener('mousemove', (e) => {
-            if (drawing) {
-                ctx.lineWidth = brushSize;
-                ctx.lineCap = 'round';
-                ctx.strokeStyle = brushColor;
-                ctx.lineTo(e.offsetX, e.offsetY);
-                ctx.stroke();
-            }
-        });
-
-        canvas.addEventListener('mouseup', () => {
-            drawing = false;
-            ctx.closePath();
-        });
-
-        canvas.addEventListener('mouseout', () => {
-            drawing = false;
-        });
-
         // Clear canvas button
         document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            canvas.style.backgroundColor = '#f0f0f0'; // Reset background color
+            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+            mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
         });
 
         // Eraser button
@@ -526,13 +602,10 @@
 
         // Resize canvas on window resize
         window.addEventListener('resize', setCanvasDimensions);
-    </script>
-    </script>
-    <script>
         // Coordinates for the cursor
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
-
+    
         // Colors for the circles
         const colors = [
             "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
@@ -540,65 +613,53 @@
             "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
             "#680060", "#60005f", "#48005f", "#3d005e"
         ];
-
+    
         // Assign colors and initial position to each circle
         circles.forEach(function (circle, index) {
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
         });
-
+    
         // Update the coordinates when the mouse moves
         window.addEventListener("mousemove", function (e) {
             coords.x = e.clientX;
             coords.y = e.clientY;
         });
-
+    
         // Animation function to move the circles
         function animateCircles() {
             let x = coords.x;
             let y = coords.y;
-
+    
             circles.forEach(function (circle, index) {
                 // Update the position and scale of each circle
                 circle.style.left = x - 12 + "px";
                 circle.style.top = y - 12 + "px";
                 circle.style.scale = (circles.length - index) / circles.length;
-
+    
                 circle.x = x;
                 circle.y = y;
-
+    
                 // Get the next circle in the sequence
                 const nextCircle = circles[index + 1] || circles[0];
                 x += (nextCircle.x - x) * 0.3;
                 y += (nextCircle.y - y) * 0.3;
             });
-
+    
             // Repeat the animation
             requestAnimationFrame(animateCircles);
         }
-
+    
         // Start the animation
+
+
         animateCircles();
+
+
     </script>
-    <section class="footer" id="footer">
-
-        <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon-->
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fa-brands fa-linkedin-in"></a>
-        <a href="#" class="fa-brands fa-pinterest"></a>
-        </div>
-
-        <div class="credit" style="font-size: 0.6rem;">
-        <p>
-            Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
-        </p>
-        <br>
-        </div>
-
-    </section>
+           
+        
 </body>
 </html>
 
