@@ -287,4 +287,44 @@ document.getElementById('lineBtn').addEventListener('click', (e) => {
     drawLine(posX, posY, posX + 50, posY + 50); // Example coordinates, adjust as needed
     addToSnapSorts('Line', canvasFont, defaultColor, posX, posY);
 });
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+let gridVisible = false;
+const gridSize = 20; // size of grid cells
+
+// Function to draw the grid
+function drawGrid() {
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)'; // light grid color
+    ctx.lineWidth = 1;
+
+    for (let x = gridSize; x < canvas.width; x += gridSize) {
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+    }
+
+    for (let y = gridSize; y < canvas.height; y += gridSize) {
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+    }
+
+    ctx.stroke();
+}
+
+// Function to clear the canvas
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Function to toggle grid visibility
+function toggleGrid() {
+    gridVisible = !gridVisible;
+    clearCanvas();
+    if (gridVisible) {
+        drawGrid();
+    }
+}
+
+// Event listener for the button
+document.getElementById('toggleGrid').addEventListener('click', toggleGrid);
 
