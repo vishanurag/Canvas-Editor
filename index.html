@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,17 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        
         body {
             overflow-x: hidden;
             background-color: #ffffff;
             font-family: 'Arial', sans-serif;
         }
-        .container {
-            max-width: 100vw;
-            margin: 0 auto;
-            color: rgb(0, 0, 0);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: none ;
-        }
+
+
         .canvas-container {
             display: flex;
             flex-direction: column;
@@ -37,106 +32,116 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
         }
+
         #mainCanvas {
             max-width: 100%;
-            height: 400px; /* Set a fixed height */
+            height: 400px;
+            /* Set a fixed height */
             border: 2px solid #000000;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-            background-color: #ffffff; /* Default background color */
+            background-color: #ffffff;
+            /* Default background color */
             cursor: crosshair;
 
         }
+
         .btn {
             margin: 5px;
             transition: background-color 0.3s, transform 0.2s;
         }
+
         .btn:hover {
             background-color: #3abe57;
             color: white;
             transform: scale(1.05);
         }
+
         .btn:active {
             transform: scale(0.95);
         }
+
         .palette {
             margin: 15px 0;
             text-align: center;
         }
+
         .form-control {
             border-radius: 5px;
         }
-        .edit{
+
+        .edit {
             display: flex;
         }
-        .toolbar-item{
+
+        .toolbar-item {
             padding: 10px;
         }
 
         /* Footer Styling */
-.footer {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 0;
-    font-family: 'Arial', sans-serif;
-    position: relative;
-    margin-top: 20px;
-}
+        .footer {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 0;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            margin-top: 20px;
+        }
 
-.footer .share {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+        .footer .share {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
 
-.footer .share a {
-    margin: 0 10px;
-    font-size: 1.8rem;
-    color: #ffffff;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
+        .footer .share a {
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: #ffffff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-.footer .share a:hover {
-    color: #f39c12;
-    transform: scale(1.1);
-}
+        .footer .share a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
 
-.footer .credit {
-    font-size: 0.9rem;
-    color: #bdc3c7;
-}
+        .footer .credit {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
 
-.footer .credit span {
-    color: #f39c12;
-    font-weight: bold;
-}
+        .footer .credit span {
+            color: #f39c12;
+            font-weight: bold;
+        }
 
-.footer .credit p {
-    margin: 0;
-    font-size: 0.85rem;
-}
+        .footer .credit p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
 
-.footer .credit span:hover {
-    color: #f1c40f;
-}
+        .footer .credit span:hover {
+            color: #f1c40f;
+        }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .footer {
-        padding: 30px 0;
-    }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 30px 0;
+            }
 
-    .footer .share a {
-        font-size: 1.5rem;
-    }
+            .footer .share a {
+                font-size: 1.5rem;
+            }
 
-    .footer .credit {
-        font-size: 0.8rem;
-    }
-}
+            .footer .credit {
+                font-size: 0.8rem;
+            }
+        }
 
-   
+
         /* Circle styles */
         .circle {
             height: 24px;
@@ -152,38 +157,72 @@
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container pt-2">
+    <div class="">
         <div class="header">
-            <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
-            <p class="lead">Design and create stunning visuals effortlessly!</p>
-        </div>
-       <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Review</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
 
-                </li>
-            </ul>
+
+
+            <!-- <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
+            <p class="lead">Design and create stunning visuals effortlessly!</p> -->
         </div>
-        <div class="row text-center p-5" style="background-color: cornflowerblue;">
+
+        <!-- Navbar Section -->
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Canva Editor
+                        <i class="fa-solid fa-paintbrush"></i>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Review</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item">
+
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Register
+                                </a>
+                                <ul class="dropdown-menu dropdown" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item text-dark bg-white" href="signup.html">Sign Up</a></li>
+                                    <li><a class="dropdown-item text-dark bg-white" href="login.html">Login</a></li>
+                                </ul>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-primary bg-dark me-4" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="row text-center p-3" style="background-color: cornflowerblue;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
+                    class="fa-light fa-face-party"></i></p>
         </div>
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
@@ -222,31 +261,31 @@
 
                     <p >Shape Pallete</p> -->
 
-                    
 
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
 
-    <!-- <header class="header">
+            <!-- Circles -->
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+
+            <!-- <header class="header">
         <nav class="navbar">
             <div class="title">
                 <h1 class="site-name">Canvas Editor</h1>
@@ -264,402 +303,414 @@
         <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
         <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
     </div> -->
-    <div class="canvas-container">
-        <!-- <canvas id="mainCanvas"></canvas> -->
+            <div class="canvas-container m-5">
+                <!-- <canvas id="mainCanvas"></canvas> -->
 
-        <div class="canvas-palette">
-            <form id="userForm" class="d-flex flex-column">
-                <div class="d-flex gap-3 mb-2">
-                    <label for="brushSize" class="text-dark">Brush Size:</label>
-                    <select name="brushSize" class="form-select" id="brushSize">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="25">25</option>
-                    </select>
-                    <label for="colorPicker" class="text-dark">Color:</label>
-                    <input type="color" name="colorPicker" class="form-control" id="colorPicker">
-                </div>
-                <div class="d-flex row gap-3 mb-2">
-                    <div class="col-sm-6">
-                        <label for="bgImageUpload" class="text-dark">Background Image:</label>
-                        <input type="file" id="bgImageUpload" accept="image/*">
+                <div class="canvas-palette">
+                    <form id="userForm" class="d-flex flex-column">
+                        <div class="d-flex gap-3 mb-2">
+                            <label for="brushSize" class="text-dark">Brush Size:</label>
+                            <select name="brushSize" class="form-select" id="brushSize">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                            </select>
+                            <label for="colorPicker" class="text-dark">Color:</label>
+                            <input type="color" name="colorPicker" class="form-control" id="colorPicker">
+                        </div>
+                        <div class="d-flex row gap-3 mb-2">
+                            <div class="col-sm-6">
+                                <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                                <input type="file" id="bgImageUpload" accept="image/*">
 
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
+                            </div>
+                        </div>
+                        <div class="edit">
+                            <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                            <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
+                            <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
+                        </div>
+                    </form>
+                    <div class="d-md-flex justify-content-evenly gap-1">
+                        <button class="btn btn-primary" id="capital">Uppercase</button>
+                        <button class="btn btn-primary" id="small">Lowercase</button>
+                        <button class="btn btn-primary" id="bold">Bold</button>
+                        <button class="btn btn-primary" id="italic">Italic</button>
                     </div>
-                    <div class="col-sm-6">
-                        <label for="bgColorPicker" class="text-dark">Background Color:</label>
-                        <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
+                    <div class="palette">
+                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                        <button id="circleBtn" class="btn btn-success">Circle</button>
+                        <button id="lineBtn" class="btn btn-success">Line</button>
                     </div>
+                    <div class="d-md-flex justify-content-center gap-2 mb-3">
+                        <input type="text" placeholder="Enter Text" name="textData" id="textData"
+                            class="form-control mw-100 w-75 mb-3">
+                        <button type="button" class="btn btn-primary" id="save">Save</button>
+                        <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                        <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="edit">
-                    <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
-                    <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
-                    <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
-                </div>
-            </form>
-                <div class="d-md-flex justify-content-evenly gap-1">
-                    <button class="btn btn-primary" id="capital">Uppercase</button>
-                    <button class="btn btn-primary" id="small">Lowercase</button>
-                    <button class="btn btn-primary" id="bold">Bold</button>
-                    <button class="btn btn-primary" id="italic">Italic</button>
-                </div>
-                <div class="palette">
-                    <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
-                    <button id="circleBtn" class="btn btn-success">Circle</button>
-                    <button id="lineBtn" class="btn btn-success">Line</button>
-                </div>
-                <div class="d-md-flex justify-content-center gap-2 mb-3">
-                    <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
-                    <button type="button" class="btn btn-primary" id="save">Save</button>
-                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
-                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                </div>
-            </form>
+
+            </div>
+            <div class="container mt-5">
+                <!-- Contact Us Section -->
+                <section id="contact" class="contact-section text-center py-5">
+                    <h2 class="mb-4">Contact Us</h2>
+                    <form id="contactForm" class="row g-3 justify-content-center">
+                        <!-- Name Field -->
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
+                                    required>
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <!-- Email Field -->
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Your Email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <!-- Subject Field -->
+                        <div class="col-md-8">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="subject" name="subject"
+                                    placeholder="Subject" required>
+                                <label for="subject">Subject</label>
+                            </div>
+                        </div>
+                        <!-- Message Field -->
+                        <div class="col-md-8">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="message" name="message" placeholder="Your Message"
+                                    style="height: 150px" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
         </div>
 
-        </div>
-        <div class="container mt-5">
-            <!-- Contact Us Section -->
-            <section id="contact" class="contact-section text-center py-5">
-                <h2 class="mb-4">Contact Us</h2>
-                <form id="contactForm" class="row g-3 justify-content-center">
-                    <!-- Name Field -->
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                            <label for="name">Your Name</label>
-                        </div>
-                    </div>
-                    <!-- Email Field -->
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                            <label for="email">Your Email</label>
-                        </div>
-                    </div>
-                    <!-- Subject Field -->
-                    <div class="col-md-8">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-                    </div>
-                    <!-- Message Field -->
-                    <div class="col-md-8">
-                        <div class="form-floating">
-                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="col-md-8">
-                        <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-                    </div>
-                </form>
-            </section>
-        </div>
-          
-    </div>
-        
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/edit.js"></script> -->
 
-    <section class="footer" id="footer">
+        <section class="footer" id="footer">
 
-        <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon-->
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fa-brands fa-linkedin-in"></a>
-        <a href="#" class="fa-brands fa-pinterest"></a>
-        </div>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fa-brands fa-linkedin-in"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
 
-        <div class="credit" style="font-size: 0.6rem;">
-        <p>
-            Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
-        </p>
-        <br>
-        </div>
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
+                </p>
+                <br>
+            </div>
 
-    </section>
+        </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const fontBtn = document.getElementById('fontBtn');
-        const fontOptions = document.getElementById('fontOptions');
-        const options = document.querySelectorAll('.font-option');
-        const radius = 100;  // Increase this value to create more spacing between buttons
-        const startAngle = -30;  // Adjust this for positioning of the arc
-        const offsetX = 300;  // Move the arc further to the right
-        const offsetY = 70;  // Adjust vertical position of the arc
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const fontBtn = document.getElementById('fontBtn');
+                const fontOptions = document.getElementById('fontOptions');
+                const options = document.querySelectorAll('.font-option');
+                const radius = 100;  // Increase this value to create more spacing between buttons
+                const startAngle = -30;  // Adjust this for positioning of the arc
+                const offsetX = 300;  // Move the arc further to the right
+                const offsetY = 70;  // Adjust vertical position of the arc
 
-        fontBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
-            if (fontOptions.style.display === 'block') {
-                const totalOptions = options.length;
-                options.forEach((option, index) => {
-                    const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
-                    const x = Math.cos(angle) * radius + offsetX + 20;
-                    const y = Math.sin(angle) * radius + offsetY + 50;
-                    option.style.transform = `translate(${x}px, ${y}px)`;
+                fontBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
+                    if (fontOptions.style.display === 'block') {
+                        const totalOptions = options.length;
+                        options.forEach((option, index) => {
+                            const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
+                            const x = Math.cos(angle) * radius + offsetX + 20;
+                            const y = Math.sin(angle) * radius + offsetY + 50;
+                            option.style.transform = `translate(${x}px, ${y}px)`;
+                        });
+                    } else {
+                        options.forEach(option => {
+                            option.style.transform = 'translate(0, 0)';
+                        });
+                    }
                 });
-            } else {
+
                 options.forEach(option => {
-                    option.style.transform = 'translate(0, 0)';
-                });
-            }
-        });
-
-        options.forEach(option => {
-            option.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent default button action
-                console.log(`${this.id} selected`);
-            });
-        });
-    });
-    
-        const mainCanvas = document.getElementById('mainCanvas');
-        const ctx = mainCanvas.getContext('2d');
-        let drawing = false;
-        let eraserMode = false;
-        let currentColor = '#000000'; // Default color
-
-        // Resize the canvas to fit the container
-        function resizeCanvas() {
-            mainCanvas.width = mainCanvas.offsetWidth;
-            mainCanvas.height = mainCanvas.offsetHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        // Function to get the mouse or touch position
-        function getPosition(event) {
-            const rect = mainCanvas.getBoundingClientRect();
-            const x = (event.clientX || event.touches[0].clientX) - rect.left;
-            const y = (event.clientY || event.touches[0].clientY) - rect.top;
-            return { x, y };
-        }
-
-        // Start drawing or erasing when the mouse or touch is pressed
-        function startDrawing(event) {
-            drawing = true;
-            const { x, y } = getPosition(event);
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-        }
-
-        // Draw on the canvas or erase as the mouse moves or touch moves
-        function draw(event) {
-            if (drawing) {
-                const { x, y } = getPosition(event);
-                if (eraserMode) {
-                    // Erase by clearing a small area
-                    ctx.clearRect(x - 10, y - 10, 20, 20);
-                } else {
-                    // Set the stroke color and draw
-                    ctx.strokeStyle = currentColor; // Use the selected color
-                    ctx.lineWidth = 5; // Set a line width
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                }
-            }
-            event.preventDefault(); // Prevent scrolling when touching the canvas
-        }
-
-        // Stop drawing or erasing when the mouse is released or touch ends
-        function stopDrawing() {
-            drawing = false;
-            ctx.closePath();
-        }
-
-        //Event listeners for mouse interactions
-        mainCanvas.addEventListener('mousedown', startDrawing);
-        mainCanvas.addEventListener('mousemove', draw);
-        mainCanvas.addEventListener('mouseup', stopDrawing);
-
-        // Event listeners for touch interactions
-        mainCanvas.addEventListener('touchstart', (event) => {
-            startDrawing(event);
-        });
-        mainCanvas.addEventListener('touchmove', (event) => {
-            draw(event);
-        });
-        mainCanvas.addEventListener('touchend', stopDrawing);
-
-        // Clear the entire canvas
-        document.getElementById('clearCanvas').addEventListener('click', () => {
-            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-        });
-
-        // Toggle eraser mode
-        document.getElementById('eraserMode').addEventListener('click', () => {
-            eraserMode = !eraserMode;
-            mainCanvas.classList.toggle('eraser', eraserMode);
-            document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
-        });
-
-        // Change the current color when the color picker changes
-        document.getElementById('colorPicker').addEventListener('input', (event) => {
-            currentColor = event.target.value;
-        });
-
-        // Download the canvas as an image
-        document.getElementById('mainCanvas').addEventListener('click', () => {
-            const link = document.createElement('a');
-            link.download = 'canvas-drawing.png';
-            link.href = mainCanvas.toDataURL('image/png');
-            link.click();
-        });
-
-        let brushColor = '#000000';
-        let brushSize = 5;
-
-        // Set initial canvas dimensions
-        function setCanvasDimensions() {
-            mainCanvas.width = window.innerWidth - 40; // Adjust width
-            mainCanvas.height = 400; // Keep height fixed
-        }
-        setCanvasDimensions();
-
-        // Brush size change
-        document.getElementById('brushSize').addEventListener('change', function() {
-            brushSize = this.value;
-        });
-
-        // Color picker change
-        document.getElementById('colorPicker').addEventListener('change', function() {
-            brushColor = this.value;
-        });
-
-        // Background color change
-        document.getElementById('bgColorPicker').addEventListener('change', function() {
-            mainCanvas.style.backgroundColor = this.value;
-        });
-        // Function to set up the canvas background image
-     function setBackgroundImage(file) {
-                 const reader = new FileReader();
-                 reader.onload = function (e) {
-                 const img = new Image();
-                 img.onload = function () {
-                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                 };
-                     img.src = e.target.result;
-                 };
-                 reader.readAsDataURL(file);
-                 }
-
-                    // Drag and Drop Event Listeners for the Canvas
-    canvas.addEventListener('dragover', (event) => {
-              event.preventDefault(); 
-              canvas.style.border = '2px dashed #000';
-            });
-
-    canvas.addEventListener('dragleave', () => {
-               canvas.style.border = '1px solid #000'; 
-        });
-
-      canvas.addEventListener('drop', (event) => {
-                  event.preventDefault(); 
-                  canvas.style.border = '1px solid #000';
-                  const file = event.dataTransfer.files[0];
-                  if (file && file.type.startsWith('image/')) {
-                          setBackgroundImage(file); 
-                        } else {
-                            alert('Please drop a valid image file.');
-                        }
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault(); // Prevent default button action
+                        console.log(`${this.id} selected`);
                     });
-        
-
-        // Background image upload
-        document.getElementById('bgImageUpload').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
-                };
-                img.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        });
-
-        // Clear canvas button
-        document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-            mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
-        });
-
-        // Eraser button
-        document.getElementById('eraserBtn').addEventListener('click', () => {
-            brushColor = '#ffffff'; // Set brush color to white
-        });
-
-        // Resize canvas on window resize
-        window.addEventListener('resize', setCanvasDimensions);
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
-    
-        // Colors for the circles
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
-    
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
-        });
-    
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
-    
-        // Animation function to move the circles
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-    
-            circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-    
-                circle.x = x;
-                circle.y = y;
-    
-                // Get the next circle in the sequence
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
+                });
             });
-    
-            // Repeat the animation
-            requestAnimationFrame(animateCircles);
-        }
-    
-        // Start the animation
+
+            const mainCanvas = document.getElementById('mainCanvas');
+            const ctx = mainCanvas.getContext('2d');
+            let drawing = false;
+            let eraserMode = false;
+            let currentColor = '#000000'; // Default color
+
+            // Resize the canvas to fit the container
+            function resizeCanvas() {
+                mainCanvas.width = mainCanvas.offsetWidth;
+                mainCanvas.height = mainCanvas.offsetHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // Function to get the mouse or touch position
+            function getPosition(event) {
+                const rect = mainCanvas.getBoundingClientRect();
+                const x = (event.clientX || event.touches[0].clientX) - rect.left;
+                const y = (event.clientY || event.touches[0].clientY) - rect.top;
+                return { x, y };
+            }
+
+            // Start drawing or erasing when the mouse or touch is pressed
+            function startDrawing(event) {
+                drawing = true;
+                const { x, y } = getPosition(event);
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            }
+
+            // Draw on the canvas or erase as the mouse moves or touch moves
+            function draw(event) {
+                if (drawing) {
+                    const { x, y } = getPosition(event);
+                    if (eraserMode) {
+                        // Erase by clearing a small area
+                        ctx.clearRect(x - 10, y - 10, 20, 20);
+                    } else {
+                        // Set the stroke color and draw
+                        ctx.strokeStyle = currentColor; // Use the selected color
+                        ctx.lineWidth = 5; // Set a line width
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+                    }
+                }
+                event.preventDefault(); // Prevent scrolling when touching the canvas
+            }
+
+            // Stop drawing or erasing when the mouse is released or touch ends
+            function stopDrawing() {
+                drawing = false;
+                ctx.closePath();
+            }
+
+            //Event listeners for mouse interactions
+            mainCanvas.addEventListener('mousedown', startDrawing);
+            mainCanvas.addEventListener('mousemove', draw);
+            mainCanvas.addEventListener('mouseup', stopDrawing);
+
+            // Event listeners for touch interactions
+            mainCanvas.addEventListener('touchstart', (event) => {
+                startDrawing(event);
+            });
+            mainCanvas.addEventListener('touchmove', (event) => {
+                draw(event);
+            });
+            mainCanvas.addEventListener('touchend', stopDrawing);
+
+            // Clear the entire canvas
+            document.getElementById('clearCanvas').addEventListener('click', () => {
+                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+            });
+
+            // Toggle eraser mode
+            document.getElementById('eraserMode').addEventListener('click', () => {
+                eraserMode = !eraserMode;
+                mainCanvas.classList.toggle('eraser', eraserMode);
+                document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
+            });
+
+            // Change the current color when the color picker changes
+            document.getElementById('colorPicker').addEventListener('input', (event) => {
+                currentColor = event.target.value;
+            });
+
+            // Download the canvas as an image
+            document.getElementById('mainCanvas').addEventListener('click', () => {
+                const link = document.createElement('a');
+                link.download = 'canvas-drawing.png';
+                link.href = mainCanvas.toDataURL('image/png');
+                link.click();
+            });
+
+            let brushColor = '#000000';
+            let brushSize = 5;
+
+            // Set initial canvas dimensions
+            function setCanvasDimensions() {
+                mainCanvas.width = window.innerWidth - 40; // Adjust width
+                mainCanvas.height = 400; // Keep height fixed
+            }
+            setCanvasDimensions();
+
+            // Brush size change
+            document.getElementById('brushSize').addEventListener('change', function () {
+                brushSize = this.value;
+            });
+
+            // Color picker change
+            document.getElementById('colorPicker').addEventListener('change', function () {
+                brushColor = this.value;
+            });
+
+            // Background color change
+            document.getElementById('bgColorPicker').addEventListener('change', function () {
+                mainCanvas.style.backgroundColor = this.value;
+            });
+            // Function to set up the canvas background image
+            function setBackgroundImage(file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = new Image();
+                    img.onload = function () {
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+
+            // Drag and Drop Event Listeners for the Canvas
+            canvas.addEventListener('dragover', (event) => {
+                event.preventDefault();
+                canvas.style.border = '2px dashed #000';
+            });
+
+            canvas.addEventListener('dragleave', () => {
+                canvas.style.border = '1px solid #000';
+            });
+
+            canvas.addEventListener('drop', (event) => {
+                event.preventDefault();
+                canvas.style.border = '1px solid #000';
+                const file = event.dataTransfer.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    setBackgroundImage(file);
+                } else {
+                    alert('Please drop a valid image file.');
+                }
+            });
 
 
-        animateCircles();
+            // Background image upload
+            document.getElementById('bgImageUpload').addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = new Image();
+                    img.onload = function () {
+                        ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // Clear canvas button
+            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
+                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+                mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
+            });
+
+            // Eraser button
+            document.getElementById('eraserBtn').addEventListener('click', () => {
+                brushColor = '#ffffff'; // Set brush color to white
+            });
+
+            // Resize canvas on window resize
+            window.addEventListener('resize', setCanvasDimensions);
+            // Coordinates for the cursor
+            const coords = { x: 0, y: 0 };
+            const circles = document.querySelectorAll(".circle");
+
+            // Colors for the circles
+            const colors = [
+                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+                "#680060", "#60005f", "#48005f", "#3d005e"
+            ];
+
+            // Assign colors and initial position to each circle
+            circles.forEach(function (circle, index) {
+                circle.x = 0;
+                circle.y = 0;
+                circle.style.backgroundColor = colors[index % colors.length];
+            });
+
+            // Update the coordinates when the mouse moves
+            window.addEventListener("mousemove", function (e) {
+                coords.x = e.clientX;
+                coords.y = e.clientY;
+            });
+
+            // Animation function to move the circles
+            function animateCircles() {
+                let x = coords.x;
+                let y = coords.y;
+
+                circles.forEach(function (circle, index) {
+                    // Update the position and scale of each circle
+                    circle.style.left = x - 12 + "px";
+                    circle.style.top = y - 12 + "px";
+                    circle.style.scale = (circles.length - index) / circles.length;
+
+                    circle.x = x;
+                    circle.y = y;
+
+                    // Get the next circle in the sequence
+                    const nextCircle = circles[index + 1] || circles[0];
+                    x += (nextCircle.x - x) * 0.3;
+                    y += (nextCircle.y - y) * 0.3;
+                });
+
+                // Repeat the animation
+                requestAnimationFrame(animateCircles);
+            }
+
+            // Start the animation
 
 
-    </script>
-           
-        
+            animateCircles();
+
+
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+
+
 </body>
-</html>
 
+</html>
