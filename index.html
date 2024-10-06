@@ -23,9 +23,14 @@
             color: rgb(0, 0, 0);
         }
         .header {
+            font-weight: bolder;
             text-align: center;
             margin-bottom: none ;
         }
+        .row{
+            font-size:20px;
+        }
+        
         .canvas-container {
             display: flex;
             flex-direction: column;
@@ -33,7 +38,6 @@
             justify-content: center;
             background: #000000;
             color: #ffffff;
-            border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
         }
@@ -75,13 +79,15 @@
 
         /* Footer Styling */
 .footer {
-    background-color: #1e1e1e;
+    background-color: #000000;
     color: #ffffff;
     text-align: center;
     padding: 40px 0;
     font-family: 'Arial', sans-serif;
     position: relative;
-    margin-top: 20px;
+    margin-top: 0;
+    width: 76.9rem;
+    
 }
 
 .footer .share {
@@ -138,18 +144,7 @@
 
    
         /* Circle styles */
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 24px;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            /* Stays on top of all elements */
-        }
+       
     </style>
 </head>
 <body>
