@@ -413,20 +413,27 @@ button#download:hover::after {
     border: none;
     background: none;
 }
-.footer .share a{
-	height: 2.5rem;
-	width: 2.5rem;
-	line-height: 2.5rem;
-	font-size: 1.0rem;
-	color: #ffffff;
-	border: 0.1rem solid rgba(255, 255, 255, 0.3);
-	margin: .2rem;
-	border-radius: 50%;
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height:2.5rem;
+  background-color: transparent;
+  border: 0.2rem solid #9dff00;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #b9c668;
   text-decoration: none;
 }
 
-.footer .share a:hover{
-	background-color: #837667;
+.social-icons a:hover {
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #adcc66;
+  box-shadow: 0 0 25px #c8ff13;
 }
 
 .footer .links{
@@ -520,3 +527,4 @@ footer .credit{
 }
 
 
+}
