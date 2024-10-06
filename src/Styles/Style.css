@@ -14,38 +14,13 @@ body {
 
 
 
-/* Main Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Canvas Styles */
-
-/* Main canvas styles */
-
-#mainCanvas {
-  width: 60% !important;
-  height: auto;
-  max-height: 500px;
-  margin: 68px;
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
 
 /* Control Panel (Form) Styles */
 #userForm {
-  margin-top: 5px;
-  padding: 15px;
   background-color: #1e1e1e;
   border-radius: 8px;
-  margin-left: 20px;
-  max-height: 90%;
+  padding-inline: 30px;
+  padding-top: 50px;
 }
 
 /* Flexbox for control panel alignment */
@@ -402,7 +377,7 @@ button#download:hover::after {
 }
 
 .footer{
-	background: black;
+	background-color: #333;
 	text-align: center;
 }
 .footer .share{
