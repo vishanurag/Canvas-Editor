@@ -267,6 +267,82 @@
     <div class="canvas-container">
         <!-- <canvas id="mainCanvas"></canvas> -->
 
+
+        
+            <div class="canvas-palette">
+                <form id="userForm" class="d-flex flex-column">
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textSize" class="text-dark">Size:</label>
+                        <select name="tSize" class="form-select" id="textSize">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                        </select>
+                        <label for="colorPicker" class="text-dark">Color:</label>
+                        <input type="color" name="colorPicker" class="form-control" id="colorPicker" value="#000000">
+                    </div>
+                    <div class="d-flex row gap-3">
+                        <div class="col-sm-6">
+                            <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                            <input type="file" id="bgImageUpload" accept="image/*">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                            <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="brushSize" class="text-dark">Brush Size:</label>
+                        <input type="range" id="brushSize" min="1" max="20" value="5" class="form-range">
+                    </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="fontFamily" class="text-dark">Font:</label>
+                        <select name="fontFamily" class="form-select" id="fontFamily">
+                            <option value="Arial">Arial</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textColor" class="text-dark">Text Color:</label>
+                        <input type="color" id="textColor" class="form-control" value="#000000">
+                    </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textAlign" class="text-dark">Text Align:</label>
+                        <select name="textAlign" class="form-select" id="textAlign">
+                            <option value="left">Left</option>
+                            <option value="center">Center</option>
+                            <option value="right">Right</option>
+                        </select>
+                    </div>
+                    <div class="d-md-flex justify-content-evenly gap-1">
+                        <button class="btn btn-primary" id="capital">A</button>
+                        <button class="btn btn-primary" id="small">a</button>
+                        <button class="btn btn-primary" id="bold">B</button>
+                        <button class="btn btn-primary" id="italic">I</button>
+                    </div>
+                    <div class="palette">
+                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                        <button id="circleBtn" class="btn btn-success">Circle</button>
+                        <button id="lineBtn" class="btn btn-success">Line</button>
+                    </div>
+                    <div class="d-md-flex justify-content-center gap-2 mb-3">
+                        <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                        <button type="button" class="btn btn-primary" id="addText">Add Text</button>
+                        <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                        <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                        <button type="button" class="btn btn-warning" id="undo">Undo</button>
+                        <button type="button" class="btn btn-secondary" id="redo">Redo</button>
+                    </div>
+                </form>
+            </div>
+        <div class="row mt-5 d-flex justify-content-center">
+=======
         <div class="canvas-palette">
             <form id="userForm" class="d-flex flex-column">
                 <div class="d-flex gap-3 mb-2">
@@ -320,6 +396,7 @@
 
         </div>
         <div class="container mt-5">
+
             <!-- Contact Us Section -->
             <section id="contact" class="contact-section text-center py-5">
                 <h2 class="mb-4">Contact Us</h2>
@@ -426,6 +503,19 @@
         const mainCanvas = document.getElementById('mainCanvas');
         const ctx = mainCanvas.getContext('2d');
         let drawing = false;
+
+        let brushSize = document.getElementById('brushSize').value;
+        let currentColor = document.getElementById('colorPicker').value;
+        let actions = []; // Store actions for undo/redo
+        let undoneActions = []; // Store undone actions
+        let textSize = document.getElementById('textSize').value;
+        let textColor = document.getElementById('textColor').value;
+        let fontFamily = document.getElementById('fontFamily').value;
+        let textAlign = document.getElementById('textAlign').value;
+
+        // Start drawing on mouse down
+        mainCanvas.addEventListener('mousedown', (e) => {
+
         let eraserMode = false;
         let currentColor = '#000000'; // Default color
 
@@ -448,60 +538,93 @@
         // Start drawing or erasing when the mouse or touch is pressed
         function startDrawing(event) {
             drawing = true;
-            const { x, y } = getPosition(event);
             ctx.beginPath();
+
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        // Draw on the canvas
+        mainCanvas.addEventListener('mousemove', (e) => {
+
             ctx.moveTo(x, y);
         }
 
         // Draw on the canvas or erase as the mouse moves or touch moves
         function draw(event) {
-            if (drawing) {
-                const { x, y } = getPosition(event);
-                if (eraserMode) {
-                    // Erase by clearing a small area
-                    ctx.clearRect(x - 10, y - 10, 20, 20);
-                } else {
-                    // Set the stroke color and draw
-                    ctx.strokeStyle = currentColor; // Use the selected color
-                    ctx.lineWidth = 5; // Set a line width
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                }
-            }
-            event.preventDefault(); // Prevent scrolling when touching the canvas
-        }
 
-        // Stop drawing or erasing when the mouse is released or touch ends
-        function stopDrawing() {
+            if (drawing) {
+                ctx.strokeStyle = currentColor;
+                ctx.lineWidth = brushSize; // Use the brush size
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        });
+
+        // Stop drawing on mouse up
+        mainCanvas.addEventListener('mouseup', () => {
             drawing = false;
             ctx.closePath();
-        }
+            saveState(); // Save canvas state after drawing
+        });
+
+
+        // Clear the canvas
+        document.getElementById('clear').addEventListener('click', () => {
+            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+            actions = []; // Clear actions
+            undoneActions = []; // Clear undone actions
+        });
 
         //Event listeners for mouse interactions
         mainCanvas.addEventListener('mousedown', startDrawing);
         mainCanvas.addEventListener('mousemove', draw);
         mainCanvas.addEventListener('mouseup', stopDrawing);
 
-        // Event listeners for touch interactions
-        mainCanvas.addEventListener('touchstart', (event) => {
-            startDrawing(event);
-        });
-        mainCanvas.addEventListener('touchmove', (event) => {
-            draw(event);
-        });
-        mainCanvas.addEventListener('touchend', stopDrawing);
 
-        // Clear the entire canvas
-        document.getElementById('clearCanvas').addEventListener('click', () => {
-            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+        // Update brush size
+        document.getElementById('brushSize').addEventListener('input', (e) => {
+            brushSize = e.target.value; // Update brush size
         });
 
-        // Toggle eraser mode
-        document.getElementById('eraserMode').addEventListener('click', () => {
-            eraserMode = !eraserMode;
-            mainCanvas.classList.toggle('eraser', eraserMode);
-            document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
+        // Update brush color
+        document.getElementById('colorPicker').addEventListener('input', (e) => {
+            currentColor = e.target.value; // Update brush color
         });
+
+        // Update text size
+        document.getElementById('textSize').addEventListener('input', (e) => {
+            textSize = e.target.value;
+        });
+
+        // Update text color
+        document.getElementById('textColor').addEventListener('input', (e) => {
+            textColor = e.target.value;
+        });
+
+
+        // Update font family
+        document.getElementById('fontFamily').addEventListener('input', (e) => {
+            fontFamily = e.target.value;
+        });
+
+        // Update text alignment
+        document.getElementById('textAlign').addEventListener('input', (e) => {
+            textAlign = e.target.value;
+        });
+
+        // Add text to canvas
+        document.getElementById('addText').addEventListener('click', () => {
+            const textInput = document.getElementById('textData').value;
+            ctx.font = `${textSize}px ${fontFamily}`;
+            ctx.fillStyle = textColor;
+            ctx.textAlign = textAlign;
+            ctx.fillText(textInput, mainCanvas.width / 2, mainCanvas.height / 2); // Center the text
+            saveState(); // Save canvas state after adding text
+            document.getElementById('textData').value = ''; // Clear input
+        });
+
+        // Save canvas to image
+        document.getElementById('download').addEventListener('click', () => {
 
         // Change the current color when the color picker changes
         document.getElementById('colorPicker').addEventListener('input', (event) => {
@@ -510,11 +633,98 @@
 
         // Download the canvas as an image
         document.getElementById('mainCanvas').addEventListener('click', () => {
+
             const link = document.createElement('a');
-            link.download = 'canvas-drawing.png';
-            link.href = mainCanvas.toDataURL('image/png');
+            link.download = 'canvas.png';
+            link.href = mainCanvas.toDataURL();
             link.click();
         });
+
+
+        // Background image upload
+        document.getElementById('bgImageUpload').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
+                    saveState(); // Save state after adding background image
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+        });
+
+        // Event listener for background color
+        document.getElementById('bgColorPicker').addEventListener('input', (e) => {
+            mainCanvas.style.backgroundColor = e.target.value; // Change the canvas background color
+        });
+
+        // Undo functionality
+        document.getElementById('undo').addEventListener('click', () => {
+            if (actions.length > 0) {
+                const lastAction = actions.pop();
+                undoneActions.push(lastAction); // Store the undone action
+                restoreState(lastAction); // Restore to the last action
+            }
+        });
+
+        // Redo functionality
+        document.getElementById('redo').addEventListener('click', () => {
+            if (undoneActions.length > 0) {
+                const actionToRedo = undoneActions.pop();
+                actions.push(actionToRedo); // Restore the action back to the action stack
+                restoreState(actionToRedo); // Restore the action
+            }
+        });
+
+        // Save the canvas state
+        function saveState() {
+            actions.push(mainCanvas.toDataURL());
+            undoneActions = []; // Clear redo actions on new action
+        }
+
+        // Restore canvas state
+        function restoreState(dataURL) {
+            const img = new Image();
+            img.onload = function() {
+                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+                ctx.drawImage(img, 0, 0);
+            }
+            img.src = dataURL;
+        }
+
+        // Prevent form submission
+        document.getElementById('userForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+        mainCanvas.addEventListener('mousedown', (e) => {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+    console.log(`Mouse down at: ${e.offsetX}, ${e.offsetY}`);
+});
+
+mainCanvas.addEventListener('mousemove', (e) => {
+    if (drawing) {
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = brushSize; 
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        console.log(`Drawing at: ${e.offsetX}, ${e.offsetY}`);
+    }
+});
+
+mainCanvas.addEventListener('mouseup', () => {
+    drawing = false;
+    ctx.closePath();
+    console.log('Mouse up');
+});
+
+    </script>
+    <section class="footer" id="footer">
+
 
         let brushColor = '#000000';
         let brushSize = 5;
