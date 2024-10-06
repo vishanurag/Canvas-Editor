@@ -180,6 +180,83 @@
 
                 </li>
             </ul>
+               /* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container holding the navbar */
+.container {
+  width: 100%;
+  background-color: #333; /* Dark background */
+  padding: 1rem 2rem;
+}
+
+/* Styling for the navbar ul */
+ul.nav-tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+}
+
+/* Styling for each navbar item */
+.nav-item {
+  padding: 0.5rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-item a:hover {
+  color: #00c3ff; /* Light blue color on hover */
+}
+
+/* Highlight the active/current page link */
+.nav-item a.active {
+  color:#00c3ff; /* Highlight for the active page */
+  font-weight: bold;
+}
+
+/* Sign-up and login buttons */
+.nav-item a[href="signup.html"],
+.nav-item a[href="login.html"] {
+  background-color:#00c3ff ;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item a[href="signup.html"]:hover,
+.nav-item a[href="login.html"]:hover {
+  background-color: #00c3ff; /* Change on hover */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  ul.nav-tabs {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+}
+
+                </style>
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
