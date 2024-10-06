@@ -90,16 +90,27 @@
     margin-bottom: 20px;
 }
 
-.footer .share a {
-    margin: 0 10px;
-    font-size: 1.8rem;
-    color: #ffffff;
-    transition: color 0.3s ease, transform 0.3s ease;
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height:2.5rem;
+  background-color: transparent;
+  border: 0.2rem solid #9dff00;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #b9c668;
+  text-decoration: none;
 }
 
-.footer .share a:hover {
-    color: #f39c12;
-    transform: scale(1.1);
+.social-icons a:hover {
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #adcc66;
+  box-shadow: 0 0 25px #c8ff13;
 }
 
 .footer .credit {
@@ -370,12 +381,12 @@
 
     <section class="footer" id="footer">
 
-        <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon-->
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fa-brands fa-linkedin-in"></a>
-        <a href="#" class="fa-brands fa-pinterest"></a>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
         </div>
 
         <div class="credit" style="font-size: 0.6rem;">
