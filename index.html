@@ -7,46 +7,93 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
+    <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            z-index: 1000; /* Ensure it appears above other elements */
+        }
+
+        .chatbot-button {
+            background-color: #007bff; /* Change to your preferred color */
+            border: none;
+            border-radius: 50%;
+            padding: 5px; /* Smaller padding */
+            cursor: pointer;
+            position: relative;
+            width: 50px; /* Adjusted size */
+            height: 50px; /* Adjusted size */
+        }
+
+        .chatbot-button img {
+            width: 30px; /* Adjusted image size */
+            height: 30px; /* Adjusted image size */
+        }
+
+        .tooltip-text {
+            display: none; /* Hide by default */
+            position: absolute;
+            bottom: 100%; /* Position above the button */
+            right: 50%;
+            transform: translateX(50%);
+            background-color: #333; /* Background color for tooltip */
+            color: #fff; /* Tooltip text color */
+            padding: 5px;
+            border-radius: 5px;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        .chatbot-button:hover .tooltip-text {
+            display: block; /* Show on hover */
+        }
         body {
-            background-color: #eef1f5;
+            overflow-x: hidden;
+            background-color: #ffffff;
             font-family: 'Arial', sans-serif;
         }
         .container {
-            max-width: 1200px;
+            max-width: 100vw;
             margin: 0 auto;
-            color: black;
+            color: rgb(0, 0, 0);
         }
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: none ;
         }
         .canvas-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: #ffffff;
+            background: #000000;
+            color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
         }
         #mainCanvas {
             max-width: 100%;
-            height: 400px; /* Set a fixed height */
-            border: 2px solid #007bff;
+            height: 40px; /* Set a fixed height */
+            border: 2px solid #000000;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Default background color */
+
+          
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+            background-color: #ffffff; /* Default background color */
+            cursor: crosshair;
+
+
         }
         .btn {
             margin: 5px;
             transition: background-color 0.3s, transform 0.2s;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #3abe57;
             color: white;
             transform: scale(1.05);
         }
@@ -60,21 +107,116 @@
         .form-control {
             border-radius: 5px;
         }
+        .edit{
+            display: flex;
+        }
+        .toolbar-item{
+            padding: 10px;
+        }
+        /* Footer Styling */
+.footer {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer .share {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height:2.5rem;
+  background-color: transparent;
+  border: 0.2rem solid #9dff00;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #b9c668;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #adcc66;
+  box-shadow: 0 0 25px #c8ff13;
+}
+
+.footer .credit {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.footer .credit span {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.footer .credit p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.footer .credit span:hover {
+    color: #f1c40f;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer .share a {
+        font-size: 1.5rem;
+    }
+
+    .footer .credit {
+        font-size: 0.8rem;
+    }
+}
+
+   
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 24px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            /* Stays on top of all elements */
+        }
     </style>
 </head>
 <body>
+
     <div class="container pt-2">
         <div class="header">
-            <h1 class="display-4">Creative Canvas Tool</h1>
+            <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
-        <div class="row">
+       <div class="row">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="about-us.html">About Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Review</a>
@@ -83,8 +225,16 @@
                   <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
+
                     <a class="nav-link" href="./Faq.html">FAQ</a>
                   </li>
+
+                    <a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+
+                </li>
+
             </ul>
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
@@ -93,17 +243,102 @@
         </div>
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
-            <div class="p-3 bg-light rounded shadow">
+            <!-- <div class="p-3 bg-light rounded shadow">
                 <form id="userForm" class="d-flex flex-column">
                     <div class="d-flex gap-3 mb-2">
-                        <label for="textSize" class="text-dark">Size:</label>
+                        <label for="textSize" class="text-white">Size:</label>
                         <select name="tSize" class="form-select" id="textSize">
                             <option value="20">20</option>
                             <option value="30">30</option>
                             <option value="40">40</option>
                         </select>
-                        <label for="colorPicker" class="text-dark">Color:</label>
+                        <label for="colorPicker" class="text-white">Color:</label>
                         <input type="color" name="colorPicker" class="form-control" id="colorPicker">
+                    </div>
+                    <div class="d-flex row gap-3">
+                        <div class="col-sm-6">
+                            <label for="bgImageUpload" class="text-white">Background Image:</label>
+                            <input type="file" id="bgImageUpload" accept="image/*">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="bgColorPicker" class="text-white">Background Color:</label>
+                            <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
+                        </div>
+                    </div>
+                    <div class="position-relative">
+                        <button type="button" class="btn btn-primary w-25 mt-5 btn-font" id="fontBtn">Fonts</button>
+                        <div class="position-absolute" style="width: 200px; height: 200px; top: -90px; left: -80px; display: none;" id="fontOptions">
+                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(80px, 0); left: -40px;" id="uppercase">A</button>
+                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(0, 80px); left:-35px;" id="lowercase">a</button>
+                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(80px, 160px); left:-15px;" id="bold">B</button>
+                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(160px, 80px); left: -5px; top:10px" id="italic">I</button>
+                        </div>
+                    </div>
+                    
+
+                    <p >Shape Pallete</p> -->
+
+                    
+
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- <header class="header">
+        <nav class="navbar">
+            <div class="title">
+                <h1 class="site-name">Canvas Editor</h1>
+                <i class="fa-solid fa-paintbrush"></i>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="#blogs">Blogs</a>
+                <a href="index.html#mainCanvas">Draw</a>
+            </div>
+        </nav>
+    </header>
+    <div class="row text-center p-5" style="background-color: rgb(0, 0, 0);">
+        <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
+        <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+    </div> -->
+    <div class="canvas-container">
+        <!-- <canvas id="mainCanvas"></canvas> -->
+
+
+        
+            <div class="canvas-palette">
+                <form id="userForm" class="d-flex flex-column">
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textSize" class="text-dark">Size:</label>
+                        <select name="tSize" class="form-select" id="textSize">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                        </select>
+                        <label for="colorPicker" class="text-dark">Color:</label>
+                        <input type="color" name="colorPicker" class="form-control" id="colorPicker" value="#000000">
                     </div>
                     <div class="d-flex row gap-3">
                         <div class="col-sm-6">
@@ -115,91 +350,595 @@
                             <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
                         </div>
                     </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="brushSize" class="text-dark">Brush Size:</label>
+                        <input type="range" id="brushSize" min="1" max="20" value="5" class="form-range">
+                    </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="fontFamily" class="text-dark">Font:</label>
+                        <select name="fontFamily" class="form-select" id="fontFamily">
+                            <option value="Arial">Arial</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textColor" class="text-dark">Text Color:</label>
+                        <input type="color" id="textColor" class="form-control" value="#000000">
+                    </div>
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="textAlign" class="text-dark">Text Align:</label>
+                        <select name="textAlign" class="form-select" id="textAlign">
+                            <option value="left">Left</option>
+                            <option value="center">Center</option>
+                            <option value="right">Right</option>
+                        </select>
+                    </div>
                     <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">A</button>
                         <button class="btn btn-primary" id="small">a</button>
                         <button class="btn btn-primary" id="bold">B</button>
                         <button class="btn btn-primary" id="italic">I</button>
                     </div>
-                    <p class="text-center">Shape Palette</p>
                     <div class="palette">
                         <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
                     </div>
-                    <div class="d-md-flex justify-content-center gap-1">
+                    <div class="d-md-flex justify-content-center gap-2 mb-3">
                         <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
-                        <button type="button" class="btn btn-primary" id="save">Save</button>
+                        <button type="button" class="btn btn-primary" id="addText">Add Text</button>
                         <button type="button" class="btn btn-danger" id="clear">Clear</button>
                         <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                        <button type="button" class="btn btn-warning" id="undo">Undo</button>
+                        <button type="button" class="btn btn-secondary" id="redo">Redo</button>
                     </div>
                 </form>
             </div>
+        <div class="row mt-5 d-flex justify-content-center">
+
+        <div class="canvas-palette">
+            <form id="userForm" class="d-flex flex-column">
+                <div class="d-flex gap-3 mb-2">
+                    <label for="brushSize" class="text-dark">Brush Size:</label>
+                    <select name="brushSize" class="form-select" id="brushSize">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                    </select>
+                    <label for="colorPicker" class="text-dark">Color:</label>
+                    <input type="color" name="colorPicker" class="form-control" id="colorPicker">
+                </div>
+                <div class="d-flex row gap-3 mb-2">
+                    <div class="col-sm-6">
+                        <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                        <input type="file" id="bgImageUpload" accept="image/*">
+
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                        <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
+                    </div>
+                </div>
+                <div class="edit">
+                    <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                    <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
+                    <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
+                </div>
+            </form>
+                <div class="d-md-flex justify-content-evenly gap-1">
+                    <button class="btn btn-primary" id="capital">Uppercase</button>
+                    <button class="btn btn-primary" id="small">Lowercase</button>
+                    <button class="btn btn-primary" id="bold">Bold</button>
+                    <button class="btn btn-primary" id="italic">Italic</button>
+                </div>
+                <div class="palette">
+                    <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                    <button id="circleBtn" class="btn btn-success">Circle</button>
+                    <button id="lineBtn" class="btn btn-success">Line</button>
+                </div>
+                <div class="d-md-flex justify-content-center gap-2 mb-3">
+                    <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                    <button type="button" class="btn btn-primary" id="save">Save</button>
+                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                </div>
+            </form>
         </div>
+
+        </div>
+        <div class="container mt-5">
+
+            <!-- Contact Us Section -->
+            <section id="contact" class="contact-section text-center py-5">
+                <h2 class="mb-4">Contact Us</h2>
+                <form id="contactForm" class="row g-3 justify-content-center">
+                    <!-- Name Field -->
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                    </div>
+                    <!-- Email Field -->
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                    </div>
+                    <!-- Subject Field -->
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                    </div>
+                    <!-- Message Field -->
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="col-md-8">
+                        <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+          
     </div>
+        
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./src/Scripts/edit.js"></script> -->
+
+    <section class="footer" id="footer">
+
+<div class="social-icons">
+    <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+    <a href="https://x.com/" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon -->
+    <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+    <a href="https://www.linkedin.com/" class="fa-brands fa-linkedin-in"></a>
+    <a href="https://in.pinterest.com/" class="fa-brands fa-pinterest"></a>
+</div>
+
+        </div>
+
+        <div class="credit" style="font-size: 0.6rem;">
+        <p>
+            Created by <a href="https://github.com/vishanurag"> <span>ANURAG VISHWAKARMA</span></a>  | All rights reserved © 2024
+        </p>
+        <br>
+        </div>
+        <a href="chatbot.html">
+            <div class="fixed bottom-0 right-2 chatbot-container">
+                <button class="chatbot-button group">
+                    <img class="h-20" src="chatbot.gif" alt="chatbot">
+                    <span class="tooltip-text">
+                        Welcome to Canvas Editor! <br>
+                        How can I help You? ^_^ 
+                    </span>
+                </button>
+            </div>
+        </a>
+
+    </section>
+
     <script>
-        const canvas = document.getElementById('mainCanvas');
-        const ctx = canvas.getContext('2d');
+        document.addEventListener('DOMContentLoaded', function() {
+        const fontBtn = document.getElementById('fontBtn');
+        const fontOptions = document.getElementById('fontOptions');
+        const options = document.querySelectorAll('.font-option');
+        const radius = 100;  // Increase this value to create more spacing between buttons
+        const startAngle = -30;  // Adjust this for positioning of the arc
+        const offsetX = 300;  // Move the arc further to the right
+        const offsetY = 70;  // Adjust vertical position of the arc
 
-        // Set canvas size
-        canvas.width = 800;
-        canvas.height = 400;
+        fontBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
+            if (fontOptions.style.display === 'block') {
+                const totalOptions = options.length;
+                options.forEach((option, index) => {
+                    const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
+                    const x = Math.cos(angle) * radius + offsetX + 20;
+                    const y = Math.sin(angle) * radius + offsetY + 50;
+                    option.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            } else {
+                options.forEach(option => {
+                    option.style.transform = 'translate(0, 0)';
+                });
+            }
+        });
 
-        let history = [];
-        let redoStack = [];
+        options.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default button action
+                console.log(`${this.id} selected`);
+            });
+        });
+    });
+    
+        const mainCanvas = document.getElementById('mainCanvas');
+        const ctx = mainCanvas.getContext('2d');
+        let drawing = false;
 
+        let brushSize = document.getElementById('brushSize').value;
+        let currentColor = document.getElementById('colorPicker').value;
+        let actions = []; // Store actions for undo/redo
+        let undoneActions = []; // Store undone actions
+        let textSize = document.getElementById('textSize').value;
+        let textColor = document.getElementById('textColor').value;
+        let fontFamily = document.getElementById('fontFamily').value;
+        let textAlign = document.getElementById('textAlign').value;
+
+        // Start drawing on mouse down
+        mainCanvas.addEventListener('mousedown', (e) => {
+
+        let eraserMode = false;
+        let currentColor = '#000000'; // Default color
+
+        // Resize the canvas to fit the container
+        function resizeCanvas() {
+            mainCanvas.width = mainCanvas.offsetWidth;
+            mainCanvas.height = mainCanvas.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Function to get the mouse or touch position
+        function getPosition(event) {
+            const rect = mainCanvas.getBoundingClientRect();
+            const x = (event.clientX || event.touches[0].clientX) - rect.left;
+            const y = (event.clientY || event.touches[0].clientY) - rect.top;
+            return { x, y };
+        }
+
+        // Start drawing or erasing when the mouse or touch is pressed
+        function startDrawing(event) {
+            drawing = true;
+            ctx.beginPath();
+
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        // Draw on the canvas
+        mainCanvas.addEventListener('mousemove', (e) => {
+
+            ctx.moveTo(x, y);
+        }
+
+        // Draw on the canvas or erase as the mouse moves or touch moves
+        function draw(event) {
+
+            if (drawing) {
+                ctx.strokeStyle = currentColor;
+                ctx.lineWidth = brushSize; // Use the brush size
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        });
+
+        // Stop drawing on mouse up
+        mainCanvas.addEventListener('mouseup', () => {
+            drawing = false;
+            ctx.closePath();
+            saveState(); // Save canvas state after drawing
+        });
+
+
+        // Clear the canvas
+        document.getElementById('clear').addEventListener('click', () => {
+            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+            actions = []; // Clear actions
+            undoneActions = []; // Clear undone actions
+        });
+
+        //Event listeners for mouse interactions
+        mainCanvas.addEventListener('mousedown', startDrawing);
+        mainCanvas.addEventListener('mousemove', draw);
+        mainCanvas.addEventListener('mouseup', stopDrawing);
+
+
+        // Update brush size
+        document.getElementById('brushSize').addEventListener('input', (e) => {
+            brushSize = e.target.value; // Update brush size
+        });
+
+        // Update brush color
+        document.getElementById('colorPicker').addEventListener('input', (e) => {
+            currentColor = e.target.value; // Update brush color
+        });
+
+        // Update text size
+        document.getElementById('textSize').addEventListener('input', (e) => {
+            textSize = e.target.value;
+        });
+
+        // Update text color
+        document.getElementById('textColor').addEventListener('input', (e) => {
+            textColor = e.target.value;
+        });
+
+
+        // Update font family
+        document.getElementById('fontFamily').addEventListener('input', (e) => {
+            fontFamily = e.target.value;
+        });
+
+        // Update text alignment
+        document.getElementById('textAlign').addEventListener('input', (e) => {
+            textAlign = e.target.value;
+        });
+
+        // Add text to canvas
+        document.getElementById('addText').addEventListener('click', () => {
+            const textInput = document.getElementById('textData').value;
+            ctx.font = `${textSize}px ${fontFamily}`;
+            ctx.fillStyle = textColor;
+            ctx.textAlign = textAlign;
+            ctx.fillText(textInput, mainCanvas.width / 2, mainCanvas.height / 2); // Center the text
+            saveState(); // Save canvas state after adding text
+            document.getElementById('textData').value = ''; // Clear input
+        });
+
+        // Save canvas to image
+        document.getElementById('download').addEventListener('click', () => {
+
+        // Change the current color when the color picker changes
+        document.getElementById('colorPicker').addEventListener('input', (event) => {
+            currentColor = event.target.value;
+        });
+
+        // Download the canvas as an image
+        document.getElementById('mainCanvas').addEventListener('click', () => {
+
+            const link = document.createElement('a');
+            link.download = 'canvas.png';
+            link.href = mainCanvas.toDataURL();
+            link.click();
+        });
+
+
+        // Background image upload
+        document.getElementById('bgImageUpload').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
+                    saveState(); // Save state after adding background image
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+        });
+
+        // Event listener for background color
+        document.getElementById('bgColorPicker').addEventListener('input', (e) => {
+            mainCanvas.style.backgroundColor = e.target.value; // Change the canvas background color
+        });
+
+        // Undo functionality
+        document.getElementById('undo').addEventListener('click', () => {
+            if (actions.length > 0) {
+                const lastAction = actions.pop();
+                undoneActions.push(lastAction); // Store the undone action
+                restoreState(lastAction); // Restore to the last action
+            }
+        });
+
+        // Redo functionality
+        document.getElementById('redo').addEventListener('click', () => {
+            if (undoneActions.length > 0) {
+                const actionToRedo = undoneActions.pop();
+                actions.push(actionToRedo); // Restore the action back to the action stack
+                restoreState(actionToRedo); // Restore the action
+            }
+        });
+
+        // Save the canvas state
         function saveState() {
-            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
-            redoStack = []; // Clear redo stack on new action
-            if (history.length > 10) history.shift(); // Limit history size
+            actions.push(mainCanvas.toDataURL());
+            undoneActions = []; // Clear redo actions on new action
         }
 
-        function setCanvasBackgroundColor(color) {
-            ctx.fillStyle = color;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Restore canvas state
+        function restoreState(dataURL) {
+            const img = new Image();
+            img.onload = function() {
+                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+                ctx.drawImage(img, 0, 0);
+            }
+            img.src = dataURL;
         }
 
-        // Set initial background color
-        const initialBgColor = document.getElementById('bgColorPicker').value;
-        setCanvasBackgroundColor(initialBgColor);
+        // Prevent form submission
+        document.getElementById('userForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+        mainCanvas.addEventListener('mousedown', (e) => {
+    drawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+    console.log(`Mouse down at: ${e.offsetX}, ${e.offsetY}`);
+});
+
+mainCanvas.addEventListener('mousemove', (e) => {
+    if (drawing) {
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = brushSize; 
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        console.log(`Drawing at: ${e.offsetX}, ${e.offsetY}`);
+    }
+});
+
+mainCanvas.addEventListener('mouseup', () => {
+    drawing = false;
+    ctx.closePath();
+    console.log('Mouse up');
+});
+
+    
+
+
+        let brushColor = '#000000';
+        let brushSize = 5;
+
+        // Set initial canvas dimensions
+        function setCanvasDimensions() {
+            mainCanvas.width = window.innerWidth - 40; // Adjust width
+            mainCanvas.height = 400; // Keep height fixed
+        }
+        setCanvasDimensions();
+
+        // Brush size change
+        document.getElementById('brushSize').addEventListener('change', function() {
+            brushSize = this.value;
+        });
+
+        // Color picker change
+        document.getElementById('colorPicker').addEventListener('change', function() {
+            brushColor = this.value;
+        });
 
         // Background color change
-        document.getElementById('bgColorPicker').addEventListener('input', function() {
-            const color = this.value;
-            setCanvasBackgroundColor(color);
+        document.getElementById('bgColorPicker').addEventListener('change', function() {
+            mainCanvas.style.backgroundColor = this.value;
+        });
+        // Function to set up the canvas background image
+     function setBackgroundImage(file) {
+                 const reader = new FileReader();
+                 reader.onload = function (e) {
+                 const img = new Image();
+                 img.onload = function () {
+                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                 };
+                     img.src = e.target.result;
+                 };
+                 reader.readAsDataURL(file);
+                 }
+
+                    // Drag and Drop Event Listeners for the Canvas
+    canvas.addEventListener('dragover', (event) => {
+              event.preventDefault(); 
+              canvas.style.border = '2px dashed #000';
+            });
+
+    canvas.addEventListener('dragleave', () => {
+               canvas.style.border = '1px solid #000'; 
         });
 
-        // Add text functionality
-        document.getElementById('addText').addEventListener('click', function() {
-            const textData = document.getElementById('textData').value;
-            const textSize = document.getElementById('textSize').value;
-            const textColor = document.getElementById('colorPicker').value;
+      canvas.addEventListener('drop', (event) => {
+                  event.preventDefault(); 
+                  canvas.style.border = '1px solid #000';
+                  const file = event.dataTransfer.files[0];
+                  if (file && file.type.startsWith('image/')) {
+                          setBackgroundImage(file); 
+                        } else {
+                            alert('Please drop a valid image file.');
+                        }
+                    });
+        
 
-            if (textData) {
-                saveState(); // Save state before adding text
-                ctx.fillStyle = textColor;
-                ctx.font = `${textSize}px Arial`;
-                ctx.fillText(textData, 50, 50); // Set text position
-                document.getElementById('textData').value = ''; // Clear input field
-            } else {
-                alert('Please enter some text!');
-            }
+        // Background image upload
+        document.getElementById('bgImageUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
         });
 
-        // Upload image functionality
-        document.getElementById('uploadImage').addEventListener('click', function() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = e => {
-                const file = e.target.files[0];
-                const reader = new File;
-            }
-});
-</script>
+
+        // Clear canvas button
+        document.getElementById('clearCanvasBtn').addEventListener('click', () => {
+            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+            mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
+        });
+
+        // Eraser button
+        document.getElementById('eraserBtn').addEventListener('click', () => {
+            brushColor = '#ffffff'; // Set brush color to white
+        });
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', setCanvasDimensions);
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+    
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+    
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+    
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+    
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+    
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+    
+                circle.x = x;
+                circle.y = y;
+    
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+    
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+    
+        // Start the animation
+
+
+        animateCircles();
+
+
+    </script>
+        
 </body>
-
 </html>
+
+

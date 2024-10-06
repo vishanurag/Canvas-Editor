@@ -2,63 +2,159 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   transition: all 0.1s linear;
 }
 
 body {
-   height: 100vh !important;
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   width: 100vw;
-    height: 100vh !important;
+  height: 100vh !important;
+  background: black;
+  width: 100vw;
 }
+
+
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Canvas Styles */
 
 /* Main canvas styles */
-#mainCanvas {
-   width: 70% !important;
-  height: auto;
-  border: 1px solid gray;
-  background: #e0eafc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #cfdef3,
-    #e0eafc
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #cfdef3,
-    #e0eafc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+#mainCanvas {
+  width: 60% !important;
+  height: auto;
+  max-height: 500px;
+  margin: 68px;
+  border: 1px solid gray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  width: 60% !important;
-    height: auto;
-    border: 1px solid gray;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-
 }
 
-/* Custom height class */
-.h-80 {
-  height: 80vh !important;
-  background: #F0F2F0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #000C40, #151615);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+/* Control Panel (Form) Styles */
+#userForm {
+  margin-top: 5px;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin-left: 20px;
+  max-height: 90%;
 }
+
+/* Flexbox for control panel alignment */
+.d-md-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Shape Palette */
+.palette {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.palette button {
+  padding: 5px;
+}
+
+#rectangleBtn, #circleBtn, #lineBtn {
+  width: 100px;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Button Styles */
+.mt-2.mb-5 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+   width: 70% !important;
+  width: 70% !important;
+  height: auto;
+  border: 1px solid gray;
+  background-color: #ced4da;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+.title {
+  display: flex;
+  align-items: left;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: center;
+}
+
+/* General Navbar Styling */
+.navbar {
+  background-color: #333; /* Dark background */
+  padding: 10px 10px; /* Space around the links */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Spacing between links */
+  border-bottom: none;
+}
+
+/* Styling individual links in the navbar */
+.navbar a {
+  color: white; /* Link color */
+  font-size: 1.2rem; /* Font size */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; /* Add padding around the text */
+  border-radius: 0.5rem; /* Rounded corners for hover effect */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+/* Hover effect for navbar links */
+.navbar a:hover {
+  background-color: #474747; /* Background color on hover */
+  color: #fff; /* White text on hover */
+
+  /* width: 60% !important; */
+  height: auto;
+  border: 1px solid gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+
+
 
 /* Full width for form controls */
 .fullWidth {
@@ -67,16 +163,64 @@ background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, F
 
 /* Style for input field */
 #textData {
+  height: 45px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 2px solid #ced4da;
+  border-radius: 30px;
+  margin-right: 15px; 
+}
+
+.canvas-palette {
+  border: 2px solid #a5a5a5; /* Adding a border for definition */
+  border-radius: 10px; /* Rounded corners */
+  background: #ffffff; /* White background for clarity */
+  padding: 20px; /* Padding around content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 20px; /* Space above the palette */
+}
+
+.canvas-palette label {
+  font-weight: bold; /* Bold labels for emphasis */
+}
+
+.canvas-palette .form-select,
+.canvas-palette .form-control {
+  border: 1px solid #ccc; /* Soft border for inputs */
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 5px; /* Padding inside inputs */
+  transition: border-color 0.3s; /* Smooth transition on focus */
+}
+
+.canvas-palette .form-select:focus,
+.canvas-palette .form-control:focus {
+  border-color: #0056b3; /* Highlight border color on focus */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Soft glow effect */
   padding: 10px;
   border: 1px solid #ced4da;
   border-radius: 5px;
   font-size: 1rem;
-   padding: 10px;              
-    border: 1px solid #ced4da; 
-    border-radius: 5px;        
-    font-size: 1rem;  
 }
 
+.canvas-palette .btn {
+  border-radius: 5px; /* Rounded button corners */
+  padding: 10px 15px; /* Ample padding for buttons */
+  font-weight: bold; /* Bold text for buttons */
+}
+
+.canvas-palette .btn:hover {
+  transform: translateY(-2px); /* Subtle lift on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.palette {
+  margin-top: 15px; /* Space above shape buttons */
+}
+
+.palette .btn {
+  margin: 5px; /* Space between shape buttons */
+}
+  
 /* Style for the Save button */
 .btn-primary {
   padding: 10px 20px;
@@ -97,7 +241,53 @@ background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, F
   gap: 1rem;
 }
 
-/* Button styling with new colors */
+button {
+  margin: 5px;
+}
+
+.btn {
+  margin: 10px 15px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+/* Input Field Styles */
+input[type="text"], #textData input {
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 10px;
+  height: 45px;
+  width: 10%;
+}
+
+/* .d-flex select{
+
+} */
+
+
+
+/* input#textData {
+  margin-right: 15px;
+  height: 45px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid #ced4da;
+  width: 20%;
+} */
+
+/* Group related inputs */
+.input-group {
+  margin-bottom: 10px;
+}
+
+/* Elegant Button */
 .boton-elegante {
   padding: 10px 10px;
   border: 2px solid #2c2c2c;
@@ -110,21 +300,24 @@ background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, F
   position: relative;
   overflow: hidden;
   font-weight: bold;
+
   margin-left: 15px;
-  width: 110px; /* Increased button width slightly */
+  width: 110px;
   text-align: center;
+
 }
 
 .boton-elegante#Save {
-  background-color: #15B392; /* Green color for Save button */
+  background-color: #15B392;
+  background-color: #15b392; /* Green color for Save button */
 }
 
 .boton-elegante#clear {
-  background-color: #dc3545; /* Red color for Clear button */
+  background-color: #dc3545;
 }
 
 .boton-elegante#download {
-  background-color: #007bff; /* Blue color for Download button */
+  background-color: #007bff;
 }
 
 .boton-elegante::after {
@@ -134,11 +327,7 @@ background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, F
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
+  background: radial-gradient(circle, rgba(15, 245, 107, 0.886) 0%, rgba(255, 255, 255, 0) 70%);
   transform: scale(0);
   transition: transform 0.5s ease;
 }
@@ -152,63 +341,190 @@ background: linear-gradient(to right, #000C40, #374137); /* W3C, IE 10+/ Edge, F
   background: #292929;
 }
 
-/* Input styling improvements */
-input#textData {
-  margin-right: 15px;
-  height: 45px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 30px;
-  border: 2px solid #ccc;
+/* Hover Tooltips for Formatting Buttons */
+button#bold:hover::after, button#italic:hover::after, button#capital:hover::after, button#small:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  transform: translateY(-30px);
+  white-space: nowrap;
+  z-index: 10;
 }
 
-/* Specific hover tooltips for Uppercase, Lowercase, Bold, and Italic buttons */
-button#bold:hover::after {
-    content: 'Bold';
+button#save:hover::after, button#clear:hover::after, button#download:hover::after {
+  content: none;
 }
 
-button#italic:hover::after {
-    content: 'Italic';
-}
-
-button#capital:hover::after {
-    content: 'Uppercase';
-}
-
-button#small:hover::after {
-    content: 'Lowercase';
-}
+ 
 
 /* Add a specific class to avoid applying to other buttons */
 button#bold:hover::after,
 button#italic:hover::after,
 button#capital:hover::after,
 button#small:hover::after {
-    position: absolute;
-    background-color: #000;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    transform: translateY(-30px);
-    white-space: nowrap;
-    z-index: 10;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  transform: translateY(-30px);
+  white-space: nowrap;
+  z-index: 10;
 }
 
 /* Avoid applying to other buttons like Save, Clear, and Download */
 button#save:hover::after,
 button#clear:hover::after,
 button#download:hover::after {
-    content: none;
+  content: none;
 }
 
-/* Shape palette */
-.palette {
-  margin-left: 30px;
-  color: rgb(255, 255, 255);
+/* Custom Height */
+.h-80 {
+  height: 80vh !important;
 }
 
-.palette button {
-  padding: 5px;
+/* Flex Container Adjustments */
+.d-flex {
+  display: flex;
+  gap: 1rem;
 }
 
+
+/* Center Alignment */
+.d-md-flex.justify-content-center {
+  margin-top: 15px;
+}
+
+.footer{
+	background: black;
+	text-align: center;
+}
+.footer .share{
+	padding: 1rem 0;
+}
+
+.footer .icon-class {
+    border: none;
+    background: none;
+}
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height:2.5rem;
+  background-color: transparent;
+  border: 0.2rem solid #9dff00;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #b9c668;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #adcc66;
+  box-shadow: 0 0 25px #c8ff13;
+}
+
+.footer .links{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 10px 0;
+	gap:10px;
+}
+
+.footer .links a{
+	padding: .7rem 2rem;
+	color:#fff;
+	border: 0.1rem solid rgba(255, 255, 255, 0.3);
+	font-size:2rem;
+}
+
+.footer .links a:hover{
+	background-color:#837667;
+}
+
+footer .credit{
+	font-size: 2rem;
+	font-weight: lighter;
+	padding: 1.5rem;
+}
+
+.footer .credit p{
+	color:#f5f5f1;
+}
+.footer .credit span{
+	color: #ffcc92;
+}
+
+@media (max-width: 768px) {
+  #mainCanvas {
+      width: 90%;
+  }
+  
+/* Contact Us Section */
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+  max-width: 650px;
+  border-radius: 15px;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-section form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section label {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-section button {
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-section button:hover {
+  background-color: #555;
+}
+
+
+}

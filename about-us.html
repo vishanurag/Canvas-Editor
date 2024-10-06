@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/Styles/Style.css">
+    <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
+    <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .about-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .team-member {
+            margin-bottom: 30px;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .about-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .mission-icon, .story-icon {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="title">
+                <h1 class="site-name">Canvas Editor</h1>
+                <i class="fa-solid fa-paintbrush"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About</a>
+                <a href="#blogs">Blogs</a>
+                <a href="index.html#mainCanvas">Draw</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h2 class="text-center mb-5">About Creative Canvas Tool</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <img src="resources/painting_image.jpg" alt="Creative Canvas Tool in action" class="about-image">
+                </div>
+                <div class="col-md-6" style="text-align: justify;">
+                    <p>
+                        Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
+                    </p>
+                        
+                    <p>
+                        Our Tool not only offers powerful creation tools but also fosters a vibrant community for artists to share their work, seek feedback, and collaborate. Engage in challenges and participate in workshops to enhance your skills. With regular updates and new features, our platform continually evolves to meet the needs of both budding talents and seasoned professionals.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <i class="fas fa-bullseye mission-icon"></i>
+                    <h3>Our Mission</h3>
+                    <p>To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <i class="fas fa-book-open story-icon"></i>
+                    <h3>Our Story</h3>
+                    <p>Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Our Team</h3>
+                </div>
+                <div class="col-md-4 text-center team-member">
+                    <h4 class="mt-3">Anurag</h4>
+                    <p>Founder & Lead Developer</p>
+                </div>
+                <div class="col-md-4 text-center team-member">
+                    <h4 class="mt-3">John Smith</h4>
+                    <p>Creative Director</p>
+                </div>
+                <div class="col-md-4 text-center team-member">
+                    <h4 class="mt-3">Emily Chen</h4>
+                    <p>UX Designer</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h3>Join Our Community</h3>
+                    <p>Be part of our growing community of artists. Share your creations, get inspired, and connect with fellow creatives from around the world.</p>
+                    <a href="#" class="btn btn-primary mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer" id="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+        <div class="credit" style="font-size: 1rem; text-align: center;">
+            <p style="color: white;">
+                Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
+            </p>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./src/Scripts/edit.js"></script>
+</body>
+</html>
