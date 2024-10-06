@@ -1,0 +1,209 @@
+ /* .footer {
+
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer .share {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.footer .share a {
+    margin: 0 10px;
+    font-size: 1.8rem;
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .share a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+.footer .credit {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+.footer .credit span {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.footer .credit p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.footer .credit span:hover {
+    color: #f1c40f;
+} 
+
+/* Responsive design */
+/* @media (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer .share a {
+        font-size: 1.5rem;
+    }
+
+    .footer .credit {
+        font-size: 0.8rem;
+    }
+}   */
+
+
+.footer {
+
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer .share {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.footer .share a {
+    margin-top: 100px;
+    margin: 0 10px;
+    font-size: 2rem;
+    color: #3498db; /* Blue color for icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .share a:hover {
+    color: #1f1ce8; /* Darker blue on hover */
+    font-size: 2.2rem;
+    transform: scale(1.2);
+     box-shadow: 0 0 10px #0d80cc; 
+}
+
+.footer .credit {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.footer .credit span {
+    color: #3498db; /* Blue for highlighted text */
+     font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-left: 5px; 
+} 
+ 
+ .footer .credit span:hover {
+    color: #1397f0;
+    transform: scale(1.05);
+    border-radius: 3px;
+}
+
+.footer .credit p {
+    margin-top: 20px;
+    font-size: 0.85rem;
+}  
+
+.footer .newsletter {
+    margin-bottom: 20px;
+}
+
+.footer .newsletter input[type="email"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-right: 10px;
+    width: 250px;
+}
+
+.footer .newsletter button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer .newsletter button:hover {
+    background-color: #1b39fa;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer .share a {
+        font-size: 1.5rem;
+    }
+
+    .footer .credit {
+        font-size: 0.8rem;
+    }
+
+    .footer .newsletter input[type="email"] {
+        width: 200px;
+    }
+}
+
+
+
+
+
+.contact_input{
+    width: 500px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    padding-left: 25px;
+    border-radius: 40px;
+    }
+    .left textarea{
+        height: 150px;
+        padding-top: 20px;
+        font-size: large;
+        border-radius: 20px;
+    }
+    .contact_input:focus{
+        border: 2px solid #5a189a;
+    }
+    button{
+        display: flex;
+        align-items: center;
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1f2421;
+        border: none;
+        border-radius: 20px;
+        background:linear-gradient(270deg,rgb(60, 128, 188) , rgb(171, 61, 162));
+        cursor: pointer;
+        margin-left: 10px;
+        transition: 1s all ease;
+        transition-duration: 0.8s;
+    }
+    button:hover{
+        color: black;
+        background:linear-gradient(270deg,rgb(3, 132, 245) , rgb(218, 22, 202));
+         font-size: 21px; 
+        
+    }
+    
+    .right{
+        margin-top: -30px;
+    }

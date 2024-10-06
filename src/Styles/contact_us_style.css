@@ -1,4 +1,4 @@
-.form-control {
+ .form-control {
     padding: 0.75rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -6,8 +6,8 @@
     border-radius: 0.25rem;
     box-shadow: none;
   }
-  
-  input[type="text"], input[type="email"], textarea {
+   
+   input[type="text"], input[type="email"], textarea {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -16,20 +16,22 @@
     padding: 0.75rem 1rem;
     font-size: 1rem;
     border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    background-color: #fff;
+    border-radius: 5px;
+    background-color: #8cc0f8;
     color: #495057;
-  }
+  } 
+  
   
   /* Ensure form-floating labels look good across all inputs */
-  .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
+   .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
     height: calc(3.5rem + 2px);
     padding: 1rem 0.75rem;
   }
-  
+   
   /* Remove box shadow on focus to prevent inconsistencies */
-  .form-control:focus {
-    border-color: #80bdff;
+  /* .form-control:focus {
+    border-color: #0d72de;
+    border-radius: 5px;
     outline: none;
     box-shadow: none;
-  }
+  } */
