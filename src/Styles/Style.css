@@ -7,11 +7,11 @@
 }
 
 body {
+  cursor: url('../../assets/custom-cursor.png'), auto;
   height: 100vh !important;
   background: black;
   width: 100vw;
 }
-
 
 
 /* Main Container */
