@@ -1,183 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Canvas Tool</title> 
+    <title>Creative Canvas Tool</title>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
     <style>
+        /* Global Styles */
         body {
-            background-color: #eef1f5;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f3f4f6;
+            line-height: 1.7;
         }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            color: black;
+            margin: auto;
+            padding: 40px 20px;
         }
-        .header {
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
             text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #f1f1f1;
+            margin-top: 10px;
+        }
+
+        /* Section Styles */
+        .about-section {
+            background-color: #fff;
+            padding: 60px;
+            margin-top: -50px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .about-section h1 span {
+            color: #007bff;
+            background: linear-gradient(to right, #007bff, #00e1ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Feature Cards */
+        .feature-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: #f9fafb;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 30%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            color: #007bff;
             margin-bottom: 20px;
         }
-        .canvas-container {
+
+        .feature-card p {
+            color: #555;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: #fff;
+            padding: 60px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .why-choose-us h2 {
+            margin-bottom: 40px;
+            color: #007bff;
+        }
+
+        .why-choose-us .features-list {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            justify-content: space-around;
         }
-        #mainCanvas {
-            max-width: 100%;
-            height: 400px; /* Set a fixed height */
-            border: 2px solid #007bff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            background-color-color: #f0f0f0; /* Default background color */
+
+        .features-list .feature {
+            text-align: center;
+            margin: 0 20px;
+            max-width: 300px;
         }
-        .btn {
-            margin: 5px;
-            transition: background-color 0.3s, transform 0.2s;
+
+        .features-list .feature h4 {
+            margin-top: 20px;
+            font-size: 1.4rem;
         }
-        .btn:hover {
-            background-color: #0056b3;
-            color: white;
-            transform: scale(1.05);
+
+        .features-list .feature i {
+            font-size: 3rem;
+            color: #007bff;
         }
-        .btn:active {
-            transform: scale(0.95);
-        }
-        .palette {
-            margin: 15px 0;
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f7f9fa;
+            padding: 60px;
             text-align: center;
         }
-        .form-control {
-            border-radius: 5px;
+
+        .testimonials h2 {
+            color: #007bff;
+            margin-bottom: 40px;
+        }
+
+        .testimonials .testimonial {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonials .testimonial p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .testimonials .testimonial h4 {
+            color: #007bff;
+            margin-top: 10px;
+        }
+
+        /* Call to Action */
+        .call-to-action {
+            background-color: #007bff;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .call-to-action h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action .btn {
+            background-color: #fff;
+            color: #007bff;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .feature-cards, .features-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card, .feature {
+                width: 80%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
-<body >
-<div class="header">
-            <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
-            <p class="lead">Design and create stunning visuals effortlessly!</p>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Creative Canvas Tool</h1>
+        <p>Unleash your creativity and bring your designs to life with our powerful, user-friendly tools</p>
+    </div>
+
+    <!-- About Section -->
+    <div class="container">
+        <div class="about-section">
+            <h1>About <span>Creative Canvas</span></h1>
+            <p>We are creators helping creators. Our platform is designed with you in mind, whether you're a professional artist or just someone who loves to design. With cutting-edge tools, user-friendly interfaces, and support for all levels of creativity, Creative Canvas allows you to make your visions a reality.</p>
         </div>
-        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Review</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
-                </li>
-            </ul>
-        </div>
-    <!-- About Start -->
-	<div class="container-fluid bg-white">
-	<div class="row">
-	<center><div class="col-sm-12">
-	<p style="font-size:70px;">ABOUT US</p>
-	</div></center>
-	</div>
-	</div>
-	<br><br>
-    <div class="container-fluid py-6 px-5" style="background-color:white;">
-        <div class="row g-5">
-            <div class="col-lg-7">
-                <h1 class="display-5 text-uppercase mb-4">Who We Are: <span class="text-primary">Innovators</span> in Design Tools</h1>
-                <h4 class="text-uppercase mb-3 text-body">Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum tempor sit diam amet diam et eos labore</h4>
-                <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor</p>
-                <div class="row gx-5 py-2">
-                    <div class="col-sm-6 mb-2">
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Perfect Planning</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Professional Workers</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>First Working Process</p>
-                    </div>
-                    <div class="col-sm-6 mb-2">
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Perfect Planning</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>Professional Workers</p>
-                        <p class="fw-bold mb-2"><i class="fa fa-check text-primary me-3"></i>First Working Process</p>
-                    </div>
-                </div>
-                <p class="mb-4">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos labore</p>
-                
+    </div>
+
+    <!-- Feature Section -->
+    <div class="container">
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h3><i class="fa fa-paint-brush"></i> Powerful Tools</h3>
+                <p>Our tools are designed to give you the ultimate creative freedom with ease of use and powerful features.</p>
             </div>
-            <div class="col-lg-5 pb-5" style="min-height: 400px;">
-                <div class="position-relative bg-dark-radial h-100 ms-5">
-                    <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="img.jpg" style="object-fit: cover;">
-                </div>
+            <div class="feature-card">
+                <h3><i class="fa fa-user"></i> User-Friendly</h3>
+                <p>No matter your skill level, our platform is accessible and easy to use for everyone.</p>
+            </div>
+            <div class="feature-card">
+                <h3><i class="fa fa-sync"></i> Continuous Updates</h3>
+                <p>We constantly improve and add new features to ensure that our platform is always up to date.</p>
             </div>
         </div>
     </div>
-    <!-- About End -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script>
-        const canvas = document.getElementById('mainCanvas');
-        const ctx = canvas.getContext('2d');
 
-        // Set canvas size
-        canvas.width = 800;
-        canvas.height = 400;
+    <!-- Why Choose Us Section -->
+    <div class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="features-list">
+            <div class="feature">
+                <i class="fa fa-tachometer-alt"></i>
+                <h4>Fast & Responsive</h4>
+                <p>Enjoy a fast and responsive interface that works seamlessly across all devices.</p>
+            </div>
+            <div class="feature">
+                <i class="fa fa-lock"></i>
+                <h4>Secure & Reliable</h4>
+                <p>We prioritize your security, ensuring that your work is safe and always accessible.</p>
+            </div>
+            <div class="feature">
+                <i class="fa fa-heart"></i>
+                <h4>Designed with Love</h4>
+                <p>Every feature of our tool is crafted with love to provide the best user experience.</p>
+            </div>
+        </div>
+    </div>
 
-        let history = [];
-        let redoStack = [];
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <p>"Creative Canvas has transformed the way I work. The tools are intuitive, and the platform is incredibly responsive."</p>
+            <h4>- John Doe, Professional Designer</h4>
+        </div>
+        <div class="testimonial">
+            <p>"I've never seen a platform that combines so much functionality with ease of use. Creative Canvas is my go-to tool for all my design projects."</p>
+            <h4>- Sarah Lee, Freelance Artist</h4>
+        </div>
+    </div>
 
-        function saveState() {
-            history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
-            redoStack = []; // Clear redo stack on new action
-            if (history.length > 10) history.shift(); // Limit history size
-        }
+    <!-- Call to Action Section -->
+    <div class="call-to-action">
+        <h2>Ready to Start Creating?</h2>
+        <p>Sign up today and unlock the full potential of Creative Canvas.</p>
+        <a href="/Canvas-Editor/index.html" class="btn">Get Started Now</a>
+    </div>
 
-        function setCanvasBackgroundColor(color) {
-            ctx.fillStyle = color;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Creative Canvas Tool. All Rights Reserved.</p>
+    </div>
 
-        // Set initial background color
-        const initialBgColor = document.getElementById('bgColorPicker').value;
-        setCanvasBackgroundColor(initialBgColor);
+    <!-- Bootstrap JS and FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 
-        // Background color change
-        document.getElementById('bgColorPicker').addEventListener('input', function() {
-            const color = this.value;
-            setCanvasBackgroundColor(color);
-        });
-
-        // Add text functionality
-        document.getElementById('addText').addEventListener('click', function() {
-            const textData = document.getElementById('textData').value;
-            const textSize = document.getElementById('textSize').value;
-            const textColor = document.getElementById('colorPicker').value;
-
-            if (textData) {
-                saveState(); // Save state before adding text
-                ctx.fillStyle = textColor;
-                ctx.font = `${textSize}px Arial`;
-                ctx.fillText(textData, 50, 50); // Set text position
-                document.getElementById('textData').value = ''; // Clear input field
-            } else {
-                alert('Please enter some text!');
-            }
-        });
-
-        // Upload image functionality
-        document.getElementById('uploadImage').addEventListener('click', function() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = e => {
-                const file = e.target.files[0];
-                const reader = new File
+</html>
