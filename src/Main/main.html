@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Canvas Drawing Tool</title>
+    <script src="/Canvas-Editor/src/Scripts/main.js" defer></script>
+    <link rel="stylesheet" href="/Canvas-Editor/src/Styles/style.css" />
+  </head>
+  <body>
+    <div class="paint-container">
+      <div class="paint-toolbar">
+        <button id="pencil-tool" class="active"></button>
+        <button id="eraser-tool"></button>
+        <button id="line-tool"></button>
+        <button id="rectangle-tool"></button>
+        <button id="circle-tool"></button>
+        <button id="triangle-tool"></button>
+        <button id="star-tool"></button>
+        <input type="color" id="color-picker" value="#000000" />
+        <input type="range" id="line-width" min="1" max="50" value="5" />
+        <button id="fill-tool"></button>
+        <button id="clear-canvas"></button>
+        <button id="save-image"></button>
+        <label for="">
+          <img src="/Canvas-Editor/src/icons/folder-svgrepo-com.svg" alt="" />
+          <input type="file" id="image-upload" accept="image/*" />
+        </label>
+      </div>
+      <div class="zoom-controls">
+        <button class="zoom-in">+</button>
+        <button class="zoom-out">-</button>
+      </div>
+      <button class="login-button" href="/login.html">Login</button>
+      <div class="paint-canvas-container">
+        <canvas id="paint-canvas"></canvas>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Canvas - Login</title>
+    <link rel="stylesheet" href="/Canvas-Editor/src/Styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Creative Canvas</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up</a>
+        </div>
+        <div class="error-message" id="error-message">Invalid credentials. Please try again.</div>
+        <div class="success-message" id="success-message">Login successful! Redirecting...</div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
+
+            // Example hardcoded credentials for demonstration
+            const validUsername = "user";
+            const validPassword = "password";
+
+            if (username === validUsername && password === validPassword) {
+                // Hide error, show success
+                errorMessage.style.display = 'none';
+                successMessage.style.display = 'block';
+
+                // Simulate redirect after login
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 2000);
+            } else {
+                // Hide success, show error
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
