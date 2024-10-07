@@ -8,7 +8,7 @@
 
 body {
   height: 100vh !important;
-  background: black;
+  background: #495057;
   width: 100vw;
 }
 
@@ -87,7 +87,7 @@ body {
   width: 70% !important;
   height: auto;
   border: 1px solid gray;
-  background-color: #ced4da;
+  /* background-color: #ced4da; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
@@ -100,57 +100,40 @@ body {
 .title {
   display: flex;
   align-items: left;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 1.5rem;
   font-weight: bold;
   justify-content: center;
+  
 }
 
-/* General Navbar Styling */
 .navbar {
-  background-color: #333; /* Dark background */
-  padding: 10px 10px; /* Space around the links */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* Spacing between links */
-  border-bottom: none;
-}
-
-/* Styling individual links in the navbar */
-.navbar a {
-  color: white; /* Link color */
-  font-size: 1.2rem; /* Font size */
-  text-decoration: none; /* Remove underline */
-  padding: 0.5rem 1rem; /* Add padding around the text */
-  border-radius: 0.5rem; /* Rounded corners for hover effect */
-  transition: background-color 0.3s ease; /* Smooth hover transition */
-}
-.nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.nav-links a {
-  color: white;
-  font-size: 1.2rem;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
-}
-/* Hover effect for navbar links */
-.navbar a:hover {
-  background-color: #474747; /* Background color on hover */
-  color: #fff; /* White text on hover */
-
-  /* width: 60% !important; */
-  height: auto;
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* background-color: #343a40; */
+  padding: 10px;
   border-radius: 5px;
+}
+
+.navbar-title {
+  color: #000000;
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+
+.nav-tabs .nav-item .nav-link {
+  color: rgb(0, 0, 0);
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.nav-tabs .nav-item .nav-link:hover {
+  background-color: #b1d6fa;
+  color: rgb(0, 0, 0);
+}
+
+.nav-tabs .nav-item .active {
+  background-color: #007bff;
+  color: #ffffff;
 }
 
 
