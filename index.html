@@ -75,10 +75,11 @@
 
         /* Footer Styling */
 .footer {
-    background-color: #1e1e1e;
+    background-color: #101010;
     color: #ffffff;
     text-align: center;
-    padding: 40px 0;
+    border-start-start-radius: 5px;
+    padding: 35px 350px;
     font-family: 'Arial', sans-serif;
     position: relative;
     margin-top: 20px;
@@ -168,7 +169,7 @@
                   <a class="nav-link" href="about-us.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Review</a>
+                  <a class="nav-link" href="review.html">Review</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Blog</a>
@@ -270,7 +271,7 @@
         <div class="canvas-palette">
             <form id="userForm" class="d-flex flex-column">
                 <div class="d-flex gap-3 mb-2">
-                    <label for="brushSize" class="text-dark">Brush Size:</label>
+                    <label for="brushSize">Brush Size:</label>
                     <select name="brushSize" class="form-select" id="brushSize">
                         <option value="5">5</option>
                         <option value="10">10</option>
@@ -278,17 +279,17 @@
                         <option value="20">20</option>
                         <option value="25">25</option>
                     </select>
-                    <label for="colorPicker" class="text-dark">Color:</label>
+                    <label for="colorPicker">Color:</label>
                     <input type="color" name="colorPicker" class="form-control" id="colorPicker">
                 </div>
                 <div class="d-flex row gap-3 mb-2">
                     <div class="col-sm-6">
-                        <label for="bgImageUpload" class="text-dark">Background Image:</label>
+                        <label for="bgImageUpload">Background Image:</label>
                         <input type="file" id="bgImageUpload" accept="image/*">
 
                     </div>
                     <div class="col-sm-6">
-                        <label for="bgColorPicker" class="text-dark">Background Color:</label>
+                        <label for="bgColorPicker">Background Color:</label>
                         <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
                     </div>
                 </div>
@@ -380,7 +381,7 @@
 
         <div class="credit" style="font-size: 0.6rem;">
         <p>
-            Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
+            Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a>  | All rights reserved © 2024
         </p>
         <br>
         </div>
