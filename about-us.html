@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <style>
         .about-section {
             padding: 50px 0;
@@ -35,16 +38,39 @@
             color: #007bff;
             margin-bottom: 20px;
         }
+        @keyframes appear {
+            from {
+              opacity: 0;
+              clip-path: inset(100% 100% 0 0);
+            }
+            to {
+              opacity: 1;
+              clip-path: inset(0 0 0 0);
+            }
+          }
+    
+          .block {
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+          }
+          .logo{
+            font-size: 3rem;
+            font-family: 'Poppins', sans-serif;
+            color: #353047;
+            font-weight: bolder;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
-            <div class="title">
-                <h1 class="site-name">Canvas Editor</h1>
+            <div class="title " >
+                <h1 class="site-name" >Canvas</h1>
                 <i class="fa-solid fa-paintbrush"></i>
-            </div>
-            <div class="nav-links">
+             </div> 
+            <div class="nav-links ">
                 <a href="index.html">Home</a>
                 <a href="about-us.html">About</a>
                 <a href="#blogs">Blogs</a>
@@ -56,11 +82,11 @@
     <section class="about-section">
         <div class="container">
             <h2 class="text-center mb-5">About Creative Canvas Tool</h2>
-            <div class="row align-items-center mb-5">
+            <div class="row align-items-center mb-5 ">
                 <div class="col-md-6">
                     <img src="resources/painting_image.jpg" alt="Creative Canvas Tool in action" class="about-image">
                 </div>
-                <div class="col-md-6" style="text-align: justify;">
+                <div class="col-md-6 " style="text-align: justify;">
                     <p>
                         Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
                     </p>
@@ -70,19 +96,19 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 text-center">
+            <div class="row ">
+                <div class="col-md-6 text-center block">
                     <i class="fas fa-bullseye mission-icon"></i>
                     <h3>Our Mission</h3>
                     <p>To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.</p>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 text-center block">
                     <i class="fas fa-book-open story-icon"></i>
                     <h3>Our Story</h3>
                     <p>Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.</p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5 block">
                 <div class="col-12">
                     <h3 class="text-center mb-4">Our Team</h3>
                 </div>
@@ -99,7 +125,7 @@
                     <p>UX Designer</p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5 block">
                 <div class="col-12 text-center">
                     <h3>Join Our Community</h3>
                     <p>Be part of our growing community of artists. Share your creations, get inspired, and connect with fellow creatives from around the world.</p>
@@ -122,9 +148,22 @@
             </p>
         </div>
     </section>
+    <script>
+                
+        var typed = new Typed('#site-name', {
+            
+            strings: ['Canvas Editor',"Build and shine!"],
+            loop: true,
+            typeSpeed: 80,
+            backSpeed: 25, // Speed for backspacing
+            backDelay: 1000, // Delay before starting to backspace
+            startDelay: 500 // Optional: Delay before starting the typing effect
+        });
+    
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/edit.js"></script>
+    <script src="./src/Scripts/Canvas.js"></script>
 </body>
 </html>
