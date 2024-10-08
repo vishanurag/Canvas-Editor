@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -163,4 +164,163 @@
       }
     </script>
   </body>
+=======
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #f7b731, #3bde5c);
+            background-size: 300% 300%;
+            animation: gradientAnimation 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-title {
+            font-size: 4rem;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            animation-delay: 1.5s;
+            margin-top: 20px;
+        }
+
+        .btn-start {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            background-color: #3abe57;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-5px) scale(1.1);
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-start:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="welcome-container">
+        <h1 class="welcome-title">Welcome to Creative Canvas Tool!</h1>
+        <p class="welcome-text">Design and create stunning visuals effortlessly.</p>
+        <a href="index.html" class="btn btn-start">Start Creating</a> <!-- Updated link -->
+    </div>
+
+    <script>
+        // Generate random particles in the background
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 10 + 5; // Random size between 5 and 15px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random()})`; // Random opacity
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(particle);
+        }
+    </script>
+
+</body>
+
+>>>>>>> upstream/main
 </html>
