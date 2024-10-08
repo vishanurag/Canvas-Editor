@@ -1,0 +1,130 @@
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+h1 {
+  color: #2c3e50;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d4d4d4;
+  padding-bottom: 10px;
+}
+
+form p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  /* border-color: #1877f4; */
+  box-shadow: 0 0 8px rgba(84, 138, 170, 0.178);
+  outline: none;
+}
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+button {
+  padding: 15px 20px;
+  background-color: #1877f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: blue;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.contact-details {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px auto;
+}
+
+.contact-details .detail {
+  display: flex;
+  align-items: center;
+}
+
+.contact-details .detail i {
+  font-size: 1.5em;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.navbar{
+  font-size: large;
+  width: 85%;
+  margin: 0 auto;
+  padding:0;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+
+}
+
+.navbar ul li a{
+
+  text-decoration:none;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.navbar ul li ::after{
+
+  content: '';
+  height: 3px;
+  width: 0%;
+  background: #82bdc0;
+  position: absolute ;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+}
+
+.navbar ul li :hover::after{
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: none ;
+}

@@ -1,0 +1,30 @@
+/* Mobile-first responsive design for screens up to 500px */
+@media screen and (max-width: 500px) {
+    /* Main canvas responsiveness */
+    #mainCanvas {
+        width: 95% !important;
+        height: auto;
+    }
+    /* Adjust height and width for responsive elements */
+    .h-80-responsive {
+        max-height: 40vh !important;
+        max-width: 100%;
+    }
+
+    /* Flex container adjustments for small screens */
+    .d-md-flex {
+        flex-direction: column;  
+        align-items: stretch;    
+    }
+
+    /* Adjust spacing for the form */
+    #textData {
+        margin-top: 20px;       
+        margin-bottom: 10px;    
+    }
+
+    .btn-primary {
+        width: 100%;            
+        margin-top: 10px;      
+    }
+}

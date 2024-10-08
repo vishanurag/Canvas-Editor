@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/Styles/Style.css">
+    <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .header-container {
+            width: 100vw; 
+            background-color: #f8f9fa; 
+            padding: 20px 0; 
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+        .form-container {
+            max-width: 400px; /* Set a max width for the form */
+            margin: 0 auto; /* Center the form on the page */
+            padding: 20px;
+            border: 1px solid #dee2e6; /* Optional: Adds a border to the form */
+            border-radius: 8px; /* Optional: Adds rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+        }
+        .nav-tabs {
+            justify-content: center;
+            background-color: #ffffff;
+            border-bottom: 2px solid #dee2e6; /* Border for the nav-tabs */
+        }
+        .nav-item .nav-link {
+            color: #000;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-link.active {
+            background-color: #3abe57;
+            color: white;
+        }
+        .nav-link:hover {
+            background-color: #3abe57;
+            color: white;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .or {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .google-btn {
+            background-color: #db4437;
+            color: white;
+        }
+        .google-btn:hover {
+            background-color: #c23321;
+        }
+        p {
+            text-align: center;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+    
+        <div class="header">
+            <h2 class="display-4">Creative Canvas Tool</h2>
+            <p class="lead">Design and create stunning visuals effortlessly!</p>
+        </div>
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact_us.html">Contact us</a>
+
+            </li>
+        </ul>    
+    <div class="form-container">
+        <h2>Create Your Account</h2>
+        <form action="/signup" method="POST" onsubmit="return validatePassword()">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="or">- OR -</div>
+        <button class="google-btn">Continue with Google</button>
+        <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
+    </div>
+
+    <script>
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
