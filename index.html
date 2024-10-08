@@ -151,6 +151,25 @@
             z-index: 99999999;
             /* Stays on top of all elements */
         }
+    /* Custom scrollbar for Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #f9f9f9; /* Thumb color */
+    border-radius: 10px; /* Rounded corners */
+    transition: background 0.3s ease, height 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background:cornflowerblue; /* Thumb color on hover */
+  background: linear-gradient(135deg,cornflowerblue, rgb(195, 226, 237));
+}
     </style>
 </head>
 <body>
