@@ -73,6 +73,7 @@
             padding: 10px;
         }
 
+
         /* Footer Styling */
 .footer {
     background-color: #101010;
@@ -137,20 +138,72 @@
     }
 }
 
-   
-        /* Circle styles */
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 24px;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            /* Stays on top of all elements */
-        }
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999;
+}
+        
+.login-button{
+    background-color: #28a745;
+    width: 80px;
+    border-radius: 50px;
+    height: 40px;
+}
+        
+.login-button:hover{
+    background-color: green;
+    transform: scale(1.05)
+}
+        
+.signup-button{
+    background-color: #007bff;
+    width: 80px;
+    border-radius: 50px;
+    height: 40px;
+}
+        
+.signup-button:hover{
+    background-color: #0056b3;
+    transform: scale(1.05)
+}
+        
+.row {
+    display: flex; 
+    justify-content: center; 
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    list-style: none; 
+    padding: 2px; 
+    margin-bottom: 5px; 
+    background-color: #E7E8D1; 
+    border-radius: 50px; 
+    padding: 10px 20px; 
+}
+
+.nav-item {
+    margin: 0 15px; 
+}
+.nav-link {
+    text-decoration: none; 
+    color: #333; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.nav-link:hover {
+    background-color: #ccc; 
+}
     </style>
 </head>
 <body>
@@ -163,7 +216,7 @@
        <div class="row">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="about-us.html">About Us</a>
@@ -174,12 +227,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Blog</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
+                <button class="login-button" onclick="openlogin()">Login</button>
 
-                </li>
+                <button class="signup-button" onclick="openSignup()">Sign Up</button>
+                
+                
             </ul>
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
@@ -657,6 +709,12 @@
 
         animateCircles();
 
+        function openSignup() {
+            window.location.href = 'signup.html';
+        }
+        function openlogin() {
+            window.location.href = 'login.html';
+        }
 
     </script>
            
