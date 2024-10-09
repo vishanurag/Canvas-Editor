@@ -1,18 +1,50 @@
-<!-- This is a web text editor that is made using canvas element of Html. -->
+<div align="center">
 
-# <p align="center" id="top">🎨 Canvas Editor 🖌️</p>
-<p align="center">
-   
-<div align="center"> 
+# 🎨 Canvas Editor 🖌️
+
 <img  src="https://readme-typing-svg.herokuapp.com?color=45ffaa&center=true&vCenter=true&size=40&width=900&height=80&lines=Welcome+to+Canvas+Editor!"/>
 </div>
 
- <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
+<div align = "center">
+<br>
 
-<p>Hello Coders!!👨‍💻<br> I am Aanurag Vishwakarma, an aspiring Web developer🤖. Here is the project on front-end Web Development.</p>
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+            <td><b>🛠️ Languages</b></td>
+            <td><b>👥 Contributors</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+            <td><img alt="Forks" src="https://img.shields.io/github/forks/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/vishanurag/Canvas-Editor?style=flat&color=critical&logo=github"/></td>
+           <td><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vishanurag/Canvas-Editor?style=flat&color=green&logo=github"></td>
+         <td><img alt="GitHub Contributors count" src="https://img.shields.io/github/contributors/vishanurag/Canvas-Editor?style=flat&color=blue&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+
+---
+
+<h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
+
+<strong>Hello Coders!!👨‍💻<br> I am Aanurag Vishwakarma, an aspiring Web developer🤖. Here is the project on front-end Web Development.</strong>
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+
 <h2>Overview📌</h2>
 <ul>
   <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
@@ -155,20 +187,19 @@ git push origin YourBranchName
 </div>
 
 
+### Contributors
 
-## Acknowledgements
+We are immensely grateful to the following amazing individuals who have contributed their time, effort, and expertise to make this project better. Your contributions, whether through code, documentation, bug reports, or feature suggestions, have been invaluable. Thank you for helping us build and improve CodeCache! 🌟✨
 
-Thank you to all the amazing contributors who have made this project possible! 💝
+Your dedication and hard work are what drive this project forward, and we couldn't have done it without you. Each contribution, no matter how small, plays a crucial role in our journey towards creating a more efficient and user-friendly tool for developers. 🙌💻
+
+We look forward to your continued support and collaboration. Together, we can achieve even greater heights! 🚀🌐
+
+Thank you once again to all our contributors! Your efforts are truly appreciated. 💖👏
 
 <p align ="center">
   <img src="https://api.vaunt.dev/v1/github/entities/vishanurag/repositories/Canvas-Editor/contributors?format=svg&limit=54" width="700" height= "250" />
 </p>
-
-<a href="https://github.com/vishanurag/Canvas-Editor/graphs/contributors">
-  <img align="center" src="https://contrib.rocks/image?max=100&repo=vishanurag/Canvas-Editor" />
-</a> 
-<br><br>
-
 
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
 
