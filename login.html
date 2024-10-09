@@ -1,142 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/Styles/Style.css">
-    <link rel="stylesheet" href="./src/Styles/Responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .header-container {
-            width: 100vw; 
-            background-color: #f8f9fa;
-            padding: 20px 0; 
-            text-align: center;
-            margin-bottom: 20px; 
-        }
-        .form-container {
-            max-width: 400px; 
-            margin: 0 auto; 
-            padding: 20px;
-            border: 1px solid #dee2e6; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .or {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .google-btn {
-            background-color: #db4437;
-            color: white;
-        }
-        .google-btn:hover {
-            background-color: #c23321;
-        }
-        p {
-            text-align: center;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .nav-tabs {
-            justify-content: center;
-            background-color: #ffffff;
-            border-bottom: 2px solid #dee2e6; 
-        }
-        .nav-item .nav-link {
-            color: #000;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .nav-link.active {
-            background-color: #3abe57;
-            color: white;
-        }
-        .nav-link:hover {
-            background-color: #3abe57;
-            color: white;
-        }
+       body {
+    background-color: #f0f4ff; /* Light blue background */
+}
+
+.navbar {
+    background-color: #007bff; /* Blue navbar */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* White text */
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #ffdd57 !important; /* Yellow hover effect */
+}
+
+.header-section {
+    text-align: center; /* Centered text */
+    margin: 30px 0; /* Spacing above headings */
+}
+
+h1 {
+    font-size: 2.5rem; /* Main heading size */
+    color: #007bff; /* Blue color for the main heading */
+}
+
+h2 {
+    font-size: 1.8rem; /* Subheading size */
+    color: #333; /* Darker color for subheadings */
+}
+
+.contact-info img {
+    width: 100%; /* Responsive image */
+    border-radius: 10px; /* Rounded corners */
+}
     </style>
 </head>
+
 <body>
-    <div class="header-container">
-        
-        <div class="header">
-            <h1 class="display-4">Creative Canvas Tool</h1>
-            <p class="lead">Design and create stunning visuals effortlessly!</p>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                Canvas
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Draw</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="review.html">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blog.html">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+    </nav>
 
-            </li>
-        </ul>
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>Welcome to Canvas</h1>
+        <h2>Your Designing Solution</h2>
     </div>
-    <div class="form-container">
-        <h2>Log In</h2>
-        <form action="/login" method="POST">
-            <input type="text" name="username_email" placeholder="Email or Username" required>
-            <input type="password" name="password" placeholder="Enter Password" required>
-            <button type="submit">Log In</button>
-        </form>
-        <div class="or">- OR -</div>
-        <button class="google-btn">Continue with Google</button>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
-
-    </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <section class="container my-5">
+        <div class="row">
+            <!-- Contact Information -->
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <img src="editor.png" class="img-fluid" alt="Canva Editor" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                </div>
+            </div>
+    
+            <!-- Login Form -->
+            <div class="col-md-6">
+                <div class="login-form">
+                    <h5 class="mb-4">CONTACT US</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    <p class="mt-3">Don't have an account? <a href="signup.html">Register</a></p>
+                </div>
+    
+                <!-- Contact Section -->
+                <div class="contact-section mt-4">
+                    <h6>Contact Information:</h6>
+                    <p><i class="fa fa-map-marker"></i> Lovely Professional University, Jalandhar, Punjab</p>
+                    <p><i class="fa fa-phone"></i> 91+ 8434675911</p>
+                    <p><i class="fa fa-envelope"></i> akanksha.kumari@lpu.in</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html> 
+
+</html>
