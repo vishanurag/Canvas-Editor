@@ -278,11 +278,11 @@ html {
   border-radius: 5px;
 }
 
-.logo {
+/* .logo {
   width: 50px;
   height: auto;
   margin-right: 10px;
-}
+} */
 .title {
   display: flex;
   align-items: left;
