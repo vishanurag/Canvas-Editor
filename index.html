@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         
@@ -26,6 +32,27 @@
             text-align: center;
             margin-bottom: none ;
         }
+        .display-4 {
+        font-family: "Dancing Script", cursive;
+        font-weight: 700;
+        background: linear-gradient(45deg, #0824d9, #7c18c4, #c91fbb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 2px;
+        font-size: 3.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .display-4:hover {
+        text-shadow: 4px 6px 6px rgba(0, 0, 0, 0.4);
+        transform: scale(1.01);
+    }
+    .lead{
+        font-family: "Oleo Script", system-ui; 
+        margin-top: 20px;
+        font-size: 20px;
+    }
         .canvas-container {
             display: flex;
             flex-direction: column;
@@ -43,9 +70,7 @@
             border: 2px solid #000000;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-            background-color: #ffffff; /* Default background color */
-            cursor: crosshair;
-
+            background-color: #ffffff; 
         }
         .btn {
             margin: 5px;
