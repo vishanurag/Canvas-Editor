@@ -42,9 +42,12 @@
             height: 400px; /* Set a fixed height */
             border: 2px solid #000000;
             border-radius: 10px;
+
+          
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
             background-color: #ffffff; /* Default background color */
             cursor: crosshair;
+
 
         }
         .btn {
@@ -175,11 +178,16 @@
                   <a class="nav-link" href="./blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
+
+                    <a class="nav-link" href="./Faq.html">FAQ</a>
+                  </li>
+
                     <a class="nav-link" href="signup.html">Sign Up</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">Login</a>
 
                 </li>
+
             </ul>
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
@@ -267,6 +275,7 @@
     </div> -->
     <div class="canvas-container">
         <!-- <canvas id="mainCanvas"></canvas> -->
+
 
         <div class="canvas-palette">
             <form id="userForm" class="d-flex flex-column">
@@ -590,6 +599,7 @@
             reader.readAsDataURL(file);
         });
 
+
         // Clear canvas button
         document.getElementById('clearCanvasBtn').addEventListener('click', () => {
             ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
@@ -663,4 +673,5 @@
         
 </body>
 </html>
+
 
