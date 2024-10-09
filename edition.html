@@ -6,71 +6,134 @@
     <title>Draw and Erase Text on Canvas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
         canvas {
             width: 100%;
             height: 400px;
-            border: 1px solid #000;
-            cursor: crosshair; /* Default cursor */
+            border: 2px solid #000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: crosshair;
+            transition: border 0.3s ease;
         }
-        
+
+        canvas:hover {
+            border-color: #007bff;
+        }
+
+        #colorPicker {
+            width: 100px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        #colorPicker:hover {
+            transform: scale(1.1);
+        }
+
+        .btn {
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
         .eraser {
-            cursor: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Eraser_icon.png'), auto; /* Custom eraser cursor */
+            cursor: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Eraser_icon.png'), auto;
         }
-        .h1{
-           text-align: center;
-            padding: 20px;
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .container {
+            animation: slideIn 1s ease-in-out;
+        }
+
+        #clearCanvas, #eraserMode, #downloadCanvas {
+            animation: slideIn 1.5s ease;
         }
     </style>
 </head>
 <body>
     <h1>Draw Your Imagination</h1>
     <div class="container pt-2">
-        <div class="mt-2 mb-3">
-            <input type="color" id="colorPicker" value="#000000" class="form-control" style="width: 100px; display: inline-block;"/>
+        <div class="mt-2 mb-5">
+            <input type="color" id="colorPicker" value="#000000" class="form-control"/>
             <button class="btn btn-primary" id="clearCanvas">Clear Canvas</button>
             <button class="btn btn-danger" id="eraserMode">Eraser Mode</button>
             <button class="btn btn-success" id="downloadCanvas">Download Canvas</button>
         </div>
         
-        <!-- New Controls for Text -->
-        <div class="mt-2 mb-3">
-            <input type="text" id="textInput" placeholder="Enter your text" class="form-control" style="width: 200px; display: inline-block;"/>
-            <select id="fontSize" class="form-control" style="width: 100px; display: inline-block;">
-                <option value="16">16px</option>
-                <option value="20">20px</option>
-                <option value="24">24px</option>
-                <option value="28">28px</option>
-                <option value="32">32px</option>
-                <option value="36">36px</option>
-                <option value="40">40px</option>
-            </select>
-            <select id="fontFamily" class="form-control" style="width: 150px; display: inline-block;">
-                <option value="Arial">Arial</option>
-                <option value="Verdana">Verdana</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Georgia">Georgia</option>
-            </select>
-            <button class="btn btn-info" id="addText">Add Text</button>
-            <button class="btn btn-warning" id="eraseTextMode">Erase Text Mode</button>
-        </div>
-
         <canvas id="mainCanvas"></canvas>
     </div>
+
     <script>
         const mainCanvas = document.getElementById('mainCanvas');
         const ctx = mainCanvas.getContext('2d');
         let drawing = false;
         let eraserMode = false;
-        let eraseTextMode = false;
         let currentColor = '#000000'; // Default color
-        let texts = []; // Array to store text objects
 
         // Resize the canvas to fit the container
         function resizeCanvas() {
             mainCanvas.width = mainCanvas.offsetWidth;
             mainCanvas.height = mainCanvas.offsetHeight;
-            redrawCanvas();
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
@@ -78,17 +141,13 @@
         // Function to get the mouse or touch position
         function getPosition(event) {
             const rect = mainCanvas.getBoundingClientRect();
-            const x = (event.clientX || (event.touches && event.touches[0].clientX)) - rect.left;
-            const y = (event.clientY || (event.touches && event.touches[0].clientY)) - rect.top;
+            const x = (event.clientX || event.touches[0].clientX) - rect.left;
+            const y = (event.clientY || event.touches[0].clientY) - rect.top;
             return { x, y };
         }
 
         // Start drawing or erasing when the mouse or touch is pressed
         function startDrawing(event) {
-            if (eraseTextMode) {
-                eraseTextAtPosition(event);
-                return;
-            }
             drawing = true;
             const { x, y } = getPosition(event);
             ctx.beginPath();
@@ -136,25 +195,13 @@
         // Clear the entire canvas
         document.getElementById('clearCanvas').addEventListener('click', () => {
             ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-            texts = []; // Clear all text objects
         });
 
         // Toggle eraser mode
         document.getElementById('eraserMode').addEventListener('click', () => {
             eraserMode = !eraserMode;
-            eraseTextMode = false; // Disable text erase mode if active
             mainCanvas.classList.toggle('eraser', eraserMode);
             document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
-            document.getElementById('eraseTextMode').textContent = 'Erase Text Mode';
-        });
-
-        // Toggle erase text mode
-        document.getElementById('eraseTextMode').addEventListener('click', () => {
-            eraseTextMode = !eraseTextMode;
-            eraserMode = false; // Disable drawing erase mode if active
-            mainCanvas.classList.toggle('eraser', eraseTextMode);
-            document.getElementById('eraseTextMode').textContent = eraseTextMode ? 'Drawing Mode' : 'Erase Text Mode';
-            document.getElementById('eraserMode').textContent = 'Eraser Mode';
         });
 
         // Change the current color when the color picker changes
@@ -169,54 +216,6 @@
             link.href = mainCanvas.toDataURL('image/png');
             link.click();
         });
-
-        // Add text to the canvas
-        document.getElementById('addText').addEventListener('click', () => {
-            const text = document.getElementById('textInput').value.trim();
-            if (text === '') {
-                alert('Please enter some text.');
-                return;
-            }
-            const fontSize = document.getElementById('fontSize').value;
-            const fontFamily = document.getElementById('fontFamily').value;
-            // For simplicity, add text at a fixed position. You can enhance this to allow user to click where to place.
-            const x = 50;
-            const y = 50 + texts.length * (parseInt(fontSize) + 10);
-            const textObject = { text, x, y, fontSize, fontFamily, color: currentColor };
-            texts.push(textObject);
-            redrawCanvas();
-            document.getElementById('textInput').value = '';
-        });
-
-        // Function to redraw the canvas including all text
-        function redrawCanvas() {
-            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-            // Redraw existing drawings if you have saved them. (Not implemented in this basic version)
-            // Draw all text objects
-            texts.forEach(textObj => {
-                ctx.fillStyle = textObj.color;
-                ctx.font = `${textObj.fontSize}px ${textObj.fontFamily}`;
-                ctx.fillText(textObj.text, textObj.x, textObj.y);
-            });
-        }
-
-        // Function to erase text at a specific position
-        function eraseTextAtPosition(event) {
-            const { x, y } = getPosition(event);
-            // Iterate through texts in reverse to erase the topmost text first
-            for (let i = texts.length - 1; i >= 0; i--) {
-                const textObj = texts[i];
-                ctx.font = `${textObj.fontSize}px ${textObj.fontFamily}`;
-                const textWidth = ctx.measureText(textObj.text).width;
-                const textHeight = parseInt(textObj.fontSize, 10);
-                if (x >= textObj.x && x <= textObj.x + textWidth &&
-                    y <= textObj.y && y >= textObj.y - textHeight) {
-                    texts.splice(i, 1); // Remove the text object
-                    redrawCanvas();
-                    break;
-                }
-            }
-        }
     </script>
 </body>
 </html>
