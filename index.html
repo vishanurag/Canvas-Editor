@@ -51,8 +51,8 @@
         }
 
         .navbar a:hover {
-            color: #ffffff;
-            background-color: #444;
+            color: rgb(7, 90, 245);
+           
         }
 
         .container {
@@ -161,6 +161,17 @@
 }
 
 /* Responsive design */
+@media (max-width: 600px) {
+    .footer {
+        padding: 20px 0;
+    }
+    .footer .credit {
+        font-size: 0.75rem;
+    }
+    .footer .share a {
+        font-size: 1.2rem;
+    }
+}
 @media (max-width: 768px) {
     .footer {
         padding: 30px 0;
@@ -172,6 +183,18 @@
 
     .footer .credit {
         font-size: 0.8rem;
+    }
+}
+@media (min-width: 1024px) {
+    .footer {
+        padding: 50px 0;
+    }
+    .footer .share a {
+        font-size: 1.8rem;
+    }
+
+    .footer .credit {
+        font-size: 0.9rem;
     }
 }
 
@@ -193,7 +216,8 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="logo">Canvas Editor</a> 
+        <a href="/" class="logo">Canvas Editor</a>
+        <i class="fa-solid fa-paintbrush"></i> 
         <div class="nav-links">
             <a class="nav-link" href="#">Home</a>
             <a class="nav-link" href="about-us.html">About Us</a>
