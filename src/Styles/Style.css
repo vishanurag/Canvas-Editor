@@ -319,32 +319,60 @@ html {
   gap: 1rem;
 }
 
-.nav-links a {
-  color: white;
-  font-size: 1.2rem;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
-}
+/* .nav-links a { */
+  /* color: white; */
+  /* font-size: 1.2rem; */
+  /* text-decoration: none; */
+  /* padding: 0.5rem 1rem; */
+  /* border-radius: 0.5rem; */
+  /* transition: background-color 0.3s ease; */
+/* } */
 /* Hover effect for navbar links */
-.navbar a:hover {
-  background-color: #474747; /* Background color on hover */
-  color: #fff; /* White text on hover */
+/* .navbar a:hover {/ */
+  /* background-color: #474747; Background color on hover */
+  /* color: #fff; White text on hover */
 
   /* width: 60% !important; */
-  height: auto;
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
+  /* height: auto; */
+  /* border: 1px solid gray; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* border-radius: 5px; */
+/* }/
+ */
 
 
 
 
 /* Full width for form controls */
-.fullWidth {
-  width: 100% !important;
+/* .fullWidth {/ */
+  /* width: 100% !important; */
+/* } */
+
+.nav-links a{
+  position: relative;
+  text-decoration:none;
+  letter-spacing:0.5px;
+  color:#a0a0a0;
+
+}
+.nav-links a:after
+{
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.
+}
+.nav-links a:hover{
+  color: #ffffff;
+
+}
+.nav-links a:hover:after{
+  width: 100%;
+
 }
 
 /* Style for input field */
