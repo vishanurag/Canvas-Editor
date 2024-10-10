@@ -3,143 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - Creative Canvas Tool</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
     <link rel="stylesheet" href="./src/Styles/signup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
+        /* Enhanced Inline Styles for Login Page */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
+            margin: 0;
         }
         .header-container {
+            position: absolute;
+            top: 0;
             width: 100vw; 
-            background-color: #f8f9fa; 
-            padding: 70px 0; 
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px 0; 
             text-align: center;
             margin-bottom: 20px; 
             background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
             background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .header-container .header p {
+            font-size: 1.2rem;
+            font-weight: 500;
         }
         .form-container {
+            background: rgba(255, 255, 255, 0.95);
             max-width: 400px; 
-            margin: 0 auto; 
-            padding: 20px;
-            border: 1px solid #dee2e6; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            margin: auto; 
+            padding: 30px;
+            border-radius: 12px; 
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            top: 70px;
         }
-        h2 {
-            text-align: center;
+        .form-container h3 {
+            font-family: 'Oswald', sans-serif;
+            color: #28a745;
+            font-weight: 600;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container #input {
+            position: relative;
             margin-bottom: 20px;
         }
-        button {
+        .form-container #input input {
             width: 100%;
-            padding: 10px;
-            background-color: #007bff;
+            padding: 12px 40px 12px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-container #input input:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        .form-container #input .fa {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #28a745;
+            font-size: 1.2rem;
+        }
+        .form-container button {
+            padding: 12px;
+            background: linear-gradient(135deg, #28a745 0%, #3abe57 100%);
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
+            font-size: 1rem;
             cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
         }
-        button:hover {
-            background-color: #0056b3;
+        .form-container button:hover {
+            background: linear-gradient(135deg, #3abe57 0%, #28a745 100%);
+            transform: translateY(-2px);
+        }
+        .form-container button:active {
+            transform: translateY(0);
         }
         .or {
             text-align: center;
-            margin: 10px 0;
-            color: white;
+            margin: 20px 0;
+            color: #6c757d;
+            font-weight: 500;
+            position: relative;
+        }
+        .or::before, .or::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #ced4da;
+        }
+        .or::before {
+            left: 0;
+        }
+        .or::after {
+            right: 0;
+        }
+        #social {
+            text-align: center;
+        }
+        #social .logo {
+            width: 40px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+        #social .logo:hover {
+            transform: scale(1.1);
         }
         p {
             text-align: center;
-            color: white;
+            color: #6c757d;
+            margin-top: 15px;
         }
+        p a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        p a:hover {
+            color: #218838;
+        }
+        /* Navigation Tabs Styling */
         .nav-tabs {
             justify-content: center;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.8);
             border-bottom: 2px solid #dee2e6; 
+            border-radius: 0 0 10px 10px;
         }
         .nav-item .nav-link {
-            color: #000;
-            font-size: 18px;
+            color: #28a745;
+            font-size: 1rem;
             padding: 10px 20px;
             border-radius: 0;
             transition: background-color 0.3s, color 0.3s;
+            font-weight: 500;
         }
         .nav-link.active {
-            background-color: #3abe57;
+            background-color: #28a745;
             color: white;
+            border-radius: 5px;
         }
         .nav-link:hover {
-            background-color: #3abe57;
+            background-color: #218838;
             color: white;
+            border-radius: 5px;
         }
-        #input input{
-            height: 35px;
-
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .loader {
+            margin: 0 15px;
+            animation: rotate 1.5s linear infinite;
+        }
+        .loader svg {
+            width: 50px;
+            height: 50px;
+        }
+        .loader circle, .loader rect, .loader polygon {
+            fill: #28a745;
+            stroke: #28a745;
+            stroke-width: 2;
+        }
+        .loader.triangle polygon {
+            fill: #17a2b8;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Dribbble Icon */
+        .dribbble img {
+            width: 40px;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        /* Responsive Adjustments */
+        @media (max-width: 576px) {
+            .form-container {
+                padding: 20px;
+            }
+            .nav-tabs .nav-link {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+            .header-container {
+                padding: 20px 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- preloader -->
+    <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
             <svg viewBox="0 0 80 80">
-                <circle id="test" cx="40" cy="40" r="32"></circle>
+                <circle cx="40" cy="40" r="32"></circle>
             </svg>
         </div>
-        
         <div class="loader triangle">
             <svg viewBox="0 0 86 80">
                 <polygon points="43 8 79 72 7 72"></polygon>
             </svg>
         </div>
-        
         <div class="loader">
             <svg viewBox="0 0 80 80">
                 <rect x="8" y="8" width="64" height="64"></rect>
             </svg>
         </div>
-        
-        <!-- dribbble -->
-        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+        <!-- Dribbble -->
+        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank">
+            <img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt="Dribbble">
+        </a>
     </div>
-    <div class="header-container">
-    
-        <div class="header">
-            <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
-        </div>
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
 
-            </li>
-        </ul>
+    <!-- Header Container -->
+    <div class="header-container">
+        <div class="header">
+            <p class="lead">Design and create stunning visuals effortlessly!</p>
+        </div>
+        <!-- Navigation Tabs -->
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Review</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
     </div>
+
+    <!-- Login Form Container -->
     <div id="login" class="form-container mt-5">
         <h3 class="pb-4">LOG IN</h3>
         <form action="/login" method="POST">
@@ -155,17 +307,30 @@
         </form>
         <div class="or">- OR -</div>
         <div id="social" class="mb-3">
-            <a href="https://www.google.com/"><img class="logo google-btn"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
+            <a href="https://www.google.com/" title="Login with Google">
+                <img class="logo google-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google">
             </a>
-            <a href="https://github.com/"><img class="logo"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
+            <a href="https://github.com/" title="Login with GitHub">
+                <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
             </a>
         </div>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
-
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p> 
     </div>
-    <script src="src\Scripts\preloader.js"></script>
+
+    <!-- Scripts -->
+    <script src="src/Scripts/preloader.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Preloader Script
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+    </script>
 </body>
-</html> 
+</html>
