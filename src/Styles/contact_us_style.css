@@ -13,7 +13,7 @@
     -moz-appearance: none;
     display: block;
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 2rem;
     font-size: 1rem;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
@@ -32,4 +32,7 @@
     border-color: #80bdff;
     outline: none;
     box-shadow: none;
+  }
+  .col-md-4{
+    width:100%;
   }
