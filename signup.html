@@ -147,14 +147,81 @@
                 <input type="email" name="email" placeholder="Email" required>
                 <i class="fa-solid fa-envelope"></i>
             </div>
-            <div id="input">
-                <input type="password" id="password" name="password" placeholder="Enter Password" required>
-                <i class="fa-solid fa-lock"></i>
+            <!-- Password Input Block with Strength Meter -->
+        <div id="input">
+            <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
+            <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="password-strength" id="password-strength" style="display: none;">
+            <span id="strength-text"></span>
+            <div class="strength-bar">
+                <div id="strength-bar-fill"></div>
             </div>
-            <div id="input">
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-                <i class="fa-solid fa-lock"></i>
-            </div>
+            <br>
+        </div>
+
+        <!-- Confirm Password Input Block -->
+        <div id="input">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+
+        <!-- Importing zxcvbn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+        <!-- Script for Password Strength Check -->
+        <script>
+            function checkPasswordStrength() {
+                const password = document.getElementById('password').value;
+                const strengthBarFill = document.getElementById('strength-bar-fill');
+                const strengthText = document.getElementById('strength-text');
+                const result = zxcvbn(password);
+
+                // Strength levels based on zxcvbn score
+                const strengthLevels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"];
+                strengthText.textContent = strengthLevels[result.score];
+
+                // Update the strength bar's width and color based on the score
+                const strengthPercentage = (result.score + 1) * 20; // Each level gets 20% width
+                strengthBarFill.style.width = strengthPercentage + "%";
+
+                // Apply different classes for coloring the strength bar (optional customization)
+                const barClasses = ['very-weak', 'weak', 'medium', 'strong', 'very-strong'];
+                strengthBarFill.className = barClasses[result.score];
+            }
+
+            function showStrengthBar() {
+                const strengthBar = document.getElementById('password-strength');
+                strengthBar.style.display = 'block';  // Show the strength bar when the user focuses on the password field
+            }
+        </script>
+
+        <!-- Styles for the Strength Meter -->
+        <style>
+            .password-strength {
+                margin-top: 10px;
+            }
+            .strength-bar {
+                width: 100%;
+                height: 10px;
+                background-color: #e0e0e0;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            #strength-bar-fill {
+                height: 100%;
+                width: 0; /* Default width */
+                transition: width 0.3s ease;
+                background-color: #ff4d4d; /* Default color for very weak */
+            }
+            /* Classes for strength levels */
+            .very-weak { background-color: #ff4d4d; }
+            .weak { background-color: #ff9933; }
+            .medium { background-color: #ffcc33; }
+            .strong { background-color: #99cc33; }
+            .very-strong { background-color: #33cc33; }
+        </style>
+
             <button type="submit">Sign Up</button>
         </form>
         <div class="or">- OR -</div>
