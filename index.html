@@ -80,12 +80,9 @@
             height: 400px; /* Set a fixed height */
             border: 2px solid #000000;
             border-radius: 10px;
-
-          
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
             background-color: #ffffff; /* Default background color */
             cursor: crosshair;
-
 
         }
         .btn {
@@ -215,7 +212,7 @@
             left: 0;
             pointer-events: none;
             z-index: 99999999;
-            /* Stays on top of all elements */
+            
         }
     </style>
 </head>
@@ -238,28 +235,7 @@
             <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
-       <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="review.html">Review</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-            </ul>
-        </div>
+ 
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
@@ -345,7 +321,6 @@
     </div> -->
     <div class="canvas-container">
         <!-- <canvas id="mainCanvas"></canvas> -->
-
 
         <div class="canvas-palette">
             <form id="userForm" class="d-flex flex-column">
@@ -464,34 +439,8 @@
         </p>
         <br>
         </div>
-         <!-- Back to Top Button -->
-         <button id="BacktoTop">
-            <span>↑</span>
-        </button>
-    </section>
 
-    <script src="src\Scripts\preloader.js"></script>
-    <script>
-        const scrollToTopBtn = document.getElementById("BacktoTop");
-        window.onscroll = function() {
-            scrollFunction();
-        };
-    
-        function scrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollToTopBtn.style.visibility = 'visible';
-                scrollToTopBtn.style.opacity = '1';
-            } else {
-                scrollToTopBtn.style.visibility = 'hidden';
-                scrollToTopBtn.style.opacity = '0';
-            }
-        }
-    
-        scrollToTopBtn.addEventListener("click", function() {
-            // Smooth scroll back to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -695,7 +644,6 @@
             reader.readAsDataURL(file);
         });
 
-
         // Clear canvas button
         document.getElementById('clearCanvasBtn').addEventListener('click', () => {
             ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
@@ -769,5 +717,4 @@
         
 </body>
 </html>
-
 
