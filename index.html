@@ -42,9 +42,12 @@
             height: 400px; /* Set a fixed height */
             border: 2px solid #000000;
             border-radius: 10px;
+
+          
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
             background-color: #ffffff; /* Default background color */
             cursor: crosshair;
+
 
         }
         .btn {
@@ -151,9 +154,51 @@
             z-index: 99999999;
             /* Stays on top of all elements */
         }
+    /* Custom scrollbar for Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #f9f9f9; /* Thumb color */
+    border-radius: 10px; /* Rounded corners */
+    transition: background 0.3s ease, height 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background:cornflowerblue; /* Thumb color on hover */
+  background: linear-gradient(135deg,cornflowerblue, rgb(195, 226, 237));
+}
     </style>
 </head>
 <body>
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <circle id="test" cx="40" cy="40" r="32"></circle>
+            </svg>
+        </div>
+        
+        <div class="loader triangle">
+            <svg viewBox="0 0 86 80">
+                <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+        </div>
+        
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+        </div>
+        
+        <!-- dribbble -->
+        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+    </div>
 
     <div class="container pt-2">
         <div class="header">
@@ -169,17 +214,22 @@
                   <a class="nav-link" href="about-us.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Review</a>
+                  <a class="nav-link" href="review.html">Review</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                  <a class="nav-link" href="./blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
+
+                    <a class="nav-link" href="./Faq.html">FAQ</a>
+                  </li>
+
                     <a class="nav-link" href="signup.html">Sign Up</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">Login</a>
 
                 </li>
+
             </ul>
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
@@ -267,6 +317,7 @@
     </div> -->
     <div class="canvas-container">
         <!-- <canvas id="mainCanvas"></canvas> -->
+
 
         <div class="canvas-palette">
             <form id="userForm" class="d-flex flex-column">
@@ -469,12 +520,38 @@
 
         <div class="credit" style="font-size: 0.6rem;">
         <p>
-            Created by <span>ANURAG VISHWAKARMA</span> | All rights reserved © 2024
+            Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a>  | All rights reserved © 2024
         </p>
         <br>
         </div>
-
+         <!-- Back to Top Button -->
+         <button id="BacktoTop">
+            <span>↑</span>
+        </button>
     </section>
+
+    <script src="src\Scripts\preloader.js"></script>
+    <script>
+        const scrollToTopBtn = document.getElementById("BacktoTop");
+        window.onscroll = function() {
+            scrollFunction();
+        };
+    
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.visibility = 'visible';
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.visibility = 'hidden';
+                scrollToTopBtn.style.opacity = '0';
+            }
+        }
+    
+        scrollToTopBtn.addEventListener("click", function() {
+            // Smooth scroll back to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -677,6 +754,7 @@
             };
             reader.readAsDataURL(file);
         });
+
 
         // Clear canvas button
         document.getElementById('clearCanvasBtn').addEventListener('click', () => {
