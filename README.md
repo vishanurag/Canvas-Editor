@@ -1,18 +1,50 @@
-<!-- This is a web text editor that is made using canvas element of Html. -->
+<div align="center">
 
-# <p align="center" id="top">🎨 Canvas Editor 🖌️</p>
-<p align="center">
-   
-<div align="center"> 
+# 🎨 Canvas Editor 🖌️
+
 <img  src="https://readme-typing-svg.herokuapp.com?color=45ffaa&center=true&vCenter=true&size=40&width=900&height=80&lines=Welcome+to+Canvas+Editor!"/>
 </div>
 
- <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
+<div align = "center">
+<br>
 
-<p>Hello Coders!!👨‍💻<br> I am Aanurag Vishwakarma, an aspiring Web developer🤖. Here is the project on front-end Web Development.</p>
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+            <td><b>🛠️ Languages</b></td>
+            <td><b>👥 Contributors</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+            <td><img alt="Forks" src="https://img.shields.io/github/forks/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/vishanurag/Canvas-Editor?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/vishanurag/Canvas-Editor?style=flat&color=critical&logo=github"/></td>
+           <td><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vishanurag/Canvas-Editor?style=flat&color=green&logo=github"></td>
+         <td><img alt="GitHub Contributors count" src="https://img.shields.io/github/contributors/vishanurag/Canvas-Editor?style=flat&color=blue&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+
+---
+
+<h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
+
+<strong>Hello Coders!!👨‍💻<br> I am Aanurag Vishwakarma, an aspiring Web developer🤖. Here is the project on front-end Web Development.</strong>
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+
 <h2>Overview📌</h2>
 <ul>
   <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
@@ -155,27 +187,14 @@ git push origin YourBranchName
 </div>
 
 
+### Contributors
 
-## Acknowledgements
-
-Thank you to all the amazing contributors who have made this project possible! 💝
-
-<p align ="center">
-  <img src="https://api.vaunt.dev/v1/github/entities/vishanurag/repositories/Canvas-Editor/contributors?format=svg&limit=54" width="700" height= "250" />
-</p>
-
-<a href="https://github.com/vishanurag/Canvas-Editor/graphs/contributors">
-  <img align="center" src="https://contrib.rocks/image?max=100&repo=vishanurag/Canvas-Editor" />
-</a> 
-<br><br>
-
-
-<p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
-
-
-## Contributing 💡
-
-We welcome all contributions to improve **Canvas Editor**! If you'd like to contribute, please follow the [Contributing.md](./Contributing.md) to get started.
-<!-- Comment: The file name provided here was wrong(CONTRIBUTING.md instead of Contributing.md) due to which the redirect was showing an error. -->
----
+| [4F24L](https://github.com/4F24L) | [ANURAG VISHWAKARMA](https://github.com/ANURAG VISHWAKARMA) | [Abhinav](https://github.com/Abhinav) | [Aman Kumar](https://github.com/Aman Kumar) | [AnantInamdar77](https://github.com/AnantInamdar77) | [Ananya Gupta](https://github.com/Ananya Gupta) | [Anuj Shrivastava](https://github.com/Anuj Shrivastava) | [Anurag Vishwakarma](https://github.com/Anurag Vishwakarma) | [Archisman Khanra](https://github.com/Archisman Khanra) | [Ayushi_Taralkar](https://github.com/Ayushi_Taralkar) | [Ayushraj_2804](https://github.com/Ayushraj_2804) | [Bhoomysingh10](https://github.com/Bhoomysingh10) | [Gayatri](https://github.com/Gayatri) | [Gayatri Mohite](https://github.com/Gayatri Mohite) | [Hannah Maria](https://github.com/Hannah Maria) | [Haris Ellahi](https://github.com/Haris Ellahi) | [Himangshu Sharma](https://github.com/Himangshu Sharma) | [Jahnavika gopal](https://github.com/Jahnavika gopal) | [Jahnavikagopal](https://github.com/Jahnavikagopal) | [KAmal-senpai](https://github.com/KAmal-senpai) |
+| [Ayushraj_2804](https://github.com/Ayushraj_2804) | [Bhoomysingh10](https://github.com/Bhoomysingh10) | [Gayatri](https://github.com/Gayatri) | [Gayatri Mohite](https://github.com/Gayatri Mohite) | [Hannah Maria](https://github.com/Hannah Maria) | [Haris Ellahi](https://github.com/Haris Ellahi) | [Himangshu Sharma](https://github.com/Himangshu Sharma) | [Jahnavika gopal](https://github.com/Jahnavika gopal) | [Jahnavikagopal](https://github.com/Jahnavikagopal) | [KAmal-senpai](https://github.com/KAmal-senpai) | [Kamal sing bhumij](https://github.com/Kamal sing bhumij) | [Khushi-Nigam](https://github.com/Khushi-Nigam) | [MIGHTY1o1](https://github.com/MIGHTY1o1) | [Manya .N](https://github.com/Manya .N) | [Meesala Govindu](https://github.com/Meesala Govindu) | [Neeru](https://github.com/Neeru) | [Patel Harsh](https://github.com/Patel Harsh) | [PavanTeja2005](https://github.com/PavanTeja2005) | [Poorvika](https://github.com/Poorvika) | [Poushmita](https://github.com/Poushmita) |
+| [Kamal sing bhumij](https://github.com/Kamal sing bhumij) | [Khushi-Nigam](https://github.com/Khushi-Nigam) | [MIGHTY1o1](https://github.com/MIGHTY1o1) | [Manya .N](https://github.com/Manya .N) | [Meesala Govindu](https://github.com/Meesala Govindu) | [Neeru](https://github.com/Neeru) | [Patel Harsh](https://github.com/Patel Harsh) | [PavanTeja2005](https://github.com/PavanTeja2005) | [Poorvika](https://github.com/Poorvika) | [Poushmita](https://github.com/Poushmita) | [Poushmita Paul](https://github.com/Poushmita Paul) | [Pranshu Jaiswal](https://github.com/Pranshu Jaiswal) | [Rajdeep Chakraborty](https://github.com/Rajdeep Chakraborty) | [Rounak Dey](https://github.com/Rounak Dey) | [Sagar2006](https://github.com/Sagar2006) | [Samyak Aditya](https://github.com/Samyak Aditya) | [Santhosh Sudhaan N G](https://github.com/Santhosh Sudhaan N G) | [Shrinedhi.M.R.](https://github.com/Shrinedhi.M.R.) | [Sneha Tiwari](https://github.com/Sneha Tiwari) | [Sri lekkha Ramesh](https://github.com/Sri lekkha Ramesh) |
+| [Poushmita Paul](https://github.com/Poushmita Paul) | [Pranshu Jaiswal](https://github.com/Pranshu Jaiswal) | [Rajdeep Chakraborty](https://github.com/Rajdeep Chakraborty) | [Rounak Dey](https://github.com/Rounak Dey) | [Sagar2006](https://github.com/Sagar2006) | [Samyak Aditya](https://github.com/Samyak Aditya) | [Santhosh Sudhaan N G](https://github.com/Santhosh Sudhaan N G) | [Shrinedhi.M.R.](https://github.com/Shrinedhi.M.R.) | [Sneha Tiwari](https://github.com/Sneha Tiwari) | [Sri lekkha Ramesh](https://github.com/Sri lekkha Ramesh) | [Srishti Soni](https://github.com/Srishti Soni) | [Subin Shakya](https://github.com/Subin Shakya) | [Sujal Patil](https://github.com/Sujal Patil) | [Sumit Rathor](https://github.com/Sumit Rathor) | [Tanushree084](https://github.com/Tanushree084) | [Venkata Vyshnavi Bondalapati](https://github.com/Venkata Vyshnavi Bondalapati) | [VidhanThakur09](https://github.com/VidhanThakur09) | [VivekShahare04](https://github.com/VivekShahare04) | [Web-Dev-Learner](https://github.com/Web-Dev-Learner) | [abhishek farshwal](https://github.com/abhishek farshwal) |
+| [Srishti Soni](https://github.com/Srishti Soni) | [Subin Shakya](https://github.com/Subin Shakya) | [Sujal Patil](https://github.com/Sujal Patil) | [Sumit Rathor](https://github.com/Sumit Rathor) | [Tanushree084](https://github.com/Tanushree084) | [Venkata Vyshnavi Bondalapati](https://github.com/Venkata Vyshnavi Bondalapati) | [VidhanThakur09](https://github.com/VidhanThakur09) | [VivekShahare04](https://github.com/VivekShahare04) | [Web-Dev-Learner](https://github.com/Web-Dev-Learner) | [abhishek farshwal](https://github.com/abhishek farshwal) | [adityalaxkar](https://github.com/adityalaxkar) | [adityalaxkar123](https://github.com/adityalaxkar123) | [archanasingh11](https://github.com/archanasingh11) | [ash-k121](https://github.com/ash-k121) | [geenath](https://github.com/geenath) | [govindumeesala](https://github.com/govindumeesala) | [krishnamverma951@gmail.com](https://github.com/krishnamverma951@gmail.com) | [monishkumardvs](https://github.com/monishkumardvs) | [mrpankajpandey](https://github.com/mrpankajpandey) | [phantom_.1](https://github.com/phantom_.1) |
+| [adityalaxkar](https://github.com/adityalaxkar) | [adityalaxkar123](https://github.com/adityalaxkar123) | [archanasingh11](https://github.com/archanasingh11) | [ash-k121](https://github.com/ash-k121) | [geenath](https://github.com/geenath) | [govindumeesala](https://github.com/govindumeesala) | [krishnamverma951@gmail.com](https://github.com/krishnamverma951@gmail.com) | [monishkumardvs](https://github.com/monishkumardvs) | [mrpankajpandey](https://github.com/mrpankajpandey) | [phantom_.1](https://github.com/phantom_.1) | [poorvikaa08](https://github.com/poorvikaa08) | [priya](https://github.com/priya) | [riyarane46](https://github.com/riyarane46) | [rounakdey6](https://github.com/rounakdey6) | [rutika kengal](https://github.com/rutika kengal) | [saadgibawa](https://github.com/saadgibawa) | [sarinsanyal](https://github.com/sarinsanyal) | [sejals23](https://github.com/sejals23) | [simmi verma](https://github.com/simmi verma) | [sriraghavi22](https://github.com/sriraghavi22) |
+| [poorvikaa08](https://github.com/poorvikaa08) | [priya](https://github.com/priya) | [riyarane46](https://github.com/riyarane46) | [rounakdey6](https://github.com/rounakdey6) | [rutika kengal](https://github.com/rutika kengal) | [saadgibawa](https://github.com/saadgibawa) | [sarinsanyal](https://github.com/sarinsanyal) | [sejals23](https://github.com/sejals23) | [simmi verma](https://github.com/simmi verma) | [sriraghavi22](https://github.com/sriraghavi22) | [tanish](https://github.com/tanish) | [tanishkagarg1911](https://github.com/tanishkagarg1911) | [yashksaini-coder](https://github.com/yashksaini-coder) | [Archisman Khanra](https://github.com/Archisman Khanra) |
+| [tanish](https://github.com/tanish) | [tanishkagarg1911](https://github.com/tanishkagarg1911) | [yashksaini-coder](https://github.com/yashksaini-coder) | [Archisman Khanra](https://github.com/Archisman Khanra) |  |
 
