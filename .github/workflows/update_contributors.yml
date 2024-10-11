@@ -1,0 +1,156 @@
+name: Update Contributors
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * 0" # Runs at 00:00 on Sunday
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Create and run update script
+        run: |
+          cat > update_contributors.py << 'EOF'
+          import subprocess
+          import re
+          import os
+
+          def normalize_name(name):
+              name = re.sub(r'\[bot\]$', '', name)
+              if name.lower() in ['github action', 'github actions', 'github-actions']:
+                  return None
+              return name.strip()
+
+          def get_contributors():
+              try:
+                  git_log = subprocess.check_output(
+                      ['git', 'log', '--format="%aN <%aE>"'],
+                      universal_newlines=True,
+                      stderr=subprocess.STDOUT
+                  )
+              except subprocess.CalledProcessError as e:
+                  print(f"Error getting git log: {e.output}")
+                  return []
+
+              contributors_dict = {}
+              for line in git_log.replace('"', '').split('\n'):
+                  if not line:
+                      continue
+
+                  name = normalize_name(line.split(' <')[0])  # Extract name from 'Name <email>'
+                  if not name:
+                      continue
+
+                  email = line.split('<')[-1].strip('>')  # Extract email from 'Name <email>'
+                  contributors_dict[name] = email
+
+              return sorted(contributors_dict.items())
+
+          def format_contributors_table(contributors):
+              # Create a table without headers
+              table = ""
+              
+              # Add rows of contributors
+              for i in range(0, len(contributors), 10):
+                  row1 = " | ".join(f"[{name}](https://github.com/{name})" for name, _ in contributors[i:i+10])
+                  row2 = " | ".join(f"[{name}](https://github.com/{name})" for name, _ in contributors[i+10:i+20])
+                  if row1.strip():  # Check if row is not empty
+                      table += f"| {row1} | {row2} |\n"
+
+              return table
+
+          def update_readme():
+              if not os.path.exists('README.md'):
+                  print("README.md not found!")
+                  return False
+
+              try:
+                  with open('README.md', 'r', encoding='utf-8') as f:
+                      content = f.read()
+
+                  # Get contributors list
+                  contributors = get_contributors()
+                  if not contributors:
+                      print("No contributors found!")
+                      return False
+
+                  # Create the contributors table
+                  contributors_table = "## Contributors\n\n"
+                  contributors_table += format_contributors_table(contributors)
+                  contributors_table += "\n"
+
+                  # Find the contributors section using a more flexible pattern
+                  contributors_pattern = r'## Contributors\s*\n(?:.*\n)*?(?=\n##|\Z)'
+                  contributing_people_pattern = r'## Contributing People\s*\n(?:.*\n)*?(?=\n##|\Z)'
+
+                  # Replace existing Contributors section if it exists
+                  if re.search(contributors_pattern, content, re.DOTALL):
+                      new_content = re.sub(contributors_pattern, contributors_table, content, flags=re.DOTALL)
+                  else:
+                      new_content = content
+
+                  # Check if Contributing People section exists and preserve it
+                  if re.search(contributing_people_pattern, content, re.DOTALL):
+                      # Preserve the Contributing People section
+                      contributing_people_section = re.search(contributing_people_pattern, content, re.DOTALL).group(0)
+                      new_content = re.sub(contributing_people_pattern, contributing_people_section, new_content, flags=re.DOTALL)
+
+                  # Add the Contributors section before the Contributing section if it doesn't exist
+                  if not re.search(contributors_pattern, new_content, re.DOTALL):
+                      new_content = re.sub(
+                          r'(## Contributing)',
+                          f'{contributors_table}\n\\1',
+                          new_content
+                      )
+
+                  with open('README.md', 'w', encoding='utf-8') as f:
+                      f.write(new_content)
+
+                  return True
+
+              except Exception as e:
+                  print(f"Error updating README.md: {e}")
+                  return False
+
+          if __name__ == "__main__":
+              print("Starting contributors update...")
+              success = update_readme()
+              if not success:
+                  print("Failed to update README.md!")
+                  exit(1)
+
+              print("Successfully updated contributors!")
+          EOF
+
+          # Run the Python script
+          python update_contributors.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+
+          # Check if README.md has changed
+          if git diff --quiet README.md; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git add README.md
+          git commit -m "docs: update contributors list"
+          git push

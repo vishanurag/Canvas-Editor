@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="./src/Styles/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         body {
@@ -17,13 +19,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow-x: hidden;
         }
         .header-container {
             width: 100vw; 
             background-color: #f8f9fa; 
-            padding: 20px 0; 
+            padding: 70px 0; 
             text-align: center;
             margin-bottom: 20px; 
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
         }
         .form-container {
             max-width: 400px; /* Set a max width for the form */
@@ -57,13 +62,6 @@
             text-align: center;
             margin-bottom: 5px;
         }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
         button {
             width: 100%;
             padding: 10px;
@@ -78,30 +76,43 @@
         }
         .or {
             text-align: center;
-            margin: 20px 0;
-        }
-        .google-btn {
-            background-color: #db4437;
+            margin: 10px 0;
             color: white;
-        }
-        .google-btn:hover {
-            background-color: #c23321;
         }
         p {
             text-align: center;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
 <body>
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <circle id="test" cx="40" cy="40" r="32"></circle>
+            </svg>
+        </div>
+        
+        <div class="loader triangle">
+            <svg viewBox="0 0 86 80">
+                <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+        </div>
+        
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+        </div>
+        
+        <!-- dribbble -->
+        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+    </div>
     <div class="header-container">
     
         <div class="header">
-            <h2 class="display-4">Creative Canvas Tool</h2>
-            <p class="lead">Design and create stunning visuals effortlessly!</p>
+            <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
         </div>
     <div class="row">
         <ul class="nav nav-tabs">
@@ -124,18 +135,106 @@
 
             </li>
         </ul>    
-    <div class="form-container">
-        <h2>Create Your Account</h2>
+    </div>
+    <div id="login" class="form-container mt-5">
+        <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
         <form action="/signup" method="POST" onsubmit="return validatePassword()">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <div id="input">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div id="input">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <!-- Password Input Block with Strength Meter -->
+        <div id="input">
+            <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
+            <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="password-strength" id="password-strength" style="display: none;">
+            <span id="strength-text"></span>
+            <div class="strength-bar">
+                <div id="strength-bar-fill"></div>
+            </div>
+            <br>
+        </div>
+
+        <!-- Confirm Password Input Block -->
+        <div id="input">
             <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+
+        <!-- Importing zxcvbn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+        <!-- Script for Password Strength Check -->
+        <script>
+            function checkPasswordStrength() {
+                const password = document.getElementById('password').value;
+                const strengthBarFill = document.getElementById('strength-bar-fill');
+                const strengthText = document.getElementById('strength-text');
+                const result = zxcvbn(password);
+
+                // Strength levels based on zxcvbn score
+                const strengthLevels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"];
+                strengthText.textContent = strengthLevels[result.score];
+
+                // Update the strength bar's width and color based on the score
+                const strengthPercentage = (result.score + 1) * 20; // Each level gets 20% width
+                strengthBarFill.style.width = strengthPercentage + "%";
+
+                // Apply different classes for coloring the strength bar (optional customization)
+                const barClasses = ['very-weak', 'weak', 'medium', 'strong', 'very-strong'];
+                strengthBarFill.className = barClasses[result.score];
+            }
+
+            function showStrengthBar() {
+                const strengthBar = document.getElementById('password-strength');
+                strengthBar.style.display = 'block';  // Show the strength bar when the user focuses on the password field
+            }
+        </script>
+
+        <!-- Styles for the Strength Meter -->
+        <style>
+            .password-strength {
+                margin-top: 10px;
+            }
+            .strength-bar {
+                width: 100%;
+                height: 10px;
+                background-color: #e0e0e0;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            #strength-bar-fill {
+                height: 100%;
+                width: 0; /* Default width */
+                transition: width 0.3s ease;
+                background-color: #ff4d4d; /* Default color for very weak */
+            }
+            /* Classes for strength levels */
+            .very-weak { background-color: #ff4d4d; }
+            .weak { background-color: #ff9933; }
+            .medium { background-color: #ffcc33; }
+            .strong { background-color: #99cc33; }
+            .very-strong { background-color: #33cc33; }
+        </style>
+
             <button type="submit">Sign Up</button>
         </form>
         <div class="or">- OR -</div>
-        <button class="google-btn">Continue with Google</button>
+        <div id="social" class="mb-3">
+            <a href="https://www.google.com/"><img class="logo google-btn"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
+            </a>
+            <a href="https://github.com/"><img class="logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
+            </a>
+        </div>
         <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
+        </div>
     </div>
 
     <script>
@@ -149,6 +248,7 @@
             return true;
         }
     </script>
+    <script src="src\Scripts\preloader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
