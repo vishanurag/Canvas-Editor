@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker Example</title>
+    <style>
+        .color-line {
+            width: 100%;
+            height: 5px; /* Height of the line */
+            background-color: #000; /* Default color (black) */
+            margin-top: 10px; /* Spacing above the line */
+        }
+        .color-picker-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="color-picker-container">
+        <label for="colorPicker">Color:</label>
+        <input type="color" name="colorPicker" class="form-control" id="colorPicker" onchange="updateColor()">
+    </div>
+    
+    <div class="color-line" id="colorLine"></div>
+
+    <script>
+        function updateColor() {
+            const colorPicker = document.getElementById('colorPicker');
+            const colorLine = document.getElementById('colorLine');
+            colorLine.style.backgroundColor = colorPicker.value;
+        }
+
+        // Initialize the color line with the default color
+        updateColor();
+    </script>
+
+</body>
+</html>

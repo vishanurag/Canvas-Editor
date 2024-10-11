@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,204 +10,295 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        
         body {
             overflow-x: hidden;
             background-color: #ffffff;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .container {
-            max-width: 170vw;
-            margin: 0 auto;
+         .heading{
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+         }
+        /* .container {
+            max-width: 100vw;
+            margin: 0 0;
             color: rgb(0, 0, 0);
+            
+        } */
+        .pt-2{
+            padding: 0;
+            margin: 0;
+        }
+        .color-picker-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
         .header {
             text-align: center;
-            margin-bottom: none ;
+            margin-bottom: none;
         }
+       #colorPicker{
+        width: 14vh;
+        height:4vh;
+        border-radius: 10%;
+       }
         .canvas-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            flex-direction:row ;
+            width: 100%;
+            height:max-content;
             background: #000000;
             color: #ffffff;
-            border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 0px;
         }
-        #mainCanvas {
-            max-width: 100%;
-            height: 400px; /* Set a fixed height */
+        
+        #left {
+            display: inline-block;
+            margin-left: 0;
+            height: 100vh;
+            width: 32vh;
+            margin-top: 2vh;
+        }
+        #right{
+            display: inline-block;
+            width: 25%;
+            height: 100%;
+           margin-right: 15px;
+           height: 100vh;
+          
+        }
+
+        #center {
+           
+            display: inline-block;
+            width: 100%;
+            height: 100vh;
+            /* Set a fixed height */
             border: 2px solid #000000;
             border-radius: 10px;
+          margin-top: 5px;
 
-          
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-            background-color: #ffffff; /* Default background color */
+            background-color: #ffffff;
+            /* Default background color */
             cursor: crosshair;
-
-
         }
+        .canvas-palette{
+            background-color: #1e1e1e;
+            border: 2px solid black;
+        }
+
         .btn {
             margin: 5px;
             transition: background-color 0.3s, transform 0.2s;
         }
+
         .btn:hover {
             background-color: #3abe57;
             color: white;
             transform: scale(1.05);
         }
+
         .btn:active {
             transform: scale(0.95);
         }
+
         .palette {
-            margin: 15px 0;
+            margin: 0;
             text-align: center;
+           
         }
+
         .form-control {
             border-radius: 5px;
         }
-        .edit{
+
+        .edit {
             display: flex;
         }
-        .toolbar-item{
+
+        .toolbar-item {
             padding: 10px;
         }
-
+        .right-button{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
         /* Footer Styling */
-.footer {
-    background-color: #101010;
-    color: #ffffff;
-    text-align: center;
-    border-start-start-radius: 5px;
-    padding: 35px 350px;
-    font-family: 'Arial', sans-serif;
-    position: relative;
-    margin-top: 20px;
-}
+        .footer {
+            background-color: #101010;
+            color: #ffffff;
+            text-align: center;
+            border-start-start-radius: 5px;
+            padding: 35px 350px;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            margin-top: 20px;
+        }
 
-.footer .share {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+        .footer .share {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
 
-.footer .share a {
-    margin: 0 10px;
-    font-size: 1.8rem;
-    color: #ffffff;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
+        .footer .share a {
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: #ffffff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-.footer .share a:hover {
-    color: #f39c12;
-    transform: scale(1.1);
-}
+        .footer .share a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
 
-.footer .credit {
-    font-size: 0.9rem;
-    color: #bdc3c7;
-}
+        .footer .credit {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
 
-.footer .credit span {
-    color: #f39c12;
-    font-weight: bold;
-}
+        .footer .credit span {
+            color: #f39c12;
+            font-weight: bold;
+        }
 
-.footer .credit p {
-    margin: 0;
-    font-size: 0.85rem;
-}
+        .footer .credit p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
 
-.footer .credit span:hover {
-    color: #f1c40f;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .footer {
-        padding: 30px 0;
+        .footer .credit span:hover {
+            color: #f1c40f;
+        }
+    .form-select{
+        height: 50px;
+        width: 70px;
     }
+       
+     .navbar{
+        width: 100%;
+        position:sticky;
+        border: 2px solid black;
+        filter: drop-shadow(2px 2px 5px black);
+     }
 
-    .footer .share a {
-        font-size: 1.5rem;
-    }
 
-    .footer .credit {
-        font-size: 0.8rem;
-    }
-}
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 30px 0;
+            }
 
-   
-        
-    /* Custom scrollbar for Chrome, Safari, and Opera */
-body::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-}
+            .footer .share a {
+                font-size: 1.5rem;
+            }
 
-body::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track color */
-}
+            .footer .credit {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width:768px){
+            .canvas-container {
+            display: flex;
+            flex-direction:row ;
+            flex-wrap: wrap;
+            width: fit-content;
+            height: fit-content;
+          
+            background: #000000;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+        }
+        #left {
+            display: inline-block;
+            margin: 0 25% 0 25%;
+            height:78vh;
+            width: 50%;
+           
+        }
+        #right{
+            display: inline-block;
+            margin: 0 25% 0 25%;
+            height:78vh;
+            width: 50%;
+          
+        }
 
-body::-webkit-scrollbar-thumb {
-    background: #f9f9f9; /* Thumb color */
-    border-radius: 10px; /* Rounded corners */
-    transition: background 0.3s ease, height 0.3s ease;
-}
+        #center {
+           
+            display: inline-block;
+            width: 98%;
+            height: 100vh;
+            /* Set a fixed height */
+            border: 2px solid #000000;
+            border-radius: 10px;
+           margin: 0 1% 0 1%;
+          
 
-body::-webkit-scrollbar-thumb:hover {
-    background:cornflowerblue; /* Thumb color on hover */
-  background: linear-gradient(135deg,cornflowerblue, rgb(195, 226, 237));
-}
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+            background-color: #ffffff;
+            /* Default background color */
+            cursor: crosshair;
+        }
 
-h5{
-   color: #eeff00;
-   font-size: small;
-   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
 
-}
-    </style>
-    <style>
         /* Circle styles */
         .circle {
             height: 24px;
             width: 24px;
-            border-radius: 50%;
-            background-color: black;
+            border-radius: 24px;
+            background-color: rgb(213, 37, 37);
             position: fixed;
             top: 0;
             left: 0;
             pointer-events: none;
             z-index: 99999999;
-            transition: transform 0.1s ease-out;
+            /* Stays on top of all elements */
+        }
+
+        /* Custom scrollbar for Chrome, Safari, and Opera */
+        body::-webkit-scrollbar {
+            width: 10px;
+            /* Width of the scrollbar */
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Track color */
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #f9f9f9;
+            /* Thumb color */
+            border-radius: 10px;
+            /* Rounded corners */
+            transition: background 0.3s ease, height 0.3s ease;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: cornflowerblue;
+            /* Thumb color on hover */
+            background: linear-gradient(135deg, cornflowerblue, rgb(195, 226, 237));
         }
     </style>
 </head>
+
 <body>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
     <!-- preloader -->
     <div id="preloader">
         <div class="loader">
@@ -214,64 +306,171 @@ h5{
                 <circle id="test" cx="40" cy="40" r="32"></circle>
             </svg>
         </div>
-        
+
         <div class="loader triangle">
             <svg viewBox="0 0 86 80">
                 <polygon points="43 8 79 72 7 72"></polygon>
             </svg>
         </div>
-        
+
         <div class="loader">
             <svg viewBox="0 0 80 80">
                 <rect x="8" y="8" width="64" height="64"></rect>
             </svg>
         </div>
-        
+
         <!-- dribbble -->
-        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img
+                src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
+                alt=""></a>
     </div>
 
-    <div class="container pt-2">
+    <div class=" pt-2">
         <div class="header">
-            <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
+            <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
+            </h1>
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
-       <div class="row">
+        <!-- <div class="row">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About Us</a>
+                    <a class="nav-link" href="about-us.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="review.html">Review</a>
+                    <a class="nav-link" href="review.html">Review</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Blog_page.html">Blog</a>
+                    <a class="nav-link" href="./blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
 
                     <a class="nav-link" href="./Faq.html">FAQ</a>
-                  </li>
+                </li>
 
-                    <a class="nav-link" href="signup.html">Sign Up</a></li>
+                <a class="nav-link" href="signup.html">Sign Up</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">Login</a>
 
                 </li>
 
             </ul>
-        </div>
-        <div class="row text-center p-5" style="background-color: cornflowerblue;">
+        </div>  -->
+        <div> <nav class="navbar">
+            <div class="title " >
+                <h1 class="site-name" >Canvas</h1>
+                <i class="fa-solid fa-paintbrush"></i>
+             </div> 
+            <div class="nav-links ">
+                <a href="#">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="review.html">Review</a>
+                <a href="#blogs">Blog</a>
+                <a href="./Faq.html">FAQ</a>
+                <a href="signup.html">SignUp</a>
+                <a href="login.html">Login</a>
+                
+
+            </div>
+        </nav></div>
+        <div class="heading" class="row text-center p-5" style="background-color: cornflowerblue;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
+                    class="fa-light fa-face-party"></i></p>
         </div>
-        <div class="canvas-container">
-           
-           <b><h5>Draw Here !!!</h5></b>
-            <canvas id="mainCanvas"></canvas>
-            <!-- <div class="p-3 bg-light rounded shadow">
+        <!-- <div id="Container"> -->
+            <div class="canvas-container">
+                <div id="left">
+                    <form id="userForm" class="d-flex flex-column">
+                        <div class="d-flex gap-3 mb-2">
+                            <label for="brushSize">Brush Size:</label>
+                            <select  name="brushSize" class="form-select" id="brushSize">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                            </select>
+                        </div>
+                        <div class="d-flex gap-3 mb-2">
+                            <div class="color-picker-container">
+                                <label for="colorPicker">Color:</label>
+                                <input type="color" name="colorPicker" class="form-control" id="colorPicker" onchange="updateColor()">
+                            </div>
+                            <!-- <label for="colorPicker">Color:</label>
+                            <input type="color" name="colorPicker" class="form-control" id="colorPicker"> -->
+                        </div>
+                        <div class="d-flex row gap-3 mb-2">
+                            <div class="col-sm-6">
+                                <label for="bgImageUpload">Background Image:</label>
+                                <input type="file" id="bgImageUpload" accept="image/*">
+
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="bgColorPicker">Background Color:</label>
+                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
+                            </div>
+                        </div>
+                        <div class="edit">
+                            <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                            <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
+                        </div>
+                        <div class="edit"><button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button></div>
+                    </form>
+                </div>
+                <div ><canvas id="center" ></canvas></div>
+                <div id="right">
+                    <!-- <div class="canvas-container"> -->
+                        <!-- <canvas id="mainCanvas"></canvas> -->
+
+
+                        <div class="canvas-palette">
+
+                            <div class="d-md-flex justify-content-evenly gap-1">
+                                <!-- <button class="btn btn-primary" id="capital">Uppercase</button>
+                                <button class="btn btn-primary" id="small">Lowercase</button>
+                                <button class="btn btn-primary" id="bold">Bold</button>
+                                <button class="btn btn-primary" id="italic">Italic</button> -->
+                                <label for="font">Font:</label>
+                                <select id="capital" class="btn btn-primary" name="fontSelector">
+                                    <option  value="Uppercase">Uppercase</option>
+                                    <option value="Lowercase">Lowercase</option>
+                                    <option value="Bold">Bold</option>
+                                    <option value="italic">italic</option>
+                                </select>
+                            </div>
+                            <div class="d-md-flex justify-content-evenly gap-1">
+                                <!-- <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                                <button id="circleBtn" class="btn btn-success">Circle</button>
+                                <button id="lineBtn" class="btn btn-success">Line</button> -->
+                                <label for="Shapes">Shape:</label>
+                                <select class="btn btn-success" name="fontSelector">
+                                    <option  value="Uppercase">Rectangle</option>
+                                    <option value="Lowercase">Circle</option>
+                                    <option value="Bold">Line</option>
+                                </select>
+                            </div>
+                            <input class="d-md-flex "  type="text" placeholder="Enter Text" name="textData" id="textData"
+                            class="form-control mw-100 w-75 mb-3">
+                            <div class="right-button" class="d-md-flex justify-content-center gap-2 mb-3">
+                               
+                                <button type="button" class="btn btn-primary" id="save">Save</button>
+                                <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                                <button type="button" class="btn btn-success" id="download"
+                                    title="Download">Download</button>
+                                    
+                            </div>
+                            </form>
+                        </div>
+
+                    <!-- </div> -->
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <!-- <div class="p-3 bg-light rounded shadow">
                 <form id="userForm" class="d-flex flex-column">
                     <div class="d-flex gap-3 mb-2">
                         <label for="textSize" class="text-white">Size:</label>
@@ -306,11 +505,31 @@ h5{
 
                     <p >Shape Pallete</p> -->
 
-                    
 
-    
 
-    <!-- <header class="header">
+        <!-- Circles -->
+        <!-- <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div> -->
+
+        <!-- <header class="header">
         <nav class="navbar">
             <div class="title">
                 <h1 class="site-name">Canvas Editor</h1>
@@ -328,62 +547,7 @@ h5{
         <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
         <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
     </div> -->
-    <div class="canvas-container">
-        <!-- <canvas id="mainCanvas"></canvas> -->
 
-
-        <div class="canvas-palette">
-            <form id="userForm" class="d-flex flex-column">
-                <div class="d-flex gap-3 mb-2">
-                    <label for="brushSize">Brush Size:</label>
-                    <select name="brushSize" class="form-select" id="brushSize">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="25">25</option>
-                    </select>
-                    <label for="colorPicker">Color:</label>
-                    <input type="color" name="colorPicker" class="form-control" id="colorPicker">
-                </div>
-                <div class="d-flex row gap-3 mb-2">
-                    <div class="col-sm-6">
-                        <label for="bgImageUpload">Background Image:</label>
-                        <input type="file" id="bgImageUpload" accept="image/*">
-
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="bgColorPicker">Background Color:</label>
-                        <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
-                    </div>
-                </div>
-                <div class="edit">
-                    <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
-                    <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
-                    <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
-                </div>
-            </form>
-                <div class="d-md-flex justify-content-evenly gap-1">
-                    <button class="btn btn-primary" id="capital">Uppercase</button>
-                    <button class="btn btn-primary" id="small">Lowercase</button>
-                    <button class="btn btn-primary" id="bold">Bold</button>
-                    <button class="btn btn-primary" id="italic">Italic</button>
-                </div>
-                <div class="palette">
-                    <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
-                    <button id="circleBtn" class="btn btn-success">Circle</button>
-                    <button id="lineBtn" class="btn btn-success">Line</button>
-                </div>
-                <div class="d-md-flex justify-content-center gap-2 mb-3">
-                    <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
-                    <button type="button" class="btn btn-primary" id="save">Save</button>
-                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
-                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                </div>
-            </form>
-        </div>
-
-        </div>
         <div class="container mt-5">
             <!-- Contact Us Section -->
             <section id="contact" class="contact-section text-center py-5">
@@ -392,28 +556,32 @@ h5{
                     <!-- Name Field -->
                     <div class="col-md-4">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
+                                required>
                             <label for="name">Your Name</label>
                         </div>
                     </div>
                     <!-- Email Field -->
                     <div class="col-md-4">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"
+                                required>
                             <label for="email">Your Email</label>
                         </div>
                     </div>
                     <!-- Subject Field -->
                     <div class="col-md-8">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject"
+                                required>
                             <label for="subject">Subject</label>
                         </div>
                     </div>
                     <!-- Message Field -->
                     <div class="col-md-8">
                         <div class="form-floating">
-                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message"
+                                style="height: 150px" required></textarea>
                             <label for="message">Your Message</label>
                         </div>
                     </div>
@@ -424,9 +592,9 @@ h5{
                 </form>
             </section>
         </div>
-          
+
     </div>
-        
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
@@ -436,32 +604,42 @@ h5{
     <section class="footer" id="footer">
 
         <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fa-brands fa-x-twitter"></a>   <!-- Updated X icon-->
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fa-brands fa-linkedin-in"></a>
-        <a href="#" class="fa-brands fa-pinterest"></a>
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fa-brands fa-linkedin-in"></a>
+            <a href="#" class="fa-brands fa-pinterest"></a>
         </div>
 
         <div class="credit" style="font-size: 0.6rem;">
-        <p>
-            Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a>  | All rights reserved © 2024
-        </p>
-        <br>
+            <p>
+                Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                2024
+            </p>
+            <br>
         </div>
-         <!-- Back to Top Button -->
-         <button id="BacktoTop">
+        <!-- Back to Top Button -->
+        <button id="BacktoTop">
             <span>↑</span>
         </button>
     </section>
+    <script>
+        function updateColor() {
+            const colorPicker = document.getElementById('colorPicker');
+            const colorLine = document.getElementById('colorLine');
+            colorLine.style.backgroundColor = colorPicker.value;
+        }
 
+        // Initialize the color line with the default color
+        updateColor();
+    </script>
     <script src="src\Scripts\preloader.js"></script>
     <script>
         const scrollToTopBtn = document.getElementById("BacktoTop");
-        window.onscroll = function() {
+        window.onscroll = function () {
             scrollFunction();
         };
-    
+
         function scrollFunction() {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 scrollToTopBtn.style.visibility = 'visible';
@@ -471,49 +649,49 @@ h5{
                 scrollToTopBtn.style.opacity = '0';
             }
         }
-    
-        scrollToTopBtn.addEventListener("click", function() {
+
+        scrollToTopBtn.addEventListener("click", function () {
             // Smooth scroll back to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const fontBtn = document.getElementById('fontBtn');
-        const fontOptions = document.getElementById('fontOptions');
-        const options = document.querySelectorAll('.font-option');
-        const radius = 100;  // Increase this value to create more spacing between buttons
-        const startAngle = -30;  // Adjust this for positioning of the arc
-        const offsetX = 300;  // Move the arc further to the right
-        const offsetY = 70;  // Adjust vertical position of the arc
+        document.addEventListener('DOMContentLoaded', function () {
+            const fontBtn = document.getElementById('fontBtn');
+            const fontOptions = document.getElementById('fontOptions');
+            const options = document.querySelectorAll('.font-option');
+            const radius = 100;  // Increase this value to create more spacing between buttons
+            const startAngle = -30;  // Adjust this for positioning of the arc
+            const offsetX = 300;  // Move the arc further to the right
+            const offsetY = 70;  // Adjust vertical position of the arc
 
-        fontBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
-            if (fontOptions.style.display === 'block') {
-                const totalOptions = options.length;
-                options.forEach((option, index) => {
-                    const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
-                    const x = Math.cos(angle) * radius + offsetX + 20;
-                    const y = Math.sin(angle) * radius + offsetY + 50;
-                    option.style.transform = `translate(${x}px, ${y}px)`;
-                });
-            } else {
-                options.forEach(option => {
-                    option.style.transform = 'translate(0, 0)';
-                });
-            }
-        });
+            fontBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
+                if (fontOptions.style.display === 'block') {
+                    const totalOptions = options.length;
+                    options.forEach((option, index) => {
+                        const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
+                        const x = Math.cos(angle) * radius + offsetX + 20;
+                        const y = Math.sin(angle) * radius + offsetY + 50;
+                        option.style.transform = `translate(${x}px, ${y}px)`;
+                    });
+                } else {
+                    options.forEach(option => {
+                        option.style.transform = 'translate(0, 0)';
+                    });
+                }
+            });
 
-        options.forEach(option => {
-            option.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent default button action
-                console.log(`${this.id} selected`);
+            options.forEach(option => {
+                option.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default button action
+                    console.log(`${this.id} selected`);
+                });
             });
         });
-    });
-    
+
         const mainCanvas = document.getElementById('mainCanvas');
         const ctx = mainCanvas.getContext('2d');
         let drawing = false;
@@ -618,61 +796,61 @@ h5{
         setCanvasDimensions();
 
         // Brush size change
-        document.getElementById('brushSize').addEventListener('change', function() {
+        document.getElementById('brushSize').addEventListener('change', function () {
             brushSize = this.value;
         });
 
         // Color picker change
-        document.getElementById('colorPicker').addEventListener('change', function() {
+        document.getElementById('colorPicker').addEventListener('change', function () {
             brushColor = this.value;
         });
 
         // Background color change
-        document.getElementById('bgColorPicker').addEventListener('change', function() {
+        document.getElementById('bgColorPicker').addEventListener('change', function () {
             mainCanvas.style.backgroundColor = this.value;
         });
         // Function to set up the canvas background image
-     function setBackgroundImage(file) {
-                 const reader = new FileReader();
-                 reader.onload = function (e) {
-                 const img = new Image();
-                 img.onload = function () {
-                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                 };
-                     img.src = e.target.result;
-                 };
-                 reader.readAsDataURL(file);
-                 }
+        function setBackgroundImage(file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
 
-                    // Drag and Drop Event Listeners for the Canvas
-    canvas.addEventListener('dragover', (event) => {
-              event.preventDefault(); 
-              canvas.style.border = '2px dashed #000';
-            });
-
-    canvas.addEventListener('dragleave', () => {
-               canvas.style.border = '1px solid #000'; 
+        // Drag and Drop Event Listeners for the Canvas
+        canvas.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            canvas.style.border = '2px dashed #000';
         });
 
-      canvas.addEventListener('drop', (event) => {
-                  event.preventDefault(); 
-                  canvas.style.border = '1px solid #000';
-                  const file = event.dataTransfer.files[0];
-                  if (file && file.type.startsWith('image/')) {
-                          setBackgroundImage(file); 
-                        } else {
-                            alert('Please drop a valid image file.');
-                        }
-                    });
-        
+        canvas.addEventListener('dragleave', () => {
+            canvas.style.border = '1px solid #000';
+        });
+
+        canvas.addEventListener('drop', (event) => {
+            event.preventDefault();
+            canvas.style.border = '1px solid #000';
+            const file = event.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                setBackgroundImage(file);
+            } else {
+                alert('Please drop a valid image file.');
+            }
+        });
+
 
         // Background image upload
-        document.getElementById('bgImageUpload').addEventListener('change', function(event) {
+        document.getElementById('bgImageUpload').addEventListener('change', function (event) {
             const file = event.target.files[0];
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 const img = new Image();
-                img.onload = function() {
+                img.onload = function () {
                     ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
                 };
                 img.src = e.target.result;
@@ -694,65 +872,64 @@ h5{
 
         // Resize canvas on window resize
         window.addEventListener('resize', setCanvasDimensions);
-        
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+
+
+        animateCircles();
 
 
     </script>
-           
-        <script>
-            // Coordinates for the cursor
-            const coords = { x: 0, y: 0 };
-            const circles = document.querySelectorAll(".circle");
 
-            // Colors for the circles
-            const colors = [
-                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-                "#680060", "#60005f", "#48005f", "#3d005e"
-            ];
 
-            // Assign colors and initial position to each circle
-            circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
-            });
-
-            // Update the coordinates when the mouse moves
-            window.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-            });
-
-            // Animation function to move the circles
-            function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
-
-                circles.forEach(function (circle, index) {
-                    // Update the position and scale of each circle
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
-                    circle.style.scale = (circles.length - index) / circles.length;
-
-                    circle.x = x;
-                    circle.y = y;
-
-                    // Get the next circle in the sequence
-                    const nextCircle = circles[index + 1] || circles[0];
-                    x += (nextCircle.x - x) * 0.3;
-                    y += (nextCircle.y - y) * 0.3;
-                });
-
-                // Repeat the animation
-                requestAnimationFrame(animateCircles);
-            }
-
-            // Start the animation
-            animateCircles();
-        </script>
 </body>
+
 </html>
-
-
