@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
+
+        * {
+            box-sizing: border-box;
+
+            &::before,
+            &::after {
+                box-sizing: border-box;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Hind', sans-serif;
+            background: black;
+            color: gray;
+            display: flex;
+            min-height: 100vh;
+
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 4rem;
+            width: 48rem;
+        }
+
+        .accordion {
+            .accordion-item {
+                border-bottom: 1px solid lightgray;
+
+                button[aria-expanded='true'] {
+                    border-bottom: 1px solid blue;
+                }
+            }
+        }
+
+        button {
+            position: relative;
+            display: block;
+            text-align: left;
+            width: 100%;
+            padding: 1em 0;
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 400;
+            border: none;
+            background: none;
+            outline: none;
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                color: blue;
+
+                &::after {
+                    cursor: pointer;
+                    color: blue;
+                    border: 1px solid blue;
+                }
+            }
+
+            .accordion-title {
+                padding: 1em 1.5em 1em 0;
+            }
+
+            .icon {
+                display: inline-block;
+                position: absolute;
+                top: 18px;
+                right: 0;
+                width: 22px;
+                height: 22px;
+                border: 1px solid;
+                border-radius: 22px;
+
+                &::before {
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    top: 9px;
+                    left: 5px;
+                    width: 10px;
+                    height: 2px;
+                    background: currentColor;
+                }
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    top: 5px;
+                    left: 9px;
+                    width: 2px;
+                    height: 10px;
+                    background: currentColor;
+                }
+            }
+        }
+
+        button[aria-expanded='true'] {
+            color: blue;
+
+            .icon {
+                &::after {
+                    width: 0;
+                }
+            }
+
+            +.accordion-content {
+                opacity: 1;
+                max-height: 9em;
+                transition: all 200ms linear;
+                will-change: opacity, max-height;
+            }
+        }
+
+        .accordion-content {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 200ms linear, max-height 200ms linear;
+            will-change: opacity, max-height;
+
+            p {
+                font-size: 1rem;
+                font-weight: 300;
+                margin: 2em 0;
+            }
+        }
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">1. What is the
+                        Canvas Editor?</span><span class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <p>Creative Canvas Tool empowers artists of all levels with an intuitive platform for digital art
+                        creation. Offering a variety of brushes, colors, and textures, it encourages creativity and
+                        style exploration. Whether sketching or perfecting a masterpiece, its user-friendly interface
+                        ensures a smooth experience, letting you focus on your art.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">2. How do I create
+                        an account using the "Sign Up" button in the navbar?</span><span class="icon"
+                        aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <p>To create an account, click on the "Sign Up" button located in the navigation bar. A registration
+                        form will appear where you need to enter Username, email address, and password. After filling
+                        out the form submit the form. Otherwise You can Sign up Using Your Google Account.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">3. How do I log in
+                        using the "Login" button in the navbar?</span><span class="icon"
+                        aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <p>To log in, click on the "Login" button in the navigation bar. Enter the email address or Username
+                        and
+                        password associated with your account, then click "Login." Once authenticated, you will be
+                        redirected to your account dashboard, where you can manage your profile or access other
+                        features.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">4. How do I convert
+                        text to uppercase, lowercase, bold, or italic in the editor?</span><span class="icon"
+                        aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <p>To convert text to uppercase,lowercase,bold and italic, just click on the button as your desire .
+                        There are buttons for uppercase,lowercase,bold and italic , write your text and convert it as
+                        your wish. </p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">5. How do I choose a
+                        background image in the Canvas Editor?</span><span class="icon"
+                        aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                    <p>To select a background image, navigate to the "Background" section in the toolbar. From there,
+                        you can either upload your own image or choose from a library of pre-loaded
+                        images. Once selected, the image will be applied to the entire canvas.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            const items = document.querySelectorAll(".accordion button");
+
+            function toggleAccordion() {
+                const itemToggle = this.getAttribute('aria-expanded');
+
+                for (i = 0; i < items.length; i++) {
+                    items[i].setAttribute('aria-expanded', 'false');
+                }
+
+                if (itemToggle == 'false') {
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            items.forEach(item => item.addEventListener('click', toggleAccordion));
+        </script>
+        <script>
+            // Coordinates for the cursor
+            const coords = { x: 0, y: 0 };
+            const circles = document.querySelectorAll(".circle");
+
+            // Colors for the circles
+            const colors = [
+                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+                "#680060", "#60005f", "#48005f", "#3d005e"
+            ];
+
+            // Assign colors and initial position to each circle
+            circles.forEach(function (circle, index) {
+                circle.x = 0;
+                circle.y = 0;
+                circle.style.backgroundColor = colors[index % colors.length];
+            });
+
+            // Update the coordinates when the mouse moves
+            window.addEventListener("mousemove", function (e) {
+                coords.x = e.clientX;
+                coords.y = e.clientY;
+            });
+
+            // Animation function to move the circles
+            function animateCircles() {
+                let x = coords.x;
+                let y = coords.y;
+
+                circles.forEach(function (circle, index) {
+                    // Update the position and scale of each circle
+                    circle.style.left = x - 12 + "px";
+                    circle.style.top = y - 12 + "px";
+                    circle.style.scale = (circles.length - index) / circles.length;
+
+                    circle.x = x;
+                    circle.y = y;
+
+                    // Get the next circle in the sequence
+                    const nextCircle = circles[index + 1] || circles[0];
+                    x += (nextCircle.x - x) * 0.3;
+                    y += (nextCircle.y - y) * 0.3;
+                });
+
+                // Repeat the animation
+                requestAnimationFrame(animateCircles);
+            }
+
+            // Start the animation
+            animateCircles();
+        </script>
+
+</body>
+
+</html>
