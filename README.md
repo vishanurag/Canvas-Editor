@@ -226,12 +226,21 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/yashksaini-coder">
+                    <img src="https://avatars.githubusercontent.com/u/115717039?v=4" width="100;" alt="yashksaini-coder"/>
+                    <br />
+                    <sub><b>Yash Kumar Saini</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/rounakdey6">
                     <img src="https://avatars.githubusercontent.com/u/98476572?v=4" width="100;" alt="rounakdey6"/>
                     <br />
                     <sub><b>Rounak Dey</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Poushmita">
                     <img src="https://avatars.githubusercontent.com/u/146666416?v=4" width="100;" alt="Poushmita"/>
@@ -239,8 +248,20 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>Poushmita Paul</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
+            <td align="center">
+                <a href="https://github.com/AnujShrivastava01">
+                    <img src="https://avatars.githubusercontent.com/u/150820396?v=4" width="100;" alt="AnujShrivastava01"/>
+                    <br />
+                    <sub><b>Anuj Shrivastava</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/KAmaL-senpai">
+                    <img src="https://avatars.githubusercontent.com/u/113301075?v=4" width="100;" alt="KAmaL-senpai"/>
+                    <br />
+                    <sub><b>Kamal sing bhumij</b></sub>
+                </a>
+            </td>
             <td align="center">
                 <a href="https://github.com/ngsanthosh">
                     <img src="https://avatars.githubusercontent.com/u/63006841?v=4" width="100;" alt="ngsanthosh"/>
@@ -256,27 +277,6 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/KAmaL-senpai">
-                    <img src="https://avatars.githubusercontent.com/u/113301075?v=4" width="100;" alt="KAmaL-senpai"/>
-                    <br />
-                    <sub><b>Kamal sing bhumij</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/AnujShrivastava01">
-                    <img src="https://avatars.githubusercontent.com/u/150820396?v=4" width="100;" alt="AnujShrivastava01"/>
-                    <br />
-                    <sub><b>Anuj Shrivastava</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/nksmanya">
-                    <img src="https://avatars.githubusercontent.com/u/171407728?v=4" width="100;" alt="nksmanya"/>
-                    <br />
-                    <sub><b>Manya .N</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/shimmer12">
                     <img src="https://avatars.githubusercontent.com/u/92056170?v=4" width="100;" alt="shimmer12"/>
                     <br />
@@ -286,17 +286,17 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 		</tr>
 		<tr>
             <td align="center">
+                <a href="https://github.com/nksmanya">
+                    <img src="https://avatars.githubusercontent.com/u/171407728?v=4" width="100;" alt="nksmanya"/>
+                    <br />
+                    <sub><b>Manya .N</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/kartik9737">
                     <img src="https://avatars.githubusercontent.com/u/180297474?v=4" width="100;" alt="kartik9737"/>
                     <br />
                     <sub><b>Kartik Kumar Pandey </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/yashksaini-coder">
-                    <img src="https://avatars.githubusercontent.com/u/115717039?v=4" width="100;" alt="yashksaini-coder"/>
-                    <br />
-                    <sub><b>Yash Kumar Saini</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -388,13 +388,6 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/4F24L">
-                    <img src="https://avatars.githubusercontent.com/u/108697331?v=4" width="100;" alt="4F24L"/>
-                    <br />
-                    <sub><b>Md Afzal Mir</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/VidhanThakur09">
                     <img src="https://avatars.githubusercontent.com/u/147980454?v=4" width="100;" alt="VidhanThakur09"/>
                     <br />
@@ -415,8 +408,6 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>Abhishek Farshwal</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/archanasingh11">
                     <img src="https://avatars.githubusercontent.com/u/114737464?v=4" width="100;" alt="archanasingh11"/>
@@ -424,6 +415,8 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>Archana Singh</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/ash-k121">
                     <img src="https://avatars.githubusercontent.com/u/120484393?v=4" width="100;" alt="ash-k121"/>
@@ -459,8 +452,6 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>Priya </b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/riyarane46">
                     <img src="https://avatars.githubusercontent.com/u/154919910?v=4" width="100;" alt="riyarane46"/>
@@ -468,6 +459,8 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>riyarane46</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/rutikakengal">
                     <img src="https://avatars.githubusercontent.com/u/177618218?v=4" width="100;" alt="rutikakengal"/>
@@ -503,8 +496,6 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>simmi verma</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/sriraghavi22">
                     <img src="https://avatars.githubusercontent.com/u/140194099?v=4" width="100;" alt="sriraghavi22"/>
@@ -512,11 +503,20 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>sriraghavi22</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/bhatiatanish225">
                     <img src="https://avatars.githubusercontent.com/u/118905174?v=4" width="100;" alt="bhatiatanish225"/>
                     <br />
                     <sub><b>Tanish Bhatia</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/4F24L">
+                    <img src="https://avatars.githubusercontent.com/u/108697331?v=4" width="100;" alt="4F24L"/>
+                    <br />
+                    <sub><b>Md Afzal Mir</b></sub>
                 </a>
             </td>
             <td align="center">
