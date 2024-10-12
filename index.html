@@ -772,6 +772,8 @@
             // Background color change
             document.getElementById('bgColorPicker').addEventListener('change', function () {
                 mainCanvas.style.backgroundColor = this.value;
+                ctx.fillStyle = this.value;
+                ctx.fillRect(0, 0, mainCanvas.width, mainCanvas.height); // Add a rectangle to the current path
             });
             // Function to set up the canvas background image
             function setBackgroundImage(file) {
