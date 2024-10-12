@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/Styles/Style.css">
+    <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
+    <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <style>
+            /* Page Layout */
+            body {
+                background-color: #f3f4f6;
+                font-family: 'Poppins', sans-serif;
+            }
+    
+            /* Header and Footer in Black */
+            .header, .footer {
+                background-color: #000;
+                color: white;
+                padding: 15px;
+            }
+    
+            .header h1, .header i {
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+            }
+    
+            .card-container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin: 50px auto;
+            }
+    
+            .card {
+                width: 300px;
+                height: 400px;
+                perspective: 1000px;
+                border: none;
+                transition: transform 0.6s;
+            }
+    
+            .card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+    
+            .card:hover .card-inner {
+                transform: rotateY(180deg);
+            }
+    
+            .card-front, .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+    
+            .card-front {
+                background-color: #007bff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                padding: 20px;
+            }
+    
+            .card-front img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 15px;
+            }
+    
+            .card-back {
+                background-color: #343a40;
+                transform: rotateY(180deg);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                color: white;
+            }
+    
+            .card-back a {
+                color: #007bff;
+                text-decoration: none;
+                font-size: 1.5rem;
+                margin: 10px;
+            }
+    
+            .card-back a:hover {
+                color: #0056b3;
+            }
+    
+            /* Footer styles */
+            .footer .share a {
+                color: white;
+                margin: 0 10px;
+                font-size: 1.5rem;
+            }
+    
+            .footer .credit {
+                margin-top: 10px;
+            }
+        </style>
+        <style>
+            /* Circle styles */
+            .circle {
+                height: 24px;
+                width: 24px;
+                border-radius: 50%;
+                background-color: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                z-index: 99999999;
+                transition: transform 0.1s ease-out;
+            }
+        </style>
+    </head>
+    <body>
+        <!--circles-->
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <header class="header">
+            <nav class="navbar">
+                <div class="title " >
+                    <h1 class="site-name" >Canvas</h1>
+                    <i class="fa-solid fa-paintbrush"></i>
+                 </div> 
+                <div class="nav-links ">
+                    <a href="index.html">Home</a>
+                    <a href="about-us.html">About</a>
+                    <a href="#blogs">Blogs</a>
+                    <a href="index.html#mainCanvas">Draw</a>
+                    <a href="contributors.html">Contributors</a>
+                </div>
+            </nav>
+        </header>
+        <!-- Community Section -->
+    <section class="community-section">
+        <div class="container">
+            <h2 class="text-center mb-5"> Meet Our Team </h2>
+            <div class="card-container">
+                <!-- Admin Card -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://avatars.githubusercontent.com/u/126074487?v=4" alt="Anurag">
+                            <p>Project Admin</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Anurag Vishwakarma</h3>
+                            <a href="https://www.linkedin.com/in/anuragvishwakarma" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/vishanurag" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://avatars.githubusercontent.com/u/77097996?v=4" alt="Somyadip">
+                            <p>Project Mentor</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Somyadip Ghosh</h3>
+                            <a href="https://github.com/somyadipghosh" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com/falconefootball" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--further more cards can be added -->
+    <section class="footer" id="footer">
+        <div class="share" style="font-size: 0.9rem; text-align: center;">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fa-brands fa-x-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fa-brands fa-linkedin-in"></a>
+            <a href="#" class="fa-brands fa-pinterest"></a>
+        </div>
+        <div class="credit" style="font-size: 1rem; text-align: center;">
+            <p style="color: white;">
+                Created by <span><a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a></span> | All rights reserved © 2024
+
+            </p>
+        </div>
+    </section>
+    <script>
+                
+        var typed = new Typed('#site-name', {
+            
+            strings: ['Canvas Editor',"Build and shine!"],
+            loop: true,
+            typeSpeed: 80,
+            backSpeed: 25, // Speed for backspacing
+            backDelay: 1000, // Delay before starting to backspace
+            startDelay: 500 // Optional: Delay before starting the typing effect
+        });
+    
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./src/Scripts/Canvas.js"></script>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
+    </script>
+</body>
+</html>
