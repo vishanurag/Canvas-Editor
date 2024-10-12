@@ -409,21 +409,14 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/VidhanThakur09">
-                    <img src="https://avatars.githubusercontent.com/u/147980454?v=4" width="100;" alt="VidhanThakur09"/>
-                    <br />
-                    <sub><b>Vidhan Thakur</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
                 <a href="https://github.com/VivekShahare04">
                     <img src="https://avatars.githubusercontent.com/u/138312154?v=4" width="100;" alt="VivekShahare04"/>
                     <br />
                     <sub><b>VivekShahare04</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Abhishek2634">
                     <img src="https://avatars.githubusercontent.com/u/136872441?v=4" width="100;" alt="Abhishek2634"/>
@@ -459,13 +452,20 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>Krishnam Verma</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/mrpankajpandey">
                     <img src="https://avatars.githubusercontent.com/u/107976020?v=4" width="100;" alt="mrpankajpandey"/>
                     <br />
                     <sub><b>Pankaj Pandey</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Pranjalsinha110">
+                    <img src="https://avatars.githubusercontent.com/u/161187690?v=4" width="100;" alt="Pranjalsinha110"/>
+                    <br />
+                    <sub><b>pranjal</b></sub>
                 </a>
             </td>
             <td align="center">
