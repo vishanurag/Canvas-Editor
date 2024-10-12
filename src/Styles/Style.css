@@ -183,6 +183,7 @@ body {
   }
 }
 
+
 .loader {
   display: inline-block;
   margin: 0 16px;
@@ -228,11 +229,13 @@ html {
 #userForm {
   margin-top: 5px;
   padding: 15px;
-  background-color: #1e1e1e;
+  background-color: #000000;
   border-radius: 8px;
   margin-left: 20px;
   max-height: 90%;
+  width: 900px;
 }
+
 
 /* Flexbox for control panel alignment */
 .d-md-flex {
@@ -395,11 +398,94 @@ html {
 }
 
 .canvas-palette label {
-  font-weight: bold; /* Bold labels for emphasis */
+  font-weight: bold;
+  /* Bold labels for emphasis */
+}
+.brush-size{
+  
+  width: 120px;
+  margin-left: 5px;
+  padding-left:20px;
 }
 
+.colors{
+  
+  width: 120px;
+  margin-left: 100px;
+  padding-left:20px;
+}
+.background-image{
+ 
+  width: 190px;
+  margin-left: 5px;
+  padding-left:15px;
+}
+#b{
+  background-color: #007bff;
+  width: 200px;
+  height: 25px;
+  font-size: 15px;
+}
+.background-color{
+  
+  width: 190px;
+  margin-left: 5px;
+  padding-left:15px;
+  transform: translate(452px,-40px);
+
+}
+
+#b1{
+  background-color: #f7f7f7;
+  transform: translate(652px,-64px);
+
+}
+.edit{
+  transform: translate(-10px,-10px);
+  background-color: #50f9d4;
+  background: linear-gradient(rgb(98, 0, 255),rgb(0, 255, 238));
+  padding-left: 30px;
+  margin-left: 15px;
+
+}
+#drawTextBtn{
+  margin-left: 50px;
+  background-color: white;
+  color: black;
+  border-color: white;
+
+}
+#clearCanvasBtn{
+  margin-left: 170px;
+  color: #000;
+  background-color: #fbfaff;
+}
+#eraserBtn{
+  margin-left: 230px;
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+#b2{
+  background-color: #9ff5ff;
+  margin-left: 20px;
+  width: 860px;
+  margin-left:30px;
+
+}
+#rectangleBtn{
+  margin-left: 90px;
+}
+#circleBtn{
+  transform: translate(-70px);
+}
+#lineBtn{
+  transform: translate(-30px);
+
+}
 .canvas-palette .form-select,
 .canvas-palette .form-control {
+  width: 200px;
   border: 1px solid #ccc; /* Soft border for inputs */
   border-radius: 5px; /* Slightly rounded corners */
   padding: 5px; /* Padding inside inputs */

@@ -1,4 +1,4 @@
-.form-control {
+/*.form-control {
     padding: 0.75rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -21,15 +21,52 @@
     color: #495057;
   }
   
-  /* Ensure form-floating labels look good across all inputs */
+  
   .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
     height: calc(3.5rem + 2px);
     padding: 1rem 0.75rem;
   }
   
-  /* Remove box shadow on focus to prevent inconsistencies */
+ 
   .form-control:focus {
     border-color: #80bdff;
     outline: none;
     box-shadow: none;
   }
+
+*/
+.contact-us{
+  width: 720px;
+  height: 650px;
+  background-color:rgb(255, 250, 250);
+  border-radius: 10px;
+  padding-top: 50px;
+  
+}
+#heads{
+  padding-top: 30px;
+  padding-left: 250px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+
+}
+.content label input{
+  width: 380px;
+  border-radius:0%;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  margin-left: 150px;
+}
+.msg input{
+  height: 150px;
+}
+#btns{
+  margin-left: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(30, 30, 73);
+  color: white;
+
+}
