@@ -153,6 +153,22 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
+        .main-button {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: blue; /* Button background color */
+    color: white; /* Button text color */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 2rem; /* Space above the button */
+    font-size: 1.15rem; /* Font size */
+}
+
+.main-button:hover {
+    background-color: rgb(139, 53, 0); /* Darker blue on hover */
+}
+
     </style>
 </head>
 
@@ -234,6 +250,8 @@
                 </div>
             </div>
         </div>
+        <a href="welcome.html" class="main-button">GO TO WELCOME PAGE</a>
+
         <script>
             const items = document.querySelectorAll(".accordion button");
 
