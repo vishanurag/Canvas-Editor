@@ -11,6 +11,26 @@ body {
   background: black;
   width: 100vw;
 }
+
+/* Styling for draw here */
+h5{
+  color: #6495ed;
+  font-size: 26px;
+  font-weight: 500;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Styling for Welcome box */
+.row{
+  border-radius: 10px;
+  /* width: 1000px; */
+}
+
+/* Styling for h1 */
+.display-4{
+  margin-top: 12px;
+}
+
 /* Scroll Bar Styling */
 
 ::-webkit-scrollbar {
@@ -223,6 +243,7 @@ html {
   height: auto;
   max-height: 500px;
   margin: 68px;
+  margin-top: 20px;
   border: 1px solid gray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
