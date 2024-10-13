@@ -35,7 +35,20 @@
 </div>
 <br>
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
+<h2>Open-Source-Programmes⭐</h2>
+
+<!-- Added Hacktoberfest 2024 and GSSoC Extended 2024 banners -->
+### This project is now OFFICIALLY accepted for
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
+  <img src="https://cdn.discordapp.com/attachments/657543125190967316/1294560786114674748/Screenshot_2024-10-12_122347.png?ex=670b752f&is=670a23af&hm=26ddd7f41740b8b19ee4985e7568b3892091384b3b85e7165770a4b10f4d1050&" alt="Hacktoberfest 2024" width="80%">
+</div>
+<br>
+
 
 <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
 
@@ -68,6 +81,10 @@ To change the background color or image:
 <li> For background color: Select a color from the color picker to apply it to the canvas!</li>
 <li> For background image: Upload an image file, and it will be displayed as the canvas background!</li>
 
+<br>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
 <h2><img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 30px height="38"> Technology Used</h2>
 
@@ -78,22 +95,11 @@ To change the background color or image:
 </p>
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
 
-<h2>Open-Source-Programmes⭐</h2>
-
- ### This project is now OFFICIALLY accepted for
-
-<div align="center">
-  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSOC" width="80%">
-</div>
-
-<br>
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 <h2>Getting Started💥</h2>
 
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 ## How to make a Pull Request?
 
 **1.** Start by forking the [**Canvas-Editor**](https://github.com/vishanurag/Canvas-Editor) repository. Click on the <a href="https://github.com/vishanurag/Canvas-Editor/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a> symbol at the top right corner.
@@ -172,6 +178,8 @@ git push origin YourBranchName
  **Congratulations! You've made your first contribution! 🙌🏼**
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
  # Project Admin⚡
  
@@ -182,6 +190,9 @@ git push origin YourBranchName
 </td>
 </tr>
 </table>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
   
 ## Contributors
 
