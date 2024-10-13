@@ -953,9 +953,12 @@ footer .credit {
   text-align: center;
   max-width: 650px;
   border-radius: 15px;
+  margin-top: 30px;
+  margin-bottom:30px;
 }
 
 .contact-section h2 {
+  font-weight: bold;
   font-size: 36px;
   margin-bottom: 20px;
   color: var(--background-color);
@@ -997,6 +1000,14 @@ footer .credit {
 
 .contact-section button:hover {
   background-color: #555;
+}
+.contact .social-media-links {
+  width: 230px;
+  justify-content: space-evenly;
+}
+.link-img{
+  margin-left: 20px;
+  font-size: 30px;
 }
 
 /* Back to Top Button */
