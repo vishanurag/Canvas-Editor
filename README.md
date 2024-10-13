@@ -665,13 +665,6 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
                     <sub><b>Sumit Rathor</b></sub>
                 </a>
             </td>
-            <td align="center">
-                <a href="https://github.com/Tanushree084">
-                    <img src="https://avatars.githubusercontent.com/u/176521591?v=4" width="100;" alt="Tanushree084"/>
-                    <br />
-                    <sub><b>Tanushree084</b></sub>
-                </a>
-            </td>
 		</tr>
 	<tbody>
 </table>
