@@ -1,0 +1,251 @@
+[33mcommit e171b0d19b0c0b639d97f3486a8aacc69e1c0f1a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview.html[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: de3ba3e 3d77cbe
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 23:15:13 2024 +0530
+
+    Merge pull request #468 from ngsanthosh/patch_reviwe_us_page_revamp
+    
+    Testimonial page revamp
+
+[33mcommit de3ba3e1bab07de1b01825d1f4907179554f688c[m
+Merge: 5bcd629 32e5796
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 23:12:50 2024 +0530
+
+    Merge pull request #466 from AsifQamar/darkmode
+    
+    Added Darkmode in Homepage #458
+
+[33mcommit 5bcd62909f065467cc4ed0326f5f57c1a72455ac[m
+Author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+Date:   Sat Oct 12 17:40:36 2024 +0000
+
+    Updated contributors list
+
+[33mcommit d1716639db760faf94b15ad6acdaf4f70ed37944[m
+Merge: 99256e4 c196610
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 23:10:23 2024 +0530
+
+    Merge pull request #465 from AsifQamar/Backtohome
+    
+    Added Back to home button in Sign up page #460
+
+[33mcommit 3d77cbe748aa39ebdb1c78aaac22a867353e085b[m
+Author: Santhosh Sudhaan N G <ngsanthosh657@gmail.com>
+Date:   Sat Oct 12 21:55:26 2024 +0530
+
+    Testimonial web page update
+
+[33mcommit 32e57961598de87558161aa8d9b14297a6947704[m
+Author: AsifQamar <asifqamar1832004@gmail.com>
+Date:   Sat Oct 12 21:54:44 2024 +0530
+
+    done
+
+[33mcommit c196610611377122c52e36686aa1318ad28733b7[m
+Author: AsifQamar <asifqamar1832004@gmail.com>
+Date:   Sat Oct 12 21:21:15 2024 +0530
+
+    done
+
+[33mcommit 69493bf9850b9c5edfc3a4e767a94014cec39a6d[m
+Author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+Date:   Sat Oct 12 15:44:44 2024 +0000
+
+    Updated contributors list
+
+[33mcommit 99256e4099d2fedfc85c4cff3afa21efc5562163[m
+Merge: 05ddc5b 5343167
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 20:19:23 2024 +0530
+
+    Merge pull request #447 from AsifQamar/ButtonFix
+    
+    Fixed #416 - aligned submit button to center
+
+[33mcommit 05ddc5bd6be0d9304fa78b41695571c3cd8f74ad[m
+Author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+Date:   Sat Oct 12 14:48:22 2024 +0000
+
+    Updated contributors list
+
+[33mcommit a922698542df735b4b7ab70b082110c20873b7f7[m
+Merge: e0693b9 effdde5
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 20:18:10 2024 +0530
+
+    Merge pull request #446 from Kajalmehta29/main
+    
+    Text size changed
+
+[33mcommit 534316710725ed3cf9f8fad55451a912fd4fe6e8[m
+Author: AsifQamar <asifqamar1832004@gmail.com>
+Date:   Sat Oct 12 16:09:10 2024 +0530
+
+    Done
+
+[33mcommit effdde504649a2f7c98a1c1a2c1ccdf3d598dd4d[m
+Author: Kajal Mehta <mehtakajal796@gmail.com>
+Date:   Sat Oct 12 16:01:59 2024 +0530
+
+    Text size changed
+    
+    Text size changed and it is now visible.
+    Issue Resolved: #414
+
+[33mcommit e0693b91fd9f74822ab3eb832dd57a8dd419a95e[m
+Author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+Date:   Sat Oct 12 10:13:14 2024 +0000
+
+    Updated contributors list
+
+[33mcommit 10cf238674d5c985e885b24a55166e80c240e053[m
+Merge: 86ff10a f87d753
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 15:43:02 2024 +0530
+
+    Merge pull request #445 from TBorundia/main
+    
+    Added Contributor's Page
+
+[33mcommit 86ff10aa696496e8674f96df7ba1be09b0a92c61[m
+Author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+Date:   Sat Oct 12 10:09:29 2024 +0000
+
+    Updated contributors list
+
+[33mcommit 38ea0d9f081998683d70c2e2740a73168cb1c4e2[m
+Merge: 2792251 fda73e9
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 15:39:12 2024 +0530
+
+    Merge pull request #443 from yashksaini-coder/yash/fix-413
+    
+    Bug Fix: Contributors section
+
+[33mcommit f87d753171ddf5028ab0e8d992ff5ffb0687d9b2[m
+Author: Tina <tinaborundia23@gmail.com>
+Date:   Sat Oct 12 15:28:36 2024 +0530
+
+    Added Contributor's Page
+
+[33mcommit 275254abdb9d7119c1b54be7cee4767d22fce4e7[m
+Merge: 2e8a0ed 2792251
+Author: Tina <tinaborundia23@gmail.com>
+Date:   Sat Oct 12 15:27:56 2024 +0530
+
+    Merge branch 'main' of https://github.com/TBorundia/Canvas-Editor
+
+[33mcommit 2e8a0ed590731f09888d550f7ac58ef681ccbb3a[m
+Author: Tina <tinaborundia23@gmail.com>
+Date:   Sat Oct 12 15:24:34 2024 +0530
+
+    Added Contributor's Page
+
+[33mcommit fda73e94cd8f1209b2a7a8ecd30ef1f979f5f800[m
+Author: yashksaini-coder <ys3853428@gmail.com>
+Date:   Sat Oct 12 15:16:30 2024 +0530
+
+    Update README
+
+[33mcommit cff3c55000d0f8003af530135c6a85695e91666e[m
+Author: yashksaini-coder <ys3853428@gmail.com>
+Date:   Sat Oct 12 15:14:13 2024 +0530
+
+    Remove previous workflow
+
+[33mcommit ae2ed62b24e2f0e7c98b61bc250b65d14e297245[m
+Author: yashksaini-coder <ys3853428@gmail.com>
+Date:   Sat Oct 12 15:13:58 2024 +0530
+
+    Add new workflow
+
+[33mcommit 27922518ac694196c92558c30a87ab149a2f2e70[m
+Merge: bc346b9 5e636bc
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 15:00:39 2024 +0530
+
+    Merge pull request #440 from Lekkhasri/main
+    
+    The creation of new community page #412
+
+[33mcommit 5e636bcd33f899598efa432cf04ec7ce9fdddd0b[m
+Author: github-actions[bot] <runner@fv-az1106-509.eyzkv0hxxq4uhofmll1wi1pi3e.ex.internal.cloudapp.net>
+Date:   Sat Oct 12 06:44:54 2024 +0000
+
+    docs: update contributors list
+
+[33mcommit 0357f04771341df5112391a2a1038190cdfe6191[m
+Merge: f7d965b bc346b9
+Author: Sri lekkha Ramesh <srilekkhaharini@gmail.com>
+Date:   Sat Oct 12 12:13:24 2024 +0530
+
+    changes to rectfiy the pull request
+
+[33mcommit f7d965bd6823909e49429abdb4bfdf06697a85c9[m
+Author: Sri lekkha Ramesh <srilekkhaharini@gmail.com>
+Date:   Sat Oct 12 12:11:10 2024 +0530
+
+     changes in the community.html
+
+[33mcommit 3753a29165442faadbc9e84deec27042cfa93b65[m
+Merge: d2f22c4 ac71c0e
+Author: Sri lekkha Ramesh <srilekkhaharini@gmail.com>
+Date:   Sat Oct 12 12:09:04 2024 +0530
+
+    changes
+
+[33mcommit d2f22c41505757308e683cd3dedd1f5165bc6789[m
+Author: Sri lekkha Ramesh <srilekkhaharini@gmail.com>
+Date:   Sat Oct 12 12:00:29 2024 +0530
+
+    created the community.html
+
+[33mcommit bf005472142904acebf322cc042c2e90fc1b2aca[m
+Author: Sri lekkha Ramesh <srilekkhaharini@gmail.com>
+Date:   Sat Oct 12 11:26:16 2024 +0530
+
+    changes made in about us to rectify the error
+
+[33mcommit bc346b9b5c9bf976173e65940a00f96950d4e975[m
+Author: github-actions[bot] <runner@fv-az774-794.j3qnnsaxsfoepktz21rketxmog.bx.internal.cloudapp.net>
+Date:   Sat Oct 12 03:52:56 2024 +0000
+
+    docs: update contributors list
+
+[33mcommit 0b70cbbd97e1ca45ea709c1ea6805bfe5c9a0b24[m
+Merge: 24b90e2 7393e30
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 09:22:46 2024 +0530
+
+    Merge pull request #261 from Prachiikhar25/Activetab
+    
+    Modified the navigation tab to highlight only the current tab.
+
+[33mcommit 24b90e28b089154307790385b4b31986cd74f060[m
+Merge: 8250dd5 b966096
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 09:20:17 2024 +0530
+
+    Merge pull request #271 from ananyag309/default
+    
+    Added functionality to contact us form
+
+[33mcommit 8250dd5aea7edddc1fa03300b1342bde90bffd75[m
+Merge: 104c5d3 60e4ef2
+Author: ANURAG VISHWAKARMA <126074487+vishanurag@users.noreply.github.com>
+Date:   Sat Oct 12 09:18:27 2024 +0530
+
+    Merge pull request #420 from Ishika-Gupta06/ConfirmationMsg
+    
+    Confirmation Upon register
+
+[33mcommit 60e4ef2fdfffa7208955a1ca09fc3526af6cbc98[m
+Author: Ishika Gupta <118624573+Ishika-Gupta06@users.noreply.github.com>
+Date:   Fri Oct 11 18:36:07 2024 +0000
+
+    Confirmation Upon register
+
+[33mcommit ac71c0ee369abf2427a199bd677fdd36a7534bdf[m
+Author: github-actions[bot] <runner@fv-az665-182.fog2pefswkletp0y445k1dqqob.bx.internal.cloudapp.
