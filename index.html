@@ -441,11 +441,11 @@ h2{
     <div class="canvas-container">
         <!-- <canvas id="mainCanvas"></canvas> -->
 
-
-        <div class="canvas-palette">
+        <div class="canvas-palette container my-5 p-4 border rounded shadow bg-light">
+            <h2 class="text-center mb-4 text-primary">Canvas Palette</h2>
             <form id="userForm" class="d-flex flex-column">
-                <div class="d-flex gap-3 mb-2">
-                    <label for="brushSize">Brush Size:</label>
+                <div class="d-flex gap-3 mb-3 align-items-center">
+                    <label for="brushSize" class="form-label">Brush Size:</label>
                     <select name="brushSize" class="form-select" id="brushSize">
                         <option value="5">5</option>
                         <option value="10">10</option>
@@ -453,45 +453,47 @@ h2{
                         <option value="20">20</option>
                         <option value="25">25</option>
                     </select>
-                    <label for="colorPicker">Color:</label>
+                    <label for="colorPicker" class="form-label">Color:</label>
                     <input type="color" name="colorPicker" class="form-control" id="colorPicker">
                 </div>
-                <div class="d-flex row gap-3 mb-2">
+                <div class="row g-3 mb-3">
                     <div class="col-sm-6">
-                        <label for="bgImageUpload">Background Image:</label>
-                        <input type="file" id="bgImageUpload" accept="image/*">
-
+                        <label for="bgImageUpload" class="form-label">Background Image:</label>
+                        <input type="file" id="bgImageUpload" class="form-control" accept="image/*">
                     </div>
                     <div class="col-sm-6">
-                        <label for="bgColorPicker">Background Color:</label>
+                        <label for="bgColorPicker" class="form-label">Background Color:</label>
                         <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
                     </div>
                 </div>
-                <div class="edit">
-                    <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
-                    <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
+                <div class="edit mb-4">
+                    <button type="button" class="btn btn-primary me-2" id="drawTextBtn">Brush</button>
+                    <button type="button" class="btn btn-secondary me-2" id="clearCanvasBtn">Clear Canvas</button>
                     <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
                 </div>
             </form>
-                <div class="d-md-flex justify-content-evenly gap-1">
-                    <button class="btn btn-primary" id="capital">Uppercase</button>
-                    <button class="btn btn-primary" id="small">Lowercase</button>
-                    <button class="btn btn-primary" id="bold">Bold</button>
-                    <button class="btn btn-primary" id="italic">Italic</button>
-                </div>
-                <div class="palette">
-                    <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
-                    <button id="circleBtn" class="btn btn-success">Circle</button>
-                    <button id="lineBtn" class="btn btn-success">Line</button>
-                </div>
-                <div class="d-md-flex justify-content-center gap-2 mb-3">
-                    <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
-                    <button type="button" class="btn btn-primary" id="save">Save</button>
-                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
-                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                </div>
-            </form>
+        
+            <div class="d-md-flex justify-content-evenly gap-2 mb-4">
+                <button class="btn btn-outline-primary" id="capital">Uppercase</button>
+                <button class="btn btn-outline-primary" id="small">Lowercase</button>
+                <button class="btn btn-outline-primary" id="bold">Bold</button>
+                <button class="btn btn-outline-primary" id="italic">Italic</button>
+            </div>
+        
+            <div class="palette mb-4">
+                <button id="rectangleBtn" class="btn btn-outline-success me-2">Rectangle</button>
+                <button id="circleBtn" class="btn btn-outline-success me-2">Circle</button>
+                <button id="lineBtn" class="btn btn-outline-success">Line</button>
+            </div>
+        
+            <div class="d-md-flex justify-content-center gap-2">
+                <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                <button type="button" class="btn btn-primary" id="save">Save</button>
+                <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+            </div>
         </div>
+        
 
         </div>
         <div class="container mt-5">
