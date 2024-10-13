@@ -6,11 +6,274 @@
   transition: all 0.1s linear;
 }
 
+        
 body {
-  height: 100vh !important;
-  background: black;
-  width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
 }
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: none ;
+  display: flex;
+  flex-direction:column;
+}
+.canvas-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: #d1d7ff;
+color: var(--text-color);
+border-radius: 10px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+padding: 20px;
+}
+a {
+text-decoration: none;
+color: var(--text-color); 
+}
+#mainCanvas {
+  max-width: 100%;
+  height: 400px; /* Set a fixed height */
+  border: 2px solid #000000;
+  border-radius: 10px;
+
+
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+  background-color: var(--background-color);
+  cursor: crosshair;
+  margin-top: 20px;
+
+
+}
+.btn {
+  margin: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.btn:hover {
+  background-color: #3abe57;
+  color: var(--text-color); 
+  transform: scale(1.05);
+}
+.btn:active {
+  transform: scale(0.95);
+}
+.palette {
+  margin: 15px 0;
+  text-align: center;
+}
+.form-control {
+  border-radius: 5px;
+}
+.edit{
+  display: flex;
+}
+.toolbar-item{
+  padding: 10px;
+}
+#userForm {
+margin-top: 5px;
+padding: 15px;
+background-color: var(--background-color);
+border-radius: 8px;
+margin-left: 20px;
+max-height: 90%;
+}
+
+/* Footer Styling */
+.footer {
+width: 100%;
+background-color: #ff8686d1;
+color: #c23e3e;
+text-align: center;
+border-start-start-radius: 5px;
+padding: 35px 350px;
+font-family: 'Arial', sans-serif;
+position: relative;
+margin-top: 20px;
+}
+
+.footer .share {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.footer .share a {
+margin: 0 10px;
+font-size: 1.8rem;
+color: #ffffff;
+transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .share a:hover {
+color: #f39c12;
+transform: scale(1.1);
+}
+
+.footer .credit {
+font-size: 0.9rem;
+color: #bdc3c7;
+}
+
+.footer .credit span {
+color: #f39c12;
+font-weight: bold;
+}
+
+.footer .credit p {
+margin: 0;
+font-size: 0.85rem;
+}
+
+.footer .credit span:hover {
+color: #f1c40f;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+.footer {
+padding: 30px 0;
+}
+
+.footer .share a {
+font-size: 1.5rem;
+}
+
+.footer .credit {
+font-size: 0.8rem;
+}
+}
+
+
+
+/* Custom scrollbar for Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+width: 10px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+background: #f1f1f1; /* Track color */
+}
+
+body::-webkit-scrollbar-thumb {
+background: #f9f9f9; /* Thumb color */
+border-radius: 10px; /* Rounded corners */
+transition: background 0.3s ease, height 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+background:cornflowerblue; /* Thumb color on hover */
+background: linear-gradient(135deg,cornflowerblue, rgb(195, 226, 237));
+}
+
+h2{
+margin-top: 50px;
+color: black;
+font-size: 50px;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* Dark mode */
+
+/* Default light mode colors */
+:root {
+--background-color:  #e1d9fb;       
+--text-color:rgb(59,59,88);
+}
+
+h2{
+color: var(--text-color);
+}
+/* Dark mode colors */
+[data-theme="dark"] {
+--background-color: #142d4a;
+--text-color: #ffffff;
+}
+p{
+color: var(--text-color); 
+}
+
+header {
+padding: 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+h1 {
+margin: 0;
+}
+
+.theme-switch-wrapper {
+display: flex;
+align-items: center;
+position: absolute;
+right: 1rem;
+top: 1rem;
+}
+
+#mode-label {
+margin-left: 10px;
+font-size: 1rem;
+}
+
+/* Toggle Switch */
+.theme-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+
+.theme-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: 0.4s;
+border-radius: 24px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+border-radius: 50%;
+background-color: white;
+transition: 0.4s;
+top: 3px;
+left: 4px;
+}
+
+input:checked + .slider {
+background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+
+
+/*--------*/
+
 /* Scroll Bar Styling */
 
 ::-webkit-scrollbar {
@@ -232,7 +495,7 @@ html {
 #userForm {
   margin-top: 5px;
   padding: 15px;
-  background-color: #1e1e1e;
+  background-color: var(--background-color);
   border-radius: 8px;
   margin-left: 20px;
   max-height: 90%;
@@ -255,7 +518,7 @@ html {
   gap: 10px;
   margin-top: 10px;
   margin-left: 30px;
-  color: rgb(255, 255, 255);
+  color: var(--text-color);
 }
 
 .palette button {
@@ -292,7 +555,7 @@ html {
 .title {
   display: flex;
   align-items: left;
-  color: white;
+  color: var(--text-color);
   font-size: 1.5rem;
   font-weight: bold;
   justify-content: center;
@@ -300,7 +563,7 @@ html {
 
 /* General Navbar Styling */
 .navbar {
-  background-color: #333; /* Dark background */
+  background-color: var(--background-color);
   padding: 10px 10px; /* Space around the links */
   display: flex;
   justify-content: center;
@@ -311,7 +574,7 @@ html {
 
 /* Styling individual links in the navbar */
 .navbar a {
-  color: white; /* Link color */
+  color: var(--text-color);  /* Link color */
   font-size: 1.2rem; /* Font size */
   text-decoration: none; /* Remove underline */
   padding: 0.5rem 1rem; /* Add padding around the text */
@@ -355,7 +618,7 @@ html {
   position: relative;
   text-decoration: none;
   letter-spacing: 0.5px;
-  color: #a0a0a0;
+  color: var(--text-color);
 }
 .nav-links a:after {
   content: "";
@@ -368,7 +631,7 @@ html {
   transition: 0;
 }
 .nav-links a:hover {
-  color: #ffffff;
+  color: var(--text-color);
 }
 .nav-links a:hover:after {
   width: 100%;
@@ -503,7 +766,7 @@ input[type="text"],
 .boton-elegante {
   padding: 10px 10px;
   border: 2px solid #2c2c2c;
-  color: #ffffff;
+  color: var(--text-color);
   font-size: 1rem;
   cursor: pointer;
   border-radius: 30px;
@@ -586,7 +849,7 @@ button#capital:hover::after,
 button#small:hover::after {
   position: absolute;
   background-color: #000;
-  color: #fff;
+  color: var(--text-color);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 12px;
@@ -656,7 +919,7 @@ button#download:hover::after {
 
 .footer .links a {
   padding: 0.7rem 2rem;
-  color: #fff;
+  color: var(--text-color);
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   font-size: 2rem;
 }
@@ -695,7 +958,7 @@ footer .credit {
 .contact-section h2 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--background-color);
 }
 
 .contact-section form {
@@ -709,7 +972,7 @@ footer .credit {
   text-align: left;
   margin-bottom: 10px;
   font-size: 16px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .contact-section input,
@@ -725,7 +988,7 @@ footer .credit {
 .contact-section button {
   padding: 15px;
   background-color: #333;
-  color: white;
+  color: var(--text-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -744,7 +1007,7 @@ footer .credit {
   width: 55px;
   height: 55px;
   background-color: #007bff; /* Button background */
-  color: white; /* Text color */
+  color: var(--text-color);
   padding: 10px 15px; /* Padding for button size */
   border-radius: 50%; /* Circular button */
   border: none;
