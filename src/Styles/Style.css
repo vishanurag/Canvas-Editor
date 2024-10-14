@@ -1,6 +1,6 @@
 /* Global styles */
 * {
-  margin: 0;
+  margin: auto;
   padding: 0;
   box-sizing: border-box;
   transition: all 0.1s linear;
@@ -517,6 +517,5 @@ footer .credit{
 
 .contact-section button:hover {
   background-color: #555;
+
 }
-
-

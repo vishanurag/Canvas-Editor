@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" type="icon" href="Paint-Logo-PNG-Pic.jpeg">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,7 +21,7 @@
         }
         .header-container {
             width: 100vw; 
-            background-color: #f8f9fa; 
+            background-color: #000; 
             padding: 20px 0; 
             text-align: center;
             margin-bottom: 20px; 
@@ -31,7 +32,7 @@
             padding: 20px;
             border: 1px solid #dee2e6; /* Optional: Adds a border to the form */
             border-radius: 8px; /* Optional: Adds rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+            box-shadow: 0 2px 10px rgba(251, 248, 248, 0.1); /* Optional: Adds a shadow for depth */
         }
         .nav-tabs {
             justify-content: center;
@@ -55,7 +56,10 @@
         }
         h2 {
             text-align: center;
-            margin-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 2px;
+            color: #ffffff;
+            margin: relative;
         }
         input[type="text"], input[type="email"], input[type="password"] {
             width: 100%;
@@ -79,9 +83,10 @@
         .or {
             text-align: center;
             margin: 20px 0;
+            color: white;
         }
         .google-btn {
-            background-color: #db4437;
+            background-color: #3abe57;
             color: white;
         }
         .google-btn:hover {
@@ -100,8 +105,11 @@
     <div class="header-container">
     
         <div class="header">
-            <h2 class="display-4">Creative Canvas Tool</h2>
-            <p class="lead">Design and create stunning visuals effortlessly!</p>
+            <div class="h2">
+            <h2 class="display-4"><img src="Paint-Logo-PNG-Pic.jpeg" height="80px" width="80px">Creative Canvas Tool</h2>
+
+            <p class="lead" style="color: #ffffff;" >Design and create stunning visuals effortlessly!</p>
+            </div>
         </div>
     <div class="row">
         <ul class="nav nav-tabs">
@@ -135,7 +143,7 @@
         </form>
         <div class="or">- OR -</div>
         <button class="google-btn">Continue with Google</button>
-        <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
+        <p style="color: #007bff;">Already have an account? <a href="login.html" style="color: #ffffff;">Log in</a></p> <!-- This should link to login.html -->
     </div>
 
     <script>
