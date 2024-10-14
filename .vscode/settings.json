@@ -4,4 +4,6 @@
         "titleBar.activeBackground": "#303E68",
         "titleBar.activeForeground": "#FCFCFD"
     }
+    "liveServer.settings.port": 5502
+
 }

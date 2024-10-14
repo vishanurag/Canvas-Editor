@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Celebrases Assignment by ANURAG VISHWAKARMA</title>
+<title>Review</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -95,8 +95,45 @@ h2::after {
 	border: 5px double;    
 }
 </style>
+<style>
+	/* Circle styles */
+	.circle {
+		height: 24px;
+		width: 24px;
+		border-radius: 50%;
+		background-color: black;
+		position: fixed;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		z-index: 99999999;
+		transition: transform 0.1s ease-out;
+	}
+</style>
 </head>
 <body>
+	<!-- Circles -->
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+
 <div class="container pt-2 bg-body-tertiary pb-4">
     <div class="row">
         <ul class="nav nav-tabs">
@@ -318,3 +355,58 @@ h2::after {
         <!-- Copyright -->
       </footer>
 </div>
+<script>
+	// Coordinates for the cursor
+	const coords = { x: 0, y: 0 };
+	const circles = document.querySelectorAll(".circle");
+
+	// Colors for the circles
+	const colors = [
+		"#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+		"#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+		"#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+		"#680060", "#60005f", "#48005f", "#3d005e"
+	];
+
+	// Assign colors and initial position to each circle
+	circles.forEach(function (circle, index) {
+		circle.x = 0;
+		circle.y = 0;
+		circle.style.backgroundColor = colors[index % colors.length];
+	});
+
+	// Update the coordinates when the mouse moves
+	window.addEventListener("mousemove", function (e) {
+		coords.x = e.clientX;
+		coords.y = e.clientY;
+	});
+
+	// Animation function to move the circles
+	function animateCircles() {
+		let x = coords.x;
+		let y = coords.y;
+
+		circles.forEach(function (circle, index) {
+			// Update the position and scale of each circle
+			circle.style.left = x - 12 + "px";
+			circle.style.top = y - 12 + "px";
+			circle.style.scale = (circles.length - index) / circles.length;
+
+			circle.x = x;
+			circle.y = y;
+
+			// Get the next circle in the sequence
+			const nextCircle = circles[index + 1] || circles[0];
+			x += (nextCircle.x - x) * 0.3;
+			y += (nextCircle.y - y) * 0.3;
+		});
+
+		// Repeat the animation
+		requestAnimationFrame(animateCircles);
+	}
+
+	// Start the animation
+	animateCircles();
+</script>
+</body>
+</html>
