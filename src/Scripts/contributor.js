@@ -52,25 +52,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // dark mode
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleCheckbox = document.getElementById("themeToggle");
-  const body = document.body;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const toggleCheckbox = document.getElementById("themeToggle");
+//   const body = document.body;
 
-  // Load saved dark mode preference from localStorage
-  if (localStorage.getItem("dark-mode") === "enabled") {
-    body.classList.add("dark-mode");
-    toggleCheckbox.checked = true;
-  } else {
-    toggleCheckbox.checked = false;
-  }
+//   // Load saved dark mode preference from localStorage
+//   if (localStorage.getItem("dark-mode") === "enabled") {
+//     body.classList.add("dark-mode");
+//     toggleCheckbox.checked = true;
+//   } else {
+//     toggleCheckbox.checked = false;
+//   }
 
-  toggleCheckbox.addEventListener("change", () => {
-    if (toggleCheckbox.checked) {
-      body.classList.add("dark-mode");
-      localStorage.setItem("dark-mode", "enabled");
-    } else {
-      body.classList.remove("dark-mode");
-      localStorage.setItem("dark-mode", "disabled");
-    }
-  });
-});
+//   toggleCheckbox.addEventListener("change", () => {
+//     if (toggleCheckbox.checked) {
+//       body.classList.add("dark-mode");
+//       localStorage.setItem("dark-mode", "enabled");
+//     } else {
+//       body.classList.remove("dark-mode");
+//       localStorage.setItem("dark-mode", "disabled");
+//     }
+//   });
+// });
