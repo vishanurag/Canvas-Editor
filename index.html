@@ -15,9 +15,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <!-- <style> -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+       <!--</style>-->
     
     <button id="darkModeToggle">🌓</button>
 
@@ -129,9 +132,12 @@
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
 
-        }
+   /* }*/
 
-            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        }
+/*background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        }*/
+
+
+            /*background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);   */
 
         .header {
             width: 100%;
@@ -213,8 +219,8 @@
 
         .footer {
             width: 100%;
-            background-color: #ff8686d1;
-            color: #c23e3e;
+            background-color: black;
+            color: #3e8dc2;
             text-align: center;
             border-start-start-radius: 5px;
             padding: 35px 350px;
@@ -293,7 +299,7 @@
             /* Thumb color */
             border-radius: 10px;
             /* Rounded corners */
-            transition: background 0.3s ease, height 0.3s ease;
+            transition: 0.3s ease, height 0.3s ease;
         }
 
         body::-webkit-scrollbar-thumb:hover {
@@ -311,7 +317,7 @@
 
 .footer {
     width: 100%;
-    background-color: #ff8686d1;
+    background-color: rgb(195, 226, 237);
     color: #c23e3e;
     text-align: center;
     border-start-start-radius: 5px;
@@ -482,45 +488,65 @@ h2{
 
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
 
-                  <a class="nav-link" aria-current="page" href="#">Home</a>
+                 <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
 
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
+             
+                <li class="nav-item" style="margin-left: 15px;">
+                    <a class="nav-link active" href="about-us.html">About Us</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="margin-left: 15px;">
 
-                    <a class="nav-link" href="review.html">Review</a>
+                    <a class="nav-link active" href="review.html">Review</a></li>
 
-                  <a class="nav-link" href="testimonial.html">Testimonial</a>
+                <!--  <a class="nav-link active" href="testimonial.html">Testimonial</a> -->
 
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="privacy.html">Privacy</a>
+                <li class="nav-item"style="margin-left: 15px;">
+                    <a class="nav-link active" href="privacy.html">Privacy</a>
                   </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Blog_page.html">Blog</a>
+                <li class="nav-item" style="margin-left: 15px;">
+                    <a class="nav-link active" href="Blog_page.html">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"style="margin-left: 15px;">
 
-                    <a class="nav-link" href="./Faq.html">FAQ</a>
+                    <a class="nav-link active" href="./Faq.html">FAQ</a>
                 </li>
-
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contributors.html">Contributors</a>
+                <li class="nav-item"style="margin-left: 15px;">
+                <a class="nav-link active" href="signup.html">Sign Up</a>
+            </li>
+                <li class="nav-item" style="margin-left: 15px;">
+                    <a class="nav-link active" href="login.html">Login</a>
 
                 </li>
+                <li class="nav-item"style="margin-left: 15px;">
+                    <a class="nav-link active" href="contributors.html">Contributors</a>
+
+                </li>
+                <li class="nav-item"style="margin-left: 15px;">
+                <a class="nav-link active" href="testimonial.html">Testimonial</a></li>
+                <style>
+                    /* Styling for the active nav-link */
+                    .nav-link.active {
+                           background-color: #007bff; /* Background color for the active link */
+                           color: white; /* Text color */
+                           border-radius: 5px; /* Rounded corners for a cool effect */
+                           padding: 10px 15px; /* Add some padding for better spacing */
+                       }
+               
+                       /* Optional: hover effect */
+                       .nav-link:hover {
+                           background-color: #0056b3; /* Darker shade for hover effect */
+                           color: white; /* Keep the text color white on hover */
+                       }
+               </style>  
+
 
             </ul>
         </div>
-        <div class="row text-center p-5" style="background-color: cornflowerblue;">
-            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
+        <div class="row text-center p-5" style="background-color : rgb(245, 207, 233);">
+            <h2 style="color: rgb(32, 31, 31);">Welcome to the Canvas Editor!</h2>
+            <p style="color: rgb(149, 142, 142);">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
                     class="fa-light fa-face-party"></i></p>
         </div>
         <div class="canvas-container">
@@ -699,17 +725,17 @@ h2{
 
         </div>
 
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 
                     </div>
-                    <!-- Message Field -->
-                    <div class="col-md-8">
+                    
+               <!--    <div class="col-md-8">
                         <div class="form-floating">
                             <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
                             <label for="message">Your Message (minimum 20 characters)</label>
                         </div>
                     </div>
-                    <!-- Submit Button -->
+                    Submit Button 
                     <div class="col-md-12 d-flex justify-content-center">
                         <div class="col-md-8">
                             <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
@@ -717,7 +743,7 @@ h2{
                     </div>
                 </form>
             </section>
-        </div>
+        </div>-->
         
         <!-- Custom Popup -->
         <div id="customPopup" class="custom-popup">
@@ -819,15 +845,15 @@ h2{
         <section class="footer" id="footer">
 
             <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fa-brands fa-linkedin-in"></a>
-                <a href="#" class="fa-brands fa-pinterest"></a>
+                <a href="#" class="fab fa-facebook-f"style="color: #3b5998;"></a>
+                <a href="#" class="fa-brands fa-x-twitter"style="color: #1da1f2;"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"style="color: #e4405f;"></a>
+                <a href="#" class="fa-brands fa-linkedin-in"style="color: #0077b5;"></a>
+                <a href="#" class="fa-brands fa-pinterest"style="color: #bd081c;"></a>
             </div>
 
             <div class="credit" style="font-size: 0.6rem;">
-                <p>
+                <p style="color:black;">
                     Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
                     2024
                 </p>
