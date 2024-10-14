@@ -15,11 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <button id="darkModeToggle">🌓</button>
+   
 
 <style>
     body {
@@ -68,7 +67,7 @@
     }
     #darkModeToggle {
         position: fixed;
-        top: 20px;
+        top: 6px;
         right: 20px;
         z-index: 1000;
         background-color: #333333;
@@ -85,35 +84,6 @@
         background-color: #ffffff;
         color: #333333;
     }
-</style>
-
-<script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    function enableDarkMode() {
-        body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled');
-    }
-
-    function disableDarkMode() {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'disabled');
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
-
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        enableDarkMode();
-    }
-</script>
-<style>
         
         body {
             overflow-x: hidden;
@@ -129,9 +99,7 @@
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
 
-        }
-
-            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        }
+        
 
         .header {
             width: 100%;
@@ -422,6 +390,8 @@ h2{
 </head>
 
 <body>
+     
+    <button id="darkModeToggle">🌓</button>
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -468,6 +438,26 @@ h2{
                 src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
                 alt=""></a>
     </div>
+    <header class="header">
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+      </header>
+      
 
     <div class="container pt-2">
         <div class="header">
@@ -476,47 +466,7 @@ h2{
             </h1>
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
-        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-                  <a class="nav-link" aria-current="page" href="#">Home</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="review.html">Review</a>
-
-                  <a class="nav-link" href="testimonial.html">Testimonial</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="privacy.html">Privacy</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Blog_page.html">Blog</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="./Faq.html">FAQ</a>
-                </li>
-
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contributors.html">Contributors</a>
-
-                </li>
-
-            </ul>
+        
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
@@ -570,24 +520,6 @@ h2{
 
 
 
-            <!-- <header class="header">
-        <nav class="navbar">
-            <div class="title">
-                <h1 class="site-name">Canvas Editor</h1>
-                <i class="fa-solid fa-paintbrush"></i>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="#blogs">Blogs</a>
-                <a href="index.html#mainCanvas">Draw</a>
-            </div>
-        </nav>
-    </header>
-    <div class="row text-center p-5" style="background-color: rgb(0, 0, 0);">
-        <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-        <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-    </div> -->
             <div class="canvas-container">
                 <!-- <canvas id="mainCanvas"></canvas> -->
 
@@ -727,6 +659,28 @@ h2{
                 <button id="closePopup" class="btn btn-primary">Close</button>
             </div>
         </div>
+        <section class="footer" id="footer">
+
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fa-brands fa-linkedin-in"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
+
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    2024
+                </p>
+                <br>
+            </div>
+            <!-- Back to Top Button -->
+            <button id="BacktoTop">
+                <span>↑</span>
+            </button>
+        </section>
         
         <style>
             .custom-popup {
@@ -816,28 +770,7 @@ h2{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/edit.js"></script> -->
 
-        <section class="footer" id="footer">
-
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fa-brands fa-linkedin-in"></a>
-                <a href="#" class="fa-brands fa-pinterest"></a>
-            </div>
-
-            <div class="credit" style="font-size: 0.6rem;">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
-                    2024
-                </p>
-                <br>
-            </div>
-            <!-- Back to Top Button -->
-            <button id="BacktoTop">
-                <span>↑</span>
-            </button>
-        </section>
+       
 
         <script src="src\Scripts\preloader.js"></script>
         <script>
@@ -1161,6 +1094,32 @@ h2{
 
             // Start the animation
             animateCircles();
+        </script>
+        <script>
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+        
+            function enableDarkMode() {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        
+            function disableDarkMode() {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        
+            darkModeToggle.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    disableDarkMode();
+                } else {
+                    enableDarkMode();
+                }
+            });
+        
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                enableDarkMode();
+            }
         </script>
 </body>
 

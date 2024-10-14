@@ -4,7 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool - Reviews, Testimonials & Popular Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /*  Navbar Styling  starts*/
+      .navbar {
+        background-color: #333; /* Dark background */
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-wrap: wrap;
+        border-bottom: none;
+      }
+      .title {
+  display: flex;
+  align-items: left;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: center;
+}
+
+      /* Styling individual links in the navbar */
+      .navbar a {
+        color: #a0a0a0; /* Link color */
+        font-size: 18px; /* Font size */
+        text-decoration: none; /* Remove underline */
+        padding: 0.5rem 1rem; 
+        border-radius: 0.5rem; /* Rounded corners for hover effect */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+        
+      }
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      }
+
+      .nav-links a:hover {
+        color: #ffffff;
+      }
+      /* navbar styling ends */
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -159,14 +204,30 @@
         header {
             position: relative;  /* Add this to ensure proper positioning of the home button */
         }
+
+        
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="home-button">◀ Back to Home</a>
-        <h1>Creative Canvas Tool</h1>
-        <p class="subtitle">Design and create stunning visuals effortlessly!</p>
-    </header>
+    
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush" style="margin: 25px 0 0 0;"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+      
     <div class="container">
         <section class="stats">
             <div class="stat-item">

@@ -15,11 +15,13 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
-            display: flex;
+            /* display: flex; */
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
         }
         .header-container {
             width: 100vw; 
@@ -166,33 +168,28 @@
         <!-- dribbble -->
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
-    <div class="header-container">
+
+    <header class="header">
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+      </header>
+
     
-        <div class="title" >
-            <h1 class="site-name" style="color: #000;">Canvas</h1>
-            <i class="fa-solid fa-paintbrush" style="color: #000;"></i>
-         </div> 
-        <div class="header">
-            <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
-        </div>
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about-us.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-        </ul>
-    </div>
     <div id="login" class="form-container mt-5">
         <h3 class="pb-4">LOG IN</h3>
         <form action="/login" method="POST">
@@ -218,7 +215,7 @@
         <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
 
     </div>
-    <a href="index.html" class="back-to-home">◀  Back to Home</a>
+    
 
     <script src="src\Scripts\preloader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
