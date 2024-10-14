@@ -35,7 +35,6 @@
 </table>
 </div>
 <br>
----
 
 ## 🚀Featured In
 
@@ -63,19 +62,18 @@
 
 ## Table of Contents
 
-1. [Welcome to Canvas Editor](#-canvas-editor-)
-2. [Overview](#overview)
-3. [New Features](#new-features-)
-4. [How to Use](#how-to-use)
-5. [Technology Used](#technology-used)
-6. [Getting Started](#getting-started)
-7. [Project Admin](#project-admin)
-8. [Contribution](#contribution)
-9. [Contributors](#contributors)
-10. [Website Preview](#website-preview)
-11. [Stargazers](#-stargazers)
-12. [Forkers](#-forkers)
-13. [Code of Conduct](#code-of-conduct)
+- [Overview](#overview)
+- [New Features](#new-features-)
+- [How to Use](#how-to-use)
+- [Technology Used](#technology-used)
+- [Getting Started](#getting-started)
+- [Project Admin](#project-admin)
+- [Contribution](#contribution)
+- [Contributors](#contributors)
+- [Website Preview](#website-preview)
+- [Stargazers](#-stargazers)
+- [Forkers](#-forkers)
+- [Code of Conduct](#code-of-conduct)
 
 ---
 <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
