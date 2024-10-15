@@ -83,9 +83,109 @@
             text-align: center;
             color: white;
         }
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/Styles/Style.css">
+    <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="./src/Styles/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        .header-container {
+            width: 100vw; 
+            background-color: #f8f9fa; 
+            padding: 70px 0; 
+            text-align: center;
+            margin-bottom: 20px; 
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+        .back-to-home:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        /* ... (rest of the styles remain unchanged) ... */
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-to-home">◀  Back to Home</a>
+
+</body>
+</html>
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
     <!-- preloader -->
     <div id="preloader">
         <div class="loader">
@@ -110,7 +210,11 @@
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
     <div class="header-container">
-    
+        
+        <div class="title " >
+            <h1 class="site-name" style="color: #000;">Canvas</h1>
+            <i class="fa-solid fa-paintbrush" style="color: #000;"></i>
+         </div> 
         <div class="header">
             <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
         </div>
@@ -120,7 +224,7 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="about-us.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Review</a>
@@ -129,126 +233,195 @@
               <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link" href="login.html">Login </a>
 
             </li>
         </ul>    
     </div>
-    <div id="login" class="form-container mt-5">
-        <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
-        <form action="/signup" method="POST" onsubmit="return validatePassword()">
-            <div id="input">
-                <input type="text" name="username" placeholder="Username" required>
-                <i class="fa-solid fa-user"></i>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="login" class="form-container mt-5">
+            <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
+            <form action="/signup" method="POST" onsubmit="return validatePassword()">
+                <div id="input">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div id="input">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <!-- Password Input Block with Strength Meter -->
+                <div id="input">
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="password-strength" id="password-strength" style="display: none;">
+                    <span id="strength-text"></span>
+                    <div class="strength-bar">
+                        <div id="strength-bar-fill"></div>
+                    </div>
+                    <br>
+                </div>
+    
+                <!-- Confirm Password Input Block -->
+                <div id="input">
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+    
+                <!-- Importing zxcvbn -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+    
+                <!-- Script for Password Strength Check -->
+                <script>
+                    function checkPasswordStrength() {
+                        const password = document.getElementById('password').value;
+                        const strengthBarFill = document.getElementById('strength-bar-fill');
+                        const strengthText = document.getElementById('strength-text');
+                        const result = zxcvbn(password);
+    
+                        // Strength levels based on zxcvbn score
+                        const strengthLevels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"];
+                        strengthText.textContent = strengthLevels[result.score];
+    
+                        // Update the strength bar's width and color based on the score
+                        const strengthPercentage = (result.score + 1) * 20; // Each level gets 20% width
+                        strengthBarFill.style.width = strengthPercentage + "%";
+    
+                        // Apply different classes for coloring the strength bar (optional customization)
+                        const barClasses = ['very-weak', 'weak', 'medium', 'strong', 'very-strong'];
+                        strengthBarFill.className = barClasses[result.score];
+                    }
+    
+                    function showStrengthBar() {
+                        const strengthBar = document.getElementById('password-strength');
+                        strengthBar.style.display = 'block';  // Show the strength bar when the user focuses on the password field
+                    }
+                </script>
+    
+                <!-- Styles for the Strength Meter -->
+                <style>
+                    .password-strength {
+                        margin-top: 10px;
+                    }
+                    .strength-bar {
+                        width: 100%;
+                        height: 10px;
+                        background-color: #e0e0e0;
+                        border-radius: 4px;
+                        overflow: hidden;
+                    }
+                    #strength-bar-fill {
+                        height: 100%;
+                        width: 0; /* Default width */
+                        transition: width 0.3s ease;
+                        background-color: #ff4d4d; /* Default color for very weak */
+                    }
+                    /* Classes for strength levels */
+                    .very-weak { background-color: #ff4d4d; }
+                    .weak { background-color: #ff9933; }
+                    .medium { background-color: #ffcc33; }
+                    .strong { background-color: #99cc33; }
+                    .very-strong { background-color: #33cc33; }
+                </style>
+    
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="or">- OR -</div>
+            <div id="social" class="mb-3">
+                <a href="https://www.google.com/"><img class="logo google-btn"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
+                </a>
+                <a href="https://github.com/"><img class="logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
+                </a>
             </div>
-            <div id="input">
-                <input type="email" name="email" placeholder="Email" required>
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <!-- Password Input Block with Strength Meter -->
-        <div id="input">
-            <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
-            <i class="fa-solid fa-lock"></i>
+            <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
         </div>
-        <div class="password-strength" id="password-strength" style="display: none;">
-            <span id="strength-text"></span>
-            <div class="strength-bar">
-                <div id="strength-bar-fill"></div>
-            </div>
-            <br>
-        </div>
-
-        <!-- Confirm Password Input Block -->
-        <div id="input">
-            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-            <i class="fa-solid fa-lock"></i>
-        </div>
-
-        <!-- Importing zxcvbn -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-
-        <!-- Script for Password Strength Check -->
+    
+        <!-- Validation Script -->
         <script>
-            function checkPasswordStrength() {
+            function validatePassword() {
                 const password = document.getElementById('password').value;
-                const strengthBarFill = document.getElementById('strength-bar-fill');
-                const strengthText = document.getElementById('strength-text');
-                const result = zxcvbn(password);
-
-                // Strength levels based on zxcvbn score
-                const strengthLevels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"];
-                strengthText.textContent = strengthLevels[result.score];
-
-                // Update the strength bar's width and color based on the score
-                const strengthPercentage = (result.score + 1) * 20; // Each level gets 20% width
-                strengthBarFill.style.width = strengthPercentage + "%";
-
-                // Apply different classes for coloring the strength bar (optional customization)
-                const barClasses = ['very-weak', 'weak', 'medium', 'strong', 'very-strong'];
-                strengthBarFill.className = barClasses[result.score];
-            }
-
-            function showStrengthBar() {
-                const strengthBar = document.getElementById('password-strength');
-                strengthBar.style.display = 'block';  // Show the strength bar when the user focuses on the password field
+                const confirmPassword = document.getElementById('confirm_password').value;
+                
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match.');
+                    return false;
+                }
+                
+                // Display the success message
+                alert("Your account is created successfully. Please login to access the website");
+                
+                return true;
             }
         </script>
-
-        <!-- Styles for the Strength Meter -->
-        <style>
-            .password-strength {
-                margin-top: 10px;
+        
+        <script src="src/Scripts/preloader.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Animation Script for Mouse Coordinates -->
+        <script>
+            // Coordinates for the cursor
+            const coords = { x: 0, y: 0 };
+            const circles = document.querySelectorAll(".circle");
+    
+            // Colors for the circles
+            const colors = [
+                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+                "#680060", "#60005f", "#48005f", "#3d005e"
+            ];
+    
+            // Assign colors and initial position to each circle
+            circles.forEach(function (circle, index) {
+                circle.x = 0;
+                circle.y = 0;
+                circle.style.backgroundColor = colors[index % colors.length];
+            });
+    
+            // Update the coordinates when the mouse moves
+            window.addEventListener("mousemove", function (e) {
+                coords.x = e.clientX;
+                coords.y = e.clientY;
+            });
+    
+            // Animation function to move the circles
+            function animateCircles() {
+                let x = coords.x;
+                let y = coords.y;
+    
+                circles.forEach(function (circle, index) {
+                    // Update the position and scale of each circle
+                    circle.style.left = x - 12 + "px";
+                    circle.style.top = y - 12 + "px";
+                    circle.style.scale = (circles.length - index) / circles.length;
+    
+                    circle.x = x;
+                    circle.y = y;
+    
+                    // Get the next circle in the sequence
+                    const nextCircle = circles[index + 1] || circles[0];
+                    x += (nextCircle.x - x) * 0.3;
+                    y += (nextCircle.y - y) * 0.3;
+                });
+    
+                // Repeat the animation
+                requestAnimationFrame(animateCircles);
             }
-            .strength-bar {
-                width: 100%;
-                height: 10px;
-                background-color: #e0e0e0;
-                border-radius: 4px;
-                overflow: hidden;
-            }
-            #strength-bar-fill {
-                height: 100%;
-                width: 0; /* Default width */
-                transition: width 0.3s ease;
-                background-color: #ff4d4d; /* Default color for very weak */
-            }
-            /* Classes for strength levels */
-            .very-weak { background-color: #ff4d4d; }
-            .weak { background-color: #ff9933; }
-            .medium { background-color: #ffcc33; }
-            .strong { background-color: #99cc33; }
-            .very-strong { background-color: #33cc33; }
-        </style>
-
-            <button type="submit">Sign Up</button>
-        </form>
-        <div class="or">- OR -</div>
-        <div id="social" class="mb-3">
-            <a href="https://www.google.com/"><img class="logo google-btn"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
-            </a>
-            <a href="https://github.com/"><img class="logo"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
-            </a>
-        </div>
-        <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
-        </div>
-    </div>
-
-    <script>
-        function validatePassword() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm_password').value;
-            if (password !== confirmPassword) {
-                alert('Passwords do not match.');
-                return false;
-            }
-            return true;
-        }
-    </script>
-    <script src="src\Scripts\preloader.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    
+            // Start the animation
+            animateCircles();
+        </script>
+    </body>
+    </html>
+    
