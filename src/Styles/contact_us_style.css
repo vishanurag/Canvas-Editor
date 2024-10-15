@@ -1,35 +1,82 @@
-.form-control {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    box-shadow: none;
-  }
+.card {
+  width: 50%; /* Set a specific width */
+  margin: 10px auto; /* Center horizontally */
+  padding: 20px;
+  margin-bottom: 70px;
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+/*
+.card-header {
+ 
   
-  input[type="text"], input[type="email"], textarea {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    display: block;
-    width: 550px;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    background-color: #fff;
-    color: #495057;
-  }
-  
-  /* Ensure form-floating labels look good across all inputs */
-  .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
-    height: calc(3.5rem + 2px);
-    padding: 1rem 0.75rem;
-  }
-  
-  /* Remove box shadow on focus to prevent inconsistencies */
-  .form-control:focus {
-    border-color: #80bdff;
-    outline: none;
-    box-shadow: none;
-  }
+  padding: 1px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 90%;
+  border-bottom: 1px solid #ddd;
+  border-radius: 6px;
+}
+  */
+.card-body {
+  display: flex;
+  justify-content: space-between; /* Form on the left and image on the right */
+  align-items: flex-start; /* Align content to the top */
+}
+
+.form-section {
+  width: 50%; /* Width for the form section */
+}
+
+
+
+
+
+.image-section {
+  width: 50%; /* Width for the image section */
+  display: flex;
+  justify-content: center; /* Center the image */
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%; /* Make sure image does not exceed its container width */
+  height: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  width: 100%; /* Adjust width for better alignment */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px; /* Adjust height for textarea */
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #444;
+}
+
+
