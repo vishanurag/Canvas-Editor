@@ -125,20 +125,37 @@
     color: #f1c40f;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
-    .footer {
-        padding: 30px 0;
-    }
-
-    .footer .share a {
-        font-size: 1.5rem;
-    }
-
-    .footer .credit {
-        font-size: 0.8rem;
-    }
+  .btn {
+    padding: 10px 20px;
+    width: 100%; /* Full width on mobile */
+    font-size: 16px;
+  }
 }
+
+img, #mainCanvas {
+  width: 100%;
+  height: auto;
+}
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .row {
+    padding: 15px; /* Reduce padding on mobile */
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .nav-item {
+    display: block; /* Stack navigation items */
+    text-align: center;
+  }
+}
+
 
    
         /* Circle styles */
@@ -206,31 +223,24 @@ body::-webkit-scrollbar-thumb:hover {
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="review.html">Review</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Blog_page.html">Blog</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="./Faq.html">FAQ</a>
-                  </li>
-
-                    <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Creative Canvas Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="review.html">Review</a></li>
+                <li class="nav-item"><a class="nav-link" href="Blog_page.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="Faq.html">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+              </ul>
+            </div>
+          </nav>
+          
         </div>
         <div class="row text-center p-5" style="background-color: cornflowerblue;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
