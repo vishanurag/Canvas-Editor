@@ -639,6 +639,38 @@ h2{
                     </form>
                 </div>
 
+                <div class="edit">
+                    <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                    <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
+                    <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
+                </div>
+            </form>
+                <div class="d-md-flex justify-content-evenly gap-1">
+                    <button class="btn btn-primary" id="capital">Uppercase</button>
+                    <button class="btn btn-primary" id="small">Lowercase</button>
+                    <button class="btn btn-primary" id="bold">Bold</button>
+                    <button class="btn btn-primary" id="italic">Italic</button>
+                </div>
+                <div class="palette">
+                    <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                    <button id="circleBtn" class="btn btn-success">Circle</button>
+                    <button id="lineBtn" class="btn btn-success">Line</button>
+                    <button id="triangleBtn" class="btn btn-success">Triangle</button>
+                    <button id="heartBtn" class="btn btn-success">Heart</button>
+                    <button id="squareBtn" class="btn btn-success">Square</button>
+                    <button id="pentagonBtn" class="btn btn-success">Pentagon</button>
+                    <button id="hexagonBtn" class="btn btn-success">Hexagon</button>
+                </div>
+                <div class="d-md-flex justify-content-center gap-2 mb-3">
+                    <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                    <button type="button" class="btn btn-primary" id="save">Save</button>
+                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                </div>
+            </form>
+        </div>
+
+
             </div>
             <div class="container mt-5">
                 <!-- Contact Us Section -->
@@ -962,7 +994,7 @@ h2{
             mainCanvas.addEventListener('touchend', stopDrawing);
 
             // Clear the entire canvas
-            document.getElementById('clearCanvas').addEventListener('click', () => {
+            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
                 ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
             });
 
