@@ -58,6 +58,60 @@
           opacity: 1;
           clip-path: inset(0 0 0 0);
         }
+
+        .team-member {
+            position: relative;
+            border-radius: 10px;
+            color: white;
+            padding: 30px;
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            overflow: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+        
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+        .team-member:hover .overlay{
+            opacity: 0;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); 
+            transition: opacity 0.3s;
+            opacity: 0.9; 
+        }
+        h3 {
+            margin-bottom: 40px;
+        }
+         
+        .team-member h4, .team-member p {
+    color: #fff; 
+    text-shadow: 
+    1px 1px 0 #000,  
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #fff; 
+    text-shadow: 
+    1px 1px 0 #000,  
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+}
       }
 
       .block {
@@ -108,6 +162,7 @@
         z-index: 99999999;
         transition: transform 0.1s ease-out;
       }
+
     </style>
   </head>
   <body>
@@ -151,6 +206,88 @@
     </header>
 
     <section class="about-section">
+
+        <div class="container">
+            <h2 class="text-center mb-5">About Creative Canvas Tool</h2>
+            <div class="row align-items-center mb-5 ">
+                <div class="col-md-6">
+                    <img src="resources/painting_image.jpg" alt="Creative Canvas Tool in action" class="about-image">
+                </div>
+                <div class="col-md-6 " style="text-align: justify;">
+                    <p>
+                        Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
+                    </p>
+                        
+                    <p>
+                        Our Tool not only offers powerful creation tools but also fosters a vibrant community for artists to share their work, seek feedback, and collaborate. Engage in challenges and participate in workshops to enhance your skills. With regular updates and new features, our platform continually evolves to meet the needs of both budding talents and seasoned professionals.
+                    </p>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-6 text-center block">
+                    <i class="fas fa-bullseye mission-icon"></i>
+                    <h3>Our Mission</h3>
+                    <p>To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.</p>
+                </div>
+                <div class="col-md-6 text-center block">
+                    <i class="fas fa-book-open story-icon"></i>
+                    <h3>Our Story</h3>
+                    <p>Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.</p>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h3>Our Team</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="team-member" style="background-image: url('https://onlinecs.baylor.edu/sites/default/files/field/image/Future%20of%20Software_Engineering%20%281%29.jpg');">
+                            <div class="overlay"></div>
+                            <i class="fas fa-user-tie icon"></i>
+                            <h4>Anurag</h4>
+                            <p>Founder & Lead Developer</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="team-member" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7gc5QKEWU_8R4G4bmhgkVegGN-fhjxycNXA&s');">
+                            <div class="overlay"></div>
+                            <i class="fas fa-paint-brush icon"></i>
+                            <h4>John Smith</h4>
+                            <p>Creative Director</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="team-member" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfgv7iuM1Exo9z5llQKVSg4NBicDOQ6BoInQ&s');">
+                            <div class="overlay"></div>
+                            <i class="fas fa-laptop-code icon"></i>
+                            <h4>Emily Chen</h4>
+                            <p>UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5 block">
+                <div class="col-12 text-center">
+                    <h3>Join Our Community</h3>
+                    <p>Be part of our growing community of artists. Share your creations, get inspired, and connect with fellow creatives from around the world.</p>
+                    <a href="#" class="btn btn-primary mt-3">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer" id="footer">
+        <div class="share" style="font-size: 0.9rem; text-align: center;">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fa-brands fa-x-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fa-brands fa-linkedin-in"></a>
+            <a href="#" class="fa-brands fa-pinterest"></a>
+        </div>
+        <div class="credit" style="font-size: 1rem; text-align: center;">
+            <p style="color: white;">
+                Created by <span><a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a></span> | All rights reserved © 2024
+
       <div class="container">
         <h2 class="text-center mb-5">About Creative Canvas Tool</h2>
         <div class="row align-items-center mb-5">
@@ -172,6 +309,7 @@
               interface ensures a seamless experience, allowing you to focus on
               what matters most—your art.
             </p>
+
 
             <p>
               Our Tool not only offers powerful creation tools but also fosters
