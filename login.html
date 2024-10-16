@@ -25,9 +25,9 @@
             width: 100vw;
             min-height: 100vh;
             background-color: #f8f9fa; 
-            padding: 120px 0; 
+            padding: 70px 0; 
             text-align: center;
-            margin-bottom: 10px; 
+            margin-bottom: 20px; 
             background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
             background-size: cover;
         }
@@ -103,23 +103,6 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
-
-        .back-to-home {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            z-index: 1000;
-        }
-        .back-to-home:hover {
-            background-color: #0056b3;
-            color: white;
-        }
     </style>
 </head>
 <body>
@@ -169,10 +152,6 @@
     </div>
     <div class="header-container">
     
-        <div class="title" >
-            <h1 class="site-name" style="color: #000;">Canvas</h1>
-            <i class="fa-solid fa-paintbrush" style="color: #000;"></i>
-         </div> 
         <div class="header">
             <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
         </div>
@@ -182,7 +161,7 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about-us.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Review</a>
@@ -192,6 +171,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+
+            </li>
         </ul>
     </div>
     <div id="login" class="form-container mt-5">
@@ -202,8 +185,8 @@
                 <i class="fa-solid fa-user"></i>
             </div>
             <div id="input">
-                <input type="password" name="password" placeholder="Enter Password" required>
-                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <i class="fa-solid fa-eye" id="togglePassword"></i>
             </div>
             <button type="submit">Log In</button>
         </form>
@@ -219,8 +202,6 @@
         <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
 
     </div>
-    <a href="index.html" class="back-to-home">◀  Back to Home</a>
-
     <script src="src\Scripts\preloader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -241,6 +222,22 @@
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+
+         // Select the password field and the eye icon
+         const passwordInput = document.getElementById('password');
+         const togglePassword = document.getElementById('togglePassword');
+
+        // Add an event listener to the eye icon
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute between password and text
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+      
+            // Toggle the icon between eye and eye-slash
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
         });
 
         // Update the coordinates when the mouse moves
