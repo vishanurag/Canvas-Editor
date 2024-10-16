@@ -53,25 +53,10 @@ body {
 }
 /* Scroll Bar Styling */
 
-::-webkit-scrollbar {
-  width: 0.8em;
-}
 
-::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 100vw;
-  margin-block: 0.5em;
-  scroll-behavior: smooth;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #6495ed;
-  border-radius: 10vw;
-}
-@supports (scrollbar-color: #6495ed) {
-  * {
-    scrollbar-color: #6495ed;
-  }
-}
+
+
+
 /* Preloader styling  */
 #preloader {
   background: #ddbea9;
@@ -811,3 +796,4 @@ footer .credit {
   background-color: #0056b3; /* Change to a lighter blue on hover */
   transform: scale(1.1);
 }
+
