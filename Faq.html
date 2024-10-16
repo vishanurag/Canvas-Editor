@@ -25,8 +25,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Hind', sans-serif;
-            background: black;
-            color: gray;
+            background: rgb(24, 24, 24);
+            color: rgb(196, 191, 191);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -44,7 +44,7 @@
                 border-bottom: 1px solid lightgray;
 
                 button[aria-expanded='true'] {
-                    border-bottom: 1px solid blue;
+                    border-bottom: 1px solid rgb(203, 222, 232);
                 }
             }
         }
@@ -65,12 +65,12 @@
             &:hover,
             &:focus {
                 cursor: pointer;
-                color: blue;
+                color: rgb(205, 225, 250);
 
                 &::after {
                     cursor: pointer;
-                    color: blue;
-                    border: 1px solid blue;
+                    color: rgb(203, 222, 232);
+                    border: 1px solid rgb(203, 222, 232);
                 }
             }
 
@@ -113,7 +113,7 @@
         }
 
         button[aria-expanded='true'] {
-            color: blue;
+            color: rgb(203, 222, 232);
 
             .icon {
                 &::after {
@@ -141,6 +141,25 @@
                 font-weight: 300;
                 margin: 2em 0;
             }
+        }
+        /* Back to home button */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 30px;
+            background-color: #444;
+            color: white;
+            border: none;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #555;
         }
     </style>
     <style>
@@ -313,6 +332,8 @@
 </head>
 
 <body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="home-button">Home</a>
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
