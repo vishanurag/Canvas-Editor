@@ -5,8 +5,49 @@
   box-sizing: border-box;
   transition: all 0.1s linear;
 }
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg,#cf9aff,#95c0ff);
+  color: #fff;
+  padding-top: 4%;
+  padding-left: 10%;
+  padding-bottom: 0;
+}
+.container h4{
+  display: flex;
+  align-items: center;
+  font-size: 55px;
+  font-weight: 600;
+  color: white;
+}
+.container h4 span{
+  display: flex;
+  align-items: center;
+  font-size: 55px;
+  font-weight: 600;
+  color: #571094;
+}
+.container button{
+  display: flex;
+  align-items: center;
+  background: linear-gradient(#9418fd,#571094);
+  color: #fff;
+  font-size: 16px;
+  outline: 0;
+  border: 0;
+  border-radius: 40px;
+  padding: 15px 25px;
+  margin: 30px 0 20px;
+  cursor: pointer;
 
-        
+
+}
+.form-control{
+  height: 200px;
+  width: 300px;
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--background-color);
@@ -276,25 +317,10 @@ transform: translateX(26px);
 
 /* Scroll Bar Styling */
 
-::-webkit-scrollbar {
-  width: 0.8em;
-}
 
-::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 100vw;
-  margin-block: 0.5em;
-  scroll-behavior: smooth;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #6495ed;
-  border-radius: 10vw;
-}
-@supports (scrollbar-color: #6495ed) {
-  * {
-    scrollbar-color: #6495ed;
-  }
-}
+
+
+
 /* Preloader styling  */
 #preloader {
   background: #ddbea9;
@@ -1034,3 +1060,4 @@ footer .credit {
   background-color: #0056b3; /* Change to a lighter blue on hover */
   transform: scale(1.1);
 }
+
