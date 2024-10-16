@@ -94,7 +94,7 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
     <link rel="stylesheet" href="./src/Styles/signup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200.700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         body {
@@ -244,7 +244,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registration Form</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="src/Styles/Style.css">
     </head>
     <body>
         <div id="login" class="form-container mt-5">
@@ -337,12 +337,70 @@
             </form>
             <div class="or">- OR -</div>
             <div id="social" class="mb-3">
-                <a href="https://www.google.com/"><img class="logo google-btn"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
-                </a>
-                <a href="https://github.com/"><img class="logo"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
-                </a>
+
+               <!-- Google Sign-In Button -->
+<button id="googleLoginBtn">Login with Google</button>
+
+<!-- GitHub Sign-In Button -->
+<button id="githubLoginBtn">Login with GitHub</button>
+
+<!-- Firebase SDKs -->
+<script type="module">
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+  console.log(process.env.REACT_APP_API_KEY)
+  // Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
+};[]
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  
+  // Initialize Firebase Auth
+  const auth = getAuth(app);
+
+  // Google Login Functionality
+  document.getElementById('googleLoginBtn').addEventListener('click', () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result.user);  // Display user info
+      alert('Google login successful');
+    })
+    .catch((error) => {
+      console.error("Google login failed", error.message);  // Log the specific error
+      alert('Google login failed: ' + error.message);  // Show detailed error in alert
+    });
+});
+
+document.getElementById('githubLoginBtn').addEventListener('click', () => {
+  const provider = new GithubAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result.user);  // Display user info
+      alert('GitHub login successful');
+    })
+    .catch((error) => {
+      console.error("GitHub login failed", error.message);  // Log the specific error
+      alert('GitHub login failed: ' + error.message);  // Show detailed error in alert
+    });
+});
+
+</script>
+
+
+
             </div>
             <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
         </div>
