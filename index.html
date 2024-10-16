@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
@@ -31,6 +31,7 @@
     }
     .dark-mode .container {
         background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+        color:#007bff;
     }
     .dark-mode .canvas-container {
         background: #2a2a2a;
@@ -127,9 +128,11 @@
             color: rgb(0, 0, 0);
 
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+
         
 
-                   }
+     }
+
 
         .header {
             width: 100%;
@@ -642,6 +645,38 @@ h2{
                     </form>
                 </div>
 
+                <div class="edit">
+                    <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                    <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
+                    <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
+                </div>
+            </form>
+                <div class="d-md-flex justify-content-evenly gap-1">
+                    <button class="btn btn-primary" id="capital">Uppercase</button>
+                    <button class="btn btn-primary" id="small">Lowercase</button>
+                    <button class="btn btn-primary" id="bold">Bold</button>
+                    <button class="btn btn-primary" id="italic">Italic</button>
+                </div>
+                <div class="palette">
+                    <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                    <button id="circleBtn" class="btn btn-success">Circle</button>
+                    <button id="lineBtn" class="btn btn-success">Line</button>
+                    <button id="triangleBtn" class="btn btn-success">Triangle</button>
+                    <button id="heartBtn" class="btn btn-success">Heart</button>
+                    <button id="squareBtn" class="btn btn-success">Square</button>
+                    <button id="pentagonBtn" class="btn btn-success">Pentagon</button>
+                    <button id="hexagonBtn" class="btn btn-success">Hexagon</button>
+                </div>
+                <div class="d-md-flex justify-content-center gap-2 mb-3">
+                    <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                    <button type="button" class="btn btn-primary" id="save">Save</button>
+                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                </div>
+            </form>
+        </div>
+
+
             </div>
             <div class="container mt-5">
                 <!-- Contact Us Section -->
@@ -815,12 +850,12 @@ h2{
     <script src="./src/Scripts/edit.js"></script> -->
 
         <section class="footer" id="footer">
-
+            <!-- Added responsiveness to icons -->
             <div class="share">
                 <a href="#" class="fab fa-facebook-f"></a>
                 <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
                 <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fa-brands fa-linkedin-in"></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
                 <a href="#" class="fa-brands fa-pinterest"></a>
             </div>
 

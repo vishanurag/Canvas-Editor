@@ -143,7 +143,7 @@
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-to-home">◀  Back to Home</a>
+    <a href="index.html" class="back-to-home">Back to Home</a>
 
 </body>
 </html>
@@ -210,11 +210,7 @@
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
     <div class="header-container">
-        
-        <div class="title " >
-            <h1 class="site-name" style="color: #000;">Canvas</h1>
-            <i class="fa-solid fa-paintbrush" style="color: #000;"></i>
-         </div> 
+    
         <div class="header">
             <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
         </div>
@@ -224,7 +220,7 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about-us.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Review</a>
@@ -233,7 +229,9 @@
               <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.html">Login </a>
+                <a class="nav-link" href="#">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
 
             </li>
         </ul>    
@@ -261,7 +259,7 @@
                 <!-- Password Input Block with Strength Meter -->
                 <div id="input">
                     <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="togglePassword"></i>
                 </div>
                 <div class="password-strength" id="password-strength" style="display: none;">
                     <span id="strength-text"></span>
@@ -274,7 +272,7 @@
                 <!-- Confirm Password Input Block -->
                 <div id="input">
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
                 </div>
     
                 <!-- Importing zxcvbn -->
@@ -387,6 +385,32 @@
                 circle.x = 0;
                 circle.y = 0;
                 circle.style.backgroundColor = colors[index % colors.length];
+            });
+
+            // Toggle Password Visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Toggle Confirm Password Visibility
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+            const confirmPasswordInput = document.getElementById('confirm_password');
+
+            toggleConfirmPassword.addEventListener('click', function () {
+                const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPasswordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
             });
     
             // Update the coordinates when the mouse moves
