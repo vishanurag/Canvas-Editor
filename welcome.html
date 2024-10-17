@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Creative Canvas Tool</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Correct Bootstrap version and CSS cleanup -->
+    <link rel="stylesheet" href="src/Styles/scroll.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" />
+
+    <!-- Consolidated and optimized CSS -->
     <style>
         body {
             margin: 0;
@@ -32,17 +32,9 @@
         }
 
         @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .particle {
@@ -54,17 +46,9 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
 
         .welcome-container {
@@ -86,15 +70,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .welcome-text {
@@ -120,12 +97,6 @@
             color: white;
         }
 
-        .btn-start:focus {
-            outline: none;
-        }
-    </style>
-    <style>
-        /* Circle styles */
         .circle {
             height: 24px;
             width: 24px;
@@ -135,111 +106,103 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: 99999999;
+            z-index: 999;
+            transform: translate(-50%, -50%);
             transition: transform 0.1s ease-out;
         }
     </style>
 </head>
 
 <body>
-<!-- Circles -->
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Background -->
     <div class="background"></div>
 
+    <!-- Welcome content -->
     <div class="welcome-container">
         <h1 class="welcome-title">Welcome to Creative Canvas Tool!</h1>
         <p class="welcome-text">Design and create stunning visuals effortlessly.</p>
-        <a href="index.html" class="btn btn-start">Start Creating</a> <!-- Updated link -->
+        <a href="index.html" class="btn btn-start">Start Creating</a>
     </div>
 
     <script>
-        // Generate random particles in the background
+        // Generate random particles in the background using DocumentFragment for performance
         const particleCount = 50;
+        const fragment = document.createDocumentFragment();
 
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
-            const size = Math.random() * 10 + 5; // Random size between 5 and 15px
+            const size = Math.random() * 10 + 5;
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
-            particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random()})`; // Random opacity
+            particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random()})`;
             particle.style.top = `${Math.random() * 100}vh`;
             particle.style.left = `${Math.random() * 100}vw`;
-            document.body.appendChild(particle);
+            fragment.appendChild(particle);
         }
-    </script>
-<script>
-    // Coordinates for the cursor
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
+        document.body.appendChild(fragment);
 
-    // Colors for the circles
-    const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-        "#680060", "#60005f", "#48005f", "#3d005e"
-    ];
+        // Cursor circles animation
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+        const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
 
-    // Assign colors and initial position to each circle
-    circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-    });
-
-    // Update the coordinates when the mouse moves
-    window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-    });
-
-    // Animation function to move the circles
-    function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
+        // Assign colors to circles and initialize their positions
         circles.forEach(function (circle, index) {
-            // Update the position and scale of each circle
-            circle.style.left = x - 12 + "px";
-            circle.style.top = y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-
-            circle.x = x;
-            circle.y = y;
-
-            // Get the next circle in the sequence
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
+            circle.style.backgroundColor = colors[index % colors.length];
         });
 
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
-    }
+        // Update cursor coordinates on mousemove
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
 
-    // Start the animation
-    animateCircles();
-</script>
+        // Animate circles based on cursor movement
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
+    </script>
 </body>
 
 </html>

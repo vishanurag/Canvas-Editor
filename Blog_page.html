@@ -6,6 +6,7 @@
     <title>Blog Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/Styles/Style_Blog_page.css">
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <style>
       /* Circle styles */
       .circle {
@@ -19,6 +20,9 @@
         pointer-events: none;
         z-index: 99999999;
         transition: transform 0.1s ease-out;
+      }
+      html{
+        scroll-behavior: smooth;
       }
     </style>
   </head>
@@ -50,8 +54,8 @@
           <a href = "index.html" class = "navbar-brand">Creative Canvas</a>
           <div class = "navbar-nav">
             <a href = "index.html">home</a>
-            <a href = "edition.html">design</a>
-            <a href = "#">Create blog</a>
+            <a href = "#design">design</a>
+            <a href = "blog.html">Create blog</a>
           </div>
         </div>
       </nav>
@@ -62,7 +66,7 @@
           </h1>
           <p>everything that you want to know about creativity</p>
           <form>
-            <input type = "text" class = "search-input" placeholder="find your food . . .">
+            <input type = "text" class = "search-input" placeholder="search blogs and designs. . .">
             <button type = "submit" class = "search-btn">
               <i class = "fas fa-search"></i>
             </button>
@@ -242,9 +246,13 @@
 
     <footer>
       <div class = "social-links">
+        <!-- Added responsiveness to icons -->
         <a href = "#"><i class = "fab fa-facebook-f"></i></a>
-        <a href = "#"><i class = "fab fa-twitter"></i></a>
+        <!-- Added the new Twitter(X) logo -->
+        <a href = "#"><i class = "fab fa-x-twitter"></i></a>
         <a href = "#"><i class = "fab fa-instagram"></i></a>
+        <!-- Added LinkedIn logo -->
+        <a href = "https://www.linkedin.com/in/anuragvishwakarma/"><i class = "fab fa-linkedin-in"></i></a>
         <a href = "#"><i class = "fab fa-pinterest"></i></a>
       </div>
       <span>Creative Canvas Blog Page</span>
