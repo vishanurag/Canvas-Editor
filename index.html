@@ -389,6 +389,10 @@ h2{
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
+
+        .gtranslate_wrapper{
+            margin-left: 30px;
+        }
     </style>
 </head>
 
@@ -484,6 +488,21 @@ h2{
                 <li class="nav-item">
                     <a class="nav-link" href="contributors.html">Contributors</a>
 
+                </li>
+                <li>
+                    <div class="gtranslate_wrapper"></div>
+            <script>
+              window.gtranslateSettings = {
+                default_language: "en",
+                detect_browser_language: true,
+                wrapper_selector: ".gtranslate_wrapper",
+                flag_size: 16,
+              };
+            </script>
+            <script
+            src="https://cdn.gtranslate.net/widgets/latest/popup.js"
+            defer
+          ></script>
                 </li>
 
             </ul>
