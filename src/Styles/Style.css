@@ -491,6 +491,7 @@ html {
 /* Main canvas styles */
 
 #mainCanvas {
+
   width: 83% !important;
   height: auto;
   max-height: 500px;
