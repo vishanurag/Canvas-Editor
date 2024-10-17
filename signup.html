@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
@@ -108,6 +109,11 @@
         
         /* ... (rest of the styles remain unchanged) ... */
    
+ 
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">Back to Home</a>
 
         /* Circle styles */
         .circle {
@@ -204,7 +210,7 @@
                 <!-- Password Input Block with Strength Meter -->
                 <div id="input">
                     <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="togglePassword"></i>
                 </div>
                 <div class="password-strength" id="password-strength" style="display: none;">
                     <span id="strength-text"></span>
@@ -217,7 +223,7 @@
                 <!-- Confirm Password Input Block -->
                 <div id="input">
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
                 </div>
     
                 <!-- Importing zxcvbn -->
@@ -330,6 +336,32 @@
                 circle.x = 0;
                 circle.y = 0;
                 circle.style.backgroundColor = colors[index % colors.length];
+            });
+
+            // Toggle Password Visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Toggle Confirm Password Visibility
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+            const confirmPasswordInput = document.getElementById('confirm_password');
+
+            toggleConfirmPassword.addEventListener('click', function () {
+                const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPasswordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
             });
     
             // Update the coordinates when the mouse moves

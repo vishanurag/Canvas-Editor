@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+   <link rel="stylesheet" href="src/Styles/scroll.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
 
@@ -30,6 +29,7 @@
     }
     .dark-mode .container {
         background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+        color:#007bff;
     }
     .dark-mode .canvas-container {
         background: #2a2a2a;
@@ -98,9 +98,7 @@
 
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
-
         
-
         .header {
             width: 100%;
             text-align: center;
@@ -246,29 +244,7 @@
 
 
         /* Custom scrollbar for Chrome, Safari, and Opera */
-        body::-webkit-scrollbar {
-            width: 10px;
-            /* Width of the scrollbar */
-        }
-
-        body::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            /* Track color */
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: #f9f9f9;
-            /* Thumb color */
-            border-radius: 10px;
-            /* Rounded corners */
-            transition: background 0.3s ease, height 0.3s ease;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background: cornflowerblue;
-            /* Thumb color on hover */
-            background: linear-gradient(135deg, cornflowerblue, rgb(195, 226, 237));
-        }
+      
 
         h5 {
             color: #eeff00;
@@ -277,9 +253,10 @@
 
         }
 
+
 .footer {
     width: 100%;
-    background-color: #ff8686d1;
+    background-color: #2c3e5e; /*updated this color */
     color: #c23e3e;
     text-align: center;
     border-start-start-radius: 5px;
@@ -289,80 +266,64 @@
     margin-top: 20px;
 }
 
-.footer .share {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
-.footer .share a {
-    margin: 0 10px;
-    font-size: 1.8rem;
-    color: #ffffff;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
+        .footer .share {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
 
-.footer .share a:hover {
-    color: #f39c12;
-    transform: scale(1.1);
-}
+        .footer .share a {
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: #ffffff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-.footer .credit {
-    font-size: 0.9rem;
-    color: #bdc3c7;
-}
+        .footer .share a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
 
-.footer .credit span {
-    color: #f39c12;
-    font-weight: bold;
-}
+        .footer .credit {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
 
-.footer .credit p {
-    margin: 0;
-    font-size: 0.85rem;
-}
+        .footer .credit span {
+            color: #f39c12;
+            font-weight: bold;
+        }
 
-.footer .credit span:hover {
-    color: #f1c40f;
-}
+        .footer .credit p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .footer .credit span:hover {
+            color: #f1c40f;
+        }
 
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .footer {
-        padding: 30px 0;
-    }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 30px 0;
+            }
 
-    .footer .share a {
-        font-size: 1.5rem;
-    }
+            .footer .share a {
+                font-size: 1.5rem;
+            }
 
-    .footer .credit {
-        font-size: 0.8rem;
-    }
-}
+            .footer .credit {
+                font-size: 0.8rem;
+            }
+        }
 
-   
         
-    /* Custom scrollbar for Chrome, Safari, and Opera */
-body::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track color */
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #f9f9f9; /* Thumb color */
-    border-radius: 10px; /* Rounded corners */
-    transition: background 0.3s ease, height 0.3s ease;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background:cornflowerblue; /* Thumb color on hover */
-  background: linear-gradient(135deg,cornflowerblue, rgb(195, 226, 237));
-}
+                
+            /* Custom scrollbar for Chrome, Safari, and Opera */
+    
 
 h2{
     margin-top: 50px;
@@ -385,6 +346,10 @@ h2{
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
+        }
+
+        .gtranslate_wrapper{
+            margin-left: 30px;
         }
     </style>
 </head>
@@ -467,19 +432,70 @@ h2{
             <p class="lead">Design and create stunning visuals effortlessly!</p>
         </div>
         
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="review.html">Review</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="testimonial.html">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="privacy.html">Privacy</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blog_page.html">Blog</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="./Faq.html">FAQ</a>
+                </li>
+
+                <a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contributors.html">Contributors</a>
+
+                </li>
+                <li>
+                    <div class="gtranslate_wrapper"></div>
+            <script>
+              window.gtranslateSettings = {
+                default_language: "en",
+                detect_browser_language: true,
+                wrapper_selector: ".gtranslate_wrapper",
+                flag_size: 16,
+              };
+            </script>
+            <script
+            src="https://cdn.gtranslate.net/widgets/latest/popup.js"
+            defer
+          ></script>
+                </li>
+
+            </ul>
         </div>
-        <div class="row text-center p-5" style="background-color: cornflowerblue;">
+        <div class="row text-center p-5" style="background-color: #2c3e5e;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
                     class="fa-light fa-face-party"></i></p>
         </div>
         <div class="canvas-container">
 
-            <b>
-                <h5>Draw Here !!!</h5>
-            </b>
-
-           
+        
            <b><h2>Draw Here !!!</h2></b>
 
             <canvas id="mainCanvas"></canvas>
@@ -549,23 +565,100 @@ h2{
                                 <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
                             </div>
                         </div>
-                        <div class="edit">
+                        <div class="wrapper edit">
+                            <button  type="button" class="btn btn-primary" id="drawTextBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Brush
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="clearCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Clear Canvas
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="eraserBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Eraser
+                            </button>
+                        </div>
+                        <div class="space"></div>
+                        <!-- <div class="edit">
                             <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
                             <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
                             <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
-                        </div>
+                        </div> -->
                     </form>
-                    <div class="d-md-flex justify-content-evenly gap-1">
+                    <div class="tStyle d-md-flex justify-content-evenly gap-1">
+                        <button  type="button" class="btn btn-primary" id="capital">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Uppercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="small">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Lowercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="bold">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Bold
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="italic">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Italic
+                        </button>
+                    </div>
+                    <!-- <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">Uppercase</button>
                         <button class="btn btn-primary" id="small">Lowercase</button>
                         <button class="btn btn-primary" id="bold">Bold</button>
                         <button class="btn btn-primary" id="italic">Italic</button>
+                    </div> -->
+                    <div class="rclStyle d-md-flex justify-content-evenly gap-1">
+                        <button  type="button" class="btn btn-success" id="rectangleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Rectangle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="circleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Circle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="linebtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Line
+                        </button>
                     </div>
-                    <div class="palette">
+                    <!-- <div class="palette">
                         <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
-                    </div>
+                    </div> -->
                     <div class="d-md-flex justify-content-center gap-2 mb-3">
                         <input type="text" placeholder="Enter Text" name="textData" id="textData"
                             class="form-control mw-100 w-75 mb-3">
@@ -575,6 +668,10 @@ h2{
                     </div>
                     </form>
                 </div>
+
+                
+        </div>
+
 
             </div>
             <div class="container mt-5">
@@ -617,7 +714,7 @@ h2{
                         <div class="col-md-8">
                             <div class="form-floating">
                                 <textarea class="form-control" id="message" name="message" placeholder="Your Message"
-                                    style="height: 150px" required></textarea>
+                                    style="height: 150px; align-items: center;" required></textarea>
                                 <label for="message">Your Message</label>
                             </div>
                         </div>
@@ -625,22 +722,30 @@ h2{
                         <div class="col-md-8">
                             <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
                         </div>
+                        </div>
                     </form>
                 </section>
             </div>
-
         </div>
-
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
                     </div>
-                    <!-- Message Field -->
-                    <div class="col-md-8">
+                    Message Field -->
+                    <!-- <div class="col-md-8">
                         <div class="form-floating">
                             <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
                             <label for="message">Your Message (minimum 20 characters)</label>
                         </div>
-                    </div>
+                    </div> -->
+                    <div class="container">
+                        <div class="cal">
+                            <h4>Your<br><span>Message</span></h4>
+                            <!-- <div class="input-box"> -->
+                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;" required></textarea>
+                                
+                            
+                            <p id="result"></p>
+                        </div>
                     <!-- Submit Button -->
                     <div class="col-md-12 d-flex justify-content-center">
                         <div class="col-md-8">
@@ -648,7 +753,7 @@ h2{
                         </div>
                     </div>
                 </form>
-            </section>
+            </div>
         </div>
         
         <!-- Custom Popup -->
@@ -771,6 +876,28 @@ h2{
     <script src="./src/Scripts/edit.js"></script> -->
 
        
+        <section class="footer" id="footer">
+            <!-- Added responsiveness to icons -->
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
+
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    2024
+                </p>
+                <br>
+            </div>
+            <!-- Back to Top Button -->
+            <button id="BacktoTop">
+                <span>↑</span>
+            </button>
+        </section>
 
         <script src="src\Scripts\preloader.js"></script>
         <script>
@@ -1121,10 +1248,16 @@ h2{
                 enableDarkMode();
             }
         </script>
+            window.embeddedChatbotConfig = {
+                chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+                domain: "www.chatbase.co"
+            }
+        </script>
+        <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
+        </script>
 </body>
 
 
 </html>
 
 </html>
-
