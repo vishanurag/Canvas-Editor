@@ -238,18 +238,9 @@
             </li>
         </ul>    
     </div>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registration Form</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
         <div id="login" class="form-container mt-5">
             <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
-            <form action="/signup" method="POST" onsubmit="return validatePassword()">
+            <form id="signupForm">
                 <div id="input">
                     <input type="text" name="username" placeholder="Username" required>
                     <i class="fa-solid fa-user"></i>
@@ -349,20 +340,29 @@
     
         <!-- Validation Script -->
         <script>
-            function validatePassword() {
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirm_password').value;
-                
-                if (password !== confirmPassword) {
-                    alert('Passwords do not match.');
-                    return false;
-                }
-                
-                // Display the success message
-                alert("Your account is created successfully. Please login to access the website");
-                
-                return true;
-            }
+            document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    const username = document.querySelector('input[name="username"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+    const confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+
+    // Check if the passwords match
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return false;
+    }
+
+    if (username && email && password && confirmPassword) {
+        alert('Account created successfully!');
+        window.location.href = "http://127.0.0.1:5501/Canvas-Editor/index.html"; // Redirect after sign up
+    } else {
+        alert('Please fill in the form.');
+    }
+});
+          
         </script>
         
         <script src="src/Scripts/preloader.js"></script>
@@ -424,4 +424,6 @@
         </script>
     </body>
     </html>
+    
+
     

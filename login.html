@@ -195,7 +195,7 @@
     </div>
     <div id="login" class="form-container mt-5">
         <h3 class="pb-4">LOG IN</h3>
-        <form action="/login" method="POST">
+        <form id="loginForm">
             <div id="input">
                 <input type="text" name="username_email" placeholder="Email or Username" required>
                 <i class="fa-solid fa-user"></i>
@@ -223,6 +223,22 @@
     <script src="src\Scripts\preloader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
+
+         document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        const usernameEmail = document.querySelector('input[name="username_email"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+        
+        // Simulate a login and redirect to the desired page
+        if (usernameEmail && password) {
+            alert('Login successful! ....');
+            window.location.href = "http://127.0.0.1:5501/Canvas-Editor/index.html"; // Redirect after login
+        } else {
+            alert('Please fill in the form.');
+        }
+    });
         // Coordinates for the cursor
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
