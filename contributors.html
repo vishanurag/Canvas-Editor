@@ -22,14 +22,57 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <link rel="stylesheet" href="style.css">
     <style>
+
       html {
         scroll-behavior: smooth;
       }
       body{
         background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff); 
       }
+      /*  Navbar Styling  starts*/
+      .title5{
+    display: flex;
+    align-items: left;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+}
+      .navbar {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: none;
+      }
+
+      /* Styling individual links in the navbar */
+      .navbar a {
+        color: #a0a0a0; /* Link color */
+        font-size: 18px; /* Font size */
+        text-decoration: none; /* Remove underline */
+        padding: 0.5rem 1rem; 
+        border-radius: 0.5rem; /* Rounded corners for hover effect */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+        
+      }
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      }
+
+      .nav-links a:hover {
+        color: #ffffff;
+      }
+/* navbar styling ends */
+
       body.dark-mode {
   background-color: #333;
   color: #ffffff;
@@ -105,9 +148,30 @@
 }
 
 </style>
-    </style>
+    
   </head>
   <body>
+    
+      <nav class="navbar">
+        <div class="title5">
+          <h1 class="site-name">Canvas Editor</h1>
+          <i class="fa-solid fa-paintbrush" style="margin: 25px 0 0 0;"></i>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="Blog_page.html">Blogs</a>
+          <a href="Faq.html">FAQ</a>
+          <a href="contributors.html">Contributors</a>
+          <a href="testimonial.html">Testimonial</a>
+          <a href="signup.html">Sign Up</a>
+          <a href="login.html">Login</a>
+        </div>
+      </nav>
+      
+      <div class="containerm">
+    
     <div id="progress-container">
       <div id="progress-bar"></div>
     </div>
@@ -115,11 +179,13 @@
       <source src="img/bg video terms2.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
+    
     <div class="container">
       <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
         <input id="themeToggle" class="toggle" type="checkbox">
       </div>
+      
+      </header>
       <h1 class="title">Our Contributors</h1>
       <div id="contributors" class="contributors-grid"></div>
       <div class="pagination-btns">
@@ -131,6 +197,7 @@
     <button class="top-btn" id="goToTopBtn" onclick="goToTop()">
       <i class="fa-solid fa-chevron-up" style="color: #ffffff"></i>
     </button>
+  </div>
     <script>
       // Get the button
       var mybutton = document.getElementById("goToTopBtn");
