@@ -164,6 +164,40 @@ Admin :- Anurag
 
 <br>
 
+## 🧑‍💻 Good Coding Practices
+
+1. **Follow the Project's Code Style**
+
+   - Maintain consistency with the existing code style (indentation, spacing, comments).
+   - Use meaningful and descriptive names for variables, functions, and classes.
+   - Keep functions short and focused on a single task.
+   - Avoid hardcoding values; instead, use constants or configuration files when possible.
+
+2. **Write Clear and Concise Comments**
+
+   - Use comments to explain why you did something, not just what you did.
+   - Avoid unnecessary comments that state the obvious.
+   - Document complex logic and functions with brief explanations to help others understand your thought -process.
+
+3. **Keep Code DRY (Don't Repeat Yourself)**
+
+   - Avoid duplicating code. Reuse functions, methods, and components whenever possible.
+   - If you find yourself copying and pasting code, consider creating a new function or component.
+
+4. **Write Tests**
+
+   - Write unit tests for your functions and components.
+   - Ensure your tests cover both expected outcomes and edge cases.
+   - Run tests locally before making a pull request to make sure your changes don’t introduce new bugs.
+
+5. **Code Reviews and Feedback**
+
+   - Be open to receiving constructive feedback from other contributors.
+   - Conduct code reviews for others and provide meaningful suggestions to improve the code.
+   - Always refactor your code based on feedback to meet the project's standards.
+
+<br>
+
 ## 🎉 Additional Notes
 
 - Make sure to sync your fork with the latest changes from the original repo before pushing new features.
