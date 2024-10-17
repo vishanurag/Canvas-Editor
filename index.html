@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
+<!-- <style> -->
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
@@ -131,9 +132,13 @@
 
         
 
-        }
+        /* }
+
+
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        } */
 
             
+
 
         .header {
             width: 100%;
@@ -593,23 +598,100 @@ h2{
                                 <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
                             </div>
                         </div>
-                        <div class="edit">
+                        <div class="wrapper edit">
+                            <button  type="button" class="btn btn-primary" id="drawTextBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Brush
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="clearCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Clear Canvas
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="eraserBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Eraser
+                            </button>
+                        </div>
+                        <div class="space"></div>
+                        <!-- <div class="edit">
                             <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
                             <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
                             <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
-                        </div>
+                        </div> -->
                     </form>
-                    <div class="d-md-flex justify-content-evenly gap-1">
+                    <div class="tStyle d-md-flex justify-content-evenly gap-1">
+                        <button  type="button" class="btn btn-primary" id="capital">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Uppercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="small">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Lowercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="bold">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Bold
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="italic">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Italic
+                        </button>
+                    </div>
+                    <!-- <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">Uppercase</button>
                         <button class="btn btn-primary" id="small">Lowercase</button>
                         <button class="btn btn-primary" id="bold">Bold</button>
                         <button class="btn btn-primary" id="italic">Italic</button>
+                    </div> -->
+                    <div class="rclStyle d-md-flex justify-content-evenly gap-1">
+                        <button  type="button" class="btn btn-success" id="rectangleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Rectangle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="circleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Circle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="linebtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Line
+                        </button>
                     </div>
-                    <div class="palette">
+                    <!-- <div class="palette">
                         <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
-                    </div>
+                    </div> -->
                     <div class="d-md-flex justify-content-center gap-2 mb-3">
                         <input type="text" placeholder="Enter Text" name="textData" id="textData"
                             class="form-control mw-100 w-75 mb-3">
