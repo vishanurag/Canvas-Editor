@@ -21,7 +21,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <button id="darkModeToggle">🌓</button>
 
 <style>
     body {
@@ -446,10 +445,26 @@ h2{
 
     <div class="container pt-2">
         <div class="header">
+
+            <div>
+                <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a></h1>
+                <p class="lead">Design and create stunning visuals effortlessly!</p>
+            </div>
+        <div>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <div class="slider"></div>
+                </label>
+                <span id="mode-label">Light Mode</span>
+            </div> 
+        </div>
+
             <img src="" alt="">
             <h1 class="display-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
             </h1>
             <p class="lead">Design and create stunning visuals effortlessly!</p>
+
         </div>
         <div class="row">
             <ul class="nav nav-tabs">
@@ -1236,6 +1251,9 @@ h2{
             // Start the animation
             animateCircles();
         </script>
+
+        <script src="./darkmode.js"></script>
+
         <script>
             window.embeddedChatbotConfig = {
                 chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
@@ -1244,6 +1262,7 @@ h2{
         </script>
         <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
         </script>
+
 </body>
 
 
