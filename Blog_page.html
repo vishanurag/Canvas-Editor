@@ -6,6 +6,9 @@
     <title>Blog Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/Styles/Style_Blog_page.css">
+    <link rel="stylesheet" href="src/Styles/scroll.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
       /* Circle styles */
       .circle {
@@ -22,6 +25,28 @@
       }
       html{
         scroll-behavior: smooth;
+      }
+      .design-item{
+        background: burlywood;
+        border-radius: 20px;
+        transition: transform 0.3s ease-in-out;
+      }
+      .design-item:hover{
+        background-color: bisque;
+        transform: scale(1.1);
+      }
+      .blog-text{
+        background: burlywood;
+        border-radius: 20px;
+        transition: transform 0.3s ease-in-out;
+        padding: 20px;
+      }
+      .blog-text:hover:{
+        background-color: bisque;
+        transform: scale(1.1);
+      }
+      a{
+        border-radius: 20px;
       }
     </style>
   </head>
@@ -59,13 +84,13 @@
         </div>
       </nav>
       <div class = "banner">
-        <div class = "container">
+        <div class = "container" data-aos="zoom-out" data-aos-duration="1200" data-aos-delay="500">
           <h1 class = "banner-title">
             <span>Creative</span> Canvas Blog
           </h1>
           <p>everything that you want to know about creativity</p>
           <form>
-            <input type = "text" class = "search-input" placeholder="find your food . . .">
+            <input type = "text" class = "search-input" placeholder="search blogs and designs. . .">
             <button type = "submit" class = "search-btn">
               <i class = "fas fa-search"></i>
             </button>
@@ -76,14 +101,14 @@
 
     <section class = "design" id = "design">
       <div class = "container">
-        <div class = "title">
+        <div class = "title" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
           <h2>Recent Designs</h2>
           <p>recent arts & designs blogs</p>
         </div>
 
         <div class = "design-content">
 
-          <div class = "design-item">
+          <div class = "design-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "design-img">
               <img src = "/src/images/art-design-1.jpg" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
@@ -94,29 +119,29 @@
             </div>
           </div>
 
-          <div class = "design-item">
+          <div class = "design-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "design-img">
               <img src = "/src/images/art-design-2.jpg" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
-            <div class = "design-title">
+            <div class = "design-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
               <a href = "#">Enhance your creativity</a>
             </div>
           </div>
           
-          <div class = "design-item">
+          <div class = "design-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "design-img">
               <img src = "/src/images/art-design-3.jpg" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
-            <div class = "design-title">
+            <div class = "design-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
               <a href = "#">Develop creative design and show the world</a>
             </div>
           </div>
           
-          <div class = "design-item">
+          <div class = "design-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "design-img">
               <img src = "/src/images/art-design-4.jpg" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
@@ -127,7 +152,7 @@
             </div>
           </div>
          
-          <div class = "design-item">
+          <div class = "design-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "design-img">
               <img src = "/src/images/art-design-5.jpg" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
@@ -138,13 +163,13 @@
             </div>
           </div>
           
-          <div class = "design-item">
+          <div class = "design-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" >
             <div class = "design-img">
               <img src = "/src/images/art-design-6.jpg" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
-            <div class = "design-title">
+            <div class = "design-title" >
               <a href = "#">Show your work to others and teach them</a>
             </div>
           </div>
@@ -155,13 +180,13 @@
 
     <section class = "blog" id = "blog">
       <div class = "container">
-        <div class = "title">
+        <div class = "title" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
           <h2>Latest Blog</h2>
           <p>recent blogs about art & design</p>
         </div>
         <div class = "blog-content">
 
-          <div class = "blog-item">
+          <div class = "blog-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-1.jpg" alt = "">
               <span><i class = "far fa-heart"></i></span>
@@ -174,7 +199,7 @@
             </div>
           </div>
 
-          <div class = "blog-item">
+          <div class = "blog-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-2.jpg" alt = "">
               <span><i class = "far fa-heart"></i></span>
@@ -187,7 +212,7 @@
             </div>
           </div>
 
-          <div class = "blog-item">
+          <div class = "blog-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-3.jpg" alt = "">
               <span><i class = "far fa-heart"></i></span>
@@ -200,7 +225,7 @@
             </div>
           </div>
 
-          <div class = "blog-item">
+          <div class = "blog-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-4.jpg" alt = "">
               <span><i class = "far fa-heart"></i></span>
@@ -213,7 +238,7 @@
             </div>
           </div>
 
-          <div class = "blog-item">
+          <div class = "blog-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-5.jpg" alt = "">
               <span><i class = "far fa-heart"></i></span>
@@ -226,7 +251,7 @@
             </div>
           </div>
 
-          <div class = "blog-item">
+          <div class = "blog-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-6.jpg" alt = "">
               <span><i class = "far fa-heart"></i></span>
@@ -310,5 +335,10 @@
       // Start the animation
       animateCircles();
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    
   </body>
 </html>

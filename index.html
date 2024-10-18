@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+   <link rel="stylesheet" href="src/Styles/scroll.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+<!-- <style> -->
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
@@ -131,9 +133,13 @@
 
         
 
-        }
+        /* }
 
-            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        }
+
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        } */
+
+            
+
 
         .header {
             width: 100%;
@@ -280,29 +286,7 @@
 
 
         /* Custom scrollbar for Chrome, Safari, and Opera */
-        body::-webkit-scrollbar {
-            width: 10px;
-            /* Width of the scrollbar */
-        }
-
-        body::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            /* Track color */
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: #f9f9f9;
-            /* Thumb color */
-            border-radius: 10px;
-            /* Rounded corners */
-            transition:  0.3s ease, height 0.3s ease;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background: cornflowerblue;
-            /* Thumb color on hover */
-            background: linear-gradient(135deg, cornflowerblue, rgb(195, 226, 237));
-        }
+      
 
         h5 {
             color: #eeff00;
@@ -311,17 +295,19 @@
 
         }
 
-            .footer {
-            width: 100%;
-            background-color: #ff8686d1;
-            color: #c23e3e;
-            text-align: center;
-            border-start-start-radius: 5px;
-            padding: 35px 350px;
-            font-family: 'Arial', sans-serif;
-            position: relative;
-            margin-top: 20px;
-        }
+
+.footer {
+    width: 100%;
+    background-color: #2c3e5e; /*updated this color */
+    color: #c23e3e;
+    text-align: center;
+    border-start-start-radius: 5px;
+    padding: 35px 350px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin-top: 20px;
+}
+
 
         .footer .share {
             display: flex;
@@ -379,24 +365,7 @@
         
                 
             /* Custom scrollbar for Chrome, Safari, and Opera */
-        body::-webkit-scrollbar {
-            width: 10px; /* Width of the scrollbar */
-        }
-
-        body::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Track color */
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: #f9f9f9; /* Thumb color */
-            border-radius: 10px; /* Rounded corners */
-            transition:  0.3s ease, height 0.3s ease;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background:cornflowerblue; /* Thumb color on hover */
-        background: linear-gradient(135deg,cornflowerblue, rgb(195, 226, 237));
-        }
+    
 
 h2{
     margin-top: 50px;
@@ -419,6 +388,10 @@ h2{
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
+        }
+
+        .gtranslate_wrapper{
+            margin-left: 30px;
         }
     </style>
 </head>
@@ -515,6 +488,21 @@ h2{
                 <li class="nav-item">
                     <a class="nav-link" href="contributors.html">Contributors</a>
 
+                </li>
+                <li>
+                    <div class="gtranslate_wrapper"></div>
+            <script>
+              window.gtranslateSettings = {
+                default_language: "en",
+                detect_browser_language: true,
+                wrapper_selector: ".gtranslate_wrapper",
+                flag_size: 16,
+              };
+            </script>
+            <script
+            src="https://cdn.gtranslate.net/widgets/latest/popup.js"
+            defer
+          ></script>
                 </li>
 
             </ul>
@@ -614,23 +602,100 @@ h2{
                                 <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
                             </div>
                         </div>
-                        <div class="edit">
+                        <div class="wrapper edit">
+                            <button  type="button" class="btn btn-primary" id="drawTextBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Brush
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="clearCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Clear Canvas
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="eraserBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Eraser
+                            </button>
+                        </div>
+                        <div class="space"></div>
+                        <!-- <div class="edit">
                             <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
                             <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
                             <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
-                        </div>
+                        </div> -->
                     </form>
-                    <div class="d-md-flex justify-content-evenly gap-1">
+                    <div class="tStyle d-md-flex justify-content-evenly gap-1">
+                        <button  type="button" class="btn btn-primary" id="capital">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Uppercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="small">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Lowercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="bold">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Bold
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="italic">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Italic
+                        </button>
+                    </div>
+                    <!-- <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">Uppercase</button>
                         <button class="btn btn-primary" id="small">Lowercase</button>
                         <button class="btn btn-primary" id="bold">Bold</button>
                         <button class="btn btn-primary" id="italic">Italic</button>
+                    </div> -->
+                    <div class="rclStyle d-md-flex justify-content-evenly gap-1">
+                        <button  type="button" class="btn btn-success" id="rectangleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Rectangle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="circleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Circle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="linebtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Line
+                        </button>
                     </div>
-                    <div class="palette">
+                    <!-- <div class="palette">
                         <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
-                    </div>
+                    </div> -->
                     <div class="d-md-flex justify-content-center gap-2 mb-3">
                         <input type="text" placeholder="Enter Text" name="textData" id="textData"
                             class="form-control mw-100 w-75 mb-3">
@@ -686,7 +751,7 @@ h2{
                         <div class="col-md-8">
                             <div class="form-floating">
                                 <textarea class="form-control" id="message" name="message" placeholder="Your Message"
-                                    style="height: 150px" required></textarea>
+                                    style="height: 150px; align-items: center;" required></textarea>
                                 <label for="message">Your Message</label>
                             </div>
                         </div>
@@ -694,22 +759,30 @@ h2{
                         <div class="col-md-8">
                             <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
                         </div>
+                        </div>
                     </form>
                 </section>
             </div>
-
         </div>
-
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
                     </div>
                     Message Field -->
-                    <div class="col-md-8">
+                    <!-- <div class="col-md-8">
                         <div class="form-floating">
                             <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
                             <label for="message">Your Message (minimum 20 characters)</label>
                         </div>
-                    </div>
+                    </div> -->
+                    <div class="container">
+                        <div class="cal">
+                            <h4>Your<br><span>Message</span></h4>
+                            <!-- <div class="input-box"> -->
+                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;" required></textarea>
+                                
+                            
+                            <p id="result"></p>
+                        </div>
                     <!-- Submit Button -->
                     <div class="col-md-12 d-flex justify-content-center">
                         <div class="col-md-8">
@@ -717,7 +790,7 @@ h2{
                         </div>
                     </div>
                 </form>
-            </section>
+            </div>
         </div>
         
         <!-- Custom Popup -->
