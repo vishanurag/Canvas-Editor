@@ -33,3 +33,27 @@
     outline: none;
     box-shadow: none;
   }
+
+.contact-us-page{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.contact-container{
+  width:100%;
+}
+
+#contact{
+  width:100%;
+}
+
+#contactForm textarea{
+    width:550px;
+}
+
+#contactForm button{
+  margin-left:6em;
+  text-align: center;
+  padding:9rem;
+}
