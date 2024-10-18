@@ -35,6 +35,16 @@
 </div>
 <br>
 
+![Screenshot 2024-10-18 135049](https://github.com/user-attachments/assets/c1a30d94-a1b2-49d4-ab5e-f5a93834f289)
+
+![Screenshot 2024-10-18 135416](https://github.com/user-attachments/assets/2df9c561-5b57-486a-a2c3-0d7f985dc0e5)
+
+![Screenshot 2024-10-18 135214](https://github.com/user-attachments/assets/1d4c5094-c626-49dc-88b4-8bc918e0bd31)
+
+![Screenshot 2024-10-18 135254](https://github.com/user-attachments/assets/3098b449-c191-4ed5-87f3-8c2cc90407de)
+
+![Screenshot 2024-10-18 135331](https://github.com/user-attachments/assets/f3809057-c332-4ff5-b3ca-74c43da06daa)
+
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
