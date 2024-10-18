@@ -513,204 +513,201 @@ h2{
                     class="fa-light fa-face-party"></i></p>
         </div>
         <div class="canvas-container">
-
-        
-           <b><h2>Draw Here !!!</h2></b>
-
-            <canvas id="mainCanvas"></canvas>
-            <!-- <div class="p-3 bg-light rounded shadow">
+            <b><h2>Draw Here !!!</h2></b>
+            <canvas id="mainCanvas" width="800" height="600" style="border: 1px solid #000;"></canvas>
+            <div class="canvas-palette">
                 <form id="userForm" class="d-flex flex-column">
                     <div class="d-flex gap-3 mb-2">
-                        <label for="textSize" class="text-white">Size:</label>
-                        <select name="tSize" class="form-select" id="textSize">
+                        <label for="brushSize">Brush Size:</label>
+                        <select name="brushSize" class="form-select" id="brushSize">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
                             <option value="20">20</option>
-                            <option value="30">30</option>
-                            <option value="40">40</option>
+                            <option value="25">25</option>
                         </select>
-                        <label for="colorPicker" class="text-white">Color:</label>
-                        <input type="color" name="colorPicker" class="form-control" id="colorPicker">
+                        <label for="colorPicker">Color:</label>
+                        <input type="color" name="colorPicker" class="form-control" id="colorPicker" value="#000000">
                     </div>
-                    <div class="d-flex row gap-3">
+                    <div class="d-flex row gap-3 mb-2">
                         <div class="col-sm-6">
-                            <label for="bgImageUpload" class="text-white">Background Image:</label>
+                            <label for="bgImageUpload">Background Image:</label>
                             <input type="file" id="bgImageUpload" accept="image/*">
                         </div>
                         <div class="col-sm-6">
-                            <label for="bgColorPicker" class="text-white">Background Color:</label>
-                            <input type="color" id="bgColorPicker" class="form-control" value="#f0f0f0">
+                            <label for="bgColorPicker">Background Color:</label>
+                            <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker" value="#ffffff">
                         </div>
                     </div>
-                    <div class="position-relative">
-                        <button type="button" class="btn btn-primary w-25 mt-5 btn-font" id="fontBtn">Fonts</button>
-                        <div class="position-absolute" style="width: 200px; height: 200px; top: -90px; left: -80px; display: none;" id="fontOptions">
-                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(80px, 0); left: -40px;" id="uppercase">A</button>
-                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(0, 80px); left:-35px;" id="lowercase">a</button>
-                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(80px, 160px); left:-15px;" id="bold">B</button>
-                            <button type="button" class="btn btn-primary position-absolute font-option" style="transform: translate(160px, 80px); left: -5px; top:10px" id="italic">I</button>
-                        </div>
+                    <div class="wrapper edit">
+                        <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                        <button type="button" class="btn btn-primary" id="clearCanvasBtn">Clear Canvas</button>
+                        <button type="button" class="btn btn-primary" id="eraserBtn">Eraser</button>
                     </div>
-                    
-
-                    <p >Shape Pallete</p> -->
-
-
-
-            <!-- <header class="header">
-        <nav class="navbar">
-            <div class="title">
-                <h1 class="site-name">Canvas Editor</h1>
-                <i class="fa-solid fa-paintbrush"></i>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="#blogs">Blogs</a>
-                <a href="index.html#mainCanvas">Draw</a>
-            </div>
-        </nav>
-    </header>
-    <div class="row text-center p-5" style="background-color: rgb(0, 0, 0);">
-        <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-        <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-    </div> -->
-            <div class="canvas-container">
-                <!-- <canvas id="mainCanvas"></canvas> -->
-
-
-                <div class="canvas-palette">
-                    <form id="userForm" class="d-flex flex-column">
-                        <div class="d-flex gap-3 mb-2">
-                            <label for="brushSize">Brush Size:</label>
-                            <select name="brushSize" class="form-select" id="brushSize">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                            </select>
-                            <label for="colorPicker">Color:</label>
-                            <input type="color" name="colorPicker" class="form-control" id="colorPicker">
-                        </div>
-                        <div class="d-flex row gap-3 mb-2">
-                            <div class="col-sm-6">
-                                <label for="bgImageUpload">Background Image:</label>
-                                <input type="file" id="bgImageUpload" accept="image/*">
-
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="bgColorPicker">Background Color:</label>
-                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
-                            </div>
-                        </div>
-                        <div class="wrapper edit">
-                            <button  type="button" class="btn btn-primary" id="drawTextBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Brush
-                            </button>
-                            <button  type="button" class="btn btn-primary" id="clearCanvasBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Clear Canvas
-                            </button>
-                            <button  type="button" class="btn btn-primary" id="eraserBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Eraser
-                            </button>
-                        </div>
-                        <div class="space"></div>
-                        <!-- <div class="edit">
-                            <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
-                            <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
-                            <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
-                        </div> -->
-                    </form>
-                    <div class="tStyle d-md-flex justify-content-evenly gap-1">
-                        <button  type="button" class="btn btn-primary" id="capital">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Uppercase
-                        </button>
-                        <button  type="button" class="btn btn-primary" id="small">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Lowercase
-                        </button>
-                        <button  type="button" class="btn btn-primary" id="bold">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Bold
-                        </button>
-                        <button  type="button" class="btn btn-primary" id="italic">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Italic
-                        </button>
-                    </div>
-                    <!-- <div class="d-md-flex justify-content-evenly gap-1">
-                        <button class="btn btn-primary" id="capital">Uppercase</button>
-                        <button class="btn btn-primary" id="small">Lowercase</button>
-                        <button class="btn btn-primary" id="bold">Bold</button>
-                        <button class="btn btn-primary" id="italic">Italic</button>
-                    </div> -->
-                    <div class="rclStyle d-md-flex justify-content-evenly gap-1">
-                        <button  type="button" class="btn btn-success" id="rectangleBtn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Rectangle
-                        </button>
-                        <button  type="button" class="btn btn-success" id="circleBtn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Circle
-                        </button>
-                        <button  type="button" class="btn btn-success" id="linebtn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Line
-                        </button>
-                    </div>
-                    <!-- <div class="palette">
-                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
-                        <button id="circleBtn" class="btn btn-success">Circle</button>
-                        <button id="lineBtn" class="btn btn-success">Line</button>
-                    </div> -->
-                    <div class="d-md-flex justify-content-center gap-2 mb-3">
-                        <input type="text" placeholder="Enter Text" name="textData" id="textData"
-                            class="form-control mw-100 w-75 mb-3">
-                        <button type="button" class="btn btn-primary" id="save">Save</button>
-                        <button type="button" class="btn btn-danger" id="clear">Clear</button>
-                        <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                    </div>
-                    </form>
+                    <div class="space"></div>
+                </form>
+                <div class="tStyle d-md-flex justify-content-evenly gap-1">
+                    <button type="button" class="btn btn-primary" id="capital">Uppercase</button>
+                    <button type="button" class="btn btn-primary" id="small">Lowercase</button>
+                    <button type="button" class="btn btn-primary" id="bold">Bold</button>
+                    <button type="button" class="btn btn-primary" id="italic">Italic</button>
                 </div>
-
-                
+                <div class="rclStyle d-md-flex justify-content-evenly gap-1">
+                    <button type="button" class="btn btn-success" id="rectangleBtn">Rectangle</button>
+                    <button type="button" class="btn btn-success" id="circleBtn">Circle</button>
+                    <button type="button" class="btn btn-success" id="linebtn">Line</button>
+                </div>
+                <div class="d-md-flex justify-content-center gap-2 mb-3">
+                    <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-75 mb-3">
+                    <button type="button" class="btn btn-primary" id="save">Save</button>
+                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                </div>
+            </div>
         </div>
 
+<script>
+    const canvas = document.getElementById('mainCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 800; // Set canvas width
+    canvas.height = 600; // Set canvas height
+    let drawing = false;
+    let brushSize = 5;
+    let brushColor = '#000000';
+    let isErasing = false;
+    let currentShape = null;
+    let shapeStartX, shapeStartY;
 
-            </div>
+    // Brush Size and Color
+    document.getElementById('brushSize').addEventListener('change', (e) => {
+        brushSize = parseInt(e.target.value); // Ensure brush size is an integer
+    });
+
+    document.getElementById('colorPicker').addEventListener('input', (e) => {
+        brushColor = e.target.value;
+        isErasing = false; // Switch off eraser when color changes
+    });
+
+    // Eraser Button
+    document.getElementById('eraserBtn').addEventListener('click', () => {
+        isErasing = !isErasing;
+        brushColor = isErasing ? '#FFFFFF' : document.getElementById('colorPicker').value;
+    });
+
+    // Clear Canvas
+    document.getElementById('clearCanvasBtn').addEventListener('click', () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.style.backgroundColor = 'transparent'; // Reset background color
+    });
+
+    // Background Color
+    document.getElementById('bgColorPicker').addEventListener('input', (e) => {
+        canvas.style.backgroundColor = e.target.value;
+    });
+
+    // Background Image
+    document.getElementById('bgImageUpload').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const img = new Image();
+            img.src = event.target.result;
+            img.onload = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear existing drawings
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+        };
+        reader.readAsDataURL(file);
+    });
+
+    // Brush Drawing
+    canvas.addEventListener('mousedown', (e) => {
+        drawing = true;
+        ctx.lineWidth = brushSize;
+        ctx.strokeStyle = brushColor;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+        if (drawing) {
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+        }
+    });
+
+    canvas.addEventListener('mouseup', () => {
+        drawing = false;
+        ctx.closePath();
+    });
+
+    // Drawing Shapes
+    document.getElementById('rectangleBtn').addEventListener('click', () => {
+        currentShape = 'rectangle';
+        canvas.addEventListener('mousedown', startShape);
+    });
+
+    document.getElementById('circleBtn').addEventListener('click', () => {
+        currentShape = 'circle';
+        canvas.addEventListener('mousedown', startShape);
+    });
+
+    function startShape(e) {
+        shapeStartX = e.offsetX;
+        shapeStartY = e.offsetY;
+
+        canvas.addEventListener('mouseup', drawShape);
+        canvas.removeEventListener('mousedown', startShape);
+    }
+
+    function drawShape(e) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear existing drawings
+        const width = e.offsetX - shapeStartX;
+        const height = e.offsetY - shapeStartY;
+
+        ctx.fillStyle = brushColor; // Set the color for the shape
+
+        if (currentShape === 'rectangle') {
+            ctx.fillRect(shapeStartX, shapeStartY, width, height);
+        } else if (currentShape === 'circle') {
+            const radius = Math.sqrt(Math.pow(e.offsetX - shapeStartX, 2) + Math.pow(e.offsetY - shapeStartY, 2));
+            ctx.beginPath();
+            ctx.arc(shapeStartX, shapeStartY, radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        canvas.removeEventListener('mouseup', drawShape);
+        currentShape = null; // Reset current shape after drawing
+    }
+
+    // Text Input Functionality
+    document.getElementById('textBtn').addEventListener('click', () => {
+        const textInput = document.getElementById('textInput').value;
+        if (textInput) {
+            // Ask for text position
+            canvas.addEventListener('click', (e) => {
+                ctx.font = `${brushSize}px Arial`; // Set font size and family
+                ctx.fillStyle = brushColor; // Set text color
+                ctx.fillText(textInput, e.offsetX, e.offsetY); // Draw the text
+                document.getElementById('textInput').value = ''; // Clear input after drawing
+                canvas.removeEventListener('click', arguments.callee); // Remove listener after drawing
+            });
+        } else {
+            alert("Please enter some text before adding it to the canvas.");
+        }
+    });
+
+    // Download Functionality
+    document.getElementById('download').addEventListener('click', () => {
+        // Create a temporary link to download the image
+        const link = document.createElement('a');
+        link.download = 'drawing.png'; // Specify the download file name
+        link.href = canvas.toDataURL('image/png'); // Get the canvas image as a PNG
+        link.click(); // Trigger the download
+    });
+</script>
+</body>
+</html>
             <div class="container mt-5">
                 <!-- Contact Us Section -->
                 <section id="contact" class="contact-section text-center py-5">
@@ -936,306 +933,8 @@ h2{
             });
         </script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const fontBtn = document.getElementById('fontBtn');
-                const fontOptions = document.getElementById('fontOptions');
-                const options = document.querySelectorAll('.font-option');
-                const radius = 100;  // Increase this value to create more spacing between buttons
-                const startAngle = -30;  // Adjust this for positioning of the arc
-                const offsetX = 300;  // Move the arc further to the right
-                const offsetY = 70;  // Adjust vertical position of the arc
 
-                fontBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
-                    if (fontOptions.style.display === 'block') {
-                        const totalOptions = options.length;
-                        options.forEach((option, index) => {
-                            const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
-                            const x = Math.cos(angle) * radius + offsetX + 20;
-                            const y = Math.sin(angle) * radius + offsetY + 50;
-                            option.style.transform = `translate(${x}px, ${y}px)`;
-                        });
-                    } else {
-                        options.forEach(option => {
-                            option.style.transform = 'translate(0, 0)';
-                        });
-                    }
-                });
-
-                options.forEach(option => {
-                    option.addEventListener('click', function (e) {
-                        e.preventDefault(); // Prevent default button action
-                        console.log(`${this.id} selected`);
-                    });
-                });
-            });
-
-            const mainCanvas = document.getElementById('mainCanvas');
-            const ctx = mainCanvas.getContext('2d');
-            let drawing = false;
-            let eraserMode = false;
-            let currentColor = '#000000'; // Default color
-
-            // Resize the canvas to fit the container
-            function resizeCanvas() {
-                mainCanvas.width = mainCanvas.offsetWidth;
-                mainCanvas.height = mainCanvas.offsetHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-
-            // Function to get the mouse or touch position
-            function getPosition(event) {
-                const rect = mainCanvas.getBoundingClientRect();
-                const x = (event.clientX || event.touches[0].clientX) - rect.left;
-                const y = (event.clientY || event.touches[0].clientY) - rect.top;
-                return { x, y };
-            }
-
-            // Start drawing or erasing when the mouse or touch is pressed
-            function startDrawing(event) {
-                drawing = true;
-                const { x, y } = getPosition(event);
-                ctx.beginPath();
-                ctx.moveTo(x, y);
-            }
-
-            // Draw on the canvas or erase as the mouse moves or touch moves
-            function draw(event) {
-                if (drawing) {
-                    const { x, y } = getPosition(event);
-                    if (eraserMode) {
-                        // Erase by clearing a small area
-                        ctx.clearRect(x - 10, y - 10, 20, 20);
-                    } else {
-                        // Set the stroke color and draw
-                        ctx.strokeStyle = currentColor; // Use the selected color
-                        ctx.lineWidth = 5; // Set a line width
-                        ctx.lineTo(x, y);
-                        ctx.stroke();
-                    }
-                }
-                event.preventDefault(); // Prevent scrolling when touching the canvas
-            }
-
-            // Stop drawing or erasing when the mouse is released or touch ends
-            function stopDrawing() {
-                drawing = false;
-                ctx.closePath();
-            }
-
-            //Event listeners for mouse interactions
-            mainCanvas.addEventListener('mousedown', startDrawing);
-            mainCanvas.addEventListener('mousemove', draw);
-            mainCanvas.addEventListener('mouseup', stopDrawing);
-
-            // Event listeners for touch interactions
-            mainCanvas.addEventListener('touchstart', (event) => {
-                startDrawing(event);
-            });
-            mainCanvas.addEventListener('touchmove', (event) => {
-                draw(event);
-            });
-            mainCanvas.addEventListener('touchend', stopDrawing);
-
-            // Clear the entire canvas
-            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-            });
-
-            // Toggle eraser mode
-            document.getElementById('eraserMode').addEventListener('click', () => {
-                eraserMode = !eraserMode;
-                mainCanvas.classList.toggle('eraser', eraserMode);
-                document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
-            });
-
-            // Change the current color when the color picker changes
-            document.getElementById('colorPicker').addEventListener('input', (event) => {
-                currentColor = event.target.value;
-            });
-
-            // Download the canvas as an image
-            document.getElementById('mainCanvas').addEventListener('click', () => {
-                const link = document.createElement('a');
-                link.download = 'canvas-drawing.png';
-                link.href = mainCanvas.toDataURL('image/png');
-                link.click();
-            });
-
-            let brushColor = '#000000';
-            let brushSize = 5;
-
-            // Set initial canvas dimensions
-            function setCanvasDimensions() {
-                mainCanvas.width = window.innerWidth - 40; // Adjust width
-                mainCanvas.height = 400; // Keep height fixed
-            }
-            setCanvasDimensions();
-
-            // Brush size change
-            document.getElementById('brushSize').addEventListener('change', function () {
-                brushSize = this.value;
-            });
-
-            // Color picker change
-            document.getElementById('colorPicker').addEventListener('change', function () {
-                brushColor = this.value;
-            });
-
-            // Background color change
-            document.getElementById('bgColorPicker').addEventListener('change', function () {
-                mainCanvas.style.backgroundColor = this.value;
-            });
-            // Function to set up the canvas background image
-            function setBackgroundImage(file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = new Image();
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                    };
-                    img.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-
-            // Drag and Drop Event Listeners for the Canvas
-            canvas.addEventListener('dragover', (event) => {
-                event.preventDefault();
-                canvas.style.border = '2px dashed #000';
-            });
-
-            canvas.addEventListener('dragleave', () => {
-                canvas.style.border = '1px solid #000';
-            });
-
-            canvas.addEventListener('drop', (event) => {
-                event.preventDefault();
-                canvas.style.border = '1px solid #000';
-                const file = event.dataTransfer.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    setBackgroundImage(file);
-                } else {
-                    alert('Please drop a valid image file.');
-                }
-            });
-
-
-            // Background image upload
-            document.getElementById('bgImageUpload').addEventListener('change', function (event) {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = new Image();
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
-                    };
-                    img.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            });
-
-
-            // Clear canvas button
-            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-                mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
-            });
-
-            // Eraser button
-            document.getElementById('eraserBtn').addEventListener('click', () => {
-                brushColor = '#ffffff'; // Set brush color to white
-            });
-
-            // Resize canvas on window resize
-            window.addEventListener('resize', setCanvasDimensions);
-
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent the form from submitting normally
-
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Check if message is at least 20 characters long
-            if (message.length < 20) {
-                alert('Please enter a message with at least 20 characters.');
-                return;
-            }
-
-            // Here you would typically send the form data to a server
-            // For this example, we'll just log it to the console
-            console.log('Form submitted:', { name, email, subject, message });
-
-            // Show confirmation popup
-            alert('Thank you for your message! We will get back to you soon.');
-
-            // Reset the form
-            this.reset();
-        });
-
-        </script>
-
-        <script>
-            // Coordinates for the cursor
-            const coords = { x: 0, y: 0 };
-            const circles = document.querySelectorAll(".circle");
-
-            // Colors for the circles
-            const colors = [
-                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-                "#680060", "#60005f", "#48005f", "#3d005e"
-            ];
-
-            // Assign colors and initial position to each circle
-            circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
-            });
-
-            // Update the coordinates when the mouse moves
-            window.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-            });
-
-            // Animation function to move the circles
-            function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
-
-                circles.forEach(function (circle, index) {
-                    // Update the position and scale of each circle
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
-                    circle.style.scale = (circles.length - index) / circles.length;
-
-                    circle.x = x;
-                    circle.y = y;
-
-                    // Get the next circle in the sequence
-                    const nextCircle = circles[index + 1] || circles[0];
-                    x += (nextCircle.x - x) * 0.3;
-                    y += (nextCircle.y - y) * 0.3;
-                });
-
-                // Repeat the animation
-                requestAnimationFrame(animateCircles);
-            }
-
-            // Start the animation
-            animateCircles();
-        </script>
+           
         <script>
             window.embeddedChatbotConfig = {
                 chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
