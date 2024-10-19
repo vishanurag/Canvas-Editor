@@ -776,7 +776,9 @@ h2{
                         <div class="col-md-4">
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
-                                    required>
+                                    required pattern="[a-zA-Z ]+"
+                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                                oninput="this.setCustomValidity('')">
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
