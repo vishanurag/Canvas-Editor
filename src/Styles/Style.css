@@ -11,7 +11,7 @@
   background: linear-gradient(135deg,#cf9aff,#95c0ff);
   color: #fff;
   padding-top: 4%;
-  padding-left: 10%;
+  /* removed padding left for proper alignment */
   padding-bottom: 0;
 }
 .container h4{
