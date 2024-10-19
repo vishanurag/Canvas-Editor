@@ -42,14 +42,17 @@
 
 .contact-container{
   width:100%;
+  background: #000000;
 }
 
 #contact{
   width:100%;
+  background: rgb(0, 0, 0);
 }
 
 #contactForm textarea{
     width:550px;
+    background: white;
 }
 
 #contactForm button{
