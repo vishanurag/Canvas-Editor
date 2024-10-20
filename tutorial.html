@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Editor Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo::after {
+            content: '✏️';
+            margin-left: 5px;
+            font-size: 20px;
+        }
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: white;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            background-color: #ecf0f1;
+            padding: 20px 0;
+            margin: -20px -20px 20px -20px;
+        }
+        h2 {
+            color: #e74c3c;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        .tutorial-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #545c61;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .cta .h2{
+            color: #f5f5f5;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        .cta-button:hover {
+            background-color: #1a252f;
+        }
+        .green { background-color: #2ecc71; }
+        .purple { background-color: #9b59b6; }
+        .red { background-color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Canvas</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="contributors.html">Contributors</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Canvas Editor Tutorial</h1>
+        
+        <div class="tutorial-section">
+            <h2>1. Basic Drawing Tools</h2>
+            <p>The Canvas Editor provides three main drawing tools:</p>
+            <span class="button green">Brush</span>
+            <span class="button purple">Clear Canvas</span>
+            <span class="button red">Eraser</span>
+            <ul>
+                <li><strong>Brush:</strong> Use this to draw freely on the canvas.</li>
+                <li><strong>Clear Canvas:</strong> Removes all content from the canvas.</li>
+                <li><strong>Eraser:</strong> Removes specific parts of your drawing.</li>
+            </ul>
+        </div>
+        
+        <div class="tutorial-section">
+            <h2>2. Brush Customization</h2>
+            <p>Customize your brush with these options:</p>
+            <ul>
+                <li><strong>Brush Size:</strong> Adjust the thickness of your brush strokes.</li>
+                <li><strong>Color:</strong> Choose any color for your brush from the color picker.</li>
+            </ul>
+        </div>
+        
+        <div class="tutorial-section">
+            <h2>3. Text Styling</h2>
+            <p>Add and style text with these options:</p>
+            <span class="button purple">Uppercase</span>
+            <span class="button purple">Lowercase</span>
+            <span class="button purple">Bold</span>
+            <span class="button purple">Italic</span>
+            <p>Use these buttons to change the case or emphasis of your text.</p>
+        </div>
+        
+        <div class="tutorial-section">
+            <h2>4. Shape Tools</h2>
+            <p>Create perfect shapes easily:</p>
+            <span class="button purple">Rectangle</span>
+            <span class="button purple">Circle</span>
+            <span class="button purple">Line</span>
+            <p>Select a shape tool, then click and drag on the canvas to draw.</p>
+        </div>
+        
+        <div class="tutorial-section">
+            <h2>5. Background Options</h2>
+            <p>Customize your canvas background:</p>
+            <ul>
+                <li><strong>Background Image:</strong> Upload an image to use as your canvas background.</li>
+                <li><strong>Background Color:</strong> Choose a solid color for your canvas background.</li>
+            </ul>
+        </div>
+        
+        <div class="tutorial-section">
+            <h2>6. Saving Your Work</h2>
+            <p>When you're done, save your masterpiece:</p>
+            <span class="button purple">Save</span>
+            <span class="button purple">Clear</span>
+            <span class="button purple">Download</span>
+            <span class="button purple">Save Image</span>
+            <ul>
+                <li><strong>Save:</strong> Store your work for later editing.</li>
+                <li><strong>Clear:</strong> Start over with a blank canvas.</li>
+                <li><strong>Download:</strong> Save your work to your device.</li>
+                <li><strong>Save Image:</strong> Export your canvas as an image file.</li>
+            </ul>
+        </div>
+        <div class="cta">
+            <h2 style="color: white;">Ready to unleash your creativity?</h2>
+            <p>Join thousands of satisfied users and start designing today!</p> 
+            <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
+        </div>
+        </div>
+</body>
+</html>

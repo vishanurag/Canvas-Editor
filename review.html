@@ -95,6 +95,110 @@ h2::after {
 	background: #1c47e3;    
 	border: 5px double;    
 }
+/* Back to Top Button */
+#BacktoTop {
+  position: fixed; /* Stay in fixed position */
+  bottom: 50px; /* Positioned above the chatbot */
+  right: 5px; /* Aligned to the right */
+  width: 55px;
+  height: 55px;
+  background-color: #007bff; /* Button background */
+  color: white; /* Text color */
+  padding: 10px 15px; /* Padding for button size */
+  border-radius: 50%; /* Circular button */
+  border: none;
+  font-size: 24px; /* Size of the text or arrow */
+  font-weight: bolder;
+  display: block; /* Initially hidden */
+  visibility: hidden;
+  z-index: 1000; /* Ensures it is above most elements */
+  cursor: pointer; /* Pointer when hovered */
+}
+
+#BacktoTop:hover {
+  background-color: #0056b3; /* Change to a lighter blue on hover */
+  transform: scale(1.1);
+}
+
+/* Navbar Styles */
+/* Navbar Styling */
+.nav {
+  background-color: #333; /* Dark background */
+  padding: 20px 10px; /* Space around the links */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Spacing between links */
+  border-bottom: none;
+	margin-bottom: 20px;
+	margin-top: 0px;
+}
+
+/* Styling individual links in the navbar */
+.nav a {
+  color: white; /* Link color */
+  font-size: 1.2rem; /* Font size */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; /* Add padding around the text */
+  border-radius: 0.5rem; /* Rounded corners for hover effect */
+}
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* .nav-links a { */
+/* color: white; */
+/* font-size: 1.2rem; */
+/* text-decoration: none; */
+/* padding: 0.5rem 1rem; */
+/* border-radius: 0.5rem; */
+/* transition: background-color 0.3s ease; */
+/* } */
+/* Hover effect for navbar links */
+/* .navbar a:hover {/ */
+/* background-color: #474747; Background color on hover */
+/* color: #fff; White text on hover */
+
+/* width: 60% !important; */
+/* height: auto; */
+/* border: 1px solid gray; */
+/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+/* border-radius: 5px; */
+/* }/
+ */
+
+/* Full width for form controls */
+/* .fullWidth {/ */
+/* width: 100% !important; */
+/* } */
+
+.nav-item a {
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: #a0a0a0;
+}
+.nav-item a:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0;
+}
+.nav-item a:hover {
+  color:#fff;
+	border: none; 
+}
+.nav-item a:hover:after {
+  width: 100%;
+}
+
 </style>
 <style>
 	/* Circle styles */
@@ -346,7 +450,11 @@ h2::after {
         </div>
         <!-- Copyright -->
       </footer>
+	  <button id="BacktoTop">
+        <span>↑</span>
+      </button>
 </div>
+<script src="src/Scripts/BacktoTop.js"></script>
 <script>
 	// Coordinates for the cursor
 	const coords = { x: 0, y: 0 };
