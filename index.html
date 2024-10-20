@@ -1001,119 +1001,6 @@ h2{
                 <button id="closePopup" class="btn btn-primary">Close</button>
             </div>
         </div>
-        <section class="footer" id="footer">
-
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fa-brands fa-linkedin-in"></a>
-                <a href="#" class="fa-brands fa-pinterest"></a>
-            </div>
-
-            <div class="credit" style="font-size: 0.6rem;">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
-                    2024
-                </p>
-                <br>
-            </div>
-            <!-- Back to Top Button -->
-            <button id="BacktoTop">
-                <span>↑</span>
-            </button>
-        </section>
-        
-        <style>
-            .custom-popup {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.5);
-            }
-        
-            .popup-content {
-                background-color: black;
-                margin: 15% auto;
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%;
-                max-width: 500px;
-                border-radius: 5px;
-                text-align: center;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-        
-            .popup-content h3 {
-                color: #007bff;
-                margin-bottom: 15px;
-            }
-        
-            .popup-content p {
-                margin-bottom: 20px;
-            }
-        </style>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const contactForm = document.getElementById('contactForm');
-                const customPopup = document.getElementById('customPopup');
-                const closePopup = document.getElementById('closePopup');
-                
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Prevent the form from submitting normally
-                
-                    // Get form values
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-                
-                    // Check if message is at least 20 characters long
-                    if (message.length < 20) {
-                        alert('Please enter a message with at least 20 characters.');
-                        return;
-                    }
-                
-                    // Here you would typically send the form data to a server
-                    console.log('Form submitted:', { name, email, subject, message });
-                
-                    // Show custom popup
-                    customPopup.style.display = 'block';
-                
-                    // Reset the form
-                    this.reset();
-                });
-                
-                // Close popup when the close button is clicked
-                closePopup.addEventListener('click', function() {
-                    customPopup.style.display = 'none';
-                });
-                
-                // Close popup when clicking outside the popup content
-                window.addEventListener('click', function(event) {
-                    if (event.target === customPopup) {
-                        customPopup.style.display = 'none';
-                    }
-                });
-            });
-
-
-        </script>
-          
-    </div>
-        
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/edit.js"></script> -->
-
        
         <section class="footer" id="footer">
             <!-- Added responsiveness to icons -->
@@ -1466,15 +1353,7 @@ h2{
             if (localStorage.getItem('darkMode') === 'enabled') {
                 enableDarkMode();
             }
-        </script>
-            window.embeddedChatbotConfig = {
-                chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
-                domain: "www.chatbase.co"
-            }
-        </script>
-        <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
-        </script>
-        <script src="src/Scripts/Save.js"></script>
+    
 </body>
 
 
