@@ -311,6 +311,17 @@ git push origin YourBranchName
 </tr>
 </table>
 
+ # Project Mentor⚡🧑‍💻
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/somyadipghosh"><img src="https://avatars.githubusercontent.com/u/77097996?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Somyadip Ghosh</h4>
+ <a href="https://www.linkedin.com/in/somyadipghosh/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
+
+
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
   
