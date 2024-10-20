@@ -131,12 +131,12 @@
 
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
 
-        
+                    
 
-        /* }
+        }
 
 
-            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        } */
+           /* background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        } */
 
             
 
@@ -176,7 +176,7 @@
 
         }
 
-        .btn {
+        /* .btn {
             margin: 5px;
             transition: background-color 0.3s, transform 0.2s;
         }
@@ -185,20 +185,86 @@
             background-color: #3abe57;
             color: white;
             transform: scale(1.05);
-        }
+        } */
 
-        .btn:active {
+        /* .btn:active {
             transform: scale(0.95);
-        }
+        } */
+        .button-container {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+}
+
+.form-control {
+    height: 45px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 0 15px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+}
+
+/* Maintain original button styling */
+.btn {
+    min-width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0 15px;
+    margin: 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* Original Bootstrap button colors */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #3abe57;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+* {
+    box-sizing: border-box;
+}
 
         .palette {
             margin: 15px 0;
             text-align: center;
         }
 
-        .form-control {
+        /* .form-control {
             border-radius: 5px;
-        }
+        } */
 
         .edit {
             display: flex;
@@ -696,12 +762,19 @@ h2{
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
                     </div> -->
-                    <div class="d-md-flex justify-content-center gap-2 mb-3">
+                    <!-- <div class="d-md-flex justify-content-center gap-2 mb-3">
                         <input type="text" placeholder="Enter Text" name="textData" id="textData"
                             class="form-control mw-100 w-75 mb-3">
                         <button type="button" class="btn btn-primary" id="save">Save</button>
                         <button type="button" class="btn btn-danger" id="clear">Clear</button>
                         <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                    </div> -->
+                    <div class="d-flex align-items-center gap-2 button-container">
+                        <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control">
+                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-danger">Clear</button>
+                        <button type="button" class="btn btn-success">Download</button>
+                        <button type="button" class="btn btn-success">Save Image</button>
                     </div>
                     </form>
                 </div>
