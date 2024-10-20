@@ -108,6 +108,7 @@
 ├── index.html
 ├── login.html
 ├── privacy.html
+├── repo_structure.txt
 ├── resources/
 │   ├── favicon.ico
 │   └── painting_image.jpg

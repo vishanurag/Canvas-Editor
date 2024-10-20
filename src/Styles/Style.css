@@ -10,8 +10,13 @@
   min-height: 100vh;
   background: linear-gradient(135deg,#cf9aff,#95c0ff);
   color: #fff;
+
+  padding-top: 4%;
+  /* removed padding left for proper alignment */
+
   padding-top: 5%;
   padding-left: 9%;
+
   padding-bottom: 0;
 }
 .container h4{
