@@ -357,6 +357,7 @@ footer{
         grid-template-columns: repeat(3, 1fr);
     }
 }
+<<<<<<< HEAD
 .blog-container {
     width: 100%;
     padding: 20px;
@@ -481,6 +482,9 @@ footer{
     font-size: 20px;
     cursor: pointer;
 }
+=======
+
+>>>>>>> 65ee2c537a827bc09f60e47a42d3e92cea5dd202
 .design-title a {
     font-size: 18px;
     color: #333;
