@@ -86,6 +86,11 @@
      
 </ul>
 
+## Project Structure
+
+<!-- START_STRUCTURE -->
+<!-- END_STRUCTURE -->
+
 ### New Features ✨
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
