@@ -75,10 +75,35 @@
     background-color: #007bff; /* Primary color for buttons */
     color: white;
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
     background-color: #0056b3; /* Darker shade on hover */
+    transform: translate(-4px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.btn::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: transform 0.65,opacity 0.6s;
+    opacity: 0;
+
+}
+.btn:hover::after{
+    transform: translate(-50%,-50%)scale(1);
+    opacity: 1;
+}
+.btn:active{
+   transform: translate(1px);
+   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
 .palette {
@@ -878,6 +903,54 @@ h2{
                             <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
                         </div>
                         </div>
+
+                        <div id="fontControls">
+                                <div class="control-group">
+                                    <label for="fontFamily">Font Family:</label>
+                                    <select id="fontFamily">
+                                        <option value="Arial">Arial</option>
+                                        <option value="Verdana">Verdana</option>
+                                        <option value="Times New Roman">Times New Roman</option>
+                                        <option value="Courier New">Courier New</option>
+                                    </select>
+                              
+
+                                    <label for="fontStyle">Font Style:</label>
+                                    <select id="fontStyle">
+                                        <option value="normal">Normal</option>
+                                        <option value="italic">Italic</option>
+                                        <option value="oblique">Oblique</option>
+                                    </select>
+
+                                
+                               
+                                    <label for="fontWeight">Font Weight:</label>
+                                    <select id="fontWeight">
+                                        <option value="normal">Normal</option>
+                                        <option value="bold">Bold</option>
+                                        <option value="bolder">Bolder</option>
+                                        <option value="lighter">Lighter</option>
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                        <option value="300">300</option>
+                                        <option value="400">400</option>
+                                        <option value="500">500</option>
+                                        <option value="600">600</option>
+                                        <option value="700">700</option>
+                                        <option value="800">800</option>
+                                        <option value="900">900</option>
+                                    </select>
+                                </div>
+
+                                
+                    
+                    
+                        </div>
+                    
+
+                          
+                     
+
                         <div class="d-flex justify-content-around  mb-2">
                             <div class="col-sm-6"  style="width: 40%;">
                                 <label for="bgImageUpload">Background Image:</label>
@@ -1106,6 +1179,66 @@ h2{
         </section>
         
         <style>
+
+                body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f0f0f0;
+                            padding: 20px;
+                        }
+                        #fontControls {
+                            margin-bottom: 20px;
+                            padding: 15px;
+                            /* background-color: #ffffff; */
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px rgb(0, 0, 0,0.1);
+                            /* display: flex;
+                            justify-content: space-around; */
+                        }
+                        /* .control-group{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                        } */
+                        label {
+                            margin-right: 10px;
+                            font-weight: bold;
+                            color: #333;
+                        }
+                        select {
+                            margin-right: 20px;
+                            padding: 10px;
+                            font-size: 14px;
+                            border-radius: 5px;
+                            border: 2px solid #ccc;
+                            transition: border-color 0.3s, background-color 0.3s;
+                        }
+                        select:hover{
+                            border-color: #007bff;
+                            background-color: #e7f3e7;
+                        }
+                        select{
+                            animation: anima 0.5s ease-in-out;
+                        }
+                        @keyframes anima {
+                            from{
+                                opacity: 0;
+                                transform: translate(-10px);
+                            }
+                            
+                        }
+                        canvas {
+                            border: 2px solid #007bff;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px rgba(0,123, 255, 0.3);
+                        }
+                        select:focus{
+                            outline: none;
+                            border-color: #007bff;
+                            background-color: #e7f3ff;
+                        }
+                        select:focus{
+                            box-shadow: 0 0 10px rgba(0,123,255,0.5);
+                        }
             .custom-popup {
                 display: none;
                 position: fixed;
@@ -1140,6 +1273,103 @@ h2{
         </style>
         
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const fontFamilySelect = document.getElementById('fontFamily');
+                const fontStyleSelect = document.getElementById('fontStyle');
+                const fontWeightSelect = document.getElementById('fontWeight');
+                let currentFontFamily = 'Arial'; // Default font family
+                let currentFontStyle = 'normal'; // Default font style
+                let currentFontWeight = 'normal'; // Default font weight
+
+                const mainCanvas = document.getElementById('mainCanvas');
+                const ctx = mainCanvas.getContext('2d');
+
+                // Function to update the font style on canvas
+                function updateFont() {
+                    ctx.font = `${currentFontStyle} ${currentFontWeight} 16px ${currentFontFamily}`;
+                    highlightCanvas();
+                }
+                function highlightCanvas()
+                {
+                    mainCanvas.style.boxShadow='0 0 20px rgba(0,123,255,0.5)';
+                    setTimeout(()=>{
+                        mainCanvas.style.boxShadow='0 4px 8px rgba(0,123,255,0.3)';
+                    },300);
+    
+                }
+
+                // Apply the selected font family
+                fontFamilySelect.addEventListener('change', function () {
+                    currentFontFamily = this.value;
+                    updateFont(); // Update the font style on the canvas
+                });
+
+                // Apply the selected font style
+                fontStyleSelect.addEventListener('change', function () {
+                    currentFontStyle = this.value;
+                    updateFont(); // Update the font style on the canvas
+                });
+
+                // Apply the selected font weight
+                fontWeightSelect.addEventListener('change', function () {
+                    currentFontWeight = this.value;
+                    updateFont(); // Update the font style on the canvas
+                });
+
+                // Existing canvas drawing functions...
+                let drawing = false;
+                let eraserMode = false;
+                let currentColor = '#000000'; // Default color
+
+                function resizeCanvas() {
+                    mainCanvas.width = mainCanvas.offsetWidth;
+                    mainCanvas.height = mainCanvas.offsetHeight;
+                }
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+
+                function getPosition(event) {
+                    const rect = mainCanvas.getBoundingClientRect();
+                    const x = (event.clientX || event.touches[0].clientX) - rect.left;
+                    const y = (event.clientY || event.touches[0].clientY) - rect.top;
+                    return { x, y };
+                }
+
+                function startDrawing(event) {
+                    drawing = true;
+                    const { x, y } = getPosition(event);
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                }
+
+                function draw(event) {
+                    if (drawing) {
+                        const { x, y } = getPosition(event);
+                        if (eraserMode) {
+                            ctx.clearRect(x - 10, y - 10, 20, 20);
+                        } else {
+                            ctx.strokeStyle = currentColor; // Use the selected color
+                            ctx.lineWidth = 5; // Set a line width
+                            ctx.lineTo(x, y);
+                            ctx.stroke();
+                        }
+                    }
+                    event.preventDefault(); // Prevent scrolling when touching the canvas
+                }
+
+                function stopDrawing() {
+                    drawing = false;
+                    ctx.closePath();
+                }
+
+                mainCanvas.addEventListener('mousedown', startDrawing);
+                mainCanvas.addEventListener('mousemove', draw);
+                mainCanvas.addEventListener('mouseup', stopDrawing);
+
+                
+            });
+
+
             document.addEventListener('DOMContentLoaded', function() {
                 const contactForm = document.getElementById('contactForm');
                 const customPopup = document.getElementById('customPopup');
