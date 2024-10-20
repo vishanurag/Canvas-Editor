@@ -43,12 +43,28 @@
 <!-- Added Hacktoberfest 2024 and GSSoC Extended 2024 banners -->
 ### This project is now OFFICIALLY accepted for
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
-  <img src="https://cdn.discordapp.com/attachments/657543125190967316/1294560786114674748/Screenshot_2024-10-12_122347.png?ex=670b752f&is=670a23af&hm=26ddd7f41740b8b19ee4985e7568b3892091384b3b85e7165770a4b10f4d1050&" alt="Hacktoberfest 2024" width="80%">
-</div>
-<br>
+<table>
 
+   <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+   </tr>
+   <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/gssocextd.jpg" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
+      <td>GirlScript Summer of Code 2024</td>
+      <td>GirlScript Summer of Code is a three-month-long Open Source Program conducted every summer by GirlScript Foundation. It is an initiative to bring more beginners to Open-Source Software Development.</td>
+   </tr>
+    <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/hacktoberfest.png" width="200" height="auto" loading="lazy" alt="Hacktoberfest 2024"/></td>
+      <td>Hacktoberfest 2024</td>
+      <td>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean, GitHub, and Twilio. It encourages contributions to open source projects and promotes a global community of developers.</td>
+   </tr>
+
+</table>
+<br/>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
 
@@ -73,6 +89,13 @@
 ### New Features ✨
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
+
+# Website Preview
+
+![image](https://github.com/user-attachments/assets/02614ccd-b2ec-492a-9f02-f53d69e9d2b9)
+
+![image](https://github.com/user-attachments/assets/7f355f78-2846-441d-b10d-73958b311f79)
+
 
 ### How to Use
 To change the background color or image:

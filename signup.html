@@ -34,22 +34,25 @@
         }
         .nav-tabs {
             justify-content: center;
-            background-color: #ffffff;
+            background-color: rgba(0,0,0,0.3);
             border-bottom: 2px solid #dee2e6; /* Border for the nav-tabs */
+            width: 35%;
+            border-radius: 30px;
+            margin: auto;
         }
         .nav-item .nav-link {
             color: #000;
             font-size: 18px;
             padding: 10px 20px;
-            border-radius: 0;
-            transition: background-color 0.3s, color 0.3s;
+            border-radius: 35px;
+            transition:all 0.4s ease
         }
         .nav-link.active {
-            background-color: #3abe57;
-            color: white;
+            background-color: white;
+            color: black;
         }
         .nav-link:hover {
-            background-color: #3abe57;
+            background-color: rgba(0,0,0,0.5);
             color: white;
         }
         h2 {
@@ -57,16 +60,19 @@
             margin-bottom: 5px;
         }
         button {
-            width: 100%;
+            width: 45%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #243447;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 30px;
             cursor: pointer;
+            transition: all 0.4s ease;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #0d1321;
+            width: 70%;
+            transform: scale(1.1);
         }
         .or {
             text-align: center;
@@ -110,10 +116,24 @@
         /* ... (rest of the styles remain unchanged) ... */
    
  
+        .google-btn{
+            margin-right:-20px;
+        }   
+        .github-btn{
+            margin-left: -20px;
+        }
+
+    ::placeholder {
+        color: #343232; /* Adjust the color to your preference */
+        opacity: 1; 
+    }
+    input[name="username"] {
+        margin-top: -5px;
+        padding-left: 4px; 
+    }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-to-home">Back to Home</a>
 
         /* Circle styles */
         .circle {
@@ -289,11 +309,12 @@
                 <a href="https://www.google.com/"><img class="logo google-btn"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
                 </a>
-                <a href="https://github.com/"><img class="logo"
+                <a href="https://github.com/"><img class="logo github-btn"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
                 </a>
             </div>
             <p style="color: black;">Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
+            <p>Already have an account? <br><a href="login.html" class="loginn">Log in</a></p> <!-- This should link to login.html -->
         </div>
     
         <!-- Validation Script -->
