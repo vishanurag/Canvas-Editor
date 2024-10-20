@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 :root{
     --Playfair: 'Playfair Display', serif;
     --Quicksand: 'Quicksand', sans-serif;
@@ -358,3 +357,191 @@ footer{
         grid-template-columns: repeat(3, 1fr);
     }
 }
+.blog-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .blog-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .blog-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .blog-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-img {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .blog-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .blog-img span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 50%;
+  }
+  
+  .blog-text {
+    padding: 15px;
+  }
+  
+  .blog-text h2 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .blog-text p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .blog-text a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .blog-text a:hover {
+    text-decoration: underline;
+  }
+  
+  .title h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .title p {
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .blog-content {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  
+    .blog-text h2 {
+      font-size: 16px;
+    }
+  
+    .blog-text p {
+      font-size: 13px;
+    }
+  }
+  /* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+.design-title a {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    position: relative;
+  }
+  
+  .design-title a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff5733; /* Highlight color */
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .design-title a:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+  
+  .design-title a:hover {
+    color: #ff5733;
+    transform: scale(1.1); /* Zoom effect */
+    letter-spacing: 1px;
+  }
+
+  .blog-text {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Initial box-shadow */
+  }
+  
+  .blog-text:hover {
+    background-color: #ffecb3; /* Change background on hover */
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow */
+  }
+  
+  .blog-text h2 {
+    transition: color 0.3s ease;
+    font-size: 22px;
+  }
+  
+  .blog-text:hover h2 {
+    color: #ff6f61; /* Text color change on hover */
+  }
+  
+  .blog-text p {
+    transition: opacity 0.3s ease;
+  }
+  
+  .blog-text:hover p {
+    opacity: 0.8; /* Slight fade effect on hover */
+  }
+  

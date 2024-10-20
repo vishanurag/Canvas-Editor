@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
@@ -83,67 +84,24 @@
             text-align: center;
             color: white;
         }
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/Styles/Style.css">
-    <link rel="stylesheet" href="./src/Styles/Responsive.css">
-    <link rel="stylesheet" href="./src/Styles/signup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow-x: hidden;
+        .google-btn{
+            margin-right:-20px;
+        }   
+        .github-btn{
+            margin-left: -20px;
         }
-        .header-container {
-            width: 100vw; 
-            background-color: #f8f9fa; 
-            padding: 70px 0; 
-            text-align: center;
-            margin-bottom: 20px; 
-            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-            background-size: cover;
-        }
-        .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .back-to-home {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            z-index: 1000;
-        }
-        .back-to-home:hover {
-            background-color: #0056b3;
-            color: white;
-        }
-        /* ... (rest of the styles remain unchanged) ... */
+
+    ::placeholder {
+        color: #343232; /* Adjust the color to your preference */
+        opacity: 1; 
+    }
+    input[name="username"] {
+        margin-top: -5px;
+        padding-left: 4px; 
+    }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-to-home">◀  Back to Home</a>
 
 </body>
 </html>
@@ -210,11 +168,7 @@
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
     <div class="header-container">
-        
-        <div class="title " >
-            <h1 class="site-name" style="color: #000;">Canvas</h1>
-            <i class="fa-solid fa-paintbrush" style="color: #000;"></i>
-         </div> 
+    
         <div class="header">
             <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
         </div>
@@ -224,7 +178,7 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about-us.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Review</a>
@@ -233,7 +187,9 @@
               <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.html">Login </a>
+                <a class="nav-link" href="#">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
 
             </li>
         </ul>    
@@ -261,7 +217,7 @@
                 <!-- Password Input Block with Strength Meter -->
                 <div id="input">
                     <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="togglePassword"></i>
                 </div>
                 <div class="password-strength" id="password-strength" style="display: none;">
                     <span id="strength-text"></span>
@@ -274,7 +230,7 @@
                 <!-- Confirm Password Input Block -->
                 <div id="input">
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
                 </div>
     
                 <!-- Importing zxcvbn -->
@@ -337,10 +293,10 @@
             </form>
             <div class="or">- OR -</div>
             <div id="social" class="mb-3">
-                <a href="https://www.google.com/"><img class="logo google-btn"
+                <a href=""><img class="logo google-btn"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
                 </a>
-                <a href="https://github.com/"><img class="logo"
+                <a href=""><img class="logo github-btn"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
                 </a>
             </div>
@@ -349,6 +305,56 @@
     
         <!-- Validation Script -->
         <script>
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+  console.log(process.env.REACT_APP_API_KEY)
+  // Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  
+  // Initialize Firebase Auth
+  const auth = getAuth(app);
+
+  // Google Login Functionality
+  document.getElementByClassName('logo google-btn').addEventListener('click', () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result.user);  // Display user info
+      alert('Google login successful');
+    })
+    .catch((error) => {
+      console.error("Google login failed", error.message);  // Log the specific error
+      alert('Google login failed: ' + error.message);  // Show detailed error in alert
+    });
+});
+
+document.getElementByClassName('logo github-btn').addEventListener('click', () => {
+  const provider = new GithubAuthProvider();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result.user);  // Display user info
+      alert('GitHub login successful');
+    })
+    .catch((error) => {
+      console.error("GitHub login failed", error.message);  // Log the specific error
+      alert('GitHub login failed: ' + error.message);  // Show detailed error in alert
+    });
+});
             function validatePassword() {
                 const password = document.getElementById('password').value;
                 const confirmPassword = document.getElementById('confirm_password').value;
@@ -387,6 +393,32 @@
                 circle.x = 0;
                 circle.y = 0;
                 circle.style.backgroundColor = colors[index % colors.length];
+            });
+
+            // Toggle Password Visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Toggle Confirm Password Visibility
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+            const confirmPasswordInput = document.getElementById('confirm_password');
+
+            toggleConfirmPassword.addEventListener('click', function () {
+                const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPasswordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
             });
     
             // Update the coordinates when the mouse moves

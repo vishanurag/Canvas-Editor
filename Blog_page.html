@@ -6,6 +6,7 @@
     <title>Blog Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/Styles/Style_Blog_page.css">
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <style>
       /* Circle styles */
       .circle {
@@ -19,6 +20,9 @@
         pointer-events: none;
         z-index: 99999999;
         transition: transform 0.1s ease-out;
+      }
+      html{
+        scroll-behavior: smooth;
       }
     </style>
   </head>
@@ -46,14 +50,51 @@
 <div class="circle"></div>
     <header>
       <nav class = "navbar">
-        <div class = "container">
-          <a href = "index.html" class = "navbar-brand">Creative Canvas</a>
-          <div class = "navbar-nav">
-            <a href = "">home</a>
-            <a href = "">design</a>
-            <a href = "">Create blog</a>
+        <div class="container">
+          <a href="index.html" class="navbar-brand">Creative Canvas</a>
+          <div class="navbar-nav">
+              <a href="index.html">Home</a>
+              <a href="#design">Design</a>
+              <!-- "Create Blog" anchor tag -->
+              <a href="#" id="createBlog">Create Blog</a> 
           </div>
-        </div>
+      </div>
+      
+      <!-- Hidden form modal for adding a blog -->
+      <div id="blogModal" class="modal" style="display: none;">
+          <div class="modal-content">
+              <span id="closeModal" class="close">&times;</span>
+              <form id="blogForm" enctype="multipart/form-data">
+                  <label for="blogTitle">Blog Title:</label>
+                  <input type="text" id="blogTitle" name="blogTitle" required>
+      
+                  <label for="blogDate">Date:</label>
+                  <input type="date" id="blogDate" name="blogDate" required>
+      
+                  <label for="blogContent">Blog Content:</label>
+                  <textarea id="blogContent" name="blogContent" rows="4" required></textarea>
+      
+                  <label for="blogImage">Upload Image:</label>
+                  <input type="file" id="blogImage" name="blogImage" accept="image/*" required>
+      
+                  <button type="submit">Add Blog</button>
+              </form>
+          </div>
+      </div>
+      
+      <!-- Blog container where new blogs will be added -->
+      <section class="blog" id="blog">
+          <div class="blog-container">
+              <div class="title">
+                  <h2>Latest Blog</h2>
+                  <p>recent blogs about art & design</p>
+              </div>
+              <div class="blog-content" id="blogContentContainer">
+                  <!-- Existing blogs here -->
+              </div>
+          </div>
+      </section>
+      
       </nav>
       <div class = "banner">
         <div class = "container">
@@ -62,7 +103,7 @@
           </h1>
           <p>everything that you want to know about creativity</p>
           <form>
-            <input type = "text" class = "search-input" placeholder="find your food . . .">
+            <input type = "text" class = "search-input" placeholder="search blogs and designs. . .">
             <button type = "submit" class = "search-btn">
               <i class = "fas fa-search"></i>
             </button>
@@ -148,109 +189,174 @@
 
         </div>
       </div>
-    </section>
-
-    <section class = "blog" id = "blog">
-      <div class = "container">
-        <div class = "title">
-          <h2>Latest Blog</h2>
-          <p>recent blogs about art & design</p>
+   
+      <section class="blog" id="blog">
+        <div class="blog-container">
+          <div class="title">
+            <h2>Latest Blog</h2>
+            <p>recent blogs about art & design</p>
+          </div>
+          <div class="blog-content" id="blog-container">
+      
+            <div class="blog-item">
+              <div class="blog-img">
+                <img src="/src/images/blog-p-1.jpg" alt="">
+                <span><i class="far fa-heart"></i></span>
+              </div>
+              <div class="blog-text">
+                <span>20 January, 2020</span>
+                <h2>Organizing the environment for productive work</h2>
+                <p>Organizing the work place is very much important as it gives you the motivation to work for longer duration.</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+      
+            <div class="blog-item">
+              <div class="blog-img">
+                <img src="/src/images/blog-p-2.jpg" alt="">
+                <span><i class="far fa-heart"></i></span>
+              </div>
+              <div class="blog-text">
+                <span>05 October, 2024</span>
+                <h2>Enhancing Creativity by Drawing</h2>
+                <p>We can enhance our creativity only when we visualize things properly and draw them.</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+      
+            <div class="blog-item">
+              <div class="blog-img">
+                <img src="/src/images/blog-p-3.jpg" alt="">
+                <span><i class="far fa-heart"></i></span>
+              </div>
+              <div class="blog-text">
+                <span>05 October, 2024</span>
+                <h2>Organizing other household stuff</h2>
+                <p>Besides work, we also need to organize our household items to keep the house neat and clean.</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+      
+            <div class="blog-item">
+              <div class="blog-img">
+                <img src="/src/images/blog-p-4.jpg" alt="">
+                <span><i class="far fa-heart"></i></span>
+              </div>
+              <div class="blog-text">
+                <span>05 October, 2024</span>
+                <h2>Spreading greenery in the house</h2>
+                <p>Green plants spread freshness and make us feel more energetic during the day.</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+      
+            <div class="blog-item">
+              <div class="blog-img">
+                <img src="/src/images/blog-p-5.jpg" alt="">
+                <span><i class="far fa-heart"></i></span>
+              </div>
+              <div class="blog-text">
+                <span>05 October, 2024</span>
+                <h2>Organizing the bed</h2>
+                <p>It's a good habit to organize the bed after waking up.</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+      
+            <div class="blog-item">
+              <div class="blog-img">
+                <img src="/src/images/blog-p-6.jpg" alt="">
+                <span><i class="far fa-heart"></i></span>
+              </div>
+              <div class="blog-text">
+                <span>05 October, 2024</span>
+                <h2>Exploring creative fields</h2>
+                <p>Art helps foster creativity, so it is essential to explore and learn more.</p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+      
+          </div>
         </div>
-        <div class = "blog-content">
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-1.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>20 January, 2020</span>
-              <h2>Organizing the environment for productive work</h2>
-              <p>Organizing the work place is very much important as it gives you the motivation to work for longer duration.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-2.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Enhancing Creativity by Drawing</h2>
-              <p>We can able to enhance our creativity only when we can able to visualize things properly and draw it.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-3.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Organizing other household stuffs</h2>
-              <p>Beside work we also have to organize our other household item to make house neat and clean.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-4.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Spreading greenery in house</h2>
-              <p>Green plants spread greenery and make us feel fresh during through the day.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-5.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Organizing the bed</h2>
-              <p>This is a very good habit of organizing the bed after waking up.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-6.jpg" alt = "">
-              <span><i class = "far fa-heart"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Exploring creative fields</h2>
-              <p>Art is something which helps us to be creative, so it's necessary to explore more and learn.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-     
-        </div>
-      </div>
-    </section>
+      </section>
+      
 
     <footer>
       <div class = "social-links">
+        <!-- Added responsiveness to icons -->
         <a href = "#"><i class = "fab fa-facebook-f"></i></a>
-        <a href = "#"><i class = "fab fa-twitter"></i></a>
+        <!-- Added the new Twitter(X) logo -->
+        <a href = "#"><i class = "fab fa-x-twitter"></i></a>
         <a href = "#"><i class = "fab fa-instagram"></i></a>
+        <!-- Added LinkedIn logo -->
+        <a href = "https://www.linkedin.com/in/anuragvishwakarma/"><i class = "fab fa-linkedin-in"></i></a>
         <a href = "#"><i class = "fab fa-pinterest"></i></a>
       </div>
       <span>Creative Canvas Blog Page</span>
     </footer>
     
     <script>
+      
+      // Handle opening and closing of the modal
+const blogModal = document.getElementById('blogModal');
+const createBlogLink = document.getElementById('createBlog');
+const closeModal = document.getElementById('closeModal');
+
+createBlogLink.addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent default anchor behavior
+    blogModal.style.display = 'flex';  // Show the modal
+});
+
+closeModal.addEventListener('click', function() {
+    blogModal.style.display = 'none';  // Close the modal
+});
+
+// Handle form submission to add a new blog
+document.getElementById('blogForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Get form values
+    const blogTitle = document.getElementById('blogTitle').value;
+    const blogDate = document.getElementById('blogDate').value;
+    const blogContent = document.getElementById('blogContent').value;
+    const blogImage = document.getElementById('blogImage').files[0];
+
+    // Create a new blog div
+    const newBlog = document.createElement('div');
+    newBlog.classList.add('blog-item');
+
+    // Convert image file to a URL
+    const reader = new FileReader();
+    reader.readAsDataURL(blogImage);
+    reader.onload = function(event) {
+        const imageSrc = event.target.result;
+
+        // Create the blog structure
+        newBlog.innerHTML = `
+            <div class="blog-img">
+                <img src="${imageSrc}" alt="">
+                <span><i class="far fa-heart"></i></span>
+            </div>
+            <div class="blog-text">
+                <span>${blogDate}</span>
+                <h2>${blogTitle}</h2>
+                <p>${blogContent}</p>
+                <a href="#">Read More</a>
+            </div>
+        `;
+
+        // Append the new blog to the blog container
+        document.getElementById('blogContentContainer').appendChild(newBlog);
+
+        // Close the modal after submission
+        blogModal.style.display = 'none';
+
+        // Clear the form after submission
+        document.getElementById('blogForm').reset();
+    };
+});
+
+
       // Coordinates for the cursor
       const coords = { x: 0, y: 0 };
       const circles = document.querySelectorAll(".circle");
