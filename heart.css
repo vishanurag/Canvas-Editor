@@ -1,0 +1,20 @@
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    font-size: 24px;
+    color: grey;
+    transition: color 0.3s ease;
+ }
+  /* Change heart color when liked */
+  .like-button.liked i {
+    color: red;
+  }     
+  /* Align the heart icon and like count */
+  .like-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
