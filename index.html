@@ -18,12 +18,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <button id="darkModeToggle">🌓</button>
+    
     <link rel="stylesheet" href="style.css">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<button id="darkModeToggle">🌓</button>
 
 <style>
    body {
@@ -204,6 +203,23 @@ body.dark-mode {
     background-color: #333333;
     color: #ffffff;
 }
+#darkModeToggle {
+    background: none;
+    border-radius: 20%; 
+    padding: 0.2rem 0.5rem;
+    cursor: pointer; 
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: #4a4949; 
+}
+
+#darkModeToggle:active {
+    background-color: #ddd; 
+    transform: scale(0.95); 
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -229,7 +245,7 @@ body.dark-mode {
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
 }
-
+}
 
     .footer .share a {
         font-size: 1.5rem;
@@ -554,7 +570,6 @@ h2{
 
 <body>
      
-    <button id="darkModeToggle">🌓</button>
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -617,6 +632,7 @@ h2{
             <a href="testimonial.html">Testimonial</a>
             <a href="signup.html">Sign Up</a>
             <a href="login.html">Login</a>
+            <button id="darkModeToggle">🌓</button>
           </div>
         </nav>
       </header>
@@ -690,16 +706,15 @@ h2{
             </ul>
         </div>
 
-        <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
+        <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p>
+                    class="fa-light fa-face-party"></i></p> -->
 
-        <div class="row text-center p-5 theme-container">
+        <!-- <div class="row text-center p-5 theme-container">
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-
-        </div>
+        </div> -->
         
 
 <div class="row text-center p-5 theme-container" style="background-color: #2c3e5e;">
@@ -975,20 +990,7 @@ h2{
                             <label for="message">Your Message (minimum 20 characters)</label>
                         </div>
                     </div> -->
-                    <div class="container">
-                        <div class="cal">
-                            <h4>Your<br><span>Message</span></h4>
-                            <!-- <div class="input-box"> -->
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:80px;" required></textarea>
-                            
-                            <p id="result"></p>
-                        </div>
-                    <!-- Submit Button -->
-                    <div class="col-md-12 d-flex justify-content-center">
-                        <div class="col-md-8">
-                            <button type="submit" class="btn w-100 text-center" style="padding-left:250px;margin-right:500px;">Submit</button>
-                        </div>
-                    </div>
+
                 </form>
             </div>
         </div>
@@ -1114,29 +1116,6 @@ h2{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/edit.js"></script> -->
 
-       
-        <section class="footer" id="footer">
-            <!-- Added responsiveness to icons -->
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-                <a href="#" class="fa-brands fa-pinterest"></a>
-            </div>
-
-            <div class="credit" style="font-size: 0.6rem;">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
-                    2024
-                </p>
-                <br>
-            </div>
-            <!-- Back to Top Button -->
-            <button id="BacktoTop">
-                <span>↑</span>
-            </button>
-        </section>
 
         <script src="src\Scripts\preloader.js"></script>
         <script src="src/Scripts/BacktoTop.js"></script>
@@ -1467,10 +1446,10 @@ h2{
                 enableDarkMode();
             }
         </script>
-            window.embeddedChatbotConfig = {
+            <!-- window.embeddedChatbotConfig = {
                 chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
                 domain: "www.chatbase.co"
-            }
+            } -->
         </script>
         <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
         </script>
