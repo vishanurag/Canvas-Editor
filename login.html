@@ -74,14 +74,14 @@
         .nav-tabs {
             justify-content: center;
             background-color: rgba(0,0,0,0.3);
-            border-bottom: 2px solid #dee2e6;
-            width: 35%; 
+            border-bottom: 2px solid #dee2e6; 
             margin: auto;
             border-radius: 30px;
         }
         .nav-item .nav-link {
             color: #000;
             font-size: 18px;
+            font-weight: bold;
             padding: 10px 20px;
             border-radius: 30px;
             transition: background-color 0.3s, color 0.3s;
@@ -91,7 +91,8 @@
             color: white;
         }
         .nav-link:hover {
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgb(72, 70, 70);
+            box-shadow: 1px 3px 4px 2px rgb(91, 90, 95) ;
             color: white;
         }
         #input input{
@@ -182,6 +183,10 @@
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
 
+    <div>
+
+    
+
     <header class="header">
         <nav class="navbar">
           <div class="title">
@@ -201,36 +206,54 @@
           </div>
         </nav>
       </header>
-
+    </div>
     
-        <div class="header">
-            <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
-        </div>
-    <div class="row">
         
-        <ul class="nav nav-tabs">
-            <img src="download (1).png" alt="" style="height: 50px; width: auto; margin-right: 200px;">
+    <div class="row">
+       
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+        <ul class="nav nav-tabs" style="display: flex;
+    justify-content: space-between; padding: 0 40px;background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 10px; 
+    ">
+            <div>
+                <a href="index.html"><img width="48" height="48" src="https://img.icons8.com/doodle/48/gimp.png"  alt="gimp"/></a>
+                
+    
+            </div>
 
-            </li>
+            
+            <div class="NaV" style="display: flex; padding: 0 5px; justify-content: space-evenly;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Review</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="signup.html">Sign Up</a></li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+      
+                  </li>
+            </div>
+           
         </ul>
     </div>
+
+    <div class="header">
+        <p class="lead" style="color: #000; margin-top: 1rem;">Design and create stunning visuals effortlessly!</p>
+    </div>
+
     <div id="login" class="form-container mt-5">
         <h3 class="pb-4" style="color:goldenrod;">LOG IN</h3>
         <form action="/login" method="POST">
