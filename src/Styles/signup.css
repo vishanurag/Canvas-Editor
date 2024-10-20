@@ -5,6 +5,30 @@
     backdrop-filter: blur(10px);
     border-radius: 5%;
 }
+/* Apply this style to your navigation links */
+.nav-link {
+  /* Initial gradient background */
+  background: linear-gradient(90deg, #3f51b5, #e34cb1);
+  padding: 0.5em 1em;
+  color: #dbefe8;
+  text-decoration: none;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect */
+.nav-link:hover {
+  background-color: #e91e63; /* Change to your desired hover color */
+  color: rgb(226, 232, 55);
+  text-shadow: #3f51b5;
+  font-size: large;
+  font-weight: bold;
+}
+
+.welcome-header span{
+    background: linear-gradient(45deg, #f03a55, #9733EE);
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  color: transparent; /* Make the original text transparent */
+}
 
 h3 {
     margin-top: 1em;
@@ -22,7 +46,10 @@ h3 {
     padding-left: 5px;
     padding-right: 5px;
 }
-
+#input:hover{
+    background-color: white;
+    color: green;
+}
 #input input {
     background: transparent;
     width: 85%;
