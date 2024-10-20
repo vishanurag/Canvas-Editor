@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 :root{
     --Playfair: 'Playfair Display', serif;
     --Quicksand: 'Quicksand', sans-serif;
@@ -299,96 +298,6 @@ footer{
     font-family: var(--Playfair);
     letter-spacing: 2px;
 }
-.card-container{
-    display: flex;
-    margin-bottom: 50px;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.card{
-    height: 350px;
-    width: 450px;
-    background: linear-gradient(135deg,#112d60,#b6c0c5);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 0px 30px 010px;
-    padding: 30px;
-    transition: all 0.4s ease;
-}
-.card span{
-    color: white;
-    position: relative;
-    top: 15px;
-    left: 10px;
-    font-size: 1.4rem;
-}
-.card h2{
-    color: white;
-    padding: 30px 0 10px 10px;
-}
-.card p{
-    color: white;
-    position: relative;
-    left: 10px;
-    top: 20px;
-    font-size: 20px;
-}
-.card a{
-    position:relative;
-    left: 10px;
-    top :70px;
-    height: 40px;
-    width: 120px;
-    background-color: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-    line-height: 20px;
-    transition: all 0.4s ease;
-}
-
-.card:hover{
-    background: linear-gradient(105deg,#112d60,#b6c0c5);
-    transform: scale(0.95);
-}
-
-.card a:hover{
-    width: 140px;
-    height: 50px;
-    font-size: 15px;
-    transform: scale(1.1);
-}
-
-/* Back to Top Button */
-#BacktoTop {
-    position: fixed; /* Stay in fixed position */
-    bottom: 50px; /* Positioned above the chatbot */
-    right: 5px; /* Aligned to the right */
-    width: 55px;
-    height: 55px;
-    background-color: #007bff; /* Button background */
-    color: white; /* Text color */
-    padding: 10px 15px; /* Padding for button size */
-    border-radius: 50%; /* Circular button */
-    border: none;
-    font-size: 24px; /* Size of the text or arrow */
-    font-weight: bolder;
-    display: block; /* Initially hidden */
-    visibility: hidden;
-    z-index: 1000; /* Ensures it is above most elements */
-    cursor: pointer; /* Pointer when hovered */
-  }
-  
-  #BacktoTop:hover {
-    background-color: #0056b3; /* Change to a lighter blue on hover */
-    transform: scale(1.1);
-  }
-  
 
 /* Media Queries */
 @media screen and (min-width: 540px){
@@ -448,3 +357,190 @@ footer{
         grid-template-columns: repeat(3, 1fr);
     }
 }
+.blog-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .blog-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .blog-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .blog-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-img {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .blog-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .blog-img span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 50%;
+  }
+  
+  .blog-text {
+    padding: 15px;
+  }
+  
+  .blog-text h2 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .blog-text p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .blog-text a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .blog-text a:hover {
+    text-decoration: underline;
+  }
+  
+  .title h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .title p {
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .blog-content {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  
+    .blog-text h2 {
+      font-size: 16px;
+    }
+  
+    .blog-text p {
+      font-size: 13px;
+    }
+  }
+  /* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+.design-title a {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    position: relative;
+  }
+  
+  .design-title a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff5733; /* Highlight color */
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .design-title a:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+  
+  .design-title a:hover {
+    color: #ff5733;
+    transform: scale(1.1); /* Zoom effect */
+    letter-spacing: 1px;
+  }
+  .blog-text {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Initial box-shadow */
+  }
+  
+  .blog-text:hover {
+    background-color: #ffecb3; /* Change background on hover */
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow */
+  }
+  
+  .blog-text h2 {
+    transition: color 0.3s ease;
+    font-size: 22px;
+  }
+  
+  .blog-text:hover h2 {
+    color: #ff6f61; /* Text color change on hover */
+  }
+  
+  .blog-text p {
+    transition: opacity 0.3s ease;
+  }
+  
+  .blog-text:hover p {
+    opacity: 0.8; /* Slight fade effect on hover */
+  }
+  
