@@ -1184,27 +1184,7 @@ h2{
         </section>
 
         <script src="src\Scripts\preloader.js"></script>
-        <script>
-            const scrollToTopBtn = document.getElementById("BacktoTop");
-            window.onscroll = function () {
-                scrollFunction();
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    scrollToTopBtn.style.visibility = 'visible';
-                    scrollToTopBtn.style.opacity = '1';
-                } else {
-                    scrollToTopBtn.style.visibility = 'hidden';
-                    scrollToTopBtn.style.opacity = '0';
-                }
-            }
-
-            scrollToTopBtn.addEventListener("click", function () {
-                // Smooth scroll back to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        </script>
+        <script src="src/Scripts/BacktoTop.js"></script>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
