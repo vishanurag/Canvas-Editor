@@ -92,15 +92,10 @@
 
 # Website Preview
 
-![image 1](https://github.com/user-attachments/assets/c1a30d94-a1b2-49d4-ab5e-f5a93834f289)
+![image](https://github.com/user-attachments/assets/02614ccd-b2ec-492a-9f02-f53d69e9d2b9)
 
-![image 2](https://github.com/user-attachments/assets/2df9c561-5b57-486a-a2c3-0d7f985dc0e5)
+![image](https://github.com/user-attachments/assets/7f355f78-2846-441d-b10d-73958b311f79)
 
-![image 3](https://github.com/user-attachments/assets/1d4c5094-c626-49dc-88b4-8bc918e0bd31)
-
-![image 4](https://github.com/user-attachments/assets/3098b449-c191-4ed5-87f3-8c2cc90407de)
-
-![image 5](https://github.com/user-attachments/assets/f3809057-c332-4ff5-b3ca-74c43da06daa)
 
 ### How to Use
 To change the background color or image:
