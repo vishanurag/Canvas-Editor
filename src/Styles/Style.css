@@ -31,15 +31,14 @@
 .container button{
   display: flex;
   align-items: center;
-  background: linear-gradient(#9418fd,#571094);
+  background: linear-gradient(#745b89,#ba85e9);
   color: #fff;
   font-size: 18px;
   outline: 0;
   border: 0;
-  border-radius: 40px;
-  padding: 15px 25px;
-  margin: 30px 0 20px;
+  margin: auto;
   cursor: pointer;
+  box-shadow: 2px 1px 20px 3px white;
 
 }
 .form-control{
@@ -919,7 +918,6 @@ footer .credit {
   background-color: #f9f9f9;
   padding: 50px;
   text-align: center;
-  max-width: 650px;
   border-radius: 15px;
   margin-top: 30px;
   margin-bottom:30px;
@@ -958,12 +956,12 @@ footer .credit {
 
 .contact-section button {
   padding: 15px;
-  background-color: #333;
-  color: white;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
 }
 
 .contact-section button:hover {
@@ -977,6 +975,8 @@ footer .credit {
   margin-left: 20px;
   font-size: 30px;
 }
+
+
 
 /* Back to Top Button */
 #BacktoTop {
