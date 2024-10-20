@@ -640,7 +640,8 @@ html {
   transition: 0;
 }
 .nav-links a:hover {
-  color: #ffffff;
+  color: #ffffff;s
+
 }
 .nav-links a:hover:after {
   width: 100%;
