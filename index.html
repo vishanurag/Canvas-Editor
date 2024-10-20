@@ -25,75 +25,271 @@
     <link rel="stylesheet" href="style.css">
 
 <style>
-    
-    body {
-        transition: background-color 0.3s, color 0.3s;
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<button id="darkModeToggle">🌓</button>
+
+<style>
+   body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px; /* Limit the maximum width for better readability */
+    margin: 0 auto;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+    border-radius: 8px; /* Added border-radius for rounded corners */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #d1d7ff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#mainCanvas {
+    max-width: 100%;
+    height: 400px;
+    border: 2px solid #007bff; /* Changed border color for better visibility */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    cursor: crosshair;
+    margin-top: 20px;
+    transition: border-color 0.3s;
+}
+
+.btn {
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 10px 20px; /* Added padding for a better button size */
+    border: none;
+    border-radius: 5px; /* Rounded button corners */
+    background-color: #007bff; /* Primary color for buttons */
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.palette {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.edit {
+    display: flex;
+}
+
+#userForm {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(114, 171, 255, 0.8); /* Added transparency for better visual */
+    border-radius: 8px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #2c3e5e;
+    color: #ffffff;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer .share {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer .share a {
+    margin: 0 10px;
+    font-size: 1.8rem;
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .share a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+.footer .credit {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.footer .credit span {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.footer .credit p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.footer .credit span:hover {
+    color: #f1c40f;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .container {
+    background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+    color: #007bff;
+}
+
+.dark-mode .canvas-container {
+    background: #2a2a2a;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode #mainCanvas {
+    border-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    background-color: #333333;
+}
+
+.dark-mode .btn {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.dark-mode .form-control {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode #userForm {
+    background-color: #444444;
+}
+
+.dark-mode .footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer .share a {
+    color: #ffffff;
+}
+
+.dark-mode .custom-popup {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .popup-content {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
     }
-    .dark-mode {
-        background-color: #1a1a1a;
-        color: #ffffff;
+
+    .footer .share a {
+        font-size: 1.5rem;
     }
-    .dark-mode .container {
-        background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
-        color:#007bff;
-    }
-    .dark-mode .canvas-container {
-        background: #2a2a2a;
-        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-    }
-    .dark-mode #mainCanvas {
-        border-color: #ffffff;
-        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-        background-color: #333333;
-    }
-    .dark-mode .btn {
-        background-color: #444444;
-        color: #ffffff;
-    }
-    .dark-mode .form-control {
-        background-color: #333333;
-        color: #ffffff;
-    }
-    .dark-mode #userForm {
-        background-color: #444444;
-    }
-    .dark-mode .footer {
-        background-color: #333333;
-        color: #ffffff;
-    }
-    .dark-mode .footer .share a {
-        color: #ffffff;
-    }
-    .dark-mode .custom-popup {
-        background-color: rgba(255,255,255,0.1);
-    }
-    .dark-mode .popup-content {
-        background-color: #333333;
-        color: #ffffff;
-    }
-    #darkModeToggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        background-color: #333333;
-        color: #ffffff;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .dark-mode #darkModeToggle {
-        background-color: #ffffff;
-        color: #333333;
-    }
-    
+}
 
 
-</style>
+    .footer .share a {
+        font-size: 1.5rem;
+    }
+
+    .footer .credit {
+        font-size: 0.8rem;
+    }
+/* General Styles */
+h2 {
+    margin-top: 50px;
+    color: black;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999;
+    transition: transform 0.1s ease-out;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .container {
+    background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+}
+
+.dark-mode .canvas-container {
+    background: #2a2a2a;
+}
+
+.dark-mode #mainCanvas {
+    border-color: #ffffff;
+    background-color: #333333;
+}
+
+.dark-mode .btn {
+    background-color: #444444;
+}
+
+.dark-mode .form-control {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer .share a {
+    color: #ffffff;
+}
+
+.dark-mode #darkModeToggle {
+    background-color: #ffffff;
+    color: #333333;
+}
+  </style>
 
 <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
@@ -558,6 +754,7 @@ h2{
 
             </ul>
         </div>
+
         <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
@@ -569,6 +766,63 @@ h2{
 
         </div>
         
+
+<div class="row text-center p-5 theme-container" style="background-color: #2c3e5e;">
+    <h2 class="welcome-header animated-text" style="color: #ffffff; font-weight: bolder;">Welcome to the Canvas Editor!</h2>
+    <p class="welcome-text" style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+</div>
+
+<style>
+    .circle {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999999;
+        transition: transform 0.1s ease-out;
+    }
+
+    /* Animation for welcome text */
+    .animated-text {
+        animation: fadeIn 2s ease-in-out forwards, colorChange 5s infinite alternate;
+        opacity: 1; /* Keep text fully visible */
+        transform: translateY(0); /* Start in original position */
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0; /* Start invisible */
+            transform: translateY(-20px); /* Start slightly above */
+        }
+        100% {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* End in original position */
+        }
+    }
+
+    @keyframes colorChange {
+        0% {
+            color: red; /* Start color */
+        }
+        25% {
+            color: yellow; /* Change to yellow */
+        }
+        50% {
+            color: green; /* Change to green */
+        }
+        75% {
+            color: blue; /* Change to blue */
+        }
+        100% {
+            color: purple; /* Change to purple */
+        }
+    }
+</style>
+
         <div class="canvas-container">
 
         
@@ -576,6 +830,7 @@ h2{
             
 
             <canvas id="mainCanvas"></canvas>
+
             <div class="canvas-container">
 
 
@@ -662,6 +917,7 @@ h2{
                             Italic
                         </button>
                     </div>
+
                     <!-- <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">Uppercase</button>
                         <button class="btn btn-primary" id="small">Lowercase</button>
@@ -670,6 +926,10 @@ h2{
                     </div> -->
 
                     <div class="rclStyle d-md-flex justify-content-center gap-3">
+
+                    
+                    <div class="rclStyle d-md-flex justify-content-evenly gap-1">
+
                         <button  type="button" class="btn btn-success" id="rectangleBtn">
                             <span></span>
                             <span></span>
@@ -703,6 +963,10 @@ h2{
                         <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
                         <button type="button" class="btn btn-danger" id="clear">Clear</button>
                         <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                        <!-- Added save functionality  -->
+                        <button type="button" class="btn btn-primary" id="saveAsImageBtn">Save Image</button>
+
+                        
                     </div>
                     </form>
                 </div>
@@ -711,8 +975,8 @@ h2{
         </div>
 
 
-            </div>
-            <div class="container mt-5">
+        <div class="contact-us-page">
+            <div class="contact-container">
                 <!-- Contact Us Section -->
                 <section id="contact" class="contact-section text-center py-5">
                     <h2 class="mb-4">Contact Us</h2>
@@ -721,13 +985,15 @@ h2{
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
-                </div>
+                  </div>
                     <form id="contactForm" class="row g-3 justify-content-center">
                         <!-- Name Field -->
                         <div class="col-md-4">
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
-                                    required>
+                                    required pattern="[a-zA-Z ]+"
+                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                                oninput="this.setCustomValidity('')">
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
@@ -760,7 +1026,6 @@ h2{
                         <div class="col-md-8">
                             <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
                         </div>
-                        </div>
                     </form>
                 </section>
             </div>
@@ -779,15 +1044,14 @@ h2{
                         <div class="cal">
                             <h4>Your<br><span>Message</span></h4>
                             <!-- <div class="input-box"> -->
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;" required></textarea>
-                                
+                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:80px;" required></textarea>
                             
                             <p id="result"></p>
                         </div>
                     <!-- Submit Button -->
                     <div class="col-md-12 d-flex justify-content-center">
                         <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
+                            <button type="submit" class="btn w-100 text-center" style="padding-left:250px;margin-right:500px;">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -880,6 +1144,8 @@ h2{
                     }
                 });
             });
+
+
         </script>
           
     </div>
@@ -1245,9 +1511,9 @@ h2{
         </script>
         <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
         </script>
+        <script src="src/Scripts/Save.js"></script>
 </body>
 
 
-</html>
 
 </html>
