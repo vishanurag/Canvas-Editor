@@ -574,14 +574,14 @@ html {
   justify-content: center;
 }
 
-/* General Navbar Styling */
+/*  Navbar Styling  starts*/
 .navbar {
   background-color: #333; /* Dark background */
-  padding: 10px 10px; /* Space around the links */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem; /* Spacing between links */
+  flex-wrap: wrap;
   border-bottom: none;
 }
 ul{
@@ -593,18 +593,21 @@ ul{
 
 /* Styling individual links in the navbar */
 .navbar a {
-  color: white; /* Link color */
-  font-size: 1.2rem; /* Font size */
+  color: #a0a0a0; /* Link color */
+  font-size: 18px; /* Font size */
   text-decoration: none; /* Remove underline */
-  padding: 0.5rem 1rem; /* Add padding around the text */
+  padding: 0.5rem 1rem; 
   border-radius: 0.5rem; /* Rounded corners for hover effect */
   transition: background-color 0.3s ease; /* Smooth hover transition */
+  
 }
 /* .nav-links {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
+  
 }
 
 .nav-links a {
@@ -647,7 +650,12 @@ ul{
 .nav-link.active{ 
   color: #e12ac9 !important;
   background-color: #ffffff;
+
+.nav-links a:hover {
+  color: #ffffff;s
+
 }
+/* navbar styling ends */
 
 /* Style for input field */
 #textData {
