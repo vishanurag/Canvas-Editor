@@ -120,6 +120,85 @@ h2::after {
   transform: scale(1.1);
 }
 
+/* Navbar Styles */
+/* Navbar Styling */
+.nav {
+  background-color: #333; /* Dark background */
+  padding: 20px 10px; /* Space around the links */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Spacing between links */
+  border-bottom: none;
+	margin-bottom: 20px;
+	margin-top: 0px;
+}
+
+/* Styling individual links in the navbar */
+.nav a {
+  color: white; /* Link color */
+  font-size: 1.2rem; /* Font size */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; /* Add padding around the text */
+  border-radius: 0.5rem; /* Rounded corners for hover effect */
+}
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* .nav-links a { */
+/* color: white; */
+/* font-size: 1.2rem; */
+/* text-decoration: none; */
+/* padding: 0.5rem 1rem; */
+/* border-radius: 0.5rem; */
+/* transition: background-color 0.3s ease; */
+/* } */
+/* Hover effect for navbar links */
+/* .navbar a:hover {/ */
+/* background-color: #474747; Background color on hover */
+/* color: #fff; White text on hover */
+
+/* width: 60% !important; */
+/* height: auto; */
+/* border: 1px solid gray; */
+/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+/* border-radius: 5px; */
+/* }/
+ */
+
+/* Full width for form controls */
+/* .fullWidth {/ */
+/* width: 100% !important; */
+/* } */
+
+.nav-item a {
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: #a0a0a0;
+}
+.nav-item a:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0;
+}
+.nav-item a:hover {
+  color:#fff;
+	border: none; 
+}
+.nav-item a:hover:after {
+  width: 100%;
+}
+
 </style>
 <style>
 	/* Circle styles */
