@@ -159,6 +159,31 @@
         header {
             position: relative;  /* Add this to ensure proper positioning of the home button */
         }
+        /* Back to Top Button */
+#BacktoTop {
+  position: fixed; /* Stay in fixed position */
+  bottom: 50px; /* Positioned above the chatbot */
+  right: 5px; /* Aligned to the right */
+  width: 55px;
+  height: 55px;
+  background-color: #007bff; /* Button background */
+  color: white; /* Text color */
+  padding: 10px 15px; /* Padding for button size */
+  border-radius: 50%; /* Circular button */
+  border: none;
+  font-size: 24px; /* Size of the text or arrow */
+  font-weight: bolder;
+  display: block; /* Initially hidden */
+  visibility: hidden;
+  z-index: 1000; /* Ensures it is above most elements */
+  cursor: pointer; /* Pointer when hovered */
+}
+
+#BacktoTop:hover {
+  background-color: #0056b3; /* Change to a lighter blue on hover */
+  transform: scale(1.1);
+}
+
     </style>
 </head>
 <body>
@@ -286,7 +311,11 @@
                     <p>Flexible tools that allow you to bring your unique vision to life.</p>
                 </div>
             </div>
-        </section>
+        <!-- Back to Top Button -->
+       <button id="BacktoTop">
+        <span>↑</span>
+      </button>
+    </section>
 
         <div class="cta">
             <h2>Ready to unleash your creativity?</h2>
@@ -294,5 +323,7 @@
             <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
         </div>
     </div>
+
+    <script src="src/Scripts/BacktoTop.js"></script>
 </body>
 </html>

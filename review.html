@@ -94,6 +94,31 @@ h2::after {
 	background: #1c47e3;    
 	border: 5px double;    
 }
+/* Back to Top Button */
+#BacktoTop {
+  position: fixed; /* Stay in fixed position */
+  bottom: 50px; /* Positioned above the chatbot */
+  right: 5px; /* Aligned to the right */
+  width: 55px;
+  height: 55px;
+  background-color: #007bff; /* Button background */
+  color: white; /* Text color */
+  padding: 10px 15px; /* Padding for button size */
+  border-radius: 50%; /* Circular button */
+  border: none;
+  font-size: 24px; /* Size of the text or arrow */
+  font-weight: bolder;
+  display: block; /* Initially hidden */
+  visibility: hidden;
+  z-index: 1000; /* Ensures it is above most elements */
+  cursor: pointer; /* Pointer when hovered */
+}
+
+#BacktoTop:hover {
+  background-color: #0056b3; /* Change to a lighter blue on hover */
+  transform: scale(1.1);
+}
+
 </style>
 <style>
 	/* Circle styles */
@@ -354,7 +379,11 @@ h2::after {
         </div>
         <!-- Copyright -->
       </footer>
+	  <button id="BacktoTop">
+        <span>↑</span>
+      </button>
 </div>
+<script src="src/Scripts/BacktoTop.js"></script>
 <script>
 	// Coordinates for the cursor
 	const coords = { x: 0, y: 0 };
