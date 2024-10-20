@@ -15,7 +15,7 @@
 
         * {
             box-sizing: border-box;
-
+            overflow: hidden;
             &::before,
             &::after {
                 box-sizing: border-box;
@@ -142,25 +142,6 @@
                 font-weight: 300;
                 margin: 2em 0;
             }
-        }
-        /* Back to home button */
-        .home-button {
-            position: fixed;
-            top: 20px;
-            left: 30px;
-            background-color: #444;
-            color: white;
-            border: none;
-            text-decoration: none;
-            padding: 8px 12px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .home-button:hover {
-            background-color: #555;
         }
     </style>
     <style>
@@ -333,8 +314,6 @@
 </head>
 
 <body>
-    <!-- Back to Home Button -->
-    <a href="index.html" class="home-button">Home</a>
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
