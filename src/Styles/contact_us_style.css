@@ -56,7 +56,12 @@
 }
 
 #contactForm button{
-  margin-left:6em;
+  display: flex;
   text-align: center;
-  padding:9rem;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
+  border-radius: 10em;
+  width: 50%;
 }
