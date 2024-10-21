@@ -35,16 +35,6 @@
 </div>
 <br>
 
-![image 1](https://github.com/user-attachments/assets/c1a30d94-a1b2-49d4-ab5e-f5a93834f289)
-
-![image 2](https://github.com/user-attachments/assets/2df9c561-5b57-486a-a2c3-0d7f985dc0e5)
-
-![image 3](https://github.com/user-attachments/assets/1d4c5094-c626-49dc-88b4-8bc918e0bd31)
-
-![image 4](https://github.com/user-attachments/assets/3098b449-c191-4ed5-87f3-8c2cc90407de)
-
-![image 5](https://github.com/user-attachments/assets/f3809057-c332-4ff5-b3ca-74c43da06daa)
-
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
@@ -53,12 +43,28 @@
 <!-- Added Hacktoberfest 2024 and GSSoC Extended 2024 banners -->
 ### This project is now OFFICIALLY accepted for
 
-<div style="display: flex; justify-content: center; align-items: center;">
-  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" style="max-width: 50%;">
-  <img src="https://pbs.twimg.com/profile_images/1831003149072535554/leInyk8A_400x400.jpg" alt="Hacktoberfest 2024" style="max-width: 20%; margin-left: 20px;">
-</div>
-<br>
+<table>
 
+   <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+   </tr>
+   <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/gssocextd.jpg" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
+      <td>GirlScript Summer of Code 2024</td>
+      <td>GirlScript Summer of Code is a three-month-long Open Source Program conducted every summer by GirlScript Foundation. It is an initiative to bring more beginners to Open-Source Software Development.</td>
+   </tr>
+    <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/hacktoberfest.png" width="200" height="auto" loading="lazy" alt="Hacktoberfest 2024"/></td>
+      <td>Hacktoberfest 2024</td>
+      <td>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean, GitHub, and Twilio. It encourages contributions to open source projects and promotes a global community of developers.</td>
+   </tr>
+
+</table>
+<br/>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
 
@@ -80,9 +86,115 @@
      
 </ul>
 
+## Project Structure
+
+<!-- START_STRUCTURE -->
+```
+├── Blog_page.html
+├── Contributing.md
+├── Faq.html
+├── LICENSE
+├── README.md
+├── about-us.html
+├── about.html
+├── blog.html
+├── community.html
+├── contributors.html
+├── download (1).png
+├── edition.html
+├── feature.png
+├── gssocextd.jpg
+├── hacktoberfest.png
+├── index.html
+├── login.html
+├── privacy.html
+├── repo_structure.txt
+├── repreviewfix.html
+├── resources/
+│   ├── favicon.ico
+│   └── painting_image.jpg
+├── review.html
+├── signup.html
+├── src/
+│   ├── Scripts/
+│   │   ├── BacktoTop.js
+│   │   ├── Canvas.js
+│   │   ├── Save.js
+│   │   ├── contributor.js
+│   │   └── preloader.js
+│   ├── Styles/
+│   │   ├── Responsive.css
+│   │   ├── Style.css
+│   │   ├── Style_Blog_page.css
+│   │   ├── contact_us_style.css
+│   │   ├── contributor.css
+│   │   ├── scroll.css
+│   │   └── signup.css
+│   ├── bootstrap/
+│   │   └── css/
+│   │       ├── bootstrap-grid.css
+│   │       ├── bootstrap-grid.css.map
+│   │       ├── bootstrap-grid.min.css
+│   │       ├── bootstrap-grid.min.css.map
+│   │       ├── bootstrap-grid.rtl.css
+│   │       ├── bootstrap-grid.rtl.css.map
+│   │       ├── bootstrap-grid.rtl.min.css
+│   │       ├── bootstrap-grid.rtl.min.css.map
+│   │       ├── bootstrap-reboot.css
+│   │       ├── bootstrap-reboot.css.map
+│   │       ├── bootstrap-reboot.min.css
+│   │       ├── bootstrap-reboot.min.css.map
+│   │       ├── bootstrap-reboot.rtl.css
+│   │       ├── bootstrap-reboot.rtl.css.map
+│   │       ├── bootstrap-reboot.rtl.min.css
+│   │       ├── bootstrap-reboot.rtl.min.css.map
+│   │       ├── bootstrap-utilities.css
+│   │       ├── bootstrap-utilities.css.map
+│   │       ├── bootstrap-utilities.min.css
+│   │       ├── bootstrap-utilities.min.css.map
+│   │       ├── bootstrap-utilities.rtl.css
+│   │       ├── bootstrap-utilities.rtl.css.map
+│   │       ├── bootstrap-utilities.rtl.min.css
+│   │       ├── bootstrap-utilities.rtl.min.css.map
+│   │       ├── bootstrap.css
+│   │       ├── bootstrap.css.map
+│   │       ├── bootstrap.min.css
+│   │       ├── bootstrap.min.css.map
+│   │       ├── bootstrap.rtl.css
+│   │       ├── bootstrap.rtl.css.map
+│   │       ├── bootstrap.rtl.min.css
+│   │       └── bootstrap.rtl.min.css.map
+│   └── images/
+│       ├── about-bg.jpg
+│       ├── art-design-1.jpg
+│       ├── art-design-2.jpg
+│       ├── art-design-3.jpg
+│       ├── art-design-4.jpg
+│       ├── art-design-5.jpg
+│       ├── art-design-6.jpg
+│       ├── banner-bg.jpg
+│       ├── blog-p-1.jpg
+│       ├── blog-p-2.jpg
+│       ├── blog-p-3.jpg
+│       ├── blog-p-4.jpg
+│       ├── blog-p-5.jpg
+│       └── blog-p-6.jpg
+├── testimonial.html
+├── tutorial.html
+└── welcome.html
+```
+<!-- END_STRUCTURE -->
+
 ### New Features ✨
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
+
+# Website Preview
+
+![image](https://github.com/user-attachments/assets/02614ccd-b2ec-492a-9f02-f53d69e9d2b9)
+
+![image](https://github.com/user-attachments/assets/7f355f78-2846-441d-b10d-73958b311f79)
+
 
 ### How to Use
 To change the background color or image:
@@ -200,6 +312,17 @@ git push origin YourBranchName
 </td>
 </tr>
 </table>
+
+ # Project Mentor⚡🧑‍💻
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/somyadipghosh"><img src="https://avatars.githubusercontent.com/u/77097996?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Somyadip Ghosh</h4>
+ <a href="https://www.linkedin.com/in/somyadipghosh/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
+
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 

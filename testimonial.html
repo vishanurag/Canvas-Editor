@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool - Reviews, Testimonials & Popular Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/Styles/scroll.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /*  Navbar Styling  starts*/
+      .navbar {
+        background-color: #333; /* Dark background */
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-wrap: wrap;
+        border-bottom: none;
+      }
+      .title {
+  display: flex;
+  align-items: left;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: center;
+}
+
+      /* Styling individual links in the navbar */
+      .navbar a {
+        color: #a0a0a0; /* Link color */
+        font-size: 18px; /* Font size */
+        text-decoration: none; /* Remove underline */
+        padding: 0.5rem 1rem; 
+        border-radius: 0.5rem; /* Rounded corners for hover effect */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+        
+      }
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      }
+
+      .nav-links a:hover {
+        color: #ffffff;
+      }
+      /* navbar styling ends */
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -171,6 +216,53 @@
         .navbar-nav .nav-link.active {
             font-weight: bold; /* Bold active link */
         }
+
+        
+    </style>
+</head>
+<body>
+    
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush" style="margin: 25px 0 0 0;"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        /* Back to Top Button */
+#BacktoTop {
+  position: fixed; /* Stay in fixed position */
+  bottom: 50px; /* Positioned above the chatbot */
+  right: 5px; /* Aligned to the right */
+  width: 55px;
+  height: 55px;
+  background-color: #007bff; /* Button background */
+  color: white; /* Text color */
+  padding: 10px 15px; /* Padding for button size */
+  border-radius: 50%; /* Circular button */
+  border: none;
+  font-size: 24px; /* Size of the text or arrow */
+  font-weight: bolder;
+  display: block; /* Initially hidden */
+  visibility: hidden;
+  z-index: 1000; /* Ensures it is above most elements */
+  cursor: pointer; /* Pointer when hovered */
+}
+
+#BacktoTop:hover {
+  background-color: #0056b3; /* Change to a lighter blue on hover */
+  transform: scale(1.1);
+}
+
     </style>
 </head>
 <body>
@@ -196,6 +288,9 @@
                             <a class="nav-link active" href="testimonial.html">Testimonial</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link active" href="tutorial.html">Tutorial</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="privacy.html">Privacy</a>
                         </li>
                         <li class="nav-item">
@@ -217,11 +312,7 @@
                 </div>
             </div>
         </nav>
-        <div class="text-center w-100"> <!-- Centering container -->
-            <h1 class="navbar-brand">Creative Canvas Tool</h1>
-            <p class="subtitle">Design and create stunning visuals effortlessly!</p>
-        </div>
-    </header>
+      
     <div class="container">
         <section class="stats">
             <div class="stat-item">
@@ -341,14 +432,20 @@
                     <p>Flexible tools that allow you to bring your unique vision to life.</p>
                 </div>
             </div>
-        </section>
+        <!-- Back to Top Button -->
+       <button id="BacktoTop">
+        <span>↑</span>
+      </button>
+    </section>
 
         <div class="cta">
             <h2>Ready to unleash your creativity?</h2>
             <p>Join thousands of satisfied users and start designing today!</p> 
             <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
         </div>
-    </div>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="src/Scripts/BacktoTop.js"></script>
+
 </body>
 </html>
