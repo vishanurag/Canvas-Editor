@@ -6,240 +6,159 @@
     <title>Blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/Styles/scroll.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<style>
-    .container{
-        max-width: 100%;
-        margin: auto;
-    }
-</style>
-<style>
-  /* Circle styles */
-  .circle {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999999;
-    transition: transform 0.1s ease-out;
-  }
-</style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            background-color: #f0f4f8; /* Light background color for better contrast */
+            font-family: 'Arial', sans-serif; /* Modern font style */
+            color: #333; /* Darker text color for readability */
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+        h1, h4 {
+            color: #1a1a1a; /* Darker color for headings */
+        }
+        .card {
+            border: none; /* Remove border for a cleaner look */
+            transition: transform 0.2s; /* Animation effect on hover */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Slightly scale the card on hover */
+        }
+        footer {
+            background-color: #282c34; /* Dark footer color */
+            color: white; /* White text color for contrast */
+            padding: 20px 0;
+        }
+        footer .btn-link {
+            color: white; /* White icons in footer */
+        }
+        textarea {
+            width: 100%;
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding for better UX */
+        }
+        textarea:focus {
+            border-color: #007bff; /* Blue border on focus */
+            outline: none; /* Remove default outline */
+        }
+    </style>
 </head>
 <body>
-  <!-- Circles -->
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
+    <div class="circle"></div>
     <div class="container pt-2">
-        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="review.html">Review</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link " href="blog.html">Blog</a>
-                </li>
-              </ul>
-        </div>
-        <div class="row text-center pt-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Canvas Editor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="review.html">Review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="text-center pt-5">
             <h1>Latest Blog Posts</h1>
-            <div class="row mx-auto">
-                <div class="col-sm-3 m-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://media.licdn.com/dms/image/D4D12AQG03_cMJE7uIw/article-cover_image-shrink_720_1280/0/1685891111023?e=2147483647&v=beta&t=ApugyNhPbwf13VZN-Zv68y0iLnd_COOph8VMtvlH1Cw" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">The Magic of Creativity</h5>
-                          <p class="card-text">
-                            Creativity is the spark that ignites new ideas, opens doors to innovation, and breaks through the ordinary. Whether you’re developing a new business strategy, designing a website, or even cooking a meal, creativity plays a significant role in shaping outcomes.</p>
-                          <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                      </div>
+        </div>
+        <div class="row mx-auto pt-4">
+            <div class="col-sm-3 m-4">
+                <div class="card">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQG03_cMJE7uIw/article-cover_image-shrink_720_1280/0/1685891111023?e=2147483647&v=beta&t=ApugyNhPbwf13VZN-Zv68y0iLnd_COOph8VMtvlH1Cw" class="card-img-top" alt="The Magic of Creativity">
+                    <div class="card-body">
+                        <h5 class="card-title">The Magic of Creativity</h5>
+                        <p class="card-text">Creativity is the spark that ignites new ideas, opens doors to innovation, and breaks through the ordinary.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
                 </div>
-                <div class="col-sm-3 m-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2020/11/thumb_720_450_dreamstime_m_186895001.jpg" class="card-img-tops" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">The Power of Thinking</h5>
-                          <p class="card-text">While creativity helps you generate ideas, critical thinking helps you refine them. The ability to analyze, evaluate, and improve your ideas ensures that they are not only innovative but also practical and applicable learning new skills, or analyzing complex problems sharpens your thinking abilities.
-
-                          </p>
-                          <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                      </div>
+            </div>
+            <div class="col-sm-3 m-4">
+                <div class="card">
+                    <img src="https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2020/11/thumb_720_450_dreamstime_m_186895001.jpg" class="card-img-top" alt="The Power of Thinking">
+                    <div class="card-body">
+                        <h5 class="card-title">The Power of Thinking</h5>
+                        <p class="card-text">While creativity helps you generate ideas, critical thinking helps you refine them and ensures their practicality.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
                 </div>
-                <div class="col-sm-3 m-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://s29814.pcdn.co/wp-content/uploads/2022/12/shutterstock_1847661151.jpg.optimal.jpg" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title"> Expanding Your Knowledge</h5>
-                          <p class="card-text">Knowledge is the foundation of both creativity and critical thinking. The more you know, the better equipped you are to solve problems, innovate, and make informed decisions. Continuous learning ensures that we stay relevant in a world that is constantly evolving.</p>
-                          <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                      </div>
+            </div>
+            <div class="col-sm-3 m-4">
+                <div class="card">
+                    <img src="https://s29814.pcdn.co/wp-content/uploads/2022/12/shutterstock_1847661151.jpg.optimal.jpg" class="card-img-top" alt="Expanding Your Knowledge">
+                    <div class="card-body">
+                        <h5 class="card-title">Expanding Your Knowledge</h5>
+                        <p class="card-text">Knowledge is the foundation of creativity and critical thinking. Continuous learning keeps us relevant.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row mx-auto pb-4">
-            <h4>Add Comments</h4>
-            <textarea name="comment" placeholder="Leave a comment" style="height: 150px;"></textarea>
+            <h4 class="text-center">Add Comments</h4>
+            <textarea name="comment" placeholder="Leave a comment" rows="4"></textarea>
         </div>
     </div>
-    <footer class="text-center bg-body-tertiary">
-        <!-- Grid container -->
+    <footer class="text-center">
         <div class="container pt-4">
-          <!-- Section: Social media -->
-          <section class="mb-4">
-            <!-- Facebook -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-      
-            <!-- Twitter -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fa-brands fa-x-twitter"></i
-            ></a>
-      
-            <!-- Google -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-google"></i
-            ></a>
-      
-            <!-- Instagram -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-instagram"></i
-            ></a>
-      
-            <!-- Linkedin -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <!-- Github -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-github"></i
-            ></a>
-          </section>
-          <!-- Section: Social media -->
+            <section class="mb-4">
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-google"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-linkedin"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-github"></i></a>
+            </section>
         </div>
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2024 Copyright:
-          <a class="text-body" href="#">CanvasEditor</a>
+            © 2024 Copyright:
+            <a class="text-body" href="#">CanvasEditor</a>
         </div>
-        <!-- Copyright -->
-      </footer>
-      <script>
+    </footer>
+    <script>
         // Coordinates for the cursor
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
 
         // Colors for the circles
         const colors = [
-          "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-          "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-          "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-          "#680060", "#60005f", "#48005f", "#3d005e"
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415c"
         ];
 
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-          circle.x = 0;
-          circle.y = 0;
-          circle.style.backgroundColor = colors[index % colors.length];
+        document.addEventListener("mousemove", (e) => {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+            circles.forEach((circle, i) => {
+                circle.style.backgroundColor = colors[i % colors.length];
+                circle.style.transform = `translate(${coords.x}px, ${coords.y}px)`;
+            });
         });
-
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-          coords.x = e.clientX;
-          coords.y = e.clientY;
-        });
-
-        // Animation function to move the circles
-        function animateCircles() {
-          let x = coords.x;
-          let y = coords.y;
-
-          circles.forEach(function (circle, index) {
-            // Update the position and scale of each circle
-            circle.style.left = x - 12 + "px";
-            circle.style.top = y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-
-            circle.x = x;
-            circle.y = y;
-
-            // Get the next circle in the sequence
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
-          });
-
-          // Repeat the animation
-          requestAnimationFrame(animateCircles);
-        }
-
-        // Start the animation
-        animateCircles();
-      </script>
+    </script>
 </body>
 </html>
