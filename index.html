@@ -19,11 +19,643 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+<style>
+   body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px; /* Limit the maximum width for better readability */
+    margin: 0 auto;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+    border-radius: 8px; /* Added border-radius for rounded corners */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -100px;
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #d1d7ff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#mainCanvas {
+    max-width: 100%;
+    height: 400px;
+    border: 2px solid #007bff; /* Changed border color for better visibility */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    cursor: crosshair;
+    margin-top: 20px;
+    transition: border-color 0.3s;
+}
+
+.btn {
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 10px 20px; /* Added padding for a better button size */
+    border: none;
+    border-radius: 5px; /* Rounded button corners */
+    background-color: #007bff; /* Primary color for buttons */
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.palette {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.edit {
+    display: flex;
+}
+
+#userForm {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(114, 171, 255, 0.8); /* Added transparency for better visual */
+    border-radius: 8px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #2c3e5e;
+    color: #ffffff;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer .share {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer .share a {
+    margin: 0 10px;
+    font-size: 1.8rem;
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .share a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+.footer .credit {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.footer .credit span {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.footer .credit p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.footer .credit span:hover {
+    color: #f1c40f;
+}
+
+/* Dark Mode */
+nav.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .container {
+    background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+    color: #007bff;
+}
+
+.dark-mode .canvas-container {
+    background: #2a2a2a;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode #mainCanvas {
+    border-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    background-color: #333333;
+}
+
+.dark-mode .btn {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.dark-mode .form-control {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode #userForm {
+    background-color: #444444;
+}
+
+.dark-mode .footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer .share a {
+    color: #ffffff;
+}
+
+.dark-mode .custom-popup {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .popup-content {
+    background-color: #333333;
+    color: #ffffff;
+}
+#darkModeToggle {
+    background: none;
+    border-radius: 20%; 
+    padding: 0.2rem 0.5rem;
+    cursor: pointer; 
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: #4a4949; 
+}
+
+#darkModeToggle:active {
+    background-color: #ddd; 
+    transform: scale(0.95); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer .share a {
+        font-size: 1.5rem;
+    }
+    #darkModeToggle {
+        position: fixed;
+        top: 6px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+}
+}
+
+    .footer .share a {
+        font-size: 1.5rem;
+    }
+
+    .footer .credit {
+        font-size: 0.8rem;
+    }
+/* General Styles */
+h2 {
+    margin-top: 50px;
+    color: black;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999;
+    transition: transform 0.1s ease-out;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .container {
+    background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+}
+
+.dark-mode .canvas-container {
+    background: #2a2a2a;
+}
+
+.dark-mode #mainCanvas {
+    border-color: #ffffff;
+    background-color: #333333;
+}
+
+.dark-mode .btn {
+    background-color: #444444;
+}
+
+.dark-mode .form-control {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer .share a {
+    color: #ffffff;
+}
+
+.body #darkModeToggle {
+    background-color: #ffffff;
+    color: #333333;
+}
+  </style>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    function enableDarkMode() {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+    }
+
+    function disableDarkMode() {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        enableDarkMode();
+    }
+</script>
+<style>
+        
+        body {
+            overflow-x: hidden;
+            background-color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            color: rgb(0, 0, 0);
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+        }
+        
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: none;
+        }
+
+        .canvas-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #d1d7ff;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 100%;
+        }
+
+
+        #mainCanvas {
+            width: 100%;
+            height: auto; /* Adjust height dynamically */
+            max-width: 100%;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+            background-color: #ffffff;
+            cursor: crosshair;
+            margin-top: 20px;
+        }
+
+
+        .btn {
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            border-radius: 30px;
+        }
+
+        .btn:hover {
+            background-color: #3abe57;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .palette {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .edit {
+            display: flex;
+        }
+
+        .toolbar-item {
+            padding: 10px;
+        }
+
+        #userForm {
+            margin-top: 5px;
+            padding: 15px;
+            background-color: #72abffe0;
+            border-radius: 8px;
+            margin-left: 20px;
+            max-height: 90%;
+        }
+
+        /* Footer Styling */
+
+        .footer {
+            width: 100%;
+            background-color: #ff8686d1;
+            color: #c23e3e;
+            text-align: center;
+            border-start-start-radius: 5px;
+            padding: 35px 350px;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .footer .share {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer .share a {
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: #ffffff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .share a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
+
+        .footer .credit {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        .footer .credit span {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .footer .credit p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .footer .credit span:hover {
+            color: #f1c40f;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 30px 0;
+            }
+
+            .footer .share a {
+                font-size: 1.5rem;
+            }
+
+            .footer .credit {
+                font-size: 0.8rem;
+            }
+        }
+
+
+
+        /* Custom scrollbar for Chrome, Safari, and Opera */
+      
+
+        h5 {
+            color: #eeff00;
+            font-size: small;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+        
+
+.footer {
+    width: 100%;
+    background-color: #2c3e5e; /*updated this color */
+    color: #c23e3e;
+    text-align: center;
+    border-start-start-radius: 5px;
+    padding: 35px 350px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin-top: 20px;
+}
+
+
+        .footer .share {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer .share a {
+            margin: 0 10px;
+            font-size: 1.8rem;
+            color: #ffffff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .share a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
+
+        .footer .credit {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        .footer .credit span {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .footer .credit p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .footer .credit span:hover {
+            color: #f1c40f;
+        }
+        .dark-mode h2 {
+            color: #ffffff; /* White text for h2 in dark mode */
+        }
+
+    /* General h2 styling */
+        h2 {
+        font-size: 24px;
+        margin: 0;
+        font-weight: bold;
+        }
+
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 30px 0;
+            }
+
+            .footer .share a {
+                font-size: 1.5rem;
+            }
+
+            .footer .credit {
+                font-size: 0.8rem;
+            }
+        }
+
+        
+                
+            /* Custom scrollbar for Chrome, Safari, and Opera */
+    
+
+h2{
+    margin-top: 50px;
+   color: black;
+   font-size: 50px;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+
+        .gtranslate_wrapper{
+            margin-left: 350px;
+            margin-top: 6px;
+        }
+/* Common Styles */
+.theme-container {
+    padding: 2rem; /* Maintain padding for the container */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Light Theme Styles */
+.theme-container {
+    background: linear-gradient(to right, #d1c4e9, #e1bee7); /* Light purple gradient background */
+}
+
+.theme-container .welcome-header {
+    color: #8e24aa; /* Base color for h2 in light theme */
+    text-shadow: 0 0 5px #9c27b0; /* Adjusted for sharper effect */
+}
+
+.theme-container .welcome-text {
+    color: #ecf0f1; /* Light text color for p in light theme */
+}
+
+/* Dark Theme Styles */
+.dark-mode .theme-container {
+    background-color: #1a1a1a; /* Dark background for dark mode */
+}
+
+.dark-mode .theme-container .welcome-header {
+    color: #ffffff; /* White text for h2 in dark mode */
+    text-shadow: 0 0 5px #ffffff; /* Glowing white effect for dark mode */
+}
+
+.dark-mode .theme-container .welcome-text {
+    color: #b0b0b0; /* Light grey text color for p in dark mode */
+}
 
     <button id="darkModeToggle">🌓</button>
 
@@ -31,6 +663,7 @@
 </head>
 
 <body>
+     
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -78,8 +711,77 @@
                 alt=""></a>
     </div>
 
+      
+        <ul class="nav nav-tabs">
+         
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="review.html">Review</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testimonial.html">Testimonial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="privacy.html">Privacy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tutorial.html">Tutorial</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Blog_page.html">Blog</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="./Faq.html">FAQ</a>
+            </li>
+
+            <a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contributors.html">Contributors</a>
+
+            </li>
+          
+          
+            <li>
+                <div class="gtranslate_wrapper"></div>
+        <script>
+          window.gtranslateSettings = {
+            default_language: "en",
+            detect_browser_language: true,
+            wrapper_selector: ".gtranslate_wrapper",
+            flag_size: 16,
+          };
+        </script>
+        <script
+        src="https://cdn.gtranslate.net/widgets/latest/popup.js"
+        defer
+      ></script>
+            </li>
+            
+            
+            <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
+          
+        </ul>
+    </div>
+  
+   
+
     <div class="container p-0">
+       
         <div class="header">
+
             <div id="logo">
                 <!-- <div class="logo-new" style="margin-left: 140px;"><img src="logo4.png" alt="" width="80px" height="auto""></div> -->
                 <h1 class="display-4 logo"><a href="/"
@@ -142,6 +844,38 @@
                 editor. <i class="fa-light fa-face-party"></i></p>
         </div>
         <div class="canvas-container p-3">
+       
+            <img src="" alt="">
+            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
+            </h1>
+            <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
+        </div>
+
+
+
+<!--         <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
+            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
+            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
+                    class="fa-light fa-face-party"></i></p> --> -->
+  <div class="row text-center p-5 theme-container">
+            <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
+            <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+
+        </div>
+
+<style>
+    .circle {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999999;
+        transition: transform 0.1s ease-out;
+    }
 
 
             <div class="title-container">Draw Here</div>
@@ -307,6 +1041,7 @@
                                 required>
                             <label for="subject">Subject</label>
                         </div>
+
                     </div>
 
                     <!-- Message Field -->
@@ -321,6 +1056,12 @@
                     <div class="col-md-8">
                         <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
                     </div>
+
+                    </div> -->
+
+                </form>
+            </div>
+
         </div>
         </form>
         </section>
@@ -340,6 +1081,7 @@
             </div>
             </form>
         </div>
+
     </div>
 
     <!-- Custom Popup -->
@@ -351,6 +1093,109 @@
         </div>
     </div>
 
+
+        <section class="footer" id="footer">
+            <!-- Added responsiveness to icons -->
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
+
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
+
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    2024
+                </p>
+                <br>
+            </div>
+            <!-- Back to Top Button -->
+            <button id="BacktoTop">
+                <span>↑</span>
+            </button>
+        </section>
+        
+        <style>
+            .custom-popup {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+            }
+        
+            .popup-content {
+                background-color: black;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 500px;
+                border-radius: 5px;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+        
+            .popup-content h3 {
+                color: #007bff;
+                margin-bottom: 15px;
+            }
+        
+            .popup-content p {
+                margin-bottom: 20px;
+            }
+        </style>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const contactForm = document.getElementById('contactForm');
+                const customPopup = document.getElementById('customPopup');
+                const closePopup = document.getElementById('closePopup');
+                
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent the form from submitting normally
+                
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                
+                    // Check if message is at least 20 characters long
+                    if (message.length < 20) {
+                        alert('Please enter a message with at least 20 characters.');
+                        return;
+                    }
+                
+                    // Here you would typically send the form data to a server
+                    console.log('Form submitted:', { name, email, subject, message });
+                
+                    // Show custom popup
+                    customPopup.style.display = 'block';
+                
+                    // Reset the form
+                    this.reset();
+                });
+                
+                // Close popup when the close button is clicked
+                closePopup.addEventListener('click', function() {
+                    customPopup.style.display = 'none';
+                });
+                
+                // Close popup when clicking outside the popup content
+                window.addEventListener('click', function(event) {
+                    if (event.target === customPopup) {
+                        customPopup.style.display = 'none';
+                    }
+                });
+            });
 
 
     </div>
@@ -364,6 +1209,14 @@
             <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
             <a href="#" class="fa-brands fa-pinterest"></a>
         </div>
+       
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./src/Scripts/edit.js"></script> -->
+
 
         <div class="credit" style="font-size: 0.6rem;">
             <p>
@@ -763,6 +1616,56 @@
                 alert('Please enter a message with at least 20 characters.');
                 return;
             }
+
+            // Start the animation
+            animateCircles();
+        </script>
+        <script>
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+        
+            function enableDarkMode() {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        
+            function disableDarkMode() {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        
+            darkModeToggle.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    disableDarkMode();
+                } else {
+                    enableDarkMode();
+                }
+            });
+        
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                enableDarkMode();
+            }
+
+        </script>
+            <!-- window.embeddedChatbotConfig = {
+                chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+                domain: "www.chatbase.co"
+            } -->
+        </script>
+        <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
+        </script>
+        <script src="src/Scripts/Save.js"></script>
+        <script>
+            window.gtranslateSettings = {
+                "default_language": "en",
+                "detect_browser_language": true,
+                "wrapper_selector": ".gtranslate_wrapper"
+            };
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        
+
+</body>
 
             // Here you would typically send the form data to a server
             console.log('Form submitted:', { name, email, subject, message });
