@@ -16,9 +16,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- <style> -->
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="style.css">
+    
+    <button id="darkModeToggle">🌓</button>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<button id="darkModeToggle">🌓</button>
+
 <style>
    body {
     overflow-x: hidden;
@@ -38,8 +47,7 @@
 
 .header {
     text-align: center;
-    margin-bottom: 10px;
-    margin-top: -100px;
+    margin-bottom: 20px;
 }
 
 .canvas-container {
@@ -147,7 +155,7 @@
 }
 
 /* Dark Mode */
-nav.dark-mode {
+body.dark-mode {
     background-color: #1a1a1a;
     color: #ffffff;
 }
@@ -199,23 +207,6 @@ nav.dark-mode {
     background-color: #333333;
     color: #ffffff;
 }
-#darkModeToggle {
-    background: none;
-    border-radius: 20%; 
-    padding: 0.2rem 0.5rem;
-    cursor: pointer; 
-    font-size: 20px;
-    transition: all 0.3s ease;
-}
-
-#darkModeToggle:hover {
-    background-color: #4a4949; 
-}
-
-#darkModeToggle:active {
-    background-color: #ddd; 
-    transform: scale(0.95); 
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -226,22 +217,8 @@ nav.dark-mode {
     .footer .share a {
         font-size: 1.5rem;
     }
-    #darkModeToggle {
-        position: fixed;
-        top: 6px;
-        right: 20px;
-        z-index: 1000;
-        background-color: #333333;
-        color: #ffffff;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
 }
-}
+
 
     .footer .share a {
         font-size: 1.5rem;
@@ -308,7 +285,7 @@ h2 {
     color: #ffffff;
 }
 
-.body #darkModeToggle {
+.dark-mode #darkModeToggle {
     background-color: #ffffff;
     color: #333333;
 }
@@ -354,7 +331,18 @@ h2 {
             color: rgb(0, 0, 0);
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
+
+
         
+
+        /* }
+
+
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        } */
+
+            
+
+
         .header {
             width: 100%;
             text-align: center;
@@ -614,8 +602,7 @@ h2{
         }
 
         .gtranslate_wrapper{
-            margin-left: 350px;
-            margin-top: 6px;
+            margin-left: 30px;
         }
 /* Common Styles */
 .theme-container {
@@ -657,7 +644,6 @@ h2{
 </head>
 
 <body>
-     
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -705,98 +691,86 @@ h2{
                 alt=""></a>
     </div>
 
-      
-        <ul class="nav nav-tabs">
-         
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about-us.html">About Us</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="review.html">Review</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">Testimonial</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="privacy.html">Privacy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="tutorial.html">Tutorial</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Blog_page.html">Blog</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="./Faq.html">FAQ</a>
-            </li>
-
-            <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contributors.html">Contributors</a>
-
-            </li>
-          
-          
-            <li>
-                <div class="gtranslate_wrapper"></div>
-        <script>
-          window.gtranslateSettings = {
-            default_language: "en",
-            detect_browser_language: true,
-            wrapper_selector: ".gtranslate_wrapper",
-            flag_size: 16,
-          };
-        </script>
-        <script
-        src="https://cdn.gtranslate.net/widgets/latest/popup.js"
-        defer
-      ></script>
-            </li>
-            
-            
-            <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
-          
-        </ul>
-    </div>
-  
-   
-
     <div class="container p-0">
-       
         <div class="header">
-           
-           
-    
-           
-          
             <img src="" alt="">
             <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
             </h1>
             <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
         </div>
+        <div class="row gap-5">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
 
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
 
-<!--         <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
+                    <a class="nav-link" href="review.html">Review</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="testimonial.html">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="privacy.html">Privacy</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blog_page.html">Blog</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="./Faq.html">FAQ</a>
+                </li>
+
+                <a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contributors.html">Contributors</a>
+
+                </li>
+                <li>
+                    <div class="gtranslate_wrapper"></div>
+            <script>
+              window.gtranslateSettings = {
+                default_language: "en",
+                detect_browser_language: true,
+                wrapper_selector: ".gtranslate_wrapper",
+                flag_size: 16,
+              };
+            </script>
+            <script
+            src="https://cdn.gtranslate.net/widgets/latest/popup.js"
+            defer
+          ></script>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p> --> -->
-  <div class="row text-center p-5 theme-container">
+                    class="fa-light fa-face-party"></i></p>
+
+        <div class="row text-center p-5 theme-container">
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
         </div>
+        
+
+<div class="row text-center p-5 theme-container" style="background-color: #2c3e5e;">
+    <h2 class="welcome-header animated-text" style="color: #ffffff; font-weight: bolder;">Welcome to the Canvas Editor!</h2>
+    <p class="welcome-text" style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+</div>
 
 <style>
     .circle {
@@ -1066,7 +1040,20 @@ h2{
                             <label for="message">Your Message (minimum 20 characters)</label>
                         </div>
                     </div> -->
-
+                    <div class="container">
+                        <div class="cal">
+                            <h4>Your<br><span>Message</span></h4>
+                            <!-- <div class="input-box"> -->
+                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:80px;" required></textarea>
+                            
+                            <p id="result"></p>
+                        </div>
+                    <!-- Submit Button -->
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="col-md-8">
+                            <button type="submit" class="btn w-100 text-center" style="padding-left:250px;margin-right:500px;">Submit</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -1079,31 +1066,6 @@ h2{
                 <button id="closePopup" class="btn btn-primary">Close</button>
             </div>
         </div>
-
-        <section class="footer" id="footer">
-            <!-- Added responsiveness to icons -->
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-
-                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-
-                <a href="#" class="fa-brands fa-pinterest"></a>
-            </div>
-
-            <div class="credit" style="font-size: 0.6rem;">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
-                    2024
-                </p>
-                <br>
-            </div>
-            <!-- Back to Top Button -->
-            <button id="BacktoTop">
-                <span>↑</span>
-            </button>
-        </section>
         
         <style>
             .custom-popup {
@@ -1195,9 +1157,51 @@ h2{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/edit.js"></script> -->
 
+        <section class="footer" id="footer">
+            <!-- Added responsiveness to icons -->
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
+
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    2024
+                </p>
+                <br>
+            </div>
+            <!-- Back to Top Button -->
+            <button id="BacktoTop">
+                <span>↑</span>
+            </button>
+        </section>
 
         <script src="src\Scripts\preloader.js"></script>
-        <script src="src/Scripts/BacktoTop.js"></script>
+        <script>
+            const scrollToTopBtn = document.getElementById("BacktoTop");
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollToTopBtn.style.visibility = 'visible';
+                    scrollToTopBtn.style.opacity = '1';
+                } else {
+                    scrollToTopBtn.style.visibility = 'hidden';
+                    scrollToTopBtn.style.opacity = '0';
+                }
+            }
+
+            scrollToTopBtn.addEventListener("click", function () {
+                // Smooth scroll back to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -1500,52 +1504,13 @@ h2{
             animateCircles();
         </script>
         <script>
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
-        
-            function enableDarkMode() {
-                body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'enabled');
-            }
-        
-            function disableDarkMode() {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        
-            darkModeToggle.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    disableDarkMode();
-                } else {
-                    enableDarkMode();
-                }
-            });
-        
-            if (localStorage.getItem('darkMode') === 'enabled') {
-                enableDarkMode();
-            }
-
-        </script>
-            <!-- window.embeddedChatbotConfig = {
+            window.embeddedChatbotConfig = {
                 chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
                 domain: "www.chatbase.co"
-            } -->
+            }
         </script>
         <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
         </script>
         <script src="src/Scripts/Save.js"></script>
-        <script>
-            window.gtranslateSettings = {
-                "default_language": "en",
-                "detect_browser_language": true,
-                "wrapper_selector": ".gtranslate_wrapper"
-            };
-        </script>
-        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-        
-
 </body>
-
-
-
 </html>
