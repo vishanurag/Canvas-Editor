@@ -42,12 +42,12 @@
 
 .contact-container{
   width:100%;
-  background: #000000;
+  background: #f579d4;
 }
 
 #contact{
   width:100%;
-  background: rgb(0, 0, 0);
+  background: rgb(248, 193, 248)
 }
 
 #contactForm textarea{
@@ -59,4 +59,5 @@
   margin-left:6em;
   text-align: center;
   padding:9rem;
+  color: white;
 }
