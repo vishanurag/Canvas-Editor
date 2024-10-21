@@ -19,7 +19,7 @@
   align-items: center;
   font-size: 60px;
   font-weight: 600;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .container h4 span{
   display: flex;
