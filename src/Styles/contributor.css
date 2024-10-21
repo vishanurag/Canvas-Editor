@@ -1,7 +1,4 @@
-body{
-  margin: 0;
-}
-.containerm {
+body {
   font-family: "Poppins";
   /* background-color: #c10f0f; */
   color: #333;
@@ -167,10 +164,10 @@ body{
   transform: translateX(25px);
 }
 
-/* body {
+body {
   background-color: #f8f9fa;
   color: #212529;
-} */
+}
 
 .nav-container {
   background-color: #ffffff;
@@ -213,7 +210,6 @@ body.dark-mode .footer {
   width: var(--size);
   height: var(--size);
 }
-
 .toggle {
   appearance: none;
   outline: none;
@@ -264,4 +260,67 @@ body.dark-mode .contributor-card p {
 }
 body.dark-mode .contributor-card h2 {
   color: white;
+}
+.design-title a {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  position: relative;
+}
+
+.design-title a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff5733; /* Highlight color */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.design-title a:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+.design-title a:hover {
+  color: #ff5733;
+  transform: scale(1.1); /* Zoom effect */
+  letter-spacing: 1px;
+}
+
+.blog-text {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Initial box-shadow */
+}
+
+.blog-text:hover {
+  background-color: #ffecb3; /* Change background on hover */
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow */
+}
+
+.blog-text h2 {
+  transition: color 0.3s ease;
+  font-size: 22px;
+}
+
+.blog-text:hover h2 {
+  color: #ff6f61; /* Text color change on hover */
+}
+
+.blog-text p {
+  transition: opacity 0.3s ease;
+}
+
+.blog-text:hover p {
+  opacity: 0.8; /* Slight fade effect on hover */
 }
