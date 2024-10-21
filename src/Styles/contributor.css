@@ -1,4 +1,7 @@
-body {
+body{
+  margin: 0;
+}
+.containerm {
   font-family: "Poppins";
   /* background-color: #c10f0f; */
   color: #333;
@@ -164,10 +167,10 @@ body {
   transform: translateX(25px);
 }
 
-body {
+/* body {
   background-color: #f8f9fa;
   color: #212529;
-}
+} */
 
 .nav-container {
   background-color: #ffffff;

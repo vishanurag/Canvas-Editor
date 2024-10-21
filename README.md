@@ -86,6 +86,105 @@
      
 </ul>
 
+## Project Structure
+
+<!-- START_STRUCTURE -->
+```
+├── Blog_page.html
+├── Contributing.md
+├── Faq.html
+├── LICENSE
+├── README.md
+├── about-us.html
+├── about.html
+├── blog.html
+├── community.html
+├── contributors.html
+├── download (1).png
+├── edition.html
+├── feature.png
+├── gssocextd.jpg
+├── hacktoberfest.png
+├── index.html
+├── login.html
+├── privacy.html
+├── repo_structure.txt
+├── repreviewfix.html
+├── resources/
+│   ├── favicon.ico
+│   └── painting_image.jpg
+├── review.html
+├── signup.html
+├── src/
+│   ├── Scripts/
+│   │   ├── BacktoTop.js
+│   │   ├── Canvas.js
+│   │   ├── Save.js
+│   │   ├── contributor.js
+│   │   └── preloader.js
+│   ├── Styles/
+│   │   ├── Responsive.css
+│   │   ├── Style.css
+│   │   ├── Style_Blog_page.css
+│   │   ├── contact_us_style.css
+│   │   ├── contributor.css
+│   │   ├── scroll.css
+│   │   └── signup.css
+│   ├── bootstrap/
+│   │   └── css/
+│   │       ├── bootstrap-grid.css
+│   │       ├── bootstrap-grid.css.map
+│   │       ├── bootstrap-grid.min.css
+│   │       ├── bootstrap-grid.min.css.map
+│   │       ├── bootstrap-grid.rtl.css
+│   │       ├── bootstrap-grid.rtl.css.map
+│   │       ├── bootstrap-grid.rtl.min.css
+│   │       ├── bootstrap-grid.rtl.min.css.map
+│   │       ├── bootstrap-reboot.css
+│   │       ├── bootstrap-reboot.css.map
+│   │       ├── bootstrap-reboot.min.css
+│   │       ├── bootstrap-reboot.min.css.map
+│   │       ├── bootstrap-reboot.rtl.css
+│   │       ├── bootstrap-reboot.rtl.css.map
+│   │       ├── bootstrap-reboot.rtl.min.css
+│   │       ├── bootstrap-reboot.rtl.min.css.map
+│   │       ├── bootstrap-utilities.css
+│   │       ├── bootstrap-utilities.css.map
+│   │       ├── bootstrap-utilities.min.css
+│   │       ├── bootstrap-utilities.min.css.map
+│   │       ├── bootstrap-utilities.rtl.css
+│   │       ├── bootstrap-utilities.rtl.css.map
+│   │       ├── bootstrap-utilities.rtl.min.css
+│   │       ├── bootstrap-utilities.rtl.min.css.map
+│   │       ├── bootstrap.css
+│   │       ├── bootstrap.css.map
+│   │       ├── bootstrap.min.css
+│   │       ├── bootstrap.min.css.map
+│   │       ├── bootstrap.rtl.css
+│   │       ├── bootstrap.rtl.css.map
+│   │       ├── bootstrap.rtl.min.css
+│   │       └── bootstrap.rtl.min.css.map
+│   └── images/
+│       ├── about-bg.jpg
+│       ├── art-design-1.jpg
+│       ├── art-design-2.jpg
+│       ├── art-design-3.jpg
+│       ├── art-design-4.jpg
+│       ├── art-design-5.jpg
+│       ├── art-design-6.jpg
+│       ├── banner-bg.jpg
+│       ├── blog-p-1.jpg
+│       ├── blog-p-2.jpg
+│       ├── blog-p-3.jpg
+│       ├── blog-p-4.jpg
+│       ├── blog-p-5.jpg
+│       └── blog-p-6.jpg
+├── testimonial.html
+├── tutorial.html
+└── welcome.html
+```
+<!-- END_STRUCTURE -->
+
 ### New Features ✨
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
@@ -213,6 +312,17 @@ git push origin YourBranchName
 </td>
 </tr>
 </table>
+
+ # Project Mentor⚡🧑‍💻
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/somyadipghosh"><img src="https://avatars.githubusercontent.com/u/77097996?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Somyadip Ghosh</h4>
+ <a href="https://www.linkedin.com/in/somyadipghosh/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
+
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
