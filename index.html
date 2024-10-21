@@ -650,7 +650,45 @@ h2{
 .dark-mode .theme-container .welcome-text {
     color: #b0b0b0; /* Light grey text color for p in dark mode */
 }
+<style>
+        .share {
+            display: flex;
+            gap: 15px;
+        }
 
+        .share a {
+            color: #333; /* Default icon color */
+            font-size: 24px;
+            transition: color 0.3s ease;
+            text-decoration: none; /* Removes underline */
+        }
+
+        /* Remove default hover behavior */
+        .share a:hover {
+            color: #333; /* Default hover color same as icon color */
+        }
+
+        /* Specific hover colors for each platform */
+        .share a.fa-facebook-f:hover {
+            color: #3b5998; /* Facebook blue */
+        }
+
+        .share a.fa-x-twitter:hover {
+            color: #1DA1F2; /* Twitter blue */
+        }
+
+        .share a.fa-instagram:hover {
+            color: #E1306C; /* Instagram pink */
+        }
+
+        .share a.fa-linkedin-in:hover {
+            color: #0077b5; /* LinkedIn blue */
+        }
+
+        .share a.fa-pinterest:hover {
+            color: #E60023; /* Pinterest red */
+        }
+    </style>
 
 
     </style>
@@ -1082,16 +1120,13 @@ h2{
 
         <section class="footer" id="footer">
             <!-- Added responsiveness to icons -->
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-
-                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-
-                <a href="#" class="fa-brands fa-pinterest"></a>
-            </div>
-
+           <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
+        <a href="#" class="fa-brands fa-pinterest"></a>
+    </div>
             <div class="credit" style="font-size: 0.6rem;">
                 <p>
                     Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
