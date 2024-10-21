@@ -28,3 +28,129 @@
         margin-top: 10px;      
     }
 }
+/* Adding a 3D effect to the canvas palette container */
+.canvas-palette {
+    background: #f0f0f0;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* 3D buttons */
+.btn {
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateZ(5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect to give depth to buttons */
+.btn:hover {
+    transform: translateZ(10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 3D dropdown and inputs */
+select, input[type="color"], input[type="file"], input[type="text"] {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateZ(5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Apply 3D effect to all button containers */
+.wrapper, .tStyle, .rclStyle {
+    transform: translateZ(5px);
+}
+
+/* 3D effect on hover for form elements */
+select:hover, input[type="color"]:hover, input[type="file"]:hover, input[type="text"]:hover {
+    transform: translateZ(10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* A 3D effect on text input fields */
+#textData {
+    transform: translateZ(5px);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hovering on text input makes it pop */
+#textData:hover {
+    transform: translateZ(12px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Adding a subtle 3D effect to save/download buttons */
+#save, #clear, #download, #saveAsImageBtn {
+    transform: translateZ(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#save:hover, #clear:hover, #download:hover, #saveAsImageBtn:hover {
+    transform: translateZ(15px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Makes it responsive */
+    padding: 10px 20px;
+    background-color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle 3D shadow */
+  }
+  
+  .nav-item {
+    list-style: none;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adds smooth animation */
+    border-radius: 5px;
+  }
+  
+  .nav-link:hover {
+    background-color: #555;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover for 3D effect */
+    transform: translateY(-3px); /* Lift effect */
+  }
+  
+  .nav-link.active {
+    background-color: #ff6f61;
+    box-shadow: 0 6px 10px rgba(255, 111, 97, 0.3);
+    transform: translateY(-3px);
+  }
+  
+  .gtranslate_wrapper {
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    /* Responsive Styles */
+    .nav-tabs {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .nav-link {
+      margin-bottom: 10px;
+    }
+  }
+  
