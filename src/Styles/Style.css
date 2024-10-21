@@ -8,8 +8,8 @@
 .container{
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg,#cf9aff,#95c0ff);
-  color: #fff;
+  background: linear-gradient(135deg,#0d13dc,hsl(27, 74%, 46%));
+  color: #ae4a4acf;
   padding-top: 5%;
   padding-left: 9%;
   padding-bottom: 0;
@@ -26,13 +26,14 @@
   align-items: center;
   font-size: 60px;
   font-weight: 600;
-  color: #571094;
+  color: #6fec0f;
 }
 .container button{
   display: flex;
   align-items: center;
-  background: linear-gradient(#9418fd,#571094);
-  color: #fff;
+  color:black;
+  background: linear-gradient(#0511f3,#a3cfd6);
+  color: #524e4e;
   font-size: 18px;
   outline: 0;
   border: 0;
@@ -48,7 +49,7 @@
 }
 body {
   height: 100vh !important;
-  background: black;
+  background: rgb(30, 28, 28);
   width: 100vw;
 }
 
@@ -72,10 +73,10 @@ body {
   padding: 15px 20px;
   /* text-transform: uppercase; */
   letter-spacing: 4px;
-  background-color: black;
+  background-color: rgb(173, 21, 21);
   border: none;
   outline: none;
-  color: #03e9f4;
+  color: black;
   font-size: 1rem;
   font-weight: bold;
   transition: .5s;
@@ -83,12 +84,12 @@ body {
   margin-right: 30px;
 }
 .wrapper button:hover{
-  background-color: #03e9f4;
+  background-color: #8ae613;
   color: #050801;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 200px #03e9f4;
+  box-shadow: 0 0 5px #b7ea1e,
+              0 0 25px #98a1a2,
+              0 0 50px #35fb1a,
+              0 0 200px #2d4c63;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 .wrapper button:first-child{
@@ -106,7 +107,7 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
+  background: linear-gradient(90deg, transparent, hsl(88, 32%, 9%));
   animation: animate1 1s infinite;
   animation-delay: 0s;
 }
@@ -123,7 +124,7 @@ body {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
+  background: linear-gradient(180deg, transparent, #998e83);
   animation: animate2 1s infinite;
   animation-delay: .25s;
 }
@@ -140,7 +141,7 @@ body {
   right: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
+  background: linear-gradient(270deg, transparent, #a80e06);
   animation: animate3 1s infinite;
   animation-delay: .5s;
 }
@@ -157,7 +158,7 @@ body {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
+  background: linear-gradient(360deg, transparent, #0b2c6a);
   animation: animate4 1s infinite;
   animation-delay: .75s;
 }
@@ -189,8 +190,8 @@ body {
   /* text-transform: uppercase; */
   letter-spacing: 4px;
   background-color: #000;
-  color: #ec0fc7;
-  border: 3px solid #ec0fc7;
+  color: #020221;
+  border: 3px solid #280221;
   outline: none;
   font-size: 1rem;
   font-weight: bold;
@@ -207,7 +208,7 @@ body {
 .tStyle button:hover{
   color: #fff;
   background-color: #000;
-  border: 3px solid #ec0fc7;
+  border: 3px solid #350bd0;
   transition: 1s;
 }
 #capital:hover{
@@ -229,7 +230,7 @@ body {
   left: -40px;
   width: 0;
   height: 100%;
-  background: #ec0fc7;
+  background: #0d20b1;
   transform: skewX(35deg);
   z-index: -1;
   transition: 1s;
@@ -254,8 +255,8 @@ body {
   width:auto ;
   letter-spacing: 4px;
   background-color: #000;
-  color: rgb(2, 217, 233);
-  border: 3px solid rgb(2, 217, 233);
+  color: rgb(13, 12, 23);
+  border: 3px solid rgb(23, 28, 29);
   outline: none;
   font-size: 1rem;
   font-weight: bold;
@@ -270,9 +271,9 @@ body {
   display: block;
 }
 .rclStyle button:hover{
-  color: #fff;
+  color: #ffff;
   background-color: #000;
-  border: 3px solid rgb(2, 217, 233);
+  border: 3px solid #ffffff;
   transition: 1s;
 }
 .rclStyle button::before{
@@ -282,7 +283,7 @@ body {
   left: -40px;
   width: 0;
   height: 100%;
-  background: rgb(2, 217, 233);
+  background: #379509;
   transform: skewX(35deg);
   z-index: -1;
   transition: 1s;
@@ -491,7 +492,6 @@ html {
 /* Main canvas styles */
 
 #mainCanvas {
-
   width: 83% !important;
   height: auto;
   max-height: 500px;
@@ -571,40 +571,81 @@ html {
   justify-content: center;
 }
 
-/*  Navbar Styling  starts*/
+/* General Navbar Styling */
 .navbar {
   background-color: #333; /* Dark background */
+  padding: 10px 10px; /* Space around the links */
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 2rem; /* Spacing between links */
   border-bottom: none;
 }
 
 /* Styling individual links in the navbar */
 .navbar a {
-  color: #a0a0a0; /* Link color */
-  font-size: 18px; /* Font size */
+  color: white; /* Link color */
+  font-size: 1.2rem; /* Font size */
   text-decoration: none; /* Remove underline */
-  padding: 0.5rem 1rem; 
+  padding: 0.5rem 1rem; /* Add padding around the text */
   border-radius: 0.5rem; /* Rounded corners for hover effect */
   transition: background-color 0.3s ease; /* Smooth hover transition */
-  
 }
 .nav-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
-  
 }
 
+/* .nav-links a { */
+/* color: white; */
+/* font-size: 1.2rem; */
+/* text-decoration: none; */
+/* padding: 0.5rem 1rem; */
+/* border-radius: 0.5rem; */
+/* transition: background-color 0.3s ease; */
+/* } */
+/* Hover effect for navbar links */
+/* .navbar a:hover {/ */
+/* background-color: #474747; Background color on hover */
+/* color: #fff; White text on hover */
+
+/* width: 60% !important; */
+/* height: auto; */
+/* border: 1px solid gray; */
+/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+/* border-radius: 5px; */
+/* }/
+ */
+
+/* Full width for form controls */
+/* .fullWidth {/ */
+/* width: 100% !important; */
+/* } */
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: #a0a0a0;
+}
+.nav-links a:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0;
+}
 .nav-links a:hover {
-  color: #ffffff;s
-
+  color: #ffffff;
 }
-/* navbar styling ends */
+.nav-links a:hover:after {
+  width: 100%;
+}
 
 /* Style for input field */
 #textData {
