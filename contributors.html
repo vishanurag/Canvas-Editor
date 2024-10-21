@@ -1,230 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contributors Page</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contributors</title>
+    <link rel="stylesheet" href="src/Styles/contributor.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/Styles/scroll.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #74ebd5, #acb6e5);
-            margin: 0;
-            padding: 0;
-            color: #2c3e50;
-        }
 
-        h1 {
-            text-align: center;
-            color: #ffffff;
-            margin-top: 50px;
-            font-size: 42px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
+      html {
+        scroll-behavior: smooth;
+      }
+      body{
+        background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff); 
+      }
+      /*  Navbar Styling  starts*/
+      .title5{
+    display: flex;
+    align-items: left;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+}
+      .navbar {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: none;
+      }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 40px;
-        }
+      /* Styling individual links in the navbar */
+      .navbar a {
+        color: #a0a0a0; /* Link color */
+        font-size: 18px; /* Font size */
+        text-decoration: none; /* Remove underline */
+        padding: 0.5rem 1rem; 
+        border-radius: 0.5rem; /* Rounded corners for hover effect */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+        
+      }
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      }
 
-        .contributor-card {
-            background: linear-gradient(135deg, #f3ec78, #af4261);
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 280px;
-            text-align: center;
-            color: #ffffff;
-        }
+      .nav-links a:hover {
+        color: #ffffff;
+      }
+/* navbar styling ends */
 
-        .contributor-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+      body.dark-mode {
+  background-color: #333;
+  color: #ffffff;
+}
+      .top-btn {
+        display: none;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 10px;
+        right: 0px;
+        background-color: #ab45e7;
+        color: #fff;
+        padding: 2px;
+        border: none;
+        margin-right: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
 
-        .contributor-photo {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #ffffff;
-        }
+      .top-btn:hover {
+        background-color: #0056b3;
+      }
 
-        .contributor-info {
-            padding: 20px;
-        }
+      video#background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        background-size: cover;
+      }
 
-        .contributor-name {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        }
+      .pagination-btns {
+        margin: 50px 0px;
+      }
 
-        .contributor-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
+      .pagination-btns button.btn {
+        border-radius: 5px;
+        outline: none;
+        margin: 5px 10px;
+        border: 1px solid rgb(146, 110, 110);
+      }
 
-        .contributor-links a {
-            color: #ffffff;
-            font-size: 18px;
-            text-decoration: none;
-            background: linear-gradient(45deg, #74ebd5, #acb6e5);
-            padding: 8px 15px;
-            border-radius: 25px;
-            transition: background 0.3s, transform 0.3s;
-        }
+      .pagination-btns button.btn, .pagination-btns button.btn i.bi {
+        font-size: 2rem;
+      }
 
-        .contributor-links a:hover {
-            background: linear-gradient(45deg, #acb6e5, #74ebd5);
-            transform: scale(1.1);
-        }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            margin-top: 50px;
-        }
-    </style>
-    <style>
-        /* Circle styles */
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
-    </style>
-</head>
-<body>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <h1>Meet Our Amazing Contributors</h1>
-    <div class="container">
-        <!-- Contributor 1 -->
-        <div class="contributor-card">
-            <img class="contributor-photo" src="https://via.placeholder.com/250x200/74ebd5/ffffff?text=Contributor+1" alt="Contributor 1 Photo">
-            <div class="contributor-info">
-                <div class="contributor-name">kjh</div>
-                <div class="contributor-links">
-                    <a href="https://github.com/johndoe" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a>
-                </div>
-            </div>
+#progress-container {
+  position: fixed ;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: 99990;
+  /* background: #f3f3f3; */
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 7px;
+  width: 0;
+  background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
+  box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: width 0.09s ease-in-out;
+  border-radius: 10px;
+}
+
+</style>
+    
+  </head>
+  <body>
+    
+      <nav class="navbar">
+        <div class="title5">
+          <h1 class="site-name">Canvas Editor</h1>
+          <i class="fa-solid fa-paintbrush" style="margin: 25px 0 0 0;"></i>
         </div>
-
-        <!-- Contributor 2 -->
-        <div class="contributor-card">
-            <img class="contributor-photo" src="https://via.placeholder.com/250x200/acb6e5/ffffff?text=Contributor+2" alt="Contributor 2 Photo">
-            <div class="contributor-info">
-                <div class="contributor-name">abc</div>
-                <div class="contributor-links">
-                    <a href="https://github.com/janesmith" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/janesmith" target="_blank">LinkedIn</a>
-                </div>
-            </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="Blog_page.html">Blogs</a>
+          <a href="Faq.html">FAQ</a>
+          <a href="contributors.html">Contributors</a>
+          <a href="testimonial.html">Testimonial</a>
+          <a href="signup.html">Sign Up</a>
+          <a href="login.html">Login</a>
         </div>
-
-        <!-- Contributor 3 -->
-        <div class="contributor-card">
-            <img class="contributor-photo" src="https://via.placeholder.com/250x200/ffcc70/ffffff?text=Contributor+3" alt="Contributor 3 Photo">
-            <div class="contributor-info">
-                <div class="contributor-name">def</div>
-                <div class="contributor-links">
-                    <a href="https://github.com/michaeljohnson" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/michaeljohnson" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </div>
+      </nav>
+      
+      <div class="containerm">
+    
+    <div id="progress-container">
+      <div id="progress-bar"></div>
     </div>
-
-    <footer>
-        &copy; 2024 Canvas-Editor | All rights reserved
-    </footer>
+    <video id="background-video" autoplay muted loop>
+      <source src="img/bg video terms2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    
+    <div class="container">
+      <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
+        <input id="themeToggle" class="toggle" type="checkbox">
+      </div>
+      
+      </header>
+      <h1 class="title">Our Contributors</h1>
+      <div id="contributors" class="contributors-grid"></div>
+      <div class="pagination-btns">
+        <button class="btn" id="prevBtn"> <i class="bi bi-arrow-left-circle"></i> </button>
+        <button class="btn" id="pageNoBox">1</button>
+        <button class="btn" id="nextBtn"> <i class="bi bi-arrow-right-circle"></i> </button>
+      </div>
+    </div>
+    <button class="top-btn" id="goToTopBtn" onclick="goToTop()">
+      <i class="fa-solid fa-chevron-up" style="color: #ffffff"></i>
+    </button>
+  </div>
     <script>
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
+      // Get the button
+      var mybutton = document.getElementById("goToTopBtn");
 
-        // Colors for the circles
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
 
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
-        });
-
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
-
-        // Animation function to move the circles
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-
-            circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-
-                circle.x = x;
-                circle.y = y;
-
-                // Get the next circle in the sequence
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
-            });
-
-            // Repeat the animation
-            requestAnimationFrame(animateCircles);
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
         }
+      }
 
-        // Start the animation
-        animateCircles();
+      // When the user clicks on the button, scroll to the top of the document
+      function goToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     </script>
-</body>
+    <script src="src/Scripts/contributor.js"></script>
+    <script>
+
+      window.addEventListener('scroll', function() {
+          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = (winScroll / height) * 100;
+          document.getElementById('progress-bar').style.width = scrolled + '%';
+      });
+      </script>
+  </body>
 </html>

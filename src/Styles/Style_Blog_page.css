@@ -128,12 +128,17 @@ header{
     padding: 1rem 0;
 }
 .title h2{
+    color: #2b2b2b;
     font-family: var(--Playfair);
     font-size: 2.4rem;
 }
 .title p{
+    color: #2b2b2b;
     text-transform: uppercase;
     padding: 0.6rem 0;
+    margin-top: 7px;
+    font-size: 1.3rem;
+    margin-left: 20px;
 }
 .design-content{
     margin: 2rem 0;
@@ -299,6 +304,96 @@ footer{
     font-family: var(--Playfair);
     letter-spacing: 2px;
 }
+.card-container{
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.card{
+    height: 350px;
+    width: 450px;
+    background: linear-gradient(135deg,#112d60,#b6c0c5);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0px 30px 010px;
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+.card span{
+    color: white;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    font-size: 1.4rem;
+}
+.card h2{
+    color: white;
+    padding: 30px 0 10px 10px;
+}
+.card p{
+    color: white;
+    position: relative;
+    left: 10px;
+    top: 20px;
+    font-size: 20px;
+}
+.card a{
+    position:relative;
+    left: 10px;
+    top :70px;
+    height: 40px;
+    width: 120px;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 20px;
+    transition: all 0.4s ease;
+}
+
+.card:hover{
+    background: linear-gradient(105deg,#112d60,#b6c0c5);
+    transform: scale(0.95);
+}
+
+.card a:hover{
+    width: 140px;
+    height: 50px;
+    font-size: 15px;
+    transform: scale(1.1);
+}
+
+/* Back to Top Button */
+#BacktoTop {
+    position: fixed; /* Stay in fixed position */
+    bottom: 50px; /* Positioned above the chatbot */
+    right: 5px; /* Aligned to the right */
+    width: 55px;
+    height: 55px;
+    background-color: #007bff; /* Button background */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding for button size */
+    border-radius: 50%; /* Circular button */
+    border: none;
+    font-size: 24px; /* Size of the text or arrow */
+    font-weight: bolder;
+    display: block; /* Initially hidden */
+    visibility: hidden;
+    z-index: 1000; /* Ensures it is above most elements */
+    cursor: pointer; /* Pointer when hovered */
+  }
+  
+  #BacktoTop:hover {
+    background-color: #0056b3; /* Change to a lighter blue on hover */
+    transform: scale(1.1);
+  }
+  
 
 /* Media Queries */
 @media screen and (min-width: 540px){
