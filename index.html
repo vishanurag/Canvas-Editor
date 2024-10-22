@@ -16,14 +16,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    
-    <link rel="stylesheet" href="style.css">
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<link rel="stylesheet" href="style.css">
 <style>
    body {
     overflow-x: hidden;
@@ -43,7 +38,8 @@
 
 .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: -100px;
 }
 
 .canvas-container {
@@ -151,7 +147,7 @@
 }
 
 /* Dark Mode */
-body.dark-mode {
+nav.dark-mode {
     background-color: #1a1a1a;
     color: #ffffff;
 }
@@ -254,6 +250,97 @@ body.dark-mode {
     .footer .credit {
         font-size: 0.8rem;
     }
+/* General Styles */
+h2 {
+    margin-top: 50px;
+    color: black;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999;
+    transition: transform 0.1s ease-out;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .container {
+    background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+}
+
+.dark-mode .canvas-container {
+    background: #2a2a2a;
+}
+
+.dark-mode #mainCanvas {
+    border-color: #ffffff;
+    background-color: #333333;
+}
+
+.dark-mode .btn {
+    background-color: #444444;
+}
+
+.dark-mode .form-control {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .footer .share a {
+    color: #ffffff;
+}
+
+.body #darkModeToggle {
+    background-color: #ffffff;
+    color: #333333;
+}
+  </style>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    function enableDarkMode() {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+    }
+
+    function disableDarkMode() {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        enableDarkMode();
+    }
+</script>
+<style>
         
         body {
             overflow-x: hidden;
@@ -531,7 +618,8 @@ h2{
         }
 
         .gtranslate_wrapper{
-            margin-left: 30px;
+            margin-left: 350px;
+            margin-top: 6px;
         }
 /* Common Styles */
 .theme-container {
@@ -620,114 +708,95 @@ h2{
                 src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
                 alt=""></a>
     </div>
-    <header class="header">
-        <nav class="navbar">
-          <div class="title">
-            <h1 class="site-name">Canvas Editor</h1>
-            <i class="fa-solid fa-paintbrush"></i>
-          </div>
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="Blog_page.html">Blogs</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="contributors.html">Contributors</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="signup.html">Sign Up</a>
-            <a href="login.html">Login</a>
-            <button id="darkModeToggle">🌓</button>
-          </div>
-        </nav>
-      </header>
+
       
+        <ul class="nav nav-tabs">
+         
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="review.html">Review</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testimonial.html">Testimonial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="privacy.html">Privacy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tutorial.html">Tutorial</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Blog_page.html">Blog</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="./Faq.html">FAQ</a>
+            </li>
+
+            <a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contributors.html">Contributors</a>
+
+            </li>
+          
+          
+            <li>
+                <div class="gtranslate_wrapper"></div>
+        <script>
+          window.gtranslateSettings = {
+            default_language: "en",
+            detect_browser_language: true,
+            wrapper_selector: ".gtranslate_wrapper",
+            flag_size: 16,
+          };
+        </script>
+        <script
+        src="https://cdn.gtranslate.net/widgets/latest/popup.js"
+        defer
+      ></script>
+            </li>
+            
+            
+            <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
+          
+        </ul>
+    </div>
+  
+   
 
     <div class="container p-0">
+       
         <div class="header">
+           
+           
+    
+           
+          
             <img src="" alt="">
             <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
             </h1>
             <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
         </div>
-        
-        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
 
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="review.html">Review</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="testimonial.html">Testimonial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="privacy.html">Privacy</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="tutorial.html">Tutorial</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Blog_page.html">Blog</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="./Faq.html">FAQ</a>
-                </li>
-
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contributors.html">Contributors</a>
-
-                </li>
-                <li>
-                    <div class="gtranslate_wrapper"></div>
-            <script>
-              window.gtranslateSettings = {
-                default_language: "en",
-                detect_browser_language: true,
-                wrapper_selector: ".gtranslate_wrapper",
-                flag_size: 16,
-              };
-            </script>
-            <script
-            src="https://cdn.gtranslate.net/widgets/latest/popup.js"
-            defer
-          ></script>
-                </li>
-
-            </ul>
-        </div>
 
 
 <!--         <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
                     class="fa-light fa-face-party"></i></p> --> -->
-
-        <!-- <div class="row text-center p-5 theme-container">
-            <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
-            <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-        </div> -->
-        
-
-<!-- <div class="row text-center p-5 theme-container" style="background-color: #2c3e5e;">
-    <h2 class="welcome-header animated-text" style="color: #ffffff; font-weight: bolder;">Welcome to the Canvas Editor!</h2>
-    <p class="welcome-text" style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-</div> -->
-
-        <div class="row text-center p-5 theme-container">
+  <div class="row text-center p-5 theme-container">
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
@@ -1032,6 +1101,7 @@ h2{
                     Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
                     2024
                 </p>
+                <a href="./src/contributor.html" id="ourvisionlink">Our Contributors</a>
                 <br>
             </div>
             <!-- Back to Top Button -->
@@ -1469,6 +1539,15 @@ h2{
         <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
         </script>
         <script src="src/Scripts/Save.js"></script>
+        <script>
+            window.gtranslateSettings = {
+                "default_language": "en",
+                "detect_browser_language": true,
+                "wrapper_selector": ".gtranslate_wrapper"
+            };
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        
 
 </body>
 
