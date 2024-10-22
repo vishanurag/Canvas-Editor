@@ -36,16 +36,20 @@
 
 .contact-us-page{
   display:flex;
+  margin-top: 40px;
+ 
   justify-content: center;
   align-items:center;
 }
 
 .contact-container{
   width:100%;
+  border-radius: 10px;
   background: #000000;
 }
 
 #contact{
+  margin: 10px;
   width:100%;
   background: rgb(0, 0, 0);
 }
