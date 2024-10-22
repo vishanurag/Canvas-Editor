@@ -9,7 +9,7 @@
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg,#cf9aff,#95c0ff);
-  color: #fff;
+  color: #ffffff;
   padding-top: 5%;
   padding-left: 9%;
   padding-bottom: 0;
@@ -19,7 +19,7 @@
   align-items: center;
   font-size: 60px;
   font-weight: 600;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .container h4 span{
   display: flex;
@@ -48,7 +48,16 @@
 }
 body {
   height: 100vh !important;
-  background: black;
+  background: linear-gradient(90deg, 
+  #FFF3E3,  /* Soft Peach */
+  #FFD1A1  /* Light Apricot */
+);
+
+
+
+
+
+
   width: 100vw;
 }
 
@@ -478,7 +487,7 @@ html {
 
 /* Main Container */
 .container {
-  max-width: 1200px;
+  max-width:150%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -601,13 +610,14 @@ html {
 }
 
 .nav-links a:hover {
-  color: #ffffff;s
+  color: #ffffff;
 
 }
 /* navbar styling ends */
 
 /* Style for input field */
-#textData {
+#textData 
+{
   height: 45px;
   padding: 10px 20px;
   font-size: 1rem;

@@ -22,7 +22,7 @@
 <style>
    body {
     overflow-x: hidden;
-    background-color: #ffffff;
+    background-color: #b01a1a;
     font-family: 'Arial', sans-serif;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -32,7 +32,7 @@
     margin: 0 auto;
     padding: 20px;
     color: rgb(0, 0, 0);
-    background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+    background-image: linear-gradient(120deg, #000000, #d8f9ff, #d4c6ff);
     border-radius: 8px; /* Added border-radius for rounded corners */
 }
 
@@ -60,7 +60,7 @@
     border: 2px solid #007bff; /* Changed border color for better visibility */
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    background-color: #c71919;
     cursor: crosshair;
     margin-top: 20px;
     transition: border-color 0.3s;
@@ -316,29 +316,35 @@ h2 {
 
 <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
+const body = document.body;
 
-    function enableDarkMode() {
-        body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled');
-    }
+function enableDarkMode() {
+    body.classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'enabled');
+    darkModeToggle.textContent = 'Switch to Light Mode';
+}
 
-    function disableDarkMode() {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'disabled');
-    }
+function disableDarkMode() {
+    body.classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'disabled');
+    darkModeToggle.textContent = 'Switch to Dark Mode';
+}
 
-    darkModeToggle.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
-
-    if (localStorage.getItem('darkMode') === 'enabled') {
+darkModeToggle.addEventListener('click', () => {
+    if (body.classList.contains('dark-mode')) {
+        disableDarkMode();
+    } else {
         enableDarkMode();
     }
+});
+
+// Check local storage and set the initial mode
+if (localStorage.getItem('darkMode') === 'enabled') {
+    enableDarkMode();
+} else {
+    disableDarkMode();
+}
+
 </script>
 <style>
         
@@ -781,9 +787,9 @@ h2{
            
           
             <img src="" alt="">
-            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
+            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none; line-height: 5.2;">Creative Canvas Tool</a>
             </h1>
-            <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
+            <p class="lead p-2" style="margin-top: -128px;">Design and create stunning visuals effortlessly!</p>
         </div>
 
 
@@ -1500,30 +1506,33 @@ h2{
             animateCircles();
         </script>
         <script>
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
-        
-            function enableDarkMode() {
-                body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'enabled');
-            }
-        
-            function disableDarkMode() {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        
-            darkModeToggle.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    disableDarkMode();
-                } else {
-                    enableDarkMode();
-                }
-            });
-        
-            if (localStorage.getItem('darkMode') === 'enabled') {
-                enableDarkMode();
-            }
+            document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    function enableDarkMode() {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+    }
+
+    function disableDarkMode() {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        enableDarkMode();
+    }
+});
+
 
         </script>
             <!-- window.embeddedChatbotConfig = {
