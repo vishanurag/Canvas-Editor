@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
    <link rel="stylesheet" href="src/Styles/scroll.css">
+   
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -97,54 +98,7 @@
     border-radius: 8px;
 }
 
-.footer {
-    width: 100%;
-    background-color: #2c3e5e;
-    color: #ffffff;
-    text-align: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    padding: 20px;
-    position: relative;
-    margin-top: 20px;
-}
 
-.footer .share {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.footer .share a {
-    margin: 0 10px;
-    font-size: 1.8rem;
-    color: #ffffff;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer .share a:hover {
-    color: #f39c12;
-    transform: scale(1.1);
-}
-
-.footer .credit {
-    font-size: 0.9rem;
-    color: #bdc3c7;
-}
-
-.footer .credit span {
-    color: #f39c12;
-    font-weight: bold;
-}
-
-.footer .credit p {
-    margin: 0;
-    font-size: 0.85rem;
-}
-
-.footer .credit span:hover {
-    color: #f1c40f;
-}
 
 /* Dark Mode */
 nav.dark-mode {
@@ -250,6 +204,8 @@ nav.dark-mode {
     .footer .credit {
         font-size: 0.8rem;
     }
+    /* FOOTER ENDS*/
+
 /* General Styles */
 h2 {
     margin-top: 50px;
@@ -433,54 +389,117 @@ h2 {
         /* Footer Styling */
 
         .footer {
-            width: 100%;
-            background-color: #ff8686d1;
-            color: #c23e3e;
-            text-align: center;
-            border-start-start-radius: 5px;
-            padding: 35px 350px;
-            font-family: 'Arial', sans-serif;
-            position: relative;
-            margin-top: 20px;
-        }
+    width: 100%;
+    background: linear-gradient(to right, #d8d0f0, #c5b3d4);
+    color: #2a1052;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    padding: 35px 20px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin-top: 20px;
+    box-shadow: 0 -5px 15px rgba(42, 16, 82, 0.15);
+}
 
-        .footer .share {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+.footer .share {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
 
-        .footer .share a {
-            margin: 0 10px;
-            font-size: 1.8rem;
-            color: #ffffff;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
 
-        .footer .share a:hover {
-            color: #f39c12;
-            transform: scale(1.1);
-        }
+.footer .share a {
+    display: inline-flex;  
+    align-items: center;
+    justify-content: center;
+    width: 40px;          
+    height: 40px;
+    font-size: 20px;      
+    color: #2a1052;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    text-decoration: none;  
+    line-height: 1;        
+}
 
-        .footer .credit {
-            font-size: 0.9rem;
-            color: #bdc3c7;
-        }
+/* Added specific icon adjustments */
+.footer .share a i {
+    display: block;
+    font-size: inherit;
+    width: auto;
+    height: auto;
+    line-height: 1;
+}
 
-        .footer .credit span {
-            color: #f39c12;
-            font-weight: bold;
-        }
+.footer .share a:hover {
+    color: #4a2b8a;
+    transform: translateY(-5px);
+    background: white;
+    box-shadow: 0 5px 15px rgba(42, 16, 82, 0.25);
+}
 
-        .footer .credit p {
-            margin: 0;
-            font-size: 0.85rem;
-        }
+.footer .credit {
+    font-size: 0.9rem;
+    color: #2a1052;
+    padding: 0 20px;
+}
 
-        .footer .credit span:hover {
-            color: #f1c40f;
-        }
+.footer .credit a {
+    color: #4a2b8a;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
+.footer .credit a:hover {
+    color: #2a1052;
+}
+
+.footer .credit p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Dark mode adjustments */
+.dark-mode .footer {
+    background: linear-gradient(to right, #3a1766, #4a2b8a);
+    color: #ffffff;
+}
+
+.dark-mode .footer .share a {
+    color: #2a1052;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.dark-mode .footer .share a:hover {
+    background: white;
+    color: #4a2b8a;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 25px 15px;
+    }
+    
+    .footer .share {
+        gap: 15px;
+    }
+    
+    .footer .share a {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .footer .credit {
+        font-size: 0.8rem;
+    }
+}
         /* Responsive design */
         @media (max-width: 768px) {
             .footer {
@@ -509,58 +528,55 @@ h2 {
         }
         
 
-.footer {
+    .footer {
     width: 100%;
-    background-color: #2c3e5e; /*updated this color */
-    color: #c23e3e;
+    background: linear-gradient(to right, #d8d0f0, #9165b4); 
+    color: #2a1052;
     text-align: center;
-    border-start-start-radius: 5px;
-    padding: 35px 350px;
+    border-radius: 20px 20px 0 0; 
+    padding: 35px 20px; 
     font-family: 'Arial', sans-serif;
     position: relative;
     margin-top: 20px;
 }
 
+.footer .share {
+    display: flex;
+    justify-content: center;
+    gap: 25px; 
+    margin-bottom: 20px;
+}
 
-        .footer .share {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+.footer .share a {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 40px; 
+    height: 40px; 
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 50%; 
+    font-size: 20px; 
+    color: #2a1052;
+    transition: all 0.3s ease;
+}
 
-        .footer .share a {
-            margin: 0 10px;
-            font-size: 1.8rem;
-            color: #ffffff;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
+.footer .share a:hover {
+    color: orange;
+    transform: translateY(-5px); 
+    background: white;
+    box-shadow: 0 5px 15px rgba(42, 16, 82, 0.25);
+}
 
-        .footer .share a:hover {
-            color: #f39c12;
-            transform: scale(1.1);
-        }
+.footer .credit {
+    font-size: 0.9rem;
+    color: #2a1052; 
+}
 
-        .footer .credit {
-            font-size: 0.9rem;
-            color: #bdc3c7;
-        }
-
-        .footer .credit span {
-            color: #f39c12;
-            font-weight: bold;
-        }
-
-        .footer .credit p {
-            margin: 0;
-            font-size: 0.85rem;
-        }
-
-        .footer .credit span:hover {
-            color: #f1c40f;
-        }
-        .dark-mode h2 {
-            color: #ffffff; /* White text for h2 in dark mode */
-        }
+.footer .credit p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
 
     /* General h2 styling */
         h2 {
@@ -1079,7 +1095,7 @@ h2{
                 <button id="closePopup" class="btn btn-primary">Close</button>
             </div>
         </div>
-
+<!--FOOTER CREDITS STARTS HERE-->
         <section class="footer" id="footer">
             <!-- Added responsiveness to icons -->
             <div class="share">
@@ -1099,6 +1115,7 @@ h2{
                 </p>
                 <br>
             </div>
+            <!--FOOTER CREDITS ENDS HERE-->
             <!-- Back to Top Button -->
             <button id="BacktoTop">
                 <span>↑</span>
