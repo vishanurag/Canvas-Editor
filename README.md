@@ -110,13 +110,15 @@
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
-
 ├── resources/
 │   ├── favicon.ico
 │   └── painting_image.jpg
 ├── review.html
 ├── signup.html
 ├── src/
+│   ├── Contributor.css
+│   ├── Contributor.html
+│   ├── Contributor.js
 │   ├── Scripts/
 │   │   ├── BacktoTop.js
 │   │   ├── Canvas.js
