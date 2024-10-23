@@ -3,7 +3,7 @@
     border: 1px solid #f87affad;
     background-color: transparent;
     backdrop-filter: blur(10px);
-    border-radius: 5%;
+    border-radius: 30px;
 }
 
 h3 {
@@ -13,6 +13,24 @@ h3 {
     display: flex;
     justify-content: center;
     color: #343232f0;
+}
+#login p a{
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 7px;
+    color :white;
+    font-size: 16px;
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: #141414;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+}
+
+#login p a:hover{
+    width: 150px;
+    transform: scale(1.05);
 }
 
 #input {
