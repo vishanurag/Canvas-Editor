@@ -25,6 +25,39 @@
       rel="stylesheet"
     />
     <style>
+      /*  Navbar Styling  starts*/
+      .navbar {
+        background-color: #333; /* Dark background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: none;
+      }
+
+      /* Styling individual links in the navbar */
+      .navbar a {
+        color: #a0a0a0; /* Link color */
+        font-size: 18px; /* Font size */
+        text-decoration: none; /* Remove underline */
+        padding: 0.5rem 1rem; 
+        border-radius: 0.5rem; /* Rounded corners for hover effect */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+        
+      }
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      }
+
+      .nav-links a:hover {
+        color: #ffffff;
+      }
+/* navbar styling ends */
       .about-section {
         padding: 50px 0;
         background-color: #f8f9fa;
@@ -136,10 +169,11 @@
     <header class="header">
       <nav class="navbar">
         <div class="title">
-          <h1 class="site-name">Canvas</h1>
+          <h1 class="site-name">Canvas Editor</h1>
           <i class="fa-solid fa-paintbrush"></i>
         </div>
         <div class="nav-links">
+
           <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="about-us.html">About</a>
           <a class="nav-link active" href="privacy.html">Privacy</a>
@@ -147,6 +181,7 @@
           <a class="nav-link" href="index.html#mainCanvas">Draw</a>
           <a class="nav-link" href="contributors.html">Contributors</a>
           <a class="nav-link" href="testimonial.html">Testimonial</a>
+
         </div>
       </nav>
     </header>

@@ -15,12 +15,22 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+
             display: flex;
+
+            background-color: #f7f7f7;
+            /* display: flex; */
+
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
+
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+
         }
         .header-container {
             height: 100vh;
@@ -49,6 +59,7 @@
             margin-bottom: 5px;
         }
         button {
+
             width: 100%;
             padding: 8px;
             background-color:#e645d0;
@@ -56,9 +67,17 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            transition: all 0.4s ease;
         }
+        
         button:hover {
+
             background-color: #e645d0;
+
+            background-color: #0d1321;
+            width: 70%;
+            transform: scale(1.1);
+
         }
         .or {
             text-align: center;
@@ -69,6 +88,34 @@
             text-align: center;
             color: #343232d4;
         }
+
+        .nav-tabs {
+            justify-content: center;
+            background-color: rgba(0,0,0,0.3);
+            border-bottom: 2px solid #dee2e6;
+            width: 35%; 
+            margin: auto;
+            border-radius: 30px;
+        }
+        .nav-item .nav-link {
+            color: #000;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-link.active {
+            background-color: #3abe57;
+            color: white;
+        }
+        .nav-link:hover {
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+        }
+        #input input{
+            height: 35px;
+        }
+
         .google-btn{
             margin-right:-20px;
         }   
@@ -80,8 +127,25 @@
         color: #3432328a; /* Adjust the color to your preference */
         opacity: 1; 
     }
+
     /* Circle styles */
     .circle {
+
+    input[name="username_email"] {
+        padding-left: 4px; 
+    }
+    @media (max-width: 768px) { 
+        button{
+            margin-left: 90px;
+        }
+    }
+
+
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+
             height: 24px;
             width: 24px;
             border-radius: 50%;
@@ -141,7 +205,27 @@
         <!-- dribbble -->
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
-    <div class="header-container">
+
+    <header class="header">
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+      </header>
+
     
         <!-- <div class="header" style="height: 10vh;">
             <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
@@ -153,7 +237,12 @@
             <a class="nav-link active" aria-current="page" href="#"><img src="logo4.png" alt=""></a>
 
         </div>
+
+    <div class="row">
+
         <ul class="nav nav-tabs">
+            <img src="download (1).png" alt="" style="height: 50px; width: auto; margin-right: 200px;">
+
             <li class="nav-item">
 
                 <a class="nav-link" aria-current="page" href="#">Home</a>
@@ -195,6 +284,7 @@
     </div>
     <div id="login" class="form-container mt-5 mb-5">
         <h3 class="pb-4">LOG IN</h3>
+
         <form action="/login" method="POST">
             <div id="input">
                 <input type="text" name="username_email" placeholder="Email or Username" required>
@@ -215,6 +305,7 @@
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
             </a>
         </div>
+
         <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
     
     </div>
@@ -291,6 +382,28 @@
         let x = coords.x;
         let y = coords.y;
 
+        <p>Don't have an account? <br><a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
+
+    </div>
+    
+
+    <script src="src\Scripts\preloader.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+
         circles.forEach(function (circle, index) {
             // Update the position and scale of each circle
             circle.style.left = x - 12 + "px";
@@ -316,13 +429,4 @@
 
     </body>
     </html>
-    
-
-
-
-
-
-
-
-
 
