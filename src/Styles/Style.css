@@ -1003,4 +1003,6 @@ footer .credit {
   background-color: #0056b3; /* Change to a lighter blue on hover */
   transform: scale(1.1);
 }
-
+#contactSubmit{
+  background-color: #03e9f4;
+}

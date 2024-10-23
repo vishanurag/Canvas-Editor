@@ -42,12 +42,11 @@
 
 .contact-container{
   width:100%;
-  background: #000000;
 }
 
 #contact{
   width:100%;
-  background: rgb(0, 0, 0);
+  background: linear-gradient(135deg,#00afb9,#fed9b7);
 }
 
 #contactForm textarea{
@@ -59,4 +58,5 @@
   margin-left:6em;
   text-align: center;
   padding:9rem;
+  background-color: #46cdcf;
 }
