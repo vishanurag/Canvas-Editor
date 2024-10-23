@@ -1,189 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Creative Canvas Tool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-      /*  Navbar Styling  starts*/
-      .navbar {
-        background-color: #333; /* Dark background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        border-bottom: none;
-      }
-
-      /* Styling individual links in the navbar */
-      .navbar a {
-        color: #a0a0a0; /* Link color */
-        font-size: 18px; /* Font size */
-        text-decoration: none; /* Remove underline */
-        padding: 0.5rem 1rem; 
-        border-radius: 0.5rem; /* Rounded corners for hover effect */
-        transition: background-color 0.3s ease; /* Smooth hover transition */
-        
-      }
-      .nav-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        
-      }
-
-      .nav-links a:hover {
-        color: #ffffff;
-      }
-      .logo {
-        font-size: 3rem;
-        font-family: "Poppins", sans-serif;
-        color: #353047;
-        font-weight: bolder;
-        text-decoration: none;
-      }
-      h1{
-        color: #fff;
-      }
-      body {
-        background: linear-gradient(135deg,#ffb7fd 0%,#abc0ef 50%,#c58be5 100% );
-        height: 100%;
-        margin: 0;
-      }
-      *{
-        font-family: "Poppins", sans-serif; 
-      }
-    .first{
-      font-size: 32px;
-      display: flex;
-      justify-content: space-around;
-    }
-    .second{
-      font-size: 32px;
-      height: 400px;
-      width: 57%;
-      margin: auto;
-    }
-    h2{
-      text-align: center;
-    }
-    img{
-      height: 30%;
-      width: 30%;
-      margin-top: 60px;
-      border-radius: 30px;
-    }
-
-    .first-para{
-      height: 400px;
-      width: 50%;
-      background-color: rgba(255,255,255,0.3);
-      display: flex;
-      padding: 30px;
-      justify-content: center;
-      align-items: center;
-      color: #000;
-      border-radius: 30px;
-    }
-    .second-para{
-      text-align: center;
-      color: #000;
-      font-size: 36px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(255,255,255,0.3);
-      padding: 30px;
-      border-radius: 30px;
-      margin-left: 100px;
-    }
-    h3{
-      font-size: 36px;
-      text-align: center;
-    }
-    h4{
-      font-size: 36px;
-    }
-    .desc{
-      font-size: 30px;
-      text-align: center;
-      padding: 0px 400px 0 400px;
-    }
-    .teams{
-      text-align: center;
-    }
+        body {
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: #000;
+        }
+        header {
+            background-color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .navbar a {
+            color: #a0a0a0;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #353047;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2rem;
+        }
+        .first, .second {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        .first {
+            flex-wrap: wrap;
+        }
+        .first-para, .second-para {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 30px;
+            margin: 10px;
+            flex: 1;
+            min-width: 300px;
+        }
+        img {
+            height: auto;
+            width: 30%;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+        h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .desc {
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .teams {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .team-member {
+            margin: 1rem 0;
+        }
+        @media (max-width: 768px) {
+            .first, .second {
+                flex-direction: column;
+                align-items: center;
+            }
+            img {
+                width: 80%;
+            }
+            .first-para, .second-para {
+                width: 90%;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <header class="header" >
-      <nav class="navbar">
-        <div class="title">
-          <h1 class="site-name">Canvas Editor</h1>
-          <i class="fa-solid fa-paintbrush"></i>
-        </div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="Blog_page.html">Blogs</a>
-          <a href="Faq.html">FAQ</a>
-          <a href="contributors.html">Contributors</a>
-          <a href="testimonial.html">Testimonial</a>
-          <a href="signup.html">Sign Up</a>
-          <a href="login.html">Login</a>
-        </div>
-      </nav>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="site-name">Canvas Editor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="Blog_page.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
     </header>
     <div class="container">
-      <h2 class="text-center mb-5">About Creative Canvas Tool</h2>
-      <div class="first">
-        <p class="first-para">
-          Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
-          <br>
-          <br>
-        </p>
-        <img src="resources/painting_image.jpg" alt="Creative Canvas">
-      </div>
-      <div class="second">
-        <p class="second-para">
-          Our Tool not only offers powerful creation tools but also fosters a vibrant community for artists to share their work, seek feedback, and collaborate. Engage in challenges and participate in workshops to enhance your skills. With regular updates and new features, our platform continually evolves to meet the needs of both budding talents and seasoned professionals.
-        </p>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="new">
+        <h2>About Creative Canvas Tool</h2>
+        <div class="first">
+            <p class="first-para">
+                Creative Canvas Tool empowers artists of all skill levels with an intuitive platform to transform ideas into stunning digital artwork. With a wide range of brushes, colors, and textures, you can easily explore your creativity and experiment with different styles. Our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
+            </p>
+            <img src="resources/painting_image.jpg" alt="Creative Canvas">
+        </div>
+        <div class="second">
+            <p class="second-para">
+                Our tool not only offers powerful creation tools but also fosters a vibrant community for artists to share their work, seek feedback, and collaborate. Engage in challenges and participate in workshops to enhance your skills. With regular updates and new features, our platform evolves to meet the needs of both budding talents and seasoned professionals.
+            </p>
+        </div>
         <h3>Our Mission</h3>
-              <p class="desc">
-                To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.
-                <br>
-                <br>
-                <br>
-                <h3>Our Story</h3>
-              <p class="desc">
-                Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
-              </p>
-              <br>
-              <br>
-              <br>
-              <h3>Our Team</h3>
-              <div class="teams">
-                <div class="team-member">
-                  <h4>Anurag</h4>
-                  <p>Founder & Lead Developer</p>
-                </div>
-                <div class="team-member">
-                  <h4>Somyadip Ghosh</h4>
-                  <p>Project Mentor</p>
-                </div>
-                </div>
-              </div>
-      </div>
+        <p class="desc">
+            To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.
+        </p>
+        <h3>Our Story</h3>
+        <p class="desc">
+            Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
+        </p>
+        <h3>Our Team</h3>
+        <div class="teams">
+            <div class="team-member">
+                <h4>Anurag</h4>
+                <p>Founder & Lead Developer</p>
+            </div>
+            <div class="team-member">
+                <h4>Somyadip Ghosh</h4>
+                <p>Project Mentor</p>
+            </div>
+        </div>
     </div>
+</body>
+</html>
