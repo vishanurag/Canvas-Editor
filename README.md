@@ -116,6 +116,9 @@
 ├── review.html
 ├── signup.html
 ├── src/
+│   ├── Contributor.css
+│   ├── Contributor.html
+│   ├── Contributor.js
 │   ├── Scripts/
 │   │   ├── BacktoTop.js
 │   │   ├── Canvas.js
