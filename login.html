@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="src/Styles/scroll.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
@@ -15,80 +15,60 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
         .header-container {
-            width: 100vw;
-            min-height: 100vh;
-            background-color: #f8f9fa; 
-            padding: 70px 0; 
+            height: 100vh;
+            width: 100vw; 
             text-align: center;
             margin-bottom: 20px; 
-            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            
+            /* background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
             background-size: cover;
         }
         .form-container {
-            max-width: 400px; 
-            margin: 0 auto; 
+            max-width: 400px; /* Set a max width for the form */
+            margin: 0 auto; /* Center the form on the page */
+            margin-top: 300px;
             padding: 20px;
-            border: 1px solid #dee2e6; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            border: 1px solid #dee2e6; /* Optional: Adds a border to the form */
+            border-radius: 8px; /* Optional: Adds rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+        }
+        .nav-link img{
+            height: 50px;
+            width: auto;
         }
         h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
         button {
             width: 100%;
-            padding: 10px;
-            background-color: #007bff;
+            padding: 8px;
+            background-color:#e645d0;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #e645d0;
         }
         .or {
             text-align: center;
             margin: 10px 0;
-            color: white;
+            color: #343232d4;
         }
         p {
             text-align: center;
-            color: white;
+            color: #343232d4;
         }
-        .nav-tabs {
-            justify-content: center;
-            background-color: #ffffff;
-            border-bottom: 2px solid #dee2e6; 
-        }
-        .nav-item .nav-link {
-            color: #000;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .nav-link.active {
-            background-color: #3abe57;
-            color: white;
-        }
-        .nav-link:hover {
-            background-color: #3abe57;
-            color: white;
-        }
-        #input input{
-            height: 35px;
-        }
-
         .google-btn{
             margin-right:-20px;
         }   
@@ -97,18 +77,11 @@
         }
 
     ::placeholder {
-        color: #4e4e4e; /* Adjust the color to your preference */
+        color: #3432328a; /* Adjust the color to your preference */
         opacity: 1; 
     }
-    input[name="username_email"] {
-        padding-left: 4px; 
-    }
-
-
-    </style>
-    <style>
-        /* Circle styles */
-        .circle {
+    /* Circle styles */
+    .circle {
             height: 24px;
             width: 24px;
             border-radius: 50%;
@@ -121,6 +94,7 @@
             transition: transform 0.1s ease-out;
         }
     </style>
+
 </head>
 <body>
     <!-- Circles -->
@@ -169,32 +143,57 @@
     </div>
     <div class="header-container">
     
-        <div class="header">
+        <!-- <div class="header" style="height: 10vh;">
             <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
+        </div> -->
+   
+    <div class="col gap-5 mt-5 d-flex justify-content-evenly align-items-center">
+        <div class="nav-item">
+
+            <a class="nav-link active" aria-current="page" href="#"><img src="logo4.png" alt=""></a>
+
         </div>
-    <div class="row">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
 
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="review.html">Review</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testimonial.html">Testimonial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Blog_page.html">Blog</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="./Faq.html">FAQ</a>
+            </li>
+
+            <a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contributors.html">Contributors</a>
+
+            </li>
+
         </ul>
     </div>
-    <div id="login" class="form-container mt-5">
+    <div id="login" class="form-container mt-5 mb-5">
         <h3 class="pb-4">LOG IN</h3>
         <form action="/login" method="POST">
             <div id="input">
@@ -217,78 +216,113 @@
             </a>
         </div>
         <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
-
+    
     </div>
-    <script src="src\Scripts\preloader.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
 
-        // Colors for the circles
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
+        <section class="footer mt-5" id="footer">
+            <!-- Added responsiveness to icons -->
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
+    
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    2024
+                </p>
+                <br>
+            </div>
+            <!-- Back to Top Button -->
+            <button id="BacktoTop">
+                <span>↑</span>
+            </button>
+        </section>
 
-        // Assign colors and initial position to each circle
+        <script src="src\Scripts\preloader.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+
+     // Select the password field and the eye icon
+     const passwordInput = document.getElementById('password');
+     const togglePassword = document.getElementById('togglePassword');
+
+    // Add an event listener to the eye icon
+    togglePassword.addEventListener('click', function () {
+        // Toggle the type attribute between password and text
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+  
+        // Toggle the icon between eye and eye-slash
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    // Update the coordinates when the mouse moves
+    window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
         circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
+            // Update the position and scale of each circle
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+
+            circle.x = x;
+            circle.y = y;
+
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
         });
 
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
 
-         // Select the password field and the eye icon
-         const passwordInput = document.getElementById('password');
-         const togglePassword = document.getElementById('togglePassword');
+    // Start the animation
+    animateCircles();
+</script>
 
-        // Add an event listener to the eye icon
-        togglePassword.addEventListener('click', function () {
-            // Toggle the type attribute between password and text
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-      
-            // Toggle the icon between eye and eye-slash
-            this.classList.toggle('fa-eye');
-            this.classList.toggle('fa-eye-slash');
-        });
+    </body>
+    </html>
+    
 
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
 
-        // Animation function to move the circles
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
 
-            circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
 
-                circle.x = x;
-                circle.y = y;
 
-                // Get the next circle in the sequence
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
-            });
 
-            // Repeat the animation
-            requestAnimationFrame(animateCircles);
-        }
 
-        // Start the animation
-        animateCircles();
-    </script>
-</body>
-</html> 
+
+
