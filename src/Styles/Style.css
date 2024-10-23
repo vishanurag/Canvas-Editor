@@ -35,6 +35,8 @@
 }
 
 .container button {
+
+.col-md-8 button{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -833,6 +835,7 @@ ul {
   font-weight: bold;
   /* Bold text for buttons */
 }
+
 
 .canvas-palette .btn:hover {
   transform: translateY(-2px);
@@ -1665,3 +1668,220 @@ h2 {
 .popup-content p {
   margin-bottom: 20px;
 }
+
+/* General Button Styling */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 30px; /* Rounded edges */
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Button Wrapper Styles */
+.wrapper, .tStyle, .rclStyle {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.space {
+  height: 20px;
+}
+
+/* Button Styles 1 - Pink and Blue Theme */
+.wrapper button {
+  background-color: #F9CEFF; /* Primary Pink */
+  color: #805D93; /* Lighter Purple/Soft Mauve */
+  border-radius: 50px; /* More roundness for soft look */
+  border: 2px solid #F9CEFF;
+}
+
+.wrapper button:hover {
+  background-color: #D8F9FF; /* Primary Blue */
+  color: #518FBA; /* Softer Blue */
+  box-shadow: 0 0 10px #D8F9FF, 0 0 20px #D8F9FF, 0 0 40px #D8F9FF;
+}
+
+.wrapper button:first-child {
+  background-color: #D8F9FF; /* Alternate Blue */
+  color: #518FBA;
+  border-color: #AEEAFF;
+}
+
+.wrapper button:last-child {
+  background-color: #F9CEFF; /* Pink for last button */
+  color: #805D93; /* Soft Purple */
+  border-color: #F4A3FF;
+}
+
+/* Soft Border Animation */
+.wrapper button span {
+  position: absolute;
+  display: block;
+}
+
+.wrapper button span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D8F9FF); /* Soft Blue Gradient */
+  animation: animate1 1s infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.wrapper button span:nth-child(2),
+.tStyle button span:nth-child(2),
+.rclStyle button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #F9CEFF); /* Soft Pink Gradient */
+  animation: animate2 1s infinite 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Button Styles 2 - Pastel Pink and Blue Theme */
+.tStyle button {
+  background-color: #F9CEFF; /* Primary Pink */
+  color: #805D93; /* Softer Purple */
+  border-radius: 50px;
+  border: 2px solid #F9CEFF;
+}
+
+.tStyle button:hover {
+  background-color: #D8F9FF; /* Primary Blue on Hover */
+  color: #518FBA; /* Softer Blue */
+  box-shadow: 0 0 10px #D8F9FF, 0 0 20px #D8F9FF, 0 0 40px #D8F9FF;
+}
+
+.tStyle button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 0;
+  height: 100%;
+  background: #D8F9FF; /* Light Blue before effect */
+  transform: skewX(35deg);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.tStyle button:hover::before {
+  width: 120%;
+}
+
+#capital:hover {
+  text-transform: uppercase;
+}
+
+#small:hover {
+  text-transform: lowercase;
+}
+
+#bold:hover {
+  font-weight: 900;
+}
+
+#italic:hover {
+  font-style: italic;
+}
+
+/* Button Styles 3 - Soft Pink and Blue Theme */
+.rclStyle button {
+  background-color: #D8F9FF; /* Soft Blue */
+  color: #518FBA; /* Soft Blue Accent */
+  border-radius: 50px;
+  border: 2px solid #AEEAFF;
+}
+
+.rclStyle button:hover {
+  background-color: #F9CEFF; /* Switch to Pink */
+  color: #805D93; /* Soft Mauve Accent */
+  box-shadow: 0 0 10px #F9CEFF, 0 0 20px #F9CEFF, 0 0 40px #F9CEFF;
+}
+
+.rclStyle button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 0;
+  height: 100%;
+  background: #F9CEFF; /* Pink before effect */
+  transform: skewX(35deg);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.rclStyle button:hover::before {
+  width: 120%;
+}
+
+/* Other border animations remain the same */
+.wrapper button span:nth-child(3),
+.tStyle button span:nth-child(3),
+.rclStyle button span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #F9CEFF); /* Pink */
+  animation: animate3 1s infinite 0.5s;
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.wrapper button span:nth-child(4),
+.tStyle button span:nth-child(4),
+.rclStyle button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #D8F9FF); /* Blue */
+  animation: animate4 1s infinite 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+
