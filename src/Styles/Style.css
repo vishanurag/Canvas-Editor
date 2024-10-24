@@ -40,7 +40,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: linear-gradient(#9418fd, #571094);
+
   color: #fff;
   font-size: 16px;
   outline: 0;
@@ -659,9 +661,16 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3rem; /* Spacing between links */
   flex-wrap: wrap;
 
   border-bottom: none;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 ul {
@@ -697,7 +706,10 @@ ul {
   transition: background-color 0.3s ease; /* Smooth hover transition */
   
 }
+
 .nav-links {
+
+/* .nav-links {
 
   display: flex;
   justify-content: center;
@@ -729,6 +741,7 @@ ul {
 .nav-links a:hover:after {
   width: 100%;
 } */
+
 .nav-link {
   text-decoration: none;
   list-style: none;
@@ -748,6 +761,24 @@ ul {
 }
 
 .nav-link.active {
+
+.nav-link{
+  text-decoration: none;
+  list-style: none;
+  color:  #e645d0;
+}
+.gt_container-unisv1 a.glink span{
+  text-decoration: none;
+  list-style: none;
+  color:  #e645d0;
+}
+.nav-link:hover{
+  color: #fff;
+  background-color:  #e645d0;
+  border: none;
+}
+.nav-link.active{ 
+
   color: #e12ac9 !important;
   background-color: #ffffff;
 
@@ -773,17 +804,20 @@ ul {
   font-weight: 550;
   font-size: 40px;
   color: rgb(50, 50, 50);
+
   position: relative;
   /* Needed for absolute positioning of pseudo-elements */
   display: flex;
   /* Use flexbox to align items */
   align-items: center;
   /* Vertically center the content */
+
 }
 
 
 
 .canvas-palette {
+
   border: 2px solid rgba(216, 94, 202, 0.41);
   /* Adding a border for definition */
   border-radius: 10px;
@@ -796,6 +830,7 @@ ul {
   /* Subtle shadow for depth */
   margin-top: 20px;
   /* Space above the palette */
+
 }
 
 .canvas-palette label {
@@ -922,6 +957,10 @@ input[type="text"],
 .input-group {
   margin-bottom: 10px;
 }
+.container.mt-5.contact-container{
+  background-color: transparent;
+}
+
 
 .container.mt-5.contact-container {
   background-color: transparent;
@@ -1178,6 +1217,7 @@ footer .credit {
 }
 
 .link-img {
+
   font-size: 30px;
   border: 1px solid #f87affad;
   padding: 2px;
@@ -1524,6 +1564,7 @@ h5 {
   transform: scale(1.1);
 }
 
+
 .footer .credit {
   font-size: 0.9rem;
   color: #bdc3c7;
@@ -1668,6 +1709,11 @@ h2 {
 .popup-content p {
   margin-bottom: 20px;
 }
+
+#contactSubmit{
+  background-color: #03e9f4;
+}
+
 
 /* General Button Styling */
 button {
