@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+
     <link rel="stylesheet" href="src/Styles/scroll.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +20,196 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+   <link rel="stylesheet" href="src/Styles/scroll.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <button id="darkModeToggle">🌓</button>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    body {
+        transition: background-color 0.3s, color 0.3s;
+
 <link rel="stylesheet" href="style.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Editor - Dark Mode</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode header {
+            background-color: #333;
+        }
+
+        body.dark-mode footer {
+            background-color: #1a1a1a;
+            color: #bbb;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            cursor: pointer;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #45a049;
+        }
+
+        /* Social Media Icon Styles */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effects for different social media icons */
+        .social-icons a.facebook:hover {
+            color: #3b5998;
+        }
+
+        .social-icons a.twitter:hover {
+            color: #1da1f2;
+        }
+
+        .social-icons a.instagram:hover {
+            color: #e4405f;
+        }
+
+        .social-icons a.linkedin:hover {
+            color: #0077b5;
+        }
+
+        .social-icons a.github:hover {
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">Toggle Dark Mode</button>
+
+    <!-- Header section -->
+    <header>
+        <h1>Welcome to Canvas Editor</h1>
+    </header>
+
+    <!-- Main content of the page -->
+    <main>
+        <section>
+            <h2>Main Content</h2>
+            <p>This is the main area of the page where your canvas editor content will go.</p>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Canvas Editor | All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+
+</body>
+</html>
+
+
 <style>
    body {
     overflow-x: hidden;
@@ -227,11 +412,17 @@ nav.dark-mode {
 @media (max-width: 768px) {
     .footer {
         padding: 30px 0;
+
+    }
+    .dark-mode {
+        background-color: #1a1a1a;
+        color: #ffffff;
     }
 
-    .footer .share a {
-        font-size: 1.5rem;
-    }
+    .dark-mode .container {
+        background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+        color:#007bff;
+
     #darkModeToggle {
         position: fixed;
         top: 6px;
@@ -251,11 +442,64 @@ nav.dark-mode {
 
     .footer .share a {
         font-size: 1.5rem;
+
+    }
+    .dark-mode .canvas-container {
+        background: #2a2a2a;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
     }
 
-    .footer .credit {
-        font-size: 0.8rem;
+    .dark-mode #mainCanvas {
+        border-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+        background-color: #333333;
     }
+    .dark-mode .btn {
+        background-color: #444444;
+        color: #ffffff;
+    }
+    .dark-mode .form-control {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    .dark-mode #userForm {
+        background-color: #444444;
+    }
+    .dark-mode .footer {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    .dark-mode .footer .share a {
+        color: #ffffff;
+    }
+    .dark-mode .custom-popup {
+        background-color: rgba(255,255,255,0.1);
+    }
+    .dark-mode .popup-content {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    #darkModeToggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode #darkModeToggle {
+        background-color: #ffffff;
+        color: #333333;
+    }
+</style>
+
 /* General Styles */
 h2 {
     margin-top: 50px;
@@ -320,6 +564,7 @@ h2 {
 }
   </style>
 
+
 <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
@@ -355,44 +600,68 @@ h2 {
         }
 
         .container {
-            max-width: 100%;
+            max-width: 170vw;
             margin: 0 auto;
             color: rgb(0, 0, 0);
+
+
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+}
+
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
         
         .header {
             width: 100%;
             text-align: center;
-            margin-bottom: none;
+            height: 16vh;
         }
+        #logo{
+    height: 14vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 205, 252);
+    /* background-attachment: sticky; */
+    position: fixed;
+    z-index: 99;
+    /* position: sticky; */
+}
+.logo{
+    background-image: linear-gradient(to right, #e645d0, #9631d5); /* Gradient from left to right */
+    -webkit-background-clip: text; /* For WebKit browsers */
+    -moz-background-clip: text; /* For Mozilla browsers */
+    background-clip: text;
+    color: transparent;
+}
 
         .canvas-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: #d1d7ff;
             color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            max-width: 100%;
         }
 
-
-        #mainCanvas {
-            width: 100%;
-            height: auto; /* Adjust height dynamically */
+        /* #mainCanvas {
             max-width: 100%;
-            border: 2px solid #000000;
-            border-radius: 10px;
+            height: 400px;
+            /* Set a fixed height */
+            /* border: 2px solid #000000; */
+            /* border-radius: 10px;
+
+
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-            background-color: #ffffff;
-            cursor: crosshair;
-            margin-top: 20px;
-        }
+            background-color: #ffffff; */
+            /* Default background color */
+            /* cursor: crosshair;
+            margin-top: 20px; */
 
+
+        /* } */ */
 
         .btn {
             margin: 5px;
@@ -440,14 +709,14 @@ h2 {
 
         .footer {
             width: 100%;
-            background-color: #ff8686d1;
+            background-color: #241835d8 !important;
             color: #c23e3e;
             text-align: center;
             border-start-start-radius: 5px;
             padding: 35px 350px;
             font-family: 'Arial', sans-serif;
             position: relative;
-            margin-top: 20px;
+            margin-top: 0px !important;
         }
 
         .footer .share {
@@ -513,7 +782,7 @@ h2 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
         }
-        
+
 
 .footer {
     width: 100%;
@@ -564,16 +833,6 @@ h2 {
         .footer .credit span:hover {
             color: #f1c40f;
         }
-        .dark-mode h2 {
-            color: #ffffff; /* White text for h2 in dark mode */
-        }
-
-    /* General h2 styling */
-        h2 {
-        font-size: 24px;
-        margin: 0;
-        font-weight: bold;
-        }
 
 
         /* Responsive design */
@@ -594,7 +853,6 @@ h2 {
         
                 
             /* Custom scrollbar for Chrome, Safari, and Opera */
-    
 
 h2{
     margin-top: 50px;
@@ -602,6 +860,34 @@ h2{
    font-size: 50px;
    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.welcome h2 {
+    font-size: 50px;
+            color: white; /* Initial color */
+            animation: colorChange 7s infinite ease-in-out; /* Smoother easing */
+            text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3), /* Main subtle shadow */
+        0 0 10px rgba(255, 255, 255, 0.5), /* Soft glow */
+        0 0 20px rgba(255, 255, 255, 0.4), /* Outer glow */
+        0 0 30px rgba(173, 216, 230, 0.6); /* Light blue glow effect *//* Subtle shadow */
+        }
+@keyframes colorChange {
+            0% {
+                color: #8361ff; /* Smooth soft red */
+            }
+            25% {
+                color: #f87aff; /* Light salmon */
+            }
+            50% {
+                color: #e100ff; /* Gold */
+            }
+            75% {
+                color: #90a3ee; /* Light green */
+            }
+            100% {
+                color: #87cefa; /* Light sky blue */
+            }
+        }
+
 
     </style>
     <style>
@@ -623,6 +909,7 @@ h2{
             margin-left: 350px;
             margin-top: 6px;
         }
+
 /* Common Styles */
 .theme-container {
     padding: 2rem; /* Maintain padding for the container */
@@ -659,6 +946,8 @@ h2{
 
     <button id="darkModeToggle">🌓</button>
 
+
+    </style>
 
 </head>
 
@@ -779,7 +1068,6 @@ h2{
    
 
     <div class="container p-0">
-       
         <div class="header">
 
             <div id="logo">
@@ -847,17 +1135,15 @@ h2{
        
             <img src="" alt="">
             <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
+
             </h1>
-            <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
         </div>
 
-
-
-<!--         <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p> --> -->
-  <div class="row text-center p-5 theme-container">
+                    class="fa-light fa-face-party"></i></p>
+
+        <div class="row text-center p-5 theme-container">
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
@@ -879,6 +1165,7 @@ h2{
 
 
             <div class="title-container">Draw Here</div>
+
 
             <canvas id="mainCanvas"></canvas>
             <div class="canvas-container">
@@ -915,7 +1202,9 @@ h2{
                             </div>
                         </div>
                         <div class="wrapper edit justify-content-center gap-3 mt-5">
+
                             <button type="button" class="btn" id="drawTextBtn">
+
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -940,7 +1229,9 @@ h2{
                         <div class="space"></div>
                     </form>
                     <div class="tStyle d-md-flex justify-content-center gap-4 py-3">
+
                         <button type="button" class="btn btn-primary" id="capital">
+
                             <span></span>
                             <span></span>
                             <span></span>
@@ -969,8 +1260,20 @@ h2{
                             Italic
                         </button>
                     </div>
+
                     <div class="rclStyle d-md-flex justify-content-center gap-3 py-3">
                         <button type="button" class="btn btn-success" id="rectangleBtn">
+
+                    <!-- <div class="d-md-flex justify-content-evenly gap-1">
+                        <button class="btn btn-primary" id="capital">Uppercase</button>
+                        <button class="btn btn-primary" id="small">Lowercase</button>
+                        <button class="btn btn-primary" id="bold">Bold</button>
+                        <button class="btn btn-primary" id="italic">Italic</button>
+                    </div> -->
+
+                    <div class="rclStyle d-md-flex justify-content-center gap-3 py-3">
+                        <button  type="button" class="btn btn-success" id="rectangleBtn">
+
                             <span></span>
                             <span></span>
                             <span></span>
@@ -992,6 +1295,13 @@ h2{
                             Line
                         </button>
                     </div>
+
+                    <!-- <div class="palette">
+                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                        <button id="circleBtn" class="btn btn-success">Circle</button>
+                        <button id="lineBtn" class="btn btn-success">Line</button>
+                    </div> -->
+
                     <div class="d-md-flex justify-content-center align-items-center py-3">
                         <input type="text" placeholder="Enter Text" name="textData" id="textData"
                             class="form-control mw-100 w-70">
@@ -1003,6 +1313,7 @@ h2{
                 </div>
             </div>
         </div>
+
         <div class="container mt-5 contact-container">
             <!-- Contact Us Section -->
             <section id="contact" class="contact-section text-center">
@@ -1024,6 +1335,43 @@ h2{
                             <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
                                 required>
                             <label for="name">Your Name</label>
+
+            </div>
+            <div class="container mt-5 contact-container">
+                <!-- Contact Us Section -->
+                <section id="contact" class="contact-section text-center">
+                    <h2 class="py-4" style="font-size: 40px;">Contact Us</h2>
+                  <div class="social-media-links d-flex justify-content-center align-items-center">
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
+                </div>
+                    <form id="contactForm" class="row g-3 justify-content-center mt-5">
+                        <!-- Name Field -->
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
+                                    required>
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <!-- Email Field -->
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Your Email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <!-- Subject Field -->
+                        <div class="col-md-8">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="subject" name="subject"
+                                    placeholder="Subject" required>
+                                <label for="subject">Subject</label>
+                            </div>
+
                         </div>
                     </div>
                     <!-- Email Field -->
@@ -1042,6 +1390,26 @@ h2{
                             <label for="subject">Subject</label>
                         </div>
 
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+                    <div class="container">
+                        <div class="cal row d-flex justify-content-center align-items-center p-5" style="width: 40%;">
+                            <h4 class="mb-4">Your<br><span>Message</span></h4>
+                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 30vh; width: 100%;" required></textarea>
+                            <p id="result"></p>
+                    <!-- Submit Button -->
+                    <div class="col-md-12 d-flex justify-content-center align-items-center">
+                        <!-- <div class="col-md-8">/ -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <!-- </div> -->
+                    </div>
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
                     </div>
 
                     <!-- Message Field -->
@@ -1058,6 +1426,7 @@ h2{
                     </div>
 
                     </div> -->
+
 
                 </form>
             </div>
@@ -1198,6 +1567,7 @@ h2{
                 });
             });
 
+        </script>
 
     </div>
 
@@ -1217,7 +1587,6 @@ h2{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/edit.js"></script> -->
-
 
         <div class="credit" style="font-size: 0.6rem;">
             <p>
@@ -1248,6 +1617,58 @@ h2{
                 scrollToTopBtn.style.opacity = '0';
             }
         }
+
+        <script src="src\Scripts\preloader.js"></script>
+        <script>
+            const scrollToTopBtn = document.getElementById("BacktoTop");
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollToTopBtn.style.visibility = 'visible';
+                    scrollToTopBtn.style.opacity = '1';
+                } else {
+                    scrollToTopBtn.style.visibility = 'hidden';
+                    scrollToTopBtn.style.opacity = '0';
+                }
+            }
+
+            scrollToTopBtn.addEventListener("click", function () {
+                // Smooth scroll back to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const fontBtn = document.getElementById('fontBtn');
+                const fontOptions = document.getElementById('fontOptions');
+                const options = document.querySelectorAll('.font-option');
+                const radius = 100;  // Increase this value to create more spacing between buttons
+                const startAngle = -30;  // Adjust this for positioning of the arc
+                const offsetX = 300;  // Move the arc further to the right
+                const offsetY = 70;  // Adjust vertical position of the arc
+
+                fontBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
+                    if (fontOptions.style.display === 'block') {
+                        const totalOptions = options.length;
+                        options.forEach((option, index) => {
+                            const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
+                            const x = Math.cos(angle) * radius + offsetX + 20;
+                            const y = Math.sin(angle) * radius + offsetY + 50;
+                            option.style.transform = `translate(${x}px, ${y}px)`;
+                        });
+                    } else {
+                        options.forEach(option => {
+                            option.style.transform = 'translate(0, 0)';
+                        });
+                    }
+                });
+
 
         scrollToTopBtn.addEventListener("click", function () {
             // Smooth scroll back to top
@@ -1655,6 +2076,7 @@ h2{
         </script>
         <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
         </script>
+
         <script src="src/Scripts/Save.js"></script>
         <script>
             window.gtranslateSettings = {
