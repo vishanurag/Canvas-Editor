@@ -1073,6 +1073,11 @@ footer .credit {
   transform: scale(1.1);
 }
 
+#contactSubmit{
+  background-color: #03e9f4;
+}
+
+
 /* General Button Styling */
 button {
   padding: 12px 20px;
@@ -1288,3 +1293,4 @@ button {
     bottom: 100%;
   }
 }
+
