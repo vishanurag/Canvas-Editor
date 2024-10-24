@@ -40,6 +40,8 @@
   }
 .contact-us-page{
   display:flex;
+  margin-top: 40px;
+ 
   justify-content: center;
   align-items:center;
 }
@@ -50,6 +52,7 @@
 }
 
 #contact{
+  margin: 10px;
   width:100%;
   background: linear-gradient(135deg,#00afb9,#fed9b7);
 
@@ -72,9 +75,4 @@
   margin-left:6em;
   text-align: center;
   padding:9rem;
-
-  background-color: #46cdcf;
 }
-
-}
-
