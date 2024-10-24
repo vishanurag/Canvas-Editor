@@ -116,6 +116,9 @@
 ├── review.html
 ├── signup.html
 ├── src/
+│   ├── Contributor.css
+│   ├── Contributor.html
+│   ├── Contributor.js
 │   ├── Scripts/
 │   │   ├── BacktoTop.js
 │   │   ├── Canvas.js
@@ -181,6 +184,8 @@
 │       └── blog-p-6.jpg
 ├── testimonial.html
 ├── tutorial.html
+├── visi.css
+├── visi.js
 └── welcome.html
 ```
 <!-- END_STRUCTURE -->
