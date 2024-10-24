@@ -30,8 +30,177 @@
     body {
         transition: background-color 0.3s, color 0.3s;
 
-
 <link rel="stylesheet" href="style.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Editor - Dark Mode</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode header {
+            background-color: #333;
+        }
+
+        body.dark-mode footer {
+            background-color: #1a1a1a;
+            color: #bbb;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            cursor: pointer;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #45a049;
+        }
+
+        /* Social Media Icon Styles */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effects for different social media icons */
+        .social-icons a.facebook:hover {
+            color: #3b5998;
+        }
+
+        .social-icons a.twitter:hover {
+            color: #1da1f2;
+        }
+
+        .social-icons a.instagram:hover {
+            color: #e4405f;
+        }
+
+        .social-icons a.linkedin:hover {
+            color: #0077b5;
+        }
+
+        .social-icons a.github:hover {
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">Toggle Dark Mode</button>
+
+    <!-- Header section -->
+    <header>
+        <h1>Welcome to Canvas Editor</h1>
+    </header>
+
+    <!-- Main content of the page -->
+    <main>
+        <section>
+            <h2>Main Content</h2>
+            <p>This is the main area of the page where your canvas editor content will go.</p>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Canvas Editor | All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+
+</body>
+</html>
+
+
 <style>
    body {
     overflow-x: hidden;
@@ -275,6 +444,7 @@ nav.dark-mode {
         border-color: #ffffff;
         box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
         background-color: #333333;
+
     }
     .dark-mode .btn {
         background-color: #444444;
@@ -284,6 +454,8 @@ nav.dark-mode {
         background-color: #333333;
         color: #ffffff;
     }
+
+
     .dark-mode #userForm {
         background-color: #444444;
     }
@@ -442,8 +614,11 @@ h2 {
     height: 14vh;
     width: 100%;
     display: flex;
+
     /* justify-content: center; */
     gap: 18rem;
+
+
     align-items: center;
     background-color: rgb(247, 205, 252);
     /* background-attachment: sticky; */
@@ -852,8 +1027,8 @@ h2{
    
 
     <div class="container p-0">
-       
         <div class="header">
+
 
             <div id="logo">
                 <div class="logo-new" style="margin-left: 140px;"><img src="logo4.png" alt="" width="80px" height="auto""></div>
@@ -938,10 +1113,15 @@ h2{
 
 
 <!--         <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
+
+            </h1>
+        </div>
+
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p> --> -->
-  <div class="row text-center p-5 theme-container">
+                    class="fa-light fa-face-party"></i></p>
+
+        <div class="row text-center p-5 theme-container">
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
@@ -999,6 +1179,7 @@ h2{
 </style>
 
         <div class="canvas-container">
+
 
         
            <div class="title-container">Draw Here</div>
@@ -1248,6 +1429,7 @@ h2{
                     Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
                     2024
                 </p>
+                <a href="./src/contributor.html" id="ourvisionlink">Our Contributors</a>
                 <br>
             </div>
             <!-- Back to Top Button -->
@@ -1704,7 +1886,26 @@ h2{
         </script>
 
         <script src="src/Scripts/Save.js"></script>
+        <script>
+            window.gtranslateSettings = {
+                "default_language": "en",
+                "detect_browser_language": true,
+                "wrapper_selector": ".gtranslate_wrapper"
+            };
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        <br /><br />
+        <link rel="stylesheet" href="visi.css">
+        <!-- ############### Footer ############### -->
+        <div class="visitor-counter">
+        <div>Visitor</div>
+        <div class="website-counter"></div>
+        </div>
+        <script src="path/to/visitorCounter.js"></script>
+        <script src="./assets/css/visitors.css"></script>
+        <script src="visi.js"></script>
 
+ 
 </body>
 
 

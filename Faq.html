@@ -15,7 +15,6 @@
 
         * {
             box-sizing: border-box;
-            overflow: hidden;
             &::before,
             &::after {
                 box-sizing: border-box;
@@ -32,6 +31,14 @@
             flex-direction: column;
             min-height: 100vh;
             max-width:100vw;
+            overflow-y: hidden;
+        }
+
+        /* Media query for mobile */
+        @media (max-width: 768px) {
+            body {
+                overflow-y: scroll; /* Enable vertical scrolling on mobile */
+            }
         }
 
         .container {
@@ -501,6 +508,15 @@
         // Start the animation
         animateCircles();
     </script>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    
 
 </body>
 
