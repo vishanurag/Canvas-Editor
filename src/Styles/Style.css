@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.1s linear;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .container{
   width: 100%;
@@ -12,34 +11,39 @@
   background: linear-gradient(135deg,#cf9aff,#95c0ff);
   color: #fff;
   padding-top: 5%;
-  padding-left: 9%;
+  /* padding-left: 9%; */
   padding-bottom: 0;
 }
 .container h4{
   display: flex;
   align-items: center;
-  font-size: 60px;
+  justify-content: center;
+  font-size: 40px;
   font-weight: 600;
-  color: white;
 }
 .container h4 span{
   display: flex;
   align-items: center;
-  font-size: 60px;
+  justify-content: center;
+  font-size: 40px;
   font-weight: 600;
   color: #571094;
 }
 .col-md-8 button{
   display: flex;
   align-items: center;
+  justify-content: center;
   background: linear-gradient(#9418fd,#571094);
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   outline: 0;
   border: 0;
   border-radius: 12px;
   padding: 15px 25px;
   margin: 30px 0 20px;
+  width: 80%;
+  /* border-radius: 40px; */
+  padding: 5px 15px;
   cursor: pointer;
 
 }
@@ -52,6 +56,7 @@ body {
   background: black;
   width: 100vw;
 }
+
 
 
 /* button styles 1 */
@@ -499,13 +504,13 @@ html {
 /* Main canvas styles */
 
 #mainCanvas {
-
-  width: 83% !important;
-  height: auto;
-  max-height: 500px;
-  margin: 68px;
-  border: 1px solid gray;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 96%;
+  padding: 10px;
+  /* max-height: 500px; */
+  /* margin: 68px; */
+  background-color: #ffffffa8;
+  border: 1px solid rgba(216, 94, 202, 0.41);
+  box-shadow: 0 4px 8px rgba(216, 94, 202, 0.41);
   border-radius: 5px;
 }
 
@@ -526,7 +531,6 @@ html {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
 }
 
 /* Shape Palette */
@@ -586,8 +590,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3rem; /* Spacing between links */
   flex-wrap: wrap;
   border-bottom: none;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 /* Styling individual links in the navbar */
@@ -600,7 +611,7 @@ html {
   transition: background-color 0.3s ease; /* Smooth hover transition */
   
 }
-.nav-links {
+/* .nav-links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -608,6 +619,47 @@ html {
   gap: 1rem;
   
 }
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: #a0a0a0;
+}
+.nav-links a:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0;
+}
+.nav-links a:hover {
+  color: #ffffff;
+}
+.nav-links a:hover:after {
+  width: 100%;
+} */
+.nav-link{
+  text-decoration: none;
+  list-style: none;
+  color:  #e645d0;
+}
+.gt_container-unisv1 a.glink span{
+  text-decoration: none;
+  list-style: none;
+  color:  #e645d0;
+}
+.nav-link:hover{
+  color: #fff;
+  background-color:  #e645d0;
+  border: none;
+}
+.nav-link.active{ 
+  color: #e12ac9 !important;
+  background-color: #ffffff;
 
 .nav-links a:hover {
   color: #ffffff;s
@@ -627,12 +679,25 @@ html {
   
 }
 
+.title-container {
+  margin-top: 30px;
+  padding: 20px 0;
+  font-weight: 550;
+  font-size: 40px;
+  color: rgb(50, 50, 50);
+  position: relative; /* Needed for absolute positioning of pseudo-elements */
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically center the content */
+}
+
+
+
 .canvas-palette {
-  border: 2px solid #a5a5a5; /* Adding a border for definition */
+  border: 2px solid rgba(216, 94, 202, 0.41); /* Adding a border for definition */
   border-radius: 10px; /* Rounded corners */
-  background: #ffffff; /* White background for clarity */
+  background: #ffffffa8; /* White background for clarity */
   padding: 20px; /* Padding around content */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 10px rgba(207, 91, 194, 0.1); /* Subtle shadow for depth */
   margin-top: 20px; /* Space above the palette */
 }
 
@@ -678,6 +743,7 @@ html {
   margin: 5px; /* Space between shape buttons */
 }
 
+
 /* Style for the Save button */
 .btn-primary {
   padding: 10px 20px;
@@ -693,9 +759,12 @@ html {
 }
 
 /* Flex container adjustments */
-.d-flex {
-  display: flex;
+.cal.d-flex {
+  /* display: flex; */
   gap: 1rem;
+  border: 1px solid #f87affad;
+  background-color: #ffffffa8;
+  border-radius: 20px;
 }
 
 button {
@@ -744,6 +813,10 @@ input[type="text"],
 .input-group {
   margin-bottom: 10px;
 }
+.container.mt-5.contact-container{
+  background-color: transparent;
+}
+
 
 /* Elegant Button */
 .boton-elegante {
@@ -860,9 +933,9 @@ button#download:hover::after {
 }
 
 /* Center Alignment */
-.d-md-flex.justify-content-center {
+/* .d-md-flex.justify-content-center {
   margin-top: 15px;
-}
+} */
 
 .footer {
   background: black;
@@ -932,7 +1005,7 @@ footer .credit {
 /* Contact Us Section */
 .contact-section {
   background-color: #f9f9f9;
-  padding: 50px;
+  padding: 20px;
   text-align: center;
   max-width: 650px;
   border-radius: 15px;
@@ -989,8 +1062,10 @@ footer .credit {
   justify-content: space-evenly;
 }
 .link-img{
-  margin-left: 20px;
   font-size: 30px;
+  border: 1px solid #f87affad;
+  padding: 2px;
+  border-radius: 6px;
 }
 
 /* Back to Top Button */
@@ -1017,6 +1092,11 @@ footer .credit {
   background-color: #0056b3; /* Change to a lighter blue on hover */
   transform: scale(1.1);
 }
+
+#contactSubmit{
+  background-color: #03e9f4;
+}
+
 
 /* General Button Styling */
 button {
@@ -1233,3 +1313,4 @@ button {
     bottom: 100%;
   }
 }
+
