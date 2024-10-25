@@ -33,12 +33,17 @@
     outline: none;
     box-shadow: none;
   }
-
+  #contact h2{
+    margin-top: 0;
+    color: black;
+  
+  }
 .contact-us-page{
   display:flex;
   justify-content: center;
   align-items:center;
 }
+
 
 .contact-container{
   width:100%;
@@ -61,3 +66,5 @@
   padding:9rem;
   color: white;
 }
+    
+
