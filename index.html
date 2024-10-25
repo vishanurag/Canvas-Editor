@@ -1012,7 +1012,7 @@ h2{
                         <div class="d-flex justify-content-around mb-2">
                             <div class="brush" style="width: 40%;">
                             <label for="brushSize">Brush Size:</label>
-                            <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;">
+                            <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;" onChange="changeBrushSize(event)">
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="15">15</option>
@@ -1022,17 +1022,17 @@ h2{
                         </div>
                         <div class="colorpick" style="width: 40%;">
                             <label for="colorPicker">Color:</label>
-                            <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
+                            <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;" onChange="changeBrushColor(event)" >
                         </div>
                         </div>
                         <div class="d-flex justify-content-around  mb-2">
                             <div class="col-sm-6"  style="width: 40%;">
                                 <label for="bgImageUpload">Background Image:</label>
-                                <input type="file" id="bgImageUpload" accept="image/*">
+                                <input type="file" id="bgImageUpload" accept="image/*" onchange=uploadBackground(event)>
                             </div>
                             <div class="col-sm-6"  style="width: 40%;">
                                 <label for="bgColorPicker">Background Color:</label>
-                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker" style="height: 4rem;">
+                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker" style="height: 4rem;" onChange=changeBackground(event)>
                             </div>
                         </div>
                         <div class="wrapper edit justify-content-center gap-3 mt-5">
@@ -1410,6 +1410,7 @@ h2{
             let drawing = false;
             let eraserMode = false;
             let currentColor = '#000000'; // Default color
+           
 
             // Resize the canvas to fit the container
             function resizeCanvas() {
@@ -1435,6 +1436,13 @@ h2{
                 ctx.moveTo(x, y);
             }
 
+            let lineWidth=0;
+            function changeBrushSize(e)
+            {
+                lineWidth=e.target.value;
+            }
+
+
             // Draw on the canvas or erase as the mouse moves or touch moves
             function draw(event) {
                 if (drawing) {
@@ -1445,13 +1453,14 @@ h2{
                     } else {
                         // Set the stroke color and draw
                         ctx.strokeStyle = currentColor; // Use the selected color
-                        ctx.lineWidth = 5; // Set a line width
+                        ctx.lineWidth = lineWidth; // Set a line width
                         ctx.lineTo(x, y);
                         ctx.stroke();
                     }
                 }
                 event.preventDefault(); // Prevent scrolling when touching the canvas
             }
+           
 
             // Stop drawing or erasing when the mouse is released or touch ends
             function stopDrawing() {
@@ -1486,9 +1495,11 @@ h2{
             });
 
             // Change the current color when the color picker changes
-            document.getElementById('colorPicker').addEventListener('input', (event) => {
-                currentColor = event.target.value;
-            });
+            function changeBackground(e){
+                currentColor = e.target.value;
+                document.getElementById('mainCanvas').style.backgroundColor=currentColor;
+
+            }
 
             // Download the canvas as an image
             document.getElementById('mainCanvas').addEventListener('click', () => {
@@ -1498,8 +1509,27 @@ h2{
                 link.click();
             });
 
+            function uploadBackground(event) {
+    const file = event.target.files[0]; // Get the uploaded file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            // Set the background image of the canvas
+            document.getElementById('mainCanvas').style.backgroundImage = `url(${e.target.result})`;
+            document.getElementById('mainCanvas').style.backgroundSize = 'cover'; // Optional: cover the entire canvas
+        };
+        reader.readAsDataURL(file); // Read the file as a data URL
+    }
+}
+
             let brushColor = '#000000';
-            let brushSize = 5;
+          
+            //change brush color
+            function changeBrushColor(e)
+            {
+               currentColor=e.target.value;
+                
+            }
 
             // Set initial canvas dimensions
             function setCanvasDimensions() {
