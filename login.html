@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
@@ -15,18 +16,21 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
-            display: flex;
+            /* display: flex; */
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
         }
         .header-container {
-            width: 100vw; 
+            width: 100vw;
+            min-height: 100vh;
             background-color: #f8f9fa; 
-            padding: 120px 0; 
+            padding: 70px 0; 
             text-align: center;
-            margin-bottom: 10px; 
+            margin-bottom: 20px; 
             background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
             background-size: cover;
         }
@@ -43,16 +47,20 @@
             margin-bottom: 20px;
         }
         button {
-            width: 100%;
+            width: 40%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #243447;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 30px;
             cursor: pointer;
+            transition: all 0.4s ease;
         }
+        
         button:hover {
-            background-color: #0056b3;
+            background-color: #0d1321;
+            width: 70%;
+            transform: scale(1.1);
         }
         .or {
             text-align: center;
@@ -65,14 +73,17 @@
         }
         .nav-tabs {
             justify-content: center;
-            background-color: #ffffff;
-            border-bottom: 2px solid #dee2e6; 
+            background-color: rgba(0,0,0,0.3);
+            border-bottom: 2px solid #dee2e6;
+            width: 35%; 
+            margin: auto;
+            border-radius: 30px;
         }
         .nav-item .nav-link {
             color: #000;
             font-size: 18px;
             padding: 10px 20px;
-            border-radius: 0;
+            border-radius: 30px;
             transition: background-color 0.3s, color 0.3s;
         }
         .nav-link.active {
@@ -80,13 +91,34 @@
             color: white;
         }
         .nav-link:hover {
-            background-color: #3abe57;
+            background-color: rgba(0,0,0,0.5);
             color: white;
         }
         #input input{
             height: 35px;
-
         }
+
+        .google-btn{
+            margin-right:-20px;
+        }   
+        .github-btn{
+            margin-left: -20px;
+        }
+
+    ::placeholder {
+        color: #4e4e4e; /* Adjust the color to your preference */
+        opacity: 1; 
+    }
+    input[name="username_email"] {
+        padding-left: 4px; 
+    }
+    @media (max-width: 768px) { 
+        button{
+            margin-left: 90px;
+        }
+    }
+
+
     </style>
     <style>
         /* Circle styles */
@@ -101,23 +133,6 @@
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
-        }
-
-        .back-to-home {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            z-index: 1000;
-        }
-        .back-to-home:hover {
-            background-color: #0056b3;
-            color: white;
         }
     </style>
 </head>
@@ -166,43 +181,39 @@
         <!-- dribbble -->
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
-    <div class="header-container">
+
+    <header class="header">
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+      </header>
+
     
-        <div class="title" >
-            <h1 class="site-name" style="color: #000;">Canvas</h1>
-            <i class="fa-solid fa-paintbrush" style="color: #000;"></i>
-         </div> 
-        <div class="header">
-            <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
-        </div>
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about-us.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-        </ul>
-    </div>
+       
     <div id="login" class="form-container mt-5">
-        <h3 class="pb-4">LOG IN</h3>
+        <h3 class="pb-4" style="color:goldenrod;">LOG IN</h3>
         <form action="/login" method="POST">
             <div id="input">
                 <input type="text" name="username_email" placeholder="Email or Username" required>
                 <i class="fa-solid fa-user"></i>
             </div>
             <div id="input">
-                <input type="password" name="password" placeholder="Enter Password" required>
-                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <i class="fa-solid fa-eye" id="togglePassword"></i>
             </div>
             <button type="submit">Log In</button>
         </form>
@@ -211,14 +222,14 @@
             <a href="https://www.google.com/"><img class="logo google-btn"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
             </a>
-            <a href="https://github.com/"><img class="logo"
+            <a href="https://github.com/"><img class="logo github-btn"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
             </a>
         </div>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
+        <p>Don't have an account? <br><a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
 
     </div>
-    <a href="index.html" class="back-to-home">◀  Back to Home</a>
+    
 
     <script src="src\Scripts\preloader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -240,6 +251,22 @@
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+
+         // Select the password field and the eye icon
+         const passwordInput = document.getElementById('password');
+         const togglePassword = document.getElementById('togglePassword');
+
+        // Add an event listener to the eye icon
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute between password and text
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+      
+            // Toggle the icon between eye and eye-slash
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
         });
 
         // Update the coordinates when the mouse moves
@@ -275,5 +302,7 @@
         // Start the animation
         animateCircles();
     </script>
+    
+    
 </body>
 </html> 

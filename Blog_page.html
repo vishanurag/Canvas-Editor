@@ -6,6 +6,7 @@
     <title>Blog Section</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/Styles/Style_Blog_page.css">
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <style>
       /* Circle styles */
       .circle {
@@ -19,6 +20,51 @@
         pointer-events: none;
         z-index: 99999999;
         transition: transform 0.1s ease-out;
+      }
+      /*  Navbar Styling  starts*/
+      .title {
+  display: flex;
+  align-items: left;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: center;
+}
+.navbar {
+  padding: 0;
+  background-color: #333; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: none;
+}
+
+/* Styling individual links in the navbar */
+.navbar a {
+  color: #a0a0a0; /* Link color */
+  font-size: 18px; /* Font size */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; 
+  border-radius: 0.5rem; /* Rounded corners for hover effect */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+/* navbar styling ends */
+      html{
+        scroll-behavior: smooth;
       }
     </style>
   </head>
@@ -44,17 +90,25 @@
 <div class="circle"></div>
 <div class="circle"></div>
 <div class="circle"></div>
-    <header>
-      <nav class = "navbar">
-        <div class = "container">
-          <a href = "index.html" class = "navbar-brand">Creative Canvas</a>
-          <div class = "navbar-nav">
-            <a href = "">home</a>
-            <a href = "">design</a>
-            <a href = "">Create blog</a>
-          </div>
-        </div>
-      </nav>
+
+  <nav class="navbar">
+    <div class="title">
+      <h1 class="site-name">Canvas Editor</h1>
+      <i class="fa-solid fa-paintbrush"></i>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="Blog_page.html">Blogs</a>
+      <a href="Faq.html">FAQ</a>
+      <a href="contributors.html">Contributors</a>
+      <a href="testimonial.html">Testimonial</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+<header>
       <div class = "banner">
         <div class = "container">
           <h1 class = "banner-title">
@@ -62,7 +116,7 @@
           </h1>
           <p>everything that you want to know about creativity</p>
           <form>
-            <input type = "text" class = "search-input" placeholder="find your food . . .">
+            <input type = "text" class = "search-input" placeholder="search blogs and designs. . .">
             <button type = "submit" class = "search-btn">
               <i class = "fas fa-search"></i>
             </button>
@@ -156,6 +210,7 @@
           <h2>Latest Blog</h2>
           <p>recent blogs about art & design</p>
         </div>
+
         <div class = "blog-content">
 
           <div class = "blog-item">
@@ -242,14 +297,22 @@
 
     <footer>
       <div class = "social-links">
+        <!-- Added responsiveness to icons -->
         <a href = "#"><i class = "fab fa-facebook-f"></i></a>
-        <a href = "#"><i class = "fab fa-twitter"></i></a>
+        <!-- Added the new Twitter(X) logo -->
+        <a href = "#"><i class = "fab fa-x-twitter"></i></a>
         <a href = "#"><i class = "fab fa-instagram"></i></a>
+        <!-- Added LinkedIn logo -->
+        <a href = "https://www.linkedin.com/in/anuragvishwakarma/"><i class = "fab fa-linkedin-in"></i></a>
         <a href = "#"><i class = "fab fa-pinterest"></i></a>
       </div>
       <span>Creative Canvas Blog Page</span>
     </footer>
-    
+     <!-- Back to Top Button -->
+     <button id="BacktoTop">
+      <span>↑</span>
+    </button>
+    <script src="src/Scripts/BacktoTop.js"></script>
     <script>
       // Coordinates for the cursor
       const coords = { x: 0, y: 0 };
