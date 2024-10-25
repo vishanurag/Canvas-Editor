@@ -28,7 +28,9 @@
 
 <style>
     body {
-        transition: background-color 0.3s, color 0.3s
+        transition: background-color 0.3s, color 0.3s;
+    }
+</style>
     
     <style>
         /* General Styles */
@@ -515,7 +517,8 @@ nav.dark-mode {
 
 <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
+    //Cannot redeclare block-scoped variable 'body'
+    // const body = document.body;
 
     function enableDarkMode() {
         body.classList.add('dark-mode');
@@ -556,7 +559,7 @@ nav.dark-mode {
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
 }
 
-            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+            /* background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff); */
         }
 
         .header {
@@ -612,9 +615,9 @@ nav.dark-mode {
             margin-top: 20px; */
 
 
-        /* } */ */
+        /* } */ 
 
-        /* } */ */
+        /* } */ 
 
         .btn {
             margin: 5px;
@@ -1442,7 +1445,11 @@ h2{
                 <br>
             </div>
             <!-- Back to Top Button -->
-            <button id="BacktoTop">
+            <button id="BacktoTop" style="padding: 2px;
+            margin: 5px;
+            height: 45px;
+            width: 40px;
+            border-radius: 50%;">
                 <span>↑</span>
             </button>
         </section>
@@ -2047,8 +2054,10 @@ h2{
             animateCircles();
         </script>
         <script>
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
+
+            //Cannot redeclare block-scoped variable 'darkModeToggle'
+            // const darkModeToggle = document.getElementById('darkModeToggle');
+            // const body = document.body;
         
             function enableDarkMode() {
                 body.classList.add('dark-mode');
@@ -2102,9 +2111,9 @@ h2{
         <script src="visi.js"></script>
 <!-- Footer section -->
 <footer>
-    <div class="footer-content">
+    <div class="footer-content" style="margin-left: 500px;">
         <p>© 2024 Canvas Editor | All rights reserved.</p>
-        <div class="footer-links">
+        <div class="footer-links" style="margin-left: 70px;">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
         </div>
