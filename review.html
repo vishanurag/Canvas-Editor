@@ -198,6 +198,86 @@ h2::after {
 .nav-item a:hover:after {
   width: 100%;
 }
+.title {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1 rem;
+            font-weight: bold;
+            justify-content: left;
+
+        }
+		.site-name {
+            margin: 0.5rem 0;
+        }
+		.header {
+			background-color: rgb(79, 79, 79);
+            padding: 10px 50px;
+            /* width: 100vw; */
+        }
+
+        .navbar {
+            padding: 0 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: none;
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 0rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            position: relative;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            color: #bdb5b5;
+        }
+
+        .nav-links a:after {
+            content: "";
+            position: absolute;
+            background-color: white;
+            height: 3px;
+            width: 0;
+            left: 0;
+            bottom: -10px;
+            transition: 0;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .site-name {
+            margin: 0.5rem 0;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            justify-content: center;
+        }
 
 </style>
 <style>
@@ -240,22 +320,20 @@ h2::after {
 	<div class="circle"></div>
 
 <div class="container pt-2 bg-body-tertiary pb-4">
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="review.html">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="blog.html">Blog</a>
-            </li>
-          </ul>
-    </div>
+    <header class="header">
+        <nav class="navbar"> 
+            <div class="title">
+                <h1 class="site-name">Canvas</h1>
+                <i class="fa-solid fa-paintbrush"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About</a>
+                <a href="review.html">Review</a>
+                <a href="blog.html">Blogs</a>
+            </div>
+        </nav>
+    </header>
     <div class="row">
         <img src="https://www.globitalmarketing.com/sg/wp-content/uploads/2021/07/df453we.png" alt="" height="400px" width="1400px">
     </div>
