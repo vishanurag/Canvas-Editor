@@ -511,6 +511,7 @@ html {
   background-color: #ffffffa8;
   border: 1px solid rgba(216, 94, 202, 0.41);
   box-shadow: 0 4px 8px rgba(216, 94, 202, 0.41);
+
   border-radius: 5px;
 }
 
@@ -590,8 +591,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+
   gap: 3rem; /* Spacing between links */
+
   flex-wrap: wrap;
+
   border-bottom: none;
 }
 ul{
