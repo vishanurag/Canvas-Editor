@@ -12,13 +12,168 @@
     <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
    <link rel="stylesheet" href="src/Styles/scroll.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="style.css">
+
+    
+    <button id="darkModeToggle">🌓</button>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    body {
+        transition: background-color 0.3s, color 0.3s
+    
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode header {
+            background-color: #333;
+        }
+
+        body.dark-mode footer {
+            background-color: #1a1a1a;
+            color: #bbb;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            cursor: pointer;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #45a049;
+        }
+
+        /* Social Media Icon Styles */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effects for different social media icons */
+        .social-icons a.facebook:hover {
+            color: #3b5998;
+        }
+
+        .social-icons a.twitter:hover {
+            color: #1da1f2;
+        }
+
+        .social-icons a.instagram:hover {
+            color: #e4405f;
+        }
+
+        .social-icons a.linkedin:hover {
+            color: #0077b5;
+        }
+
+        .social-icons a.github:hover {
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">Toggle Dark Mode</button>
+
+    <!-- Main content of the page -->
+   
+
+  
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+
+</body>
+</html>
+
+
 <style>
    body {
     overflow-x: hidden;
@@ -75,10 +230,35 @@
     background-color: #007bff; /* Primary color for buttons */
     color: white;
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
     background-color: #0056b3; /* Darker shade on hover */
+    transform: translate(-4px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.btn::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: transform 0.65,opacity 0.6s;
+    opacity: 0;
+
+}
+.btn:hover::after{
+    transform: translate(-50%,-50%)scale(1);
+    opacity: 1;
+}
+.btn:active{
+   transform: translate(1px);
+   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
 .palette {
@@ -221,11 +401,17 @@ nav.dark-mode {
 @media (max-width: 768px) {
     .footer {
         padding: 30px 0;
+
+    }
+    .dark-mode {
+        background-color: #1a1a1a;
+        color: #ffffff;
     }
 
-    .footer .share a {
-        font-size: 1.5rem;
-    }
+    .dark-mode .container {
+        background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
+        color:#007bff;
+
     #darkModeToggle {
         position: fixed;
         top: 6px;
@@ -245,74 +431,87 @@ nav.dark-mode {
 
     .footer .share a {
         font-size: 1.5rem;
+
     }
 
-    .footer .credit {
-        font-size: 0.8rem;
+    /* .dark-mode .canvas-container {
+        background: #2a2a2a;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    } */
+    .dark-mode #mainCanvas {
+        border-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+        /* background-color: #333333; */
     }
-/* General Styles */
-h2 {
-    margin-top: 50px;
-    color: black;
-    font-size: 50px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 
-.circle {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999999;
-    transition: transform 0.1s ease-out;
-}
+    .dark-mode .btn {
+        background-color: #444444;
+        color: #ffffff;
+    }
+    .dark-mode .form-control {
+        /* background-color: #333333; */
+        color: #ffffff;
+    }
 
-/* Dark Mode Styles */
-.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
+    .dark-mode .canvas-container {
+        background: #2a2a2a;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
 
-.dark-mode .container {
-    background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
-}
+    .dark-mode #mainCanvas {
+        border-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+        background-color: #333333;
+    }
+    .dark-mode .btn {
+        background-color: #444444;
+        color: #ffffff;
+    }
+    .dark-mode .form-control {
+        background-color: #333333;
+        color: #ffffff;
+    }
 
-.dark-mode .canvas-container {
-    background: #2a2a2a;
-}
+    .dark-mode #userForm {
+        background-color: #444444;
+    }
+    .dark-mode .footer {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    .dark-mode .footer .share a {
+        color: #ffffff;
+    }
+    .dark-mode .custom-popup {
+        background-color: rgba(255,255,255,0.1);
+    }
+    .dark-mode .popup-content {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    #darkModeToggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode #darkModeToggle {
+        background-color: #ffffff;
+        color: #333333;
+    }
+</style>
 
-.dark-mode #mainCanvas {
-    border-color: #ffffff;
-    background-color: #333333;
-}
-
-.dark-mode .btn {
-    background-color: #444444;
-}
-
-.dark-mode .form-control {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-.dark-mode .footer {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-.dark-mode .footer .share a {
-    color: #ffffff;
-}
-
-.body #darkModeToggle {
-    background-color: #ffffff;
-    color: #333333;
-}
   </style>
+
 
 <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
@@ -349,44 +548,73 @@ h2 {
         }
 
         .container {
-            max-width: 100%;
+            max-width: 170vw;
             margin: 0 auto;
             color: rgb(0, 0, 0);
+
+
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+}
+
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
-        
+
         .header {
             width: 100%;
             text-align: center;
-            margin-bottom: none;
+            height: 16vh;
         }
+        #logo{
+    height: 14vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    /* gap: 18rem; */
+
+    align-items: center;
+    background-color: rgb(247, 205, 252);
+    /* background-attachment: sticky; */
+    position: fixed;
+    z-index: 99;
+    /* position: sticky; */
+}
+.logo{
+    background-image: linear-gradient(to right, #e645d0, #9631d5); /* Gradient from left to right */
+    -webkit-background-clip: text; /* For WebKit browsers */
+    -moz-background-clip: text; /* For Mozilla browsers */
+    background-clip: text;
+    color: transparent;
+}
 
         .canvas-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: #d1d7ff;
             color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            max-width: 100%;
         }
 
-
-        #mainCanvas {
-            width: 100%;
-            height: auto; /* Adjust height dynamically */
+        /* #mainCanvas {
             max-width: 100%;
-            border: 2px solid #000000;
-            border-radius: 10px;
+            height: 400px;
+            /* Set a fixed height */
+            /* border: 2px solid #000000; */
+            /* border-radius: 10px;
+
+
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-            background-color: #ffffff;
-            cursor: crosshair;
-            margin-top: 20px;
-        }
+            background-color: #ffffff; */
+            /* Default background color */
+            /* cursor: crosshair;
+            margin-top: 20px; */
 
+
+        /* } */ */
+
+        /* } */ */
 
         .btn {
             margin: 5px;
@@ -434,14 +662,14 @@ h2 {
 
         .footer {
             width: 100%;
-            background-color: #ff8686d1;
+            background-color: #241835d8 !important;
             color: #c23e3e;
             text-align: center;
             border-start-start-radius: 5px;
             padding: 35px 350px;
             font-family: 'Arial', sans-serif;
             position: relative;
-            margin-top: 20px;
+            margin-top: 0px !important;
         }
 
         .footer .share {
@@ -507,7 +735,7 @@ h2 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
         }
-        
+
 
 .footer {
     width: 100%;
@@ -558,16 +786,6 @@ h2 {
         .footer .credit span:hover {
             color: #f1c40f;
         }
-        .dark-mode h2 {
-            color: #ffffff; /* White text for h2 in dark mode */
-        }
-
-    /* General h2 styling */
-        h2 {
-        font-size: 24px;
-        margin: 0;
-        font-weight: bold;
-        }
 
 
         /* Responsive design */
@@ -588,7 +806,6 @@ h2 {
         
                 
             /* Custom scrollbar for Chrome, Safari, and Opera */
-    
 
 h2{
     margin-top: 50px;
@@ -596,6 +813,39 @@ h2{
    font-size: 50px;
    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.dark-mode h2{
+    color: pink;
+}
+
+.welcome h2 {
+    font-size: 50px;
+            color: white; /* Initial color */
+            animation: colorChange 7s infinite ease-in-out; /* Smoother easing */
+            text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3), /* Main subtle shadow */
+        0 0 10px rgba(255, 255, 255, 0.5), /* Soft glow */
+        0 0 20px rgba(255, 255, 255, 0.4), /* Outer glow */
+        0 0 30px rgba(173, 216, 230, 0.6); /* Light blue glow effect *//* Subtle shadow */
+        }
+@keyframes colorChange {
+            0% {
+                color: #8361ff; /* Smooth soft red */
+            }
+            25% {
+                color: #f87aff; /* Light salmon */
+            }
+            50% {
+                color: #e100ff; /* Gold */
+            }
+            75% {
+                color: #90a3ee; /* Light green */
+            }
+            100% {
+                color: #87cefa; /* Light sky blue */
+            }
+        }
+
 
     </style>
     <style>
@@ -650,48 +900,48 @@ h2{
 .dark-mode .theme-container .welcome-text {
     color: #b0b0b0; /* Light grey text color for p in dark mode */
 }
+
 <style>
-        .share {
-            display: flex;
-            gap: 15px;
-        }
+    .share {
+        display: flex;
+        gap: 15px;
+    }
 
-        .share a {
-            color: #333; /* Default icon color */
-            font-size: 24px;
-            transition: color 0.3s ease;
-            text-decoration: none; /* Removes underline */
-        }
+    .share a {
+        color: #333; /* Default icon color */
+        font-size: 24px;
+        transition: color 0.3s ease;
+        text-decoration: none; /* Removes underline */
+    }
 
-        /* Remove default hover behavior */
-        .share a:hover {
-            color: #333; /* Default hover color same as icon color */
-        }
+    /* Remove default hover behavior */
+    .share a:hover {
+        color: #333; /* Default hover color same as icon color */
+    }
 
-        /* Specific hover colors for each platform */
-        .share a.fa-facebook-f:hover {
-            color: #3b5998; /* Facebook blue */
-        }
+    /* Specific hover colors for each platform */
+    .share a.fa-facebook-f:hover {
+        color: #3b5998; /* Facebook blue */
+    }
 
-        .share a.fa-x-twitter:hover {
-            color: #1DA1F2; /* Twitter blue */
-        }
+    .share a.fa-x-twitter:hover {
+        color: #1DA1F2; /* Twitter blue */
+    }
 
-        .share a.fa-instagram:hover {
-            color: #E1306C; /* Instagram pink */
-        }
+    .share a.fa-instagram:hover {
+        color: #E1306C; /* Instagram pink */
+    }
 
-        .share a.fa-linkedin-in:hover {
-            color: #0077b5; /* LinkedIn blue */
-        }
+    .share a.fa-linkedin-in:hover {
+        color: #0077b5; /* LinkedIn blue */
+    }
 
-        .share a.fa-pinterest:hover {
-            color: #E60023; /* Pinterest red */
-        }
-    </style>
+    .share a.fa-pinterest:hover {
+        color: #E60023; /* Pinterest red */
+    }
+</style>
 
-
-    </style>
+    
 </head>
 
 <body>
@@ -811,8 +1061,12 @@ h2{
    
 
     <div class="container p-0">
-       
         <div class="header">
+
+            <div id="logo">
+                <!-- <div class="logo-new" style="margin-left: 140px;"><img src="logo4.png" alt="" width="80px" height="auto""></div> -->
+            <h1 class="display-4 logo"><a href="/" style="color: inherit; text-decoration: none; font-family: 'Permanent Marker', cursive;">Creative Canvas Tool</a>
+
            
            
     
@@ -820,17 +1074,89 @@ h2{
           
             <img src="" alt="">
             <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
+
             </h1>
-            <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
         </div>
+
+    </div>
+            <p class="lead p-4">Design and create stunning visuals effortlessly!</p>
+        
+        <div class="row gap-5">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="review.html">Review</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="testimonial.html">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="privacy.html">Privacy</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blog_page.html">Blog</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="./Faq.html">FAQ</a>
+                </li>
+
+                <a class="nav-link" href="signup.html">Sign Up</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contributors.html">Contributors</a>
+
+                </li>
+                <li>
+                    <div class="gtranslate_wrapper"></div>
+            <script>
+              window.gtranslateSettings = {
+                default_language: "en",
+                detect_browser_language: true,
+                wrapper_selector: ".gtranslate_wrapper",
+                flag_size: 16,
+              };
+            </script>
+            <script
+            src="https://cdn.gtranslate.net/widgets/latest/popup.js"
+            defer
+          ></script>
+                </li>
+
+            </ul>
+        </div>
+        <div class="row text-center p-5 welcome" style="background-color: #241835d8; width: 100%; height: 40vh;">
+            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
+            <p style="color: rgb(223, 140, 235);">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
+                    class="fa-light fa-face-party"></i></p>
+        </div>
+        <div class="canvas-container p-3">
+
 
 
 
 <!--         <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
+
+            </h1>
+        </div>
+
             <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
             <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p> --> -->
-  <div class="row text-center p-5 theme-container">
+                    class="fa-light fa-face-party"></i></p>
+
+        <div class="row text-center p-5 theme-container">
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
@@ -889,12 +1215,11 @@ h2{
 
         <div class="canvas-container">
 
+
         
-            <b><h2>Draw Here !!!</h2></b>
-            
+           <div class="title-container">Draw Here</div>
 
             <canvas id="mainCanvas"></canvas>
-
             <div class="canvas-container">
 
 
@@ -903,7 +1228,7 @@ h2{
                         <div class="d-flex justify-content-around mb-2">
                             <div class="brush" style="width: 40%;">
                             <label for="brushSize">Brush Size:</label>
-                            <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;">
+                            <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;" onChange="changeBrushSize(event)">
                                 <option value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="15">15</option>
@@ -913,21 +1238,69 @@ h2{
                         </div>
                         <div class="colorpick" style="width: 40%;">
                             <label for="colorPicker">Color:</label>
-                            <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
+                            <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;" onChange="changeBrushColor(event)" >
                         </div>
                         </div>
+
+                        <div id="fontControls">
+                                <div class="control-group">
+                                    <label for="fontFamily">Font Family:</label>
+                                    <select id="fontFamily">
+                                        <option value="Arial">Arial</option>
+                                        <option value="Verdana">Verdana</option>
+                                        <option value="Times New Roman">Times New Roman</option>
+                                        <option value="Courier New">Courier New</option>
+                                    </select>
+                              
+
+                                    <label for="fontStyle">Font Style:</label>
+                                    <select id="fontStyle">
+                                        <option value="normal">Normal</option>
+                                        <option value="italic">Italic</option>
+                                        <option value="oblique">Oblique</option>
+                                    </select>
+
+                                
+                               
+                                    <label for="fontWeight">Font Weight:</label>
+                                    <select id="fontWeight">
+                                        <option value="normal">Normal</option>
+                                        <option value="bold">Bold</option>
+                                        <option value="bolder">Bolder</option>
+                                        <option value="lighter">Lighter</option>
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                        <option value="300">300</option>
+                                        <option value="400">400</option>
+                                        <option value="500">500</option>
+                                        <option value="600">600</option>
+                                        <option value="700">700</option>
+                                        <option value="800">800</option>
+                                        <option value="900">900</option>
+                                    </select>
+                                </div>
+
+                                
+                    
+                    
+                        </div>
+                    
+
+                          
+                     
+
                         <div class="d-flex justify-content-around  mb-2">
                             <div class="col-sm-6"  style="width: 40%;">
                                 <label for="bgImageUpload">Background Image:</label>
-                                <input type="file" id="bgImageUpload" accept="image/*">
+                                <input type="file" id="bgImageUpload" accept="image/*" onchange=uploadBackground(event)>
                             </div>
                             <div class="col-sm-6"  style="width: 40%;">
                                 <label for="bgColorPicker">Background Color:</label>
-                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker" style="height: 4rem;">
+                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker" style="height: 4rem;" onChange=changeBackground(event)>
                             </div>
                         </div>
                         <div class="wrapper edit justify-content-center gap-3 mt-5">
-                            <button  type="button" class="btn btn-primary" id="drawTextBtn">
+                            <button  type="button" class="btn" id="drawTextBtn">
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -951,7 +1324,7 @@ h2{
                         </div>
                         <div class="space"></div>
                     </form>
-                    <div class="tStyle d-md-flex justify-content-center gap-4">
+                    <div class="tStyle d-md-flex justify-content-center gap-4 py-3">
                         <button  type="button" class="btn btn-primary" id="capital">
                             <span></span>
                             <span></span>
@@ -981,7 +1354,6 @@ h2{
                             Italic
                         </button>
                     </div>
-
                     <!-- <div class="d-md-flex justify-content-evenly gap-1">
                         <button class="btn btn-primary" id="capital">Uppercase</button>
                         <button class="btn btn-primary" id="small">Lowercase</button>
@@ -989,11 +1361,7 @@ h2{
                         <button class="btn btn-primary" id="italic">Italic</button>
                     </div> -->
 
-                    <div class="rclStyle d-md-flex justify-content-center gap-3">
-
-                    
-                    <div class="rclStyle d-md-flex justify-content-evenly gap-1">
-
+                    <div class="rclStyle d-md-flex justify-content-center gap-3 py-3">
                         <button  type="button" class="btn btn-success" id="rectangleBtn">
                             <span></span>
                             <span></span>
@@ -1021,16 +1389,12 @@ h2{
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
                     </div> -->
-                    <div class="d-md-flex justify-content-center align-items-center">
+                    <div class="d-md-flex justify-content-center align-items-center py-3">
                         <input type="text" placeholder="Enter Text" name="textData" id="textData"
-                            class="form-control mw-100 w-70">
+                            class="form-control mw-100 w-50">
                         <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
                         <button type="button" class="btn btn-danger" id="clear">Clear</button>
                         <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                        <!-- Added save functionality  -->
-                        <button type="button" class="btn btn-primary" id="saveAsImageBtn">Save Image</button>
-
-                        
                     </div>
                     </form>
                 </div>
@@ -1039,25 +1403,23 @@ h2{
         </div>
 
 
-        <div class="contact-us-page">
-            <div class="contact-container">
+            </div>
+            <div class="container mt-5 contact-container">
                 <!-- Contact Us Section -->
-                <section id="contact" class="contact-section text-center py-5">
-                    <h2 class="mb-4">Contact Us</h2>
-                  <div class="social-media-links">
+                <section id="contact" class="contact-section text-center">
+                    <h2 class="py-4" style="font-size: 40px;">Contact Us</h2>
+                  <div class="social-media-links d-flex justify-content-center align-items-center">
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
-                  </div>
-                    <form id="contactForm" class="row g-3 justify-content-center">
+                </div>
+                    <form id="contactForm" class="row g-3 justify-content-center mt-5">
                         <!-- Name Field -->
                         <div class="col-md-4">
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
-                                    required pattern="[a-zA-Z ]+"
-                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                                oninput="this.setCustomValidity('')">
+                                    required>
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
@@ -1090,10 +1452,24 @@ h2{
                         <div class="col-md-8">
                             <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
                         </div>
+                        </div>
                     </form>
                 </section>
             </div>
         </div>
+
+                    <div class="container">
+                        <div class="cal row d-flex justify-content-center align-items-center p-5" style="width: 40%;">
+                            <h4 class="mb-4">Your<br><span>Message</span></h4>
+                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 30vh; width: 100%;" required></textarea>
+                            <p id="result"></p>
+                    <!-- Submit Button -->
+                    <div class="col-md-12 d-flex justify-content-center align-items-center">
+                        <!-- <div class="col-md-8">/ -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <!-- </div> -->
+                    </div>
+
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
                     </div>
@@ -1104,6 +1480,7 @@ h2{
                             <label for="message">Your Message (minimum 20 characters)</label>
                         </div>
                     </div> -->
+
 
                 </form>
             </div>
@@ -1129,9 +1506,10 @@ h2{
     </div>
             <div class="credit" style="font-size: 0.6rem;">
                 <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    Created by <a target="_blank" href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
                     2024
                 </p>
+                <a href="./src/contributor.html" id="ourvisionlink">Our Contributors</a>
                 <br>
             </div>
             <!-- Back to Top Button -->
@@ -1141,6 +1519,66 @@ h2{
         </section>
         
         <style>
+
+                body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f0f0f0;
+                            padding: 20px;
+                        }
+                        #fontControls {
+                            margin-bottom: 20px;
+                            padding: 15px;
+                            /* background-color: #ffffff; */
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px rgb(0, 0, 0,0.1);
+                            /* display: flex;
+                            justify-content: space-around; */
+                        }
+                        /* .control-group{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                        } */
+                        label {
+                            margin-right: 10px;
+                            font-weight: bold;
+                            color: #333;
+                        }
+                        select {
+                            margin-right: 20px;
+                            padding: 10px;
+                            font-size: 14px;
+                            border-radius: 5px;
+                            border: 2px solid #ccc;
+                            transition: border-color 0.3s, background-color 0.3s;
+                        }
+                        select:hover{
+                            border-color: #007bff;
+                            background-color: #e7f3e7;
+                        }
+                        select{
+                            animation: anima 0.5s ease-in-out;
+                        }
+                        @keyframes anima {
+                            from{
+                                opacity: 0;
+                                transform: translate(-10px);
+                            }
+                            
+                        }
+                        canvas {
+                            border: 2px solid #007bff;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 8px rgba(0,123, 255, 0.3);
+                        }
+                        select:focus{
+                            outline: none;
+                            border-color: #007bff;
+                            background-color: #e7f3ff;
+                        }
+                        select:focus{
+                            box-shadow: 0 0 10px rgba(0,123,255,0.5);
+                        }
             .custom-popup {
                 display: none;
                 position: fixed;
@@ -1175,6 +1613,103 @@ h2{
         </style>
         
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const fontFamilySelect = document.getElementById('fontFamily');
+                const fontStyleSelect = document.getElementById('fontStyle');
+                const fontWeightSelect = document.getElementById('fontWeight');
+                let currentFontFamily = 'Arial'; // Default font family
+                let currentFontStyle = 'normal'; // Default font style
+                let currentFontWeight = 'normal'; // Default font weight
+
+                const mainCanvas = document.getElementById('mainCanvas');
+                const ctx = mainCanvas.getContext('2d');
+
+                // Function to update the font style on canvas
+                function updateFont() {
+                    ctx.font = `${currentFontStyle} ${currentFontWeight} 16px ${currentFontFamily}`;
+                    highlightCanvas();
+                }
+                function highlightCanvas()
+                {
+                    mainCanvas.style.boxShadow='0 0 20px rgba(0,123,255,0.5)';
+                    setTimeout(()=>{
+                        mainCanvas.style.boxShadow='0 4px 8px rgba(0,123,255,0.3)';
+                    },300);
+    
+                }
+
+                // Apply the selected font family
+                fontFamilySelect.addEventListener('change', function () {
+                    currentFontFamily = this.value;
+                    updateFont(); // Update the font style on the canvas
+                });
+
+                // Apply the selected font style
+                fontStyleSelect.addEventListener('change', function () {
+                    currentFontStyle = this.value;
+                    updateFont(); // Update the font style on the canvas
+                });
+
+                // Apply the selected font weight
+                fontWeightSelect.addEventListener('change', function () {
+                    currentFontWeight = this.value;
+                    updateFont(); // Update the font style on the canvas
+                });
+
+                // Existing canvas drawing functions...
+                let drawing = false;
+                let eraserMode = false;
+                let currentColor = '#000000'; // Default color
+
+                function resizeCanvas() {
+                    mainCanvas.width = mainCanvas.offsetWidth;
+                    mainCanvas.height = mainCanvas.offsetHeight;
+                }
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+
+                function getPosition(event) {
+                    const rect = mainCanvas.getBoundingClientRect();
+                    const x = (event.clientX || event.touches[0].clientX) - rect.left;
+                    const y = (event.clientY || event.touches[0].clientY) - rect.top;
+                    return { x, y };
+                }
+
+                function startDrawing(event) {
+                    drawing = true;
+                    const { x, y } = getPosition(event);
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                }
+
+                function draw(event) {
+                    if (drawing) {
+                        const { x, y } = getPosition(event);
+                        if (eraserMode) {
+                            ctx.clearRect(x - 10, y - 10, 20, 20);
+                        } else {
+                            ctx.strokeStyle = currentColor; // Use the selected color
+                            ctx.lineWidth = 5; // Set a line width
+                            ctx.lineTo(x, y);
+                            ctx.stroke();
+                        }
+                    }
+                    event.preventDefault(); // Prevent scrolling when touching the canvas
+                }
+
+                function stopDrawing() {
+                    drawing = false;
+                    ctx.closePath();
+                }
+
+                mainCanvas.addEventListener('mousedown', startDrawing);
+                mainCanvas.addEventListener('mousemove', draw);
+                mainCanvas.addEventListener('mouseup', stopDrawing);
+
+                
+            });
+
+
             document.addEventListener('DOMContentLoaded', function() {
                 const contactForm = document.getElementById('contactForm');
                 const customPopup = document.getElementById('customPopup');
@@ -1217,8 +1752,6 @@ h2{
                     }
                 });
             });
-
-
         </script>
           
     </div>
@@ -1232,7 +1765,27 @@ h2{
 
 
         <script src="src\Scripts\preloader.js"></script>
-        <script src="src/Scripts/BacktoTop.js"></script>
+        <script>
+            const scrollToTopBtn = document.getElementById("BacktoTop");
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollToTopBtn.style.visibility = 'visible';
+                    scrollToTopBtn.style.opacity = '1';
+                } else {
+                    scrollToTopBtn.style.visibility = 'hidden';
+                    scrollToTopBtn.style.opacity = '0';
+                }
+            }
+
+            scrollToTopBtn.addEventListener("click", function () {
+                // Smooth scroll back to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -1275,6 +1828,7 @@ h2{
             let drawing = false;
             let eraserMode = false;
             let currentColor = '#000000'; // Default color
+           
 
             // Resize the canvas to fit the container
             function resizeCanvas() {
@@ -1300,6 +1854,13 @@ h2{
                 ctx.moveTo(x, y);
             }
 
+            let lineWidth=0;
+            function changeBrushSize(e)
+            {
+                lineWidth=e.target.value;
+            }
+
+
             // Draw on the canvas or erase as the mouse moves or touch moves
             function draw(event) {
                 if (drawing) {
@@ -1310,13 +1871,14 @@ h2{
                     } else {
                         // Set the stroke color and draw
                         ctx.strokeStyle = currentColor; // Use the selected color
-                        ctx.lineWidth = 5; // Set a line width
+                        ctx.lineWidth = lineWidth; // Set a line width
                         ctx.lineTo(x, y);
                         ctx.stroke();
                     }
                 }
                 event.preventDefault(); // Prevent scrolling when touching the canvas
             }
+           
 
             // Stop drawing or erasing when the mouse is released or touch ends
             function stopDrawing() {
@@ -1351,9 +1913,11 @@ h2{
             });
 
             // Change the current color when the color picker changes
-            document.getElementById('colorPicker').addEventListener('input', (event) => {
-                currentColor = event.target.value;
-            });
+            function changeBackground(e){
+                currentColor = e.target.value;
+                document.getElementById('mainCanvas').style.backgroundColor=currentColor;
+
+            }
 
             // Download the canvas as an image
             document.getElementById('mainCanvas').addEventListener('click', () => {
@@ -1363,8 +1927,27 @@ h2{
                 link.click();
             });
 
+            function uploadBackground(event) {
+    const file = event.target.files[0]; // Get the uploaded file
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            // Set the background image of the canvas
+            document.getElementById('mainCanvas').style.backgroundImage = `url(${e.target.result})`;
+            document.getElementById('mainCanvas').style.backgroundSize = 'cover'; // Optional: cover the entire canvas
+        };
+        reader.readAsDataURL(file); // Read the file as a data URL
+    }
+}
+
             let brushColor = '#000000';
-            let brushSize = 5;
+          
+            //change brush color
+            function changeBrushColor(e)
+            {
+               currentColor=e.target.value;
+                
+            }
 
             // Set initial canvas dimensions
             function setCanvasDimensions() {
@@ -1568,10 +2151,40 @@ h2{
         </script>
         <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
         </script>
-        <script src="src/Scripts/Save.js"></script>
 
+        <script src="src/Scripts/Save.js"></script>
+        <script>
+            window.gtranslateSettings = {
+                "default_language": "en",
+                "detect_browser_language": true,
+                "wrapper_selector": ".gtranslate_wrapper"
+            };
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        <br /><br />
+        <link rel="stylesheet" href="visi.css">
+        <!-- ############### Footer ############### -->
+        <div class="visitor-counter">
+        <div>Visitor</div>
+        <div class="website-counter"></div>
+        </div>
+        <script src="path/to/visitorCounter.js"></script>
+        <script src="./assets/css/visitors.css"></script>
+        <script src="visi.js"></script>
+<!-- Footer section -->
+<footer>
+    <div class="footer-content">
+        <p>© 2024 Canvas Editor | All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+ 
 </body>
 
 
+</html>
 
 </html>

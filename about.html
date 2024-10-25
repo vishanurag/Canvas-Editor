@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool</title>
-    
-    <!-- Single bootstrap inclusion to avoid redundancy -->
+
+    <!-- Single bootstrap inclusion -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/Styles/scroll.css">
     <!-- External styles -->
@@ -13,22 +14,56 @@
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
 
     <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
-          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         body {
             background-color: #eef1f5;
             font-family: 'Arial', sans-serif;
+            color: #333;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            color: black;
+            padding: 20px;
         }
 
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header img {
+            height: 100px;
+            width: auto;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .header h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .header h3 {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        /* Canvas Container */
         .canvas-container {
             display: flex;
             flex-direction: column;
@@ -38,15 +73,16 @@
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            margin: 20px 0;
         }
 
         #mainCanvas {
             width: 100%;
-            height: 60vh; /* Responsive height */
+            height: 60vh;
             border: 2px solid #007bff;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Default background color */
+            background-color: #f0f0f0;
         }
 
         .btn {
@@ -55,18 +91,13 @@
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #0056b3 !important;
             color: white;
             transform: scale(1.05);
         }
 
         .btn:active {
             transform: scale(0.95);
-        }
-
-        .palette {
-            margin: 15px 0;
-            text-align: center;
         }
 
         .form-control {
@@ -77,46 +108,40 @@
 
 <body>
     <!-- Preloader HTML omitted for brevity -->
-    
+
     <div class="container">
         <div class="header text-center">
-               
-            <h1 class="display-4" ">
-                <img src="download (1).png" style="height: 100px; width: auto; 
-                border-radius: 50px 50px 50px 50px ; margin-right: 70px;"> 
-     
-                <a href="/" style="color: inherit; text-decoration: none;margin-bottom: 50px;">Creative Canvas Tool Build the future</a>
+            <img src="download (1).png" alt="Logo">
+            <h1>
+                <a href="/">Creative Canvas Tool - Build the Future</a>
             </h1>
-            <br>
-            <h3 class="lead">  Introducing Creative Canvas: a dynamic tool designed to unleash your 
-                imagination and elevate your creative projects! Whether you’re an artist, designer, or simply someone who loves to explore ideas, Creative Canvas provides a flexible platform where you can sketch, brainstorm, and bring your visions to life. With intuitive features and an array of customizable templates, you can easily collaborate with others or work solo to refine your concepts. Dive into a world of creativity and let your ideas flow freely on your digital canvas!
-
-
-
-
-                
+            <h3 class="lead">
+                Introducing Creative Canvas: a dynamic tool designed to unleash your imagination and elevate your
+                creative projects! Whether you’re an artist, designer, or simply someone who loves to explore ideas,
+                Creative Canvas provides a flexible platform where you can sketch, brainstorm, and bring your visions to
+                life. With intuitive features and an array of customizable templates, you can easily collaborate with
+                others or work solo to refine your concepts. Dive into a world of creativity and let your ideas flow
+                freely on your digital canvas!
             </h3>
         </div>
 
         <!-- Canvas Section -->
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
-            
         </div>
     </div>
-    
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const canvas = document.getElementById('mainCanvas');
             const ctx = canvas.getContext('2d');
-            
+
             // Set canvas dimensions dynamically based on window size
             function setCanvasSize() {
                 canvas.width = window.innerWidth * 0.8;
                 canvas.height = window.innerHeight * 0.5;
             }
-            
+
             window.addEventListener('resize', setCanvasSize);
             setCanvasSize(); // Set the initial canvas size
 
@@ -142,12 +167,12 @@
             bgColorPicker && setCanvasBackgroundColor(bgColorPicker.value);
 
             // Background color change event
-            bgColorPicker?.addEventListener('input', function() {
+            bgColorPicker?.addEventListener('input', function () {
                 setCanvasBackgroundColor(this.value);
             });
 
             // Add text functionality
-            document.getElementById('addText')?.addEventListener('click', function() {
+            document.getElementById('addText')?.addEventListener('click', function () {
                 const textData = document.getElementById('textData').value;
                 const textSize = document.getElementById('textSize').value;
                 const textColor = document.getElementById('colorPicker').value;
@@ -165,18 +190,18 @@
                 }
             });
 
-            // Upload image functionality (completed function)
-            document.getElementById('uploadImage')?.addEventListener('click', function() {
+            // Upload image functionality
+            document.getElementById('uploadImage')?.addEventListener('click', function () {
                 const input = document.createElement('input');
                 input.type = 'file';
                 input.accept = 'image/*';
-                input.onchange = function(e) {
+                input.onchange = function (e) {
                     const file = e.target.files[0];
                     const reader = new FileReader();
-                    
-                    reader.onload = function(event) {
+
+                    reader.onload = function (event) {
                         const img = new Image();
-                        img.onload = function() {
+                        img.onload = function () {
                             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                             saveCanvasState(); // Save state after uploading image
                         };
@@ -188,5 +213,15 @@
             });
         });
     </script>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    
 </body>
+
 </html>

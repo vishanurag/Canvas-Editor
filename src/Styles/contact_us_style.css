@@ -33,21 +33,43 @@
     outline: none;
     box-shadow: none;
   }
-
+  #contact h2{
+    margin-top: 0;
+    color: black;
+  
+  }
 .contact-us-page{
   display:flex;
   justify-content: center;
   align-items:center;
 }
 
-.contact-container{
+/* .contact-container{
   width:100%;
+
   background: #000000;
+} */
+
+#contact{
+  width:100%;
+  background: #ffffffa8;
+  border: 1px solid rgba(216, 94, 202, 0.41);
+
+
 }
 
 #contact{
   width:100%;
-  background: rgb(0, 0, 0);
+  background: linear-gradient(135deg,#00afb9,#fed9b7);
+
+  background: #000000;
+} */
+
+#contact{
+  width:100%;
+  background: #ffffffa8;
+  border: 1px solid rgba(216, 94, 202, 0.41);
+
 }
 
 #contactForm textarea{
@@ -59,4 +81,13 @@
   margin-left:6em;
   text-align: center;
   padding:9rem;
+
 }
+
+
+  background-color: #46cdcf;
+}
+
+}
+
+
