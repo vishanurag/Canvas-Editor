@@ -16,16 +16,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     
-    <button id="darkModeToggle">🌓</button>
+     <button id="darkModeToggle">🌓</button>
     <link rel="stylesheet" href="style.css">
 
+ 
 <style>
     body {
         transition: background-color 0.3s, color 0.3s
@@ -532,15 +540,50 @@ nav.dark-mode {
             disableDarkMode();
         } else {
             enableDarkMode();
-        }
-    });
+         }
 
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        enableDarkMode();
-    }
-</script>
-<style>
-        
+        .dark-mode .footer {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .dark-mode .footer .share a {
+            color: #ffffff;
+        }
+
+        .dark-mode .custom-popup {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode .popup-content {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode #darkModeToggle {
+            background-color: #ffffff;
+            color: #333333;
+        }
+    </style>
+
+
+    <style>
         body {
             overflow-x: hidden;
             background-color: #ffffff;
@@ -551,14 +594,10 @@ nav.dark-mode {
             max-width: 170vw;
             margin: 0 auto;
             color: rgb(0, 0, 0);
-
-
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
 }
 
-            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
-        }
-
+ 
         .header {
             width: 100%;
             text-align: center;
@@ -660,6 +699,7 @@ nav.dark-mode {
 
         /* Footer Styling */
 
+
         .footer {
             width: 100%;
             background-color: #241835d8 !important;
@@ -736,6 +776,7 @@ nav.dark-mode {
 
         }
 
+ 
 
 .footer {
     width: 100%;
@@ -749,7 +790,7 @@ nav.dark-mode {
     margin-top: 20px;
 }
 
-
+ 
         .footer .share {
             display: flex;
             justify-content: center;
@@ -787,6 +828,21 @@ nav.dark-mode {
             color: #f1c40f;
         }
 
+         .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: black;
+
+            width: fit-content;
+        }
+
+        .canvas-container {
+            width: 85%;
+        }
+ 
 
         /* Responsive design */
         @media (max-width: 768px) {
@@ -801,7 +857,171 @@ nav.dark-mode {
             .footer .credit {
                 font-size: 0.8rem;
             }
+ 
+            .lead {
+                display: none;
+            }
+
+            .header .logo {
+                font-size: 1.4rem;
+            }
+
+            #navbar {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100%;
+                width: 250px;
+                flex-direction: column;
+                background-color: #333;
+                transition: right 0.3s ease;
+                padding-top: 60px;
+                /* For space under the header */
+            }
+
+            .hamburger {
+                display: block;
+                margin: 10px;
+                position: absolute;
+                z-index: 88;
+                top: 0;
+
+                left: 350px;
+
+            }
+
+            .nav-item a {
+                padding: 12px;
+                text-align: left;
+                text-decoration: none;
+                color: white;
+                display: block;
+                transition: background-color 0.3s ease;
+                padding-left: 40px;
+            }
+
+            /* .nav-item a:hover {
+                background-color: #575757;
+            } */
+
+            #navbar.show {
+
+                right: 0px;
+            }
+
+            .hamburger.open {
+                content: '✖';
+
+            }
+
+            .header {
+                display: flex;
+            }
+
+            .p-5 {
+                padding: 3rem 0rem !important;
+            }
+
+            h2 {
+                margin-top: 0 !important;
+                font-size: 1.7rem !important;
+            }
+
+            .row p {
+                font-size: 0.8rem !important;
+            }
+
+            .row {
+                width: 100%;
+            }
+
+            .canvas-container {
+                width: 100%;
+                padding: 20px 0px;
+            }
+
+            #mainCanvas {
+                width: 100% !important;
+                margin: 0;
+            }
+
+            #darkModeToggle {
+                top: 0px;
+                left: 4px;
+            }
+
+            #userForm {
+                margin: 0;
+            }
+
+            .contact-section {
+                max-width: none;
+                width: 100%;
+            }
+
+            .form-floating .form-control {
+                width: 100%;
+            }
+
+            #contact {
+                padding: 30px 0px;
+            }
+
+            .container {
+                padding: 0;
+                width: 100% !important;
+            }
         }
+
+
+
+        /* Custom scrollbar for Chrome, Safari, and Opera */
+        body::-webkit-scrollbar {
+            width: 10px;
+            /* Width of the scrollbar */
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Track color */
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #f9f9f9;
+            /* Thumb color */
+            border-radius: 10px;
+            /* Rounded corners */
+            transition: background 0.3s ease, height 0.3s ease;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: cornflowerblue;
+            /* Thumb color on hover */
+            background: linear-gradient(135deg, cornflowerblue, rgb(195, 226, 237));
+        }
+
+
+        body::-webkit-scrollbar-thumb {
+            background: #f9f9f9;
+            /* Thumb color */
+            border-radius: 10px;
+            /* Rounded corners */
+            transition: background 0.3s ease, height 0.3s ease;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: cornflowerblue;
+            /* Thumb color on hover */
+            background: linear-gradient(135deg, cornflowerblue, rgb(195, 226, 237));
+        }
+
+        h2 {
+            margin-top: 50px;
+            color: black;
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+         }
 
         
                 
@@ -847,7 +1067,7 @@ h2{
         }
 
 
-    </style>
+     </style>
     <style>
         /* Circle styles */
         .circle {
@@ -919,234 +1139,67 @@ h2{
                 alt=""></a>
     </div>
 
-      
-        <ul class="nav nav-tabs">
-         
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+     <div class="container pt-2">
+        <div>
+            <div class="header">
+                <img src="" alt="">
+                <h1 class="display-4">
+                    <a href="/" style="color: inherit; text-decoration: none;" class="logo">Creative Canvas Tool</a>
+                </h1>
+                <p class="lead">Design and create stunning visuals effortlessly!</p>
+            </div>
+            <div class="row">
+                <!-- Hamburger Icon for mobile -->
+                <button class="hamburger" id="menu-toggle" onclick="toggleMenu()">&#9776;</button>
 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about-us.html">About Us</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="review.html">Review</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">Testimonial</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="privacy.html">Privacy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="tutorial.html">Tutorial</a>
-              </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Blog_page.html">Blog</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="./Faq.html">FAQ</a>
-            </li>
-
-            <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contributors.html">Contributors</a>
-
-            </li>
-          
-          
-            <li>
-                <div class="gtranslate_wrapper"></div>
-        <script>
-          window.gtranslateSettings = {
-            default_language: "en",
-            detect_browser_language: true,
-            wrapper_selector: ".gtranslate_wrapper",
-            flag_size: 16,
-          };
-        </script>
-        <script
-        src="https://cdn.gtranslate.net/widgets/latest/popup.js"
-        defer
-      ></script>
-            </li>
-            
-            
-            <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
-          
-        </ul>
-    </div>
-  
-   
-
-    <div class="container p-0">
-        <div class="header">
-
-            <div id="logo">
-                <!-- <div class="logo-new" style="margin-left: 140px;"><img src="logo4.png" alt="" width="80px" height="auto""></div> -->
-            <h1 class="display-4 logo"><a href="/" style="color: inherit; text-decoration: none; font-family: 'Permanent Marker', cursive;">Creative Canvas Tool</a>
-
-           
-           
-    
-           
-          
-            <img src="" alt="">
-            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
-
-            </h1>
+                <ul class="nav nav-tabs" id="navbar">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonial.html">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog_page.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contributors.html">Contributors</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-    </div>
-            <p class="lead p-4">Design and create stunning visuals effortlessly!</p>
-        
-        <div class="row gap-5">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="review.html">Review</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="testimonial.html">Testimonial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="privacy.html">Privacy</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Blog_page.html">Blog</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="./Faq.html">FAQ</a>
-                </li>
-
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contributors.html">Contributors</a>
-
-                </li>
-                <li>
-                    <div class="gtranslate_wrapper"></div>
-            <script>
-              window.gtranslateSettings = {
-                default_language: "en",
-                detect_browser_language: true,
-                wrapper_selector: ".gtranslate_wrapper",
-                flag_size: 16,
-              };
-            </script>
-            <script
-            src="https://cdn.gtranslate.net/widgets/latest/popup.js"
-            defer
-          ></script>
-                </li>
-
-            </ul>
-        </div>
-        <div class="row text-center p-5 welcome" style="background-color: #241835d8; width: 100%; height: 40vh;">
-            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-            <p style="color: rgb(223, 140, 235);">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p>
-        </div>
-        <div class="canvas-container p-3">
+ 
 
 
 
+         <div class="canvas-container">
 
-<!--         <!-- <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
+            <b>
+                <h2>Draw Here !!!</h2>
+            </b>
 
-            </h1>
-        </div>
-
-            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p>
-
-        <div class="row text-center p-5 theme-container">
-            <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
-            <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-
-        </div>
-
-<style>
-    .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: black;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 99999999;
-        transition: transform 0.1s ease-out;
-    }
-
-    /* Animation for welcome text */
-    .animated-text {
-        animation: fadeIn 2s ease-in-out forwards, colorChange 5s infinite alternate;
-        opacity: 1; /* Keep text fully visible */
-        transform: translateY(0); /* Start in original position */
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0; /* Start invisible */
-            transform: translateY(-20px); /* Start slightly above */
-        }
-        100% {
-            opacity: 1; /* Fully visible */
-            transform: translateY(0); /* End in original position */
-        }
-    }
-
-    @keyframes colorChange {
-        0% {
-            color: red; /* Start color */
-        }
-        25% {
-            color: yellow; /* Change to yellow */
-        }
-        50% {
-            color: green; /* Change to green */
-        }
-        75% {
-            color: blue; /* Change to blue */
-        }
-        100% {
-            color: purple; /* Change to purple */
-        }
-    }
-</style>
-
-        <div class="canvas-container">
-
+            <canvas id="mainCanvas"></canvas>
+ 
 
         
            <div class="title-container">Draw Here</div>
 
-            <canvas id="mainCanvas"></canvas>
-            <div class="canvas-container">
+ 
+             <canvas id="mainCanvas"></canvas>
+             <div class="canvas-container">
 
 
                 <div class="canvas-palette">
@@ -1325,84 +1378,178 @@ h2{
                     </form>
                 </div>
 
-                
+ 
         </div>
 
+        </nav>
+        </header>
 
-            </div>
-            <div class="container mt-5 contact-container">
-                <!-- Contact Us Section -->
-                <section id="contact" class="contact-section text-center">
-                    <h2 class="py-4" style="font-size: 40px;">Contact Us</h2>
-                  <div class="social-media-links d-flex justify-content-center align-items-center">
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
+        <div class="canvas-container">
+            <!-- <canvas id="mainCanvas"></canvas> -->
+
+
+            <div class="canvas-palette">
+                <form id="userForm" class="d-flex flex-column">
+                    <div class="d-flex gap-3 mb-2">
+                        <label for="brushSize">Brush Size:</label>
+                        <select name="brushSize" class="form-select" id="brushSize">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                        </select>
+                        <label for="colorPicker">Color:</label>
+                        <input type="color" name="colorPicker" class="form-control" id="colorPicker">
+                    </div>
+                    <div class="d-flex row gap-3 mb-2">
+                        <div class="col-sm-6">
+                            <label for="bgImageUpload">Background Image:</label>
+                            <input type="file" id="bgImageUpload" accept="image/*">
+
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="bgColorPicker">Background Color:</label>
+                            <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker">
+                        </div>
+                    </div>
+                    <div class="edit">
+                        <button type="button" class="btn btn-primary" id="drawTextBtn">Brush</button>
+                        <button type="button" class="btn btn-secondary" id="clearCanvasBtn">Clear Canvas</button>
+                        <button type="button" class="btn btn-danger" id="eraserBtn">Eraser</button>
+                    </div>
+                </form>
+                <div class="d-md-flex justify-content-evenly gap-1">
+                    <button class="btn btn-primary" id="capital">Uppercase</button>
+                    <button class="btn btn-primary" id="small">Lowercase</button>
+                    <button class="btn btn-primary" id="bold">Bold</button>
+                    <button class="btn btn-primary" id="italic">Italic</button>
                 </div>
-                    <form id="contactForm" class="row g-3 justify-content-center mt-5">
-                        <!-- Name Field -->
-                        <div class="col-md-4">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
-                                    required>
-                                <label for="name">Your Name</label>
-                            </div>
-                        </div>
-                        <!-- Email Field -->
-                        <div class="col-md-4">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Your Email" required>
-                                <label for="email">Your Email</label>
-                            </div>
-                        </div>
-                        <!-- Subject Field -->
-                        <div class="col-md-8">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" name="subject"
-                                    placeholder="Subject" required>
-                                <label for="subject">Subject</label>
-                            </div>
-                        </div>
-
-                        <!-- Message Field -->
-                        <div class="col-md-8">
-                            <div class="form-floating">
-                                <textarea class="form-control" id="message" name="message" placeholder="Your Message"
-                                    style="height: 150px; align-items: center;" required></textarea>
-                                <label for="message">Your Message</label>
-                            </div>
-                        </div>
-                        <!-- Submit Button -->
-                        <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-                        </div>
-                        </div>
-                    </form>
-                </section>
+                <div class="palette">
+                    <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                    <button id="circleBtn" class="btn btn-success">Circle</button>
+                    <button id="lineBtn" class="btn btn-success">Line</button>
+                </div>
+                <div class="d-md-flex justify-content-center gap-2 mb-3">
+                    <input type="text" placeholder="Enter Text" name="textData" id="textData"
+                        class="form-control mw-100 w-75 mb-3">
+                    <button type="button" class="btn btn-primary" id="save">Save</button>
+                    <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                    <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                </div>
+                </form>
             </div>
-        </div>
-
-                    <div class="container">
-                        <div class="cal row d-flex justify-content-center align-items-center p-5" style="width: 40%;">
-                            <h4 class="mb-4">Your<br><span>Message</span></h4>
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 30vh; width: 100%;" required></textarea>
-                            <p id="result"></p>
-                    <!-- Submit Button -->
-                    <div class="col-md-12 d-flex justify-content-center align-items-center">
-                        <!-- <div class="col-md-8">/ -->
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        <!-- </div> -->
+         </div>
+        <div class="container mt-5">
+            <!-- Contact Us Section -->
+            <section id="contact" class="contact-section text-center py-5">
+                <h2 class="mb-4">Contact Us</h2>
+                <div class="social-media-links">
+                    <img class="link-img"
+                        src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
+                    <img class="link-img"
+                        src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">
+                    <img class="link-img"
+                        src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
+                    <img class="link-img"
+                        src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
+                </div>
+                <form id="contactForm" class="row g-3 justify-content-center">
+                    <!-- Name Field -->
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
+                                required>
+                            <label for="name">Your Name</label>
+ 
+                        </div>
+                    </div>
+                    <!-- Email Field -->
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"
+                                required>
+                            <label for="email">Your Email</label>
+                        </div>
+                    </div>
+                    <!-- Subject Field -->
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject"
+                                required>
+                            <label for="subject">Subject</label>
+                        </div>
                     </div>
 
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                     <!-- Message Field -->
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message"
+                                style="height: 150px" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="col-md-8">
+                        <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
+                    </div>
+                </form>
+            </section>
+        </div>
 
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                    </div>
+                    <!-- Message Field -->
+
+ 
+
+    </div>
+
+    <!-- Custom Popup -->
+    <div id="customPopup" class="custom-popup">
+        <div class="popup-content">
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully. We'll get back to you soon!</p>
+            <button id="closePopup" class="btn btn-primary">Close</button>
+            >>>>>>> main
+        </div>
+        <div class=" w-100 d-flex justify-content-center mt-5">
+            <!-- Contact Us Section -->
+            <section id="contact" class="contact-section text-center py-5">
+                <h2 class="mb-4">Contact Us</h2>
+                <form id="contactForm" class="row g-3 justify-content-center">
+                    <!-- Name Field -->
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
+                                required>
+                            <label for="name">Your Name</label>
+                        </div>
+                    </div>
+                    <!-- Email Field -->
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"
+                                required>
+                            <label for="email">Your Email</label>
+                        </div>
+                    </div>
+                    <!-- Subject Field -->
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject"
+                                required>
+                            <label for="subject">Subject</label>
+                        </div>
                     </div>
                     Message Field -->
                     <!-- <div class="col-md-8">
                         <div class="form-floating">
-                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message"
+                                style="height: 150px" required></textarea>
                             <label for="message">Your Message (minimum 20 characters)</label>
                         </div>
                     </div> -->
@@ -1411,7 +1558,7 @@ h2{
                 </form>
             </div>
         </div>
-        
+
         <!-- Custom Popup -->
         <div id="customPopup" class="custom-popup">
             <div class="popup-content">
@@ -1421,6 +1568,7 @@ h2{
             </div>
         </div>
 
+ 
         <section class="footer" id="footer">
             <!-- Added responsiveness to icons -->
             <div class="share">
@@ -1447,6 +1595,7 @@ h2{
             </button>
         </section>
         
+ 
         <style>
 
                 body {
@@ -1516,9 +1665,9 @@ h2{
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0,0,0,0.5);
+                background-color: rgba(0, 0, 0, 0.5);
             }
-        
+
             .popup-content {
                 background-color: black;
                 margin: 15% auto;
@@ -1528,21 +1677,22 @@ h2{
                 max-width: 500px;
                 border-radius: 5px;
                 text-align: center;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
-        
+
             .popup-content h3 {
                 color: #007bff;
                 margin-bottom: 15px;
             }
-        
+
             .popup-content p {
                 margin-bottom: 20px;
             }
         </style>
-        
+
         <script>
             document.addEventListener('DOMContentLoaded', function () {
+ 
                 const fontFamilySelect = document.getElementById('fontFamily');
                 const fontStyleSelect = document.getElementById('fontStyle');
                 const fontWeightSelect = document.getElementById('fontWeight');
@@ -1640,149 +1790,173 @@ h2{
 
 
             document.addEventListener('DOMContentLoaded', function() {
-                const contactForm = document.getElementById('contactForm');
+                 const contactForm = document.getElementById('contactForm');
                 const customPopup = document.getElementById('customPopup');
                 const closePopup = document.getElementById('closePopup');
-                
-                contactForm.addEventListener('submit', function(e) {
+
+                contactForm.addEventListener('submit', function (e) {
                     e.preventDefault(); // Prevent the form from submitting normally
-                
+
                     // Get form values
                     const name = document.getElementById('name').value;
                     const email = document.getElementById('email').value;
                     const subject = document.getElementById('subject').value;
                     const message = document.getElementById('message').value;
-                
+
                     // Check if message is at least 20 characters long
                     if (message.length < 20) {
                         alert('Please enter a message with at least 20 characters.');
                         return;
                     }
-                
+
                     // Here you would typically send the form data to a server
                     console.log('Form submitted:', { name, email, subject, message });
-                
+
                     // Show custom popup
                     customPopup.style.display = 'block';
-                
+
                     // Reset the form
                     this.reset();
                 });
-                
+
                 // Close popup when the close button is clicked
-                closePopup.addEventListener('click', function() {
+                closePopup.addEventListener('click', function () {
                     customPopup.style.display = 'none';
                 });
-                
+
                 // Close popup when clicking outside the popup content
-                window.addEventListener('click', function(event) {
+                window.addEventListener('click', function (event) {
                     if (event.target === customPopup) {
                         customPopup.style.display = 'none';
                     }
                 });
-            });
+            }); 
         </script>
-          
-    </div>
-        
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./src/Scripts/edit.js"></script> -->
 
+ 
 
-        <script src="src\Scripts\preloader.js"></script>
-        <script>
-            const scrollToTopBtn = document.getElementById("BacktoTop");
-            window.onscroll = function () {
-                scrollFunction();
-            };
+        <div class="credit" style="font-size: 0.6rem;">
+            <p>
+                Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                2024
+            </p>
+            <br>
+        </div>
+        <!-- Back to Top Button -->
+        <button id="BacktoTop">
+            <span>↑</span>
+        </button>
+    </section>
 
-            function scrollFunction() {
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    scrollToTopBtn.style.visibility = 'visible';
-                    scrollToTopBtn.style.opacity = '1';
-                } else {
-                    scrollToTopBtn.style.visibility = 'hidden';
-                    scrollToTopBtn.style.opacity = '0';
-                }
+    <script src="src\Scripts\preloader.js"></script>
+    <script>
+        const scrollToTopBtn = document.getElementById("BacktoTop");
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.visibility = 'visible';
+                scrollToTopBtn.style.opacity = '1';
+            } else {
+                scrollToTopBtn.style.visibility = 'hidden';
+                scrollToTopBtn.style.opacity = '0';
             }
+        }
 
-            scrollToTopBtn.addEventListener("click", function () {
-                // Smooth scroll back to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        </script>
+        scrollToTopBtn.addEventListener("click", function () {
+            // Smooth scroll back to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const fontBtn = document.getElementById('fontBtn');
-                const fontOptions = document.getElementById('fontOptions');
-                const options = document.querySelectorAll('.font-option');
-                const radius = 100;  // Increase this value to create more spacing between buttons
-                const startAngle = -30;  // Adjust this for positioning of the arc
-                const offsetX = 300;  // Move the arc further to the right
-                const offsetY = 70;  // Adjust vertical position of the arc
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fontBtn = document.getElementById('fontBtn');
+            const fontOptions = document.getElementById('fontOptions');
+            const options = document.querySelectorAll('.font-option');
+            const radius = 100;  // Increase this value to create more spacing between buttons
+            const startAngle = -30;  // Adjust this for positioning of the arc
+            const offsetX = 300;  // Move the arc further to the right
+            const offsetY = 70;  // Adjust vertical position of the arc
 
-                fontBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
-                    if (fontOptions.style.display === 'block') {
-                        const totalOptions = options.length;
-                        options.forEach((option, index) => {
-                            const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
-                            const x = Math.cos(angle) * radius + offsetX + 20;
-                            const y = Math.sin(angle) * radius + offsetY + 50;
-                            option.style.transform = `translate(${x}px, ${y}px)`;
-                        });
-                    } else {
-                        options.forEach(option => {
-                            option.style.transform = 'translate(0, 0)';
-                        });
-                    }
-                });
-
-                options.forEach(option => {
-                    option.addEventListener('click', function (e) {
-                        e.preventDefault(); // Prevent default button action
-                        console.log(`${this.id} selected`);
+            fontBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
+                if (fontOptions.style.display === 'block') {
+                    const totalOptions = options.length;
+                    options.forEach((option, index) => {
+                        const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
+                        const x = Math.cos(angle) * radius + offsetX + 20;
+                        const y = Math.sin(angle) * radius + offsetY + 50;
+                        option.style.transform = `translate(${x}px, ${y}px)`;
                     });
-                });
+                } else {
+                    options.forEach(option => {
+                        option.style.transform = 'translate(0, 0)';
+                    });
+                }
             });
 
+
+            options.forEach(option => {
+                option.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default button action
+                    console.log(`${this.id} selected`);
+                });
+            });
+        });
+ 
             const mainCanvas = document.getElementById('mainCanvas');
             const ctx = mainCanvas.getContext('2d');
             let drawing = false;
             let eraserMode = false;
             let currentColor = '#000000'; // Default color
            
+ 
+        // Resize the canvas to fit the container
+        function resizeCanvas() {
+            mainCanvas.width = mainCanvas.offsetWidth;
+            mainCanvas.height = mainCanvas.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-            // Resize the canvas to fit the container
-            function resizeCanvas() {
-                mainCanvas.width = mainCanvas.offsetWidth;
-                mainCanvas.height = mainCanvas.offsetHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
+        // Function to get the mouse or touch position
+        function getPosition(event) {
+            const rect = mainCanvas.getBoundingClientRect();
+            const x = (event.clientX || event.touches[0].clientX) - rect.left;
+            const y = (event.clientY || event.touches[0].clientY) - rect.top;
+            return { x, y };
 
-            // Function to get the mouse or touch position
-            function getPosition(event) {
-                const rect = mainCanvas.getBoundingClientRect();
-                const x = (event.clientX || event.touches[0].clientX) - rect.left;
-                const y = (event.clientY || event.touches[0].clientY) - rect.top;
-                return { x, y };
-            }
+        }
 
-            // Start drawing or erasing when the mouse or touch is pressed
-            function startDrawing(event) {
-                drawing = true;
+        // Start drawing or erasing when the mouse or touch is pressed
+        function startDrawing(event) {
+            drawing = true;
+            const { x, y } = getPosition(event);
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        // Draw on the canvas or erase as the mouse moves or touch moves
+        function draw(event) {
+            if (drawing) {
                 const { x, y } = getPosition(event);
-                ctx.beginPath();
-                ctx.moveTo(x, y);
-            }
-
+                if (eraserMode) {
+                    // Erase by clearing a small area
+                    ctx.clearRect(x - 10, y - 10, 20, 20);
+ 
             let lineWidth=0;
             function changeBrushSize(e)
             {
@@ -1804,58 +1978,52 @@ h2{
                         ctx.lineTo(x, y);
                         ctx.stroke();
                     }
-                }
-                event.preventDefault(); // Prevent scrolling when touching the canvas
+                 }
             }
-           
+             event.preventDefault(); // Prevent scrolling when touching the canvas
+        }
+ 
 
-            // Stop drawing or erasing when the mouse is released or touch ends
-            function stopDrawing() {
-                drawing = false;
-                ctx.closePath();
-            }
 
-            //Event listeners for mouse interactions
-            mainCanvas.addEventListener('mousedown', startDrawing);
-            mainCanvas.addEventListener('mousemove', draw);
-            mainCanvas.addEventListener('mouseup', stopDrawing);
+        // Stop drawing or erasing when the mouse is released or touch ends
+        function stopDrawing() {
+            drawing = false;
+            ctx.closePath();
+        }
 
-            // Event listeners for touch interactions
-            mainCanvas.addEventListener('touchstart', (event) => {
-                startDrawing(event);
-            });
-            mainCanvas.addEventListener('touchmove', (event) => {
-                draw(event);
-            });
-            mainCanvas.addEventListener('touchend', stopDrawing);
+        //Event listeners for mouse interactions
+        mainCanvas.addEventListener('mousedown', startDrawing);
+        mainCanvas.addEventListener('mousemove', draw);
+        mainCanvas.addEventListener('mouseup', stopDrawing);
 
-            // Clear the entire canvas
-            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-            });
+        // Event listeners for touch interactions
+        mainCanvas.addEventListener('touchstart', (event) => {
+            startDrawing(event);
+        });
+        mainCanvas.addEventListener('touchmove', (event) => {
+            draw(event);
+        });
+        mainCanvas.addEventListener('touchend', stopDrawing);
 
-            // Toggle eraser mode
-            document.getElementById('eraserMode').addEventListener('click', () => {
-                eraserMode = !eraserMode;
-                mainCanvas.classList.toggle('eraser', eraserMode);
-                document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
-            });
+        // Clear the entire canvas
+        document.getElementById('clearCanvas').addEventListener('click', () => {
+            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+        });
 
+ 
             // Change the current color when the color picker changes
             function changeBackground(e){
                 currentColor = e.target.value;
                 document.getElementById('mainCanvas').style.backgroundColor=currentColor;
 
             }
+ 
+        // Change the current color when the color picker changes
+        document.getElementById('colorPicker').addEventListener('input', (event) => {
+            currentColor = event.target.value;
+        });
 
-            // Download the canvas as an image
-            document.getElementById('mainCanvas').addEventListener('click', () => {
-                const link = document.createElement('a');
-                link.download = 'canvas-drawing.png';
-                link.href = mainCanvas.toDataURL('image/png');
-                link.click();
-            });
-
+ 
             function uploadBackground(event) {
     const file = event.target.files[0]; // Get the uploaded file
     if (file) {
@@ -1877,95 +2045,98 @@ h2{
                currentColor=e.target.value;
                 
             }
+ 
+        let brushColor = '#000000';
+        let brushSize = 5;
 
-            // Set initial canvas dimensions
-            function setCanvasDimensions() {
-                mainCanvas.width = window.innerWidth - 40; // Adjust width
-                mainCanvas.height = 400; // Keep height fixed
-            }
-            setCanvasDimensions();
+        // Set initial canvas dimensions
+        function setCanvasDimensions() {
+            mainCanvas.width = window.innerWidth - 40; // Adjust width
+            mainCanvas.height = 400; // Keep height fixed
+        }
+        setCanvasDimensions();
 
-            // Brush size change
-            document.getElementById('brushSize').addEventListener('change', function () {
-                brushSize = this.value;
-            });
+        // Brush size change
+        document.getElementById('brushSize').addEventListener('change', function () {
+            brushSize = this.value;
+        });
 
-            // Color picker change
-            document.getElementById('colorPicker').addEventListener('change', function () {
-                brushColor = this.value;
-            });
+        // Color picker change
+        document.getElementById('colorPicker').addEventListener('change', function () {
+            brushColor = this.value;
+        });
 
-            // Background color change
-            document.getElementById('bgColorPicker').addEventListener('change', function () {
-                mainCanvas.style.backgroundColor = this.value;
-            });
-            // Function to set up the canvas background image
-            function setBackgroundImage(file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = new Image();
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                    };
-                    img.src = e.target.result;
+        // Background color change
+        document.getElementById('bgColorPicker').addEventListener('change', function () {
+            mainCanvas.style.backgroundColor = this.value;
+        });
+        // Function to set up the canvas background image
+        function setBackgroundImage(file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                 };
-                reader.readAsDataURL(file);
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Drag and Drop Event Listeners for the Canvas
+        canvas.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            canvas.style.border = '2px dashed #000';
+        });
+
+        canvas.addEventListener('dragleave', () => {
+            canvas.style.border = '1px solid #000';
+        });
+
+        canvas.addEventListener('drop', (event) => {
+            event.preventDefault();
+            canvas.style.border = '1px solid #000';
+            const file = event.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                setBackgroundImage(file);
+            } else {
+                alert('Please drop a valid image file.');
             }
-
-            // Drag and Drop Event Listeners for the Canvas
-            canvas.addEventListener('dragover', (event) => {
-                event.preventDefault();
-                canvas.style.border = '2px dashed #000';
-            });
-
-            canvas.addEventListener('dragleave', () => {
-                canvas.style.border = '1px solid #000';
-            });
-
-            canvas.addEventListener('drop', (event) => {
-                event.preventDefault();
-                canvas.style.border = '1px solid #000';
-                const file = event.dataTransfer.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    setBackgroundImage(file);
-                } else {
-                    alert('Please drop a valid image file.');
-                }
-            });
+        });
 
 
-            // Background image upload
-            document.getElementById('bgImageUpload').addEventListener('change', function (event) {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = new Image();
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
-                    };
-                    img.src = e.target.result;
+        // Background image upload
+        document.getElementById('bgImageUpload').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
                 };
-                reader.readAsDataURL(file);
-            });
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
 
 
-            // Clear canvas button
-            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-                mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
-            });
+        // Clear canvas button
+        document.getElementById('clearCanvasBtn').addEventListener('click', () => {
+            ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+            mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
+        });
 
-            // Eraser button
-            document.getElementById('eraserBtn').addEventListener('click', () => {
-                brushColor = '#ffffff'; // Set brush color to white
-            });
+        // Eraser button
+        document.getElementById('eraserBtn').addEventListener('click', () => {
+            brushColor = '#ffffff'; // Set brush color to white
+        });
 
-            // Resize canvas on window resize
-            window.addEventListener('resize', setCanvasDimensions);
+        // Resize canvas on window resize
+        window.addEventListener('resize', setCanvasDimensions);
 
 
         // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent the form from submitting normally
 
             // Get form values
@@ -1991,58 +2162,104 @@ h2{
             this.reset();
         });
 
-        </script>
+    </script>
 
-        <script>
-            // Coordinates for the cursor
-            const coords = { x: 0, y: 0 };
-            const circles = document.querySelectorAll(".circle");
+    </script>
 
-            // Colors for the circles
-            const colors = [
-                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-                "#680060", "#60005f", "#48005f", "#3d005e"
-            ];
 
-            // Assign colors and initial position to each circle
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
             circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
             });
 
-            // Update the coordinates when the mouse moves
-            window.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-            });
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
 
-            // Animation function to move the circles
-            function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
+        // Start the animation
+        animateCircles(); 
+    </script>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
 
-                circles.forEach(function (circle, index) {
-                    // Update the position and scale of each circle
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
-                    circle.style.scale = (circles.length - index) / circles.length;
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        }
 
-                    circle.x = x;
-                    circle.y = y;
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
 
-                    // Get the next circle in the sequence
-                    const nextCircle = circles[index + 1] || circles[0];
-                    x += (nextCircle.x - x) * 0.3;
-                    y += (nextCircle.y - y) * 0.3;
-                });
-
-                // Repeat the animation
-                requestAnimationFrame(animateCircles);
+        darkModeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
             }
+        });
 
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            enableDarkMode();
+        }
+
+        function toggleMenu() {
+            var navbar = document.getElementById("navbar");
+            var menuToggle = document.getElementById("menu-toggle");
+
+            navbar.classList.toggle("show");
+
+            if (navbar.classList.contains("show")) {
+                menuToggle.innerHTML = "✖";
+            } else {
+                menuToggle.innerHTML = "&#9776;";
+            }
+        }
+
+ 
             // Start the animation
             animateCircles();
         </script>
@@ -2117,3 +2334,4 @@ h2{
 </html>
 
 </html>
+ 
