@@ -44,32 +44,15 @@
   align-items:center;
 }
 
-/* .contact-container{
+
+.contact-container{
   width:100%;
-
-  background: #000000;
-} */
-
-#contact{
-  width:100%;
-  background: #ffffffa8;
-  border: 1px solid rgba(216, 94, 202, 0.41);
-
-
+  background: #f579d4;
 }
 
 #contact{
   width:100%;
-  background: linear-gradient(135deg,#00afb9,#fed9b7);
-
-  background: #000000;
-} */
-
-#contact{
-  width:100%;
-  background: #ffffffa8;
-  border: 1px solid rgba(216, 94, 202, 0.41);
-
+  background: rgb(248, 193, 248)
 }
 
 #contactForm textarea{
@@ -81,13 +64,7 @@
   margin-left:6em;
   text-align: center;
   padding:9rem;
-
+  color: white;
 }
-
-
-  background-color: #46cdcf;
-}
-
-}
-
+    
 
