@@ -91,6 +91,7 @@
 <!-- START_STRUCTURE -->
 ```
 ├── Blog_page.html
+├── CODE_OF_CONDUCT.md
 ├── Contributing.md
 ├── Faq.html
 ├── LICENSE
@@ -107,6 +108,7 @@
 ├── hacktoberfest.png
 ├── index.html
 ├── login.html
+├── logo4.png
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
