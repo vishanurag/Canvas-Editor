@@ -19,6 +19,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 
+    <button id="darkModeToggle">🌓</button>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    body {
+        transition: background-color 0.3s, color 0.3s;
+    }
+</style>
+    
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+
+
     <link rel="stylesheet" href="style.css">
 
 
@@ -228,7 +278,24 @@ body.dark-mode {
         font-size: 24px;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
+
+    }
+    .dark-mode #darkModeToggle {
+        background-color: #ffffff;
+        color: #333333;
+    }
+</style>
+
+  </style>
+
+
+<script>
+  {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    //Cannot redeclare block-scoped variable 'body'
+
 }
+
 
 
     .footer .share a {
@@ -249,8 +316,15 @@ body.dark-mode {
             max-width: 100%;
             margin: 0 auto;
             color: rgb(0, 0, 0);
+
+
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
-        }
+}
+
+            /* background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff); */
+
+//             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+
         
         .header {
             width: 100%;
@@ -279,10 +353,22 @@ body.dark-mode {
             border: 2px solid #000000;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+
+            background-color: #ffffff; */
+            /* Default background color */
+            /* cursor: crosshair;
+            margin-top: 20px; */
+
+
+        /* } */ 
+
+        /* } */ 
+
             background-color: #ffffff;
             cursor: crosshair;
             margin-top: 20px;
         }
+
 
 
         .btn {
@@ -1094,7 +1180,11 @@ h2{
                 <br>
             </div>
             <!-- Back to Top Button -->
-            <button id="BacktoTop">
+            <button id="BacktoTop" style="padding: 2px;
+            margin: 5px;
+            height: 45px;
+            width: 40px;
+            border-radius: 50%;">
                 <span>↑</span>
             </button>
         </section>
@@ -1403,8 +1493,10 @@ h2{
             animateCircles();
         </script>
         <script>
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
+
+            //Cannot redeclare block-scoped variable 'darkModeToggle'
+            // const darkModeToggle = document.getElementById('darkModeToggle');
+            // const body = document.body;
         
             function enableDarkMode() {
                 body.classList.add('dark-mode');
@@ -1431,6 +1523,48 @@ h2{
     // Get the button
             var mybutton = document.getElementById("goToTopBtn");
 
+
+        </script>
+            <!-- window.embeddedChatbotConfig = {
+                chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+                domain: "www.chatbase.co"
+            } -->
+        </script>
+        <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
+        </script>
+
+        <script src="src/Scripts/Save.js"></script>
+        <script>
+            window.gtranslateSettings = {
+                "default_language": "en",
+                "detect_browser_language": true,
+                "wrapper_selector": ".gtranslate_wrapper"
+            };
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+        <br /><br />
+        <link rel="stylesheet" href="visi.css">
+        <!-- ############### Footer ############### -->
+        <div class="visitor-counter">
+        <div>Visitor</div>
+        <div class="website-counter"></div>
+        </div>
+        <script src="path/to/visitorCounter.js"></script>
+        <script src="./assets/css/visitors.css"></script>
+        <script src="visi.js"></script>
+<!-- Footer section -->
+<footer>
+    <div class="footer-content" style="margin-left: 500px;">
+        <p>© 2024 Canvas Editor | All rights reserved.</p>
+        <div class="footer-links" style="margin-left: 70px;">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+ 
+</body>
+
             // When the user scrolls down 20px from the top of the document, show the button
             window.onscroll = function () {
                 scrollFunction();
@@ -1445,6 +1579,7 @@ h2{
                 mybutton.style.display = "none";
         }
     }
+
 
             // When the user clicks on the button, scroll to the top of the document
             function goToTop() {
