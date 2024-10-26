@@ -666,8 +666,7 @@ ul{
   background-color: #ffffff;
 
 .nav-links a:hover {
-  color: #ffffff;s
-
+  color: #ffffff;
 }
 /* navbar styling ends */
 
@@ -1021,7 +1020,7 @@ footer .credit {
   font-weight: bold;
   font-size: 36px;
   margin-bottom: 20px;
-  color:#f9f9f9 ;
+  color: #fff;
 }
 
 .contact-section form {
