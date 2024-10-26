@@ -98,6 +98,26 @@
         .team-member {
             margin: 1rem 0;
         }
+        /* Scroll Up Button Styles */
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+        }
+        .scroll-up:hover {
+            background-color: #555;
+        }
         @media (max-width: 768px) {
             .first, .second {
                 flex-direction: column;
@@ -111,24 +131,24 @@
             }
         }
     </style>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-                <h1 class="site-name">Canvas Editor</h1>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about-us.html">About</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="Blog_page.html">Blogs</a>
-                    <a href="Faq.html">FAQ</a>
-                    <a href="contributors.html">Contributors</a>
-                    <a href="testimonial.html">Testimonial</a>
-                    <a href="signup.html">Sign Up</a>
-                    <a href="login.html">Login</a>
-                </div>
-            </nav>
-        </header>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="site-name">Canvas Editor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="Blog_page.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <h2>About Creative Canvas Tool</h2>
         <div class="first">
@@ -162,5 +182,28 @@
             </div>
         </div>
     </div>
+
+    <!-- Scroll Up Button -->
+    <button class="scroll-up" id="scrollUpBtn">&#8679;</button>
+
+    <script>
+        // Get the button
+        const scrollUpBtn = document.getElementById("scrollUpBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollUpBtn.style.display = "flex";
+            } else {
+                scrollUpBtn.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollUpBtn.onclick = function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        };
+    </script>
 </body>
 </html>

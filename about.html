@@ -7,17 +7,25 @@
     <title>Creative Canvas Tool</title>
 
     <!-- Single bootstrap inclusion -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="src/Styles/scroll.css">
     <!-- External styles -->
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+ 
 
+   
+ 
     <!-- Font Awesome icons -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+
+        
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 
     <style>
         body {
@@ -103,6 +111,43 @@
         .form-control {
             border-radius: 5px;
         }
+
+/* Scroll Up Button Styling */
+.scroll-up {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000; /* Added z-index to ensure it's above other elements */
+}
+
+.scroll-up.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-up:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.scroll-up:active {
+    transform: scale(0.95);
+}
+
+
+
     </style>
 </head>
 
@@ -125,11 +170,44 @@
             </h3>
         </div>
 
-        <!-- Canvas Section -->
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
+            <div style="height: 1500px; background: lightgrey;">
+                <!-- Long content goes here -->
+            </div>
         </div>
     </div>
+
+    <!-- Scroll Up Button -->
+<button id="scrollUpBtn" class="scroll-up">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollUpBtn = document.getElementById('scrollUpBtn');
+
+        // Function to show or hide the scroll-up button based on scroll position
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollUpBtn.classList.add('show');
+            } else {
+                scrollUpBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollUpBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
