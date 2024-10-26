@@ -21,8 +21,18 @@
             margin: auto;
             color: black;
         }
+*, *::before, *::after {
+    box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+body *{
+	overflow-y: hidden;
+}
+
 body {
 	font-family: "Open Sans", sans-serif;
+	overflow-x: hidden;
 }
 h2 {
 	color: #000;
@@ -45,6 +55,11 @@ h2::after {
 	right: 0;
 	bottom: -20px;
 }
+img, .container, section {
+    max-width: 100%;
+    width: 100%;
+}
+
 .carousel .carousel-item {
 	color: #999;
 	overflow: hidden;
@@ -99,7 +114,7 @@ h2::after {
 #BacktoTop {
   position: fixed; /* Stay in fixed position */
   bottom: 50px; /* Positioned above the chatbot */
-  right: 5px; /* Aligned to the right */
+  right: 15px; /* Aligned to the right */
   width: 55px;
   height: 55px;
   background-color: #007bff; /* Button background */
