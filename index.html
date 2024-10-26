@@ -1565,31 +1565,8 @@ h2{
  
 </body>
 
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction();
-    };
-            function scrollFunction() {
-        if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-            ) {
-                mybutton.style.display = "block";
-        } else {
-                mybutton.style.display = "none";
-        }
-    }
-
-
-            // When the user clicks on the button, scroll to the top of the document
-            function goToTop() {
-                document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-    }
-    </script>
 
 <script>
-
         window.addEventListener('scroll', function () {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1597,14 +1574,15 @@ h2{
         document.getElementById('progress-bar').style.width = scrolled + '%';
     });
 </script>
+
 <script>
         window.embeddedChatbotConfig = {
             chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
-        domain: "www.chatbase.co"
-    }
+            domain: "www.chatbase.co"
+        }
 </script>
-<script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
-</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer></script>
+
 <script>
         // Get the button
         var mybutton = document.getElementById("goToTopBtn");
@@ -1612,17 +1590,15 @@ h2{
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction();
-    };
+        };
+
         function scrollFunction() {
-        if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-        ) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
             mybutton.style.display = "block";
         } else {
             mybutton.style.display = "none";
+         }
         }
-    }
 
         // When the user clicks on the button, scroll to the top of the document
         function goToTop() {
