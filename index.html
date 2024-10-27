@@ -36,6 +36,7 @@
 .container {
     max-width: 1200px; /* Limit the maximum width for better readability */
     margin: 0 auto;
+    top: 100px;
     padding: 20px;
     color: rgb(0, 0, 0);
     background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
@@ -256,6 +257,14 @@ body.dark-mode {
             width: 100%;
             text-align: center;
             margin-bottom: none;
+            position: absolute;
+            top: 650px;
+        }
+
+        #heading{
+            position: absolute;
+            top: 52px;
+            left: 500px;
         }
 
         .canvas-container {
@@ -625,7 +634,7 @@ h2{
     <div class="container p-0">
         <div class="header">
             <img src="" alt="">
-            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
+            <h1 class="display-4 mb-4" id="heading"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
             </h1>
             <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
         </div>
@@ -1342,4 +1351,52 @@ h2{
     
 </body>
 </html>
+
+
+
+<script>
+        window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+</script>
+
+<script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+            domain: "www.chatbase.co"
+        }
+</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer></script>
+
+<script>
+        // Get the button
+        var mybutton = document.getElementById("goToTopBtn");
+
+
+</html>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+         }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function goToTop() {
+            document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>
+
 
