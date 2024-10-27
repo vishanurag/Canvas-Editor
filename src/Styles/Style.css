@@ -512,6 +512,12 @@ html {
   border: 1px solid rgba(216, 94, 202, 0.41);
   box-shadow: 0 4px 8px rgba(216, 94, 202, 0.41);
 
+  height: auto;
+  max-height: 500px;
+  margin: 68px;
+  border: 1px solid gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   border-radius: 5px;
 }
 
