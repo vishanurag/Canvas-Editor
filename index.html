@@ -16,13 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- <style> -->
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <button id="darkModeToggle">🌓</button>
+
     <link rel="stylesheet" href="style.css">
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <button id="darkModeToggle">🌓</button>
@@ -217,6 +215,20 @@ body.dark-mode {
     .footer .share a {
         font-size: 1.5rem;
     }
+    #darkModeToggle {
+        position: fixed;
+        top: 6px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #333333;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
 }
 
 
@@ -227,97 +239,6 @@ body.dark-mode {
     .footer .credit {
         font-size: 0.8rem;
     }
-/* General Styles */
-h2 {
-    margin-top: 50px;
-    color: black;
-    font-size: 50px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.circle {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 99999999;
-    transition: transform 0.1s ease-out;
-}
-
-/* Dark Mode Styles */
-.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-
-.dark-mode .container {
-    background-image: linear-gradient(120deg, #3a0033, #001a33, #1a0033);
-}
-
-.dark-mode .canvas-container {
-    background: #2a2a2a;
-}
-
-.dark-mode #mainCanvas {
-    border-color: #ffffff;
-    background-color: #333333;
-}
-
-.dark-mode .btn {
-    background-color: #444444;
-}
-
-.dark-mode .form-control {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-.dark-mode .footer {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-.dark-mode .footer .share a {
-    color: #ffffff;
-}
-
-.dark-mode #darkModeToggle {
-    background-color: #ffffff;
-    color: #333333;
-}
-  </style>
-
-<script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    function enableDarkMode() {
-        body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled');
-    }
-
-    function disableDarkMode() {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'disabled');
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
-
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        enableDarkMode();
-    }
-</script>
-<style>
         
         body {
             overflow-x: hidden;
@@ -331,18 +252,7 @@ h2 {
             color: rgb(0, 0, 0);
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
-
-
         
-
-        /* }
-
-
-            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);        } */
-
-            
-
-
         .header {
             width: 100%;
             text-align: center;
@@ -644,6 +554,8 @@ h2{
 </head>
 
 <body>
+     
+
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -690,6 +602,26 @@ h2{
                 src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
                 alt=""></a>
     </div>
+    <header class="header">
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+      </header>
+      
 
     <div class="container p-0">
         <div class="header">
@@ -698,7 +630,8 @@ h2{
             </h1>
             <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
         </div>
-        <div class="row gap-5">
+        
+        <div class="row">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
 
@@ -758,22 +691,11 @@ h2{
             </ul>
         </div>
 
-        <div class="row text-center p-5" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
-            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-            <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i
-                    class="fa-light fa-face-party"></i></p>
-
         <div class="row text-center p-5 theme-container">
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
         </div>
-        
-
-<div class="row text-center p-5 theme-container" style="background-color: #2c3e5e;">
-    <h2 class="welcome-header animated-text" style="color: #ffffff; font-weight: bolder;">Welcome to the Canvas Editor!</h2>
-    <p class="welcome-text" style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-</div>
 
 <style>
     .circle {
@@ -1052,11 +974,8 @@ h2{
                             <p id="result"></p>
                         </div>
                     <!-- Submit Button -->
-                    <div class="col-md-12 d-flex justify-content-center">
-                        <div class="col-md-8">
-                            <button type="submit" class="btn w-100 text-center" style="padding-left:250px;margin-right:500px;">Submit</button>
-                        </div>
-                    </div>
+                  <div class="col-md-8 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
                 </form>
             </div>
         </div>
@@ -1069,97 +988,7 @@ h2{
                 <button id="closePopup" class="btn btn-primary">Close</button>
             </div>
         </div>
-        
-        <style>
-            .custom-popup {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.5);
-            }
-        
-            .popup-content {
-                background-color: black;
-                margin: 15% auto;
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%;
-                max-width: 500px;
-                border-radius: 5px;
-                text-align: center;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-        
-            .popup-content h3 {
-                color: #007bff;
-                margin-bottom: 15px;
-            }
-        
-            .popup-content p {
-                margin-bottom: 20px;
-            }
-        </style>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const contactForm = document.getElementById('contactForm');
-                const customPopup = document.getElementById('customPopup');
-                const closePopup = document.getElementById('closePopup');
-                
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Prevent the form from submitting normally
-                
-                    // Get form values
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-                
-                    // Check if message is at least 20 characters long
-                    if (message.length < 20) {
-                        alert('Please enter a message with at least 20 characters.');
-                        return;
-                    }
-                
-                    // Here you would typically send the form data to a server
-                    console.log('Form submitted:', { name, email, subject, message });
-                
-                    // Show custom popup
-                    customPopup.style.display = 'block';
-                
-                    // Reset the form
-                    this.reset();
-                });
-                
-                // Close popup when the close button is clicked
-                closePopup.addEventListener('click', function() {
-                    customPopup.style.display = 'none';
-                });
-                
-                // Close popup when clicking outside the popup content
-                window.addEventListener('click', function(event) {
-                    if (event.target === customPopup) {
-                        customPopup.style.display = 'none';
-                    }
-                });
-            });
-
-
-        </script>
-          
-    </div>
-        
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/edit.js"></script> -->
-
+       
         <section class="footer" id="footer">
             <!-- Added responsiveness to icons -->
             <div class="share">
@@ -1487,16 +1316,31 @@ h2{
             animateCircles();
         </script>
         <script>
-            window.embeddedChatbotConfig = {
-                chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
-                domain: "www.chatbase.co"
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+        
+            function enableDarkMode() {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
             }
-        </script>
-        <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
-        </script>
-        <script src="src/Scripts/Save.js"></script>
+        
+            function disableDarkMode() {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        
+            darkModeToggle.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    disableDarkMode();
+                } else {
+                    enableDarkMode();
+                }
+            });
+        
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                enableDarkMode();
+            }
+    
 </body>
-
-
-
 </html>
+

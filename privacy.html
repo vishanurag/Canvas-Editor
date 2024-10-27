@@ -25,6 +25,39 @@
       rel="stylesheet"
     />
     <style>
+      /*  Navbar Styling  starts*/
+      .navbar {
+        background-color: #333; /* Dark background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-bottom: none;
+      }
+
+      /* Styling individual links in the navbar */
+      .navbar a {
+        color: #a0a0a0; /* Link color */
+        font-size: 18px; /* Font size */
+        text-decoration: none; /* Remove underline */
+        padding: 0.5rem 1rem; 
+        border-radius: 0.5rem; /* Rounded corners for hover effect */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+        
+      }
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      }
+
+      .nav-links a:hover {
+        color: #ffffff;
+      }
+/* navbar styling ends */
       .about-section {
         padding: 50px 0;
         background-color: #f8f9fa;
@@ -136,7 +169,7 @@
     <header class="header">
       <nav class="navbar">
         <div class="title">
-          <h1 class="site-name">Canvas</h1>
+          <h1 class="site-name">Canvas Editor</h1>
           <i class="fa-solid fa-paintbrush"></i>
         </div>
         <div class="nav-links">
@@ -144,9 +177,11 @@
           <a href="about-us.html">About</a>
           <a href="privacy.html">Privacy</a>
           <a href="Blog_page.html">Blogs</a>
-          <a href="index.html#mainCanvas">Draw</a>
+          <a href="Faq.html">FAQ</a>
           <a href="contributors.html">Contributors</a>
           <a href="testimonial.html">Testimonial</a>
+          <a href="signup.html">Sign Up</a>
+          <a href="login.html">Login</a>
         </div>
       </nav>
     </header>
@@ -266,120 +301,240 @@ We automatically collect certain information about your interaction with our Sit
         </section>
       </div>
     </section>
-    <section class="footer" id="footer">
-      <div class="share" style="font-size: 0.9rem; text-align: center">
-        <!-- Added responsiveness to icons -->
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fa-brands fa-x-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-        <a href="#" class="fa-brands fa-pinterest"></a>
-      </div>
-      <div class="credit" style="font-size: 1rem; text-align: center">
-        <p style="color: white">
-          Created by
-          <span
-            ><a href="https://github.com/vishanurag/" target="_blank"
-              >ANURAG VISHWAKARMA</a
-            ></span
-          >
-          | All rights reserved © 2024
-        </p>
-      </div>
-      <button id="BacktoTop">
-        <span>↑</span>
-      </button>
-    </section>
-    <script src="src/Scripts/BacktoTop.js"></script>
-    <script>
-      var typed = new Typed("#site-name", {
-        strings: ["Canvas Editor", "Build and shine!"],
-        loop: true,
-        typeSpeed: 80,
-        backSpeed: 25, // Speed for backspacing
-        backDelay: 1000, // Delay before starting to backspace
-        startDelay: 500, // Optional: Delay before starting the typing effect
-      });
-    </script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/Canvas.js"></script>
-    <script>
-      // Coordinates for the cursor
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-
-      // Colors for the circles
-      const colors = [
-        "#ffb56b",
-        "#fdaf69",
-        "#f89d63",
-        "#f59761",
-        "#ef865e",
-        "#ec805d",
-        "#e36e5c",
-        "#df685c",
-        "#d5585c",
-        "#d1525c",
-        "#c5415d",
-        "#c03b5d",
-        "#b22c5e",
-        "#ac265e",
-        "#9c155f",
-        "#950f5f",
-        "#830060",
-        "#7c0060",
-        "#680060",
-        "#60005f",
-        "#48005f",
-        "#3d005e",
-      ];
-
-      // Assign colors and initial position to each circle
-      circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-      });
-
-      // Update the coordinates when the mouse moves
-      window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-      });
-
-      // Animation function to move the circles
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-          // Update the position and scale of each circle
-          circle.style.left = x - 12 + "px";
-          circle.style.top = y - 12 + "px";
-          circle.style.scale = (circles.length - index) / circles.length;
-
-          circle.x = x;
-          circle.y = y;
-
-          // Get the next circle in the sequence
-          const nextCircle = circles[index + 1] || circles[0];
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-        });
-
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
-      }
-
-      // Start the animation
-      animateCircles();
-    </script>
-  </body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Enhanced Footer</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <style>
+            .footer {
+                background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+                padding: 2rem 0;
+                position: relative;
+            }
+    
+            .share {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+    
+            .share a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background: #fff;
+                color: #333;
+                text-decoration: none;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+    
+            .share a:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                background: #333;
+                color: #fff;
+            }
+    
+            .credit {
+                text-align: center;
+                padding: 1rem 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+    
+            .credit p {
+                color: #fff;
+                font-size: 1rem;
+                margin: 0;
+            }
+    
+            .credit a {
+                color: #4a9eff;
+                text-decoration: none;
+                font-weight: bold;
+                transition: color 0.3s ease;
+            }
+    
+            .credit a:hover {
+                color: #2980b9;
+            }
+    
+            #BacktoTop {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                background: #4a9eff;
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                display: none;
+                font-size: 1.5rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            }
+    
+            #BacktoTop:hover {
+                background: #2980b9;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+    
+            #BacktoTop.visible {
+                display: block;
+                animation: fadeIn 0.3s ease-in;
+            }
+    
+            .circle {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                position: fixed;
+                pointer-events: none;
+                transition: transform 0.1s;
+            }
+    
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+    
+            @media (max-width: 768px) {
+                .share {
+                    gap: 1rem;
+                }
+                
+                .share a {
+                    width: 35px;
+                    height: 35px;
+                }
+    
+                #BacktoTop {
+                    bottom: 1rem;
+                    right: 1rem;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 1.2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="footer" id="footer">
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+                <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+                <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+                <a href="#" class="fab fa-pinterest" aria-label="Pinterest"></a>
+            </div>
+            <div class="credit">
+                <p>
+                    Created by
+                    <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a>
+                    | All rights reserved © 2024
+                </p>
+            </div>
+            <button id="BacktoTop" aria-label="Back to top">
+                <span>↑</span>
+            </button>
+        </section>
+    
+        <!-- Cursor animation circles -->
+        <div id="cursor-trail"></div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script>
+            // Back to Top Button
+            const backToTopButton = document.getElementById('BacktoTop');
+    
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+    
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+    
+            // Typed.js initialization
+            if (document.getElementById('site-name')) {
+                new Typed('#site-name', {
+                    strings: ['Canvas Editor', 'Build and shine!'],
+                    loop: true,
+                    typeSpeed: 80,
+                    backSpeed: 25,
+                    backDelay: 1000,
+                    startDelay: 500
+                });
+            }
+    
+            // Cursor trail animation
+            const cursorTrail = document.getElementById('cursor-trail');
+            const colors = [
+                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e",
+                "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c",
+                "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f",
+                "#950f5f", "#830060", "#7c0060", "#680060", "#60005f",
+                "#48005f", "#3d005e"
+            ];
+    
+            // Create circles for cursor trail
+            for (let i = 0; i < colors.length; i++) {
+                const circle = document.createElement('div');
+                circle.className = 'circle';
+                circle.style.backgroundColor = colors[i];
+                cursorTrail.appendChild(circle);
+            }
+    
+            const circles = document.querySelectorAll('.circle');
+            const coords = { x: 0, y: 0 };
+    
+            circles.forEach((circle, index) => {
+                circle.x = 0;
+                circle.y = 0;
+            });
+    
+            window.addEventListener('mousemove', (e) => {
+                coords.x = e.clientX;
+                coords.y = e.clientY;
+            });
+    
+            function animateCircles() {
+                let x = coords.x;
+                let y = coords.y;
+    
+                circles.forEach((circle, index) => {
+                    circle.style.left = `${x - 12}px`;
+                    circle.style.top = `${y - 12}px`;
+                    circle.style.scale = (circles.length - index) / circles.length;
+                    circle.x = x;
+                    circle.y = y;
+    
+                    const nextCircle = circles[index + 1] || circles[0];
+                    x += (nextCircle.x - x) * 0.3;
+                    y += (nextCircle.y - y) * 0.3;
+                });
+    
+                requestAnimationFrame(animateCircles);
+            }
+    
+            animateCircles();
+        </script>
+    </body>
+    </html>
