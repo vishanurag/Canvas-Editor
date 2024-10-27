@@ -17,9 +17,11 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <button id="darkModeToggle">🌓</button>
+    <button  onclick="myfun()">🌓</button>
+
     <link rel="stylesheet" href="style.css">
 
 <style>
@@ -28,54 +30,13 @@
     }
 </style>
     
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
 
 
-
-    <link rel="stylesheet" href="style.css">
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<button id="darkModeToggle">🌓</button>
 
 <style>
+     a:hover{
+        color: white;
+    }
    body {
     overflow-x: hidden;
     background-color: #ffffff;
@@ -284,19 +245,10 @@ body.dark-mode {
         background-color: #ffffff;
         color: #333333;
     }
+}
 </style>
 
-  </style>
-
-
-<script>
-  {
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    //Cannot redeclare block-scoped variable 'body'
-
-}
-
-
+<style>
 
     .footer .share a {
         font-size: 1.5rem;
@@ -323,10 +275,9 @@ body.dark-mode {
 
             /* background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff); */
 
-//             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
 
         
-        .header {
+       .header {
             width: 100%;
             text-align: center;
             margin-bottom: none;
@@ -348,26 +299,19 @@ body.dark-mode {
 
         #mainCanvas {
             width: 100%;
-            height: auto; /* Adjust height dynamically */
+            height: auto;  
             max-width: 100%;
             border: 2px solid #000000;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
 
-            background-color: #ffffff; */
+            background-color: #ffffff; 
             /* Default background color */
             /* cursor: crosshair;
             margin-top: 20px; */
 
 
-        /* } */ 
-
-        /* } */ 
-
-            background-color: #ffffff;
-            cursor: crosshair;
-            margin-top: 20px;
-        }
+        } 
 
 
 
@@ -413,7 +357,6 @@ body.dark-mode {
             max-height: 90%;
         }
 
-        /* Footer Styling */
 
         .footer {
             width: 100%;
@@ -464,7 +407,6 @@ body.dark-mode {
             color: #f1c40f;
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             .footer {
                 padding: 30px 0;
@@ -481,7 +423,7 @@ body.dark-mode {
 
 
 
-        /* Custom scrollbar for Chrome, Safari, and Opera */
+
       
 
         h5 {
@@ -494,7 +436,7 @@ body.dark-mode {
 
 .footer {
     width: 100%;
-    background-color: #2c3e5e; /*updated this color */
+    background-color: #2c3e5e; 
     color: #c23e3e;
     text-align: center;
     border-start-start-radius: 5px;
@@ -542,10 +484,9 @@ body.dark-mode {
             color: #f1c40f;
         }
         .dark-mode h2 {
-            color: #ffffff; /* White text for h2 in dark mode */
+            color: #ffffff; 
         }
 
-    /* General h2 styling */
         h2 {
         font-size: 24px;
         margin: 0;
@@ -553,7 +494,6 @@ body.dark-mode {
         }
 
 
-        /* Responsive design */
         @media (max-width: 768px) {
             .footer {
                 padding: 30px 0;
@@ -570,7 +510,7 @@ body.dark-mode {
 
         
                 
-            /* Custom scrollbar for Chrome, Safari, and Opera */
+             
     
 
 h2{
@@ -580,9 +520,7 @@ h2{
    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-    </style>
-    <style>
-        /* Circle styles */
+    
         .circle {
             height: 24px;
             width: 24px;
@@ -599,43 +537,41 @@ h2{
         .gtranslate_wrapper{
             margin-left: 30px;
         }
-/* Common Styles */
 .theme-container {
-    padding: 2rem; /* Maintain padding for the container */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    padding: 2rem;  
+    transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Light Theme Styles */
 .theme-container {
-    background: linear-gradient(to right, #d1c4e9, #e1bee7); /* Light purple gradient background */
+    background: linear-gradient(to right, #d1c4e9, #e1bee7); 
 }
 
 .theme-container .welcome-header {
-    color: #8e24aa; /* Base color for h2 in light theme */
-    text-shadow: 0 0 5px #9c27b0; /* Adjusted for sharper effect */
+    color: #8e24aa; 
+    text-shadow: 0 0 5px #9c27b0;  
 }
 
 .theme-container .welcome-text {
-    color: #ecf0f1; /* Light text color for p in light theme */
+    color: #ecf0f1; 
 }
 
-/* Dark Theme Styles */
+ Dark Theme Styles 
 .dark-mode .theme-container {
-    background-color: #1a1a1a; /* Dark background for dark mode */
+    background-color: #1a1a1a; 
 }
 
 .dark-mode .theme-container .welcome-header {
-    color: #ffffff; /* White text for h2 in dark mode */
-    text-shadow: 0 0 5px #ffffff; /* Glowing white effect for dark mode */
+    color: #ffffff; 
+    text-shadow: 0 0 5px #ffffff; 
 }
 
 .dark-mode .theme-container .welcome-text {
-    color: #b0b0b0; /* Light grey text color for p in dark mode */
+    color: #b0b0b0; 
 }
 
 
 
-    </style>
+</style>
     <style>
         html {
             scroll-behavior: smooth;
@@ -715,6 +651,7 @@ h2{
             transition: width 0.09s ease-in-out;
             border-radius: 10px;
         }
+        
     </style>
 </head>
 
@@ -871,61 +808,10 @@ h2{
     <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
 </div>
-            <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
-            <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+           
+        
 
-        </div>
 
-<style>
-    .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: black;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 99999999;
-        transition: transform 0.1s ease-out;
-    }
-
-    /* Animation for welcome text */
-    .animated-text {
-        animation: fadeIn 2s ease-in-out forwards, colorChange 5s infinite alternate;
-        opacity: 1; /* Keep text fully visible */
-        transform: translateY(0); /* Start in original position */
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0; /* Start invisible */
-            transform: translateY(-20px); /* Start slightly above */
-        }
-        100% {
-            opacity: 1; /* Fully visible */
-            transform: translateY(0); /* End in original position */
-        }
-    }
-
-    @keyframes colorChange {
-        0% {
-            color: red; /* Start color */
-        }
-        25% {
-            color: yellow; /* Change to yellow */
-        }
-        50% {
-            color: green; /* Change to green */
-        }
-        75% {
-            color: blue; /* Change to blue */
-        }
-        100% {
-            color: purple; /* Change to purple */
-        }
-    }
-</style>
 
         <div class="canvas-container">
 
@@ -935,7 +821,7 @@ h2{
 
             <canvas id="mainCanvas"></canvas>
 
-            <div class="canvas-container">
+            <div class="canvas-container" style="margin:10px;">
 
 
                 <div class="canvas-palette">
@@ -991,7 +877,12 @@ h2{
                         </div>
                         <div class="space"></div>
                     </form>
+                    <div style="justify-content: center; align-items: center; justify-items: center; text-align: center;">
+                    <input type="text" placeholder="Enter Text" name="textData" id="textData"
+                    class="form-control mw-100 w-70" style="border-color: #000000; border-style: solid 1px; margin:10px; text-align: center;">
+                    </div>
                     <div class="tStyle d-md-flex justify-content-center gap-4">
+                       
                         <button  type="button" class="btn btn-primary" id="capital">
                             <span></span>
                             <span></span>
@@ -1062,15 +953,11 @@ h2{
                         <button id="lineBtn" class="btn btn-success">Line</button>
                     </div> -->
                     <div class="d-md-flex justify-content-center align-items-center">
-                        <input type="text" placeholder="Enter Text" name="textData" id="textData"
-                            class="form-control mw-100 w-70">
                         <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
                         <button type="button" class="btn btn-danger" id="clear">Clear</button>
                         <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
                         <!-- Added save functionality  -->
                         <button type="button" class="btn btn-primary" id="saveAsImageBtn">Save Image</button>
-
-                        
                     </div>
                     </form>
                 </div>
@@ -1079,85 +966,60 @@ h2{
         </div>
 
 
-
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
+<div style="display: flex; padding-top: 10px;">
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png" >
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
-                  </div>
-                    <form id="contactForm" class="row g-3 justify-content-center">
-                        <!-- Name Field -->
-                        <div class="col-md-4">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
-                                    required pattern="[a-zA-Z ]+"
-                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                                oninput="this.setCustomValidity('')">
-                                <label for="name">Your Name</label>
-                            </div>
-                        </div>
-                        <!-- Email Field -->
-                        <div class="col-md-4">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Your Email" required>
-                                <label for="email">Your Email</label>
-                            </div>
-                        </div>
-                        <!-- Subject Field -->
-                        <div class="col-md-8">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" name="subject"
-                                    placeholder="Subject" required>
-                                <label for="subject">Subject</label>
-                            </div>
-                        </div>
-
-                        <!-- Message Field -->
-                        <div class="col-md-8">
-                            <div class="form-floating">
-                                <textarea class="form-control" id="message" name="message" placeholder="Your Message"
-                                    style="height: 150px; align-items: center;" required></textarea>
-                                <label for="message">Your Message</label>
-                            </div>
-                        </div>
-                        <!-- Submit Button -->
-                        <div class="col-md-8 col-sm-8">
-                            <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-                        </div>
-                    </form>
-                </section>
-            </div>
-        </div>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-                    </div>
-                    Message Field -->
-                    <!-- <div class="col-md-8">
+                 </div>
+                </div>
+                <h1 style="text-align: center; color:purple; font-weight: bolder;">Contact us</h1>
+                <form id="contactForm" class="row g-3 justify-content-center" style="display: grid;">
+                    <!-- Name Field -->
+                    <div class="col-md-4">
                         <div class="form-floating">
-                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
-                            <label for="message">Your Message (minimum 20 characters)</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                                oninput="this.setCustomValidity('')" style="margin-bottom: 30px;">
+                            <label for="name">Your Name</label>
                         </div>
-                    </div> -->
-                    <div class="container">
-                        <div class="cal">
-                            <h4>Your<br><span>&nbsp;Message</span></h4>
-                            <!-- <div class="input-box"> -->
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:0px;" required></textarea>
-                            
-                            <p id="result"></p>
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required style="margin-top: 10px;">
+                            <label for="email">Your Email</label>
                         </div>
+                    </div>
+                
+                    <!-- Subject Field -->
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                    </div>
+                
+                    <!-- Message Field -->
+                    <div class="col-md-8">
+                        <div class="form-floating">
+                            <textarea class="form-control" id="message" name="message" placeholder="Type your message here..."
+                                style="height: 150px;" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                    </div>
+                
                     <!-- Submit Button -->
-                  <div class="col-md-8 d-flex justify-content-center">
-    <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
+                    <div class="col-md-8 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
+                    </div>
                 </form>
-            </div>
-        </div>
-        <!-- Custom Popup -->
+        
         <div id="customPopup" class="custom-popup">
             <div class="popup-content">
-                <h3>Thank You!</h3>
-                <p>Your message has been sent successfully. We'll get back to you soon!</p>
+                <h3 style="color:#1a0033;">Thank You!</h3>
+                <p  style="color: #1a0033">Your message has been sent successfully. We'll get back to you soon!</p>
                 <button id="closePopup" class="btn btn-primary">Close</button>
             </div>
         </div>
@@ -1521,8 +1383,7 @@ h2{
                 enableDarkMode();
             }
 
-    <script>
-    // Get the button
+
             var mybutton = document.getElementById("goToTopBtn");
 
 
@@ -1554,7 +1415,7 @@ h2{
         <script src="./assets/css/visitors.css"></script>
         <script src="visi.js"></script>
 <!-- Footer section -->
-<footer>
+<footer >
     <div class="footer-content" style="margin-left: 500px;">
         <p>© 2024 Canvas Editor | All rights reserved.</p>
         <div class="footer-links" style="margin-left: 70px;">
