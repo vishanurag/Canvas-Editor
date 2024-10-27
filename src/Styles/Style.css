@@ -48,6 +48,9 @@
   font-size: 16px;
   outline: 0;
   border: 0;
+  border-radius: 12px;
+  padding: 15px 25px;
+  margin: 30px 0 20px;
   width: 80%;
   /* border-radius: 40px; */
   padding: 5px 15px;
@@ -73,6 +76,7 @@ body {
   display: flex;
   /* background-color: #72abffe0; */
   min-height: 5%;
+ 
   /* justify-content: center;
   align-items: center; */
 }
@@ -88,13 +92,13 @@ body {
   display: inline-block;
   padding: 15px 20px;
   /* text-transform: uppercase; */
-  letter-spacing: 4px;
+  border-radius: 12px;
+  letter-spacing: 2px;
   background-color: black;
   border: none;
   outline: none;
-  color: #03e9f4;
+  color: #F9E400;
   font-size: 1rem;
-  font-weight: bold;
   transition: .5s;
   overflow: hidden;
   margin-right: 30px;
@@ -107,6 +111,7 @@ body {
     0 0 25px #03e9f4,
     0 0 50px #03e9f4,
     0 0 200px #03e9f4;
+
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
@@ -128,7 +133,7 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
+  background: linear-gradient(90deg, transparent, #F9E400);
   animation: animate1 1s infinite;
   animation-delay: 0s;
 }
@@ -148,7 +153,7 @@ body {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
+  background: linear-gradient(180deg, transparent, #F9E400);
   animation: animate2 1s infinite;
   animation-delay: .25s;
 }
@@ -168,7 +173,7 @@ body {
   right: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
+  background: linear-gradient(270deg, transparent, #F9E400);
   animation: animate3 1s infinite;
   animation-delay: .5s;
 }
@@ -188,7 +193,7 @@ body {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
+  background: linear-gradient(360deg, transparent, #F9E400);
   animation: animate4 1s infinite;
   animation-delay: .75s;
 }
@@ -212,6 +217,7 @@ body {
   display: flex;
   /* background-color: #72abffe0; */
   min-height: 5%;
+  
   /* justify-content: center;
   align-items: center; */
 }
@@ -221,13 +227,13 @@ body {
   display: inline-block;
   padding: 15px 20px;
   /* text-transform: uppercase; */
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   background-color: #000;
-  color: #ec0fc7;
-  border: 3px solid #ec0fc7;
+  border-radius: 12px;
+  color: #F9E400;
+  border: 2px solid #F5004F;
   outline: none;
   font-size: 1rem;
-  font-weight: bold;
   transition: .5s;
   overflow: hidden;
   margin-right: 30px;
@@ -242,8 +248,9 @@ body {
 
 .tStyle button:hover {
   color: #fff;
+
   background-color: #000;
-  border: 3px solid #ec0fc7;
+  border: 3px solid #F9E400;
   transition: 1s;
 }
 
@@ -270,7 +277,7 @@ body {
   left: -40px;
   width: 0;
   height: 100%;
-  background: #ec0fc7;
+  background: #F9E400;
   transform: skewX(35deg);
   z-index: -1;
   transition: 1s;
@@ -294,11 +301,13 @@ body {
   position: relative;
   display: inline-block;
   padding: 15px 20px;
+
   width: auto;
   letter-spacing: 4px;
+
   background-color: #000;
-  color: rgb(2, 217, 233);
-  border: 3px solid rgb(2, 217, 233);
+  color: #F9E400;
+  border: 2px solid #F5004F;
   outline: none;
   font-size: 1rem;
   font-weight: bold;
@@ -316,8 +325,9 @@ body {
 
 .rclStyle button:hover {
   color: #fff;
+
   background-color: #000;
-  border: 3px solid rgb(2, 217, 233);
+  border: 2px solid #F5004F;
   transition: 1s;
 }
 
@@ -328,7 +338,7 @@ body {
   left: -40px;
   width: 0;
   height: 100%;
-  background: rgb(2, 217, 233);
+  background: #F9E400;
   transform: skewX(35deg);
   z-index: -1;
   transition: 1s;
@@ -340,8 +350,12 @@ body {
 
 
 
-
-
+#save,
+#clear,
+#download {
+    padding-right:50px;
+    
+}
 
 
 
@@ -609,6 +623,7 @@ html {
   /* width: 100px; */
   /* padding: 5px; */
   text-align: center;
+  border-radius: 12px;
 }
 
 /* Button Styles */
@@ -622,7 +637,7 @@ html {
   border: 1px solid gray;
   background-color: #ced4da;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 /* .logo {
@@ -650,6 +665,7 @@ html {
   align-items: center;
 
   gap: 3rem; /* Spacing between links */
+
   flex-wrap: wrap;
 
   border-bottom: none;
@@ -736,19 +752,20 @@ ul {
   background-color: #ffffff;
 
 .nav-links a:hover {
-  color: #ffffff;s
-
+  color: #ffffff;
 }
 /* navbar styling ends */
 
 /* Style for input field */
 #textData {
+  
   height: 45px;
   padding: 10px 20px;
   font-size: 1rem;
   border: 2px solid #ced4da;
   border-radius: 30px;
   margin-right: 15px;
+  
 }
 
 .title-container {
@@ -824,6 +841,12 @@ ul {
 }
 
 
+.canvas-palette .btn {
+  border-radius: 12px; /* Rounded button corners */
+  padding: 10px 15px; /* Ample padding for buttons */
+}
+
+
 .canvas-palette .btn:hover {
   transform: translateY(-2px);
   /* Subtle lift on hover */
@@ -846,7 +869,7 @@ ul {
 .btn-primary {
   padding: 10px 20px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 12px;
   transition: background-color 0.3s;
 }
 
@@ -867,10 +890,12 @@ ul {
 
 button {
   margin: 5px;
+  
 }
 
 .btn {
   margin: 10px 15px;
+
 }
 
 .btn:hover {
@@ -986,7 +1011,7 @@ button#small:hover::after {
   background-color: #000;
   color: #fff;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 12px;
   font-size: 12px;
   transform: translateY(-30px);
   white-space: nowrap;
@@ -1008,7 +1033,7 @@ button#small:hover::after {
   background-color: #000;
   color: #fff;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 12px;
   font-size: 12px;
   transform: translateY(-30px);
   white-space: nowrap;
@@ -1122,7 +1147,7 @@ footer .credit {
   font-weight: bold;
   font-size: 36px;
   margin-bottom: 20px;
-  color: #333;
+  color: #fff;
 }
 
 .contact-section form {

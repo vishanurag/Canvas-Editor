@@ -91,6 +91,7 @@
 <!-- START_STRUCTURE -->
 ```
 ├── Blog_page.html
+├── CODE_OF_CONDUCT.md
 ├── Contributing.md
 ├── Faq.html
 ├── LICENSE
@@ -100,22 +101,27 @@
 ├── blog.html
 ├── community.html
 ├── contributors.html
-├── download (1).png
+├── download (1).webp
 ├── edition.html
-├── feature.png
-├── gssocextd.jpg
-├── hacktoberfest.png
+├── feature.webp
+├── gssocextd.webp
 ├── index.html
 ├── login.html
+├── logo4.png
+├── package-lock.json
+├── package.json
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
 ├── resources/
 │   ├── favicon.ico
-│   └── painting_image.jpg
+│   └── painting_image.webp
 ├── review.html
 ├── signup.html
 ├── src/
+│   ├── Contributor.css
+│   ├── Contributor.html
+│   ├── Contributor.js
 │   ├── Scripts/
 │   │   ├── BacktoTop.js
 │   │   ├── Canvas.js
@@ -165,22 +171,24 @@
 │   │       ├── bootstrap.rtl.min.css
 │   │       └── bootstrap.rtl.min.css.map
 │   └── images/
-│       ├── about-bg.jpg
-│       ├── art-design-1.jpg
-│       ├── art-design-2.jpg
-│       ├── art-design-3.jpg
-│       ├── art-design-4.jpg
-│       ├── art-design-5.jpg
-│       ├── art-design-6.jpg
-│       ├── banner-bg.jpg
-│       ├── blog-p-1.jpg
-│       ├── blog-p-2.jpg
-│       ├── blog-p-3.jpg
-│       ├── blog-p-4.jpg
-│       ├── blog-p-5.jpg
-│       └── blog-p-6.jpg
+│       ├── about-bg.webp
+│       ├── art-design-1.webp
+│       ├── art-design-2.webp
+│       ├── art-design-3.webp
+│       ├── art-design-4.webp
+│       ├── art-design-5.webp
+│       ├── art-design-6.webp
+│       ├── banner-bg.webp
+│       ├── blog-p-1.webp
+│       ├── blog-p-2.webp
+│       ├── blog-p-3.webp
+│       ├── blog-p-4.webp
+│       ├── blog-p-5.webp
+│       └── blog-p-6.webp
 ├── testimonial.html
 ├── tutorial.html
+├── visi.css
+├── visi.js
 └── welcome.html
 ```
 <!-- END_STRUCTURE -->
@@ -326,6 +334,44 @@ git push origin YourBranchName
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+## Troubleshooting
+
+### Common Issues
+
+1. **Installation Error: `npm install` fails**
+   - **Symptoms:** Error messages during the installation process.
+   - **Solution:** 
+     - Ensure you have the latest version of Node.js and npm installed. You can check your versions using `node -v` and `npm -v`.
+     - Clear the npm cache by running `npm cache clean --force`.
+     - Try deleting the `node_modules` folder and the `package-lock.json` file, then rerun the installation with `npm install`.
+
+2. **Wallet Connection Issues**
+   - **Symptoms:** Unable to connect to MetaMask.
+   - **Solution:**
+     - Verify that MetaMask is installed and enabled in your browser.
+     - Check that you are on the correct network (e.g., Rinkeby) in both your app and MetaMask.
+     - Ensure that your wallet is unlocked. If issues persist, refresh the page or restart your browser.
+
+3. **Smart Contract Deployment Fails**
+   - **Error Message:** `Revert: Contract validation failed`
+   - **Solution:** 
+     - Double-check that all contract parameters are accurate and align with your contract’s requirements.
+     - Make sure you have sufficient Ether in your wallet to cover gas fees.
+     - Confirm that you are deploying to the intended network.
+
+### Configuration Issues
+- Ensure that the `.env` file is properly configured with the necessary environment variables, including your Infura Project ID and wallet private key. 
+
+### Development Environment
+- Make sure you are using Node.js version **16.x.x** or **18.x.x** and that all required npm packages are installed. You can check your current Node.js version using `node -v`.
+
+### Tips for Optimizing Performance
+- Minimize the number of unnecessary background tasks during deployment to improve efficiency.
+- Monitor gas fees closely and consider deploying during off-peak hours to reduce costs.
+
+### Contact for Support
+If you encounter an issue not listed here, please reach out via [GitHub Issues](https://github.com/vishanurag/Canvas-Editor/issues).
+
   
 ## Contributors
 

@@ -1,131 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Creative Canvas Tool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
     <style>
-      /*  Navbar Styling  starts*/
-      .navbar {
-        background-color: #333; /* Dark background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        border-bottom: none;
-      }
-
-      /* Styling individual links in the navbar */
-      .navbar a {
-        color: #a0a0a0; /* Link color */
-        font-size: 18px; /* Font size */
-        text-decoration: none; /* Remove underline */
-        padding: 0.5rem 1rem; 
-        border-radius: 0.5rem; /* Rounded corners for hover effect */
-        transition: background-color 0.3s ease; /* Smooth hover transition */
-        
-      }
-      .nav-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        
-      }
-
-      .nav-links a:hover {
-        color: #ffffff;
-      }
-      .logo {
-        font-size: 3rem;
-        font-family: "Poppins", sans-serif;
-        color: #353047;
-        font-weight: bolder;
-        text-decoration: none;
-      }
-      h1{
-        color: #fff;
-      }
-      body {
-        background: linear-gradient(135deg,#ffb7fd 0%,#abc0ef 50%,#c58be5 100% );
-        height: 100%;
-        margin: 0;
-      }
-      *{
-        font-family: "Poppins", sans-serif; 
-      }
-    .first{
-      font-size: 32px;
-      display: flex;
-      justify-content: space-around;
-    }
-    .second{
-      font-size: 32px;
-      height: 400px;
-      width: 57%;
-      margin: auto;
-    }
-    h2{
-      text-align: center;
-    }
-    img{
-      height: 30%;
-      width: 30%;
-      margin-top: 60px;
-      border-radius: 30px;
-    }
-
-    .first-para{
-      height: 400px;
-      width: 50%;
-      background-color: rgba(255,255,255,0.3);
-      display: flex;
-      padding: 30px;
-      justify-content: center;
-      align-items: center;
-      color: #000;
-      border-radius: 30px;
-    }
-    .second-para{
-      text-align: center;
-      color: #000;
-      font-size: 36px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(255,255,255,0.3);
-      padding: 30px;
-      border-radius: 30px;
-      margin-left: 100px;
-    }
-    h3{
-      font-size: 36px;
-      text-align: center;
-    }
-    h4{
-      font-size: 36px;
-    }
-    .desc{
-      font-size: 30px;
-      text-align: center;
-      padding: 0px 400px 0 400px;
-    }
-    .teams{
-      text-align: center;
-    }
+        /* General Style */
+        body {
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .site-name {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .navbar a {
+            color: #bbb;
+            font-size: 16px;
+            text-decoration: none;
+            margin: 0 0.8rem;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #fff;
+        }
+        /* About Section */
+        .about-section {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #353047;
+            margin-bottom: 1rem;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+        }
+        .about-text:hover, .about-image:hover {
+            transform: scale(1.05);
+        }
+        .desc, .teams {
+            max-width: 800px;
+            margin: 1.5rem auto;
+            padding: 1rem;
+        }
+        h3 {
+            font-size: 2rem;
+            color: #353047;
+        }
+        .team-member h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #bbb;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #bbb;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .about-text, .about-image {
+                width: 90%;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <header class="header" >
-      <nav class="navbar">
-        <div class="title">
-          <h1 class="site-name">Canvas Editor</h1>
-          <i class="fa-solid fa-paintbrush"></i>
+</head>
+<body>
+        <h2>About Creative Canvas Tool</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="resources/painting_image.webp" alt="Creative Canvas Tool in action">
+            </div>
+            <div class="about-text">
+                <p>
+                    Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
+                </p>
+            </div>
         </div>
+
         <div class="nav-links">
           <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link active" href="about-us.html" class="active">About</a>
@@ -146,44 +161,22 @@
           Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
           <br>
           <br>
+
         </p>
-        <img src="resources/painting_image.jpg" alt="Creative Canvas">
-      </div>
-      <div class="second">
-        <p class="second-para">
-          Our Tool not only offers powerful creation tools but also fosters a vibrant community for artists to share their work, seek feedback, and collaborate. Engage in challenges and participate in workshops to enhance your skills. With regular updates and new features, our platform continually evolves to meet the needs of both budding talents and seasoned professionals.
+
+        <h3>Our Story</h3>
+        <p class="desc">
+            Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
         </p>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="new">
-        <h3>Our Mission</h3>
-              <p class="desc">
-                To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.
-                <br>
-                <br>
-                <br>
-                <h3>Our Story</h3>
-              <p class="desc">
-                Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
-              </p>
-              <br>
-              <br>
-              <br>
-              <h3>Our Team</h3>
-              <div class="teams">
-                <div class="team-member">
-                  <h4>Anurag</h4>
-                  <p>Founder & Lead Developer</p>
-                </div>
-                <div class="team-member">
-                  <h4>Somyadip Ghosh</h4>
-                  <p>Project Mentor</p>
-                </div>
-                </div>
-              </div>
-      </div>
-    </div>
+
+        <h3>Our Team</h3>
+        <div class="teams">
+            <div class="team-member">
+                <h4>Anurag</h4>
+                <p>Founder & Lead Developer</p>
+            </div>
+            <div class="team-member">
+                <h4>Somyadip Ghosh</h4>
+                <p>Project Mentor</p>
+            </div>
+        </div>
