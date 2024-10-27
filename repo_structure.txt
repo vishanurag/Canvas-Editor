@@ -92,7 +92,10 @@
 │       ├── blog-p-3.webp
 │       ├── blog-p-4.webp
 │       ├── blog-p-5.webp
-│       └── blog-p-6.webp
+│       ├── blog-p-6.webp
+│       ├── mission.png
+│       ├── profille.png
+│       └── story.png
 ├── testimonial.html
 ├── tutorial.html
 ├── visi.css
