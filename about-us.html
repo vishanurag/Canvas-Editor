@@ -6,206 +6,170 @@
     <title>About Us - Creative Canvas Tool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
     <style>
+        /* General Style */
         body {
             background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            color: #000;
+            color: #333;
+            overflow-x: hidden;
         }
         header {
-            background-color: #333;
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
         .site-name {
-            color: #ffffff; /* Changed to white for better visibility */
-            font-size: 24px; /* Slightly increased size */
-            font-weight: 600; /* Made it semi-bold */
-            margin: 0;
-            text-transform: uppercase; /* Added uppercase for emphasis */
-            letter-spacing: 1px; /* Added letter spacing */
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .navbar a {
-            color: #a0a0a0;
-            font-size: 18px;
+            color: #bbb;
+            font-size: 16px;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
+            margin: 0 0.8rem;
+            transition: color 0.3s ease;
         }
         .navbar a:hover {
             color: #fff;
-            background-color: rgba(255, 255, 255, 0.1);
         }
-        /* Rest of your CSS remains the same */
-        h1 {
+        /* About Section */
+        .about-section {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .about-section h2 {
             font-size: 2.5rem;
             color: #353047;
+            margin-bottom: 1rem;
         }
-        .container {
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
             max-width: 1200px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            max-width: 500px;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            transition: transform 0.3s;
         }
-        h2 {
-            text-align: center;
-            margin: 2rem 0;
-            font-size: 2rem;
-        }
-        .first, .second {
+        .about-image {
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin: 2rem 0;
         }
-        .first {
-            flex-wrap: wrap;
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
         }
-        .first-para, .second-para {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            padding: 30px;
-            margin: 10px;
-            flex: 1;
-            min-width: 300px;
+        .about-text:hover, .about-image:hover {
+            transform: scale(1.05);
         }
-        img {
-            height: auto;
-            width: 30%;
-            border-radius: 30px;
-            margin-top: 20px;
+        .desc, .teams {
+            max-width: 800px;
+            margin: 1.5rem auto;
+            padding: 1rem;
         }
         h3 {
             font-size: 2rem;
+            color: #353047;
+        }
+        .team-member h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #bbb;
+            padding: 1.5rem 0;
             text-align: center;
-            margin: 2rem 0;
+            font-size: 0.9rem;
         }
-        .desc {
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 0 20px;
+        footer a {
+            color: #bbb;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        .teams {
-            text-align: center;
-            margin: 2rem 0;
+        footer a:hover {
+            color: #fff;
         }
-        .team-member {
-            margin: 1rem 0;
-        }
+        /* Responsive */
         @media (max-width: 768px) {
-            .first, .second {
+            .about-content {
                 flex-direction: column;
-                align-items: center;
             }
-            img {
-                width: 80%;
-            }
-            .first-para, .second-para {
+            .about-text, .about-image {
                 width: 90%;
             }
         }
     </style>
-  </head>
-  <body>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    
-    <header class="header">
-      <nav class="navbar">
-        <div class="title">
-          <h1 class="site-name">Canvas Editor</h1>
-          <i class="fa-solid fa-paintbrush"></i>
-        </div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="Blog_page.html">Blogs</a>
-          <a href="Faq.html">FAQ</a>
-          <a href="contributors.html">Contributors</a>
-          <a href="testimonial.html">Testimonial</a>
-          <a href="signup.html">Sign Up</a>
-          <a href="login.html">Login</a>
-        </div>
-      </nav>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="site-name">Creative Canvas Tool</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="Blog_page.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
     </header>
 
     <section class="about-section">
-      <div class="container">
-        <h2 class="text-center mb-5">About Creative Canvas Tool</h2>
-        
-        <!-- About Section with Image and Text -->
-        <div class="row align-items-center mb-5">
-          <div class="col-md-6">
-            <img src="resources/painting_image.webp" alt="Creative Canvas Tool in action" class="img-fluid about-image"/>
-          </div>
-          <div class="col-md-6">
-            <p class="about-text">
-              Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-                <h1 class="site-name">Canvas Editor</h1>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about-us.html">About</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="Blog_page.html">Blogs</a>
-                    <a href="Faq.html">FAQ</a>
-                    <a href="contributors.html">Contributors</a>
-                    <a href="testimonial.html">Testimonial</a>
-                    <a href="signup.html">Sign Up</a>
-                    <a href="login.html">Login</a>
-                </div>
-            </nav>
-        </header>
-    <div class="container">
         <h2>About Creative Canvas Tool</h2>
-        <div class="first">
-            <p class="first-para">
-                Creative Canvas Tool empowers artists of all skill levels with an intuitive platform to transform ideas into stunning digital artwork. With a wide range of brushes, colors, and textures, you can easily explore your creativity and experiment with different styles. Our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
-            </p>
-            <img src="resources/painting_image.jpg" alt="Creative Canvas">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="resources/painting_image.webp" alt="Creative Canvas Tool in action">
+            </div>
+            <div class="about-text">
+                <p>
+                    Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
+                </p>
+            </div>
         </div>
-        <div class="second">
-            <p class="second-para">
-                Our tool not only offers powerful creation tools but also fosters a vibrant community for artists to share their work, seek feedback, and collaborate. Engage in challenges and participate in workshops to enhance your skills. With regular updates and new features, our platform evolves to meet the needs of both budding talents and seasoned professionals.
-            </p>
-        </div>
+
         <h3>Our Mission</h3>
         <p class="desc">
             To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.
         </p>
+
         <h3>Our Story</h3>
         <p class="desc">
             Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
         </p>
+
         <h3>Our Team</h3>
         <div class="teams">
             <div class="team-member">
@@ -217,6 +181,15 @@
                 <p>Project Mentor</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Creative Canvas Tool. All rights reserved.</p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
 </body>
 </html>
