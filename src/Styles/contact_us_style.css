@@ -6,6 +6,7 @@
     border-radius: 0.25rem;
     box-shadow: none;
   }
+
   
   input[type="text"], input[type="email"], textarea {
     appearance: none;
@@ -40,12 +41,14 @@
   }
 .contact-us-page{
   display:flex;
+  margin-top: 40px;
+ 
   justify-content: center;
   align-items:center;
-}
 
 
-.contact-container{
+
+
   width:100%;
   background: #f579d4;
 }
@@ -61,10 +64,7 @@
 }
 
 #contactForm button{
-  margin-left:6em;
+  margin-left:0em;
   text-align: center;
   padding:9rem;
-  color: white;
 }
-    
-
