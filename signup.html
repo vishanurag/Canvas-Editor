@@ -14,24 +14,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-       
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
+        }
+
         .header-container {
+            height: 100vh;
             width: 100vw; 
-            background-color: #f8f9fa; 
-            padding: 70px 0; 
             text-align: center;
             margin-bottom: 20px; 
-            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            
+            /* background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
             background-size: cover;
         }
         .form-container {
             max-width: 400px; /* Set a max width for the form */
             margin: 0 auto; /* Center the form on the page */
+            margin-top: 300px;
             padding: 20px;
             border: 1px solid #dee2e6; /* Optional: Adds a border to the form */
             border-radius: 8px; /* Optional: Adds rounded corners */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
         }
+
+        .nav-link img{
+            height: 50px;
+            width: auto;
+
         .nav-tabs {
             justify-content: center;
             background-color: rgba(0,0,0,0.3);
@@ -54,6 +70,7 @@
         .nav-link:hover {
             background-color: rgba(0,0,0,0.5);
             color: white;
+
         }
         h2 {
             text-align: center;
@@ -77,11 +94,11 @@
         .or {
             text-align: center;
             margin: 10px 0;
-            color: white;
+            color: #343232d4;
         }
         p {
             text-align: center;
-            color: white;
+            color: #343232d4;
         }
     
         body {
@@ -124,9 +141,13 @@
         }
 
     ::placeholder {
-        color: #343232; /* Adjust the color to your preference */
+        color: #3432328a; /* Adjust the color to your preference */
         opacity: 1; 
     }
+
+    /* Circle styles */
+    .circle {
+
     input[name="username"] {
         margin-top: -5px;
         padding-left: 4px; 
@@ -153,9 +174,23 @@
             }
         }
 
+        /* Circle styles */
+        .circle {
 
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
 
     </style>
+
 </head>
 <body>
     <!-- Circles -->
@@ -202,7 +237,60 @@
         <!-- dribbble -->
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
-    
+
+        <!-- <div class="header" style="height: 10vh;">
+            <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
+        </div> -->
+   
+    <div class="col gap-5 mt-5 d-flex justify-content-evenly align-items-center">
+        <div class="nav-item">
+
+            <a class="nav-link active" aria-current="page" href="#"><img src="logo4.png" alt=""></a>
+
+        </div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="review.html">Review</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testimonial.html">Testimonial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Blog_page.html">Blog</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="./Faq.html">FAQ</a>
+            </li>
+
+            <a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contributors.html">Contributors</a>
+
+            </li>
+
+        </ul>
+    </div>
+        <div id="login" class="form-container mt-5 mb-5">
+            <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
+
     <header class="header">
         <nav class="navbar">
           <div class="title">
@@ -225,6 +313,7 @@
 
         <div id="login" class="form-container mt-5">
             <h3 class="pb-4">CREATE YOUR ACCOUNT </h3>
+
             <form action="/signup" method="POST" onsubmit="return validatePassword()">
                 <div id="input">
                     <input type="text" name="username" placeholder="Username" required>
@@ -323,6 +412,29 @@
             <!-- <p style="color: black;">Already have an account? <a href="login.html">Log in</a></p>  -->
             <p>Already have an account? <br><a href="login.html" class="loginn">Log in</a></p> <!-- This should link to login.html -->
         </div>
+
+        <section class="footer mt-5" id="footer">
+            <!-- Added responsiveness to icons -->
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
+    
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    2024
+                </p>
+                <br>
+            </div>
+            <!-- Back to Top Button -->
+            <button id="BacktoTop">
+                <span>↑</span>
+            </button>
+        </section>
     
         <!-- Validation Script -->
         <script>
