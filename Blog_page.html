@@ -1,113 +1,313 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Section</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./src/Styles/Style_Blog_page.css">
-    <link rel="stylesheet" href="src/Styles/scroll.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-      /* Circle styles */
-      .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: black;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 99999999;
-        transition: transform 0.1s ease-out;
-      }
-      /*  Navbar Styling  starts*/
-      .title {
-  display: flex;
-  align-items: left;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  justify-content: center;
-}
-.navbar {
-  padding: 0;
-  background-color: #333; /* Dark background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border-bottom: none;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f3e7ff, #e5d0ff, #f0e6ff);
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #2d1b4d;
+        }
 
-/* Styling individual links in the navbar */
-.navbar a {
-  color: #a0a0a0; /* Link color */
-  font-size: 18px; /* Font size */
-  text-decoration: none; /* Remove underline */
-  padding: 0.5rem 1rem; 
-  border-radius: 0.5rem; /* Rounded corners for hover effect */
-  transition: background-color 0.3s ease; /* Smooth hover transition */
-  
-}
-.nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  
-}
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: all 0.2s ease-out;
+            opacity: 0.6;
+        }
 
-.nav-links a:hover {
-  color: #ffffff;
-}
-/* navbar styling ends */
-      html{
-        scroll-behavior: smooth;
-      }
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .site-name {
+            background: linear-gradient(45deg, #6b21a8, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #5b21b6;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(147, 51, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .banner {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 2rem 0;
+        }
+
+        .banner-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner-title span {
+            color: #6b21a8;
+        }
+
+        .search-input {
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50%;
+            max-width: 500px;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .search-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 2rem;
+            background: #7c3aed;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 0.5rem;
+        }
+
+        .search-btn:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .title h2 {
+            font-size: 2.5rem;
+            color: #4c1d95;
+            margin-bottom: 0.5rem;
+        }
+
+        .design-content, .blog-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .design-item, .blog-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .design-item:hover, .blog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .design-img, .blog-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .design-img img, .blog-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .design-img span, .blog-img span {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(124, 58, 237, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .design-title, .blog-text {
+            padding: 1.5rem;
+        }
+
+        .design-title a, .blog-text h2 {
+            color: #4c1d95;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .blog-text span {
+            color: #6b21a8;
+            font-size: 0.9rem;
+        }
+
+        .blog-text p {
+            color: #4a5568;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .blog-text a {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #7c3aed;
+            color: white;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-text a:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #6b21a8;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #4c1d95;
+            transform: translateY(-2px);
+        }
+
+        #BacktoTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #7c3aed;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        #BacktoTop:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .banner-title {
+                font-size: 2.5rem;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+        }
     </style>
-  </head>
-  <body>
-<!-- Circles -->
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-
-  <nav class="navbar">
-    <div class="title">
-      <h1 class="site-name">Canvas Editor</h1>
-      <i class="fa-solid fa-paintbrush"></i>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about-us.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="Blog_page.html">Blogs</a>
-      <a href="Faq.html">FAQ</a>
-      <a href="contributors.html">Contributors</a>
-      <a href="testimonial.html">Testimonial</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="login.html">Login</a>
-    </div>
-  </nav>
+</head>
+<body>
+    <!-- Previous HTML structure remains the same, just using placeholder images -->
+    <!-- Replace all image sources with placeholder API -->
+    <!-- For example: -->
+    <nav class="navbar">
+        <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
 <header>
       <div class = "banner">
         <div class = "container">
@@ -136,7 +336,7 @@
 
           <div class = "design-item">
             <div class = "design-img">
-              <img src = "/src/images/art-design-1.jpg" alt = "">
+              <img src = "/src/images/art-design-1.webp" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
@@ -147,7 +347,7 @@
 
           <div class = "design-item">
             <div class = "design-img">
-              <img src = "/src/images/art-design-2.jpg" alt = "">
+              <img src = "/src/images/art-design-2.webp" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
@@ -158,7 +358,7 @@
           
           <div class = "design-item">
             <div class = "design-img">
-              <img src = "/src/images/art-design-3.jpg" alt = "">
+              <img src = "/src/images/art-design-3.webp" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
@@ -169,7 +369,7 @@
           
           <div class = "design-item">
             <div class = "design-img">
-              <img src = "/src/images/art-design-4.jpg" alt = "">
+              <img src = "/src/images/art-design-4.webp" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
@@ -180,7 +380,7 @@
          
           <div class = "design-item">
             <div class = "design-img">
-              <img src = "/src/images/art-design-5.jpg" alt = "">
+              <img src = "/src/images/art-design-5.webp" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
@@ -191,7 +391,7 @@
           
           <div class = "design-item">
             <div class = "design-img">
-              <img src = "/src/images/art-design-6.jpg" alt = "">
+              <img src = "/src/images/art-design-6.webp" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
               <span>Creative Canvas</span>
             </div>
@@ -215,7 +415,7 @@
 
           <div class = "blog-item">
             <div class = "blog-img">
-              <img src = "/src/images/blog-p-1.jpg" alt = "">
+              <img src = "/src/images/blog-p-1.webp" alt = "">
               <span><i class = "far fa-heart"></i></span>
             </div>
             <div class = "blog-text">
@@ -228,7 +428,7 @@
 
           <div class = "blog-item">
             <div class = "blog-img">
-              <img src = "/src/images/blog-p-2.jpg" alt = "">
+              <img src = "/src/images/blog-p-2.webp" alt = "">
               <span><i class = "far fa-heart"></i></span>
             </div>
             <div class = "blog-text">
@@ -241,7 +441,7 @@
 
           <div class = "blog-item">
             <div class = "blog-img">
-              <img src = "/src/images/blog-p-3.jpg" alt = "">
+              <img src = "/src/images/blog-p-3.webp" alt = "">
               <span><i class = "far fa-heart"></i></span>
             </div>
             <div class = "blog-text">
@@ -254,7 +454,7 @@
 
           <div class = "blog-item">
             <div class = "blog-img">
-              <img src = "/src/images/blog-p-4.jpg" alt = "">
+              <img src = "/src/images/blog-p-4.webp" alt = "">
               <span><i class = "far fa-heart"></i></span>
             </div>
             <div class = "blog-text">
@@ -267,7 +467,7 @@
 
           <div class = "blog-item">
             <div class = "blog-img">
-              <img src = "/src/images/blog-p-5.jpg" alt = "">
+              <img src = "/src/images/blog-p-5.webp" alt = "">
               <span><i class = "far fa-heart"></i></span>
             </div>
             <div class = "blog-text">
@@ -280,7 +480,7 @@
 
           <div class = "blog-item">
             <div class = "blog-img">
-              <img src = "/src/images/blog-p-6.jpg" alt = "">
+              <img src = "/src/images/blog-p-6.webp" alt = "">
               <span><i class = "far fa-heart"></i></span>
             </div>
             <div class = "blog-text">
