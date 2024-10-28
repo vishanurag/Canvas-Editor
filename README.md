@@ -73,8 +73,16 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
+## Table of Contents
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Website Preview](#website-preview)
+- [Technologies Used](#technologies-used)
+- [How to make a Pull Request](#how-to-make-a-pull-request)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
 
-<h2>Overview📌</h2>
+## Overview
 <ul>
   <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
   <li>🖼️ It includes a webpage with a canvas element that allows you to style text content as needed (made for fun purposes 🎉).</li>
@@ -197,7 +205,7 @@
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
 
-# Website Preview
+## Website Preview
 
 ![image](https://github.com/user-attachments/assets/02614ccd-b2ec-492a-9f02-f53d69e9d2b9)
 
@@ -216,7 +224,7 @@ To change the background color or image:
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
-<h2><img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 30px height="38"> Technology Used</h2>
+## Technologies Used
 
 <p>
   <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
@@ -334,6 +342,7 @@ git push origin YourBranchName
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
 ## Troubleshooting
 
 ### Common Issues
