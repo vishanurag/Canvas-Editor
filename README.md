@@ -118,6 +118,8 @@
 ├── logo4.png
 ├── package-lock.json
 ├── package.json
+├── popup.jpg
+├── popup.js
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
