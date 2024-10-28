@@ -49,6 +49,17 @@
         .navbar a:hover {
             color: #fff;
         }
+        .navbar .auth a {
+            background: #ffb7fd;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        .navbar .auth a:hover {
+            background: #fff;
+            color: #ffb7fd;
+        }
+
         /* About Section */
         .about-section {
             padding: 4rem 1rem;
@@ -58,6 +69,7 @@
             font-size: 2.5rem;
             color: #353047;
             margin-bottom: 1rem;
+            text-align: center;
         }
         .about-content {
             display: flex;
@@ -88,19 +100,30 @@
         .about-text:hover, .about-image:hover {
             transform: scale(1.05);
         }
-        .desc, .teams {
+        h3 {
+            font-size: 2rem;
+            color: #353047;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .desc {
+            text-align: center;
             max-width: 800px;
             margin: 1.5rem auto;
             padding: 1rem;
         }
-        h3 {
-            font-size: 2rem;
-            color: #353047;
+        .teams {
+            max-width: 800px;
+            margin: 1.5rem auto;
+            padding: 1rem;
+            text-align: center;
         }
         .team-member h4 {
             font-size: 1.5rem;
             margin-bottom: 0.3rem;
+            text-align: center;
         }
+
         /* Footer */
         footer {
             background-color: #333;
@@ -130,7 +153,27 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="site-name">Creative Canvas Tool</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="blog.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+            <div class="auth">
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </header>
 
+    <!-- About Section -->
+    <section class="about-section">
         <h2>About Creative Canvas Tool</h2>
         <div class="about-content">
             <div class="about-image">
@@ -142,26 +185,35 @@
                 </p>
             </div>
         </div>
+    </section>
 
-        <h3>Our Mission</h3>
-        <p class="desc">
-            To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.
-        </p>
+    <h3>Our Mission</h3>
+    <p class="desc">
+        To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.
+    </p>
 
-        <h3>Our Story</h3>
-        <p class="desc">
-            Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
-        </p>
+    <h3>Our Story</h3>
+    <p class="desc">
+        Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
+    </p>
 
-        <h3>Our Team</h3>
-        <div class="teams">
-            <div class="team-member">
-                <h4>Anurag</h4>
-                <p>Founder & Lead Developer</p>
-            </div>
-            <div class="team-member">
-                <h4>Somyadip Ghosh</h4>
-                <p>Project Mentor</p>
-            </div>
+    <h3>Our Team</h3>
+    <div class="teams">
+        <div class="team-member">
+            <h4>Anurag</h4>
+            <p>Founder & Lead Developer</p>
         </div>
+        <div class="team-member">
+            <h4>Somyadip Ghosh</h4>
+            <p>Project Mentor</p>
+        </div>
+    </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Creative Canvas Tool. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+    </footer>
+</body>
+</html>
