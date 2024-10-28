@@ -199,87 +199,108 @@
 </div>
 <script src="popup.js"></script>
 
+<title>Dark Mode Toggle Switch</title>
+<style>
+    /* Basic Page Styling */
+    body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+        background-color: #ffffff;
+        color: #333333;
+    }
+/* Footer Styling */
+.footer {
+    width: 100%;
+    background-color: black;
+    color: #3e8dc2;
+    text-align: center;
+    border-top-left-radius: 5px;
+    padding: 35px 350px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin-top: 20px;
+}
 
-        /* Footer Styling */
+.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
 
-        .footer {
-            width: 100%;
-            background-color: black;
-            color: #3e8dc2;
-            text-align: center;
-            border-start-start-radius: 5px;
-            padding: 35px 350px;
-            font-family: 'Arial', sans-serif;
-            position: relative;
-            margin-top: 20px;
-        }
+    /* Toggle Switch Styling */
+    .toggle-switch {
+        position: fixed;
+        top: 20px;
+        left: 350px;
+        width: 80px;
+        height: 40px;
+        background-color: #f39c12; /* Orange background for light mode */
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        z-index: 1000; /* Ensure the toggle switch is above other elements */
+    }
 
+    .toggle-switch.dark {
+        background-color: #222; /* Dark background for dark mode */
+    }
 
-    <div class="d-flex align-items-center vh-1">
-        <button id="darkModeToggle" type="button" class="btn btn-outline-secondary hover-highlight">🌓</button>
-    </div>
+    /* Sliding Circle */
+    .toggle-circle {
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        transition: transform 0.3s;
+    }
 
+// Toggle button functionality for dark mode
+if (document.body.classList.contains('dark-mode')) {
+    toggleButton.innerHTML = '🌞'; // Change to sun icon
+    toggleButton.classList.remove('btn-outline-secondary');
+    toggleButton.classList.add('btn-outline-light'); // Optional: change button color for dark mode
+} else {
+    toggleButton.innerHTML = '🌓'; // Change back to moon icon
+    toggleButton.classList.remove('btn-outline-light');
+    toggleButton.classList.add('btn-outline-secondary'); // Optional: change button color for light mode
+}
 
-    <script>
-        const toggleButton = document.getElementById('darkModeToggle');
+// Custom scrollbar for Chrome, Safari, and Opera
+body::-webkit-scrollbar {
+    width: 10px;
+}
 
-        toggleButton.addEventListener('click', () => {
-            // Toggle dark mode class on the body
-            document.body.classList.toggle('dark-mode');
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
-            // Change button text or style if needed
-            if (document.body.classList.contains('dark-mode')) {
-                toggleButton.innerHTML = '🌞'; // Change to sun icon
-                toggleButton.classList.remove('btn-outline-secondary');
-                toggleButton.classList.add('btn-outline-light'); // Optional: change button color for dark mode
-            } else {
-                toggleButton.innerHTML = '🌓'; // Change back to moon icon
-                toggleButton.classList.remove('btn-outline-light');
-                toggleButton.classList.add('btn-outline-secondary'); // Optional: change button color for light mode
-            }
+body::-webkit-scrollbar-thumb {
+    background: #f9f9f9;
+    border-radius: 10px;
+    transition: 0.3s ease, height 0.3s ease;
+}
 
-        }
+body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, cornflowerblue, rgb(195, 226, 237));
+}
 
+// Styling for h5 elements
+h5 {
+    color: #eeff00;
+    font-size: small;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-
-        /* Custom scrollbar for Chrome, Safari, and Opera */
-        body::-webkit-scrollbar {
-            width: 10px;
-            /* Width of the scrollbar */
-        }
-
-        body::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            /* Track color */
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background: #f9f9f9;
-            /* Thumb color */
-            border-radius: 10px;
-            /* Rounded corners */
-            transition: 0.3s ease, height 0.3s ease;
-        }
-
-        body::-webkit-scrollbar-thumb:hover {
-            background: cornflowerblue;
-            /* Thumb color on hover */
-            background: linear-gradient(135deg, cornflowerblue, rgb(195, 226, 237));
-        }
-
-        h5 {
-            color: #eeff00;
-            font-size: small;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-        }
-
+// Footer Styling
 .footer {
     width: 100%;
     background-color: rgb(195, 226, 237);
     color: #c23e3e;
     text-align: center;
-    border-start-start-radius: 5px;
+    border-top-left-radius: 5px; /* Fixed border property */
     padding: 35px 350px;
     font-family: 'Arial', sans-serif;
     position: relative;
@@ -323,8 +344,7 @@
     color: #f1c40f;
 }
 
-
-/* Responsive design */
+/* Responsive design for footer */
 @media (max-width: 768px) {
     .footer {
         padding: 30px 0;
@@ -339,9 +359,76 @@
     }
 }
 
-        });
-    </script>
+/* Icon Styling */
+.icon {
+    position: absolute;
+    font-size: 20px;
+    transition: opacity 0.3s;
+}
 
+.sun-icon {
+    left: 10px;
+    color: #f39c12;
+}
+
+.moon-icon {
+    right: 10px;
+    color: #ffffff;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Dark Mode Active State */
+.dark-mode .sun-icon {
+    opacity: 0;
+}
+
+.dark-mode .moon-icon {
+    opacity: 1;
+}
+
+
+    .dark-mode .toggle-circle {
+        transform: translateX(40px); /* Move to the right for dark mode */
+    }
+</style>
+</head>
+<body>
+
+<!-- Toggle Switch HTML -->
+<div class="toggle-switch" id="darkModeToggle">
+<span class="icon sun-icon">☀️</span>
+<span class="icon moon-icon">🌙</span>
+<div class="toggle-circle"></div>
+</div>
+
+
+<script src="popup.js"></script>
+<script>
+// JavaScript to toggle dark mode
+const toggleSwitch = document.getElementById('darkModeToggle');
+const popup = document.getElementById('popup');
+const closePopupButton = document.getElementById('closePopup');
+
+// Function to show the popup
+function showPopup() {
+    popup.style.display = 'block';
+}
+
+// Show popup on page load (you can adjust this as needed)
+window.onload = showPopup;
+
+toggleSwitch.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleSwitch.classList.toggle('dark');
+});
+
+closePopupButton.addEventListener('click', () => {
+    popup.style.display = 'none'; // Close the popup
+});
+</script>
+</body>
+</html>
+    
 
 
     <!-- Circles -->
@@ -407,35 +494,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse nav-links" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="privacy.html">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Blog_page.html">Blogs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contributors.html">Contributors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="testimonial.html">Testimonial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
-                        </li>
-                    </ul>
+                    
+                  
                 </div>
             </div>
         </nav>
@@ -445,21 +505,16 @@
     <div class="container p-0">
         <div class="header">
 
-            <img src="" alt="">
-            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
-            </h1>
-            <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
+            
 
 
             <div id="logo">
                 <!-- <div class="logo-new" style="margin-left: 140px;"><img src="logo4.png" alt="" width="80px" height="auto""></div> -->
-                <h1 class="display-4 logo"><a href="/" style="color: inherit; text-decoration: none; font-family: 'Permanent Marker', cursive;">Creative
-                        Canvas Tool</a>
+               
                 </h1>
             </div>
         </div>
-        <p class="lead p-4">Design and create stunning visuals effortlessly!</p>
-
+    
         <div class="row gap-5">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -513,9 +568,7 @@
         <div class="canvas-container p-3">
 
             <img src="" alt="">
-            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
-
-                <img src="" alt="">
+           
                 <h1 class="display-4 mb-4" id="heading"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
 
                 </h1>
@@ -617,10 +670,14 @@
     <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
 </div>
+< main
+            
+
            
         
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+> main
 
 
         </div>
@@ -662,20 +719,7 @@
                             <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
                         </div>
 
-                            <div class="brush" style="width: 40%;">
-                                <label for="brushSize">Brush Size:</label>
-                                <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                    <option value="25">25</option>
-                                </select>
-                            </div>
-                            <div class="colorpick" style="width: 40%;">
-                                <label for="colorPicker">Color:</label>
-                                <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
-                            </div>
+                           
 
                         </div>
                         <div class="d-flex justify-content-around  mb-2">
@@ -702,6 +746,20 @@
                                 <span></span>
                                 <span></span>
                                 Clear Canvas
+                            </button>
+                            <button type="button" class="btn btn-primary" id="redoCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Redo
+                            </button>
+                            <button type="button" class="btn btn-primary" id="undoCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Undo
                             </button>
                             <button  type="button" class="btn btn-primary" id="eraserBtn">
                                 <span></span>
@@ -754,6 +812,13 @@
 
 
                         <button  type="button" class="btn btn-success" id="rectangleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            triangle
+                        </button>
+                            
 
                         <div class="rclStyle d-md-flex justify-content-evenly gap-1">
 
@@ -767,7 +832,6 @@
                             Rectangle
                         </button>
 
-                        <button  type="button" class="btn btn-success" id="circleBtn">
 
                             <button type="button" class="btn btn-success" id="circleBtn">
 
@@ -778,7 +842,6 @@
                             Circle
                         </button>
 
-                        <button  type="button" class="btn btn-success" id="linebtn">
 
                             <button type="button" class="btn btn-success" id="linebtn">
 
@@ -796,6 +859,7 @@
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
                     </div> -->
+                    <br>
                     <div class="d-md-flex justify-content-center align-items-center">
                         <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
                         <button type="button" class="btn btn-danger" id="clear">Clear</button>
@@ -809,14 +873,7 @@
 
                         <div class="d-md-flex justify-content-center align-items-center py-3">
 
-
-                            <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-70">
-                            <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
-                            <button type="button" class="btn btn-danger" id="clear">Clear</button>
-                            <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                            <!-- Added save functionality  -->
-                            <button type="button" class="btn btn-primary" id="saveAsImageBtn">Save Image</button>
-
+</div>
 
 
                         </div>
@@ -829,55 +886,36 @@
         </div>
 
 
-<div style="display: flex; padding-top: 10px;">
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png" >
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
-                 </div>
-                </div>
-                <h1 style="text-align: center; color:purple; font-weight: bolder;">Contact us</h1>
-                <form id="contactForm" class="row g-3 justify-content-center" style="display: grid;">
-                    <!-- Name Field -->
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
-                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                                oninput="this.setCustomValidity('')" style="margin-bottom: 30px;">
-                       <label for="name">Your Name</label>
-                  </div>
-                    <form id="contactForm" class="row g-3 justify-content-center">
+<div style="display: flex; padding-top: 10px; justify-content: center;">
+    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png" alt="Twitter Icon">
+    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png" alt="Facebook Icon">
+    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png" alt="Google Icon">
+    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png" alt="Instagram Icon">
+</div>
+
+<h1 style="text-align: center; color: purple; font-weight: bolder;">Contact Us</h1>
+
+<form id="contactForm" class="row g-3 justify-content-center" style="display: grid;">
+    <!-- Name Field -->
+    <div class="col-md-4">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                oninput="this.setCustomValidity('')" style="margin-bottom: 30px;">
+            <label for="name">Your Name</label>
+        </div>
+    </div>
+</form>
+     <form id="contactForm" class="row g-3 justify-content-center">
 
             </div>
 
             <div class="container mt-5 contact-container">
-                <!-- Contact Us Section -->
-                <section id="contact" class="contact-section text-center">
-                    <h2 class="py-4" style="font-size: 40px;">Contact Us</h2>
-                    <div class="social-media-links d-flex justify-content-center align-items-center">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
-                    </div>
-                    <form id="contactForm" class="row g-3 justify-content-center mt-5">
-
-                        <!-- Name Field -->
-                        <div class="col-md-4">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                <label for="name">Your Name</label>
-
-                                <div class="contact-us-page">
-                                    <div class="contact-container">
+              
                                         <!-- Contact Us Section -->
                                         <section id="contact" class="contact-section text-center py-5">
                                             <h2 class="mb-4">Contact Us</h2>
                                             <div class="social-media-links">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
                                             </div>
                                             <form id="contactForm" class="row g-3 justify-content-center">
                                                 <!-- Name Field -->
@@ -928,20 +966,6 @@
 
                     </div>
 
-                    <!-- Message Field -->
-                            <div class="col-md-8">
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px; align-items: center;" required></textarea>
-                                    <label for="message">Your Message</label>
-                                </div>
-                            </div>
-                            <!-- Submit Button -->
-                            <div class="col-md-8">
-                                <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-                            </div>
-
-                        </div>
-
                         <!-- Message Field -->
                         <div class="col-md-8">
                             <div class="form-floating">
@@ -963,15 +987,7 @@
                         </div> -->
                         <div class="container">
                             <div class="cal">
-                                <h4>Your<br><span>Message</span></h4>
-                                <!-- <div class="input-box"> -->
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:80px;" required></textarea>
-
-                                <p id="result"></p>
-                            </div>
-                            <!-- Submit Button -->
-                            <div class="col-md-8 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
+                              
                     </form>
                     </div>
 
@@ -982,54 +998,44 @@
             </div>
         </div>
 
+<div class="container">
+    <h1 style="text-align: center; color: purple; font-weight: bolder;">Contact Us</h1>
 
-                    </div>
-                
-                    <!-- Subject Field -->
-                    <div class="col-md-8">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-                    </div>
-                
-                    <!-- Message Field -->
-                    <div class="col-md-8">
-                        <div class="form-floating">
-                            <textarea class="form-control" id="message" name="message" placeholder="Type your message here..."
-                                style="height: 150px;" required></textarea>
-                            <label for="message">Your Message</label>
-                    </div> -->
-                    <div class="container">
-                        <div class="cal">
-                            <h4>Your<br><span>Message</span></h4>
-                            <!-- <div class="input-box"> -->
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:80px;" required></textarea>
-                            
-                            <p id="result"></p>
-                        </div>
-                    </div>
-                
-                    <!-- Submit Button -->
-                    <div class="col-md-8 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-                    </div>
-                </form>
-        
-                  <div class="col-md-8 d-flex justify-content-center">
-    <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
+    <form id="contactForm" class="row g-3 justify-content-center" style="display: grid;">
+        <!-- Name Field -->
+        <div class="col-md-4">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+                    oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                    oninput="this.setCustomValidity('')" style="margin-bottom: 30px;">
+                <label for="name">Your Name</label>
+            </div>
+        </div>
 
-        <div class="container">
-            <div class="cal row d-flex justify-content-center align-items-center p-5" style="width: 40%;">
-                <h4 class="mb-4">Your<br><span>Message</span></h4>
-                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 30vh; width: 100%;" required></textarea>
-                <p id="result"></p>
-                <!-- Submit Button -->
-                <div class="col-md-12 d-flex justify-content-center align-items-center">
-                    <!-- <div class="col-md-8">/ -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <!-- </div> -->
-                </div>
+        <!-- Subject Field -->
+        <div class="col-md-8">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                <label for="subject">Subject</label>
+            </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="col-md-8">
+            <div class="form-floating">
+                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..."
+                    style="height: 150px;" required></textarea>
+                <label for="message">Your Message</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-md-8 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
+        </div>
+    </form>
+</div>
+
 
                 </form>
             </div>
@@ -1101,6 +1107,58 @@
                 <span>↑</span>
             </button>
         </section>
+
+
+<script>
+    const canvas = document.getElementById('mainCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let undoStack = [];
+    let redoStack = [];
+
+    function saveState() {
+        undoStack.push(canvas.toDataURL());
+        redoStack = [];
+    }
+
+    function undo() {
+        if (undoStack.length > 0) {
+            redoStack.push(undoStack.pop());
+            restoreState(undoStack[undoStack.length - 1] || null);
+        }
+    }
+
+    function redo() {
+        if (redoStack.length > 0) {
+            const redoState = redoStack.pop();
+            undoStack.push(redoState);
+                restoreState(redoState);
+            }
+        }
+
+        function restoreState(imageData) {
+            const img = new Image();
+            img.src = imageData || '';
+            img.onload = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                if (imageData) ctx.drawImage(img, 0, 0);
+            };
+        }
+
+        function draw(x, y) {
+            ctx.fillStyle = "black";
+            ctx.fillRect(x, y, 5, 5);
+            saveState();
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            draw(e.offsetX, e.offsetY);
+        });
+
+        document.querySelector('button[name="Undo"]').addEventListener('click', undo);
+        document.querySelector('button[name="Redo"]').addEventListener('click', redo);
+
+</script>
 
 
         <script src="src\Scripts\preloader.js"></script>
@@ -1223,65 +1281,53 @@
 
     </div>
 
-    <section class="footer" id="footer">
-        <!-- Added responsiveness to icons -->
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fa-brands fa-x-twitter"></a>
-            <!-- Updated X icon-->
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-            <a href="#" class="fa-brands fa-pinterest"></a>
-        </div>
+<section class="footer" id="footer">
+    <!-- Social Media Links -->
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f" style="color: #3b5998;"></a>
+        <a href="#" class="fa-brands fa-x-twitter" style="color: #1da1f2;"></a> <!-- Updated X icon-->
+        <a href="#" class="fab fa-instagram" style="color: #e4405f;"></a>
+        <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in" style="color: #0077b5;"></a>
+        <a href="#" class="fa-brands fa-pinterest" style="color: #bd081c;"></a>
+    </div>
 
+    <!-- Credit Section -->
+    <div class="credit" style="font-size: 0.6rem;">
+        <p style="color: black;">
+            Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA</a> | All rights reserved © 2024
+        </p>
+        <br>
+    </div>
 
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Back to Top Button -->
+    <button id="BacktoTop">
+        <span>↑</span>
+    </button>
+</section>
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/edit.js"></script> -->
+<!-- Scripts -->
+<script src="src/Scripts/preloader.js"></script>
+<script>
+    const scrollToTopBtn = document.getElementById("BacktoTop");
 
-        <section class="footer" id="footer">
+    window.onscroll = function () {
+        scrollFunction();
+    };
 
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"style="color: #3b5998;"></a>
-                <a href="#" class="fa-brands fa-x-twitter"style="color: #1da1f2;"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"style="color: #e4405f;"></a>
-                <a href="#" class="fa-brands fa-linkedin-in"style="color: #0077b5;"></a>
-                <a href="#" class="fa-brands fa-pinterest"style="color: #bd081c;"></a>
-            </div>
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
 
-            <div class="credit" style="font-size: 0.6rem;">
-                <p style="color:black;">
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
-                    2024
-                </p>
-                <br>
-            </div>
-            <!-- Back to Top Button -->
-            <button id="BacktoTop">
-                <span>↑</span>
-            </button>
-        </section>
+    scrollToTopBtn.addEventListener("click", function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+</script>
 
-        <script src="src\Scripts\preloader.js"></script>
-        <script>
-            const scrollToTopBtn = document.getElementById("BacktoTop");
-            window.onscroll = function () {
-                scrollFunction();
-            };
-
-        <div class="credit" style="font-size: 0.6rem;">
-            <p>
-                Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © 2024
-            </p>
-            <br>
-        </div>
-        <!-- Back to Top Button -->
-        <button id="BacktoTop">
-            <span>↑</span>
-        </button>
     </section>
 
     <script src="src\Scripts\preloader.js"></script>
