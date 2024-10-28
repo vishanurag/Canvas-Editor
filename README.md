@@ -73,8 +73,16 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
+## Table of Contents
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Website Preview](#website-preview)
+- [Technologies Used](#technologies-used)
+- [How to make a Pull Request](#how-to-make-a-pull-request)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
 
-<h2>Overview📌</h2>
+## Overview
 <ul>
   <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
   <li>🖼️ It includes a webpage with a canvas element that allows you to style text content as needed (made for fun purposes 🎉).</li>
@@ -101,20 +109,23 @@
 ├── blog.html
 ├── community.html
 ├── contributors.html
-├── download (1).png
+├── download (1).webp
 ├── edition.html
-├── feature.png
-├── gssocextd.jpg
-├── hacktoberfest.png
+├── feature.webp
+├── gssocextd.webp
 ├── index.html
 ├── login.html
 ├── logo4.png
+├── package-lock.json
+├── package.json
+├── popup.jpg
+├── popup.js
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
 ├── resources/
 │   ├── favicon.ico
-│   └── painting_image.jpg
+│   └── painting_image.webp
 ├── review.html
 ├── signup.html
 ├── src/
@@ -170,20 +181,20 @@
 │   │       ├── bootstrap.rtl.min.css
 │   │       └── bootstrap.rtl.min.css.map
 │   └── images/
-│       ├── about-bg.jpg
-│       ├── art-design-1.jpg
-│       ├── art-design-2.jpg
-│       ├── art-design-3.jpg
-│       ├── art-design-4.jpg
-│       ├── art-design-5.jpg
-│       ├── art-design-6.jpg
-│       ├── banner-bg.jpg
-│       ├── blog-p-1.jpg
-│       ├── blog-p-2.jpg
-│       ├── blog-p-3.jpg
-│       ├── blog-p-4.jpg
-│       ├── blog-p-5.jpg
-│       └── blog-p-6.jpg
+│       ├── about-bg.webp
+│       ├── art-design-1.webp
+│       ├── art-design-2.webp
+│       ├── art-design-3.webp
+│       ├── art-design-4.webp
+│       ├── art-design-5.webp
+│       ├── art-design-6.webp
+│       ├── banner-bg.webp
+│       ├── blog-p-1.webp
+│       ├── blog-p-2.webp
+│       ├── blog-p-3.webp
+│       ├── blog-p-4.webp
+│       ├── blog-p-5.webp
+│       └── blog-p-6.webp
 ├── testimonial.html
 ├── tutorial.html
 ├── visi.css
@@ -196,7 +207,7 @@
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
 
-# Website Preview
+## Website Preview
 
 ![image](https://github.com/user-attachments/assets/02614ccd-b2ec-492a-9f02-f53d69e9d2b9)
 
@@ -215,7 +226,7 @@ To change the background color or image:
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
-<h2><img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 30px height="38"> Technology Used</h2>
+## Technologies Used
 
 <p>
   <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
@@ -333,6 +344,7 @@ git push origin YourBranchName
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
 ## Troubleshooting
 
 ### Common Issues

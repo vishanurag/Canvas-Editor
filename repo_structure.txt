@@ -9,20 +9,23 @@
 ├── blog.html
 ├── community.html
 ├── contributors.html
-├── download (1).png
+├── download (1).webp
 ├── edition.html
-├── feature.png
-├── gssocextd.jpg
-├── hacktoberfest.png
+├── feature.webp
+├── gssocextd.webp
 ├── index.html
 ├── login.html
 ├── logo4.png
+├── package-lock.json
+├── package.json
+├── popup.jpg
+├── popup.js
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
 ├── resources/
 │   ├── favicon.ico
-│   └── painting_image.jpg
+│   └── painting_image.webp
 ├── review.html
 ├── signup.html
 ├── src/
@@ -78,20 +81,20 @@
 │   │       ├── bootstrap.rtl.min.css
 │   │       └── bootstrap.rtl.min.css.map
 │   └── images/
-│       ├── about-bg.jpg
-│       ├── art-design-1.jpg
-│       ├── art-design-2.jpg
-│       ├── art-design-3.jpg
-│       ├── art-design-4.jpg
-│       ├── art-design-5.jpg
-│       ├── art-design-6.jpg
-│       ├── banner-bg.jpg
-│       ├── blog-p-1.jpg
-│       ├── blog-p-2.jpg
-│       ├── blog-p-3.jpg
-│       ├── blog-p-4.jpg
-│       ├── blog-p-5.jpg
-│       └── blog-p-6.jpg
+│       ├── about-bg.webp
+│       ├── art-design-1.webp
+│       ├── art-design-2.webp
+│       ├── art-design-3.webp
+│       ├── art-design-4.webp
+│       ├── art-design-5.webp
+│       ├── art-design-6.webp
+│       ├── banner-bg.webp
+│       ├── blog-p-1.webp
+│       ├── blog-p-2.webp
+│       ├── blog-p-3.webp
+│       ├── blog-p-4.webp
+│       ├── blog-p-5.webp
+│       └── blog-p-6.webp
 ├── testimonial.html
 ├── tutorial.html
 ├── visi.css
