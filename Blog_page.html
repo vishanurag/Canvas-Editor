@@ -285,6 +285,16 @@
                 width: 100%;
             }
         }
+        .heart-icon {
+            cursor: pointer;
+            color: white; 
+            transition: color 0.3s ease; 
+          }
+          
+          .heart-icon.liked {
+            color: red; 
+          }
+          
     </style>
 </head>
 <body>
@@ -338,6 +348,7 @@
             <div class = "design-img">
               <img src = "/src/images/art-design-1.webp" alt = "">
               <span><i class = "far fa-heart"></i> 22</span>
+    </span>
               <span>Creative Canvas</span>
             </div>
             <div class = "design-title">
@@ -416,7 +427,7 @@
           <div class = "blog-item">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-1.webp" alt = "">
-              <span><i class = "far fa-heart"></i></span>
+              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
             </div>
             <div class = "blog-text">
               <span>20 January, 2020</span>
@@ -429,7 +440,7 @@
           <div class = "blog-item">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-2.webp" alt = "">
-              <span><i class = "far fa-heart"></i></span>
+              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
             </div>
             <div class = "blog-text">
               <span>05 October, 2024</span>
@@ -442,7 +453,7 @@
           <div class = "blog-item">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-3.webp" alt = "">
-              <span><i class = "far fa-heart"></i></span>
+              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
             </div>
             <div class = "blog-text">
               <span>05 October, 2024</span>
@@ -455,7 +466,7 @@
           <div class = "blog-item">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-4.webp" alt = "">
-              <span><i class = "far fa-heart"></i></span>
+              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
             </div>
             <div class = "blog-text">
               <span>05 October, 2024</span>
@@ -468,7 +479,7 @@
           <div class = "blog-item">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-5.webp" alt = "">
-              <span><i class = "far fa-heart"></i></span>
+              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
             </div>
             <div class = "blog-text">
               <span>05 October, 2024</span>
@@ -481,7 +492,7 @@
           <div class = "blog-item">
             <div class = "blog-img">
               <img src = "/src/images/blog-p-6.webp" alt = "">
-              <span><i class = "far fa-heart"></i></span>
+              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
             </div>
             <div class = "blog-text">
               <span>05 October, 2024</span>
@@ -493,6 +504,7 @@
      
         </div>
       </div>
+      
     </section>
 
     <footer>
@@ -565,6 +577,53 @@
 
       // Start the animation
       animateCircles();
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const heartIcons = document.querySelectorAll('.heart-icon');
+        const likedBlogsList = document.getElementById('liked-blogs-list');
+        const popup = document.getElementById('liked-blogs-popup');
+        const closePopup = document.querySelector('.close-popup');
+      
+        heartIcons.forEach(icon => {
+          icon.addEventListener('click', function () {
+            const isLiked = this.getAttribute('data-liked') === 'true';
+      
+            if (isLiked) {
+              this.classList.remove('liked');
+              this.setAttribute('data-liked', 'false');
+              removeFromLikedBlogs(icon);
+            } else {
+              this.classList.add('liked');
+              this.setAttribute('data-liked', 'true');
+              addToLikedBlogs(icon);
+            }
+          });
+        });
+      
+        closePopup.addEventListener('click', () => {
+          popup.classList.add('hidden');
+        });
+      
+        function addToLikedBlogs(icon) {
+          const blogTitle = icon.parentElement.nextElementSibling.innerText;
+          const listItem = document.createElement('li');
+          listItem.textContent = blogTitle;
+          likedBlogsList.appendChild(listItem);
+        }
+      
+        function removeFromLikedBlogs(icon) {
+          const blogTitle = icon.parentElement.nextElementSibling.innerText;
+          const items = likedBlogsList.getElementsByTagName('li');
+      
+          for (let i = 0; i < items.length; i++) {
+            if (items[i].textContent === blogTitle) {
+              likedBlogsList.removeChild(items[i]);
+              break;
+            }
+          }
+        }
+      });
+      
     </script>
   </body>
 </html>
