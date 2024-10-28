@@ -1,23 +1,16 @@
 /* Scroll bar */
-::-webkit-scrollbar {
-  width: 1.5rem; /* Increase width */
-  position: fixed; /* Ensure it's aligned properly */
+::-webkit-scrollbar{
+  width:1.2rem;
 }
-
-::-webkit-scrollbar-track {
-  background-color: #f0f0f0; /* Subtle background color */
-  border-radius: 1rem; /* Rounded edges for the track */
+::-webkit-scrollbar-track{
+  background-color: white;
 }
-
-::-webkit-scrollbar-thumb {
-  background-color: #8a2be2; /* Stylish violet color */
+::-webkit-scrollbar-thumb{
+  background-color: violet;
   border-radius: 1rem;
-  border: 0.4rem solid transparent; /* Increase border size */
-  background-clip: content-box;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Add subtle shadow for effect */
+  border: 0.3rem solid transparent ;
+  background-clip: content-box ;
 }
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #1e90ff; /* Change to a bright blue on hover */
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+::-webkit-scrollbar-thumb:hover{
+  background-color: blue;
 }

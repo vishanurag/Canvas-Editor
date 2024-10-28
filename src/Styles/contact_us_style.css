@@ -1,87 +1,62 @@
 .form-control {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    box-shadow: none;
-  }
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-shadow: none;
+}
 
-  
-  input[type="text"], input[type="email"], textarea {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    display: block;
-    width: 550px;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    background-color: #fff;
-    color: #495057;
-  }
-  
-  /* Ensure form-floating labels look good across all inputs */
-  .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
-    height: calc(3.5rem + 2px);
-    padding: 1rem 0.75rem;
-  }
-  
-  /* Remove box shadow on focus to prevent inconsistencies */
-  .form-control:focus {
-    border-color: #80bdff;
-    outline: none;
-    box-shadow: none;
-  }
-  #contact h2{
-    margin-top: 0;
-    color: black;
-  
-  }
+input[type="text"], input[type="email"], textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 550px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: #495057;
+}
+
+/* Ensure form-floating labels look good across all inputs */
+.form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
+  height: calc(3.5rem + 2px);
+  padding: 1rem 0.75rem;
+}
+
+/* Remove box shadow on focus to prevent inconsistencies */
+.form-control:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: none;
+}
+
 .contact-us-page{
-  display:flex;
-  margin-top: 40px;
- 
-  justify-content: center;
-  align-items:center;
-
-
-  background: #000000;
-} */
-
-#contact{
-  width:100%;
-  background: #ffffffa8;
-  border: 1px solid rgba(216, 94, 202, 0.41);
-
-
+display:flex;
+justify-content: center;
+align-items:center;
 }
 
-
-
-  width:100%;
-  background: #f579d4;
+.contact-container{
+width:100%;
+background: #000000;
 }
 
 #contact{
-  width:100%;
-  background: rgb(248, 193, 248)
+width:100%;
+background: rgb(0, 0, 0);
 }
 
 #contactForm textarea{
-    width:550px;
-    background: white;
+  width:550px;
+  background: white;
 }
 
 #contactForm button{
-  margin-left:0em;
-  text-align: center;
-  padding:9rem;
-
-}
-
-
-  background-color: #46cdcf;
-
+margin-left:6em;
+text-align: center;
+padding:9rem;
 }
