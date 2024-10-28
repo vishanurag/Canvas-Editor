@@ -434,6 +434,20 @@
                                 <span></span>
                                 Clear Canvas
                             </button>
+                            <button type="button" class="btn btn-primary" id="redoCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Redo
+                            </button>
+                            <button type="button" class="btn btn-primary" id="undoCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Undo
+                            </button>
                             <button  type="button" class="btn btn-primary" id="eraserBtn">
                                 <span></span>
                                 <span></span>
@@ -801,6 +815,58 @@
                 <span>↑</span>
             </button>
         </section>
+
+
+<script>
+    const canvas = document.getElementById('mainCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let undoStack = [];
+    let redoStack = [];
+
+    function saveState() {
+        undoStack.push(canvas.toDataURL());
+        redoStack = [];
+    }
+
+    function undo() {
+        if (undoStack.length > 0) {
+            redoStack.push(undoStack.pop());
+            restoreState(undoStack[undoStack.length - 1] || null);
+        }
+    }
+
+    function redo() {
+        if (redoStack.length > 0) {
+            const redoState = redoStack.pop();
+            undoStack.push(redoState);
+                restoreState(redoState);
+            }
+        }
+
+        function restoreState(imageData) {
+            const img = new Image();
+            img.src = imageData || '';
+            img.onload = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                if (imageData) ctx.drawImage(img, 0, 0);
+            };
+        }
+
+        function draw(x, y) {
+            ctx.fillStyle = "black";
+            ctx.fillRect(x, y, 5, 5);
+            saveState();
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            draw(e.offsetX, e.offsetY);
+        });
+
+        document.querySelector('button[name="Undo"]').addEventListener('click', undo);
+        document.querySelector('button[name="Redo"]').addEventListener('click', redo);
+
+</script>
 
 
         <script src="src\Scripts\preloader.js"></script>
