@@ -79,32 +79,121 @@
 </div>
 <script src="popup.js"></script>
 
+<title>Dark Mode Toggle Switch</title>
+<style>
+    /* Basic Page Styling */
+    body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+        background-color: #ffffff;
+        color: #333333;
+    }
 
-    <div class="d-flex align-items-center vh-1">
-        <button id="darkModeToggle" type="button" class="btn btn-outline-secondary hover-highlight">🌓</button>
-    </div>
+    .dark-mode {
+        background-color: #333333;
+        color: #ffffff;
+    }
+
+    /* Toggle Switch Styling */
+    .toggle-switch {
+        position: fixed;
+        top: 20px;
+        left: 350px;
+        width: 80px;
+        height: 40px;
+        background-color: #f39c12; /* Orange background for light mode */
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        z-index: 1000; /* Ensure the toggle switch is above other elements */
+    }
+
+    .toggle-switch.dark {
+        background-color: #222; /* Dark background for dark mode */
+    }
+
+    /* Sliding Circle */
+    .toggle-circle {
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        transition: transform 0.3s;
+    }
+
+    /* Icon Styling */
+    .icon {
+        position: absolute;
+        font-size: 20px;
+        transition: opacity 0.3s;
+    }
+
+    .sun-icon {
+        left: 10px;
+        color: #f39c12;
+    }
+
+    .moon-icon {
+        right: 10px;
+        color: #ffffff;
+        opacity: 0; /* Initially hidden */
+    }
+
+    /* Dark Mode Active State */
+    .dark-mode .sun-icon {
+        opacity: 0;
+    }
+
+    .dark-mode .moon-icon {
+        opacity: 1;
+    }
+
+    .dark-mode .toggle-circle {
+        transform: translateX(40px); /* Move to the right for dark mode */
+    }
+</style>
+</head>
+<body>
+
+<!-- Toggle Switch HTML -->
+<div class="toggle-switch" id="darkModeToggle">
+<span class="icon sun-icon">☀️</span>
+<span class="icon moon-icon">🌙</span>
+<div class="toggle-circle"></div>
+</div>
 
 
-    <script>
-        const toggleButton = document.getElementById('darkModeToggle');
+<script src="popup.js"></script>
+<script>
+// JavaScript to toggle dark mode
+const toggleSwitch = document.getElementById('darkModeToggle');
+const popup = document.getElementById('popup');
+const closePopupButton = document.getElementById('closePopup');
 
-        toggleButton.addEventListener('click', () => {
-            // Toggle dark mode class on the body
-            document.body.classList.toggle('dark-mode');
+// Function to show the popup
+function showPopup() {
+    popup.style.display = 'block';
+}
 
-            // Change button text or style if needed
-            if (document.body.classList.contains('dark-mode')) {
-                toggleButton.innerHTML = '🌞'; // Change to sun icon
-                toggleButton.classList.remove('btn-outline-secondary');
-                toggleButton.classList.add('btn-outline-light'); // Optional: change button color for dark mode
-            } else {
-                toggleButton.innerHTML = '🌓'; // Change back to moon icon
-                toggleButton.classList.remove('btn-outline-light');
-                toggleButton.classList.add('btn-outline-secondary'); // Optional: change button color for light mode
-            }
-        });
-    </script>
+// Show popup on page load (you can adjust this as needed)
+window.onload = showPopup;
 
+toggleSwitch.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleSwitch.classList.toggle('dark');
+});
+
+closePopupButton.addEventListener('click', () => {
+    popup.style.display = 'none'; // Close the popup
+});
+</script>
+</body>
+</html>
+    
 
     <!-- Circles -->
     <div class="circle"></div>
