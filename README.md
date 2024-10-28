@@ -35,7 +35,36 @@
 </div>
 <br>
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
+<h2>Open-Source-Programmes⭐</h2>
+
+<!-- Added Hacktoberfest 2024 and GSSoC Extended 2024 banners -->
+### This project is now OFFICIALLY accepted for
+
+<table>
+
+   <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+   </tr>
+   <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/gssocextd.jpg" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
+      <td>GirlScript Summer of Code 2024</td>
+      <td>GirlScript Summer of Code is a three-month-long Open Source Program conducted every summer by GirlScript Foundation. It is an initiative to bring more beginners to Open-Source Software Development.</td>
+   </tr>
+    <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/hacktoberfest.png" width="200" height="auto" loading="lazy" alt="Hacktoberfest 2024"/></td>
+      <td>Hacktoberfest 2024</td>
+      <td>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean, GitHub, and Twilio. It encourages contributions to open source projects and promotes a global community of developers.</td>
+   </tr>
+
+</table>
+<br/>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 <h2>Hi there,<img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" height="40"width="40" /> Enjoy the World of Open source contribution <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="60px" height="35"> </h2>
 
@@ -44,8 +73,16 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
+## Table of Contents
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Website Preview](#website-preview)
+- [Technologies Used](#technologies-used)
+- [How to make a Pull Request](#how-to-make-a-pull-request)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
 
-<h2>Overview📌</h2>
+## Overview
 <ul>
   <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
   <li>🖼️ It includes a webpage with a canvas element that allows you to style text content as needed (made for fun purposes 🎉).</li>
@@ -57,9 +94,128 @@
      
 </ul>
 
+## Project Structure
+
+<!-- START_STRUCTURE -->
+```
+├── Blog_page.html
+├── CODE_OF_CONDUCT.md
+├── Contributing.md
+├── Faq.html
+├── LICENSE
+├── README.md
+├── about-us.html
+├── about.html
+├── blog.html
+├── community.html
+├── contributors.html
+├── download (1).webp
+├── edition.html
+├── feature.webp
+├── gssocextd.webp
+├── index.html
+├── login.html
+├── logo4.png
+├── package-lock.json
+├── package.json
+├── popup.jpg
+├── popup.js
+├── privacy.html
+├── repo_structure.txt
+├── repreviewfix.html
+├── resources/
+│   ├── favicon.ico
+│   └── painting_image.webp
+├── review.html
+├── signup.html
+├── src/
+│   ├── Contributor.css
+│   ├── Contributor.html
+│   ├── Contributor.js
+│   ├── Scripts/
+│   │   ├── BacktoTop.js
+│   │   ├── Canvas.js
+│   │   ├── Save.js
+│   │   ├── contributor.js
+│   │   └── preloader.js
+│   ├── Styles/
+│   │   ├── Responsive.css
+│   │   ├── Style.css
+│   │   ├── Style_Blog_page.css
+│   │   ├── contact_us_style.css
+│   │   ├── contributor.css
+│   │   ├── scroll.css
+│   │   └── signup.css
+│   ├── bootstrap/
+│   │   └── css/
+│   │       ├── bootstrap-grid.css
+│   │       ├── bootstrap-grid.css.map
+│   │       ├── bootstrap-grid.min.css
+│   │       ├── bootstrap-grid.min.css.map
+│   │       ├── bootstrap-grid.rtl.css
+│   │       ├── bootstrap-grid.rtl.css.map
+│   │       ├── bootstrap-grid.rtl.min.css
+│   │       ├── bootstrap-grid.rtl.min.css.map
+│   │       ├── bootstrap-reboot.css
+│   │       ├── bootstrap-reboot.css.map
+│   │       ├── bootstrap-reboot.min.css
+│   │       ├── bootstrap-reboot.min.css.map
+│   │       ├── bootstrap-reboot.rtl.css
+│   │       ├── bootstrap-reboot.rtl.css.map
+│   │       ├── bootstrap-reboot.rtl.min.css
+│   │       ├── bootstrap-reboot.rtl.min.css.map
+│   │       ├── bootstrap-utilities.css
+│   │       ├── bootstrap-utilities.css.map
+│   │       ├── bootstrap-utilities.min.css
+│   │       ├── bootstrap-utilities.min.css.map
+│   │       ├── bootstrap-utilities.rtl.css
+│   │       ├── bootstrap-utilities.rtl.css.map
+│   │       ├── bootstrap-utilities.rtl.min.css
+│   │       ├── bootstrap-utilities.rtl.min.css.map
+│   │       ├── bootstrap.css
+│   │       ├── bootstrap.css.map
+│   │       ├── bootstrap.min.css
+│   │       ├── bootstrap.min.css.map
+│   │       ├── bootstrap.rtl.css
+│   │       ├── bootstrap.rtl.css.map
+│   │       ├── bootstrap.rtl.min.css
+│   │       └── bootstrap.rtl.min.css.map
+│   └── images/
+│       ├── about-bg.webp
+│       ├── art-design-1.webp
+│       ├── art-design-2.webp
+│       ├── art-design-3.webp
+│       ├── art-design-4.webp
+│       ├── art-design-5.webp
+│       ├── art-design-6.webp
+│       ├── banner-bg.webp
+│       ├── blog-p-1.webp
+│       ├── blog-p-2.webp
+│       ├── blog-p-3.webp
+│       ├── blog-p-4.webp
+│       ├── blog-p-5.webp
+│       └── blog-p-6.webp
+├── style.css
+├── testimonial.html
+├── tutorial.html
+├── visi.css
+├── visi.js
+├── visitor.css
+├── visitor.js
+└── welcome.html
+```
+<!-- END_STRUCTURE -->
+
 ### New Features ✨
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
+
+## Website Preview
+
+![image](https://github.com/user-attachments/assets/02614ccd-b2ec-492a-9f02-f53d69e9d2b9)
+
+![image](https://github.com/user-attachments/assets/7f355f78-2846-441d-b10d-73958b311f79)
+
 
 ### How to Use
 To change the background color or image:
@@ -68,8 +224,12 @@ To change the background color or image:
 <li> For background color: Select a color from the color picker to apply it to the canvas!</li>
 <li> For background image: Upload an image file, and it will be displayed as the canvas background!</li>
 
+<br>
 
-<h2><img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 30px height="38"> Technology Used</h2>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
+## Technologies Used
 
 <p>
   <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
@@ -78,22 +238,11 @@ To change the background color or image:
 </p>
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
 
-<h2>Open-Source-Programmes⭐</h2>
-
- ### This project is now OFFICIALLY accepted for
-
-<div align="center">
-  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSOC" width="80%">
-</div>
-
-<br>
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 <h2>Getting Started💥</h2>
 
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 ## How to make a Pull Request?
 
 **1.** Start by forking the [**Canvas-Editor**](https://github.com/vishanurag/Canvas-Editor) repository. Click on the <a href="https://github.com/vishanurag/Canvas-Editor/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a> symbol at the top right corner.
@@ -172,6 +321,8 @@ git push origin YourBranchName
  **Congratulations! You've made your first contribution! 🙌🏼**
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
  # Project Admin⚡
  
@@ -182,6 +333,59 @@ git push origin YourBranchName
 </td>
 </tr>
 </table>
+
+ # Project Mentor⚡🧑‍💻
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/somyadipghosh"><img src="https://avatars.githubusercontent.com/u/77097996?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Somyadip Ghosh</h4>
+ <a href="https://www.linkedin.com/in/somyadipghosh/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
+
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Installation Error: `npm install` fails**
+   - **Symptoms:** Error messages during the installation process.
+   - **Solution:** 
+     - Ensure you have the latest version of Node.js and npm installed. You can check your versions using `node -v` and `npm -v`.
+     - Clear the npm cache by running `npm cache clean --force`.
+     - Try deleting the `node_modules` folder and the `package-lock.json` file, then rerun the installation with `npm install`.
+
+2. **Wallet Connection Issues**
+   - **Symptoms:** Unable to connect to MetaMask.
+   - **Solution:**
+     - Verify that MetaMask is installed and enabled in your browser.
+     - Check that you are on the correct network (e.g., Rinkeby) in both your app and MetaMask.
+     - Ensure that your wallet is unlocked. If issues persist, refresh the page or restart your browser.
+
+3. **Smart Contract Deployment Fails**
+   - **Error Message:** `Revert: Contract validation failed`
+   - **Solution:** 
+     - Double-check that all contract parameters are accurate and align with your contract’s requirements.
+     - Make sure you have sufficient Ether in your wallet to cover gas fees.
+     - Confirm that you are deploying to the intended network.
+
+### Configuration Issues
+- Ensure that the `.env` file is properly configured with the necessary environment variables, including your Infura Project ID and wallet private key. 
+
+### Development Environment
+- Make sure you are using Node.js version **16.x.x** or **18.x.x** and that all required npm packages are installed. You can check your current Node.js version using `node -v`.
+
+### Tips for Optimizing Performance
+- Minimize the number of unnecessary background tasks during deployment to improve efficiency.
+- Monitor gas fees closely and consider deploying during off-peak hours to reduce costs.
+
+### Contact for Support
+If you encounter an issue not listed here, please reach out via [GitHub Issues](https://github.com/vishanurag/Canvas-Editor/issues).
+
   
 ## Contributors
 
@@ -193,515 +397,9 @@ We look forward to your continued support and collaboration. Together, we can ac
 
 Thank you once again to all our contributors! Your efforts are truly appreciated. 💖👏
 
-<!-- readme: contributors -start -->
-<table>
-	<tbody>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/vishanurag">
-                    <img src="https://avatars.githubusercontent.com/u/126074487?v=4" width="100;" alt="vishanurag"/>
-                    <br />
-                    <sub><b>ANURAG VISHWAKARMA</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Lekkhasri">
-                    <img src="https://avatars.githubusercontent.com/u/166889122?v=4" width="100;" alt="Lekkhasri"/>
-                    <br />
-                    <sub><b>Sri Lekkha</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Sagar2006">
-                    <img src="https://avatars.githubusercontent.com/u/62787510?v=4" width="100;" alt="Sagar2006"/>
-                    <br />
-                    <sub><b>Sagar2006</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/ananyag309">
-                    <img src="https://avatars.githubusercontent.com/u/145869907?v=4" width="100;" alt="ananyag309"/>
-                    <br />
-                    <sub><b>Ananya Gupta</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/yashksaini-coder">
-                    <img src="https://avatars.githubusercontent.com/u/115717039?v=4" width="100;" alt="yashksaini-coder"/>
-                    <br />
-                    <sub><b>Yash Kumar Saini</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/ngsanthosh">
-                    <img src="https://avatars.githubusercontent.com/u/63006841?v=4" width="100;" alt="ngsanthosh"/>
-                    <br />
-                    <sub><b>Santhosh Sudhaan N G</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/rounakdey6">
-                    <img src="https://avatars.githubusercontent.com/u/98476572?v=4" width="100;" alt="rounakdey6"/>
-                    <br />
-                    <sub><b>Rounak Dey</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Poushmita">
-                    <img src="https://avatars.githubusercontent.com/u/146666416?v=4" width="100;" alt="Poushmita"/>
-                    <br />
-                    <sub><b>Poushmita Paul</b></sub>
-                </a>
-            </td>
-            <td align="center">
-
-                <a href="https://github.com/KAmaL-senpai">
-                    <img src="https://avatars.githubusercontent.com/u/113301075?v=4" width="100;" alt="KAmaL-senpai"/>
-                    <br />
-                    <sub><b>Kamal sing bhumij</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/adityalaxkar123">
-                    <img src="https://avatars.githubusercontent.com/u/175431218?v=4" width="100;" alt="adityalaxkar123"/>
-
-                <a href="https://github.com/AnujShrivastava01">
-                    <img src="https://avatars.githubusercontent.com/u/150820396?v=4" width="100;" alt="AnujShrivastava01"/>
-
-                    <br />
-                    <sub><b>adityalaxkar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/AnujShrivastava01">
-                    <img src="https://avatars.githubusercontent.com/u/150820396?v=4" width="100;" alt="AnujShrivastava01"/>
-                    <br />
-                    <sub><b>Anuj Shrivastava</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/KAmaL-senpai">
-                    <img src="https://avatars.githubusercontent.com/u/113301075?v=4" width="100;" alt="KAmaL-senpai"/>
-                    <br />
-                    <sub><b>Kamal sing bhumij</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/TBorundia">
-                    <img src="https://avatars.githubusercontent.com/u/168854094?v=4" width="100;" alt="TBorundia"/>
-                    <br />
-                    <sub><b>Tina Borundia</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/shimmer12">
-                    <img src="https://avatars.githubusercontent.com/u/92056170?v=4" width="100;" alt="shimmer12"/>
-                    <br />
-                    <sub><b>Srishti Soni</b></sub>
-                </a>
-            </td>
-            <td align="center">
-
-                <a href="https://github.com/Ishika-Gupta06">
-                    <img src="https://avatars.githubusercontent.com/u/118624573?v=4" width="100;" alt="Ishika-Gupta06"/>
-                    <br />
-                    <sub><b>Ishika Gupta</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/AsifQamar">
-                    <img src="https://avatars.githubusercontent.com/u/93258479?v=4" width="100;" alt="AsifQamar"/>
-
-                <a href="https://github.com/nksmanya">
-                    <img src="https://avatars.githubusercontent.com/u/171407728?v=4" width="100;" alt="nksmanya"/>
-
-                    <br />
-                    <sub><b>Manya .N</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/kartik9737">
-                    <img src="https://avatars.githubusercontent.com/u/180297474?v=4" width="100;" alt="kartik9737"/>
-                    <br />
-                    <sub><b>Kartik Kumar Pandey </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Ishika-Gupta06">
-                    <img src="https://avatars.githubusercontent.com/u/118624573?v=4" width="100;" alt="Ishika-Gupta06"/>
-                    <br />
-                    <sub><b>Ishika Gupta</b></sub>
-                </a>
-            </td>
-            <td align="center">
-
-                <a href="https://github.com/AsifQamar">
-                    <img src="https://avatars.githubusercontent.com/u/93258479?v=4" width="100;" alt="AsifQamar"/>
-                    <br />
-                    <sub><b>Cyphrr_07 </b></sub>
-                </a>
-            </td>
-            <td align="center">
-
-                <a href="https://github.com/monishkumardvs">
-                    <img src="https://avatars.githubusercontent.com/u/125813798?v=4" width="100;" alt="monishkumardvs"/>
-                    <br />
-                    <sub><b>Dvs monish kumar</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/JahnavikaGopalbvrith">
-                    <img src="https://avatars.githubusercontent.com/u/120931967?v=4" width="100;" alt="JahnavikaGopalbvrith"/>
-                    <br />
-                    <sub><b>Jahnavika gopal </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/govindumeesala">
-                    <img src="https://avatars.githubusercontent.com/u/129055361?v=4" width="100;" alt="govindumeesala"/>
-                    <br />
-                    <sub><b>Meesala Govindu</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/poorvikaa08">
-                    <img src="https://avatars.githubusercontent.com/u/152640996?v=4" width="100;" alt="poorvikaa08"/>
-                    <br />
-                    <sub><b>Poorvika</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Archisman141">
-                    <img src="https://avatars.githubusercontent.com/u/121884549?v=4" width="100;" alt="Archisman141"/>
-                    <br />
-                    <sub><b>Archisman Khanra</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Web-Dev-Learner">
-                    <img src="https://avatars.githubusercontent.com/u/137269309?v=4" width="100;" alt="Web-Dev-Learner"/>
-                    <br />
-                    <sub><b>Shrinedhi.M.R.</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Devaki01">
-                    <img src="https://avatars.githubusercontent.com/u/147143243?v=4" width="100;" alt="Devaki01"/>
-                    <br />
-                    <sub><b>phantom_.1</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Vyshnavi1322">
-                    <img src="https://avatars.githubusercontent.com/u/164364526?v=4" width="100;" alt="Vyshnavi1322"/>
-                    <br />
-                    <sub><b>Venkata Vyshnavi Bondalapati</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Sujal1201">
-                    <img src="https://avatars.githubusercontent.com/u/151530482?v=4" width="100;" alt="Sujal1201"/>
-                    <br />
-                    <sub><b>Sujal Patil</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Pranshu-jais">
-                    <img src="https://avatars.githubusercontent.com/u/150207373?v=4" width="100;" alt="Pranshu-jais"/>
-                    <br />
-                    <sub><b>Pranshu Jaiswal</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/PatelHarsh2006">
-                    <img src="https://avatars.githubusercontent.com/u/183596777?v=4" width="100;" alt="PatelHarsh2006"/>
-                    <br />
-                    <sub><b>Patel Harsh</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Khushi-Nigam">
-                    <img src="https://avatars.githubusercontent.com/u/143868952?v=4" width="100;" alt="Khushi-Nigam"/>
-                    <br />
-                    <sub><b>Khushi Nigam </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/4F24L">
-                    <img src="https://avatars.githubusercontent.com/u/108697331?v=4" width="100;" alt="4F24L"/>
-                    <br />
-                    <sub><b>Md Afzal Mir</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/VidhanThakur09">
-                    <img src="https://avatars.githubusercontent.com/u/147980454?v=4" width="100;" alt="VidhanThakur09"/>
-                    <br />
-                    <sub><b>Vidhan Thakur</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/VivekShahare04">
-                    <img src="https://avatars.githubusercontent.com/u/138312154?v=4" width="100;" alt="VivekShahare04"/>
-                    <br />
-                    <sub><b>VivekShahare04</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Abhishek2634">
-                    <img src="https://avatars.githubusercontent.com/u/136872441?v=4" width="100;" alt="Abhishek2634"/>
-                    <br />
-                    <sub><b>Abhishek Farshwal</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/archanasingh11">
-                    <img src="https://avatars.githubusercontent.com/u/114737464?v=4" width="100;" alt="archanasingh11"/>
-                    <br />
-                    <sub><b>Archana Singh</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/ash-k121">
-                    <img src="https://avatars.githubusercontent.com/u/120484393?v=4" width="100;" alt="ash-k121"/>
-                    <br />
-                    <sub><b>Ashmeet</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/wgeenath">
-                    <img src="https://avatars.githubusercontent.com/u/44458689?v=4" width="100;" alt="wgeenath"/>
-                    <br />
-                    <sub><b>geenath</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Krishnamverma951">
-                    <img src="https://avatars.githubusercontent.com/u/166730422?v=4" width="100;" alt="Krishnamverma951"/>
-                    <br />
-                    <sub><b>Krishnam Verma</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/mrpankajpandey">
-                    <img src="https://avatars.githubusercontent.com/u/107976020?v=4" width="100;" alt="mrpankajpandey"/>
-                    <br />
-                    <sub><b>Pankaj Pandey</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/priyashuu">
-                    <img src="https://avatars.githubusercontent.com/u/150767072?v=4" width="100;" alt="priyashuu"/>
-                    <br />
-                    <sub><b>Priya </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/riyarane46">
-                    <img src="https://avatars.githubusercontent.com/u/154919910?v=4" width="100;" alt="riyarane46"/>
-                    <br />
-                    <sub><b>riyarane46</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/rutikakengal">
-                    <img src="https://avatars.githubusercontent.com/u/177618218?v=4" width="100;" alt="rutikakengal"/>
-                    <br />
-                    <sub><b>Rutika Kengal</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/saadgibawa">
-                    <img src="https://avatars.githubusercontent.com/u/171240814?v=4" width="100;" alt="saadgibawa"/>
-                    <br />
-                    <sub><b>Saadgi Bawa</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/sarinsanyal">
-                    <img src="https://avatars.githubusercontent.com/u/171278391?v=4" width="100;" alt="sarinsanyal"/>
-                    <br />
-                    <sub><b>Sarin Sanyal</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/sejals23">
-                    <img src="https://avatars.githubusercontent.com/u/183209584?v=4" width="100;" alt="sejals23"/>
-                    <br />
-                    <sub><b>Sejal</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/simmi-verma">
-                    <img src="https://avatars.githubusercontent.com/u/166193913?v=4" width="100;" alt="simmi-verma"/>
-                    <br />
-                    <sub><b>simmi verma</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/sriraghavi22">
-                    <img src="https://avatars.githubusercontent.com/u/140194099?v=4" width="100;" alt="sriraghavi22"/>
-                    <br />
-                    <sub><b>sriraghavi22</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/bhatiatanish225">
-                    <img src="https://avatars.githubusercontent.com/u/118905174?v=4" width="100;" alt="bhatiatanish225"/>
-                    <br />
-                    <sub><b>Tanish Bhatia</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Abhi9shinde">
-                    <img src="https://avatars.githubusercontent.com/u/143414991?v=4" width="100;" alt="Abhi9shinde"/>
-                    <br />
-                    <sub><b>Abhinav Shinde</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Amankr200">
-                    <img src="https://avatars.githubusercontent.com/u/160874720?v=4" width="100;" alt="Amankr200"/>
-                    <br />
-                    <sub><b>Amankr200</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/AnantInamdar77">
-                    <img src="https://avatars.githubusercontent.com/u/180192523?v=4" width="100;" alt="AnantInamdar77"/>
-                    <br />
-                    <sub><b>AnantInamdar77</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/AyushiTaralkar">
-                    <img src="https://avatars.githubusercontent.com/u/142772971?v=4" width="100;" alt="AyushiTaralkar"/>
-                    <br />
-                    <sub><b>Ayushi_Taralkar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/ayush-py-c">
-                    <img src="https://avatars.githubusercontent.com/u/85986862?v=4" width="100;" alt="ayush-py-c"/>
-                    <br />
-                    <sub><b>Ayushraj_2804 </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Bhoomysingh10">
-                    <img src="https://avatars.githubusercontent.com/u/126002795?v=4" width="100;" alt="Bhoomysingh10"/>
-                    <br />
-                    <sub><b>Bhoomy Singh</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/gayu999Code">
-                    <img src="https://avatars.githubusercontent.com/u/182801318?v=4" width="100;" alt="gayu999Code"/>
-                    <br />
-                    <sub><b>Gayatri Mohite</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/hariscoder3">
-                    <img src="https://avatars.githubusercontent.com/u/98173884?v=4" width="100;" alt="hariscoder3"/>
-                    <br />
-                    <sub><b>Haris Ellahi</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/HS202022">
-                    <img src="https://avatars.githubusercontent.com/u/120270398?v=4" width="100;" alt="HS202022"/>
-                    <br />
-                    <sub><b>Himangshu Sharma</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Kajalmehta29">
-                    <img src="https://avatars.githubusercontent.com/u/177048363?v=4" width="100;" alt="Kajalmehta29"/>
-                    <br />
-                    <sub><b>Kajal Mehta</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/shubhagarwal1">
-                    <img src="https://avatars.githubusercontent.com/u/105449260?v=4" width="100;" alt="shubhagarwal1"/>
-                    <br />
-                    <sub><b>Shubh Agarwal</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/neeru24">
-                    <img src="https://avatars.githubusercontent.com/u/161798182?v=4" width="100;" alt="neeru24"/>
-                    <br />
-                    <sub><b>Neeru </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/PavanTeja2005">
-                    <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
-                    <br />
-                    <sub><b>PavanTeja2005</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Prachiikhar25">
-                    <img src="https://avatars.githubusercontent.com/u/150283338?v=4" width="100;" alt="Prachiikhar25"/>
-                    <br />
-                    <sub><b>Prachiikhar25</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/rajdeepchakraborty-rc">
-                    <img src="https://avatars.githubusercontent.com/u/68934988?v=4" width="100;" alt="rajdeepchakraborty-rc"/>
-                    <br />
-                    <sub><b>Rajdeep Chakraborty</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/samyak-aditya">
-                    <img src="https://avatars.githubusercontent.com/u/91079592?v=4" width="100;" alt="samyak-aditya"/>
-                    <br />
-                    <sub><b>Samyak Aditya</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/sumitrathor1">
-                    <img src="https://avatars.githubusercontent.com/u/144085591?v=4" width="100;" alt="sumitrathor1"/>
-                    <br />
-                    <sub><b>Sumit Rathor</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Tanushree084">
-                    <img src="https://avatars.githubusercontent.com/u/176521591?v=4" width="100;" alt="Tanushree084"/>
-                    <br />
-                    <sub><b>Tanushree084</b></sub>
-                </a>
-            </td>
-		</tr>
-	<tbody>
-</table>
-<!-- readme: contributors -end -->
+<div align="center">
+    <img src="https://contrib.rocks/image?repo=vishanurag/Canvas-Editor">
+<div>
 
 <br>
 

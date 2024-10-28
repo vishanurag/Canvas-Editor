@@ -21,13 +21,8 @@
             margin: auto;
             color: black;
         }
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
 body {
 	font-family: "Open Sans", sans-serif;
-	overflow-x: hidden;
 }
 h2 {
 	color: #000;
@@ -50,11 +45,6 @@ h2::after {
 	right: 0;
 	bottom: -20px;
 }
-img, .container, section {
-    max-width: 100%;
-    width: 100%;
-}
-
 .carousel .carousel-item {
 	color: #999;
 	overflow: hidden;
@@ -109,7 +99,7 @@ img, .container, section {
 #BacktoTop {
   position: fixed; /* Stay in fixed position */
   bottom: 50px; /* Positioned above the chatbot */
-  right: 15px; /* Aligned to the right */
+  right: 5px; /* Aligned to the right */
   width: 55px;
   height: 55px;
   background-color: #007bff; /* Button background */
@@ -249,7 +239,26 @@ img, .container, section {
 	<div class="circle"></div>
 	<div class="circle"></div>
 
- 
+<div class="container pt-2 bg-body-tertiary pb-4">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="review.html">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="blog.html">Blog</a>
+            </li>
+          </ul>
+    </div>
+    <div class="row">
+        <img src="https://www.globitalmarketing.com/sg/wp-content/uploads/2021/07/df453we.png" alt="" height="400px" width="1400px">
+    </div>
 	<div class="row pt-5">
 		<div class="col-sm-12">
 			<h2>What <b>our customers</b> are saying</h2>
@@ -344,9 +353,9 @@ img, .container, section {
 			</div>
 		</div>
 	</div>
-    <div class="row pt-5 feature">
+    <div class="row pt-5">
         <h2>SERVICES LOVED THE MOST</h2>
-        <div class="row mx-auto services">
+        <div class="row mx-auto">
             <div class="col-sm-6">
                 <img src="feature.webp" alt="" width="500" style="border-radius: 40px;">
             </div>
@@ -375,7 +384,7 @@ img, .container, section {
             </div>
         </div>
     </div>
-    <footer class="text-center bg-body-tertiary footer">
+    <footer class="text-center bg-body-tertiary">
         <!-- Grid container -->
         <div class="container pt-4">
           <!-- Section: Social media -->

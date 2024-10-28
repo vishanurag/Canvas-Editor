@@ -1,0 +1,12 @@
+{
+  "name": "canvas-editor",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "visi.js",
+  "scripts": {
+    "start": "node visi.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
