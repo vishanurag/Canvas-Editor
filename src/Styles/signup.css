@@ -1,9 +1,9 @@
 #login {
     padding: 0.75% 3%;
-    border: black 1px solid;
+    border: 1px solid #f87affad;
     background-color: transparent;
     backdrop-filter: blur(10px);
-    border-radius: 5%;
+    border-radius: 30px;
 }
 
 h3 {
@@ -12,15 +12,51 @@ h3 {
     font-family: "Oswald", sans-serif;
     display: flex;
     justify-content: center;
+    color: #343232f0;
+}
+#login p a{
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 7px;
+    color :white;
+    font-size: 16px;
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: #141414;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+}
+
+#login p a:hover{
+    width: 150px;
+    transform: scale(1.05);
 }
 
 #input {
     font-family: "Oswald", sans-serif;
-    margin-bottom: 1.75em;
-    border: grey 2px solid;
+    border: 1px solid #f87affad;
     border-radius: 10px;
     padding-left: 5px;
     padding-right: 5px;
+
+    i{
+        color: #343232d4;
+    }
+}
+input[type="text"]{
+    font-size: 0.8rem;
+}
+
+input{
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 #input input {
@@ -29,7 +65,7 @@ h3 {
     height: 90%;
     border: none;
     outline: none;
-    padding-bottom: 4px;
+    padding: 0.4rem 1rem;
 }
 
 #google {

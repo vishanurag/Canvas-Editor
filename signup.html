@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
@@ -11,100 +12,105 @@
     <link rel="stylesheet" href="./src/Styles/signup.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
+            background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
+
         .header-container {
+            height: 100vh;
             width: 100vw; 
-            background-color: #f8f9fa; 
-            padding: 70px 0; 
             text-align: center;
             margin-bottom: 20px; 
-            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            
+            /* background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
             background-size: cover;
         }
         .form-container {
             max-width: 400px; /* Set a max width for the form */
             margin: 0 auto; /* Center the form on the page */
+            margin-top: 300px;
             padding: 20px;
             border: 1px solid #dee2e6; /* Optional: Adds a border to the form */
             border-radius: 8px; /* Optional: Adds rounded corners */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
         }
+
+        .nav-link img{
+            height: 50px;
+            width: auto;
+
         .nav-tabs {
             justify-content: center;
-            background-color: #ffffff;
+            background-color: rgba(0,0,0,0.3);
             border-bottom: 2px solid #dee2e6; /* Border for the nav-tabs */
+            width: 35%;
+            border-radius: 30px;
+            margin: auto;
         }
         .nav-item .nav-link {
             color: #000;
             font-size: 18px;
             padding: 10px 20px;
-            border-radius: 0;
-            transition: background-color 0.3s, color 0.3s;
+            border-radius: 35px;
+            transition:all 0.4s ease
         }
         .nav-link.active {
-            background-color: #3abe57;
-            color: white;
+            background-color: white;
+            color: black;
         }
         .nav-link:hover {
-            background-color: #3abe57;
+            background-color: rgba(0,0,0,0.5);
             color: white;
+
         }
         h2 {
             text-align: center;
             margin-bottom: 5px;
         }
         button {
-            width: 100%;
+            width: 45%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #243447;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 30px;
             cursor: pointer;
+            transition: all 0.4s ease;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #0d1321;
+            width: 70%;
+            transform: scale(1.1);
         }
         .or {
             text-align: center;
             margin: 10px 0;
-            color: white;
+            color: #343232d4;
         }
         p {
             text-align: center;
-            color: white;
+            color: #343232d4;
         }
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/Styles/Style.css">
-    <link rel="stylesheet" href="./src/Styles/Responsive.css">
-    <link rel="stylesheet" href="./src/Styles/signup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
+    
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
-            display: flex;
+            /* display: flex; */
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow-x: hidden;
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
         }
         .header-container {
             width: 100vw; 
@@ -123,34 +129,54 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .back-to-home {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            z-index: 1000;
-        }
-        .back-to-home:hover {
-            background-color: #0056b3;
-            color: white;
-        }
+        
         /* ... (rest of the styles remain unchanged) ... */
-    </style>
-</head>
-<body>
-    <a href="index.html" class="back-to-home">◀  Back to Home</a>
+   
+ 
+        .google-btn{
+            margin-right:-20px;
+        }   
+        .github-btn{
+            margin-left: -20px;
+        }
 
-</body>
-</html>
-    </style>
-    <style>
+    ::placeholder {
+        color: #3432328a; /* Adjust the color to your preference */
+        opacity: 1; 
+    }
+
+    /* Circle styles */
+    .circle {
+
+    input[name="username"] {
+        margin-top: -5px;
+        padding-left: 4px; 
+    }
+
+
+    /* Mobile devices */
+        @media (max-width: 768px) { 
+
+            #input input{
+                color: white;
+            }
+
+            button{
+                margin-left: 90px;
+            }
+            ::placeholder {
+                color: #757272; 
+                opacity: 1; 
+            }
+
+            #input i{
+                color: #302f2f;
+            }
+        }
+
         /* Circle styles */
         .circle {
+
             height: 24px;
             width: 24px;
             border-radius: 50%;
@@ -162,7 +188,9 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
+
     </style>
+
 </head>
 <body>
     <!-- Circles -->
@@ -209,46 +237,83 @@
         <!-- dribbble -->
         <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
     </div>
-    <div class="header-container">
-        
-        <div class="title " >
-            <h1 class="site-name" style="color: #000;">Canvas</h1>
-            <i class="fa-solid fa-paintbrush" style="color: #000;"></i>
-         </div> 
-        <div class="header">
+
+        <!-- <div class="header" style="height: 10vh;">
             <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
+        </div> -->
+   
+    <div class="col gap-5 mt-5 d-flex justify-content-evenly align-items-center">
+        <div class="nav-item">
+
+            <a class="nav-link active" aria-current="page" href="#"><img src="logo4.png" alt=""></a>
+
         </div>
-    <div class="row">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about-us.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login </a>
+
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
 
             </li>
-        </ul>    
+            <li class="nav-item">
+                <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="review.html">Review</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testimonial.html">Testimonial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="privacy.html">Privacy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Blog_page.html">Blog</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="./Faq.html">FAQ</a>
+            </li>
+
+            <a class="nav-link" href="signup.html">Sign Up</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contributors.html">Contributors</a>
+
+            </li>
+
+        </ul>
     </div>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registration Form</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="login" class="form-container mt-5">
+        <div id="login" class="form-container mt-5 mb-5">
             <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
+
+    <header class="header">
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+      </header>
+
+        <div id="login" class="form-container mt-5">
+            <h3 class="pb-4">CREATE YOUR ACCOUNT </h3>
+
             <form action="/signup" method="POST" onsubmit="return validatePassword()">
                 <div id="input">
                     <input type="text" name="username" placeholder="Username" required>
@@ -261,7 +326,7 @@
                 <!-- Password Input Block with Strength Meter -->
                 <div id="input">
                     <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="togglePassword"></i>
                 </div>
                 <div class="password-strength" id="password-strength" style="display: none;">
                     <span id="strength-text"></span>
@@ -274,7 +339,7 @@
                 <!-- Confirm Password Input Block -->
                 <div id="input">
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
                 </div>
     
                 <!-- Importing zxcvbn -->
@@ -340,12 +405,36 @@
                 <a href="https://www.google.com/"><img class="logo google-btn"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
                 </a>
-                <a href="https://github.com/"><img class="logo"
+                <a href="https://github.com/"><img class="logo github-btn"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
                 </a>
             </div>
-            <p>Already have an account? <a href="login.html">Log in</a></p> <!-- This should link to login.html -->
+            <!-- <p style="color: black;">Already have an account? <a href="login.html">Log in</a></p>  -->
+            <p>Already have an account? <br><a href="login.html" class="loginn">Log in</a></p> <!-- This should link to login.html -->
         </div>
+
+        <section class="footer mt-5" id="footer">
+            <!-- Added responsiveness to icons -->
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
+                <a href="#" class="fa-brands fa-pinterest"></a>
+            </div>
+    
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
+                    2024
+                </p>
+                <br>
+            </div>
+            <!-- Back to Top Button -->
+            <button id="BacktoTop">
+                <span>↑</span>
+            </button>
+        </section>
     
         <!-- Validation Script -->
         <script>
@@ -387,6 +476,32 @@
                 circle.x = 0;
                 circle.y = 0;
                 circle.style.backgroundColor = colors[index % colors.length];
+            });
+
+            // Toggle Password Visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Toggle Confirm Password Visibility
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+            const confirmPasswordInput = document.getElementById('confirm_password');
+
+            toggleConfirmPassword.addEventListener('click', function () {
+                const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPasswordInput.setAttribute('type', type);
+
+                // Toggle the icon between eye and eye-slash
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
             });
     
             // Update the coordinates when the mouse moves
