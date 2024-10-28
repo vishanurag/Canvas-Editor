@@ -258,35 +258,8 @@ closePopupButton.addEventListener('click', () => {
                 <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse nav-links" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="privacy.html">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Blog_page.html">Blogs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contributors.html">Contributors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="testimonial.html">Testimonial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
-                        </li>
-                    </ul>
+                    
+                  
                 </div>
             </div>
         </nav>
@@ -296,21 +269,16 @@ closePopupButton.addEventListener('click', () => {
     <div class="container p-0">
         <div class="header">
 
-            <img src="" alt="">
-            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
-            </h1>
-            <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
+            
 
 
             <div id="logo">
                 <!-- <div class="logo-new" style="margin-left: 140px;"><img src="logo4.png" alt="" width="80px" height="auto""></div> -->
-                <h1 class="display-4 logo"><a href="/" style="color: inherit; text-decoration: none; font-family: 'Permanent Marker', cursive;">Creative
-                        Canvas Tool</a>
+               
                 </h1>
             </div>
         </div>
-        <p class="lead p-4">Design and create stunning visuals effortlessly!</p>
-
+    
         <div class="row gap-5">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -364,9 +332,7 @@ closePopupButton.addEventListener('click', () => {
         <div class="canvas-container p-3">
 
             <img src="" alt="">
-            <h1 class="display-4 mb-4"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
-
-                <img src="" alt="">
+           
                 <h1 class="display-4 mb-4" id="heading"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
 
                 </h1>
@@ -438,10 +404,14 @@ closePopupButton.addEventListener('click', () => {
     <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
 
 </div>
+< main
+            
+
            
         
             <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
             <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
+> main
 
         </div>
 
@@ -482,20 +452,7 @@ closePopupButton.addEventListener('click', () => {
                             <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
                         </div>
 
-                            <div class="brush" style="width: 40%;">
-                                <label for="brushSize">Brush Size:</label>
-                                <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                    <option value="25">25</option>
-                                </select>
-                            </div>
-                            <div class="colorpick" style="width: 40%;">
-                                <label for="colorPicker">Color:</label>
-                                <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
-                            </div>
+                           
 
                         </div>
                         <div class="d-flex justify-content-around  mb-2">
@@ -588,6 +545,13 @@ closePopupButton.addEventListener('click', () => {
 
 
                         <button  type="button" class="btn btn-success" id="rectangleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            triangle
+                        </button>
+                            
 
                         <div class="rclStyle d-md-flex justify-content-evenly gap-1">
 
@@ -601,7 +565,6 @@ closePopupButton.addEventListener('click', () => {
                             Rectangle
                         </button>
 
-                        <button  type="button" class="btn btn-success" id="circleBtn">
 
                             <button type="button" class="btn btn-success" id="circleBtn">
 
@@ -612,7 +575,6 @@ closePopupButton.addEventListener('click', () => {
                             Circle
                         </button>
 
-                        <button  type="button" class="btn btn-success" id="linebtn">
 
                             <button type="button" class="btn btn-success" id="linebtn">
 
@@ -630,6 +592,7 @@ closePopupButton.addEventListener('click', () => {
                         <button id="circleBtn" class="btn btn-success">Circle</button>
                         <button id="lineBtn" class="btn btn-success">Line</button>
                     </div> -->
+                    <br>
                     <div class="d-md-flex justify-content-center align-items-center">
                         <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
                         <button type="button" class="btn btn-danger" id="clear">Clear</button>
@@ -643,14 +606,7 @@ closePopupButton.addEventListener('click', () => {
 
                         <div class="d-md-flex justify-content-center align-items-center py-3">
 
-
-                            <input type="text" placeholder="Enter Text" name="textData" id="textData" class="form-control mw-100 w-70">
-                            <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
-                            <button type="button" class="btn btn-danger" id="clear">Clear</button>
-                            <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                            <!-- Added save functionality  -->
-                            <button type="button" class="btn btn-primary" id="saveAsImageBtn">Save Image</button>
-
+</div>
 
 
                         </div>
@@ -662,6 +618,8 @@ closePopupButton.addEventListener('click', () => {
                 
         </div>
 
+
+< main
 
 <div style="display: flex; padding-top: 10px;">
                     <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png" >
@@ -679,39 +637,18 @@ closePopupButton.addEventListener('click', () => {
                                 oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
                                 oninput="this.setCustomValidity('')" style="margin-bottom: 30px;">
                        <label for="name">Your Name</label>
+> main
                   </div>
                     <form id="contactForm" class="row g-3 justify-content-center">
 
             </div>
 
             <div class="container mt-5 contact-container">
-                <!-- Contact Us Section -->
-                <section id="contact" class="contact-section text-center">
-                    <h2 class="py-4" style="font-size: 40px;">Contact Us</h2>
-                    <div class="social-media-links d-flex justify-content-center align-items-center">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
-                        <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
-                    </div>
-                    <form id="contactForm" class="row g-3 justify-content-center mt-5">
-
-                        <!-- Name Field -->
-                        <div class="col-md-4">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                <label for="name">Your Name</label>
-
-                                <div class="contact-us-page">
-                                    <div class="contact-container">
+              
                                         <!-- Contact Us Section -->
                                         <section id="contact" class="contact-section text-center py-5">
                                             <h2 class="mb-4">Contact Us</h2>
                                             <div class="social-media-links">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
-                                                <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
                                             </div>
                                             <form id="contactForm" class="row g-3 justify-content-center">
                                                 <!-- Name Field -->
@@ -762,20 +699,6 @@ closePopupButton.addEventListener('click', () => {
 
                     </div>
 
-                    <!-- Message Field -->
-                            <div class="col-md-8">
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px; align-items: center;" required></textarea>
-                                    <label for="message">Your Message</label>
-                                </div>
-                            </div>
-                            <!-- Submit Button -->
-                            <div class="col-md-8">
-                                <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-                            </div>
-
-                        </div>
-
                         <!-- Message Field -->
                         <div class="col-md-8">
                             <div class="form-floating">
@@ -797,15 +720,7 @@ closePopupButton.addEventListener('click', () => {
                         </div> -->
                         <div class="container">
                             <div class="cal">
-                                <h4>Your<br><span>Message</span></h4>
-                                <!-- <div class="input-box"> -->
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:80px;" required></textarea>
-
-                                <p id="result"></p>
-                            </div>
-                            <!-- Submit Button -->
-                            <div class="col-md-8 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
+                              
                     </form>
                     </div>
 
@@ -815,6 +730,9 @@ closePopupButton.addEventListener('click', () => {
                 </section>
             </div>
         </div>
+
+< main
+     
 
 
                     </div>
@@ -864,6 +782,7 @@ closePopupButton.addEventListener('click', () => {
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <!-- </div> -->
                 </div>
+> main
 
                 </form>
             </div>
@@ -1078,35 +997,7 @@ closePopupButton.addEventListener('click', () => {
 
     </div>
 
-    <section class="footer" id="footer">
-        <!-- Added responsiveness to icons -->
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fa-brands fa-x-twitter"></a>
-            <!-- Updated X icon-->
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-            <a href="#" class="fa-brands fa-pinterest"></a>
-        </div>
-
-
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/edit.js"></script> -->
-
-        <div class="credit" style="font-size: 0.6rem;">
-            <p>
-                Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © 2024
-            </p>
-            <br>
-        </div>
-        <!-- Back to Top Button -->
-        <button id="BacktoTop">
-            <span>↑</span>
-        </button>
+        
     </section>
 
     <script src="src\Scripts\preloader.js"></script>
