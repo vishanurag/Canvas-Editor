@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
     <div class="visitor-counter">
         <div>Visitor</div>
@@ -120,11 +121,11 @@
             display: flex;
         }
         .sidebar {
-            width: 200px;
+            width: 150px;
             background-color: #a69ac4;
             color: white;
-            padding: 20px;
-            height: 103vh;
+            padding: 17px;
+            padding-top: 100px;
         }
         .sidebar button {
             display: block;
@@ -138,9 +139,10 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s;
+            font-size: 15px;
         }
         .sidebar button:hover {
-            background-color: #967ada;
+            background-color: #553d8c;
         }
         .main-content {
             flex-grow: 1;
@@ -154,14 +156,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-bottom: 50px;
         }
         .navbar h1 {
             color: rgb(255, 255, 255);
             margin: 0;
+            margin-left: -180px;
         }
         .nav-links {
             display: flex;
             gap: 20px;
+            margin: auto;
         }
         .nav-links a {
             color: rgb(255, 255, 255);
@@ -176,7 +181,7 @@
         .tools {
             display: flex;
             gap: 10px;
-
+            padding-left:40px;
             background-color:#a69ac4 ;
         }
         .tool {
@@ -194,10 +199,10 @@
             transition: background-color 0.3s;
         }
         .tool:hover {
-            background-color: #a495a8;
+            background-color: #bd8ce6;
         }
         .tool.active {
-            background-color: #cd67c8;
+            background-color: #bd74dd;
         }
         #canvas {
             border: 1px solid #000000;
@@ -243,7 +248,7 @@
             border: 1px solid #ddd;
         }
         .footer {
-            background-color: #eba9ef;
+            background-color: #fddaff;
             color: rgb(197, 82, 184);
 
         }
@@ -291,8 +296,21 @@
             background-color: white;
         }
         .text-size-control:hover {
-            background-color: #a495a8;
+            background-color: #bd8ce6;
             transition: background-color 0.3s;
+        }
+        .credit{
+            text-align: center;
+        }
+        .share{
+            font-size: 25px;
+        }
+        .share i{
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .share i:hover{
+            cursor: pointer;
+            color: #5c2872;
         }
     </style>
 </head>
@@ -306,7 +324,7 @@
         <nav class="navbar">
             <h1>Canvas Editor</h1>
             <div class="nav-links">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about-us.html">About Us</a>
                 <a href="review.html">Review</a>
                 <a href="testimonial.html">Testimonial</a>
@@ -369,28 +387,23 @@
         <canvas id="canvas"></canvas>
         <footer class="footer">
             <div class="footer-content">
-                <div class="footer-image">
+                <!-- <div class="footer-image">
                     <img src="popup.jpg" alt="Newsletter signup" width="100">
-                </div>
+                </div> -->
                 <div class="newsletter-section">
                     <h3>Subscribe to our Newsletter</h3>
                     <input type="email" id="newsletter-email" placeholder="Enter your email address">
                     <button onclick="subscribeNewsletter()">Subscribe</button>
                 </div>
-                <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fa-brands fa-x-twitter"></a>
-                    <!-- Updated X icon-->
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-                    <a href="#" class="fa-brands fa-pinterest"></a>
-                </div>
-            
                 <div class="credit" style="font-size: 0.6rem;">
                     <p>
                         Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © 2024
                     </p>
-                    <br>
+                    <div style="margin: 20px;" class="share">
+                        <i class="fab fa-github" style="margin-right: 10px;"></i>
+                        <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
                 </div>
         </footer>
     </div>
@@ -604,6 +617,25 @@
     </script>
     <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
        </script>
+
+<!-- script for adding valid email -->
+<script>
+    function subscribeNewsletter() {
+        const emailInput = document.getElementById('newsletter-email');
+        const email = emailInput.value;
+
+        // Regular expression for basic email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailPattern.test(email)) {
+            alert('Thank you for subscribing!');
+            // Add your subscription logic here
+        } else {
+            alert('Please enter a valid email address.');
+            emailInput.focus();
+        }
+    }
+</script>
 <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"right"}</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
