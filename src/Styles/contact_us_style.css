@@ -6,6 +6,7 @@
     border-radius: 0.25rem;
     box-shadow: none;
   }
+
   
   input[type="text"], input[type="email"], textarea {
     appearance: none;
@@ -33,21 +34,39 @@
     outline: none;
     box-shadow: none;
   }
-
+  #contact h2{
+    margin-top: 0;
+    color: black;
+  
+  }
 .contact-us-page{
   display:flex;
+  margin-top: 40px;
+ 
   justify-content: center;
   align-items:center;
+
+
+  background: #000000;
+} */
+
+#contact{
+  width:100%;
+  background: #ffffffa8;
+  border: 1px solid rgba(216, 94, 202, 0.41);
+
+
 }
 
-.contact-container{
+
+
   width:100%;
-  background: #000000;
+  background: #f579d4;
 }
 
 #contact{
   width:100%;
-  background: rgb(0, 0, 0);
+  background: rgb(248, 193, 248)
 }
 
 #contactForm textarea{
@@ -56,6 +75,7 @@
 }
 
 #contactForm button{
+
   display: flex;
   text-align: center;
   justify-content: center;
@@ -65,3 +85,15 @@
   border-radius: 10em;
   width: 50%;
 }
+
+  margin-left:0em;
+  text-align: center;
+  padding:9rem;
+
+}
+
+
+  background-color: #46cdcf;
+
+}
+
