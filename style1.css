@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.feedback-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+.feedback-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffc107;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.thankyou-message {
+    display: none;
+    margin-top: 15px;
+    color: green;
+    font-size: 16px;
+}
+/* Existing CSS */
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffc107;
+}
+
+/* Basic Styles - Unchanged */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.feedback-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.feedback-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    text-align: left;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+}
+
+/* Horizontal Star Rating with Animation */
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+}
+
+/* Scale and Color Change on Hover */
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+/* Button Styling with Animation */
+button {
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.thankyou-message {
+    display: none;
+    margin-top: 15px;
+    color: green;
+    font-size: 16px;
+    opacity: 0;
+    animation: fadeInText 0.5s ease forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* Feedback Container Styling */
+.feedback-container {
+    background: #9c27b0; /* Set the background color */
+    color: #fff; /* Set text color to contrast with background */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.7); /* Create a glowing shadow */
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+/* Apply Font to Heading */
+.feedback-container h2 {
+    font-family: 'Pacifico', cursive; /* Apply new font */
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2em;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Slide-in Animation for Heading */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Light Purple Background for Body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3e5f5; /* Light purple background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Feedback Container */
+.feedback-container {
+    background: #9c27b0; /* Darker purple for form container */
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.7); /* Glowing shadow effect */
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading Style with Animation */
+.feedback-container h2 {
+    font-family: 'Pacifico', cursive; /* Unique font */
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2em;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Slide-in Animation for Heading */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Light Purple Background for Body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3e5f5; /* Light purple background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Feedback Container */
+.feedback-container {
+    background: #9c27b0; /* Darker purple for form container */
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.7); /* Glowing shadow effect */
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading Style with Animation */
+.feedback-container h2 {
+    font-family: 'Pacifico', cursive; /* Unique font */
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2em;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Slide-in Animation for Heading */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
