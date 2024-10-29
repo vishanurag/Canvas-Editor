@@ -4,500 +4,384 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Review</title>
-<link rel="stylesheet" href="src/Styles/scroll.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <style>
-     .container{
-            max-width: 100%;
-            margin: auto;
-            color: black;
-        }
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #1e1e2f;
+        color: #e4e4e7;
+        padding: 0;
+        margin: 0;
+    }
 
-body {
-	font-family: "Open Sans", sans-serif;
-	overflow-x: hidden;
-}
-h2 {
-	color: #000;
-	font-size: 26px;
-	font-weight: 300;
-	text-align: center;
-	text-transform: uppercase;
-	position: relative;
-	margin: 30px 0 70px;
-}
-h2::after {
-	content: "";
-	width: 100px;
-	position: absolute;
-	margin: 0 auto;
-	height: 4px;
-	border-radius: 1px;
-	background: #1c47e3;
-	left: 0;
-	right: 0;
-	bottom: -20px;
-}
-img, .container, section {
-    max-width: 100%;
-    width: 100%;
-}
+    h2 {
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        color: #f05454;
+        position: relative;
+    }
 
-.carousel .carousel-item {
-	color: #999;
-	overflow: hidden;
-	min-height: 120px;
-	font-size: 13px;
-}
-.carousel .media img {
-	width: 80px;
-	height: 80px;
-	display: block;
-	border-radius: 50%;
-}
-.carousel .testimonial {
-	padding: 0 15px 0 60px ;
-	position: relative;
-}
-.carousel .testimonial::before {
-	content: "\201C";
-	font-family: Arial,sans-serif;
-	color: #e2e2e2;
-	font-weight: bold;
-	font-size: 68px;
-	line-height: 54px;
-	position: absolute;
-	left: 15px;
-	top: 0;
-}
-.carousel .overview b {
-	text-transform: uppercase;
-	color: #1c47e3;
-}
-.carousel .carousel-indicators {
-	bottom: -40px;
-}
-.carousel-indicators li, .carousel-indicators li.active {
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	margin: 1px 3px;
-	box-sizing: border-box;
-}
-.carousel-indicators li {	
-	background: #e2e2e2;
-	border: 4px solid #fff;
-}
-.carousel-indicators li.active {
-	color: #fff;
-	background: #1c47e3;    
-	border: 5px double;    
-}
-/* Back to Top Button */
-#BacktoTop {
-  position: fixed; /* Stay in fixed position */
-  bottom: 50px; /* Positioned above the chatbot */
-  right: 15px; /* Aligned to the right */
-  width: 55px;
-  height: 55px;
-  background-color: #007bff; /* Button background */
-  color: white; /* Text color */
-  padding: 10px 15px; /* Padding for button size */
-  border-radius: 50%; /* Circular button */
-  border: none;
-  font-size: 24px; /* Size of the text or arrow */
-  font-weight: bolder;
-  display: block; /* Initially hidden */
-  visibility: hidden;
-  z-index: 1000; /* Ensures it is above most elements */
-  cursor: pointer; /* Pointer when hovered */
-}
+    h2::after {
+        content: "";
+        width: 80px;
+        height: 4px;
+        background-color: #ff6b6b;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+    }
 
-#BacktoTop:hover {
-  background-color: #0056b3; /* Change to a lighter blue on hover */
-  transform: scale(1.1);
-}
+    .carousel-item {
+        padding: 20px;
+        background-color: #2b2b3c;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+    }
 
-/* Navbar Styles */
-/* Navbar Styling */
-.nav {
-  background-color: #333; /* Dark background */
-  padding: 20px 10px; /* Space around the links */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* Spacing between links */
-  border-bottom: none;
-	margin-bottom: 20px;
-	margin-top: 0px;
-}
+    .carousel-item:hover {
+        transform: translateY(-10px);
+    }
 
-/* Styling individual links in the navbar */
-.nav a {
-  color: white; /* Link color */
-  font-size: 1.2rem; /* Font size */
-  text-decoration: none; /* Remove underline */
-  padding: 0.5rem 1rem; /* Add padding around the text */
-  border-radius: 0.5rem; /* Rounded corners for hover effect */
-}
-.nav-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
+    .media img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
 
-/* .nav-links a { */
-/* color: white; */
-/* font-size: 1.2rem; */
-/* text-decoration: none; */
-/* padding: 0.5rem 1rem; */
-/* border-radius: 0.5rem; */
-/* transition: background-color 0.3s ease; */
-/* } */
-/* Hover effect for navbar links */
-/* .navbar a:hover {/ */
-/* background-color: #474747; Background color on hover */
-/* color: #fff; White text on hover */
+    .testimonial {
+        margin-left: 20px;
+        font-style: italic;
+        color: #ccc;
+    }
 
-/* width: 60% !important; */
-/* height: auto; */
-/* border: 1px solid gray; */
-/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-/* border-radius: 5px; */
-/* }/
- */
+    .overview {
+        margin-top: 10px;
+        font-weight: 600;
+        color: #f05454;
+    }
 
-/* Full width for form controls */
-/* .fullWidth {/ */
-/* width: 100% !important; */
-/* } */
+    .progress-bar {
+        background-color: #f05454;
+    }
 
-.nav-item a {
-  position: relative;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  color: #a0a0a0;
-}
-.nav-item a:after {
-  content: "";
-  position: absolute;
-  background-color: white;
-  height: 3px;
-  width: 0;
-  left: 0;
-  bottom: -10px;
-  transition: 0;
-}
-.nav-item a:hover {
-  color:#fff;
-	border: none; 
-}
-.nav-item a:hover:after {
-  width: 100%;
-}
+    .services img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
 
+    .services h3 {
+        color: #f05454;
+        font-weight: 700;
+    }
+
+    .services h5 {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #ccc;
+        display: flex;
+        align-items: center;
+    }
+
+    .services h5 i {
+        margin-right: 10px;
+        color: #ff6b6b;
+    }
+
+    .carousel-indicators li {
+        background-color: #444;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+    }
+
+    .carousel-indicators li.active {
+        background-color: #f05454;
+    }
+
+    #BacktoTop {
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        background-color: #f05454;
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 18px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    #BacktoTop:hover {
+        background-color: #ff6b6b;
+    }
+
+    .nav {
+        background-color: #2b2b3c;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav a {
+        color: #e4e4e7;
+        font-weight: 600;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+        color: #ff6b6b;
+    }
+
+    footer {
+        background-color: #2b2b3c;
+        padding: 30px 0;
+        color: #e4e4e7;
+    }
+
+    footer .footer-heading {
+        font-weight: 700;
+        color: #f05454;
+    }
+
+    footer a {
+        color: #e4e4e7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        color: #ff6b6b;
+    }
+
+    footer .social-icons i {
+        font-size: 24px;
+        margin-right: 15px;
+        color: #e4e4e7;
+        transition: color 0.3s ease;
+    }
+
+    footer .social-icons i:hover {
+        color: #ff6b6b;
+    }
+
+    .circle {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background-color: #ff6b6b;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999999;
+    }
 </style>
-<style>
-	/* Circle styles */
-	.circle {
-		height: 24px;
-		width: 24px;
-		border-radius: 50%;
-		background-color: black;
-		position: fixed;
-		top: 0;
-		left: 0;
-		pointer-events: none;
-		z-index: 99999999;
-		transition: transform 0.1s ease-out;
-	}
-</style>
+
 </head>
 <body>
-	<!-- Circles -->
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
-	<div class="circle"></div>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
 
- 
-	<div class="row pt-5">
-		<div class="col-sm-12">
-			<h2>What <b>our customers</b> are saying</h2>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Carousel indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-				</ol>   
-				<!-- Wrapper for carousel items -->
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="media">
-									<img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
-									<div class="media-body">
-										<div class="testimonial">
-											<p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nam eusem scelerisque tempor, varius quam luctus dui. Mauris magna metus nec.</p>
-											<p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="media">
-									<img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" class="mr-3" alt="">
-									<div class="media-body">
-										<div class="testimonial">
-											<p>Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra.</p>
-											<p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>			
-					</div>
-					<div class="carousel-item">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="media">
-									<img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" class="mr-3" alt="">
-									<div class="media-body">
-										<div class="testimonial">
-											<p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nam eusem scelerisque tempor, varius quam luctus dui. Mauris magna metus nec.</p>
-											<p class="overview"><b>Michael Holz</b>, Seo Analyst</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="media">
-									<img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" class="mr-3" alt="">
-									<div class="media-body">
-										<div class="testimonial">
-											<p>Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra.</p>
-											<p class="overview"><b>Mary Saveley</b>, Web Designer</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>			
-					</div>
-					<div class="carousel-item">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="media">
-									<img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" class="mr-3" alt="">
-									<div class="media-body">
-										<div class="testimonial">
-											<p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nam eusem scelerisque tempor, varius quam luctus dui. Mauris magna metus nec.</p>
-											<p class="overview"><b>Martin Sommer</b>, UX Analyst</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="media">
-									<img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" class="mr-3" alt="">
-									<div class="media-body">
-										<div class="testimonial">
-											<p>Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra.</p>
-											<p class="overview"><b>John Williams</b>, Web Developer</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>			
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    <div class="row pt-5 feature">
-        <h2>SERVICES LOVED THE MOST</h2>
-        <div class="row mx-auto services">
-            <div class="col-sm-6">
-                <img src="feature.webp" alt="" width="500" style="border-radius: 40px;">
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About-us</a>
+    <a href="tutorial.html">Tutorial</a>
+    <a href="testimonial.html">Testimonial</a>
+	<a href="signup.html">Sign up</a>
+	<a href="login.html">Login</a>
+</div>
+
+<!-- Review Section -->
+<div class="container pt-5">
+    <h2>What <b>Our Customers</b> Are Saying</h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="media">
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
+                            <div class="media-body testimonial">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="media">
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
+                            <div class="media-body testimonial">
+                                <p>Vestibulum quis quam ut magna consequat faucibus.</p>
+                                <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <h3 class="pb-3" style="color: #1c47e3; font-weight: 700;">Excellent Features</h3>
-                <h5>Draw Tool <i class="fa-solid fa-pencil"></i></h5>
-                <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 50%"></div>
-                  </div>
-                  <h5>Brush Tool <i class="fa-solid fa-paintbrush"></i></h5>
-                  <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 25%"></div>
-                  </div>
-                  <h5>Eraser Tool <i class="fa-solid fa-eraser"></i></h5>
-                  <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 50%"></div>
-                  </div>
-                  <h5>Shapes <i class="fa-solid fa-shapes"></i></h5>
-                  <div class="progress mb-3" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 75%"></div>
-                  </div>
-                  <h5>Text <i class="fa-solid fa-text-width"></i></h5>
-                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 100%"></div>
-                  </div>
+
+            <!-- Repeat for other carousel items -->
+        </div>
+    </div>
+</div>
+
+<!-- Services Section -->
+<div class="container pt-5">
+    <h2>SERVICES LOVED THE MOST</h2>
+    <div class="row services">
+        <div class="col-sm-6">
+            <img src="feature.webp" alt="">
+        </div>
+        <div class="col-sm-6">
+            <h3>Excellent Features</h3>
+            <h5><i class="fa-solid fa-pencil"></i> Draw Tool</h5>
+            <div class="progress">
+                <div class="progress-bar" style="width: 50%;"></div>
+            </div>
+            <h5><i class="fa-solid fa-paintbrush"></i> Brush Tool</h5>
+            <div class="progress">
+                <div class="progress-bar" style="width: 25%;"></div>
+            </div>
+            <h5><i class="fa-solid fa-eraser"></i> Eraser Tool</h5>
+            <div class="progress">
+                <div class="progress-bar" style="width: 50%;"></div>
+            </div>
+            <h5><i class="fa-solid fa-shapes"></i> Shapes</h5>
+            <div class="progress">
+                <div class="progress-bar" style="width: 75%;"></div>
+            </div>
+            <h5><i class="fa-solid fa-text-height"></i> Text Tool</h5>
+            <div class="progress">
+                <div class="progress-bar" style="width: 100%;"></div>
             </div>
         </div>
     </div>
-    <footer class="text-center bg-body-tertiary footer">
-        <!-- Grid container -->
-        <div class="container pt-4">
-          <!-- Section: Social media -->
-          <section class="mb-4">
-            <!-- Facebook -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-      
-            <!-- Replaced new Twitter[X] logo -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-x-twitter"></i
-            ></a>
-           
-            <!-- Instagram -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-instagram"></i
-            ></a>
-			<!-- Added responsiveness to icons -->
-            <!-- Linkedin -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="https://www.linkedin.com/in/anuragvishwakarma/"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <!-- Added the Pinterest icon -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-link btn-floating btn-lg text-body m-1"
-              href="#"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-pinterest"></i
-            ></a>
-
-          </section>
-          <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2024 Copyright:
-          <a class="text-body" href="#">CanvasEditor</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-	  <button id="BacktoTop">
-        <span>↑</span>
-      </button>
 </div>
-<script src="src/Scripts/BacktoTop.js"></script>
+
+<!-- Back to Top -->
+<a id="BacktoTop" href="#">&#9650;</a>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="footer-heading">About Us</h4>
+                <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. </p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-heading">Quick Links</h4>
+                <a href="index.html">Home</a><br>
+				<a href="about-us.html">About-us</a><br>
+                <a href="tutorial.html">Tutorial</a><br>
+                <a href="Faq.html">FAQ</a>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-heading">Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>Contact us at: info@example.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
 <script>
-	// Coordinates for the cursor
-	const coords = { x: 0, y: 0 };
-	const circles = document.querySelectorAll(".circle");
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
 
-	// Colors for the circles
-	const colors = [
-		"#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-		"#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-		"#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-		"#680060", "#60005f", "#48005f", "#3d005e"
-	];
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
 
-	// Assign colors and initial position to each circle
-	circles.forEach(function (circle, index) {
-		circle.x = 0;
-		circle.y = 0;
-		circle.style.backgroundColor = colors[index % colors.length];
-	});
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
 
-	// Update the coordinates when the mouse moves
-	window.addEventListener("mousemove", function (e) {
-		coords.x = e.clientX;
-		coords.y = e.clientY;
-	});
+    // Update the coordinates when the mouse moves
+    window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
 
-	// Animation function to move the circles
-	function animateCircles() {
-		let x = coords.x;
-		let y = coords.y;
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
 
-		circles.forEach(function (circle, index) {
-			// Update the position and scale of each circle
-			circle.style.left = x - 12 + "px";
-			circle.style.top = y - 12 + "px";
-			circle.style.scale = (circles.length - index) / circles.length;
+        circles.forEach(function (circle, index) {
+            // Update the position and scale of each circle
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
 
-			circle.x = x;
-			circle.y = y;
+            circle.x = x;
+            circle.y = y;
 
-			// Get the next circle in the sequence
-			const nextCircle = circles[index + 1] || circles[0];
-			x += (nextCircle.x - x) * 0.3;
-			y += (nextCircle.y - y) * 0.3;
-		});
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
 
-		// Repeat the animation
-		requestAnimationFrame(animateCircles);
-	}
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
 
-	// Start the animation
-	animateCircles();
+    // Start the animation
+    animateCircles();
 </script>
+
 </body>
 </html>

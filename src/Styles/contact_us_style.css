@@ -47,6 +47,17 @@
   align-items:center;
 
 
+  background: #000000;
+} */
+
+#contact{
+  width:100%;
+  background: #ffffffa8;
+  border: 1px solid rgba(216, 94, 202, 0.41);
+
+
+}
+
 
 
   width:100%;
@@ -67,4 +78,10 @@
   margin-left:0em;
   text-align: center;
   padding:9rem;
+
+}
+
+
+  background-color: #46cdcf;
+
 }

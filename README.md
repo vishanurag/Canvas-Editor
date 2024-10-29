@@ -73,8 +73,16 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
+## Table of Contents
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Website Preview](#website-preview)
+- [Technologies Used](#technologies-used)
+- [How to make a Pull Request](#how-to-make-a-pull-request)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
 
-<h2>Overview📌</h2>
+## Overview
 <ul>
   <li>🎨 This repository contains my project on a Canvas Editor using HTML, CSS, Bootstrap, and JavaScript.</li>
   <li>🖼️ It includes a webpage with a canvas element that allows you to style text content as needed (made for fun purposes 🎉).</li>
@@ -94,6 +102,7 @@
 ├── CODE_OF_CONDUCT.md
 ├── Contributing.md
 ├── Faq.html
+├── Feedback.html
 ├── LICENSE
 ├── README.md
 ├── about-us.html
@@ -110,6 +119,8 @@
 ├── logo4.png
 ├── package-lock.json
 ├── package.json
+├── popup.jpg
+├── popup.js
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
@@ -117,6 +128,7 @@
 │   ├── favicon.ico
 │   └── painting_image.webp
 ├── review.html
+├── script1.js
 ├── signup.html
 ├── src/
 │   ├── Contributor.css
@@ -184,14 +196,14 @@
 │       ├── blog-p-3.webp
 │       ├── blog-p-4.webp
 │       ├── blog-p-5.webp
-│       ├── blog-p-6.webp
-│       ├── mission.png
-│       ├── profille.png
-│       └── story.png
+
 ├── testimonial.html
+├── tooltips.html
 ├── tutorial.html
 ├── visi.css
 ├── visi.js
+├── visitor.css
+├── visitor.js
 └── welcome.html
 ```
 <!-- END_STRUCTURE -->
@@ -200,7 +212,7 @@
 <li> Background Image: Easily set an image as the background of your canvas to create more visually appealing designs</li>
 <li> Background Color: You can now add a custom background color to the canvas with ease!</li>
 
-# Website Preview
+## Website Preview
 
 ![image](https://github.com/user-attachments/assets/02614ccd-b2ec-492a-9f02-f53d69e9d2b9)
 
@@ -219,7 +231,7 @@ To change the background color or image:
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
 
-<h2><img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 30px height="38"> Technology Used</h2>
+## Technologies Used
 
 <p>
   <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
@@ -337,6 +349,7 @@ git push origin YourBranchName
 
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
 ## Troubleshooting
 
 ### Common Issues
@@ -386,11 +399,14 @@ We look forward to your continued support and collaboration. Together, we can ac
 
 Thank you once again to all our contributors! Your efforts are truly appreciated. 💖👏
 
-<div align="center">
-    <img src="https://contrib.rocks/image?repo=vishanurag/Canvas-Editor">
-<div>
+<p align="center">
+      <a href="https://github.com/vishanurag/Canvas-Editor/graphs/contributors">
+         <img src="https://api.vaunt.dev/v1/github/entities/vishanurag/repositories/Canvas-Editor/contributors?format=svg&limit=54" width="700" height="250" />
+      </a>
+</p>
 
 <br>
+
 
 ### &#8627; Stargazers
 
@@ -407,3 +423,24 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 [![Forkers repo roster for @vishanurag/Canvas-Editor](https://reporoster.com/forks/vishanurag/Canvas-Editor)](https://github.com/vishanurag/Canvas-Editor/network/members)
 
 </div>
+
+## 🌐 Connect with Me
+
+<div align="center">
+    <a href="https://www.linkedin.com/in/anuragvishwakarma/">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" width="100" height="30"/>
+    </a>
+    <a href="mailto:anuraga2005@gmail.com">
+        <img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" width="100" height="30"/>
+    </a>
+    <a href="https://github.com/vishanurag">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" width="100" height="30"/>
+    </a>
+    <a href="https://api.whatsapp.com/send/?phone=%2B917693993165&text&type=phone_number&app_absent=0">
+        <img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp" width="100" height="30"/>
+    </a>
+</div>
+
+---
+
+Thank you for visiting! Feel free to reach out through any of the links above.

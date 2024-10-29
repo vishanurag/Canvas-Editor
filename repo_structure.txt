@@ -2,6 +2,7 @@
 ├── CODE_OF_CONDUCT.md
 ├── Contributing.md
 ├── Faq.html
+├── Feedback.html
 ├── LICENSE
 ├── README.md
 ├── about-us.html
@@ -18,6 +19,8 @@
 ├── logo4.png
 ├── package-lock.json
 ├── package.json
+├── popup.jpg
+├── popup.js
 ├── privacy.html
 ├── repo_structure.txt
 ├── repreviewfix.html
@@ -25,6 +28,7 @@
 │   ├── favicon.ico
 │   └── painting_image.webp
 ├── review.html
+├── script1.js
 ├── signup.html
 ├── src/
 │   ├── Contributor.css
@@ -92,12 +96,11 @@
 │       ├── blog-p-3.webp
 │       ├── blog-p-4.webp
 │       ├── blog-p-5.webp
-│       ├── blog-p-6.webp
-│       ├── mission.png
-│       ├── profille.png
-│       └── story.png
 ├── testimonial.html
+├── tooltips.html
 ├── tutorial.html
 ├── visi.css
 ├── visi.js
+├── visitor.css
+├── visitor.js
 └── welcome.html
