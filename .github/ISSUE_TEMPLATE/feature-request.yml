@@ -1,0 +1,59 @@
+name: "✨ Feature Request"
+description: "Suggest any new feature / functionality which will actually be a meaningful addon to the application."
+title: "Feat:"
+labels: [Feat, Needs Triage]
+body:
+  - type: checkboxes
+    attributes:
+      label: "Is there an existing issue raised for this?"
+      description: "Before reporting, kindly ensure that you dont duplicate an already existing issue."
+      options:
+        - label: "I have searched the existing issues"
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to properly describe the new feature you are suggesting. Try to be as much detailed as possible.
+  - type: textarea
+    attributes:
+      label: Describe the feature
+      description: Describe your idea which you would like to implement. Add necessary prototypes or rough sketch or an overview on how you will be proceeding with this request. A breif about the approach, tools or libraries you will be using will be an add-on.
+      placeholder: Eg - Adding chat functionality, integrating Google sign on etc
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Add ScreenShots"
+      description: "Add sufficient SS to explain your issue."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Component
+      description: Where would you like to add this feature? specify the URI if you want to add a new feature in an existing URI.
+      placeholder: Eg - /navbar
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: It should be implemented because
+      description: Give out a detailed explanation along with its use-case
+    validations:
+      required: true
+  - type: dropdown
+    id: assign
+    attributes:
+      label: "Would you like to work on this issue?"
+      options:
+        - "Yes"
+  - type: checkboxes
+    attributes:
+      label: "Terms & Conditions"
+      options:
+        - label: "I agree to follow the Code of Conduct"
+          required: true
+        - label: "I'm a GSSOC'24 Ext contributor"
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your suggestion! Let's see together if it can be implemented.
