@@ -1,30 +1,96 @@
-/* Mobile-first responsive design for screens up to 500px */
-@media screen and (max-width: 500px) {
-    /* Main canvas responsiveness */
-    #mainCanvas {
-        width: 95% !important;
-        height: auto;
+.form-control {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    width: 100%; /* Full width by default for flexibility */
+    max-width: 100%;
+  }
+  
+  input[type="text"], input[type="email"], textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    width: 100%; /* Use 100% width for fluid layout */
+    max-width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #495057;
+  }
+  
+  .form-floating > .form-control, 
+  .form-floating > .form-control-plaintext, 
+  .form-floating > .form-select {
+    height: calc(3.5rem + 2px);
+    padding: 1rem 0.75rem;
+  }
+  
+  /* Remove box shadow on focus to prevent inconsistencies */
+  .form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  #contact h2 {
+    margin-top: 0;
+    color: black;
+  }
+  
+  .contact-us-page {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    padding: 1rem;
+  }
+  
+  #contact {
+    width: 100%;
+    max-width: 800px; /* Restrict the width to a max value */
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(216, 94, 202, 0.41);
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  #contactForm textarea {
+    width: 100%; /* Responsive width */
+    background: white;
+  }
+  
+  #contactForm button {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #46cdcf;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    input[type="text"], input[type="email"], textarea, #contactForm textarea {
+      width: 100%; /* Full width on small screens */
     }
-    /* Adjust height and width for responsive elements */
-    .h-80-responsive {
-        max-height: 40vh !important;
-        max-width: 100%;
+  
+    #contact {
+      padding: 1rem;
     }
-
-    /* Flex container adjustments for small screens */
-    .d-md-flex {
-        flex-direction: column;  
-        align-items: stretch;    
+  
+    .contact-us-page {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      padding: 1rem;
     }
-
-    /* Adjust spacing for the form */
-    #textData {
-        margin-top: 20px;       
-        margin-bottom: 10px;    
-    }
-
-    .btn-primary {
-        width: 100%;            
-        margin-top: 10px;      
-    }
-}
+  }
+  
