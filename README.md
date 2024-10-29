@@ -102,6 +102,7 @@
 ├── CODE_OF_CONDUCT.md
 ├── Contributing.md
 ├── Faq.html
+├── Feedback.html
 ├── LICENSE
 ├── README.md
 ├── about-us.html
@@ -127,6 +128,7 @@
 │   ├── favicon.ico
 │   └── painting_image.webp
 ├── review.html
+├── script1.js
 ├── signup.html
 ├── src/
 │   ├── Contributor.css
@@ -196,7 +198,9 @@
 │       ├── blog-p-5.webp
 │       └── blog-p-6.webp
 ├── style.css
+├── style1.css
 ├── testimonial.html
+├── tooltips.html
 ├── tutorial.html
 ├── visi.css
 ├── visi.js
