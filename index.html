@@ -10,6 +10,9 @@
         <div class="website-counter"></div>
       </div>
       <style>
+        #toggleGridButton {
+          margin-top: 10px;
+        }
         .visitor-counter {
           position: fixed;
           top: 570px;
@@ -302,6 +305,7 @@
         <button id="settings-btn">Settings</button>
         <button id="help-btn">Help</button>
     </div>
+    <button id="toggleGridButton">Toggle Grid</button>
     <div class="main-content">
         <nav class="navbar">
             <h1>Canvas Editor</h1>
@@ -412,11 +416,12 @@
         let isDrawing = false;
         let currentTool = 'pencil';
         let startX, startY;
-
+        let showGrid = false;
         // Set canvas size
         function resizeCanvas() {
             canvas.width = window.innerWidth - 200; // Subtracting sidebar width
             canvas.height = window.innerHeight - 220; // Adjusted for footer
+            updateCanvasWithGrid();
         }
 
         // Initial resize and add event listener for window resize
@@ -487,7 +492,40 @@
         canvas.addEventListener('mousemove', draw);
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mouseout', stopDrawing);
+        function drawGrid() {
+      if (!showGrid) return; // Only draw if the grid is enabled
+      ctx.save();
+      ctx.strokeStyle = '#c0c0c0';
+      ctx.lineWidth = 0.5;
 
+      const gridSpacing = 20;
+      for (let x = 0; x < canvas.width; x += gridSpacing) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSpacing) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // Function to clear and redraw the canvas, including the grid if enabled
+    function updateCanvasWithGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+      drawGrid(); // Draw grid if enabled
+      // Any other canvas drawing updates should go here if needed
+    }
+
+    // Event listener to toggle the grid on and off
+    document.getElementById('toggleGridButton').addEventListener('click', () => {
+      showGrid = !showGrid; // Toggle grid state
+      updateCanvasWithGrid(); // Redraw canvas with or without grid
+    });
         function startDrawing(e) {
             isDrawing = true;
             [startX, startY] = [e.offsetX, e.offsetY];
