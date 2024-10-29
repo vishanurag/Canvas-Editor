@@ -438,7 +438,7 @@
                 </div>
                 <div class="credit" style="font-size: 0.6rem;">
                     <p>
-                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © 2024
+                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © <span id="year"></span>
                     </p>
                     <div style="margin: 20px;" class="share">
                         <i class="fab fa-github" style="margin-right: 10px;"></i>
@@ -933,6 +933,9 @@ initializePoll();
 
     // Start the animation
     animateCircles();
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
 </script>
 </body>
 </html>

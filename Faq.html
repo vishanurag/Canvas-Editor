@@ -447,7 +447,7 @@
             <p style="color: white">
                 Created by
                 <span><a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a></span>
-                | All rights reserved © 2024
+                | All rights reserved © <span id="year"></span>
             </p>
         </div>
     </footer>
@@ -531,7 +531,9 @@
         };
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-    
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 
 </body>
 

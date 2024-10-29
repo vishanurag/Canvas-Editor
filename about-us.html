@@ -247,7 +247,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Creative Canvas Tool. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Creative Canvas Tool. All rights reserved.</p>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
     </footer>
@@ -304,5 +304,8 @@
         // Start the animation
         animateCircles();
     </script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>
