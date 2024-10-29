@@ -123,8 +123,8 @@
             transition: transform 0.1s ease-out;
         }
 #github{
-    height: 40px;
-    width: 60px;
+    height: auto;
+    width: 40px;
 }
 #sub-btn{
     padding-left: 110px;
@@ -135,48 +135,143 @@
                 margin-left: 90px;
             }
         }
+
+
+     /*navbar*/ 
+     header {
+        background: #333;
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .site-name {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .navbar a {
+        color: #bbb;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 0 0.8rem;
+        transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+        color: #fff;
+    }
+    .navbar .auth a {
+        background: #ffb7fd;
+        color: #333;
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+    .navbar .auth a:hover {
+        background: #fff;
+        color: #ffb7fd;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 4rem 1rem;
+        text-align: center;
+    }
+    .about-section h2 {
+        font-size: 2.5rem;
+        color: #353047;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-text{
+        flex: 1;
+        max-width: 500px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        transition: transform 0.3s;
+    }
+    
+    
+    .about-text:hover, .about-image:hover {
+        transform: scale(1.05);
+    }
+    h3 {
+        font-size: 2rem;
+        color: #353047;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .desc {
+        text-align: center;
+        max-width: 800px;
+        margin: 1.5rem auto;
+        padding: 1rem;
+    }
+    .teams {
+        max-width: 800px;
+        margin: 1.5rem auto;
+        padding: 1rem;
+        text-align: center;
+    }
+    .team-member h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+        text-align: center;
+    }
+
+   
+    .google-btn, .github-btn , .twitter-btn , .instagram-btn {
+        width: 36px;
+        height: 36px;
+        margin: 0 5px;
+        border-radius: 50%;
+        transition: transform 0.2s ease;
+    }
+   
+
     </style>
 </head>
 <body>
     <div class="circle"></div>
-
-    <div class="col gap-5 mt-5 d-flex justify-content-evenly align-items-center">
-        <div class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"><img src="logo4.png" alt=""></a>
+    <header>
+        <div class="navbar">
+            <div class="site-name">Creative Canvas Tool</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="blog.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+            <div class="auth">
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
         </div>
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about-us.html">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="review.html">Review</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">Testimonial</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="privacy.html">Privacy</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Blog_page.html">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./Faq.html">FAQ</a>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a>
-            </li> -->
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contributors.html">Contributors</a>
-            </li>
-        </ul>
-    </div>
+    </header>
+   
 
     <div id="login" class="form-container mt-5 mb-5">
         <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
@@ -211,8 +306,10 @@
         </form>
         <div class="or">- OR -</div>
         <div id="social" class="mb-3">
-            <a href="https://www.google.com/"><img class="logo google-btn" src="https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo-thumbnail.png"></a>
-            <a href="https://github.com/"><img class="logo github-btn"id="github" src="https://w7.pngwing.com/pngs/93/461/png-transparent-github-computer-icons-logo-readme-github-logo-monochrome-computer-wallpaper-thumbnail.png"></a>
+            <a href="https://www.google.com/"><img class="logo google-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911"></a>
+            <a href="https://github.com/"><img class="logo github-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png"></a>
+            <a href="https://www.instagram.com/"><img class="logo instagram-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/180px-Instagram_logo_2016.svg.png"></a>
+            <a href="https://twitter.com/"><img class="logo twitter-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/180px-Logo_of_Twitter.svg.png" width="10px" ></a>
         </div>
     </div>
 
@@ -244,5 +341,13 @@
         }
     </script>
     <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+
+      .twitter-btn , .github-btn{
+        width: 10px;
+        height: auto;
+      }  
+    </style>
 </body>
 </html>
