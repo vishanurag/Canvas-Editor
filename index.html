@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,112 +10,126 @@
     <div class="visitor-counter">
         <div>Visitor</div>
         <div class="website-counter"></div>
-      </div>
-      <style>
+    </div>
+    <style>
         #toggleGridButton {
-          margin-top: 10px;
+            margin-top: 10px;
         }
+
         .visitor-counter {
-          position: fixed;
-          top: 570px;
-          left: 10px;
-          background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque background for better visibility */
-          height: 100px;
-          width: 100px;
-          color: #333; /* Darker text for better contrast */
-          font-weight: 700;
-          font-size: 18px;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          border-radius: 12px; /* Softer corners */
-          backdrop-filter: blur(10px); /* Increased blur for a modern touch */
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), /* Slightly more pronounced shadow */
-                      0 2px 4px rgba(0, 0, 0, 0.1);
-          z-index: 1000;
-          transition: all 0.3s ease; /* Smooth transition for hover effect */
+            position: fixed;
+            top: 570px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Slightly opaque background for better visibility */
+            height: 100px;
+            width: 100px;
+            color: #333;
+            /* Darker text for better contrast */
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            /* Softer corners */
+            backdrop-filter: blur(10px);
+            /* Increased blur for a modern touch */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
+                /* Slightly more pronounced shadow */
+                0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            /* Smooth transition for hover effect */
         }
 
         .visitor-counter:hover {
-          transform: scale(1.05); /* Slightly enlarge on hover */
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Enhance shadow on hover */
         }
 
         .visitor-counter div:first-child {
-          margin-bottom: 5px;
-          font-size: 14px; /* Adjusted for clarity */
-          letter-spacing: 1px; /* Increased spacing for readability */
+            margin-bottom: 5px;
+            font-size: 14px;
+            /* Adjusted for clarity */
+            letter-spacing: 1px;
+            /* Increased spacing for readability */
         }
 
         .website-counter {
-          font-size: 24px;
-          font-family: 'Arial', sans-serif; /* Consistent font family */
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            /* Consistent font family */
         }
 
         @media screen and (max-width: 768px) {
-          .visitor-counter {
-              height: 100px;
-              width: 100px;
-              font-size: 16px;
-          }
+            .visitor-counter {
+                height: 100px;
+                width: 100px;
+                font-size: 16px;
+            }
 
-          .website-counter {
-              font-size: 20px;
-          }
+            .website-counter {
+                font-size: 20px;
+            }
         }
 
         @media screen and (max-width: 480px) {
-          .visitor-counter {
-              height: 80px;
-              width: 80px;
-              font-size: 14px;
-          }
+            .visitor-counter {
+                height: 80px;
+                width: 80px;
+                font-size: 14px;
+            }
 
-          .website-counter {
-              font-size: 18px;
-          }
+            .website-counter {
+                font-size: 18px;
+            }
         }
 
         .dark-mode .visitor-counter div {
-          color: #f0f0f0; /* Lighter text for dark mode */
+            color: #f0f0f0;
+            /* Lighter text for dark mode */
         }
 
         .dark-mode .visitor-counter .website-counter {
-          color: #f0f0f0; /* Lighter color for consistency */
+            color: #f0f0f0;
+            /* Lighter color for consistency */
         }
 
         .dark-mode .visitor-counter {
-          background-color: rgba(0, 0, 0, 0.7); /* Darker background for dark mode */
-          box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
-                      0 2px 4px rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Darker background for dark mode */
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
+                0 2px 4px rgba(255, 255, 255, 0.05);
         }
-
-      </style>
-      <script>
-         // Function to get the count from localStorage or initialize it
-       function getVisitorCount() {
-          return localStorage.getItem('visitorCount') || 0;
+    </style>
+    <script>
+        // Function to get the count from localStorage or initialize it
+        function getVisitorCount() {
+            return localStorage.getItem('visitorCount') || 0;
         }
 
         // Function to increment and save the count
         function incrementVisitorCount() {
-          let count = parseInt(getVisitorCount()) + 1;
-          localStorage.setItem('visitorCount', count);
-          return count;
+            let count = parseInt(getVisitorCount()) + 1;
+            localStorage.setItem('visitorCount', count);
+            return count;
         }
 
         // Function to display the count
         function displayVisitorCount() {
-          const counterElement = document.querySelector('.website-counter');
-          const count = incrementVisitorCount();
-          counterElement.textContent = count;
+            const counterElement = document.querySelector('.website-counter');
+            const count = incrementVisitorCount();
+            counterElement.textContent = count;
         }
 
         // Call the display function when the page loads
         document.addEventListener('DOMContentLoaded', displayVisitorCount);
-      </script>
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -123,6 +138,7 @@
             background-color: #f0f0f0;
             display: flex;
         }
+
         .sidebar {
             width: 150px;
             background-color: #a69ac4;
@@ -130,6 +146,7 @@
             padding: 17px;
             padding-top: 100px;
         }
+
         .sidebar button {
             display: block;
             width: 100%;
@@ -144,15 +161,18 @@
             transition: background-color 0.3s;
             font-size: 15px;
         }
+
         .sidebar button:hover {
             background-color: #553d8c;
         }
+
         .main-content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
+
         .navbar {
             background-color: #a69ac4;
             padding: 10px;
@@ -161,16 +181,19 @@
             align-items: center;
             padding-bottom: 50px;
         }
+
         .navbar h1 {
             color: rgb(255, 255, 255);
             margin: 0;
             margin-left: -180px;
         }
+
         .nav-links {
             display: flex;
             gap: 20px;
             margin: auto;
         }
+
         .nav-links a {
             color: rgb(255, 255, 255);
             text-decoration: none;
@@ -178,15 +201,18 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
+
         .nav-links a:hover {
             background-color: #8a7ba8;
         }
+
         .tools {
             display: flex;
             gap: 10px;
-            padding-left:40px;
-            background-color:#a69ac4 ;
+            padding-left: 40px;
+            background-color: #a69ac4;
         }
+
         .tool {
             background-color: #cd8cf9;
             border: none;
@@ -201,24 +227,30 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+
         .tool:hover {
             background-color: #bd8ce6;
         }
+
         .tool.active {
             background-color: #bd74dd;
         }
+
         #canvas {
             border: 1px solid #000000;
             background-color: white;
             cursor: crosshair;
             width: 100%;
-            height: calc(100vh - 280px); /* Adjusted for footer */
+            height: calc(100vh - 280px);
+            /* Adjusted for footer */
         }
+
         .color-picker {
             margin: 10px 0;
             position: relative;
             display: inline-block;
         }
+
         .color-picker input[type="color"] {
             padding: 0;
             width: 50px;
@@ -227,6 +259,7 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
         .color-palette {
             position: absolute;
             top: 100%;
@@ -234,15 +267,17 @@
             background: white;
             padding: 10px;
             border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             display: none;
             grid-template-columns: repeat(5, 1fr);
             gap: 5px;
             z-index: 1000;
         }
+
         .color-picker:hover .color-palette {
             display: grid;
         }
+
         .color-swatch {
             width: 25px;
             height: 25px;
@@ -250,11 +285,13 @@
             cursor: pointer;
             border: 1px solid #ddd;
         }
+
         .footer {
             background-color: #fddaff;
             color: rgb(197, 82, 184);
 
         }
+
         .newsletter-section {
             display: flex;
             justify-content: center;
@@ -263,12 +300,14 @@
             max-width: 800px;
             margin: 0 auto;
         }
+
         .newsletter-section input {
             padding: 10px;
             width: 300px;
             border: none;
             border-radius: 4px;
         }
+
         .newsletter-section button {
             background-color: #c66de7;
             color: white;
@@ -278,9 +317,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .newsletter-section button:hover {
             background-color: #df3cbf;
         }
+
         .text-size-control {
             display: flex;
             align-items: center;
@@ -291,6 +332,7 @@
             border-radius: 5px;
             color: white;
         }
+
         .text-size-control input {
             width: 60px;
             padding: 5px;
@@ -298,20 +340,25 @@
             border-radius: 4px;
             background-color: white;
         }
+
         .text-size-control:hover {
             background-color: #bd8ce6;
             transition: background-color 0.3s;
         }
-        .credit{
+
+        .credit {
             text-align: center;
         }
-        .share{
+
+        .share {
             font-size: 25px;
         }
-        .share i{
+
+        .share i {
             transition: transform 0.3s ease, color 0.3s ease;
         }
-        .share i:hover{
+
+        .share i:hover {
             cursor: pointer;
             color: #5c2872;
         }
@@ -332,6 +379,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Circles -->
     <div class="circle"></div>
@@ -359,7 +407,6 @@
         <button id="settings-btn">Settings</button>
         <button id="help-btn">Help</button>
     </div>
-    <button id="toggleGridButton">Toggle Grid</button>
     <div class="main-content">
         <nav class="navbar">
             <h1>Canvas Editor</h1>
@@ -376,6 +423,7 @@
                 <a href="signup.html">Sign Up</a>
                 <a href="contributors.html">Contributors</a>
                 <a href="login.html">Login</a>
+                <button id="toggleGridButton">Toggle Grid</button>
 
             </div>
         </nav>
@@ -438,7 +486,8 @@
                 </div>
                 <div class="credit" style="font-size: 0.6rem;">
                     <p>
-                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © 2024
+                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
+                        © 2024
                     </p>
                     <div style="margin: 20px;" class="share">
                         <i class="fab fa-github" style="margin-right: 10px;"></i>
@@ -533,7 +582,13 @@
 
         // Clear canvas
         document.getElementById('clear').addEventListener('click', () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (confirm("Are you sure you want to clear the canvas? This action cannot be undone.")) {
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            else {
+                console.log("Clear action canceled.");
+            }
         });
 
         // Drawing functions
@@ -542,39 +597,39 @@
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mouseout', stopDrawing);
         function drawGrid() {
-      if (!showGrid) return; // Only draw if the grid is enabled
-      ctx.save();
-      ctx.strokeStyle = '#c0c0c0';
-      ctx.lineWidth = 0.5;
+            if (!showGrid) return; // Only draw if the grid is enabled
+            ctx.save();
+            ctx.strokeStyle = '#c0c0c0';
+            ctx.lineWidth = 0.5;
 
-      const gridSpacing = 20;
-      for (let x = 0; x < canvas.width; x += gridSpacing) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-      for (let y = 0; y < canvas.height; y += gridSpacing) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-      ctx.restore();
-    }
+            const gridSpacing = 20;
+            for (let x = 0; x < canvas.width; x += gridSpacing) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += gridSpacing) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+            ctx.restore();
+        }
 
-    // Function to clear and redraw the canvas, including the grid if enabled
-    function updateCanvasWithGrid() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-      drawGrid(); // Draw grid if enabled
-      // Any other canvas drawing updates should go here if needed
-    }
+        // Function to clear and redraw the canvas, including the grid if enabled
+        function updateCanvasWithGrid() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+            drawGrid(); // Draw grid if enabled
+            // Any other canvas drawing updates should go here if needed
+        }
 
-    // Event listener to toggle the grid on and off
-    document.getElementById('toggleGridButton').addEventListener('click', () => {
-      showGrid = !showGrid; // Toggle grid state
-      updateCanvasWithGrid(); // Redraw canvas with or without grid
-    });
+        // Event listener to toggle the grid on and off
+        document.getElementById('toggleGridButton').addEventListener('click', () => {
+            showGrid = !showGrid; // Toggle grid state
+            updateCanvasWithGrid(); // Redraw canvas with or without grid
+        });
         function startDrawing(e) {
             isDrawing = true;
             [startX, startY] = [e.offsetX, e.offsetY];
@@ -691,248 +746,273 @@
         }
     </script>
     <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
-       </script>
+    </script>
 
-<!-- script for adding valid email -->
-<script>
-    function subscribeNewsletter() {
-        const emailInput = document.getElementById('newsletter-email');
-        const email = emailInput.value;
+    <!-- script for adding valid email -->
+    <script>
+        function subscribeNewsletter() {
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value;
 
-        // Regular expression for basic email validation
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // Regular expression for basic email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (emailPattern.test(email)) {
-            alert('Thank you for subscribing!');
-            // Add your subscription logic here
-        } else {
-            alert('Please enter a valid email address.');
-            emailInput.focus();
+            if (emailPattern.test(email)) {
+                alert('Thank you for subscribing!');
+                // Add your subscription logic here
+            } else {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+            }
         }
-    }
-</script>
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"right"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    </script>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-<style>
+    <style>
+        body {
 
-    body {
+            font-family: Arial, sans-serif;
 
-        font-family: Arial, sans-serif;
+        }
 
-    }
+        /* Popup Styles */
+        .popup {
 
-    /* Popup Styles */
-    .popup {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
+            justify-content: center;
+            /* Center the popup */
+            align-items: center;
+            /* Center the popup */
+            z-index: 1000;
+            /* Sit on top */
 
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-        justify-content: center; /* Center the popup */
-        align-items: center; /* Center the popup */
-        z-index: 1000; /* Sit on top */
+        }
 
-    }
+        .popup-content {
 
-    .popup-content {
+            background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            max-height: 500px;
+            min-height: 320px;
+            text-align: center;
 
-        background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
-        padding: 20px;
-        border-radius: 5px;
-        max-width: 500px;
-        max-height: 500px;
-        min-height: 320px;
-        text-align: center;
+        }
 
-    }
+        /* Set poll options to stack vertically */
+        #pollOptions {
 
-    /* Set poll options to stack vertically */
-    #pollOptions {
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            align-items: center;
+            /* Center the buttons */
 
-        display: flex;
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center the buttons */
+        }
 
-    }
+        .poll-button {
 
-    .poll-button {
+            display: block;
+            /* Change to block for full-width */
+            margin: 5px 0;
+            /* Add vertical margin */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(58 30 86 / 40%);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            /* Full width */
 
-        display: block; /* Change to block for full-width */
-        margin: 5px 0; /* Add vertical margin */
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        background-color: rgb(58 30 86 / 40%);
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        width: 100%; /* Full width */
+        }
 
-    }
+        .poll-button:hover {
 
-    .poll-button:hover {
+            background-color: #45a049;
+            /* Darker green */
 
-        background-color: #45a049; /* Darker green */
+        }
 
-    }
+        .poll-button.selected {
 
-    .poll-button.selected {
+            background-color: #ad00c9;
+            /* Blue for selected */
 
-        background-color: #ad00c9; /* Blue for selected */
+        }
 
-    }
+        /* New Vote Button Styles */
+        .vote-button {
 
-    /* New Vote Button Styles */
-    .vote-button {
+            display: block;
+            /* Change to block for full-width */
+            margin: 5px 0;
+            /* Add vertical margin */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f44336;
+            /* Red */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            /* Full width */
 
-        display: block; /* Change to block for full-width */
-        margin: 5px 0; /* Add vertical margin */
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        background-color: #f44336; /* Red */
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        width: 100%; /* Full width */
+        }
 
-    }
+        .vote-button:hover {
 
-    .vote-button:hover {
+            background-color: #d32f2f;
+            /* Darker red */
 
-        background-color: #d32f2f; /* Darker red */
+        }
 
-    }
+        /* Result Text Styles */
+        #result {
 
-    /* Result Text Styles */
-    #result {
+            margin-top: 10px;
+            /* Add space above result text */
+            word-wrap: break-word;
+            /* Allow long text to wrap within the box */
+            overflow: hidden;
+            /* Prevent overflow */
+            max-height: 50px;
+            /* Limit height to prevent overflow */
+            color: rgb(255, 255, 255);
+            /* Set text color to white */
 
-        margin-top: 10px; /* Add space above result text */
-        word-wrap: break-word; /* Allow long text to wrap within the box */
-        overflow: hidden; /* Prevent overflow */
-        max-height: 50px; /* Limit height to prevent overflow */
-        color: rgb(255, 255, 255); /* Set text color to white */
+        }
+    </style>
 
-    }
-
-</style>
- 
-<div class="popup" id="pollPopup">
-    <div class="popup-content">
-        <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
-        <div id="pollOptions">
-            <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
-            <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It’s good but has room for growth.</button>
-            <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
+    <div class="popup" id="pollPopup">
+        <div class="popup-content">
+            <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
+            <div id="pollOptions">
+                <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
+                <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It’s good but has room for
+                    growth.</button>
+                <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
+            </div>
+            <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+            <p id="result"></p>
         </div>
-        <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
-        <p id="result"></p>
     </div>
-</div>
 
-<script>
-// Show the poll popup 10 seconds after the page loads, if not already voted
-window.onload = function() {
-    const hasVoted = sessionStorage.getItem('hasVoted');
-    setTimeout(function() {
-        if (!hasVoted) {
-            document.getElementById('pollPopup').style.display = 'flex';
-        }
-    }, 10000); // 10000 milliseconds = 10 seconds
-};
+    <script>
+        // Show the poll popup 10 seconds after the page loads, if not already voted
+        window.onload = function () {
+            const hasVoted = sessionStorage.getItem('hasVoted');
+            setTimeout(function () {
+                if (!hasVoted) {
+                    document.getElementById('pollPopup').style.display = 'flex';
+                }
+            }, 10000); // 10000 milliseconds = 10 seconds
+        };
 
-const pollButtons = document.querySelectorAll('.poll-button[data-value]');
-let selectedValue = '';
+        const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+        let selectedValue = '';
 
-pollButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        // Remove selected class from all buttons
-        pollButtons.forEach(btn => btn.classList.remove('selected'));
-        // Add selected class to the clicked button
-        button.classList.add('selected');
-        selectedValue = button.getAttribute('data-value');
-    });
-});
-
-document.getElementById('voteButton').addEventListener('click', function() {
-    if (selectedValue) {
-        document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
-        // Save voting status in session storage
-        sessionStorage.setItem('hasVoted', 'true');
-        // Hide the popup after voting
-        setTimeout(() => {
-            document.getElementById('pollPopup').style.display = 'none';
-        }, 2000);
-    } else {
-        alert("Please select an option!");
-    }
-});
-
-function initializePoll() {
-    console.log("Poll initialized.");
-}
-
-initializePoll();
-
-</script>
-
-<script>
-    // Coordinates for the cursor
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
-
-    // Colors for the circles
-    const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-        "#680060", "#60005f", "#48005f", "#3d005e"
-    ];
-
-    // Assign colors and initial position to each circle
-    circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-    });
-
-    // Update the coordinates when the mouse moves
-    window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-    });
-
-    // Animation function to move the circles
-    function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-            // Update the position and scale of each circle
-            circle.style.left = x - 12 + "px";
-            circle.style.top = y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-
-            circle.x = x;
-            circle.y = y;
-
-            // Get the next circle in the sequence
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
+        pollButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove selected class from all buttons
+                pollButtons.forEach(btn => btn.classList.remove('selected'));
+                // Add selected class to the clicked button
+                button.classList.add('selected');
+                selectedValue = button.getAttribute('data-value');
+            });
         });
 
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
-    }
+        document.getElementById('voteButton').addEventListener('click', function () {
+            if (selectedValue) {
+                document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+                // Save voting status in session storage
+                sessionStorage.setItem('hasVoted', 'true');
+                // Hide the popup after voting
+                setTimeout(() => {
+                    document.getElementById('pollPopup').style.display = 'none';
+                }, 2000);
+            } else {
+                alert("Please select an option!");
+            }
+        });
 
-    // Start the animation
-    animateCircles();
-</script>
+        function initializePoll() {
+            console.log("Poll initialized.");
+        }
+
+        initializePoll();
+
+    </script>
+
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
+    </script>
 </body>
+
 </html>
