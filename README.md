@@ -401,11 +401,14 @@ We look forward to your continued support and collaboration. Together, we can ac
 
 Thank you once again to all our contributors! Your efforts are truly appreciated. 💖👏
 
-<div align="center">
-    <img src="https://contrib.rocks/image?repo=vishanurag/Canvas-Editor">
-<div>
+<p align="center">
+      <a href="https://github.com/vishanurag/Canvas-Editor/graphs/contributors">
+         <img src="https://api.vaunt.dev/v1/github/entities/vishanurag/repositories/Canvas-Editor/contributors?format=svg&limit=54" width="700" height="250" />
+      </a>
+</p>
 
 <br>
+
 
 ### &#8627; Stargazers
 
