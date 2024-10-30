@@ -406,7 +406,7 @@ h2{
     </style>
     <style>
         /* Circle styles */
-        .circle {
+/*         .circle {
             height: 24px;
             width: 24px;
             border-radius: 50%;
@@ -417,12 +417,19 @@ h2{
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
-        }
+        } */
+        #canvas {
+    display: block; /* Ensures no scrollbar appears */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
     </style>
 </head>
 
 <body>
     <!-- Circles -->
+<!--     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -441,8 +448,9 @@ h2{
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <div class="circle"></div> -->
+
+    <canvas id="canvas"></canvas>
     <!-- preloader -->
     <div id="preloader">
         <div class="loader">
@@ -1111,56 +1119,147 @@ h2{
 
         <script>
             // Coordinates for the cursor
-            const coords = { x: 0, y: 0 };
-            const circles = document.querySelectorAll(".circle");
+            // const coords = { x: 0, y: 0 };
+            // const circles = document.querySelectorAll(".circle");
 
-            // Colors for the circles
-            const colors = [
-                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-                "#680060", "#60005f", "#48005f", "#3d005e"
-            ];
+            // // Colors for the circles
+            // const colors = [
+            //     "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            //     "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            //     "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            //     "#680060", "#60005f", "#48005f", "#3d005e"
+            // ];
 
-            // Assign colors and initial position to each circle
-            circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
-            });
+            // // Assign colors and initial position to each circle
+            // circles.forEach(function (circle, index) {
+            //     circle.x = 0;
+            //     circle.y = 0;
+            //     circle.style.backgroundColor = colors[index % colors.length];
+            // });
 
-            // Update the coordinates when the mouse moves
-            window.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-            });
+            // // Update the coordinates when the mouse moves
+            // window.addEventListener("mousemove", function (e) {
+            //     coords.x = e.clientX;
+            //     coords.y = e.clientY;
+            // });
 
-            // Animation function to move the circles
-            function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
+            // // Animation function to move the circles
+            // function animateCircles() {
+            //     let x = coords.x;
+            //     let y = coords.y;
 
-                circles.forEach(function (circle, index) {
-                    // Update the position and scale of each circle
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
-                    circle.style.scale = (circles.length - index) / circles.length;
+            //     circles.forEach(function (circle, index) {
+            //         // Update the position and scale of each circle
+            //         circle.style.left = x - 12 + "px";
+            //         circle.style.top = y - 12 + "px";
+            //         circle.style.scale = (circles.length - index) / circles.length;
 
-                    circle.x = x;
-                    circle.y = y;
+            //         circle.x = x;
+            //         circle.y = y;
 
-                    // Get the next circle in the sequence
-                    const nextCircle = circles[index + 1] || circles[0];
-                    x += (nextCircle.x - x) * 0.3;
-                    y += (nextCircle.y - y) * 0.3;
-                });
+            //         // Get the next circle in the sequence
+            //         const nextCircle = circles[index + 1] || circles[0];
+            //         x += (nextCircle.x - x) * 0.3;
+            //         y += (nextCircle.y - y) * 0.3;
+            //     });
 
-                // Repeat the animation
-                requestAnimationFrame(animateCircles);
+            //     // Repeat the animation
+            //     requestAnimationFrame(animateCircles);
+            // }
+
+            // // Start the animation
+            // animateCircles();
+
+            const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let spots = [];
+let hue = 0;
+
+const mouse = {
+    x: undefined,
+    y: undefined
+};
+
+canvas.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;  // Set the mouse position to the event position
+    mouse.y = event.y;
+    for (let i = 0; i < 3; i++) {
+        spots.push(new Particle());
+    }
+});
+
+class Particle {
+    constructor() {
+        this.x = mouse.x;
+        this.y = mouse.y;
+        this.size = Math.random() * 2 + 0.1;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        this.color = 'hsl(' + hue + ', 100%, 50%)';
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.1)
+            this.size -= 0.03;
+    }
+
+    draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+function handleParticle() {
+    for (let i = 0; i < spots.length; i++) {
+        spots[i].update();
+        spots[i].draw();
+        for (let j = i + 1; j < spots.length; j++) {  // j = i + 1 to avoid connecting to itself
+            const dx = spots[i].x - spots[j].x;
+            const dy = spots[i].y - spots[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 90) {
+                ctx.beginPath();
+                ctx.strokeStyle = spots[i].color;
+                ctx.lineWidth = spots[i].size / 10;  // Corrected lineWidth property
+                ctx.moveTo(spots[i].x, spots[i].y);
+                ctx.lineTo(spots[j].x, spots[j].y);  // Draw line to the other particle
+                ctx.stroke();
             }
+        }
 
-            // Start the animation
-            animateCircles();
+        if (spots[i].size <= 0.3) {
+            spots.splice(i, 1);
+            i--;  // Adjust index after removal
+        }
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    handleParticle();
+    hue++;
+    requestAnimationFrame(animate);
+}
+
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+window.addEventListener('mouseout', function() {
+    mouse.x = undefined;
+    mouse.y = undefined;
+});
+
+animate();
+
         </script>
 </body>
 
