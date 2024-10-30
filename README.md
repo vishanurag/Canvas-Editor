@@ -102,6 +102,7 @@
 ├── CODE_OF_CONDUCT.md
 ├── Contributing.md
 ├── Faq.html
+├── Feedback.html
 ├── LICENSE
 ├── README.md
 ├── about-us.html
@@ -127,6 +128,7 @@
 │   ├── favicon.ico
 │   └── painting_image.webp
 ├── review.html
+├── script1.js
 ├── signup.html
 ├── src/
 │   ├── Contributor.css
@@ -196,7 +198,9 @@
 │       ├── blog-p-5.webp
 │       └── blog-p-6.webp
 ├── style.css
+├── style1.css
 ├── testimonial.html
+├── tooltips.html
 ├── tutorial.html
 ├── visi.css
 ├── visi.js
@@ -397,11 +401,14 @@ We look forward to your continued support and collaboration. Together, we can ac
 
 Thank you once again to all our contributors! Your efforts are truly appreciated. 💖👏
 
-<div align="center">
-    <img src="https://contrib.rocks/image?repo=vishanurag/Canvas-Editor">
-<div>
+<p align="center">
+      <a href="https://github.com/vishanurag/Canvas-Editor/graphs/contributors">
+         <img src="https://api.vaunt.dev/v1/github/entities/vishanurag/repositories/Canvas-Editor/contributors?format=svg&limit=54" width="700" height="250" />
+      </a>
+</p>
 
 <br>
+
 
 ### &#8627; Stargazers
 
@@ -418,3 +425,24 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 [![Forkers repo roster for @vishanurag/Canvas-Editor](https://reporoster.com/forks/vishanurag/Canvas-Editor)](https://github.com/vishanurag/Canvas-Editor/network/members)
 
 </div>
+
+## 🌐 Connect with Me
+
+<div align="center">
+    <a href="https://www.linkedin.com/in/anuragvishwakarma/">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" width="100" height="30"/>
+    </a>
+    <a href="mailto:anuraga2005@gmail.com">
+        <img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" width="100" height="30"/>
+    </a>
+    <a href="https://github.com/vishanurag">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" width="100" height="30"/>
+    </a>
+    <a href="https://api.whatsapp.com/send/?phone=%2B917693993165&text&type=phone_number&app_absent=0">
+        <img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp" width="100" height="30"/>
+    </a>
+</div>
+
+---
+
+Thank you for visiting! Feel free to reach out through any of the links above.

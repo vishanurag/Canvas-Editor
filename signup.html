@@ -14,68 +14,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-
         body {
             font-family: Arial, sans-serif;
-            display: flex;
+            /* display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; */
             height: 100vh;
             overflow-x: hidden;
             background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff);
         }
 
         .header-container {
-            height: 100vh;
             width: 100vw; 
+            background-color: #f8f9fa; 
+            padding: 70px 0; 
             text-align: center;
             margin-bottom: 20px; 
-            
-            /* background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
             background-size: cover;
         }
-        .form-container {
-            max-width: 400px; /* Set a max width for the form */
-            margin: 0 auto; /* Center the form on the page */
-            margin-top: 300px;
-            padding: 20px;
-            border: 1px solid #dee2e6; /* Optional: Adds a border to the form */
-            border-radius: 8px; /* Optional: Adds rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
-        }
 
-        .nav-link img{
-            height: 50px;
-            width: auto;
+        .form-container {
+            max-width: 400px; 
+            margin: 0 auto; 
+            padding: 20px;
+            border: 1px solid #dee2e6; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+        }
 
         .nav-tabs {
+            display: flex; /* Change to flex for row-wise alignment */
             justify-content: center;
-            background-color: rgba(0,0,0,0.3);
-            border-bottom: 2px solid #dee2e6; /* Border for the nav-tabs */
-            width: 35%;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #dee2e6; 
             border-radius: 30px;
             margin: auto;
+            padding: 10px 0; /* Add some padding for better spacing */
         }
+
         .nav-item .nav-link {
             color: #000;
             font-size: 18px;
             padding: 10px 20px;
             border-radius: 35px;
-            transition:all 0.4s ease
+            transition: all 0.4s ease;
         }
+
         .nav-link.active {
             background-color: white;
             color: black;
         }
-        .nav-link:hover {
-            background-color: rgba(0,0,0,0.5);
-            color: white;
 
+        .nav-link:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
         }
+
         h2 {
             text-align: center;
             margin-bottom: 5px;
         }
+
         button {
             width: 45%;
             padding: 10px;
@@ -86,97 +86,31 @@
             cursor: pointer;
             transition: all 0.4s ease;
         }
+
         button:hover {
             background-color: #0d1321;
             width: 70%;
             transform: scale(1.1);
         }
+
         .or {
             text-align: center;
             margin: 10px 0;
             color: #343232d4;
         }
+
         p {
             text-align: center;
             color: #343232d4;
         }
-    
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            /* display: flex; */
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow-x: hidden;
-            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-            background-size: cover;
-        }
-        .header-container {
-            width: 100vw; 
-            background-color: #f8f9fa; 
-            padding: 70px 0; 
-            text-align: center;
-            margin-bottom: 20px; 
-            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-            background-size: cover;
-        }
-        .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* ... (rest of the styles remain unchanged) ... */
-   
- 
-        .google-btn{
-            margin-right:-20px;
-        }   
-        .github-btn{
-            margin-left: -20px;
-        }
 
-    ::placeholder {
-        color: #3432328a; /* Adjust the color to your preference */
-        opacity: 1; 
-    }
-
-    /* Circle styles */
-    .circle {
-
-    input[name="username"] {
-        margin-top: -5px;
-        padding-left: 4px; 
-    }
-
-
-    /* Mobile devices */
-        @media (max-width: 768px) { 
-
-            #input input{
-                color: white;
-            }
-
-            button{
-                margin-left: 90px;
-            }
-            ::placeholder {
-                color: #757272; 
-                opacity: 1; 
-            }
-
-            #input i{
-                color: #302f2f;
-            }
+        ::placeholder {
+            color: #3432328a; 
+            opacity: 1; 
         }
 
         /* Circle styles */
         .circle {
-
             height: 24px;
             width: 24px;
             border-radius: 50%;
@@ -188,9 +122,150 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
+#github{
+    height: auto;
+    width: 40px;
+}
+#sub-btn{
+    padding-left: 110px;
+}
+        /* Mobile devices */
+        @media (max-width: 768px) { 
+            button {
+                margin-left: 90px;
+            }
+        }
+
+
+     /*navbar*/ 
+     header {
+        background: #333;
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .site-name {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .navbar a {
+        color: #bbb;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 0 0.8rem;
+        transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+        color: #fff;
+    }
+    .navbar .auth a {
+        background: #ffb7fd;
+        color: #333;
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+    .navbar .auth a:hover {
+        background: #fff;
+        color: #ffb7fd;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 4rem 1rem;
+        text-align: center;
+    }
+    .about-section h2 {
+        font-size: 2.5rem;
+        color: #353047;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-text{
+        flex: 1;
+        max-width: 500px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        transition: transform 0.3s;
+    }
+    
+    
+    .about-text:hover, .about-image:hover {
+        transform: scale(1.05);
+    }
+    h3 {
+        font-size: 2rem;
+        color: #353047;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .desc {
+        text-align: center;
+        max-width: 800px;
+        margin: 1.5rem auto;
+        padding: 1rem;
+    }
+    .teams {
+        max-width: 800px;
+        margin: 1.5rem auto;
+        padding: 1rem;
+        text-align: center;
+    }
+    .team-member h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+        text-align: center;
+    }
+
+   
+    .google-btn, .github-btn , .twitter-btn , .instagram-btn {
+        width: 36px;
+        height: 36px;
+        margin: 0 5px;
+        border-radius: 50%;
+        transition: transform 0.2s ease;
+    }
+   
 
     </style>
-
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
 </head>
 <body>
     <!-- Circles -->
@@ -214,329 +289,154 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-    <!-- preloader -->
-    <div id="preloader">
-        <div class="loader">
-            <svg viewBox="0 0 80 80">
-                <circle id="test" cx="40" cy="40" r="32"></circle>
-            </svg>
+    <div class="circle"></div>
+    <header>
+        <div class="navbar">
+            <div class="site-name">Creative Canvas Tool</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="blog.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+            <div class="auth">
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
         </div>
-        
-        <div class="loader triangle">
-            <svg viewBox="0 0 86 80">
-                <polygon points="43 8 79 72 7 72"></polygon>
-            </svg>
-        </div>
-        
-        <div class="loader">
-            <svg viewBox="0 0 80 80">
-                <rect x="8" y="8" width="64" height="64"></rect>
-            </svg>
-        </div>
-        
-        <!-- dribbble -->
-        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
-    </div>
-
-        <!-- <div class="header" style="height: 10vh;">
-            <p class="lead" style="color: #000;">Design and create stunning visuals effortlessly!</p>
-        </div> -->
+    </header>
    
-    <div class="col gap-5 mt-5 d-flex justify-content-evenly align-items-center">
-        <div class="nav-item">
 
-            <a class="nav-link active" aria-current="page" href="#"><img src="logo4.png" alt=""></a>
-
-        </div>
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about-us.html">About Us</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="review.html">Review</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">Testimonial</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="privacy.html">Privacy</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Blog_page.html">Blog</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="./Faq.html">FAQ</a>
-            </li>
-
-            <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contributors.html">Contributors</a>
-
-            </li>
-
-        </ul>
-    </div>
-        <div id="login" class="form-container mt-5 mb-5">
-            <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
-
-    <header class="header">
-        <nav class="navbar">
-          <div class="title">
-            <h1 class="site-name">Canvas Editor</h1>
-            <i class="fa-solid fa-paintbrush"></i>
-          </div>
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="Blog_page.html">Blogs</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="contributors.html">Contributors</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="signup.html">Sign Up</a>
-            <a href="login.html">Login</a>
-          </div>
-        </nav>
-      </header>
-
-        <div id="login" class="form-container mt-5">
-            <h3 class="pb-4">CREATE YOUR ACCOUNT </h3>
-
-            <form action="/signup" method="POST" onsubmit="return validatePassword()">
-                <div id="input">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div id="input">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <!-- Password Input Block with Strength Meter -->
-                <div id="input">
-                    <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
-                    <i class="fa-solid fa-eye" id="togglePassword"></i>
-                </div>
-                <div class="password-strength" id="password-strength" style="display: none;">
-                    <span id="strength-text"></span>
-                    <div class="strength-bar">
-                        <div id="strength-bar-fill"></div>
-                    </div>
-                    <br>
-                </div>
-    
-                <!-- Confirm Password Input Block -->
-                <div id="input">
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-                    <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
-                </div>
-    
-                <!-- Importing zxcvbn -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
-    
-                <!-- Script for Password Strength Check -->
-                <script>
-                    function checkPasswordStrength() {
-                        const password = document.getElementById('password').value;
-                        const strengthBarFill = document.getElementById('strength-bar-fill');
-                        const strengthText = document.getElementById('strength-text');
-                        const result = zxcvbn(password);
-    
-                        // Strength levels based on zxcvbn score
-                        const strengthLevels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"];
-                        strengthText.textContent = strengthLevels[result.score];
-    
-                        // Update the strength bar's width and color based on the score
-                        const strengthPercentage = (result.score + 1) * 20; // Each level gets 20% width
-                        strengthBarFill.style.width = strengthPercentage + "%";
-    
-                        // Apply different classes for coloring the strength bar (optional customization)
-                        const barClasses = ['very-weak', 'weak', 'medium', 'strong', 'very-strong'];
-                        strengthBarFill.className = barClasses[result.score];
-                    }
-    
-                    function showStrengthBar() {
-                        const strengthBar = document.getElementById('password-strength');
-                        strengthBar.style.display = 'block';  // Show the strength bar when the user focuses on the password field
-                    }
-                </script>
-    
-                <!-- Styles for the Strength Meter -->
-                <style>
-                    .password-strength {
-                        margin-top: 10px;
-                    }
-                    .strength-bar {
-                        width: 100%;
-                        height: 10px;
-                        background-color: #e0e0e0;
-                        border-radius: 4px;
-                        overflow: hidden;
-                    }
-                    #strength-bar-fill {
-                        height: 100%;
-                        width: 0; /* Default width */
-                        transition: width 0.3s ease;
-                        background-color: #ff4d4d; /* Default color for very weak */
-                    }
-                    /* Classes for strength levels */
-                    .very-weak { background-color: #ff4d4d; }
-                    .weak { background-color: #ff9933; }
-                    .medium { background-color: #ffcc33; }
-                    .strong { background-color: #99cc33; }
-                    .very-strong { background-color: #33cc33; }
-                </style>
-    
-                <button type="submit">Sign Up</button>
-            </form>
-            <div class="or">- OR -</div>
-            <div id="social" class="mb-3">
-                <a href="https://www.google.com/"><img class="logo google-btn"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
-                </a>
-                <a href="https://github.com/"><img class="logo github-btn"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
-                </a>
+    <div id="login" class="form-container mt-5 mb-5">
+        <h3 class="pb-4">CREATE YOUR ACCOUNT</h3>
+        <form action="/signup" method="POST" onsubmit="return validatePassword()">
+            <div id="input">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class="fa-solid fa-user"></i>
             </div>
-            <!-- <p style="color: black;">Already have an account? <a href="login.html">Log in</a></p>  -->
-            <p>Already have an account? <br><a href="login.html" class="loginn">Log in</a></p> <!-- This should link to login.html -->
-        </div>
-
-        <section class="footer mt-5" id="footer">
-            <!-- Added responsiveness to icons -->
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a> <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-                <a href="#" class="fa-brands fa-pinterest"></a>
+            <div id="input">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="fa-solid fa-envelope"></i>
             </div>
-    
-            <div class="credit" style="font-size: 0.6rem;">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved ©
-                    2024
-                </p>
+            <div id="input">
+                <input type="password" id="password" name="password" placeholder="Enter Password" required oninput="checkPasswordStrength()" onfocus="showStrengthBar()">
+                <i class="fa-solid fa-eye" id="togglePassword"></i>
+            </div>
+            <div class="password-strength" id="password-strength" style="display: none;">
+                <span id="strength-text"></span>
+                <div class="strength-bar">
+                    <div id="strength-bar-fill"></div>
+                </div>
                 <br>
             </div>
-            <!-- Back to Top Button -->
-            <button id="BacktoTop">
-                <span>↑</span>
-            </button>
-        </section>
-    
-        <!-- Validation Script -->
-        <script>
-            function validatePassword() {
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirm_password').value;
-                
-                if (password !== confirmPassword) {
-                    alert('Passwords do not match.');
-                    return false;
-                }
-                
-                // Display the success message
-                alert("Your account is created successfully. Please login to access the website");
-                
-                return true;
+            <div id="input">
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
+            </div>
+            <div id="sub-btn">
+                <button type="submit">Sign Up</button>
+            </div>
+            
+        </form>
+        <div class="or">- OR -</div>
+        <div id="social" class="mb-3">
+            <a href="https://www.google.com/"><img class="logo google-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911"></a>
+            <a href="https://github.com/"><img class="logo github-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png"></a>
+            <a href="https://www.instagram.com/"><img class="logo instagram-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/180px-Instagram_logo_2016.svg.png"></a>
+            <a href="https://twitter.com/"><img class="logo twitter-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/180px-Logo_of_Twitter.svg.png" width="10px" ></a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+    <script>
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const strengthBarFill = document.getElementById('strength-bar-fill');
+            const strengthText = document.getElementById('strength-text');
+            const result = zxcvbn(password);
+            const strengthLevels = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"];
+            strengthText.textContent = strengthLevels[result.score];
+            const strengthPercentage = (result.score + 1) * 25;
+            strengthBarFill.style.width = strengthPercentage + '%';
+        }
+
+        function showStrengthBar() {
+            document.getElementById('password-strength').style.display = 'block';
+        }
+
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
             }
-        </script>
-        
-        <script src="src/Scripts/preloader.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
-        <!-- Animation Script for Mouse Coordinates -->
-        <script>
-            // Coordinates for the cursor
-            const coords = { x: 0, y: 0 };
-            const circles = document.querySelectorAll(".circle");
-    
-            // Colors for the circles
-            const colors = [
-                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-                "#680060", "#60005f", "#48005f", "#3d005e"
-            ];
-    
-            // Assign colors and initial position to each circle
+            return true;
+        }
+    </script>
+    <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+
+      .twitter-btn , .github-btn{
+        width: 10px;
+        height: auto;
+      }  
+    </style>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
             circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
             });
 
-            // Toggle Password Visibility
-            const togglePassword = document.getElementById('togglePassword');
-            const passwordInput = document.getElementById('password');
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
 
-            togglePassword.addEventListener('click', function () {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-
-                // Toggle the icon between eye and eye-slash
-                this.classList.toggle('fa-eye');
-                this.classList.toggle('fa-eye-slash');
-            });
-
-            // Toggle Confirm Password Visibility
-            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-            const confirmPasswordInput = document.getElementById('confirm_password');
-
-            toggleConfirmPassword.addEventListener('click', function () {
-                const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                confirmPasswordInput.setAttribute('type', type);
-
-                // Toggle the icon between eye and eye-slash
-                this.classList.toggle('fa-eye');
-                this.classList.toggle('fa-eye-slash');
-            });
-    
-            // Update the coordinates when the mouse moves
-            window.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-            });
-    
-            // Animation function to move the circles
-            function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
-    
-                circles.forEach(function (circle, index) {
-                    // Update the position and scale of each circle
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
-                    circle.style.scale = (circles.length - index) / circles.length;
-    
-                    circle.x = x;
-                    circle.y = y;
-    
-                    // Get the next circle in the sequence
-                    const nextCircle = circles[index + 1] || circles[0];
-                    x += (nextCircle.x - x) * 0.3;
-                    y += (nextCircle.y - y) * 0.3;
-                });
-    
-                // Repeat the animation
-                requestAnimationFrame(animateCircles);
-            }
-    
-            // Start the animation
-            animateCircles();
-        </script>
-    </body>
-    </html>
-    
+        // Start the animation
+        animateCircles();
+    </script>
+</body>
+</html>

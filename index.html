@@ -15,6 +15,205 @@
         #toggleGridButton {
             margin-top: 10px;
         }
+<style>
+    .visitor-counter {
+        position: fixed;
+        top: 570px;
+        left: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Slightly opaque background for better visibility */
+        height: 100px;
+        width: 100px;
+        color: #333;
+        /* Darker text for better contrast */
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        /* Softer corners */
+        backdrop-filter: blur(10px);
+        /* Increased blur for a modern touch */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
+            /* Slightly more pronounced shadow */
+            0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        /* Smooth transition for hover effect */
+    }
+
+    .visitor-counter:hover {
+        transform: scale(1.05);
+        /* Slightly enlarge on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        /* Enhance shadow on hover */
+    }
+
+    .visitor-counter div:first-child {
+        margin-bottom: 5px;
+        font-size: 14px;
+        /* Adjusted for clarity */
+        letter-spacing: 1px;
+        /* Increased spacing for readability */
+    }
+
+    .website-counter {
+        font-size: 24px;
+        font-family: 'Arial', sans-serif;
+        /* Consistent font family */
+    }
+
+    @media screen and (max-width: 768px) {
+        .visitor-counter {
+            height: 100px;
+            width: 100px;
+            font-size: 16px;
+        }
+
+        .website-counter {
+            font-size: 20px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .visitor-counter {
+            height: 80px;
+            width: 80px;
+            font-size: 14px;
+        }
+
+        .website-counter {
+            font-size: 18px;
+        }
+    }
+
+    .dark-mode .visitor-counter div {
+        color: #f0f0f0;
+        /* Lighter text for dark mode */
+    }
+
+    .dark-mode .visitor-counter .website-counter {
+        color: #f0f0f0;
+        /* Lighter color for consistency */
+    }
+
+    .dark-mode .visitor-counter {
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Darker background for dark mode */
+        box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
+            0 2px 4px rgba(255, 255, 255, 0.05);
+    }
+</style>
+<script>
+    // Function to get the count from localStorage or initialize it
+    function getVisitorCount() {
+        return localStorage.getItem('visitorCount') || 0;
+    }
+
+    // Function to increment and save the count
+    function incrementVisitorCount() {
+        let count = parseInt(getVisitorCount()) + 1;
+        localStorage.setItem('visitorCount', count);
+        return count;
+    }
+
+    // Function to display the count
+    function displayVisitorCount() {
+        const counterElement = document.querySelector('.website-counter');
+        const count = incrementVisitorCount();
+        counterElement.textContent = count;
+    }
+
+    // Call the display function when the page loads
+    document.addEventListener('DOMContentLoaded', displayVisitorCount);
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        display: flex;
+    }
+
+    .sidebar {
+        width: 150px;
+        background-color: #a69ac4;
+        color: white;
+        padding: 17px;
+        padding-top: 100px;
+    }
+
+    .sidebar button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #a34da6;
+        border: none;
+        color: white;
+        text-align: left;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        font-size: 15px;
+    }
+
+    .sidebar button:hover {
+        background-color: #553d8c;
+    }
+
+    .main-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .navbar {
+        background-color: #a69ac4;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+        margin-left: -180px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+        margin: auto;
+    }
+
+    .nav-links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #8a7ba8;
+    }
+
+    .tools {
+        display: flex;
+        gap: 10px;
+        padding-left: 40px;
+        background-color: #a69ac4;
+    }
+</style>
+
 
         .visitor-counter {
             position: fixed;
@@ -273,6 +472,362 @@
             gap: 5px;
             z-index: 1000;
         }
+<style>
+    /* Circle styles */
+    .circle {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999999;
+        transition: transform 0.1s ease-out;
+    }
+
+    .color-picker:hover .color-palette {
+        display: grid;
+    }
+
+    .color-swatch {
+        width: 25px;
+        height: 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid #ddd;
+    }
+
+    .footer {
+        background-color: #fddaff;
+        color: rgb(197, 82, 184);
+    }
+
+    .newsletter-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .newsletter-section input {
+        padding: 10px;
+        width: 300px;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .newsletter-section button {
+        background-color: #c66de7;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .newsletter-section button:hover {
+        background-color: #df3cbf;
+    }
+
+    .text-size-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+        background-color: #cd8cf9;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .text-size-control input {
+        width: 60px;
+        padding: 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: white;
+    }
+
+    .text-size-control:hover {
+        background-color: #bd8ce6;
+        transition: background-color 0.3s;
+    }
+
+    .credit {
+        text-align: center;
+    }
+
+    .share {
+        font-size: 25px;
+    }
+
+    .share i {
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .share i:hover {
+        cursor: pointer;
+        color: #5c2872;
+    }
+</style>
+</head>
+
+<body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="sidebar">
+        <button id="tools-btn">Tools</button>
+        <button id="settings-btn">Settings</button>
+        <button id="help-btn">Help</button>
+    </div>
+    <button id="toggleGridButton">Toggle Grid</button>
+    <div class="main-content">
+        <nav class="navbar">
+            <h1>Canvas Editor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="review.html">Review</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="Blog_page.html">Blog</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="./Feedback.html">Feedback</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
+        <div class="tools">
+            <button class="tool active" id="pencil">Pencil</button>
+            <button class="tool" id="marker">Marker</button>
+            <button class="tool" id="eraser">Eraser</button>
+            <button class="tool" id="line">Line</button>
+            <button class="tool" id="rectangle">Rectangle</button>
+            <button class="tool" id="circle">Circle</button>
+            <button class="tool" id="text">Text</button>
+            <button class="tool" id="textarea">Text Area</button>
+            <div class="color-picker">
+                <input type="color" id="colorPicker">
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #ff0000"></div>
+                    <div class="color-swatch" style="background: #00ff00"></div>
+                    <div class="color-swatch" style="background: #0000ff"></div>
+                    <div class="color-swatch" style="background: #ffff00"></div>
+                    <div class="color-swatch" style="background: #ff00ff"></div>
+                    <div class="color-swatch" style="background: #00ffff"></div>
+                    <div class="color-swatch" style="background: #000000"></div>
+                    <div class="color-swatch" style="background: #ffffff"></div>
+                    <div class="color-swatch" style="background: #808080"></div>
+                    <div class="color-swatch" style="background: #c0c0c0"></div>
+                </div>
+            </div>
+            <div class="color-picker">
+                <input type="color" id="bgColorPicker">
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #ff0000"></div>
+                    <div class="color-swatch" style="background: #00ff00"></div>
+                    <div class="color-swatch" style="background: #0000ff"></div>
+                    <div class="color-swatch" style="background: #ffff00"></div>
+                    <div class="color-swatch" style="background: #ff00ff"></div>
+                    <div class="color-swatch" style="background: #00ffff"></div>
+                    <div class="color-swatch" style="background: #000000"></div>
+                    <div class="color-swatch" style="background: #ffffff"></div>
+                    <div class="color-swatch" style="background: #808080"></div>
+                    <div class="color-swatch" style="background: #c0c0c0"></div>
+                </div>
+            </div>
+            <input type="range" id="lineWidth" min="1" max="50" value="5">
+            <div class="text-size-control">
+                <label for="textSize">Text Size:</label>
+                <input type="number" id="textSize" min="8" max="72" value="20">
+            </div>
+            <button class="tool" id="clear">Clear</button>
+        </div>
+        <canvas id="canvas"></canvas>
+        
+        <!-- Footer Styles -->
+        <style>
+            /* Footer Styles */
+            .footer {
+              background-color: #ff69b4; /* Vibrant pink */
+              color: white;
+              padding: 30px; /* Increased footer height */
+              text-align: center;
+            }
+        
+            .footer-content {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 15px;
+              margin-bottom: 20px;
+            }
+        
+            .footer h3 {
+              margin: 0;
+              font-size: 1.6em; /* Increased heading size */
+            }
+        
+            .footer input[type="email"] {
+              padding: 8px;
+              font-size: 1em;
+              border: none;
+              border-radius: 5px;
+              width: 220px;
+            }
+        
+            .footer button {
+              padding: 8px 15px;
+              font-size: 1em;
+              color: #ff69b4;
+              background-color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+        
+            .footer button:hover {
+              background-color: lightgray;
+            }
+        
+            .footer-links {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              margin-left: 60px; /* Adjust left margin for link alignment */
+              margin-bottom: 20px; /* Add space below links */
+            }
+        
+            .footer-links a {
+              color: white;
+              text-decoration: none;
+              margin: 5px 0;
+              position: relative;
+              font-size: 1.2em; /* Increased link font size */
+            }
+        
+            /* Underline Animation on Hover */
+            .footer-links a::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              width: 0;
+              height: 2px;
+              background-color: white;
+              transition: width 0.3s ease;
+            }
+        
+            .footer-links a:hover::after {
+              width: 100%; /* Expands underline on hover */
+            }
+        
+            /* Created By Section */
+            .created-by {
+              font-size: 1.2em; /* Increased font size */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+            }
+        
+            .created-by a {
+              color: white;
+              text-decoration: none;
+              font-weight: bold;
+            }
+        
+            .created-by a:hover {
+              text-decoration: underline;
+            }
+        
+            .rights {
+              font-size: 1.2em;
+              color: white;
+            }
+        
+            /* Social Media Icons */
+            .social-icons {
+              margin-top: 25px; /* Space above social icons */
+              display: flex;
+              gap: 15px;
+              justify-content: center;
+            }
+        
+            .social-icons a {
+              color: white;
+              text-decoration: none;
+            }
+        
+            .social-icons img {
+              width: 30px; /* Icon size */
+              height: 30px;
+              transition: opacity 0.3s;
+            }
+        
+            .social-icons img:hover {
+              opacity: 0.7; /* Hover effect for icons */
+            }
+        </style>
+        
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-content">
+            <h3>Subscribe to our Newsletter</h3>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </div>
+          <div class="footer-links">
+            <a href="https://vishanurag.github.io/Canvas-Editor/index.html">Home</a>
+            <a href="https://vishanurag.github.io/Canvas-Editor/about-us.html">About</a>
+            <a href="https://vishanurag.github.io/Canvas-Editor/contributors.html">Contributor</a>
+            <a href="https://vishanurag.github.io/Canvas-Editor/privacy.html">Privacy</a>
+          </div>
+          <div class="created-by">
+            Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA</a> 
+            <span class="rights">| All rights reserved © 2024</span>
+          </div>
+          <div class="social-icons">
+            <a href="https://github.com/vishanurag" target="_blank" title="GitHub">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Icon">
+            </a>
+            <a href="https://linkedin.com/in/vishanurag" target="_blank" title="LinkedIn">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn Icon">
+            </a>
+            <a href="https://twitter.com/vishanurag" target="_blank" title="Twitter">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Icon">
+            </a>
+          </div>
+        </footer>
+    </div>
+</body>
+
 
         .color-picker:hover .color-palette {
             display: grid;
@@ -474,164 +1029,28 @@
             <button class="tool" id="clear">Clear</button>
         </div>
         <canvas id="canvas"></canvas>
-        
-        <style>
-            /* Footer Styles */
-            .footer {
-              background-color: #ff69b4; /* Vibrant pink */
-              color: white;
-              padding: 30px; /* Increased footer height */
-              text-align: center;
-            }
-        
-            .footer-content {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 15px;
-              margin-bottom: 20px;
-            }
-        
-            .footer h3 {
-              margin: 0;
-              font-size: 1.6em; /* Increased heading size */
-            }
-        
-            .footer input[type="email"] {
-              padding: 8px;
-              font-size: 1em;
-              border: none;
-              border-radius: 5px;
-              width: 220px;
-            }
-        
-            .footer button {
-              padding: 8px 15px;
-              font-size: 1em;
-              color: #ff69b4;
-              background-color: white;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-            }
-        
-            .footer button:hover {
-              background-color: lightgray;
-            }
-        
-            .footer-links {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              margin-left: 60px; /* Adjust left margin for link alignment */
-              margin-bottom: 20px; /* Add space below links */
-            }
-        
-            .footer-links a {
-              color: white;
-              text-decoration: none;
-              margin: 5px 0;
-              position: relative;
-              font-size: 1.2em; /* Increased link font size */
-            }
-        
-            /* Underline Animation on Hover */
-            .footer-links a::after {
-              content: "";
-              position: absolute;
-              left: 0;
-              bottom: -2px;
-              width: 0;
-              height: 2px;
-              background-color: white;
-              transition: width 0.3s ease;
-            }
-        
-            .footer-links a:hover::after {
-              width: 100%; /* Expands underline on hover */
-            }
-        
-            /* Created By Section */
-            .created-by {
-               /* Space between links and creator text */
-              font-size: 1.2em; /* Increased font size */
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 10px;
-            }
-        
-            .created-by a {
-              color: white;
-              text-decoration: none;
-              font-weight: bold;
-            }
-        
-            .created-by a:hover {
-              text-decoration: underline;
-            }
-        
-            .rights {
-              font-size: 1.2em;
-              color: white;
-            }
-        
-            /* Social Media Icons */
-            .social-icons {
-              margin-top: 25px; /* Space above social icons */
-              display: flex;
-              gap: 15px;
-              justify-content: center;
-            }
-        
-            .social-icons a {
-              color: white;
-              text-decoration: none;
-            }
-        
-            .social-icons img {
-              width: 30px; /* Icon size */
-              height: 30px;
-              transition: opacity 0.3s;
-            }
-        
-            .social-icons img:hover {
-              opacity: 0.7; /* Hover effect for icons */
-            }
-          </style>
-        
-        
-        <!-- Footer -->
         <footer class="footer">
-          <div class="footer-content">
-            <h3>Subscribe to our Newsletter</h3>
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </div>
-          <div class="footer-links">
-            <a href="https://vishanurag.github.io/Canvas-Editor/index.html">Home</a>
-            <a href="https://vishanurag.github.io/Canvas-Editor/about-us.html">About</a>
-            <a href="https://vishanurag.github.io/Canvas-Editor/contributors.html">Contributor</a>
-            <a href="https://vishanurag.github.io/Canvas-Editor/privacy.html">Privacy</a>
-          </div>
-          <div class="created-by">
-            Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA</a> 
-            <span class="rights">| All rights reserved © 2024</span>
-          </div>
-          <div class="social-icons">
-            <a href="https://github.com/vishanurag" target="_blank" title="GitHub">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Icon">
-            </a>
-            <a href="https://linkedin.com/in/vishanurag" target="_blank" title="LinkedIn">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn Icon">
-            </a>
-            <a href="https://twitter.com/vishanurag" target="_blank" title="Twitter">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Icon">
-        
-            </a>
-          </div>
+            <div class="footer-content">
+                <!-- <div class="footer-image">
+                    <img src="popup.jpg" alt="Newsletter signup" width="100">
+                </div> -->
+                <div class="newsletter-section">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address">
+                    <button onclick="subscribeNewsletter()">Subscribe</button>
+                </div>
+                <div class="credit" style="font-size: 0.6rem;">
+                    <p>
+                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
+                        © 2024
+                    </p>
+                    <div style="margin: 20px;" class="share">
+                        <i class="fab fa-github" style="margin-right: 10px;"></i>
+                        <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
         </footer>
-
     </div>
 
     <script>
@@ -814,6 +1233,272 @@
                     break;
             }
         }
+
+<script>
+    function subscribeNewsletter() {
+        const emailInput = document.getElementById('newsletter-email');
+        const email = emailInput.value;
+
+        // Regular expression for basic email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailPattern.test(email)) {
+            alert('Thank you for subscribing!');
+            emailInput.value = ''; // Clear the input field after subscription
+            // Add your subscription logic here (e.g., sending the email to your server)
+        } else {
+            alert('Please enter a valid email address.');
+            emailInput.focus();
+        }
+    }
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    let currentTool = 'pencil';
+    let startX, startY;
+    let showGrid = false;
+
+    // Set canvas size
+    function resizeCanvas() {
+        canvas.width = window.innerWidth - 200; // Subtracting sidebar width
+        canvas.height = window.innerHeight - 220; // Adjusted for footer
+        updateCanvasWithGrid();
+    }
+
+    // Initial resize and add event listener for window resize
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Set initial styles
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#000000';
+
+    // Tool selection
+    document.querySelectorAll('.tool').forEach(tool => {
+        tool.addEventListener('click', () => {
+            document.querySelector('.tool.active').classList.remove('active');
+            tool.classList.add('active');
+            currentTool = tool.id;
+        });
+    });
+
+    // Color picker and swatches
+    document.querySelectorAll('.color-swatch').forEach(swatch => {
+        swatch.addEventListener('click', (e) => {
+            const color = e.target.style.backgroundColor;
+            const picker = e.target.closest('.color-picker').querySelector('input[type="color"]');
+            picker.value = rgbToHex(color);
+            if (picker.id === 'colorPicker') {
+                ctx.strokeStyle = color;
+                ctx.fillStyle = color;
+            } else {
+                canvas.style.backgroundColor = color;
+            }
+        });
+    });
+
+    // Convert RGB to Hex
+    function rgbToHex(rgb) {
+        const rgbArr = rgb.match(/\d+/g);
+        return '#' + rgbArr.map(x => {
+            const hex = parseInt(x).toString(16);
+            return hex.length === 1 ? '0' + hex : hex;
+        }).join('');
+    }
+
+    // Color picker
+    document.getElementById('colorPicker').addEventListener('input', (e) => {
+        ctx.strokeStyle = e.target.value;
+        ctx.fillStyle = e.target.value;
+    });
+
+    // Background color picker
+    document.getElementById('bgColorPicker').addEventListener('input', (e) => {
+        canvas.style.backgroundColor = e.target.value;
+    });
+
+    // Line width
+    document.getElementById('lineWidth').addEventListener('input', (e) => {
+        ctx.lineWidth = e.target.value;
+    });
+
+    // Clear canvas
+    document.getElementById('clear').addEventListener('click', () => {
+        if (confirm("Are you sure you want to clear the canvas? This action cannot be undone.")) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        } else {
+            console.log("Clear action canceled.");
+        }
+    });
+
+    // Drawing functions
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
+    
+    function drawGrid() {
+        if (!showGrid) return; // Only draw if the grid is enabled
+        ctx.save();
+        ctx.strokeStyle = '#c0c0c0';
+        ctx.lineWidth = 0.5;
+
+        const gridSpacing = 20;
+        for (let x = 0; x < canvas.width; x += gridSpacing) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, canvas.height);
+            ctx.stroke();
+        }
+        for (let y = 0; y < canvas.height; y += gridSpacing) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(canvas.width, y);
+            ctx.stroke();
+        }
+        ctx.restore();
+    }
+
+    // Function to clear and redraw the canvas, including the grid if enabled
+    function updateCanvasWithGrid() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+        drawGrid(); // Draw grid if enabled
+    }
+
+    // Event listener to toggle the grid on and off
+    document.getElementById('toggleGridButton').addEventListener('click', () => {
+        showGrid = !showGrid; // Toggle grid state
+        updateCanvasWithGrid(); // Redraw canvas with or without grid
+    });
+
+    function startDrawing(e) {
+        isDrawing = true;
+        [startX, startY] = [e.offsetX, e.offsetY];
+    }
+
+    function draw(e) {
+        if (!isDrawing) return;
+
+        const x = e.offsetX;
+        const y = e.offsetY;
+
+        switch (currentTool) {
+            case 'pencil':
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                [startX, startY] = [x, y];
+                break;
+            case 'marker':
+                ctx.globalAlpha = 0.5;
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                ctx.globalAlpha = 1.0;
+                [startX, startY] = [x, y];
+                break;
+            case 'eraser':
+                ctx.strokeStyle = canvas.style.backgroundColor || '#FFFFFF';
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                ctx.strokeStyle = document.getElementById('colorPicker').value;
+                [startX, startY] = [x, y];
+                break;
+            case 'line':
+            case 'rectangle':
+            case 'circle':
+                // These shapes are drawn on mouseup
+                break;
+            case 'text':
+            case 'textarea':
+                // Text is added on mouseup
+                break;
+        }
+    }
+
+    function stopDrawing(e) {
+        if (!isDrawing) return;
+        isDrawing = false;
+
+        const x = e.offsetX;
+        const y = e.offsetY;
+        const fontSize = document.getElementById('textSize').value;
+
+        switch (currentTool) {
+            case 'line':
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                break;
+            case 'rectangle':
+                ctx.strokeRect(startX, startY, x - startX, y - startY);
+                break;
+            case 'circle':
+                const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
+                ctx.beginPath();
+                ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
+                ctx.stroke();
+                break;
+            case 'text':
+                const text = prompt('Enter text:');
+                if (text) {
+                    ctx.font = `${fontSize}px Arial`;
+                    ctx.fillText(text, x, y);
+                }
+                break;
+            case 'textarea':
+                const textareaContent = prompt('Enter text for textarea:');
+                if (textareaContent) {
+                    const maxWidth = 200;
+                    const lineHeight = fontSize * 1.2;
+                    const words = textareaContent.split(' ');
+                    let line = '';
+                    let currentY = y;
+
+                    ctx.font = `${fontSize}px Arial`;
+
+                    for (let n = 0; n < words.length; n++) {
+                        const testLine = line + words[n] + ' ';
+                        const metrics = ctx.measureText(testLine);
+                        const testWidth = metrics.width;
+                        if (testWidth > maxWidth && n > 0) {
+                            ctx.fillText(line, x, currentY);
+                            line = words[n] + ' ';
+                            currentY += lineHeight;
+                        } else {
+                            line = testLine;
+                        }
+                    }
+                    ctx.fillText(line, x, currentY);
+                }
+                break;
+        }
+    }
+
+    window.embeddedChatbotConfig = {
+        chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+        domain: "www.chatbase.co",
+        position: "right"
+    };
+</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer></script>
+
+<div class="gtranslate_wrapper"></div>
+<script>
+    window.gtranslateSettings = {
+        "default_language": "en",
+        "detect_browser_language": true,
+        "wrapper_selector": ".gtranslate_wrapper"
+    };
+</script>
+<script src="//gtranslate.io/translate.js" defer></script>
 
         function stopDrawing(e) {
             if (!isDrawing) return;

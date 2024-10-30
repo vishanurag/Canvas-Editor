@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Back to Home button */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #f89d63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            z-index: 1000;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #d1525c;
+        }
+
+        /* Feedback Form styles */
+        .feedback-container {
+            margin-top: 60px; /* Avoid overlap with the home button */
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="home-button">Back to Home</a>
+
+    <!-- Circles -->
+    <div class="circle"></div>
+    <!-- Other circles... -->
+
+    <div class="feedback-container">
+        <h2>We Value Your Feedback</h2>
+        <form id="feedbackForm">
+            <!-- Form elements -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="rating">Rating:</label>
+            <div class="star-rating">
+                <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+                <!-- Other star inputs... -->
+            </div>
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <p id="thankyouMessage" class="thankyou-message"></p>
+    </div>
+
+    <script src="script1.js"></script>
+    <script>
+        // JavaScript for animated circles
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+        const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+                circle.x = x;
+                circle.y = y;
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+            requestAnimationFrame(animateCircles);
+        }
+        animateCircles();
+    </script>
+</body>
+</html>

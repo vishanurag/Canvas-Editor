@@ -51,7 +51,7 @@
         }
 
         .navbar .nav-links a {
-            color: #fff !important; /* Default color */
+            color: #000 !important; /* Changed to black */
             margin: 0 10px;
             padding: 10px 15px;
             text-transform: uppercase;
@@ -61,8 +61,8 @@
         }
 
         .navbar .nav-links a:hover {
-            color: white; 
-            background-color: #3abe57; 
+            color: #000; 
+            background-color: #fff; 
             border-radius: 5px;
         }
 
@@ -126,19 +126,27 @@
             color: white;
         }
 
-        .google-btn, .github-btn {
+        .google-btn, .github-btn , .twitter-btn , .instagram-btn {
             width: 36px;
             height: 36px;
             margin: 0 5px;
             border-radius: 50%;
             transition: transform 0.2s ease;
         }
-        .google-btn {
+        .google-btn , .twitter-btn {
             margin-right: 20px; 
         }
         
         .github-btn {
-            margin-left: 20px; 
+            margin-left: 10px; 
+        }
+
+        .instagram-btn{
+            margin-left: 20px;
+        }
+
+        .twitter-btn{
+            margin-left: 20px;
         }
         
         .google-btn:hover, .github-btn:hover {
@@ -161,8 +169,44 @@
             margin: 0 auto;
         }
     </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
 </head>
 <body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
     <header class="header">
         <nav class="navbar">
           <div class="title">
@@ -203,12 +247,10 @@
         </form>
         <div class="or">- OR -</div>
         <div id="social" class="d-flex justify-content-center mb-3">
-            <a href="https://www.google.com/"><img class="logo google-btn"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911">
-            </a>
-            <a href="https://github.com/"><img class="logo github-btn"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png">
-            </a>
+            <a href="https://www.google.com/"><img class="logo google-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911"></a>
+            <a href="https://github.com/"><img class="logo github-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png"></a>
+            <a href="https://www.instagram.com/"><img class="logo instagram-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/180px-Instagram_logo_2016.svg.png"></a>
+            <a href="https://twitter.com/"><img class="logo twitter-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/180px-Logo_of_Twitter.svg.png"></a>
         </div>
         <p>Don't have an account? <br><a href="signup.html">Sign up</a></p>
     </div>
@@ -241,6 +283,59 @@ function type() {
 // Start typing effect
 type();
 
+    </script>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
     </script>
 </body>
 </html>
