@@ -5,196 +5,382 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/Styles/Style.css">
-    <link rel="stylesheet" href="./src/Styles/contact_us_style.css">
-    <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <div class="visitor-counter">
+        <div>Visitor</div>
+        <div class="website-counter"></div>
+    </div>
+    <style>
+        #toggleGridButton {
+            margin-top: 10px;
+        }
 
-   <link rel="stylesheet" href="src/Styles/scroll.css">
+        .visitor-counter {
+            position: fixed;
+            top: 570px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Slightly opaque background for better visibility */
+            height: 100px;
+            width: 100px;
+            color: #333;
+            /* Darker text for better contrast */
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            /* Softer corners */
+            backdrop-filter: blur(10px);
+            /* Increased blur for a modern touch */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
+                /* Slightly more pronounced shadow */
+                0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            /* Smooth transition for hover effect */
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        .visitor-counter:hover {
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Enhance shadow on hover */
+        }
 
+        .visitor-counter div:first-child {
+            margin-bottom: 5px;
+            font-size: 14px;
+            /* Adjusted for clarity */
+            letter-spacing: 1px;
+            /* Increased spacing for readability */
+        }
 
-    <link rel="stylesheet" href="style.css">
-    
+        .website-counter {
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            /* Consistent font family */
+        }
 
+        @media screen and (max-width: 768px) {
+            .visitor-counter {
+                height: 100px;
+                width: 100px;
+                font-size: 16px;
+            }
 
-    <link rel="stylesheet" href="src/Styles/scroll.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+            .website-counter {
+                font-size: 20px;
+            }
+        }
 
-    <link rel="stylesheet" href="src/Styles/scroll.css">
+        @media screen and (max-width: 480px) {
+            .visitor-counter {
+                height: 80px;
+                width: 80px;
+                font-size: 14px;
+            }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+            .website-counter {
+                font-size: 18px;
+            }
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+        .dark-mode .visitor-counter div {
+            color: #f0f0f0;
+            /* Lighter text for dark mode */
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+        .dark-mode .visitor-counter .website-counter {
+            color: #f0f0f0;
+            /* Lighter color for consistency */
+        }
 
+        .dark-mode .visitor-counter {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Darker background for dark mode */
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
+                0 2px 4px rgba(255, 255, 255, 0.05);
+        }
+    </style>
+    <script>
+        // Function to get the count from localStorage or initialize it
+        function getVisitorCount() {
+            return localStorage.getItem('visitorCount') || 0;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        // Function to increment and save the count
+        function incrementVisitorCount() {
+            let count = parseInt(getVisitorCount()) + 1;
+            localStorage.setItem('visitorCount', count);
+            return count;
+        }
 
+        // Function to display the count
+        function displayVisitorCount() {
+            const counterElement = document.querySelector('.website-counter');
+            const count = incrementVisitorCount();
+            counterElement.textContent = count;
+        }
 
+        // Call the display function when the page loads
+        document.addEventListener('DOMContentLoaded', displayVisitorCount);
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        .sidebar {
+            width: 150px;
+            background-color: #a69ac4;
+            color: white;
+            padding: 17px;
+            padding-top: 100px;
+        }
 
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #a34da6;
+            border: none;
+            color: white;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 15px;
+        }
 
+        .sidebar button:hover {
+            background-color: #553d8c;
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
+        .navbar {
+            background-color: #a69ac4;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 50px;
+        }
 
-  
-  </head>
-  <body>
-   <div id="popup-nl" class="popup-nl">
-  <div class="popup-content-nl">
-      <div class="popup-left-nl">
-          <img src="popup.jpg" alt="finance">
-      </div>
+        .navbar h1 {
+            color: rgb(255, 255, 255);
+            margin: 0;
+            margin-left: -180px;
+        }
 
-      <div class="popup-right-nl">
-          <a href="# " class="close1-btn-nl close-nl">X</a>
-          <h1>Subscribe to Newsletter</h1>
-          <h2 class="h2-nl">A free guide to canvas art techniques!</h2>
-          <p class="pop_up-nl">Join our artistic community and stay in the loop with the latest trends, tips, and exclusive art collections</p>
-          <form id="emailForm-nl">
-              <input type="email" id="email-nl" placeholder="Enter your email" required>
-              <button type="submit" class="signup-btn1-nl">Subscribe</button>
-          </form>
-          <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-          <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
-      </div>
-  </div>
-</div>
-<script src="popup.js"></script>
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            margin: auto;
+        }
 
-<title>Dark Mode Toggle Switch</title>
-<style>
-    /* Basic Page Styling */
-    body {
-        font-family: Arial, sans-serif;
-        transition: background-color 0.3s, color 0.3s;
-        background-color: #ffffff;
-        color: #333333;
-    }
+        .nav-links a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
 
-    .dark-mode {
-        background-color: #333333;
-        color: #ffffff;
-    }
+        .nav-links a:hover {
+            background-color: #8a7ba8;
+        }
 
-    /* Toggle Switch Styling */
-    .toggle-switch {
-        position: fixed;
-        top: 20px;
-        left: 350px;
-        width: 80px;
-        height: 40px;
-        background-color: #f39c12; /* Orange background for light mode */
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        padding: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        z-index: 1000; /* Ensure the toggle switch is above other elements */
-    }
+        .tools {
+            display: flex;
+            gap: 10px;
+            padding-left: 40px;
+            background-color: #a69ac4;
+        }
 
-    .toggle-switch.dark {
-        background-color: #222; /* Dark background for dark mode */
-    }
+        .tool {
+            background-color: #cd8cf9;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-    /* Sliding Circle */
-    .toggle-circle {
-        width: 30px;
-        height: 30px;
-        background-color: white;
-        border-radius: 50%;
-        position: relative;
-        transition: transform 0.3s;
-    }
+        .tool:hover {
+            background-color: #bd8ce6;
+        }
 
-    /* Icon Styling */
-    .icon {
-        position: absolute;
-        font-size: 20px;
-        transition: opacity 0.3s;
-    }
+        .tool.active {
+            background-color: #bd74dd;
+        }
 
-    .sun-icon {
-        left: 10px;
-        color: #f39c12;
-    }
+        #canvas {
+            border: 1px solid #000000;
+            background-color: white;
+            cursor: crosshair;
+            width: 100%;
+            height: calc(100vh - 280px);
+            /* Adjusted for footer */
+        }
 
-    .moon-icon {
-        right: 10px;
-        color: #ffffff;
-        opacity: 0; /* Initially hidden */
-    }
+        .color-picker {
+            margin: 10px 0;
+            position: relative;
+            display: inline-block;
+        }
 
-    /* Dark Mode Active State */
-    .dark-mode .sun-icon {
-        opacity: 0;
-    }
+        .color-picker input[type="color"] {
+            padding: 0;
+            width: 50px;
+            height: 40px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    .dark-mode .moon-icon {
-        opacity: 1;
-    }
+        .color-palette {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            z-index: 1000;
+        }
 
-    .dark-mode .toggle-circle {
-        transform: translateX(40px); /* Move to the right for dark mode */
-    }
-</style>
+        .color-picker:hover .color-palette {
+            display: grid;
+        }
+
+        .color-swatch {
+            width: 25px;
+            height: 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+
+        .footer {
+            background-color: #fddaff;
+            color: rgb(197, 82, 184);
+
+        }
+
+        .newsletter-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .newsletter-section button {
+            background-color: #c66de7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-section button:hover {
+            background-color: #df3cbf;
+        }
+
+        .text-size-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            background-color: #cd8cf9;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .text-size-control input {
+            width: 60px;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .text-size-control:hover {
+            background-color: #bd8ce6;
+            transition: background-color 0.3s;
+        }
+
+        .credit {
+            text-align: center;
+        }
+
+        .share {
+            font-size: 25px;
+        }
+
+        .share i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .share i:hover {
+            cursor: pointer;
+            color: #5c2872;
+        }
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
 </head>
+
 <body>
-
-<!-- Toggle Switch HTML -->
-<div class="toggle-switch" id="darkModeToggle">
-<span class="icon sun-icon">☀️</span>
-<span class="icon moon-icon">🌙</span>
-<div class="toggle-circle"></div>
-</div>
-
-
-<script src="popup.js"></script>
-<script>
-// JavaScript to toggle dark mode
-const toggleSwitch = document.getElementById('darkModeToggle');
-const popup = document.getElementById('popup');
-const closePopupButton = document.getElementById('closePopup');
-
-// Function to show the popup
-function showPopup() {
-    popup.style.display = 'block';
-}
-
-// Show popup on page load (you can adjust this as needed)
-window.onload = showPopup;
-
-toggleSwitch.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    toggleSwitch.classList.toggle('dark');
-});
-
-closePopupButton.addEventListener('click', () => {
-    popup.style.display = 'none'; // Close the popup
-});
-</script>
-</body>
-</html>
-    
-
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -216,1221 +402,703 @@ closePopupButton.addEventListener('click', () => {
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-<div id="progress-container">
-    <div id="progress-bar"></div>
-</div>
-
-
-<button class="top-btn" id="goToTopBtn" onclick="goToTop()">
-    <i class="fa-solid fa-chevron-up" style="color: #ffffff"></i>
-</button>
-
-    <div id="preloader">
-        <div class="loader">
-            <svg viewBox="0 0 80 80">
-                <circle id="test" cx="40" cy="40" r="32"></circle>
-            </svg>
-        </div>
-
-        <div class="loader triangle">
-            <svg viewBox="0 0 86 80">
-                <polygon points="43 8 79 72 7 72"></polygon>
-            </svg>
-        </div>
-
-        <div class="loader">
-            <svg viewBox="0 0 80 80">
-                <rect x="8" y="8" width="64" height="64"></rect>
-            </svg>
-        </div>
-
-        <!-- dribbble -->
-        <a class="dribbble" href="https://dribbble.com/shots/5878367-Loaders" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+    <div class="sidebar">
+        <button id="tools-btn">Tools</button>
+        <button id="settings-btn">Settings</button>
+        <button id="help-btn">Help</button>
     </div>
-    <header class="header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <div class="title d-flex align-items-center">
-                    <h1 class="site-name">Canvas Editor</h1>
-                    <i class="fa-solid fa-paintbrush text-white"></i>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                <div class="collapse navbar-collapse nav-links" id="navbarNav">
-                    
-                  
-                </div>
+    <button id="toggleGridButton">Toggle Grid</button>
+    <div class="main-content">
+        <nav class="navbar">
+            <h1>Canvas Editor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="review.html">Review</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="Blog_page.html">Blog</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="./Feedback.html">Feedback</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="login.html">Login</a>
+
             </div>
         </nav>
-    </header>
-
-
-    <div class="container p-0">
-        <div class="header">
-
-            
-
-
-            <div id="logo">
-                <!-- <div class="logo-new" style="margin-left: 140px;"><img src="logo4.png" alt="" width="80px" height="auto""></div> -->
-               
-                </h1>
+        <div class="tools">
+            <button class="tool active" id="pencil">Pencil</button>
+            <button class="tool" id="marker">Marker</button>
+            <button class="tool" id="eraser">Eraser</button>
+            <button class="tool" id="line">Line</button>
+            <button class="tool" id="rectangle">Rectangle</button>
+            <button class="tool" id="circle">Circle</button>
+            <button class="tool" id="text">Text</button>
+            <button class="tool" id="textarea">Text Area</button>
+            <div class="color-picker">
+                <input type="color" id="colorPicker">
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #ff0000"></div>
+                    <div class="color-swatch" style="background: #00ff00"></div>
+                    <div class="color-swatch" style="background: #0000ff"></div>
+                    <div class="color-swatch" style="background: #ffff00"></div>
+                    <div class="color-swatch" style="background: #ff00ff"></div>
+                    <div class="color-swatch" style="background: #00ffff"></div>
+                    <div class="color-swatch" style="background: #000000"></div>
+                    <div class="color-swatch" style="background: #ffffff"></div>
+                    <div class="color-swatch" style="background: #808080"></div>
+                    <div class="color-swatch" style="background: #c0c0c0"></div>
+                </div>
             </div>
+            <div class="color-picker">
+                <input type="color" id="bgColorPicker">
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #ff0000"></div>
+                    <div class="color-swatch" style="background: #00ff00"></div>
+                    <div class="color-swatch" style="background: #0000ff"></div>
+                    <div class="color-swatch" style="background: #ffff00"></div>
+                    <div class="color-swatch" style="background: #ff00ff"></div>
+                    <div class="color-swatch" style="background: #00ffff"></div>
+                    <div class="color-swatch" style="background: #000000"></div>
+                    <div class="color-swatch" style="background: #ffffff"></div>
+                    <div class="color-swatch" style="background: #808080"></div>
+                    <div class="color-swatch" style="background: #c0c0c0"></div>
+                </div>
+            </div>
+            <input type="range" id="lineWidth" min="1" max="50" value="5">
+            <div class="text-size-control">
+                <label for="textSize">Text Size:</label>
+                <input type="number" id="textSize" min="8" max="72" value="20">
+            </div>
+            <button class="tool" id="clear">Clear</button>
         </div>
-    
-        <div class="row gap-5">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-
-                    <a class="nav-link " aria-current="page" href="#">Home</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="review.html">Review</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="testimonial.html">Testimonial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="privacy.html">Privacy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Blog_page.html">Blog</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="./Faq.html">FAQ</a>
-                </li>
-
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contributors.html">Contributors</a>
-
-                </li>
-                <li>
-                    <div class="gtranslate_wrapper"></div>
-
-                    <script src="https://cdn.gtranslate.net/widgets/latest/popup.js" defer></script>
-                </li>
-
-            </ul>
-        </div>
-        <div class="row text-center p-5 welcome" style="background-color: #241835d8; width: 100%; height: 40vh;">
-            <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-            <p style="color: rgb(223, 140, 235);">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-        </div>
-        <div class="canvas-container p-3">
-
-            <img src="" alt="">
-           
-                <h1 class="display-4 mb-4" id="heading"><a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
-
-                </h1>
-                <p class="lead p-2">Design and create stunning visuals effortlessly!</p>
-
-        </div>
-
-        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="review.html">Review</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="testimonial.html">Testimonial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="privacy.html">Privacy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tutorial.html">Tutorial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Blog_page.html">Blog</a>
-                </li>
-                <li class="nav-item">
-
-                    <a class="nav-link" href="./Faq.html">FAQ</a>
-                </li>
-
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contributors.html">Contributors</a>
-
-                </li>
-                <li>
-                    <div class="gtranslate_wrapper"></div>
-                    <script>
-                        window.gtranslateSettings = {
-                            default_language: "en",
-                            detect_browser_language: true,
-                            wrapper_selector: ".gtranslate_wrapper",
-                            flag_size: 16,
-                        };
-                    </script>
-                    <script src="https://cdn.gtranslate.net/widgets/latest/popup.js" defer></script>
-                </li>
-
-            </ul>
-        </div>
-
-<div class="row text-center p-5 theme-container" style="background-color: #2c3e5e; width: 100%; height: 60vh;">
-
-    <h2 style="color: white;">Welcome to the Canvas Editor!</h2>
-
-    <p style="color: white;">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-
-</div>
-< main
-            
-
-           
+        <canvas id="canvas"></canvas>
         
-            <h2 class="welcome-header">Welcome to the Canvas Editor!</h2>
-            <p class="welcome-text">Unleash your creativity with our powerful and easy-to-use canvas editor. <i class="fa-light fa-face-party"></i></p>
-> main
-
-        </div>
-
-
-            <div class="title-container">Draw Here</div>
-            /* Animation for welcome text */
-            
-           
-
-
-        <div class="canvas-container">
-
-
-            <b><h2>Draw Here !!!</h2></b>
-
-
-            <canvas id="mainCanvas"></canvas>
-
-            <div class="canvas-container" style="margin:10px;">
-
-
-                <div class="canvas-palette">
-                    <form id="userForm" class="d-flex flex-column gap-2 p-4 ml-0">
-                        <div class="d-flex justify-content-around mb-2">
-
-                            <div class="brush" style="width: 30%;">
-                            <label for="brushSize">Brush Size:</label>
-                            <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                            </select>
-                        </div>
-                        <div class="colorpick" style="width: 30%;">
-                            <label for="colorPicker">Color:</label>
-                            <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
-                        </div>
-
-                           
-
-                        </div>
-                        <div class="d-flex justify-content-around  mb-2">
-                            <div class="col-sm-6"  style="width: 30%;">
-                                <label for="bgImageUpload">Background Image:</label>
-                                <input type="file" id="bgImageUpload" accept="image">
-                            </div>
-                            <div class="col-sm-6"  style="width: 30%;">
-                                <label for="bgColorPicker">Background Color:</label>
-                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker" style="height: 4rem;">
-                            </div>
-                        </div>
-                        <div class="wrapper edit justify-content-center gap-3 mt-5">
-                            <button  type="button" class="btn btn-primary" id="drawTextBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Brush
-                            </button>
-                            <button  type="button" class="btn btn-primary" id="clearCanvasBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Clear Canvas
-                            </button>
-                            <button type="button" class="btn btn-primary" id="redoCanvasBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Redo
-                            </button>
-                            <button type="button" class="btn btn-primary" id="undoCanvasBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Undo
-                            </button>
-                            <button  type="button" class="btn btn-primary" id="eraserBtn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                Eraser
-                            </button>
-                        </div>
-                        <div class="space"></div>
-                    </form>
-                    <div style="justify-content: center; align-items: center; justify-items: center; text-align: center;">
-                    <input type="text" placeholder="Enter Text" name="textData" id="textData"
-                    class="form-control mw-100 w-70" style="border-color: #000000; border-style: solid 1px; margin:10px; text-align: center;">
-                    </div>
-                    <div class="tStyle d-md-flex justify-content-center gap-4">
-                       
-                        <button  type="button" class="btn btn-primary" id="capital">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Uppercase
-                        </button>
-                        <button  type="button" class="btn btn-primary" id="small">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Lowercase
-                        </button>
-                        <button  type="button" class="btn btn-primary" id="bold">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Bold
-                        </button>
-                        <button  type="button" class="btn btn-primary" id="italic">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Italic
-                        </button>
-                    </div>
-
-                    <div class="rclStyle d-md-flex justify-content-center gap-3">
-
-
-
-                        <button  type="button" class="btn btn-success" id="rectangleBtn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            triangle
-                        </button>
-                            
-
-                        <div class="rclStyle d-md-flex justify-content-evenly gap-1">
-
-                            <button type="button" class="btn btn-success" id="rectangleBtn">
-
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Rectangle
-                        </button>
-
-
-                            <button type="button" class="btn btn-success" id="circleBtn">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Circle
-                        </button>
-
-
-                            <button type="button" class="btn btn-success" id="linebtn">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Line
-                        </button>
-
-
-                    </div>
-                    <!-- <div class="palette">
-                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
-                        <button id="circleBtn" class="btn btn-success">Circle</button>
-                        <button id="lineBtn" class="btn btn-success">Line</button>
-                    </div> -->
-                    <br>
-                    <div class="d-md-flex justify-content-center align-items-center">
-                        <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
-                        <button type="button" class="btn btn-danger" id="clear">Clear</button>
-                        <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
-                        <!-- Added save functionality  -->
-                        <button type="button" class="btn btn-primary" id="saveAsImageBtn">Save Image</button>
-
-
-                        </div>
-
-
-                        <div class="d-md-flex justify-content-center align-items-center py-3">
-
-</div>
-
-
-                        </div>
-                        </form>
-                    </div>
-                </div>
-
-
-                
-        </div>
-
-
-< main
-
-<div style="display: flex; padding-top: 10px;">
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png" >
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
-                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
-                 </div>
-                </div>
-                <h1 style="text-align: center; color:purple; font-weight: bolder;">Contact us</h1>
-                <form id="contactForm" class="row g-3 justify-content-center" style="display: grid;">
-                    <!-- Name Field -->
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
-                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                                oninput="this.setCustomValidity('')" style="margin-bottom: 30px;">
-                       <label for="name">Your Name</label>
-> main
-                  </div>
-                    <form id="contactForm" class="row g-3 justify-content-center">
-
-            </div>
-
-            <div class="container mt-5 contact-container">
-              
-                                        <!-- Contact Us Section -->
-                                        <section id="contact" class="contact-section text-center py-5">
-                                            <h2 class="mb-4">Contact Us</h2>
-                                            <div class="social-media-links">
-                                            </div>
-                                            <form id="contactForm" class="row g-3 justify-content-center">
-                                                <!-- Name Field -->
-                                                <div class="col-md-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+" oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')" oninput="this.setCustomValidity('')">
-                                                        <label for="name">Your Name</label>
-                                                    </div>
-                                                </div>
-                                                <!-- Email Field -->
-                                                <div class="col-md-4">
-                                                    <div class="form-floating">
-                                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                                        <label for="email">Your Email</label>
-                                                    </div>
-                                                </div>
-                                                <!-- Subject Field -->
-                                                <div class="col-md-8">
-                                                    <div class="form-floating">
-                                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                                                        <label for="subject">Subject</label>
-                                                    </div>
-
-                                                </div>
-                                    </div>
-                                    <!-- Email Field -->
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                            <label for="email">Your Email</label>
-                                        </div>
-                                    </div>
-                                    <!-- Subject Field -->
-                                    <div class="col-md-8">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                                            <label for="subject">Subject</label>
-                                        </div>
-
-                                    </div>
-
-                                    </form>
-                                    </section>
-                                </div>
-                            </div>
-                            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-                    </div>
-
-                        <!-- Message Field -->
-                        <div class="col-md-8">
-                            <div class="form-floating">
-                                <textarea class="form-control" id="message" name="message" placeholder="Your Message"
-                                    style="height: 150px; align-items: center;" required></textarea>
-                                <label for="message">Your Message</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Email Field -->
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required style="margin-top: 10px;">
-                            <label for="email">Your Email</label>
-                        </div>
-
-
-                        </div> -->
-                        <div class="container">
-                            <div class="cal">
-                              
-                    </form>
-                    </div>
-
-                    </div>
-
-                    </form>
-                </section>
-            </div>
-        </div>
-
-< main
-     
-
-
-                    </div>
-                
-                    <!-- Subject Field -->
-                    <div class="col-md-8">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-                    </div>
-                
-                    <!-- Message Field -->
-                    <div class="col-md-8">
-                        <div class="form-floating">
-                            <textarea class="form-control" id="message" name="message" placeholder="Type your message here..."
-                                style="height: 150px;" required></textarea>
-                            <label for="message">Your Message</label>
-                    </div> -->
-                    <div class="container">
-                        <div class="cal">
-                            <h4>Your<br><span>Message</span></h4>
-                            <!-- <div class="input-box"> -->
-                                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 350px; width: 800px;margin-right:80px;" required></textarea>
-                            
-                            <p id="result"></p>
-                        </div>
-                    </div>
-                
-                    <!-- Submit Button -->
-                    <div class="col-md-8 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary w-100 py-2">Submit</button>
-                    </div>
-                </form>
-        
-                  <div class="col-md-8 d-flex justify-content-center">
-    <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
-
-        <div class="container">
-            <div class="cal row d-flex justify-content-center align-items-center p-5" style="width: 40%;">
-                <h4 class="mb-4">Your<br><span>Message</span></h4>
-                <textarea class="form-control" id="message" name="message" placeholder="Type your message here..." style="height: 30vh; width: 100%;" required></textarea>
-                <p id="result"></p>
-                <!-- Submit Button -->
-                <div class="col-md-12 d-flex justify-content-center align-items-center">
-                    <!-- <div class="col-md-8">/ -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <!-- </div> -->
-                </div>
-> main
-
-                </form>
-            </div>
-        </div>
-
-        <!-- Custom Popup -->
-        <div id="customPopup" class="custom-popup">
-            <div class="popup-content">
-                <h3 style="color:#1a0033;">Thank You!</h3>
-                <p  style="color: #1a0033">Your message has been sent successfully. We'll get back to you soon!</p>
-                <button id="closePopup" class="btn btn-primary">Close</button>
-            </div>
-        </div>
-
-       
-        <section class="footer" id="footer">
-
-        <section class="footer" id="footer">
-
-            <!-- Added responsiveness to icons -->
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fa-brands fa-x-twitter"></a>
-                <!-- Updated X icon-->
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-                <a href="#" class="fa-brands fa-pinterest"></a>
-            </div>
-
-            <div class="credit" style="font-size: 0.6rem;">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © 2024
-                </p>
-                <br>
-            </div>
-            <!-- Back to Top Button -->
-            <button id="BacktoTop">
-                <span>↑</span>
-            </button>
-        </section>
-
-
-<script>
-    const canvas = document.getElementById('mainCanvas');
-    const ctx = canvas.getContext('2d');
-
-    let undoStack = [];
-    let redoStack = [];
-
-    function saveState() {
-        undoStack.push(canvas.toDataURL());
-        redoStack = [];
-    }
-
-    function undo() {
-        if (undoStack.length > 0) {
-            redoStack.push(undoStack.pop());
-            restoreState(undoStack[undoStack.length - 1] || null);
-        }
-    }
-
-    function redo() {
-        if (redoStack.length > 0) {
-            const redoState = redoStack.pop();
-            undoStack.push(redoState);
-                restoreState(redoState);
-            }
-        }
-
-        function restoreState(imageData) {
-            const img = new Image();
-            img.src = imageData || '';
-            img.onload = () => {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                if (imageData) ctx.drawImage(img, 0, 0);
-            };
-        }
-
-        function draw(x, y) {
-            ctx.fillStyle = "black";
-            ctx.fillRect(x, y, 5, 5);
-            saveState();
-        }
-
-        canvas.addEventListener('mousedown', (e) => {
-            draw(e.offsetX, e.offsetY);
-        });
-
-        document.querySelector('button[name="Undo"]').addEventListener('click', undo);
-        document.querySelector('button[name="Redo"]').addEventListener('click', redo);
-
-</script>
-
-
-        <script src="src\Scripts\preloader.js"></script>
-        <script src="src/Scripts/BacktoTop.js"></script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const fontBtn = document.getElementById('fontBtn');
-                const fontOptions = document.getElementById('fontOptions');
-                const options = document.querySelectorAll('.font-option');
-                const radius = 100;  // Increase this value to create more spacing between buttons
-                const startAngle = -30;  // Adjust this for positioning of the arc
-                const offsetX = 300;  // Move the arc further to the right
-                const offsetY = 70;  // Adjust vertical position of the arc
-
-                fontBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
-                    if (fontOptions.style.display === 'block') {
-                        const totalOptions = options.length;
-                        options.forEach((option, index) => {
-                            const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
-                            const x = Math.cos(angle) * radius + offsetX + 20;
-                            const y = Math.sin(angle) * radius + offsetY + 50;
-                            option.style.transform = `translate(${x}px, ${y}px)`;
-                        });
-                    } else {
-                        options.forEach(option => {
-                            option.style.transform = 'translate(0, 0)';
-                        });
-                    }
-                });
-
-                options.forEach(option => {
-                    option.addEventListener('click', function (e) {
-
         <style>
-            .custom-popup {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
+            /* Footer Styles */
+            .footer {
+              background-color: #ff69b4; /* Vibrant pink */
+              color: white;
+              padding: 30px; /* Increased footer height */
+              text-align: center;
             }
-            
-            .popup-content {
-                background-color: black;
-                margin: 15% auto;
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%;
-                max-width: 500px;
-                border-radius: 5px;
-                text-align: center;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+            .footer-content {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 15px;
+              margin-bottom: 20px;
             }
-            
-            .popup-content h3 {
-                color: #007bff;
-                margin-bottom: 15px;
+        
+            .footer h3 {
+              margin: 0;
+              font-size: 1.6em; /* Increased heading size */
             }
-            
-            .popup-content p {
-                margin-bottom: 20px;
+        
+            .footer input[type="email"] {
+              padding: 8px;
+              font-size: 1em;
+              border: none;
+              border-radius: 5px;
+              width: 220px;
             }
-        </style>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const contactForm = document.getElementById('contactForm');
-                const customPopup = document.getElementById('customPopup');
-                const closePopup = document.getElementById('closePopup');
-
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Prevent the form from submitting normally
-
-                    // Get form values
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-
-                    // Check if message is at least 20 characters long
-                    if (message.length < 20) {
-                        alert('Please enter a message with at least 20 characters.');
-                        return;
-                    }
-
-                    // Here you would typically send the form data to a server
-                    console.log('Form submitted:', {
-                        name,
-                        email,
-                        subject,
-                        message
-                    });
-
-                    // Show custom popup
-                    customPopup.style.display = 'block';
-
-                    // Reset the form
-                    this.reset();
-                });
-
-                // Close popup when the close button is clicked
-                closePopup.addEventListener('click', function() {
-                    customPopup.style.display = 'none';
-                });
-
-                // Close popup when clicking outside the popup content
-                window.addEventListener('click', function(event) {
-                    if (event.target === customPopup) {
-                        customPopup.style.display = 'none';
-                    }
-                });
-            });
-        </script>
+        
+            .footer button {
+              padding: 8px 15px;
+              font-size: 1em;
+              color: #ff69b4;
+              background-color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+        
+            .footer button:hover {
+              background-color: lightgray;
+            }
+        
+            .footer-links {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              margin-left: 60px; /* Adjust left margin for link alignment */
+              margin-bottom: 20px; /* Add space below links */
+            }
+        
+            .footer-links a {
+              color: white;
+              text-decoration: none;
+              margin: 5px 0;
+              position: relative;
+              font-size: 1.2em; /* Increased link font size */
+            }
+        
+            /* Underline Animation on Hover */
+            .footer-links a::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              width: 0;
+              height: 2px;
+              background-color: white;
+              transition: width 0.3s ease;
+            }
+        
+            .footer-links a:hover::after {
+              width: 100%; /* Expands underline on hover */
+            }
+        
+            /* Created By Section */
+            .created-by {
+               /* Space between links and creator text */
+              font-size: 1.2em; /* Increased font size */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+            }
+        
+            .created-by a {
+              color: white;
+              text-decoration: none;
+              font-weight: bold;
+            }
+        
+            .created-by a:hover {
+              text-decoration: underline;
+            }
+        
+            .rights {
+              font-size: 1.2em;
+              color: white;
+            }
+        
+            /* Social Media Icons */
+            .social-icons {
+              margin-top: 25px; /* Space above social icons */
+              display: flex;
+              gap: 15px;
+              justify-content: center;
+            }
+        
+            .social-icons a {
+              color: white;
+              text-decoration: none;
+            }
+        
+            .social-icons img {
+              width: 30px; /* Icon size */
+              height: 30px;
+              transition: opacity 0.3s;
+            }
+        
+            .social-icons img:hover {
+              opacity: 0.7; /* Hover effect for icons */
+            }
+          </style>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-content">
+            <h3>Subscribe to our Newsletter</h3>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </div>
+          <div class="footer-links">
+            <a href="https://vishanurag.github.io/Canvas-Editor/index.html">Home</a>
+            <a href="https://vishanurag.github.io/Canvas-Editor/about-us.html">About</a>
+            <a href="https://vishanurag.github.io/Canvas-Editor/contributors.html">Contributor</a>
+            <a href="https://vishanurag.github.io/Canvas-Editor/privacy.html">Privacy</a>
+          </div>
+          <div class="created-by">
+            Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA</a> 
+            <span class="rights">| All rights reserved © 2024</span>
+          </div>
+          <div class="social-icons">
+            <a href="https://github.com/vishanurag" target="_blank" title="GitHub">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Icon">
+            </a>
+            <a href="https://linkedin.com/in/vishanurag" target="_blank" title="LinkedIn">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn Icon">
+            </a>
+            <a href="https://twitter.com/vishanurag" target="_blank" title="Twitter">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Icon">
+        
+            </a>
+          </div>
+        </footer>
 
     </div>
 
-        
-    </section>
-
-    <script src="src\Scripts\preloader.js"></script>
     <script>
-        const scrollToTopBtn = document.getElementById("BacktoTop");
-        window.onscroll = function() {
-            scrollFunction();
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Please enter a valid email address');
+            }
+        }
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let currentTool = 'pencil';
+        let startX, startY;
+        let showGrid = false;
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth - 200; // Subtracting sidebar width
+            canvas.height = window.innerHeight - 220; // Adjusted for footer
+            updateCanvasWithGrid();
+        }
+
+        // Initial resize and add event listener for window resize
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Set initial styles
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#000000';
+
+        // Tool selection
+        document.querySelectorAll('.tool').forEach(tool => {
+            tool.addEventListener('click', () => {
+                document.querySelector('.tool.active').classList.remove('active');
+                tool.classList.add('active');
+                currentTool = tool.id;
+            });
+        });
+
+        // Color picker and swatches
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', (e) => {
+                const color = e.target.style.backgroundColor;
+                const picker = e.target.closest('.color-picker').querySelector('input[type="color"]');
+                picker.value = rgbToHex(color);
+                if (picker.id === 'colorPicker') {
+                    ctx.strokeStyle = color;
+                    ctx.fillStyle = color;
+                } else {
+                    canvas.style.backgroundColor = color;
+                }
+            });
+        });
+
+        // Convert RGB to Hex
+        function rgbToHex(rgb) {
+            const rgbArr = rgb.match(/\d+/g);
+            return '#' + rgbArr.map(x => {
+                const hex = parseInt(x).toString(16);
+                return hex.length === 1 ? '0' + hex : hex;
+            }).join('');
+        }
+
+        // Color picker
+        document.getElementById('colorPicker').addEventListener('input', (e) => {
+            ctx.strokeStyle = e.target.value;
+            ctx.fillStyle = e.target.value;
+        });
+
+        // Background color picker
+        document.getElementById('bgColorPicker').addEventListener('input', (e) => {
+            canvas.style.backgroundColor = e.target.value;
+        });
+
+        // Line width
+        document.getElementById('lineWidth').addEventListener('input', (e) => {
+            ctx.lineWidth = e.target.value;
+        });
+
+        // Clear canvas
+        document.getElementById('clear').addEventListener('click', () => {
+            if (confirm("Are you sure you want to clear the canvas? This action cannot be undone.")) {
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            else {
+                console.log("Clear action canceled.");
+            }
+        });
+
+        // Drawing functions
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        function drawGrid() {
+            if (!showGrid) return; // Only draw if the grid is enabled
+            ctx.save();
+            ctx.strokeStyle = '#c0c0c0';
+            ctx.lineWidth = 0.5;
+
+            const gridSpacing = 20;
+            for (let x = 0; x < canvas.width; x += gridSpacing) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += gridSpacing) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+            ctx.restore();
+        }
+
+        // Function to clear and redraw the canvas, including the grid if enabled
+        function updateCanvasWithGrid() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+            drawGrid(); // Draw grid if enabled
+            // Any other canvas drawing updates should go here if needed
+        }
+
+        // Event listener to toggle the grid on and off
+        document.getElementById('toggleGridButton').addEventListener('click', () => {
+            showGrid = !showGrid; // Toggle grid state
+            updateCanvasWithGrid(); // Redraw canvas with or without grid
+        });
+        function startDrawing(e) {
+            isDrawing = true;
+            [startX, startY] = [e.offsetX, e.offsetY];
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+
+            const x = e.offsetX;
+            const y = e.offsetY;
+
+            switch (currentTool) {
+                case 'pencil':
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                    [startX, startY] = [x, y];
+                    break;
+                case 'marker':
+                    ctx.globalAlpha = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                    ctx.globalAlpha = 1.0;
+                    [startX, startY] = [x, y];
+                    break;
+                case 'eraser':
+                    ctx.strokeStyle = canvas.style.backgroundColor || '#FFFFFF';
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                    ctx.strokeStyle = document.getElementById('colorPicker').value;
+                    [startX, startY] = [x, y];
+                    break;
+                case 'line':
+                case 'rectangle':
+                case 'circle':
+                    // These shapes are drawn on mouseup
+                    break;
+                case 'text':
+                case 'textarea':
+                    // Text is added on mouseup
+                    break;
+            }
+        }
+
+        function stopDrawing(e) {
+            if (!isDrawing) return;
+            isDrawing = false;
+
+            const x = e.offsetX;
+            const y = e.offsetY;
+            const fontSize = document.getElementById('textSize').value;
+
+            switch (currentTool) {
+                case 'line':
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                    break;
+                case 'rectangle':
+                    ctx.strokeRect(startX, startY, x - startX, y - startY);
+                    break;
+                case 'circle':
+                    const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
+                    ctx.beginPath();
+                    ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
+                    ctx.stroke();
+                    break;
+                case 'text':
+                    const text = prompt('Enter text:');
+                    if (text) {
+                        ctx.font = `${fontSize}px Arial`;
+                        ctx.fillText(text, x, y);
+                    }
+                    break;
+                case 'textarea':
+                    const textareaContent = prompt('Enter text for textarea:');
+                    if (textareaContent) {
+                        const maxWidth = 200;
+                        const lineHeight = fontSize * 1.2;
+                        const words = textareaContent.split(' ');
+                        let line = '';
+                        let currentY = y;
+
+                        ctx.font = `${fontSize}px Arial`;
+
+                        for (let n = 0; n < words.length; n++) {
+                            const testLine = line + words[n] + ' ';
+                            const metrics = ctx.measureText(testLine);
+                            const testWidth = metrics.width;
+                            if (testWidth > maxWidth && n > 0) {
+                                ctx.fillText(line, x, currentY);
+                                line = words[n] + ' ';
+                                currentY += lineHeight;
+                            } else {
+                                line = testLine;
+                            }
+                        }
+                        ctx.fillText(line, x, currentY);
+                    }
+                    break;
+            }
+        }
+
+        window.embeddedChatbotConfig = {
+            chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+            domain: "www.chatbase.co",
+            position: "right"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
+    </script>
+
+    <!-- script for adding valid email -->
+    <script>
+        function subscribeNewsletter() {
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value;
+
+            // Regular expression for basic email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailPattern.test(email)) {
+                alert('Thank you for subscribing!');
+                // Add your subscription logic here
+            } else {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+            }
+        }
+    </script>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        /* Popup Styles */
+        .popup {
+
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
+            justify-content: center;
+            /* Center the popup */
+            align-items: center;
+            /* Center the popup */
+            z-index: 1000;
+            /* Sit on top */
+
+        }
+
+        .popup-content {
+
+            background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            max-height: 500px;
+            min-height: 320px;
+            text-align: center;
+
+        }
+
+        /* Set poll options to stack vertically */
+        #pollOptions {
+
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            align-items: center;
+            /* Center the buttons */
+
+        }
+
+        .poll-button {
+
+            display: block;
+            /* Change to block for full-width */
+            margin: 5px 0;
+            /* Add vertical margin */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(58 30 86 / 40%);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            /* Full width */
+
+        }
+
+        .poll-button:hover {
+
+            background-color: #45a049;
+            /* Darker green */
+
+        }
+
+        .poll-button.selected {
+
+            background-color: #ad00c9;
+            /* Blue for selected */
+
+        }
+
+        /* New Vote Button Styles */
+        .vote-button {
+
+            display: block;
+            /* Change to block for full-width */
+            margin: 5px 0;
+            /* Add vertical margin */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f44336;
+            /* Red */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            /* Full width */
+
+        }
+
+        .vote-button:hover {
+
+            background-color: #d32f2f;
+            /* Darker red */
+
+        }
+
+        /* Result Text Styles */
+        #result {
+
+            margin-top: 10px;
+            /* Add space above result text */
+            word-wrap: break-word;
+            /* Allow long text to wrap within the box */
+            overflow: hidden;
+            /* Prevent overflow */
+            max-height: 50px;
+            /* Limit height to prevent overflow */
+            color: rgb(255, 255, 255);
+            /* Set text color to white */
+
+        }
+    </style>
+
+    <div class="popup" id="pollPopup">
+        <div class="popup-content">
+            <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
+            <div id="pollOptions">
+                <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
+                <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It’s good but has room for
+                    growth.</button>
+                <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
+            </div>
+            <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        // Show the poll popup 10 seconds after the page loads, if not already voted
+        window.onload = function () {
+            const hasVoted = sessionStorage.getItem('hasVoted');
+            setTimeout(function () {
+                if (!hasVoted) {
+                    document.getElementById('pollPopup').style.display = 'flex';
+                }
+            }, 10000); // 10000 milliseconds = 10 seconds
         };
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollToTopBtn.style.visibility = 'visible';
-                scrollToTopBtn.style.opacity = '1';
+        const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+        let selectedValue = '';
+
+        pollButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove selected class from all buttons
+                pollButtons.forEach(btn => btn.classList.remove('selected'));
+                // Add selected class to the clicked button
+                button.classList.add('selected');
+                selectedValue = button.getAttribute('data-value');
+            });
+        });
+
+        document.getElementById('voteButton').addEventListener('click', function () {
+            if (selectedValue) {
+                document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+                // Save voting status in session storage
+                sessionStorage.setItem('hasVoted', 'true');
+                // Hide the popup after voting
+                setTimeout(() => {
+                    document.getElementById('pollPopup').style.display = 'none';
+                }, 2000);
             } else {
-                scrollToTopBtn.style.visibility = 'hidden';
-                scrollToTopBtn.style.opacity = '0';
+                alert("Please select an option!");
             }
+        });
+
+        function initializePoll() {
+            console.log("Poll initialized.");
         }
 
-        scrollToTopBtn.addEventListener("click", function() {
-            // Smooth scroll back to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-                    const fontBtn = document.getElementById('fontBtn');
-                    const fontOptions = document.getElementById('fontOptions');
-                    const options = document.querySelectorAll('.font-option');
-                    const radius = 100; // Increase this value to create more spacing between buttons
-                    const startAngle = -30; // Adjust this for positioning of the arc
-                    const offsetX = 300; // Move the arc further to the right
-                    const offsetY = 70; // Adjust vertical position of the arc
-
-                    fontBtn.addEventListener('click', function(e) {
-                                e.preventDefault();
-                                fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
-                                if (fontOptions.style.display === 'block') {
-                                    const totalOptions = options.length;
-                                    options.forEach((option, index) => {
-                                                const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
-                                                const x = Math.cos(angle) * radius + offsetX + 20;
-                                                const y = Math.sin(angle) * radius + offsetY + 50;
-                                                option.style.transform = `translate(${x}px, ${y}px)`;
-
-                                                <
-                                                script src = "src\Scripts\preloader.js" >
-    </script>
-    <script src="src/Scripts/BacktoTop.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fontBtn = document.getElementById('fontBtn');
-            const fontOptions = document.getElementById('fontOptions');
-            const options = document.querySelectorAll('.font-option');
-            const radius = 100; // Increase this value to create more spacing between buttons
-            const startAngle = -30; // Adjust this for positioning of the arc
-            const offsetX = 300; // Move the arc further to the right
-            const offsetY = 70; // Adjust vertical position of the arc
-
-            fontBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                fontOptions.style.display = fontOptions.style.display === 'none' ? 'block' : 'none';
-                if (fontOptions.style.display === 'block') {
-                    const totalOptions = options.length;
-                    options.forEach((option, index) => {
-                        const angle = (startAngle + index * (90 / (totalOptions - 1))) * (Math.PI / 180);
-                        const x = Math.cos(angle) * radius + offsetX + 20;
-                        const y = Math.sin(angle) * radius + offsetY + 50;
-                        option.style.transform = `translate(${x}px, ${y}px)`;
-                    });
-                } else {
-                    options.forEach(option => {
-                        option.style.transform = 'translate(0, 0)';
-                    });
-                }
-            });
-
-            options.forEach(option => {
-                    option.addEventListener('click', function(e) {
-
-                        e.preventDefault(); // Prevent default button action
-                        console.log(`${this.id} selected`);
-
-                });
-            });
-
-                } else {
-                    options.forEach(option => {
-                        option.style.transform = 'translate(0, 0)';
-                    });
-                }
-            });
-
-        options.forEach(option => {
-            option.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent default button action
-                console.log(`${this.id} selected`);
-            });
-        });
-        });
-
-
-            const mainCanvas = document.getElementById('mainCanvas');
-            const ctx = mainCanvas.getContext('2d');
-            let drawing = false;
-            let eraserMode = false;
-            let currentColor = '#000000'; // Default color
-
-
-            // Resize the canvas to fit the container
-            function resizeCanvas() {
-                mainCanvas.width = mainCanvas.offsetWidth;
-                mainCanvas.height = mainCanvas.offsetHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-
-            // Function to get the mouse or touch position
-            function getPosition(event) {
-                const rect = mainCanvas.getBoundingClientRect();
-                const x = (event.clientX || event.touches[0].clientX) - rect.left;
-                const y = (event.clientY || event.touches[0].clientY) - rect.top;
-                return { x, y };
-            }
-
-            // Start drawing or erasing when the mouse or touch is pressed
-            function startDrawing(event) {
-                drawing = true;
-                const { x, y } = getPosition(event);
-                ctx.beginPath();
-                ctx.moveTo(x, y);
-            }
-
-            // Draw on the canvas or erase as the mouse moves or touch moves
-            function draw(event) {
-                if (drawing) {
-                    const { x, y } = getPosition(event);
-                    if (eraserMode) {
-                        // Erase by clearing a small area
-                        ctx.clearRect(x - 10, y - 10, 20, 20);
-                    } else {
-                        // Set the stroke color and draw
-                        ctx.strokeStyle = currentColor; // Use the selected color
-                        ctx.lineWidth = 5; // Set a line width
-                        ctx.lineTo(x, y);
-                        ctx.stroke();
-                    }
-
-        // Resize the canvas to fit the container
-        function resizeCanvas() {
-            mainCanvas.width = mainCanvas.offsetWidth;
-            mainCanvas.height = mainCanvas.offsetHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        // Function to get the mouse or touch position
-        function getPosition(event) {
-            const rect = mainCanvas.getBoundingClientRect();
-            const x = (event.clientX || event.touches[0].clientX) - rect.left;
-            const y = (event.clientY || event.touches[0].clientY) - rect.top;
-            return {
-                x,
-                y
-            };
-        }
-
-        // Start drawing or erasing when the mouse or touch is pressed
-        function startDrawing(event) {
-            drawing = true;
-            const {
-                x,
-                y
-            } = getPosition(event);
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-        }
-
-        // Draw on the canvas or erase as the mouse moves or touch moves
-        function draw(event) {
-            if (drawing) {
-                const {
-                    x,
-                    y
-                } = getPosition(event);
-                if (eraserMode) {
-                    // Erase by clearing a small area
-                    ctx.clearRect(x - 10, y - 10, 20, 20);
-                } else {
-                    // Set the stroke color and draw
-                    ctx.strokeStyle = currentColor; // Use the selected color
-                    ctx.lineWidth = 5; // Set a line width
-                    ctx.lineTo(x, y);
-
-                }
-                event.preventDefault(); // Prevent scrolling when touching the canvas
-            }
-
-            // Stop drawing or erasing when the mouse is released or touch ends
-            function stopDrawing() {
-                drawing = false;
-                ctx.closePath();
-            }
-
-            //Event listeners for mouse interactions
-            mainCanvas.addEventListener('mousedown', startDrawing);
-            mainCanvas.addEventListener('mousemove', draw);
-            mainCanvas.addEventListener('mouseup', stopDrawing);
-
-            // Event listeners for touch interactions
-            mainCanvas.addEventListener('touchstart', (event) => {
-                startDrawing(event);
-            });
-            mainCanvas.addEventListener('touchmove', (event) => {
-                draw(event);
-            });
-            mainCanvas.addEventListener('touchend', stopDrawing);
-
-            // Clear the entire canvas
-            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-            });
-
-            // Toggle eraser mode
-            document.getElementById('eraserMode').addEventListener('click', () => {
-                eraserMode = !eraserMode;
-                mainCanvas.classList.toggle('eraser', eraserMode);
-                document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
-            });
-
-            // Change the current color when the color picker changes
-            document.getElementById('colorPicker').addEventListener('input', (event) => {
-                currentColor = event.target.value;
-            });
-
-            // Download the canvas as an image
-            document.getElementById('mainCanvas').addEventListener('click', () => {
-                const link = document.createElement('a');
-                link.download = 'canvas-drawing.png';
-                link.href = mainCanvas.toDataURL('image/png');
-                link.click();
-            });
-
-            let brushColor = '#000000';
-            let brushSize = 5;
-
-            // Set initial canvas dimensions
-            function setCanvasDimensions() {
-                mainCanvas.width = window.innerWidth - 40; // Adjust width
-                mainCanvas.height = 400; // Keep height fixed
-            }
-            setCanvasDimensions();
-
-            // Brush size change
-            document.getElementById('brushSize').addEventListener('change', function () {
-                brushSize = this.value;
-            });
-
-            // Color picker change
-            document.getElementById('colorPicker').addEventListener('change', function () {
-                brushColor = this.value;
-            });
-
-            // Background color change
-            document.getElementById('bgColorPicker').addEventListener('change', function () {
-                mainCanvas.style.backgroundColor = this.value;
-            });
-            // Function to set up the canvas background image
-            function setBackgroundImage(file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = new Image();
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                    };
-                    img.src = e.target.result;
-
-        // Brush size change
-        document.getElementById('brushSize').addEventListener('change', function() {
-            brushSize = this.value;
-        });
-
-        // Color picker change
-        document.getElementById('colorPicker').addEventListener('change', function() {
-            brushColor = this.value;
-        });
-
-        // Background color change
-        document.getElementById('bgColorPicker').addEventListener('change', function() {
-            mainCanvas.style.backgroundColor = this.value;
-        });
-        // Function to set up the canvas background image
-        function setBackgroundImage(file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                };
-                reader.readAsDataURL(file);
-            }
-
-            // Drag and Drop Event Listeners for the Canvas
-            canvas.addEventListener('dragover', (event) => {
-                event.preventDefault();
-                canvas.style.border = '2px dashed #000';
-            });
-
-            canvas.addEventListener('dragleave', () => {
-                canvas.style.border = '1px solid #000';
-            });
-
-            canvas.addEventListener('drop', (event) => {
-                event.preventDefault();
-                canvas.style.border = '1px solid #000';
-                const file = event.dataTransfer.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    setBackgroundImage(file);
-                } else {
-                    alert('Please drop a valid image file.');
-                }
-            });
-
-
-
-            // Background image upload
-            document.getElementById('bgImageUpload').addEventListener('change', function (event) {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = new Image();
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
-                    };
-                    img.src = e.target.result;
-
-        // Background image upload
-        document.getElementById('bgImageUpload').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    ctx.drawImage(img, 0, 0, mainCanvas.width, mainCanvas.height);
-
-                };
-                reader.readAsDataURL(file);
-            });
-
-
-            // Clear canvas button
-            document.getElementById('clearCanvasBtn').addEventListener('click', () => {
-                ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-                mainCanvas.style.backgroundColor = '#f0f0f0'; // Reset background color
-            });
-
-            // Eraser button
-            document.getElementById('eraserBtn').addEventListener('click', () => {
-                brushColor = '#ffffff'; // Set brush color to white
-            });
-
-            // Resize canvas on window resize
-            window.addEventListener('resize', setCanvasDimensions);
-
-
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent the form from submitting normally
-
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Check if message is at least 20 characters long
-            if (message.length < 20) {
-                alert('Please enter a message with at least 20 characters.');
-                return;
-            }
-
-            // Here you would typically send the form data to a server
-            // For this example, we'll just log it to the console
-            console.log('Form submitted:', {
-                name,
-                email,
-                subject,
-                message
-            });
-
-            // Show confirmation popup
-            alert('Thank you for your message! We will get back to you soon.');
-
-            // Reset the form
-            this.reset();
-        });
-
-
-        </script>
-
-        <script>
-            // Coordinates for the cursor
-            const coords = { x: 0, y: 0 };
-            const circles = document.querySelectorAll(".circle");
-
-            // Colors for the circles
-            const colors = [
-                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-                "#680060", "#60005f", "#48005f", "#3d005e"
-            ];
-
-            // Assign colors and initial position to each circle
-            circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
+        initializePoll();
 
     </script>
 
     <script>
         // Coordinates for the cursor
-        const coords = {
-            x: 0,
-            y: 0
-        };
+        const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
 
         // Colors for the circles
@@ -1442,14 +1110,14 @@ closePopupButton.addEventListener('click', () => {
         ];
 
         // Assign colors and initial position to each circle
-        circles.forEach(function(circle, index) {
+        circles.forEach(function (circle, index) {
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
         });
 
         // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function(e) {
+        window.addEventListener("mousemove", function (e) {
             coords.x = e.clientX;
             coords.y = e.clientY;
         });
@@ -1459,7 +1127,7 @@ closePopupButton.addEventListener('click', () => {
             let x = coords.x;
             let y = coords.y;
 
-            circles.forEach(function(circle, index) {
+            circles.forEach(function (circle, index) {
                 // Update the position and scale of each circle
                 circle.style.left = x - 12 + "px";
                 circle.style.top = y - 12 + "px";
@@ -1472,264 +1140,15 @@ closePopupButton.addEventListener('click', () => {
                 const nextCircle = circles[index + 1] || circles[0];
                 x += (nextCircle.x - x) * 0.3;
                 y += (nextCircle.y - y) * 0.3;
-
             });
 
-            // Update the coordinates when the mouse moves
-            window.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-            });
-
-            // Animation function to move the circles
-            function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
-
-
-                circles.forEach(function (circle, index) {
-                    // Update the position and scale of each circle
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
-                    circle.style.scale = (circles.length - index) / circles.length;
-
-                    circle.x = x;
-                    circle.y = y;
-
-                    // Get the next circle in the sequence
-                    const nextCircle = circles[index + 1] || circles[0];
-                    x += (nextCircle.x - x) * 0.3;
-                    y += (nextCircle.y - y) * 0.3;
-                });
-
-                // Repeat the animation
-                requestAnimationFrame(animateCircles);
-            }
-
-            // Start the animation
-            animateCircles();
-        </script>
-        <script>
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
-        
-            function enableDarkMode() {
-                body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'enabled');
-            }
-        
-            function disableDarkMode() {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        
-            darkModeToggle.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    disableDarkMode();
-                } else {
-                    enableDarkMode();
-                }
-            });
-        
-            if (localStorage.getItem('darkMode') === 'enabled') {
-                enableDarkMode();
-            }
-
-
-    <script>
-            var mybutton = document.getElementById("goToTopBtn");
-
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () {
-                scrollFunction();
-    };
-            function scrollFunction() {
-        if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-            ) {
-                mybutton.style.display = "block";
-        } else {
-                mybutton.style.display = "none";
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
         }
-    }
 
-        </script>
-            <!-- window.embeddedChatbotConfig = {
-                chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
-                domain: "www.chatbase.co"
-            } -->
-        </script>
-        <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer></script>
-
-        <script src="src/Scripts/Save.js"></script>
-        <script>
-            window.gtranslateSettings = {
-                "default_language": "en",
-                "detect_browser_language": true,
-                "wrapper_selector": ".gtranslate_wrapper"
-            };
-        </script>
-        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-        <br /><br />
-        <link rel="stylesheet" href="visi.css">
-        <!-- ############### Footer ############### -->
-        <div class="visitor-counter">
-        <div>Visitor</div>
-        <div class="website-counter"></div>
-        </div>
-        <script src="path/to/visitorCounter.js"></script>
-        <script src="./assets/css/visitors.css"></script>
-        <script src="visi.js"></script>
-<!-- Footer section -->
-<footer >
-    <div class="footer-content" style="margin-left: 500px;">
-        <p>© 2024 Canvas Editor | All rights reserved.</p>
-        <div class="footer-links" style="margin-left: 70px;">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-        </div>
-    </div>
-</footer>
- 
-</body>
-
-            // When the user clicks on the button, scroll to the top of the document
-            function goToTop() {
-                document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-    }
+        // Start the animation
+        animateCircles();
     </script>
-
-<script>
-
-        window.addEventListener('scroll', function () {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        document.getElementById('progress-bar').style.width = scrolled + '%';
-    });
-</script>
-<script>
-        window.embeddedChatbotConfig = {
-            chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
-        domain: "www.chatbase.co"
-    }
-</script>
-<script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
-
-    document.addEventListener('DOMContentLoaded', function() {
-                const contactForm = document.getElementById('contactForm');
-                const customPopup = document.getElementById('customPopup');
-                const closePopup = document.getElementById('closePopup');
-
-                contactForm.addEventListener('submit', function(e) {
-                            e.preventDefault(); // Prevent the form from submitting normally
-
-                            // Get form values
-                            const name = document.getElementById('name').value;
-                            const email = document.getElementById('email').value;
-                            const subject = document.getElementById('subject').value;
-                            const message = document.getElementById('message').value;
-
-                            // Check if message is at least 20 characters long
-                            if (message.length < 20) {
-                                alert('Please enter a message with at least 20 characters.');
-                                return;
-                            }
-
-                            // Start the animation
-                            animateCircles();
-</script>
-<script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    function enableDarkMode() {
-        body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled');
-    }
-
-    function disableDarkMode() {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'disabled');
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
-
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        enableDarkMode();
-    }
-
-    <
-    /body> 
-
-
-
-        <script >
-        window.addEventListener('scroll', function() {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progress-bar').style.width = scrolled + '%';
-        });
-</script>
-
-<script>
-    // Get the button
-    var mybutton = document.getElementById("goToTopBtn");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            scrollFunction();
-    };
-        function scrollFunction() {
-        if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-        ) {
-
-
-        // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {
-        scrollFunction();
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function goToTop() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
-
-
-
-<br /><br />
-        <link rel="stylesheet" href="visitor.css">
-        <!-- ############### Footer ############### -->
-        <div class="visitor-counter">
-        <div>Visitor</div>
-        <div class="website-counter"></div>
-        </div>
-        <script src="path/to/visitorCounter.js"></script>
-        <script src="./assets/css/visitors.css"></script>
-        <script src="visitor.js"></script>
-
 </body>
 
 </html>
