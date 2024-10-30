@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        :root {
+            --primary-color: #d5880d ;
+            --secondary-color: #2c3e50;
+            --accent-color: #d5880d;
+            --dark-bg: rgb(57, 51, 51);
+            --transition: all 0.3s ease;
+            --hover-color: #fff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #1f1f1f;
@@ -30,17 +42,21 @@
             top: 0;
             z-index: 1000;
         }
+
         nav h1 {
             color: #fca311;
             font-size: 24px;
         }
+
         nav ul {
             list-style: none;
             display: flex;
         }
+
         nav ul li {
             margin-left: 30px;
         }
+
         nav ul li a {
             text-decoration: none;
             color: #fff;
@@ -49,6 +65,7 @@
             border-radius: 30px;
             transition: background-color 0.3s ease;
         }
+
         nav ul li a:hover {
             background-color: #fca311;
             color: #000;
@@ -60,10 +77,12 @@
             padding: 120px 20px;
             background-color: #282828;
         }
+
         .hero h2 {
             font-size: 40px;
             color: #fca311;
         }
+
         .hero p {
             margin-top: 15px;
             font-size: 18px;
@@ -79,16 +98,19 @@
             background-color: #333;
             text-align: center;
         }
+
         .testimonial-section h2 {
             color: #fca311;
             font-size: 32px;
         }
+
         .testimonial-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 40px;
         }
+
         .testimonial {
             background-color: #444;
             border-radius: 10px;
@@ -98,9 +120,11 @@
             color: #fff;
             transition: transform 0.3s ease;
         }
+
         .testimonial:hover {
             transform: translateY(-10px);
         }
+
         .testimonial img {
             border-radius: 50%;
             width: 80px;
@@ -108,10 +132,12 @@
             object-fit: cover;
             margin-bottom: 15px;
         }
+
         .testimonial h3 {
             font-size: 20px;
             color: #fca311;
         }
+
         .testimonial p {
             font-size: 14px;
             color: #ddd;
@@ -125,14 +151,17 @@
             padding: 40px 20px;
             background-color: #1a1a1a;
         }
+
         .stat-box {
             text-align: center;
             color: #fff;
         }
+
         .stat-box h3 {
             font-size: 24px;
             color: #fca311;
         }
+
         .stat-box p {
             font-size: 16px;
             color: #ccc;
@@ -147,15 +176,18 @@
             margin: 40px 20px;
             color: #fff;
         }
+
         .cta-section h3 {
             font-size: 28px;
             margin-bottom: 10px;
         }
+
         .cta-section p {
             font-size: 16px;
             margin-bottom: 20px;
             color: #e2e2e2;
         }
+
         .cta-button {
             background-color: #2c3e50;
             color: #fff;
@@ -165,19 +197,61 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
+
         .cta-button:hover {
             background-color: #1a252f;
         }
 
         /* Footer */
-        footer {
-            background-color: #1c1c1c;
-            padding: 20px;
-            text-align: center;
-            color: #fff;
+        
+        .footer {
+            background: linear-gradient(135deg, var(--secondary-color), var(--dark-bg));
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
         }
-        footer p {
-            margin: 0;
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a  {
+            color: #fff;
+            background: #d5880d;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            background: var(--hover-color);
+            transform: translateY(-3px);
+            color: var(--primary-color);
+        }
+
+
+
+        .footer-credit {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-credit a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer-credit a:hover {
+            color: white;
         }
 
         /* Media Queries */
@@ -185,10 +259,12 @@
             nav {
                 padding: 15px 30px;
             }
+
             .testimonial {
                 width: 100%;
                 max-width: 300px;
             }
+
             .stats-section {
                 flex-direction: column;
                 align-items: center;
@@ -196,6 +272,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation Bar -->
@@ -212,7 +289,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <h2>What Our Clients Say</h2>
-        <p>At Canvas Editor, we believe that our success is best measured by the satisfaction of our clients. Here’s what they have to say about their experiences with us:</p>
+        <p>At Canvas Editor, we believe that our success is best measured by the satisfaction of our clients. Here’s
+            what they have to say about their experiences with us:</p>
     </section>
 
     <!-- Stats Section -->
@@ -238,12 +316,14 @@
             <div class="testimonial">
                 <img src="https://via.placeholder.com/80" alt="Client Image">
                 <h3>Jane Doe</h3>
-                <p>"The service was exceptional, and the staff was very friendly. I am so happy with the outcome of my project!"</p>
+                <p>"The service was exceptional, and the staff was very friendly. I am so happy with the outcome of my
+                    project!"</p>
             </div>
             <div class="testimonial">
                 <img src="https://via.placeholder.com/80" alt="Client Image">
                 <h3>John Smith</h3>
-                <p>"A great experience from start to finish. Highly recommend this company for their professionalism and dedication."</p>
+                <p>"A great experience from start to finish. Highly recommend this company for their professionalism and
+                    dedication."</p>
             </div>
             <div class="testimonial">
                 <img src="https://via.placeholder.com/80" alt="Client Image">
@@ -261,9 +341,23 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Canvas Editor. All rights reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"> <i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"> <i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands  fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/anuragvishwakarma/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <div class="footer-credit">
+                <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG
+                        VISHWAKARMA</a> | All rights reserved © 2024</p>
+            </div>
+        </div>
     </footer>
 
+
 </body>
+
 </html>
