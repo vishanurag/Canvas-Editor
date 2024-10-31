@@ -174,38 +174,66 @@
         }
 
         .navbar {
-            background-color: #a69ac4;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 50px;
-        }
+        background-color: #eb69f0;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 12px #f94ddfe2;
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
 
-        .navbar h1 {
-            color: rgb(255, 255, 255);
-            margin: 0;
-            margin-left: -180px;
-        }
+    /* Navbar Brand */
+    .navbar h1 {
+        color: #ffcad4;
+        font-size: 24px;
+        margin: 0;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1px;
+    }
 
+    /* Centered Navigation Links */
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        margin: auto;
+    }
+
+    /* Link Styling */
+    .nav-links a {
+        color: #f8f8ff;
+        text-decoration: none;
+        padding: 10px 18px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        border-radius: 25px;
+        background-color: transparent;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Hover Effect */
+    .nav-links a:hover {
+        color: #4a4e69;
+        background-color: #ffcad4;
+    }
+
+    /* Mobile Responsive */
+    @media screen and (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+        }
         .nav-links {
-            display: flex;
-            gap: 20px;
-            margin: auto;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
         }
-
-        .nav-links a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+        .navbar h1 {
+            font-size: 20px;
         }
-
-        .nav-links a:hover {
-            background-color: #8a7ba8;
-        }
-
+    }
         .tools {
             display: flex;
             gap: 10px;
