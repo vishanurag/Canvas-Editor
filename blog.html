@@ -15,22 +15,11 @@
             font-family: 'Arial', sans-serif; /* Modern font style */
             color: #333; /* Darker text color for readability */
         }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
+       
+        
         h1, h4 {
             color: #1a1a1a; /* Darker color for headings */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
         .card {
             border: none; /* Remove border for a cleaner look */
@@ -59,75 +48,33 @@
         }
     </style>
     
-    <style>
-        /* Circle styles */
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
-    </style>
+
 </head>
 <body>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-
-
-    <div class="container pt-2">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Canvas Editor</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="review.html">Review</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                </ul>
+ 
+    <header>
+        <div class="navbar">
+            <div class="site-name">Creative Canvas Tool</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="blog.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+            <div class="auth">
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
             </div>
-        </nav>
+        </div>
+    </header>
+
         <div class="text-center pt-5">
             <h1>Latest Blog Posts</h1>
         </div>
-        <div class="row mx-auto pt-4">
-            <div class="col-sm-3 m-4">
+        <div class="row justify-content-center pt-4">
+            <div class="col-sm-4 col-md-3 m-4">
                 <div class="card">
                     <img src="https://media.licdn.com/dms/image/D4D12AQG03_cMJE7uIw/article-cover_image-shrink_720_1280/0/1685891111023?e=2147483647&v=beta&t=ApugyNhPbwf13VZN-Zv68y0iLnd_COOph8VMtvlH1Cw" class="card-img-top" alt="The Magic of Creativity">
                     <div class="card-body">
@@ -137,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 m-4">
+            <div class="col-sm-4 col-md-3 m-4">
                 <div class="card">
                     <img src="https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2020/11/thumb_720_450_dreamstime_m_186895001.jpg" class="card-img-top" alt="The Power of Thinking">
                     <div class="card-body">
@@ -160,26 +107,127 @@
         </div>
         <div class="row mx-auto pb-4">
             <h4 class="text-center">Add Comments</h4>
-            <textarea name="comment" placeholder="Leave a comment" rows="4"></textarea>
+            <div class="col-md-4 mx-auto">
+            <textarea name="comment" placeholder="Leave a comment" col="4"></textarea>
         </div>
     </div>
-    <footer class="text-center">
-        <div class="container pt-4">
-            <section class="mb-4">
-                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fa-brands fa-x-twitter"></i></a>
-                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-google"></i></a>
-                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-instagram"></i></a>
-                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-linkedin"></i></a>
-                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#!"><i class="fab fa-github"></i></a>
-            </section>
+   <!-- Footer -->
+<footer class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="footer-heading">About Us</h4>
+                <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. </p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-heading">Quick Links</h4>
+                <a href="index.html">Home</a><br>
+				<a href="about-us.html">About-us</a><br>
+                <a href="tutorial.html">Tutorial</a><br>
+                <a href="Faq.html">FAQ</a>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-heading">Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>Contact us at: info@example.com</p>
+            </div>
         </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2024 Copyright:
-            <a class="text-body" href="#">CanvasEditor</a>
-        </div>
-    </footer>
-    
+    </div>
+</footer>
+
+
+    <style>
+    body {
+        background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        color: #333;
+        overflow-x: hidden;
+    }
+    header {
+        background: #333;
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .site-name {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .navbar a {
+        color: #bbb;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 0 0.8rem;
+        transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+        color: #fff;
+    }
+    .navbar .auth a {
+        background: #ffb7fd;
+        color: #333;
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+    .navbar .auth a:hover {
+        background: #fff;
+        color: #ffb7fd;
+    }
+
+   
+    footer {
+        background-color: #2b2b3c;
+        padding: 30px 0;
+        color: #e4e4e7;
+    }
+
+    footer .footer-heading {
+        font-weight: 700;
+        color: rgb(253, 249, 249);;
+    }
+
+    footer a {
+        color: #e4e4e7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        color: rgb(253, 249, 249);;
+    }
+
+    footer .social-icons i {
+        font-size: 24px;
+        margin-right: 15px;
+        color: #e4e4e7;
+        transition: color 0.3s ease;
+    }
+
+    footer .social-icons i:hover {
+        color: rgb(253, 249, 249);
+    }
+
+
+</style>
+
     <script>
         // Coordinates for the cursor
         const coords = { x: 0, y: 0 };
@@ -233,5 +281,8 @@
         // Start the animation
         animateCircles();
     </script>
+
+
+
 </body>
 </html>

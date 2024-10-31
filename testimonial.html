@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -172,13 +175,36 @@
         /* Footer */
         footer {
             background-color: #1c1c1c;
-            padding: 20px;
-            text-align: center;
-            color: #fff;
+            padding: 30px 0;
+            color: #e4e4e7;
         }
-        footer p {
-            margin: 0;
+    
+        footer .footer-heading {
+            font-weight: 700;
+            color:#fca311;
         }
+    
+        footer a {
+            color: #e4e4e7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    
+        footer a:hover {
+            color: #fca311;
+        }
+    
+        footer .social-icons i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #e4e4e7;
+            transition: color 0.3s ease;
+        }
+    
+        footer .social-icons i:hover {
+            color:#fca311;
+        }
+        
 
         /* Media Queries */
         @media (max-width: 768px) {
@@ -204,8 +230,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about-us.html">About-us</a></li>
-            <li><a href="signup.html">Sign up</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="auth.html">Login</a></li>
         </ul>
     </nav>
 
@@ -238,12 +263,14 @@
             <div class="testimonial">
                 <img src="https://via.placeholder.com/80" alt="Client Image">
                 <h3>Jane Doe</h3>
-                <p>"The service was exceptional, and the staff was very friendly. I am so happy with the outcome of my project!"</p>
+                <p>"The service was exceptional, and the staff was very friendly. I am so happy with the outcome of 
+                      my project!"</p>
             </div>
             <div class="testimonial">
                 <img src="https://via.placeholder.com/80" alt="Client Image">
                 <h3>John Smith</h3>
-                <p>"A great experience from start to finish. Highly recommend this company for their professionalism and dedication."</p>
+                <p>"A great experience from start to finish. Highly recommend this company for their professionalism 
+                     and dedication."</p>
             </div>
             <div class="testimonial">
                 <img src="https://via.placeholder.com/80" alt="Client Image">
@@ -261,9 +288,41 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Canvas Editor. All rights reserved.</p>
-    </footer>
 
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="footer-heading">About Us</h4>
+                    <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an 
+                          intuitive platform that transforms ideas into stunning digital artwork. </p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="index.html">Home</a><br>
+                    <a href="about-us.html">About-us</a><br>
+                    <a href="tutorial.html">Tutorial</a><br>
+                    <a href="Faq.html">FAQ</a>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>Contact us at: info@example.com</p>
+                </div>
+            </div>
+        </div>
+  </footer>
+
+    <footer>
+        <p>&copy; All rights reserved © <span id="year"></span></p>
+
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>

@@ -333,8 +333,7 @@
                 <a href="Faq.html">FAQ</a>
                 <a href="contributors.html">Contributors</a>
                 <a href="testimonial.html">Testimonial</a>
-                <a href="signup.html">Sign Up</a>
-                <a href="login.html">Login</a>
+                <a href="auth.html">Login</a>
             </div>
         </div>
     </nav>
@@ -401,13 +400,10 @@
                         <p>Founder & Lead Developer</p>
                     </div>
                     <div class="team-member">
-                        <h4>John Smith</h4>
-                        <p>Creative Director</p>
+                        <h4>Somyadip Ghosh</h4>
+                        <p>Project Mentor</p>
                     </div>
-                    <div class="team-member">
-                        <h4>Emily Chen</h4>
-                        <p>UX Designer</p>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -423,7 +419,7 @@
                 <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
             </div>
             <div class="footer-credit">
-                <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © 2024</p>
+                <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
             </div>
         </div>
     </footer>
@@ -504,5 +500,8 @@
         // Start the animation
         animateCircles();
     </script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>
