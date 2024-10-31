@@ -487,7 +487,9 @@
                 <div class="credit" style="font-size: 0.6rem;">
                     <p>
                         Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
-                        © 2024
+
+                        © <span id="year"></span>
+
                     </p>
                     <div style="margin: 20px;" class="share">
                         <i class="fab fa-github" style="margin-right: 10px;"></i>
@@ -978,6 +980,7 @@
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
+
         });
 
         // Update the coordinates when the mouse moves
@@ -986,10 +989,12 @@
             coords.y = e.clientY;
         });
 
+
         // Animation function to move the circles
         function animateCircles() {
             let x = coords.x;
             let y = coords.y;
+
 
             circles.forEach(function (circle, index) {
                 // Update the position and scale of each circle
@@ -1012,6 +1017,11 @@
 
         // Start the animation
         animateCircles();
+
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+
     </script>
 </body>
 

@@ -262,8 +262,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Canvas Editor. All rights reserved.</p>
+        <p>&copy; All rights reserved © <span id="year"></span></p>
     </footer>
-
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>
