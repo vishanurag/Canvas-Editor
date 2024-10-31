@@ -29,16 +29,41 @@
         }
 
         .navbar {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+          backdrop-filter: blur(12px);
+          background: rgba(255, 255, 255, 0.15);
+          padding: 1rem 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+        }
+
+        /* Title styling */
+        .navbar .title .site-name {
+            font-family: 'Poppins', sans-serif; /* Use Google Fonts for custom style */
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        /* Navigation link styling */
+        .navbar .nav-links a {
+            color:#5b21b6;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover effect on links */
+        .navbar .nav-links a:hover {
+            color:#6b21a8;
+            transform: scale(1.1);
         }
 
         .title {
@@ -331,8 +356,10 @@
     <!-- For example: -->
     <nav class="navbar">
         <div class="title">
+          <a href="index.html" class="logo-link">
             <h1 class="site-name">Canvas Editor</h1>
             <i class="fa-solid fa-paintbrush"></i>
+          </a>
         </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
