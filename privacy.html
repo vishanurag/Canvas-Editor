@@ -420,7 +420,7 @@
                 <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
             </div>
             <div class="footer-credit">
-                <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © 2024</p>
+                <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
             </div>
         </div>
     </footer>
@@ -501,5 +501,8 @@
         // Start the animation
         animateCircles();
     </script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>
