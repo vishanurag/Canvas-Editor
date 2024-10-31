@@ -15,7 +15,7 @@
         #toggleGridButton {
             margin-top: 10px;
         }
-
+        
         .visitor-counter {
             position: fixed;
             top: 570px;
@@ -37,21 +37,20 @@
             /* Softer corners */
             backdrop-filter: blur(10px);
             /* Increased blur for a modern touch */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
-                /* Slightly more pronounced shadow */
-                0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), /* Slightly more pronounced shadow */
+            0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             transition: all 0.3s ease;
             /* Smooth transition for hover effect */
         }
-
+        
         .visitor-counter:hover {
             transform: scale(1.05);
             /* Slightly enlarge on hover */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             /* Enhance shadow on hover */
         }
-
+        
         .visitor-counter div:first-child {
             margin-bottom: 5px;
             font-size: 14px;
@@ -59,52 +58,49 @@
             letter-spacing: 1px;
             /* Increased spacing for readability */
         }
-
+        
         .website-counter {
             font-size: 24px;
             font-family: 'Arial', sans-serif;
             /* Consistent font family */
         }
-
+        
         @media screen and (max-width: 768px) {
             .visitor-counter {
                 height: 100px;
                 width: 100px;
                 font-size: 16px;
             }
-
             .website-counter {
                 font-size: 20px;
             }
         }
-
+        
         @media screen and (max-width: 480px) {
             .visitor-counter {
                 height: 80px;
                 width: 80px;
                 font-size: 14px;
             }
-
             .website-counter {
                 font-size: 18px;
             }
         }
-
+        
         .dark-mode .visitor-counter div {
             color: #f0f0f0;
             /* Lighter text for dark mode */
         }
-
+        
         .dark-mode .visitor-counter .website-counter {
             color: #f0f0f0;
             /* Lighter color for consistency */
         }
-
+        
         .dark-mode .visitor-counter {
             background-color: rgba(0, 0, 0, 0.7);
             /* Darker background for dark mode */
-            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
-                0 2px 4px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(255, 255, 255, 0.05);
         }
     </style>
     <script>
@@ -137,9 +133,9 @@
             padding: 0;
             background-color: #f0f0f0;
             display: flex;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
-
+        
         .sidebar {
             width: 100px;
             background-color: #0f0f10;
@@ -147,7 +143,7 @@
             padding: 17px;
             padding-top: 100px;
         }
-
+        
         .sidebar button {
             display: block;
             width: 100%;
@@ -162,23 +158,23 @@
             transition: background-color 0.3s;
             font-size: 15px;
         }
-
+        
         .sidebar button:hover {
             background-color: #340c90;
         }
-
-        .canvas{
+        
+        .canvas {
             padding-right: 50px;
             padding-left: 10px;
         }
-
+        
         .main-content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-
+        
         .navbar {
             background-color: #34313b;
             padding: 10px;
@@ -187,20 +183,19 @@
             align-items: center;
             padding-bottom: 50px;
         }
-
+        
         .navbar h1 {
             color: rgb(255, 255, 255);
             margin: 0;
             margin-left: -180px;
         }
-
+        
         .nav-links {
             display: flex;
             gap: 20px;
             margin: auto;
-            
         }
-
+        
         .nav-links a {
             color: rgb(255, 255, 255);
             text-decoration: none;
@@ -208,11 +203,11 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
+        
         .nav-links a:hover {
             background-color: #8a7ba8;
         }
-
+        
         .tools {
             display: flex;
             gap: 10px;
@@ -220,7 +215,7 @@
             padding-bottom: 10px;
             background-color: #34313b;
         }
-
+        
         .tool {
             background-color: #0000FF;
             border: none;
@@ -235,15 +230,15 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
+        
         .tool:hover {
             background-color: #340c90;
         }
-
+        
         .tool.active {
             background-color: #090874;
         }
-
+        
         #canvas {
             border: 1px solid #000000;
             background-color: white;
@@ -252,13 +247,13 @@
             height: calc(100vh - 280px);
             /* Adjusted for footer */
         }
-
+        
         .color-picker {
             margin: 10px 0;
             position: relative;
             display: inline-block;
         }
-
+        
         .color-picker input[type="color"] {
             padding: 0;
             width: 50px;
@@ -267,7 +262,7 @@
             border-radius: 4px;
             cursor: pointer;
         }
-
+        
         .color-palette {
             position: absolute;
             top: 100%;
@@ -281,11 +276,11 @@
             gap: 5px;
             z-index: 1000;
         }
-
+        
         .color-picker:hover .color-palette {
             display: grid;
         }
-
+        
         .color-swatch {
             width: 25px;
             height: 25px;
@@ -293,13 +288,12 @@
             cursor: pointer;
             border: 1px solid #ddd;
         }
-
+        
         .footer {
             background-color: #34313b;
             color: rgb(255, 255, 255);
-
         }
-
+        
         .newsletter-section {
             display: flex;
             justify-content: center;
@@ -307,16 +301,15 @@
             gap: 20px;
             max-width: 900px;
             margin: 0 auto;
-          
         }
-
+        
         .newsletter-section input {
             padding: 10px;
             width: 300px;
             border: none;
             border-radius: 4px;
         }
-
+        
         .newsletter-section button {
             background-color: #0000ff;
             color: white;
@@ -325,13 +318,12 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
-            
         }
-
+        
         .newsletter-section button:hover {
             background-color: #340c90;
         }
-
+        
         .text-size-control {
             display: flex;
             align-items: center;
@@ -342,7 +334,7 @@
             border-radius: 5px;
             color: white;
         }
-
+        
         .text-size-control input {
             width: 60px;
             padding: 5px;
@@ -350,35 +342,37 @@
             border-radius: 4px;
             background-color: white;
         }
-
+        
         .text-size-control:hover {
             background-color: #090874;
             transition: background-color 0.3s;
         }
-
+        
         .credit {
             text-align: center;
         }
-
+        
         .share {
             font-size: 25px;
         }
-
+        
         .share i {
             transition: transform 0.3s ease, color 0.3s ease;
         }
-
+        
         .share i:hover {
             cursor: pointer;
             color: #5c2872;
         }
-        .profile{
+        
+        .profile {
             font-size: 2rem;
             padding-right: 1rem;
         }
     </style>
     <style>
         /* Circle styles */
+        
         .circle {
             height: 24px;
             width: 24px;
@@ -390,6 +384,20 @@
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
+        }
+        
+        .color-swatch {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        
+        .tools .form-control {
+            width: auto;
+            min-width: 60px;
+            margin: 0;
         }
     </style>
 </head>
@@ -417,12 +425,12 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="sidebar">
-     
+
         <button id="tools-btn">Tools 🔧</button>
         <button id="settings-btn">Settings ⚙️</button>
         <button id="help-btn">Help ❓</button>
 
-        
+
     </div>
     <div class="main-content">
         <nav class="navbar">
@@ -441,62 +449,65 @@
                 <a href="contributors.html">Contributors</a>
 
                 <a href="login.html">Login</a>
-                
 
-              
+
+
 
             </div>
             <a href="auth.html" class="profile">
                 <i class="fas fa-user-circle"></i>
             </a>
         </nav>
-        <div class="tools">
-            <button class="tool active" id="pencil">Pencil</button>
-            <button class="tool" id="marker">Marker</button>
-            <button class="tool" id="eraser">Eraser</button>
-            <button class="tool" id="line">Line</button>
-            <button class="tool" id="rectangle">Rectangle</button>
-            <button class="tool" id="circle">Circle</button>
-            <button class="tool" id="text">Text</button>
-            <button class="tool" id="textarea">Text Area</button>
-            <div class="color-picker">
-                <input type="color" id="colorPicker">
-                <div class="color-palette">
-                    <div class="color-swatch" style="background: #ff0000"></div>
-                    <div class="color-swatch" style="background: #00ff00"></div>
-                    <div class="color-swatch" style="background: #0000ff"></div>
-                    <div class="color-swatch" style="background: #ffff00"></div>
-                    <div class="color-swatch" style="background: #ff00ff"></div>
-                    <div class="color-swatch" style="background: #00ffff"></div>
-                    <div class="color-swatch" style="background: #000000"></div>
-                    <div class="color-swatch" style="background: #ffffff"></div>
-                    <div class="color-swatch" style="background: #808080"></div>
-                    <div class="color-swatch" style="background: #c0c0c0"></div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <div class="container mt-4">
+            <div class="tools d-flex flex-wrap align-items-center">
+                <div class="btn-group mr-2">
+                    <button class="btn btn-primary active" id="pencil">Pencil</button>
+                    <button class="btn btn-primary" id="marker">Marker</button>
+                    <button class="btn btn-primary" id="eraser">Eraser</button>
+                    <button class="btn btn-primary" id="line">Line</button>
+                    <button class="btn btn-primary" id="rectangle">Rectangle</button>
+                    <button class="btn btn-primary" id="circle">Circle</button>
+                    <button class="btn btn-primary" id="text">Text</button>
+                    <button class="btn btn-primary" id="textarea">Text Area</button>
                 </div>
-            </div>
-            <div class="color-picker">
-                <input type="color" id="bgColorPicker">
-                <div class="color-palette">
-                    <div class="color-swatch" style="background: #ff0000"></div>
-                    <div class="color-swatch" style="background: #00ff00"></div>
-                    <div class="color-swatch" style="background: #0000ff"></div>
-                    <div class="color-swatch" style="background: #ffff00"></div>
-                    <div class="color-swatch" style="background: #ff00ff"></div>
-                    <div class="color-swatch" style="background: #00ffff"></div>
-                    <div class="color-swatch" style="background: #000000"></div>
-                    <div class="color-swatch" style="background: #ffffff"></div>
-                    <div class="color-swatch" style="background: #808080"></div>
-                    <div class="color-swatch" style="background: #c0c0c0"></div>
+
+                <div class="color-picker d-flex align-items-center mr-3">
+                    <input type="color" id="colorPicker" class="form-control p-1">
+                    <div class="d-flex ml-2">
+                        <div class="color-swatch" style="background: #ff0000"></div>
+                        <div class="color-swatch" style="background: #00ff00"></div>
+                        <div class="color-swatch" style="background: #0000ff"></div>
+                        <!-- Add more colors as needed -->
+                    </div>
                 </div>
+
+                <div class="color-picker d-flex align-items-center mr-3">
+                    <input type="color" id="bgColorPicker" class="form-control p-1">
+                    <div class="d-flex ml-2">
+                        <div class="color-swatch" style="background: #ff0000"></div>
+                        <div class="color-swatch" style="background: #00ff00"></div>
+                        <div class="color-swatch" style="background: #0000ff"></div>
+                        <!-- Add more colors as needed -->
+                    </div>
+                </div>
+
+                <div class="form-group mr-3">
+                    <label for="lineWidth" class="mr-2">Line Width:</label>
+                    <input type="range" id="lineWidth" class="form-control-range" min="1" max="50" value="5">
+                </div>
+
+                <div class="form-group d-flex align-items-center mr-3">
+                    <label for="textSize" class="mr-2">Text Size:</label>
+                    <input type="number" id="textSize" class="form-control" min="8" max="72" value="20" style="width: 60px;">
+                </div>
+
+                <button class="btn btn-danger mr-2" id="clear">Clear</button>
+                <button class="btn btn-secondary" id="toggleGridButton">Toggle Grid</button>
             </div>
-            <input type="range" id="lineWidth" min="1" max="50" value="5">
-            <div class="text-size-control">
-                <label for="textSize">Text Size:</label>
-                <input type="number" id="textSize" min="8" max="72" value="20">
-            </div>
-            <button class="tool" id="clear">Clear</button>
-            <button class="tool" id="toggleGridButton">Toggle Grid</button>
         </div>
+
         <canvas id="canvas"></canvas>
         <footer class="footer">
             <div class="footer-content">
@@ -510,9 +521,7 @@
                 </div>
                 <div class="credit" style="font-size: 0.6rem;">
                     <p>
-                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
-
-                        © <span id="year"></span>
+                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved © <span id="year"></span>
 
                     </p>
                     <div style="margin: 20px;" class="share">
@@ -522,531 +531,519 @@
                     </div>
                 </div>
         </footer>
-    </div>
-
-    <script>
-        function subscribeNewsletter() {
-            const email = document.getElementById('newsletter-email').value;
-            if (email) {
-                alert('Thank you for subscribing!');
-                document.getElementById('newsletter-email').value = '';
-            } else {
-                alert('Please enter a valid email address');
-            }
-        }
-
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        let isDrawing = false;
-        let currentTool = 'pencil';
-        let startX, startY;
-        let showGrid = false;
-        // Set canvas size
-        function resizeCanvas() {
-            canvas.width = window.innerWidth - 200; // Subtracting sidebar width
-            canvas.height = window.innerHeight - 220; // Adjusted for footer
-            updateCanvasWithGrid();
-        }
-
-        // Initial resize and add event listener for window resize
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        // Set initial styles
-        ctx.lineWidth = 5;
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = '#000000';
-
-        // Tool selection
-        document.querySelectorAll('.tool').forEach(tool => {
-            tool.addEventListener('click', () => {
-                document.querySelector('.tool.active').classList.remove('active');
-                tool.classList.add('active');
-                currentTool = tool.id;
-            });
-        });
-
-        // Color picker and swatches
-        document.querySelectorAll('.color-swatch').forEach(swatch => {
-            swatch.addEventListener('click', (e) => {
-                const color = e.target.style.backgroundColor;
-                const picker = e.target.closest('.color-picker').querySelector('input[type="color"]');
-                picker.value = rgbToHex(color);
-                if (picker.id === 'colorPicker') {
-                    ctx.strokeStyle = color;
-                    ctx.fillStyle = color;
-                } else {
-                    canvas.style.backgroundColor = color;
-                }
-            });
-        });
-
-        // Convert RGB to Hex
-        function rgbToHex(rgb) {
-            const rgbArr = rgb.match(/\d+/g);
-            return '#' + rgbArr.map(x => {
-                const hex = parseInt(x).toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            }).join('');
-        }
-
-        // Color picker
-        document.getElementById('colorPicker').addEventListener('input', (e) => {
-            ctx.strokeStyle = e.target.value;
-            ctx.fillStyle = e.target.value;
-        });
-
-        // Background color picker
-        document.getElementById('bgColorPicker').addEventListener('input', (e) => {
-            canvas.style.backgroundColor = e.target.value;
-        });
-
-        // Line width
-        document.getElementById('lineWidth').addEventListener('input', (e) => {
-            ctx.lineWidth = e.target.value;
-        });
-
-        // Clear canvas
-        document.getElementById('clear').addEventListener('click', () => {
-            if (confirm("Are you sure you want to clear the canvas? This action cannot be undone.")) {
-
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            }
-            else {
-                console.log("Clear action canceled.");
-            }
-        });
-
-        // Drawing functions
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mouseup', stopDrawing);
-        canvas.addEventListener('mouseout', stopDrawing);
-        function drawGrid() {
-            if (!showGrid) return; // Only draw if the grid is enabled
-            ctx.save();
-            ctx.strokeStyle = '#c0c0c0';
-            ctx.lineWidth = 0.5;
-
-            const gridSpacing = 20;
-            for (let x = 0; x < canvas.width; x += gridSpacing) {
-                ctx.beginPath();
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, canvas.height);
-                ctx.stroke();
-            }
-            for (let y = 0; y < canvas.height; y += gridSpacing) {
-                ctx.beginPath();
-                ctx.moveTo(0, y);
-                ctx.lineTo(canvas.width, y);
-                ctx.stroke();
-            }
-            ctx.restore();
-        }
-
-        // Function to clear and redraw the canvas, including the grid if enabled
-        function updateCanvasWithGrid() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-            drawGrid(); // Draw grid if enabled
-            // Any other canvas drawing updates should go here if needed
-        }
-
-        // Event listener to toggle the grid on and off
-        document.getElementById('toggleGridButton').addEventListener('click', () => {
-            showGrid = !showGrid; // Toggle grid state
-            updateCanvasWithGrid(); // Redraw canvas with or without grid
-        });
-        function startDrawing(e) {
-            isDrawing = true;
-            [startX, startY] = [e.offsetX, e.offsetY];
-        }
-
-        function draw(e) {
-            if (!isDrawing) return;
-
-            const x = e.offsetX;
-            const y = e.offsetY;
-
-            switch (currentTool) {
-                case 'pencil':
-                    ctx.beginPath();
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                    [startX, startY] = [x, y];
-                    break;
-                case 'marker':
-                    ctx.globalAlpha = 0.5;
-                    ctx.beginPath();
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                    ctx.globalAlpha = 1.0;
-                    [startX, startY] = [x, y];
-                    break;
-                case 'eraser':
-                    ctx.strokeStyle = canvas.style.backgroundColor || '#FFFFFF';
-                    ctx.beginPath();
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                    ctx.strokeStyle = document.getElementById('colorPicker').value;
-                    [startX, startY] = [x, y];
-                    break;
-                case 'line':
-                case 'rectangle':
-                case 'circle':
-                    // These shapes are drawn on mouseup
-                    break;
-                case 'text':
-                case 'textarea':
-                    // Text is added on mouseup
-                    break;
-            }
-        }
-
-        function stopDrawing(e) {
-            if (!isDrawing) return;
-            isDrawing = false;
-
-            const x = e.offsetX;
-            const y = e.offsetY;
-            const fontSize = document.getElementById('textSize').value;
-
-            switch (currentTool) {
-                case 'line':
-                    ctx.beginPath();
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                    break;
-                case 'rectangle':
-                    ctx.strokeRect(startX, startY, x - startX, y - startY);
-                    break;
-                case 'circle':
-                    const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
-                    ctx.beginPath();
-                    ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
-                    ctx.stroke();
-                    break;
-                case 'text':
-                    const text = prompt('Enter text:');
-                    if (text) {
-                        ctx.font = `${fontSize}px Arial`;
-                        ctx.fillText(text, x, y);
-                    }
-                    break;
-                case 'textarea':
-                    const textareaContent = prompt('Enter text for textarea:');
-                    if (textareaContent) {
-                        const maxWidth = 200;
-                        const lineHeight = fontSize * 1.2;
-                        const words = textareaContent.split(' ');
-                        let line = '';
-                        let currentY = y;
-
-                        ctx.font = `${fontSize}px Arial`;
-
-                        for (let n = 0; n < words.length; n++) {
-                            const testLine = line + words[n] + ' ';
-                            const metrics = ctx.measureText(testLine);
-                            const testWidth = metrics.width;
-                            if (testWidth > maxWidth && n > 0) {
-                                ctx.fillText(line, x, currentY);
-                                line = words[n] + ' ';
-                                currentY += lineHeight;
-                            } else {
-                                line = testLine;
-                            }
-                        }
-                        ctx.fillText(line, x, currentY);
-                    }
-                    break;
-            }
-        }
-
-        window.embeddedChatbotConfig = {
-            chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
-            domain: "www.chatbase.co",
-            position: "right"
-        }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
-    </script>
-
-    <!-- script for adding valid email -->
-    <script>
-        function subscribeNewsletter() {
-            const emailInput = document.getElementById('newsletter-email');
-            const email = emailInput.value;
-
-            // Regular expression for basic email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (emailPattern.test(email)) {
-                alert('Thank you for subscribing!');
-                // Add your subscription logic here
-            } else {
-                alert('Please enter a valid email address.');
-                emailInput.focus();
-            }
-        }
-    </script>
-    <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right" }</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-    <style>
-        body {
-
-            font-family: Arial, sans-serif;
-
-        }
-
-        /* Popup Styles */
-        .popup {
-
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black background with opacity */
-            justify-content: center;
-            /* Center the popup */
-            align-items: center;
-            /* Center the popup */
-            z-index: 1000;
-            /* Sit on top */
-
-        }
-
-        .popup-content {
-
-            background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
-            padding: 20px;
-            border-radius: 5px;
-            max-width: 500px;
-            max-height: 500px;
-            min-height: 320px;
-            text-align: center;
-
-        }
-
-        /* Set poll options to stack vertically */
-        #pollOptions {
-
-            display: flex;
-            flex-direction: column;
-            /* Stack buttons vertically */
-            align-items: center;
-            /* Center the buttons */
-
-        }
-
-        .poll-button {
-
-            display: block;
-            /* Change to block for full-width */
-            margin: 5px 0;
-            /* Add vertical margin */
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: rgb(58 30 86 / 40%);
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            /* Full width */
-
-        }
-
-        .poll-button:hover {
-
-            background-color: #45a049;
-            /* Darker green */
-
-        }
-
-        .poll-button.selected {
-
-            background-color: #ad00c9;
-            /* Blue for selected */
-
-        }
-
-        /* New Vote Button Styles */
-        .vote-button {
-
-            display: block;
-            /* Change to block for full-width */
-            margin: 5px 0;
-            /* Add vertical margin */
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #f44336;
-            /* Red */
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            /* Full width */
-
-        }
-
-        .vote-button:hover {
-
-            background-color: #d32f2f;
-            /* Darker red */
-
-        }
-
-        /* Result Text Styles */
-        #result {
-
-            margin-top: 10px;
-            /* Add space above result text */
-            word-wrap: break-word;
-            /* Allow long text to wrap within the box */
-            overflow: hidden;
-            /* Prevent overflow */
-            max-height: 50px;
-            /* Limit height to prevent overflow */
-            color: rgb(255, 255, 255);
-            /* Set text color to white */
-
-        }
-    </style>
-
-    <div class="popup" id="pollPopup">
-        <div class="popup-content">
-            <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
-            <div id="pollOptions">
-                <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
-                <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It’s good but has room for
-                    growth.</button>
-                <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
-            </div>
-            <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
-            <p id="result"></p>
         </div>
-    </div>
 
-    <script>
-        // Show the poll popup 10 seconds after the page loads, if not already voted
-        window.onload = function () {
-            const hasVoted = sessionStorage.getItem('hasVoted');
-            setTimeout(function () {
-                if (!hasVoted) {
-                    document.getElementById('pollPopup').style.display = 'flex';
+        <script>
+            function subscribeNewsletter() {
+                const email = document.getElementById('newsletter-email').value;
+                if (email) {
+                    alert('Thank you for subscribing!');
+                    document.getElementById('newsletter-email').value = '';
+                } else {
+                    alert('Please enter a valid email address');
                 }
-            }, 10000); // 10000 milliseconds = 10 seconds
-        };
-
-        const pollButtons = document.querySelectorAll('.poll-button[data-value]');
-        let selectedValue = '';
-
-        pollButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                // Remove selected class from all buttons
-                pollButtons.forEach(btn => btn.classList.remove('selected'));
-                // Add selected class to the clicked button
-                button.classList.add('selected');
-                selectedValue = button.getAttribute('data-value');
-            });
-        });
-
-        document.getElementById('voteButton').addEventListener('click', function () {
-            if (selectedValue) {
-                document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
-                // Save voting status in session storage
-                sessionStorage.setItem('hasVoted', 'true');
-                // Hide the popup after voting
-                setTimeout(() => {
-                    document.getElementById('pollPopup').style.display = 'none';
-                }, 2000);
-            } else {
-                alert("Please select an option!");
             }
-        });
 
-        function initializePoll() {
-            console.log("Poll initialized.");
-        }
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            let isDrawing = false;
+            let currentTool = 'pencil';
+            let startX, startY;
+            let showGrid = false;
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth - 200; // Subtracting sidebar width
+                canvas.height = window.innerHeight - 220; // Adjusted for footer
+                updateCanvasWithGrid();
+            }
 
-        initializePoll();
+            // Initial resize and add event listener for window resize
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
 
-    </script>
+            // Set initial styles
+            ctx.lineWidth = 5;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = '#000000';
 
-    <script>
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
-
-        // Colors for the circles
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
-
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
-
-        });
-
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
-
-
-        // Animation function to move the circles
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-
-
-            circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-
-                circle.x = x;
-                circle.y = y;
-
-                // Get the next circle in the sequence
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
+            // Tool selection
+            document.querySelectorAll('.tool').forEach(tool => {
+                tool.addEventListener('click', () => {
+                    document.querySelector('.tool.active').classList.remove('active');
+                    tool.classList.add('active');
+                    currentTool = tool.id;
+                });
             });
 
-            // Repeat the animation
-            requestAnimationFrame(animateCircles);
-        }
+            // Color picker and swatches
+            document.querySelectorAll('.color-swatch').forEach(swatch => {
+                swatch.addEventListener('click', (e) => {
+                    const color = e.target.style.backgroundColor;
+                    const picker = e.target.closest('.color-picker').querySelector('input[type="color"]');
+                    picker.value = rgbToHex(color);
+                    if (picker.id === 'colorPicker') {
+                        ctx.strokeStyle = color;
+                        ctx.fillStyle = color;
+                    } else {
+                        canvas.style.backgroundColor = color;
+                    }
+                });
+            });
 
-        // Start the animation
-        animateCircles();
+            // Convert RGB to Hex
+            function rgbToHex(rgb) {
+                const rgbArr = rgb.match(/\d+/g);
+                return '#' + rgbArr.map(x => {
+                    const hex = parseInt(x).toString(16);
+                    return hex.length === 1 ? '0' + hex : hex;
+                }).join('');
+            }
+
+            // Color picker
+            document.getElementById('colorPicker').addEventListener('input', (e) => {
+                ctx.strokeStyle = e.target.value;
+                ctx.fillStyle = e.target.value;
+            });
+
+            // Background color picker
+            document.getElementById('bgColorPicker').addEventListener('input', (e) => {
+                canvas.style.backgroundColor = e.target.value;
+            });
+
+            // Line width
+            document.getElementById('lineWidth').addEventListener('input', (e) => {
+                ctx.lineWidth = e.target.value;
+            });
+
+            // Clear canvas
+            document.getElementById('clear').addEventListener('click', () => {
+                if (confirm("Are you sure you want to clear the canvas? This action cannot be undone.")) {
+
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                } else {
+                    console.log("Clear action canceled.");
+                }
+            });
+
+            // Drawing functions
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            function drawGrid() {
+                if (!showGrid) return; // Only draw if the grid is enabled
+                ctx.save();
+                ctx.strokeStyle = '#c0c0c0';
+                ctx.lineWidth = 0.5;
+
+                const gridSpacing = 20;
+                for (let x = 0; x < canvas.width; x += gridSpacing) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, canvas.height);
+                    ctx.stroke();
+                }
+                for (let y = 0; y < canvas.height; y += gridSpacing) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+                ctx.restore();
+            }
+
+            // Function to clear and redraw the canvas, including the grid if enabled
+            function updateCanvasWithGrid() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+                drawGrid(); // Draw grid if enabled
+                // Any other canvas drawing updates should go here if needed
+            }
+
+            // Event listener to toggle the grid on and off
+            document.getElementById('toggleGridButton').addEventListener('click', () => {
+                showGrid = !showGrid; // Toggle grid state
+                updateCanvasWithGrid(); // Redraw canvas with or without grid
+            });
+
+            function startDrawing(e) {
+                isDrawing = true;
+                [startX, startY] = [e.offsetX, e.offsetY];
+            }
+
+            function draw(e) {
+                if (!isDrawing) return;
+
+                const x = e.offsetX;
+                const y = e.offsetY;
+
+                switch (currentTool) {
+                    case 'pencil':
+                        ctx.beginPath();
+                        ctx.moveTo(startX, startY);
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+                        [startX, startY] = [x, y];
+                        break;
+                    case 'marker':
+                        ctx.globalAlpha = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(startX, startY);
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+                        ctx.globalAlpha = 1.0;
+                        [startX, startY] = [x, y];
+                        break;
+                    case 'eraser':
+                        ctx.strokeStyle = canvas.style.backgroundColor || '#FFFFFF';
+                        ctx.beginPath();
+                        ctx.moveTo(startX, startY);
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+                        ctx.strokeStyle = document.getElementById('colorPicker').value;
+                        [startX, startY] = [x, y];
+                        break;
+                    case 'line':
+                    case 'rectangle':
+                    case 'circle':
+                        // These shapes are drawn on mouseup
+                        break;
+                    case 'text':
+                    case 'textarea':
+                        // Text is added on mouseup
+                        break;
+                }
+            }
+
+            function stopDrawing(e) {
+                if (!isDrawing) return;
+                isDrawing = false;
+
+                const x = e.offsetX;
+                const y = e.offsetY;
+                const fontSize = document.getElementById('textSize').value;
+
+                switch (currentTool) {
+                    case 'line':
+                        ctx.beginPath();
+                        ctx.moveTo(startX, startY);
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+                        break;
+                    case 'rectangle':
+                        ctx.strokeRect(startX, startY, x - startX, y - startY);
+                        break;
+                    case 'circle':
+                        const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
+                        ctx.beginPath();
+                        ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
+                        ctx.stroke();
+                        break;
+                    case 'text':
+                        const text = prompt('Enter text:');
+                        if (text) {
+                            ctx.font = `${fontSize}px Arial`;
+                            ctx.fillText(text, x, y);
+                        }
+                        break;
+                    case 'textarea':
+                        const textareaContent = prompt('Enter text for textarea:');
+                        if (textareaContent) {
+                            const maxWidth = 200;
+                            const lineHeight = fontSize * 1.2;
+                            const words = textareaContent.split(' ');
+                            let line = '';
+                            let currentY = y;
+
+                            ctx.font = `${fontSize}px Arial`;
+
+                            for (let n = 0; n < words.length; n++) {
+                                const testLine = line + words[n] + ' ';
+                                const metrics = ctx.measureText(testLine);
+                                const testWidth = metrics.width;
+                                if (testWidth > maxWidth && n > 0) {
+                                    ctx.fillText(line, x, currentY);
+                                    line = words[n] + ' ';
+                                    currentY += lineHeight;
+                                } else {
+                                    line = testLine;
+                                }
+                            }
+                            ctx.fillText(line, x, currentY);
+                        }
+                        break;
+                }
+            }
+
+            window.embeddedChatbotConfig = {
+                chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+                domain: "www.chatbase.co",
+                position: "right"
+            }
+        </script>
+        <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
+        </script>
+
+        <!-- script for adding valid email -->
+        <script>
+            function subscribeNewsletter() {
+                const emailInput = document.getElementById('newsletter-email');
+                const email = emailInput.value;
+
+                // Regular expression for basic email validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (emailPattern.test(email)) {
+                    alert('Thank you for subscribing!');
+                    // Add your subscription logic here
+                } else {
+                    alert('Please enter a valid email address.');
+                    emailInput.focus();
+                }
+            }
+        </script>
+        <div class="gtranslate_wrapper"></div>
+        <script>
+            window.gtranslateSettings = {
+                "default_language": "en",
+                "detect_browser_language": true,
+                "wrapper_selector": ".gtranslate_wrapper",
+                "switcher_horizontal_position": "right"
+            }
+        </script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            /* Popup Styles */
+            
+            .popup {
+                display: none;
+                /* Hidden by default */
+                position: fixed;
+                /* Stay in place */
+                left: 0;
+                top: 0;
+                width: 100%;
+                /* Full width */
+                height: 100%;
+                /* Full height */
+                background-color: rgba(0, 0, 0, 0.5);
+                /* Black background with opacity */
+                justify-content: center;
+                /* Center the popup */
+                align-items: center;
+                /* Center the popup */
+                z-index: 1000;
+                /* Sit on top */
+            }
+            
+            .popup-content {
+                background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
+                padding: 20px;
+                border-radius: 5px;
+                max-width: 500px;
+                max-height: 500px;
+                min-height: 320px;
+                text-align: center;
+            }
+            /* Set poll options to stack vertically */
+            
+            #pollOptions {
+                display: flex;
+                flex-direction: column;
+                /* Stack buttons vertically */
+                align-items: center;
+                /* Center the buttons */
+            }
+            
+            .poll-button {
+                display: block;
+                /* Change to block for full-width */
+                margin: 5px 0;
+                /* Add vertical margin */
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                background-color: rgb(58 30 86 / 40%);
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                width: 100%;
+                /* Full width */
+            }
+            
+            .poll-button:hover {
+                background-color: #45a049;
+                /* Darker green */
+            }
+            
+            .poll-button.selected {
+                background-color: #ad00c9;
+                /* Blue for selected */
+            }
+            /* New Vote Button Styles */
+            
+            .vote-button {
+                display: block;
+                /* Change to block for full-width */
+                margin: 5px 0;
+                /* Add vertical margin */
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                background-color: #f44336;
+                /* Red */
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                width: 100%;
+                /* Full width */
+            }
+            
+            .vote-button:hover {
+                background-color: #d32f2f;
+                /* Darker red */
+            }
+            /* Result Text Styles */
+            
+            #result {
+                margin-top: 10px;
+                /* Add space above result text */
+                word-wrap: break-word;
+                /* Allow long text to wrap within the box */
+                overflow: hidden;
+                /* Prevent overflow */
+                max-height: 50px;
+                /* Limit height to prevent overflow */
+                color: rgb(255, 255, 255);
+                /* Set text color to white */
+            }
+        </style>
+
+        <div class="popup" id="pollPopup">
+            <div class="popup-content">
+                <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
+                <div id="pollOptions">
+                    <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
+                    <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It’s good but has room for
+                    growth.</button>
+                    <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
+                </div>
+                <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+                <p id="result"></p>
+            </div>
+        </div>
+
+        <script>
+            // Show the poll popup 10 seconds after the page loads, if not already voted
+            window.onload = function() {
+                const hasVoted = sessionStorage.getItem('hasVoted');
+                setTimeout(function() {
+                    if (!hasVoted) {
+                        document.getElementById('pollPopup').style.display = 'flex';
+                    }
+                }, 10000); // 10000 milliseconds = 10 seconds
+            };
+
+            const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+            let selectedValue = '';
+
+            pollButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove selected class from all buttons
+                    pollButtons.forEach(btn => btn.classList.remove('selected'));
+                    // Add selected class to the clicked button
+                    button.classList.add('selected');
+                    selectedValue = button.getAttribute('data-value');
+                });
+            });
+
+            document.getElementById('voteButton').addEventListener('click', function() {
+                if (selectedValue) {
+                    document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+                    // Save voting status in session storage
+                    sessionStorage.setItem('hasVoted', 'true');
+                    // Hide the popup after voting
+                    setTimeout(() => {
+                        document.getElementById('pollPopup').style.display = 'none';
+                    }, 2000);
+                } else {
+                    alert("Please select an option!");
+                }
+            });
+
+            function initializePoll() {
+                console.log("Poll initialized.");
+            }
+
+            initializePoll();
+        </script>
+
+        <script>
+            // Coordinates for the cursor
+            const coords = {
+                x: 0,
+                y: 0
+            };
+            const circles = document.querySelectorAll(".circle");
+
+            // Colors for the circles
+            const colors = [
+                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+                "#680060", "#60005f", "#48005f", "#3d005e"
+            ];
+
+            // Assign colors and initial position to each circle
+            circles.forEach(function(circle, index) {
+                circle.x = 0;
+                circle.y = 0;
+                circle.style.backgroundColor = colors[index % colors.length];
+
+            });
+
+            // Update the coordinates when the mouse moves
+            window.addEventListener("mousemove", function(e) {
+                coords.x = e.clientX;
+                coords.y = e.clientY;
+            });
 
 
-        document.getElementById("year").textContent = new Date().getFullYear();
+            // Animation function to move the circles
+            function animateCircles() {
+                let x = coords.x;
+                let y = coords.y;
 
 
-    </script>
+                circles.forEach(function(circle, index) {
+                    // Update the position and scale of each circle
+                    circle.style.left = x - 12 + "px";
+                    circle.style.top = y - 12 + "px";
+                    circle.style.scale = (circles.length - index) / circles.length;
+
+                    circle.x = x;
+                    circle.y = y;
+
+                    // Get the next circle in the sequence
+                    const nextCircle = circles[index + 1] || circles[0];
+                    x += (nextCircle.x - x) * 0.3;
+                    y += (nextCircle.y - y) * 0.3;
+                });
+
+                // Repeat the animation
+                requestAnimationFrame(animateCircles);
+            }
+
+            // Start the animation
+            animateCircles();
+
+
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
 </body>
 
 </html>
