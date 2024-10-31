@@ -1,0 +1,64 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #d2a8d3; /* Light lavender background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #a67da3; /* Dark lavender background */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.toolbar button {
+    background-color: #c290c1; /* Soft purple */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background-color: #7d4d7e; /* Darker purple on hover */
+}
+
+#size-slider {
+    width: 100px;
+}
+
+.text-options {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #a67da3; /* Dark lavender background */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.text-options label, .text-options input, .text-options select {
+    color: white;
+}
+
+.text-options input[type="color"] {
+    border: none;
+    background: transparent;
+}
+
+canvas {
+    border: 2px solid #c290c1; /* Border matches toolbar color */
+    background-color: white;
+    cursor: crosshair;
+}
