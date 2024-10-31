@@ -1,169 +1,195 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = 1000;
-canvas.height = 600;
+const toolButtons = document.querySelectorAll('.toolbar button');
+const clearButton = document.getElementById('clear');
+const sizeSlider = document.getElementById('size-slider');
+const fontSizeInput = document.getElementById('font-size');
+const fontStyleSelect = document.getElementById('font-style');
+const textColorInput = document.getElementById('text-color');
+const textOptionsContainer = document.querySelector('.text-options');
 
-let tool = 'pencil';
-let drawing = false;
-let startX, startY;
-let text = '';
-let textPosition = null;
-let isDraggingText = false;
-let selectedText = null;
-let size = 5;
-let fontSize = 20;
-let fontStyle = 'normal';
-let textColor = '#000000';
-let textItems = []; // Store each text item with properties
+class DrawingApp {
+    constructor(canvas, ctx) {
+        this.canvas = canvas;
+        this.ctx = ctx;
+        this.canvas.width = 1000;
+        this.canvas.height = 600;
 
-// Tool buttons
-document.querySelectorAll('.toolbar button').forEach(button => {
-    button.addEventListener('click', () => {
-        tool = button.id;
-        document.querySelector('.text-options').style.display = (tool === 'text') ? 'flex' : 'none';
-        ctx.beginPath();
-    });
-});
-
-// Text options
-document.getElementById('font-size').addEventListener('input', (e) => {
-    fontSize = parseInt(e.target.value, 10);
-});
-document.getElementById('font-style').addEventListener('change', (e) => {
-    fontStyle = e.target.value;
-});
-document.getElementById('text-color').addEventListener('input', (e) => {
-    textColor = e.target.value;
-});
-
-// Size slider
-document.getElementById('size-slider').addEventListener('input', (e) => {
-    size = parseInt(e.target.value, 10);
-});
-
-// Mouse events
-canvas.addEventListener('mousedown', handleMouseDown);
-canvas.addEventListener('mouseup', handleMouseUp);
-canvas.addEventListener('mousemove', handleMouseMove);
-
-// Start drawing or placing text
-function handleMouseDown(e) {
-    startX = e.offsetX;
-    startY = e.offsetY;
-
-    if (tool === 'text') {
-        const clickedText = findTextAtPosition(startX, startY);
-        if (clickedText) {
-            selectedText = clickedText;
-            isDraggingText = true;
-        } else {
-            text = prompt("Enter your text:");
-            if (text) {
-                const textObj = {
-                    text,
-                    x: startX,
-                    y: startY,
-                    fontSize,
-                    fontStyle,
-                    color: textColor
-                };
-                textItems.push(textObj);
-                drawTextItem(textObj);
+        // State management
+        this.state = {
+            tool: 'pencil',
+            drawing: false,
+            isDraggingText: false,
+            selectedText: null,
+            startX: 0,
+            startY: 0,
+            size: 5,
+            text: {
+                fontSize: 20,
+                fontStyle: 'normal',
+                color: '#000000',
+                items: []
             }
+        };
+
+        this.bindEvents();
+    }
+
+    // Centralized event binding
+    bindEvents() {
+        this.canvas.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        this.canvas.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        this.canvas.addEventListener('mousemove', this.handleMouseMove.bind(this));
+
+        // Tool buttons
+        toolButtons.forEach(button => {
+            button.addEventListener('click', () => this.changeTool(button.id));
+        });
+
+        // Text options
+        fontSizeInput.addEventListener('input', (e) => this.state.text.fontSize = parseInt(e.target.value, 10));
+        fontStyleSelect.addEventListener('change', (e) => this.state.text.fontStyle = e.target.value);
+        textColorInput.addEventListener('input', (e) => this.state.text.color = e.target.value);
+
+        // Size slider
+        sizeSlider.addEventListener('input', (e) => this.state.size = parseInt(e.target.value, 10));
+
+        // Clear button
+        clearButton.addEventListener('click', () => this.clearCanvas());
+    }
+
+    // Change tool and update UI
+    changeTool(newTool) {
+        this.state.tool = newTool;
+        textOptionsContainer.style.display = (newTool === 'text') ? 'flex' : 'none';
+        this.ctx.beginPath();
+    }
+
+    // Mouse down handler
+    handleMouseDown(e) {
+        const { offsetX: x, offsetY: y } = e;
+        this.state.startX = x;
+        this.state.startY = y;
+
+        if (this.state.tool === 'text') {
+            const clickedText = this.findTextAtPosition(x, y);
+            if (clickedText) {
+                this.state.selectedText = clickedText;
+                this.state.isDraggingText = true;
+            } else {
+                const text = prompt("Enter your text:");
+                if (text) {
+                    this.addTextItem(text, x, y);
+                }
+            }
+        } else if (['line', 'circle'].includes(this.state.tool)) {
+            this.state.drawing = true;
+        } else {
+            this.state.drawing = true;
+            this.ctx.beginPath();
+            this.ctx.moveTo(x, y);
         }
-    } else if (tool === 'line' || tool === 'circle') {
-        drawing = true;
-    } else {
-        drawing = true;
-        ctx.beginPath();
-        ctx.moveTo(startX, startY);
+    }
+
+    // Mouse move handler
+    handleMouseMove(e) {
+        if (!this.state.drawing) return;
+
+        const { offsetX: x, offsetY: y } = e;
+        const { tool, size, isDraggingText, selectedText } = this.state;
+
+        if (['pencil', 'marker', 'eraser'].includes(tool)) {
+            this.ctx.lineWidth = size;
+            this.ctx.strokeStyle = tool === 'eraser' ? '#f9f9f9' : 'black';
+            this.ctx.lineCap = 'round';
+            this.ctx.lineTo(x, y);
+            this.ctx.stroke();
+            this.ctx.beginPath();
+            this.ctx.moveTo(x, y);
+        }
+
+        if (isDraggingText && selectedText) {
+            selectedText.x = x;
+            selectedText.y = y;
+            this.redrawCanvas();
+        }
+    }
+
+    // Mouse up handler
+    handleMouseUp(e) {
+        const { drawing, tool, startX, startY } = this.state;
+        const { offsetX: x, offsetY: y } = e;
+
+        if (drawing && tool === 'line') {
+            this.drawLine(startX, startY, x, y);
+        } else if (drawing && tool === 'circle') {
+            const radius = Math.hypot(x - startX, y - startY);
+            this.drawCircle(startX, startY, radius);
+        }
+
+        this.state.drawing = false;
+        this.state.isDraggingText = false;
+        this.state.selectedText = null;
+        this.ctx.beginPath();
+    }
+
+    // Add text item
+    addTextItem(text, x, y) {
+        const textObj = {
+            text,
+            x,
+            y,
+            fontSize: this.state.text.fontSize,
+            fontStyle: this.state.text.fontStyle,
+            color: this.state.text.color
+        };
+        this.state.text.items.push(textObj);
+        this.drawTextItem(textObj);
+    }
+
+    // Drawing methods
+    drawTextItem({ text, x, y, fontSize, fontStyle, color }) {
+        this.ctx.font = `${fontStyle} ${fontSize}px Arial`;
+        this.ctx.fillStyle = color;
+        this.ctx.fillText(text, x, y);
+    }
+
+    drawLine(x1, y1, x2, y2) {
+        this.ctx.lineWidth = this.state.size;
+        this.ctx.strokeStyle = 'black';
+        this.ctx.beginPath();
+        this.ctx.moveTo(x1, y1);
+        this.ctx.lineTo(x2, y2);
+        this.ctx.stroke();
+    }
+
+    drawCircle(x, y, radius) {
+        this.ctx.lineWidth = this.state.size;
+        this.ctx.strokeStyle = 'black';
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, radius, 0, Math.PI * 2);
+        this.ctx.stroke();
+    }
+
+    // Find if text is clicked
+    findTextAtPosition(x, y) {
+        return this.state.text.items.find(
+            item => Math.abs(item.x - x) < 20 && Math.abs(item.y - y) < 20
+        );
+    }
+
+    // Redraw canvas
+    redrawCanvas() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.state.text.items.forEach(item => this.drawTextItem(item));
+    }
+
+    // Clear canvas
+    clearCanvas() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.state.text.items = [];
     }
 }
 
-// Stop drawing
-function handleMouseUp(e) {
-    if (drawing && tool === 'line') {
-        drawLine(startX, startY, e.offsetX, e.offsetY);
-    } else if (drawing && tool === 'circle') {
-        const radius = Math.sqrt(Math.pow(e.offsetX - startX, 2) + Math.pow(e.offsetY - startY, 2));
-        drawCircle(startX, startY, radius);
-    }
-    drawing = false;
-    isDraggingText = false;
-    selectedText = null;
-    ctx.beginPath();
-}
-
-// Dragging and drawing
-function handleMouseMove(e) {
-    if (!drawing) return;
-
-    const x = e.offsetX;
-    const y = e.offsetY;
-
-    if (tool === 'pencil' || tool === 'marker') {
-        ctx.lineWidth = size;
-        ctx.strokeStyle = 'black';
-        ctx.lineCap = 'round';
-        ctx.lineTo(x, y);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-    } else if (tool === 'eraser') {
-        ctx.lineWidth = size;
-        ctx.strokeStyle = '#f9f9f9';
-        ctx.lineTo(x, y);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-    }
-
-    if (isDraggingText && selectedText) {
-        selectedText.x = x;
-        selectedText.y = y;
-        redrawCanvas();
-    }
-}
-
-// Draw Text Function with Style
-function drawTextItem({ text, x, y, fontSize, fontStyle, color }) {
-    ctx.font = `${fontStyle} ${fontSize}px Arial`;
-    ctx.fillStyle = color;
-    ctx.fillText(text, x, y);
-}
-
-// Find if text is clicked
-function findTextAtPosition(x, y) {
-    return textItems.find(item => Math.abs(item.x - x) < 20 && Math.abs(item.y - y) < 20);
-}
-
-// Redraw canvas to show all elements
-function redrawCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    textItems.forEach(drawTextItem);
-}
-
-// Draw Line Function
-function drawLine(x1, y1, x2, y2) {
-    ctx.lineWidth = size;
-    ctx.strokeStyle = 'black';
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-}
-
-// Draw Circle Function
-function drawCircle(x, y, radius) {
-    ctx.lineWidth = size;
-    ctx.strokeStyle = 'black';
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, Math.PI * 2);
-    ctx.stroke();
-}
-
-// Clear Canvas
-document.getElementById('clear').addEventListener('click', () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    textItems = [];
-});
+// Initialize the drawing app
+const drawingApp = new DrawingApp(canvas, ctx);
