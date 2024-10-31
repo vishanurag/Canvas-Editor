@@ -107,7 +107,13 @@
 ├── README.md
 ├── about-us.html
 ├── about.html
+├── auth.css
+├── auth.html
 ├── blog.html
+├── canva.css
+├── canva.html
+├── canva.js
+├── canva.md
 ├── community.html
 ├── contributors.html
 ├── download (1).webp
