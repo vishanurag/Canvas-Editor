@@ -25,8 +25,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Hind', sans-serif;
-            background: rgb(24, 24, 24);
-            color: rgb(196, 191, 191);
+            background: rgb(71, 42, 73);
+            color: rgb(244, 240, 240);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -172,55 +172,36 @@
         }
 
         .navbar {
-            padding: 0 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: none;
-        }
+        background-color: #f0adfb;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Center aligns the navbar */
+        position: fixed; /* Sticks to the top */
+        width: 100%;
+        z-index: 1000;
+    }
 
-        .navbar a {
-            color: white;
-            font-size: 1.2rem;
-            text-decoration: none;
-            padding: 0rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
 
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-        }
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
 
-        .nav-links a {
-            position: relative;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            color: #bdb5b5;
-        }
+    .nav-links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 6px 4px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
 
-        .nav-links a:after {
-            content: "";
-            position: absolute;
-            background-color: white;
-            height: 3px;
-            width: 0;
-            left: 0;
-            bottom: -10px;
-            transition: 0;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
+    .nav-links a:hover {
+        background-color: #541058;
+    }
         .site-name {
             margin: 0.5rem 0;
         }
@@ -360,18 +341,20 @@
 
     <header class="header">
         <nav class="navbar">
-            <div class="title">
-                <h1 class="site-name">Canvas</h1>
-                <i class="fa-solid fa-paintbrush"></i>
-            </div>
             <div class="nav-links">
+                <h1 class="canvas">Canvas Editor</h1>
                 <a href="index.html">Home</a>
-                <a href="about-us.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="#blogs">Blogs</a>
-                <a href="index.html#mainCanvas">Draw</a>
-                <a href="contributors.html">Contributors</a>
+                <a href="about-us.html">About Us</a>
+                <a href="review.html">Review</a>
                 <a href="testimonial.html">Testimonial</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="Blog_page.html">Blog</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="./Feedback.html">Feedback</a>
+                <!-- <a href="signup.html">Sign Up</a> -->
+                <a href="contributors.html">Contributors</a>
+            
             </div>
         </nav>
     </header>

@@ -14,24 +14,24 @@
 <style>
     body {
         font-family: "Poppins", sans-serif;
-        background: #1e1e2f;
+        background: #fffcff;
         color: #e4e4e7;
         padding: 0;
         margin: 0;
     }
 
-    h2 {
+    h1{
         font-size: 28px;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
         margin-top: 50px;
         margin-bottom: 40px;
-        color: #f05454;
+        color: #8054f0;
         position: relative;
     }
 
-    h2::after {
+    h1::after {
         content: "";
         width: 80px;
         height: 4px;
@@ -131,32 +131,36 @@
         background-color: #ff6b6b;
     }
 
-    .nav {
-        background-color: #2b2b3c;
-        padding: 15px;
+    .navbar {
+        background-color: #f0adfb;
+        padding: 10px;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: center; /* Center aligns the navbar */
+        position: fixed; /* Sticks to the top */
+        width: 100%;
+        z-index: 1000;
     }
 
-    .nav img {
-        float: left;
-        margin-right: 10px; /* Adds space between the image and links */
-        width: 50px;
-        height: auto;
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
     }
 
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
 
-    .nav a {
-        color: #e4e4e7;
-        font-weight: 600;
-        margin: 0 15px;
+    .nav-links a {
+        color: rgb(255, 255, 255);
         text-decoration: none;
-        transition: color 0.3s ease;
+        padding: 6px 4px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
     }
 
-    .nav a:hover {
-        color: #ff6b6b;
+    .nav-links a:hover {
+        background-color: #541058;
     }
 
     footer {
@@ -229,14 +233,22 @@
     <div class="circle"></div>
 
 <div class="nav">
-    <a href="index.html">
-        <img src="logo4.png" alt="Logo">
-    </a>
-    <a href="index.html">Home</a>
-    <a href="about-us.html">About-us</a>
-    <a href="tutorial.html">Tutorial</a>
-    <a href="testimonial.html">Testimonial</a>
-	<a href="auth.html">Sign up/in</a>
+    <nav class="navbar">
+        <div class="nav-links">
+            <h1 class="canvas">Canvas Editor</h1>
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="./Feedback.html">Feedback</a>
+            <!-- <a href="signup.html">Sign Up</a> -->
+            <a href="contributors.html">Contributors</a>
+        
+        </div>
 </div>
 
 <!-- Review Section -->

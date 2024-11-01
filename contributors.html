@@ -40,46 +40,37 @@
     font-weight: bold;
     justify-content: center;
 }
-      .navbar {
-        background-color: #333;
+.navbar {
+        background-color: #f0adfb;
+        padding: 10px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        border-bottom: none;
-
-        position: fixed; 
-        top: 0;
-        left: 0;
+        justify-content: center; /* Center aligns the navbar */
+        position: fixed; /* Sticks to the top */
         width: 100%;
-        height: 100px; 
-        z-index: 100;
-        padding-right: 40px; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-      }
+        z-index: 1000;
+    }
 
-      /* Styling individual links in the navbar */
-      .navbar a {
-        color: #a0a0a0; /* Link color */
-        font-size: 18px; /* Font size */
-        text-decoration: none; /* Remove underline */
-        padding: 0.5rem 1rem; 
-        border-radius: 0.5rem; /* Rounded corners for hover effect */
-        transition: background-color 0.3s ease; /* Smooth hover transition */
-        
-      }
-      .nav-links {
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
+
+    .nav-links {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        
-      }
+        gap: 20px;
+    }
 
-      .nav-links a:hover {
-        color: #ffffff;
-      }
+    .nav-links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 6px 4px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #541058;
+    }
 /* navbar styling ends */
 
       body.dark-mode {
@@ -196,20 +187,21 @@
     <div class="circle"></div>
     <div class="circle"></div>
       <nav class="navbar">
-        <div class="title5">
-          <h1 class="site-name">Canvas Editor</h1>
-          <i class="fa-solid fa-paintbrush" style="margin: 25px 0 0 0;"></i>
-        </div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="Blog_page.html">Blogs</a>
-          <a href="Faq.html">FAQ</a>
-          <a href="contributors.html">Contributors</a>
-          <a href="testimonial.html">Testimonial</a>
-          <a href="auth.html">Login</a>
-        </div>
+          <div class="nav-links">
+              <h1 class="canvas">Canvas Editor</h1>
+              <a href="index.html">Home</a>
+              <a href="about-us.html">About Us</a>
+              <a href="review.html">Review</a>
+              <a href="testimonial.html">Testimonial</a>
+              <a href="privacy.html">Privacy</a>
+              <a href="tutorial.html">Tutorial</a>
+              <a href="Blog_page.html">Blog</a>
+              <a href="Faq.html">FAQ</a>
+              <a href="./Feedback.html">Feedback</a>
+              <!-- <a href="signup.html">Sign Up</a> -->
+              <a href="contributors.html">Contributors</a>
+          
+          </div>
         <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
           <input id="themeToggle" class="toggle" type="checkbox">
         </div>

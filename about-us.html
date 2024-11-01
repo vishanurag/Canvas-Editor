@@ -17,7 +17,7 @@
             overflow-x: hidden;
         }
         header {
-            background: #333;
+            background: #fa9cfa;
             color: #fff;
             padding: 1rem 0;
             position: sticky;
@@ -39,27 +39,37 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .navbar a {
-            color: #bbb;
-            font-size: 16px;
-            text-decoration: none;
-            margin: 0 0.8rem;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #fff;
-        }
-        .navbar .auth a {
-            background: #ffb7fd;
-            color: #333;
-            padding: 8px 16px;
-            border-radius: 5px;
-        }
-        .navbar .auth a:hover {
-            background: #fff;
-            color: #ffb7fd;
-        }
+        .navbar {
+        background-color: #f0adfb;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Center aligns the navbar */
+        position: fixed; /* Sticks to the top */
+        width: 100%;
+        z-index: 1000;
+    }
 
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 6px 4px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #541058;
+    }
         /* About Section */
         .about-section {
             padding: 4rem 1rem;
@@ -100,8 +110,8 @@
         .about-text:hover, .about-image:hover {
             transform: scale(1.05);
         }
-        h3 {
-            font-size: 2rem;
+        h1 {
+            font-size: 1.2rem;
             color: #353047;
             margin-bottom: 1rem;
             text-align: center;
@@ -191,18 +201,21 @@
     <div class="circle"></div>
     <!-- Navbar -->
     <header>
-        <div class="navbar">
-            <div class="site-name">Creative Canvas Tool</div>
-            <nav>
+        <nav class="navbar">
+            <div class="nav-links">
+                <h1 class="canvas">Canvas Editor</h1>
                 <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="blog.html">Blogs</a>
-                <a href="Faq.html">FAQ</a>
-                <a href="contributors.html">Contributors</a>
+                <a href="about-us.html">About Us</a>
+                <a href="review.html">Review</a>
                 <a href="testimonial.html">Testimonial</a>
-            </nav>
-            <div class="auth">
-                <a href="auth.html">Sign up/Sign in</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="Blog_page.html">Blog</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="./Feedback.html">Feedback</a>
+                <!-- <a href="signup.html">Sign Up</a> -->
+                <a href="contributors.html">Contributors</a>
+            
             </div>
         </div>
     </header>
