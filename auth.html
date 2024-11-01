@@ -187,6 +187,24 @@
                 element.classList.remove('active');
             }
         }
+
+        // New login functionality
+        const signInForm = document.querySelector('.sign-in-form');
+        signInForm.addEventListener('submit', handleSignIn);
+
+        function handleSignIn(e) {
+            e.preventDefault();
+            const username = document.querySelector('.sign-in-form input[type="text"]').value;
+            const password = document.querySelector('.sign-in-form input[type="password"]').value;
+            
+            if (username && password) {
+                // Here you would typically send a request to your server to validate the credentials
+                console.log('Login attempt:', username, password);
+                alert('Login successful!'); // Replace this with actual login logic
+            } else {
+                alert('Please enter both username and password');
+            }
+        }
     </script>
     <script type="module" src="auth.js" defer></script>
 
