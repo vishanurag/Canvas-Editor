@@ -318,21 +318,7 @@
             color: #fdd09c;
         }
     </style>
-    <style>
-        /* Circle styles */
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -376,6 +362,8 @@
         </nav>
     </header>
 
+
+   
 
     <div class="container">
         <h2>Frequently Asked Questions</h2>
@@ -433,6 +421,23 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out to us!</p>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="4"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 
     <footer class="footer" id="footer">
@@ -536,5 +541,89 @@
       </script>
 
 </body>
+<style>
+     body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; 
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    background-color: #121212; 
+    color: #f1f1f1; 
+    
+} 
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and other WebKit browsers: hide scrollbar */
+}
+.contact-section {
+    background-color: #1f1f1f; /* Dark container */
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.contact-section h2 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #e0e0e0;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #b3b3b3;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    color: #f1f1f1;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaaaaa;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: 1px solid #555555;
+    background-color: #2a2a2a;
+}
+
+form button {
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    color: #f1f1f1;
+    background-color: #444444;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #555555;
+}
+
+</style>
 
 </html>
