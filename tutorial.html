@@ -6,12 +6,12 @@
     <title>Canvas Editor Tutorial</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+            color: #333;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
         .navbar {
             background-color: #333;
@@ -53,29 +53,26 @@
         }
         .content {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-        h1 {
-            color: #2c3e50;
+        .heading {
+            font-size: 2.5rem;
+            color: #353047;
+            margin-bottom: 2rem;
             text-align: center;
-            background-color: #ecf0f1;
-            padding: 20px 0;
-            margin: -20px -20px 20px -20px;
-        }
-        h2 {
-            color: #e74c3c;
-            border-bottom: 2px solid #e74c3c;
-            padding-bottom: 10px;
         }
         .tutorial-section {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #353047;
+            border-bottom: 2px solid #353047;
+            padding-bottom: 10px;
         }
         .button {
             display: inline-block;
@@ -90,16 +87,17 @@
             text-align: center;
             margin-top: 3rem;
             padding: 2rem;
-            background-color: #545c61;
+            background-color: rgba(84, 92, 97, 0.7);
             color: #fff;
             border-radius: 10px;
         }
-        .cta .h2{
+        .cta h2 {
             color: #f5f5f5;
+            border-bottom: none;
         }
         .cta-button {
             display: inline-block;
-            background-color: #2c3e50;
+            background-color: #353047;
             color: #fff;
             text-decoration: none;
             padding: 1rem 2rem;
@@ -111,12 +109,9 @@
         .cta-button:hover {
             background-color: #1a252f;
         }
-        .green { background-color: #2ecc71; }
+        .green { background-color: #28b864; }
         .purple { background-color: #9b59b6; }
         .red { background-color: #e74c3c; }
-    </style>
-    <style>
-        /* Circle styles */
         .circle {
             height: 24px;
             width: 24px;
@@ -164,9 +159,9 @@
         </ul>
     </nav>
 
+    <h1 class="heading">Canvas Editor Tutorial</h1>
+
     <div class="content">
-        <h1>Canvas Editor Tutorial</h1>
-        
         <div class="tutorial-section">
             <h2>1. Basic Drawing Tools</h2>
             <p>The Canvas Editor provides three main drawing tools:</p>
@@ -192,9 +187,9 @@
         <div class="tutorial-section">
             <h2>3. Text Styling</h2>
             <p>Add and style text with these options:</p>
-            <span class="button purple">Uppercase</span>
+            <span class="button green">Uppercase</span>
             <span class="button purple">Lowercase</span>
-            <span class="button purple">Bold</span>
+            <span class="button red">Bold</span>
             <span class="button purple">Italic</span>
             <p>Use these buttons to change the case or emphasis of your text.</p>
         </div>
@@ -203,8 +198,8 @@
             <h2>4. Shape Tools</h2>
             <p>Create perfect shapes easily:</p>
             <span class="button purple">Rectangle</span>
-            <span class="button purple">Circle</span>
-            <span class="button purple">Line</span>
+            <span class="button red">Circle</span>
+            <span class="button green">Line</span>
             <p>Select a shape tool, then click and drag on the canvas to draw.</p>
         </div>
         
@@ -220,8 +215,8 @@
         <div class="tutorial-section">
             <h2>6. Saving Your Work</h2>
             <p>When you're done, save your masterpiece:</p>
-            <span class="button purple">Save</span>
-            <span class="button purple">Clear</span>
+            <span class="button green">Save</span>
+            <span class="button red">Clear</span>
             <span class="button purple">Download</span>
             <span class="button purple">Save Image</span>
             <ul>
@@ -232,63 +227,63 @@
             </ul>
         </div>
         <div class="cta">
-            <h2 style="color: white;">Ready to unleash your creativity?</h2>
+            <h2>Ready to unleash your creativity?</h2>
             <p>Join thousands of satisfied users and start designing today!</p> 
             <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
         </div>
-        </div>
-        <script>
-            // Coordinates for the cursor
-            const coords = { x: 0, y: 0 };
-            const circles = document.querySelectorAll(".circle");
+    </div>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
 
-            // Colors for the circles
-            const colors = [
-                "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-                "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-                "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-                "#680060", "#60005f", "#48005f", "#3d005e"
-            ];
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
 
-            // Assign colors and initial position to each circle
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
             circles.forEach(function (circle, index) {
-                circle.x = 0;
-                circle.y = 0;
-                circle.style.backgroundColor = colors[index % colors.length];
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
             });
 
-            // Update the coordinates when the mouse moves
-            window.addEventListener("mousemove", function (e) {
-                coords.x = e.clientX;
-                coords.y = e.clientY;
-            });
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
 
-            // Animation function to move the circles
-            function animateCircles() {
-                let x = coords.x;
-                let y = coords.y;
-
-                circles.forEach(function (circle, index) {
-                    // Update the position and scale of each circle
-                    circle.style.left = x - 12 + "px";
-                    circle.style.top = y - 12 + "px";
-                    circle.style.scale = (circles.length - index) / circles.length;
-
-                    circle.x = x;
-                    circle.y = y;
-
-                    // Get the next circle in the sequence
-                    const nextCircle = circles[index + 1] || circles[0];
-                    x += (nextCircle.x - x) * 0.3;
-                    y += (nextCircle.y - y) * 0.3;
-                });
-
-                // Repeat the animation
-                requestAnimationFrame(animateCircles);
-            }
-
-            // Start the animation
-            animateCircles();
-        </script>
+        // Start the animation
+        animateCircles();
+    </script>
 </body>
 </html>
