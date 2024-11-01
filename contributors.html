@@ -47,6 +47,15 @@
         align-items: center;
         flex-wrap: wrap;
         border-bottom: none;
+
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px; 
+        z-index: 100;
+        padding-right: 40px; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
       }
 
       /* Styling individual links in the navbar */
@@ -199,8 +208,10 @@
           <a href="Faq.html">FAQ</a>
           <a href="contributors.html">Contributors</a>
           <a href="testimonial.html">Testimonial</a>
-          <a href="signup.html">Sign Up</a>
-          <a href="login.html">Login</a>
+          <a href="auth.html">Login</a>
+        </div>
+        <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
+          <input id="themeToggle" class="toggle" type="checkbox">
         </div>
       </nav>
       
@@ -215,9 +226,6 @@
     </video>
     
     <div class="container">
-      <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
-        <input id="themeToggle" class="toggle" type="checkbox">
-      </div>
       
       </header>
       <h1 class="title">Our Contributors</h1>
