@@ -53,8 +53,6 @@
 <body>
     <!-- Back to Home Button -->
     <a href="index.html" class="home-button">Back to Home</a>
-
-    <!-- Circles -->
     <div class="circle"></div>
     <!-- Other circles... -->
 
@@ -72,7 +70,7 @@
                 <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
                 <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
                 <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
-                <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+                <input type="radio" name="rating" id="star" value="1"><label for="star">★</label>
             </div>
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
@@ -83,7 +81,7 @@
 
     <script src="script1.js"></script>
     <script>
-        // JavaScript for animated circles
+        
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
         const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
