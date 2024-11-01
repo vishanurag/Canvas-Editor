@@ -75,6 +75,17 @@
 }
 
 #contactForm button{
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
+  border-radius: 10em;
+  width: 50%;
+}
+
   margin-left:0em;
   text-align: center;
   padding:9rem;
@@ -85,3 +96,4 @@
   background-color: #46cdcf;
 
 }
+

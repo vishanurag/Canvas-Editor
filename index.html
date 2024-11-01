@@ -624,6 +624,275 @@
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mouseout', stopDrawing);
         function drawGrid() {
+
+      if (!showGrid) return; // Only draw if the grid is enabled
+      ctx.save();
+      ctx.strokeStyle = '#c0c0c0';
+      ctx.lineWidth = 0.5;
+
+      const gridSpacing = 20;
+      for (let x = 0; x < canvas.width; x += gridSpacing) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSpacing) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // Function to clear and redraw the canvas, including the grid if enabled
+    function updateCanvasWithGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+      drawGrid(); // Draw grid if enabled
+      // Any other canvas drawing updates should go here if needed
+    }
+
+</style>
+
+        <div class="canvas-container">
+
+        
+            <b><h2>Draw Here !!!</h2></b>
+            
+
+            <canvas id="mainCanvas"></canvas>
+
+            <div class="canvas-container">
+
+
+                <div class="canvas-palette">
+                    <form id="userForm" class="d-flex flex-column gap-2 p-4 ml-0">
+                        <div class="d-flex justify-content-around mb-2">
+                            <div class="brush" style="width: 40%;">
+                            <label for="brushSize">Brush Size:</label>
+                            <select name="brushSize" class="form-select" id="brushSize" style="height: 2rem;">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                            </select>
+                        </div>
+                        <div class="colorpick" style="width: 40%;">
+                            <label for="colorPicker">Color:</label>
+                            <input type="color" name="colorPicker" class="form-control" id="colorPicker" style="height: 4rem;">
+                        </div>
+                        </div>
+                        <div class="d-flex justify-content-around  mb-2">
+                            <div class="col-sm-6"  style="width: 40%;">
+                                <label for="bgImageUpload">Background Image:</label>
+                                <input type="file" id="bgImageUpload" accept="image/*">
+                            </div>
+                            <div class="col-sm-6"  style="width: 40%;">
+                                <label for="bgColorPicker">Background Color:</label>
+                                <input type="color" name="bgColorPicker" class="form-control" id="bgColorPicker" style="height: 4rem;">
+                            </div>
+                        </div>
+                        <div class="wrapper edit justify-content-center gap-3 mt-5">
+                            <button  type="button" class="btn btn-primary" id="drawTextBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Brush
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="clearCanvasBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Clear Canvas
+                            </button>
+                            <button  type="button" class="btn btn-primary" id="eraserBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Eraser
+                            </button>
+                        </div>
+                        <div class="space"></div>
+                    </form>
+                    <div class="tStyle d-md-flex justify-content-center gap-4">
+                        <button  type="button" class="btn btn-primary" id="capital">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Uppercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="small">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Lowercase
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="bold">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Bold
+                        </button>
+                        <button  type="button" class="btn btn-primary" id="italic">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Italic
+                        </button>
+                    </div>
+
+                    <!-- <div class="d-md-flex justify-content-evenly gap-1">
+                        <button class="btn btn-primary" id="capital">Uppercase</button>
+                        <button class="btn btn-primary" id="small">Lowercase</button>
+                        <button class="btn btn-primary" id="bold">Bold</button>
+                        <button class="btn btn-primary" id="italic">Italic</button>
+                    </div> -->
+
+                    <div class="rclStyle d-md-flex justify-content-center gap-3">
+
+                    
+                    <div class="rclStyle d-md-flex justify-content-evenly gap-1">
+
+                        <button  type="button" class="btn btn-success" id="rectangleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Rectangle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="circleBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Circle
+                        </button>
+                        <button  type="button" class="btn btn-success" id="linebtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Line
+                        </button>
+                    </div>
+                    <!-- <div class="palette">
+                        <button id="rectangleBtn" class="btn btn-success">Rectangle</button>
+                        <button id="circleBtn" class="btn btn-success">Circle</button>
+                        <button id="lineBtn" class="btn btn-success">Line</button>
+                    </div> -->
+                    <div class="d-md-flex justify-content-center align-items-center">
+                        <input type="text" placeholder="Enter Text" name="textData" id="textData"
+                            class="form-control mw-100 w-70">
+                        <button type="button" class="btn btn-primary pl-3 pr-3" id="save">Save</button>
+                        <button type="button" class="btn btn-danger" id="clear">Clear</button>
+                        <button type="button" class="btn btn-success" id="download" title="Download">Download</button>
+                        <!-- Added save functionality  -->
+                        <button type="button" class="btn btn-primary" id="saveAsImageBtn">Save Image</button>
+
+                        
+                    </div>
+                    </form>
+                </div>
+
+                
+        </div>
+
+
+        <div class="contact-us-page">
+            <div class="contact-container">
+                <!-- Contact Us Section -->
+                <section id="contact" class="contact-section text-center py-5">
+                    <h2 class="mb-4">Contact Us</h2>
+                  <div class="social-media-links">
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">         
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
+                    <img class="link-img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
+                  </div>
+                    <form id="contactForm" class="row g-3 justify-content-center">
+                        <!-- Name Field -->
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
+                                    required pattern="[a-zA-Z ]+"
+                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                                oninput="this.setCustomValidity('')">
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <!-- Email Field -->
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Your Email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <!-- Subject Field -->
+                        <div class="col-md-8">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="subject" name="subject"
+                                    placeholder="Subject" required>
+                                <label for="subject">Subject</label>
+                            </div>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="col-md-8">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="message" name="message" placeholder="Your Message"
+                                    style="height: 150px; align-items: center;" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="col-md-8" style="margin: auto; margin-top: 10px;">
+                            <button type="submit" class="btn btn-primary py-2"t>Submit</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                    </div>
+                    Message Field -->
+                    <!-- <div class="col-md-8">
+                        <div class="form-floating">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
+                            <label for="message">Your Message (minimum 20 characters)</label>
+                        </div>
+                    </div> -->
+
+                </form>
+            </div>
+        </div>
+        
+        <!-- Custom Popup -->
+        <div id="customPopup" class="custom-popup">
+            <div class="popup-content">
+                <h3>Thank You!</h3>
+                <p>Your message has been sent successfully. We'll get back to you soon!</p>
+                <button id="closePopup" class="btn btn-primary">Close</button>
+            </div>
+        </div>
+
+
+    // Event listener to toggle the grid on and off
+    document.getElementById('toggleGridButton').addEventListener('click', () => {
+      showGrid = !showGrid; // Toggle grid state
+      updateCanvasWithGrid(); // Redraw canvas with or without grid
+    });
+
             if (!showGrid) return; // Only draw if the grid is enabled
             ctx.save();
             ctx.strokeStyle = '#c0c0c0';
@@ -657,6 +926,7 @@
             showGrid = !showGrid; // Toggle grid state
             updateCanvasWithGrid(); // Redraw canvas with or without grid
         });
+
         function startDrawing(e) {
             isDrawing = true;
             [startX, startY] = [e.offsetX, e.offsetY];
