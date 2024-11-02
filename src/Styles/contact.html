@@ -28,5 +28,13 @@
             <button type="submit">Send Message</button>
         </form>
     </div>
+
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            alert('Form submitted successfully!'); // Show a message
+            this.reset(); // Clear the form
+        });
+    </script>
 </body>
 </html>
