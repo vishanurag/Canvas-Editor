@@ -3,405 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Canvas Tool - Reviews, Testimonials & Popular Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="src/Styles/scroll.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Testimonials Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /*  Navbar Styling  starts*/
-      .navbar {
-        background-color: #333; /* Dark background */
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        flex-wrap: wrap;
-        border-bottom: none;
-      }
-      .title {
-  display: flex;
-  align-items: left;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  justify-content: center;
-}
-
-      /* Styling individual links in the navbar */
-      .navbar a {
-        color: #a0a0a0; /* Link color */
-        font-size: 18px; /* Font size */
-        text-decoration: none; /* Remove underline */
-        padding: 0.5rem 1rem; 
-        border-radius: 0.5rem; /* Rounded corners for hover effect */
-        transition: background-color 0.3s ease; /* Smooth hover transition */
-        
-      }
-      .nav-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        
-      }
-
-      .nav-links a:hover {
-        color: #ffffff;
-      }
-      /* navbar styling ends */
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 2rem;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1f1f1f;
+            color: #fff;
+            overflow-x: hidden;
         }
-        header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+
+        /* Navbar styling */
+        nav {
+            background-color: #1c1c1c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav h1 {
+            color: #fca311;
+            font-size: 24px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #fca311;
+            color: #000;
+        }
+
+        /* Hero section */
+        .hero {
             text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
+            padding: 120px 20px;
+            background-color: #282828;
         }
-        h1, h2 {
-            margin: 0;
-            padding: 1rem 0;
+        .hero h2 {
+            font-size: 40px;
+            color: #fca311;
         }
-        h1 {
-            font-size: 2.5rem;
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #b3b3b3;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        h2 {
-            font-size: 2rem;
-            color: #2c3e50;
+
+        /* Testimonial section */
+        .testimonial-section {
+            padding: 80px 20px;
+            background-color: #333;
             text-align: center;
-            margin-top: 3rem;
         }
-        .subtitle {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-top: 0.5rem;
+        .testimonial-section h2 {
+            color: #fca311;
+            font-size: 32px;
         }
-        .testimonial-grid, .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
         }
-        .testimonial, .service {
-            background-color: #fff;
+        .testimonial {
+            background-color: #444;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            color: #fff;
             transition: transform 0.3s ease;
         }
-        .testimonial:hover, .service:hover {
-            transform: translateY(-5px);
+        .testimonial:hover {
+            transform: translateY(-10px);
         }
-        .testimonial img, .service img {
+        .testimonial img {
+            border-radius: 50%;
             width: 80px;
             height: 80px;
-            border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
-        .testimonial h3, .service h3 {
-            margin: 0 0 0.5rem 0;
-            color: #2c3e50;
+        .testimonial h3 {
+            font-size: 20px;
+            color: #fca311;
         }
-        .testimonial p, .service p {
-            font-style: italic;
-            color: #7f8c8d;
+        .testimonial p {
+            font-size: 14px;
+            color: #ddd;
+            line-height: 1.6;
         }
-        .rating {
-            color: #f1c40f;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+
+        /* Stats Section */
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #1a1a1a;
         }
-        .cta {
+        .stat-box {
             text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: #3498db;
             color: #fff;
+        }
+        .stat-box h3 {
+            font-size: 24px;
+            color: #fca311;
+        }
+        .stat-box p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #d5880d;
+            padding: 40px 20px;
+            text-align: center;
             border-radius: 10px;
+            margin: 40px 20px;
+            color: #fff;
+        }
+        .cta-section h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #e2e2e2;
         }
         .cta-button {
-            display: inline-block;
             background-color: #2c3e50;
             color: #fff;
-            text-decoration: none;
-            padding: 1rem 2rem;
+            padding: 10px 25px;
+            font-size: 16px;
             border-radius: 5px;
-            font-weight: bold;
+            text-decoration: none;
             transition: background-color 0.3s ease;
-            margin-top: 1rem;
         }
         .cta-button:hover {
             background-color: #1a252f;
         }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        .stat-item {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 1.5rem;
-            border-radius: 10px;
-            width: 200px;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .features {
-            background-color: #ecf0f1;
-            padding: 3rem 0;
-            margin: 3rem 0;
-        }
-        .feature-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .feature-item {
-            width: 30%;
-            min-width: 250px;
-            margin: 1rem;
-            text-align: center;
-        }
-        .feature-icon {
-            font-size: 3rem;
-            color: #3498db;
-            margin-bottom: 1rem;
-        }
 
-        .home-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+        /* Footer */
+        footer {
+            background-color: #1c1c1c;
+            padding: 30px 0;
+            color: #e4e4e7;
         }
-        .home-button:hover {
-            background-color: #34495e;
-        }
-        .navbar-brand {
-            font-weight: bolder;
-            padding-top: 30px;
-            text-align: center; 
-            width: 100%; 
-            font-size: 2.5rem;
-        }
-        .navbar-nav .nav-link {
-            color: #e0e2e2; /* Default link color */
-        }
-        .navbar-nav .nav-link.active {
-            font-weight: bold; /* Bold active link */
-        }
-
-        
-    </style>
-</head>
-<body>
     
-        <nav class="navbar">
-          <div class="title">
-            <h1 class="site-name">Canvas Editor</h1>
-            <i class="fa-solid fa-paintbrush" style="margin: 25px 0 0 0;"></i>
-          </div>
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="Blog_page.html">Blogs</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="contributors.html">Contributors</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="signup.html">Sign Up</a>
-            <a href="login.html">Login</a>
-          </div>
-            <style>
-        /* Back to Top Button */
-#BacktoTop {
-  position: fixed; /* Stay in fixed position */
-  bottom: 50px; /* Positioned above the chatbot */
-  right: 5px; /* Aligned to the right */
-  width: 55px;
-  height: 55px;
-  background-color: #007bff; /* Button background */
-  color: white; /* Text color */
-  padding: 10px 15px; /* Padding for button size */
-  border-radius: 50%; /* Circular button */
-  border: none;
-  font-size: 24px; /* Size of the text or arrow */
-  font-weight: bolder;
-  display: block; /* Initially hidden */
-  visibility: hidden;
-  z-index: 1000; /* Ensures it is above most elements */
-  cursor: pointer; /* Pointer when hovered */
-}
+        footer .footer-heading {
+            font-weight: 700;
+            color:#fca311;
+        }
+    
+        footer a {
+            color: #e4e4e7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    
+        footer a:hover {
+            color: #fca311;
+        }
+    
+        footer .social-icons i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #e4e4e7;
+            transition: color 0.3s ease;
+        }
+    
+        footer .social-icons i:hover {
+            color:#fca311;
+        }
+        
 
-#BacktoTop:hover {
-  background-color: #0056b3; /* Change to a lighter blue on hover */
-  transform: scale(1.1);
-}
-
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 30px;
+            }
+            .testimonial {
+                width: 100%;
+                max-width: 300px;
+            }
+            .stats-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-      
-    <div class="container">
-        <section class="stats">
-            <div class="stat-item">
-                <div class="stat-number">10k+</div>
-                <div class="stat-label">Happy Users</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">1M+</div>
-                <div class="stat-label">Designs Created</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">4.8</div>
-                <div class="stat-label">Average Rating</div>
-            </div>
-        </section>
 
-        <h2>What Our Customers Are Saying</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Sarah J.</h3>
-                <div class="rating">★★★★★</div>
-                <p>"Creative Canvas Tool has revolutionized my design process. It's intuitive, powerful, and a joy to use!"</p>
-            </div>
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Mark T.</h3>
-                <div class="rating">★★★★☆</div>
-                <p>"As a marketing professional, this tool has saved me countless hours. The templates are top-notch!"</p>
-            </div>
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Emily R.</h3>
-                <div class="rating">★★★★★</div>
-                <p>"I'm not a designer, but Creative Canvas Tool makes me feel like one. It's so easy to create beautiful graphics!"</p>
-            </div>
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Alex K.</h3>
-                <div class="rating">★★★★☆</div>
-                <p>"The variety of templates and the ease of customization are unmatched. It's my go-to for all design needs!"</p>
-            </div>
-        </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>Canvas Editor</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About-us</a></li>
+            <li><a href="auth.html">Login</a></li>
+        </ul>
+    </nav>
 
-        <h2>Services Loved The Most</h2>
-        <div class="services-grid">
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                    </svg>
-                </div>
-                <h3>Social Media Graphics</h3>
-                <p>"Perfect for creating eye-catching posts for all platforms. The pre-sized templates are a huge time-saver!"</p>
-            </div>
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
-                    </svg>
-                </div>
-                <h3>Logo Design</h3>
-                <p>"The logo maker is intuitive and offers a wide range of customization options. It's great for branding projects!"</p>
-            </div>
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                    </svg>
-                </div>
-                <h3>Infographic Creator</h3>
-                <p>"Turning complex data into visually appealing infographics has never been easier. Love the chart options!"</p>
-            </div>
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                    </svg>
-                </div>
-                <h3>Photo Editor</h3>
-                <p>"The photo editing tools are powerful yet easy to use. I can enhance my images without any prior experience!"</p>
-            </div>
-        </div>
-
-        <section class="features">
-            <h2>Why Choose Creative Canvas Tool?</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <div class="feature-icon">🎨</div>
-                    <h3>User-Friendly Interface</h3>
-                    <p>Intuitive design that anyone can master, regardless of experience level.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Time-Saving Templates</h3>
-                    <p>Hundreds of professionally designed templates to jumpstart your creativity.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💡</div>
-                    <h3>Endless Customization</h3>
-                    <p>Flexible tools that allow you to bring your unique vision to life.</p>
-                </div>
-            </div>
-        <!-- Back to Top Button -->
-       <button id="BacktoTop">
-        <span>↑</span>
-      </button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>What Our Clients Say</h2>
+        <p>At Canvas Editor, we believe that our success is best measured by the satisfaction of our clients. Here’s what they have to say about their experiences with us:</p>
     </section>
 
-        <div class="cta">
-            <h2>Ready to unleash your creativity?</h2>
-            <p>Join thousands of satisfied users and start designing today!</p> 
-            <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stat-box">
+            <h3>10k+</h3>
+            <p>Happy Users</p>
         </div>
-  </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="src/Scripts/BacktoTop.js"></script>
+        <div class="stat-box">
+            <h3>1M+</h3>
+            <p>Designs Created</p>
+        </div>
+        <div class="stat-box">
+            <h3>4.8</h3>
+            <p>Average Rating</p>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <h2>Client Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/80" alt="Client Image">
+                <h3>Jane Doe</h3>
+                <p>"The service was exceptional, and the staff was very friendly. I am so happy with the outcome of 
+                      my project!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/80" alt="Client Image">
+                <h3>John Smith</h3>
+                <p>"A great experience from start to finish. Highly recommend this company for their professionalism 
+                     and dedication."</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/80" alt="Client Image">
+                <h3>Emily White</h3>
+                <p>"I couldn't be more pleased with the results. The team went above and beyond to meet my needs."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h3>Ready to unleash your creativity?</h3>
+        <p>Join thousands of satisfied users and start designing today!</p>
+        <a href="index.html" class="cta-button">Start Drawing Now ➞</a>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="footer-heading">About Us</h4>
+                    <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an 
+                          intuitive platform that transforms ideas into stunning digital artwork. </p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="index.html">Home</a><br>
+                    <a href="about-us.html">About-us</a><br>
+                    <a href="tutorial.html">Tutorial</a><br>
+                    <a href="Faq.html">FAQ</a>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>Contact us at: info@example.com</p>
+                </div>
+            </div>
+        </div>
+  </footer>
+
+    <footer>
+        <p>&copy; All rights reserved © <span id="year"></span></p>
+
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>

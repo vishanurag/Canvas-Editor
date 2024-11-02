@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="auth.css" />
+
+    <link rel="icon" href="resources/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="sign-in-signup">
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="sign-in-password" />
+                        <i class="fas fa-eye password-toggle" onclick="togglePassword('sign-in-password', this)"></i>
+                    </div>
+                    <div class="login">
+                        <input type="submit" value="Login" class="btn solid" />
+                    </div>
+                    <a href="/forgot_password.html" style="text-decoration: none; color: black;">
+                        <p>Forgot Password?</p>
+                    </a>
+                    <p class="social-text">OR<br>Sign in with social platforms</p>
+
+                    <div class="social-media">
+                        <button class="social-icon" id="microsoft-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" style="
+                            height: 35px;">
+                                <path fill="#ff5722" d="M6 6H22V22H6z" transform="rotate(-180 14 14)"></path><path fill="#4caf50" d="M26 6H42V22H26z" transform="rotate(-180 34 14)"></path><path fill="#ffc107" d="M26 26H42V42H26z" transform="rotate(-180 34 34)"></path><path fill="#03a9f4" d="M6 26H22V42H6z" transform="rotate(-180 14 34)"></path>
+                                </svg>
+                        </button>
+                        <button class="social-icon" id="google-icon">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" style="
+                            height: 35px;">
+                                <path fill="#fbc02d" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#e53935" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1565c0" d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                                </svg>
+                        </button>
+                        <button class="social-icon" id="githubSignInBtn">
+                            <i class="fa-brands fa-github" style="color: #b10aff;"></i>
+                        </button>
+                    </div>
+                </form>
+                <form action="#" class="sign-up-form" onsubmit="return validateForm()">
+                    <h2 class="title">Sign up</h2>
+
+                    <!-- Username Field -->
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" id="username" required />
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" id="email" required />
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="signup-password" required />
+                        <i class="fas fa-eye password-toggle" onclick="togglePassword('signup-password', this)"></i>
+                    </div>
+
+                    <!-- Password Strength Bars -->
+                    <div class="password-strength">
+                        <div id="strength-weak"></div>
+                        <div id="strength-medium"></div>
+                        <div id="strength-strong"></div>
+                    </div>
+
+                    <input type="submit" class="btn" value="Sign up" />
+                </form>
+                <p id="error-message" style="color: red; display: none;"></p>
+
+            </div>
+        </div>
+
+        <script>
+            function validateForm() {
+                const password = document.getElementById('signup-password').value;
+                const email = document.getElementById('email').value;
+                const username = document.getElementById('username').value;
+
+                // Password length validation
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return false;
+                }
+
+                // Password hexadecimal validation
+
+                const hexRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]+$/;
+                if (!hexRegex.test(password)) {
+                    alert("Password must contain at least one uppercase letter (A-Z), one number (0-9), and include only letters and numbers.");
+                    return false;
+                }
+
+
+                // Validate if username is provided
+                if (username.trim() === "") {
+                    alert("Please enter a valid username.");
+                    return false;
+                }
+
+                // Validate if email is provided and valid
+                if (!email.includes("@")) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+
+                // If all validations pass
+                return true;
+            }
+
+
+        </script>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    <p>
+                        Discover new experiences with Canvas! <br> Create your account.
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
+                </div>
+                <img src="img/log.svg" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us ?</h3>
+                    <p>
+                        Welcome back to our community
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+                <img src="img/register.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="homeBtn">
+        <i class="fas fa-home"></i>
+    </a>
+    <div id="toast-container"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
+    <script src="firebase.js"></script>
+    <script>
+        const signUpBtn = document.getElementById('sign-up-btn');
+        const signInBtn = document.getElementById('sign-in-btn');
+        const container = document.querySelector('.container');
+
+        signUpBtn.addEventListener('click', () => {
+            container.classList.add('sign-up-mode');
+        });
+
+        signInBtn.addEventListener('click', () => {
+            container.classList.remove('sign-up-mode');
+        });
+
+        function togglePassword(id, element) {
+            const passwordInput = document.getElementById(id);
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                element.classList.add('active');
+            } else {
+                passwordInput.type = 'password';
+                element.classList.remove('active');
+            }
+        }
+    </script>
+    <script type="module" src="auth.js" defer></script>
+
+    <script type="module" src="SignUpWithGoogle.js"></script>
+
+    <script type="module" src="SignIn-Up-withGithub.js"></script>
+
+    <div class="gtranslate_wrapper"></div>
+
+    <script>
+
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        }
+
+    </script>
+
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+</body>
+
+</html>

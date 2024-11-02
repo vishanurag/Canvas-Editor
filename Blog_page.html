@@ -29,16 +29,41 @@
         }
 
         .navbar {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+          backdrop-filter: blur(12px);
+          background: rgba(255, 255, 255, 0.15);
+          padding: 1rem 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+        }
+
+        /* Title styling */
+        .navbar .title .site-name {
+            font-family: 'Poppins', sans-serif; /* Use Google Fonts for custom style */
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        /* Navigation link styling */
+        .navbar .nav-links a {
+            color:#5b21b6;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover effect on links */
+        .navbar .nav-links a:hover {
+            color:#6b21a8;
+            transform: scale(1.1);
         }
 
         .title {
@@ -305,13 +330,36 @@
     </style>
 </head>
 <body>
+  <!-- Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
     <!-- Previous HTML structure remains the same, just using placeholder images -->
     <!-- Replace all image sources with placeholder API -->
     <!-- For example: -->
     <nav class="navbar">
         <div class="title">
+          <a href="index.html" class="logo-link">
             <h1 class="site-name">Canvas Editor</h1>
             <i class="fa-solid fa-paintbrush"></i>
+          </a>
         </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -321,8 +369,7 @@
             <a href="Faq.html">FAQ</a>
             <a href="contributors.html">Contributors</a>
             <a href="testimonial.html">Testimonial</a>
-            <a href="signup.html">Sign Up</a>
-            <a href="login.html">Login</a>
+            <a href="auth.html">Login</a>
         </div>
     </nav>
 <header>
@@ -514,19 +561,43 @@
       
     </section>
 
-    <footer>
-      <div class = "social-links">
-        <!-- Added responsiveness to icons -->
-        <a href = "#"><i class = "fab fa-facebook-f"></i></a>
-        <!-- Added the new Twitter(X) logo -->
-        <a href = "#"><i class = "fab fa-x-twitter"></i></a>
-        <a href = "#"><i class = "fab fa-instagram"></i></a>
-        <!-- Added LinkedIn logo -->
-        <a href = "https://www.linkedin.com/in/anuragvishwakarma/"><i class = "fab fa-linkedin-in"></i></a>
-        <a href = "#"><i class = "fab fa-pinterest"></i></a>
+    <footer style="text-align: center; padding: 20px; background-color: #f4f4f4;">
+      <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 10px;">
+          <!-- Facebook Icon -->
+          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+             onmouseover="this.style.color='#3b5998'; this.style.transform='scale(1.2)';"
+             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <!-- Twitter (X) Icon -->
+          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+             onmouseover="this.style.color='#1da1f2'; this.style.transform='scale(1.2)';"
+             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+              <i class="fab fa-x-twitter"></i>
+          </a>
+          <!-- Instagram Icon -->
+          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+             onmouseover="this.style.color='#e1306c'; this.style.transform='scale(1.2)';"
+             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+              <i class="fab fa-instagram"></i>
+          </a>
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/in/anuragvishwakarma/" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+             onmouseover="this.style.color='#0077b5'; this.style.transform='scale(1.2)';"
+             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+              <i class="fab fa-linkedin-in"></i>
+          </a>
+          <!-- Pinterest Icon -->
+          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+             onmouseover="this.style.color='#bd081c'; this.style.transform='scale(1.2)';"
+             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+              <i class="fab fa-pinterest"></i>
+          </a>
       </div>
-      <span>Creative Canvas Blog Page</span>
-    </footer>
+      <span style="color: #333; font-size: 14px;">Creative Canvas Blog Page</span>
+  </footer>
+  
+  
      <!-- Back to Top Button -->
      <button id="BacktoTop">
       <span>↑</span>
