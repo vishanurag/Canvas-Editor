@@ -155,7 +155,6 @@
   transition: width 0.09s ease-in-out;
   border-radius: 10px;
 }
-
 </style>
     <style>
       /* Circle styles */
@@ -236,36 +235,7 @@
         <button class="btn" id="nextBtn"> <i class="bi bi-arrow-right-circle"></i> </button>
       </div>
     </div>
-    <button class="top-btn" id="goToTopBtn" onclick="goToTop()">
-      <i class="fa-solid fa-chevron-up" style="color: #ffffff"></i>
-    </button>
   </div>
-    <script>
-      // Get the button
-      var mybutton = document.getElementById("goToTopBtn");
-
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function () {
-        scrollFunction();
-      };
-
-      function scrollFunction() {
-        if (
-          document.body.scrollTop > 20 ||
-          document.documentElement.scrollTop > 20
-        ) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-
-      // When the user clicks on the button, scroll to the top of the document
-      function goToTop() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
     <script src="src/Scripts/contributor.js"></script>
     <script>
 
@@ -329,5 +299,100 @@
         // Start the animation
         animateCircles();
       </script>
+      <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 36 36">
+                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            </svg>
+        </div>
+        <span>&uarr;</span>
+    </button>
+    <style>
+/* Scroll to Top Button */
+#scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            outline: none;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Progress Ring */
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 36px;
+            height: 36px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: white;
+            stroke-width: 4;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.3s;
+        }
+    </style>
+
+    <!-- JavaScript for Scroll to Top Button -->
+    <script>
+        // Show button and update progress ring on scroll
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
+
+        window.addEventListener("scroll", () => {
+            // Show/hide button
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+
+            // Update progress ring
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+        });
+
+        // Scroll to top when button clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
   </body>
 </html>
