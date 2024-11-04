@@ -1047,6 +1047,183 @@
 
 
     </script>
-</body>
+    <div id="cookie-consent">
+        <button class="close-btn" id="closeBtn" style="padding: 5px; height: 40px; width: 40px; border-radius: 100%; font-size: 30px;" >&times;</button>
+        <p>
+            We use cookies to improve your experience. By using our website, you consent to all cookies in accordance with our Cookie Policy.
+            <a href="#" id="learn-more-link">Learn More</a>
+    
+        </p>
+        <div id="learn-more-content" style="display: none;">
+            <p>Cookies are small text files that can be used by websites to make a user's experience more efficient. The law states that we can store cookies on your device if they are strictly necessary for the operation of this site. For all other types of cookies we need your permission.</p>
+            <p>This site uses different types of cookies. Some cookies are placed by third party services that appear on our pages.</p>
+        </div>
+    
+        <a href="#" id="show-less-link" style="display: none;">Show Less</a>
+        <button class="accept-cookies">Accept</button>
+        <button class="reject-cookies">Reject</button>
+      </div>
+    
+      <script src="script.js"></script>
+    
+    <script>
+    
+    
+    
+      document.addEventListener('DOMContentLoaded', function() {
+      const cookieConsent = document.getElementById('cookie-consent');
+      const acceptButton = document.querySelector('.accept-cookies');
+      const rejectButton = document.querySelector('.reject-cookies');
+      const learnMoreLink = document.getElementById('learn-more-link');
+      const learnMoreContent = document.getElementById('learn-more-content');
+    
+      // Hide preloader after page load
+      window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.style.display = 'none';
+        }
+        cookieConsent.style.display = 'block';
+      });
+    
+      // Check if localStorage is available
+      function localStorageAvailable() {
+        try {
+          const test = '__localStorage_test__';
+          localStorage.setItem(test, test);
+          localStorage.removeItem(test);
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+    
+      if (localStorageAvailable()) {
+        // Check if the user has already made a choice
+        if (localStorage.getItem('cookieConsent')) {
+          cookieConsent.style.display = 'none';
+        }
+    
+        // Function to handle cookie consent choice
+        function handleConsent(choice) {
+          localStorage.setItem('cookieConsent', choice);
+          cookieConsent.style.display = 'none';
+        }
+    
+        // Add event listeners to buttons
+        acceptButton.addEventListener('click', function() {
+          handleConsent('accepted');
+        });
+    
+        rejectButton.addEventListener('click', function() {
+          handleConsent('rejected');
+        });
+      } else {
+        // Hide consent if localStorage is not available
+        cookieConsent.style.display = 'none';
+      }
+    
+      // Add event listener to "Learn More" link
+      learnMoreLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        learnMoreContent.style.display = 'block';
+        learnMoreLink.style.display = 'none';
+      });
+    });
+    </script>
+    <style>
+     #cookie-consent {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #f1f1f1; /* Light background color */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: fit-content;
+    z-index: 10000;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    margin: 20px;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: border-color 0.3s;
+}
 
+#cookie-consent:hover {
+    border-right-color: #0056b3; /* Blue border color */
+    border-bottom-color: #0056b3;
+}
+
+#cookie-consent p {
+    color: #0056b3;  /* Blue text for better visibility */
+    text-align: center;  /* Center align the text */
+}
+
+.accept-cookies,
+.reject-cookies {
+    width: 260px;  /* Button width */
+    height: 35px;  /* Button height */
+    color: white;
+    background-color: #0056b3; /* Blue background for buttons */
+    border: none;
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;  /* Smooth transition for effects */
+}
+
+.dark-mode #cookie-consent {
+    background-color: #252423;
+}
+
+.dark-mode #cookie-consent p {
+    color: white;
+}
+
+.reject-cookies {
+    margin-top: 10px;
+}
+
+.accept-cookies:hover,
+.reject-cookies:hover {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgb(192, 216, 255);  /* Blue shadow effect */
+}
+
+.accept-cookies:hover {
+    background-color: rgb(173, 216, 230); /* Light blue */
+    color: #0056b3;
+}
+
+.reject-cookies:hover {
+    background-color: rgb(173, 216, 230); /* Light blue */
+    color: #0056b3;
+}
+
+#learn-more-link,
+#show-less-link {
+    color: #0056b3;  
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#learn-more-link:hover,
+#show-less-link:hover {
+    text-decoration: underline; 
+}
+
+#cookie-content {
+    display: none;
+    margin-top: 10px;
+}
+
+#back-to-top-container {
+    position: fixed;
+}
+</style>
+</body>
 </html>
