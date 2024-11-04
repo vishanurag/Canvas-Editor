@@ -459,6 +459,8 @@
             <button class="tool" id="circle">Circle</button>
             <button class="tool" id="text">Text</button>
             <button class="tool" id="textarea">Text Area</button>
+            <button class="tool" id="undoButton">Undo</button>
+            <button class="tool" id="redoButton">Redo</button>
             <div class="color-picker">
                 <input type="color" id="colorPicker">
                 <div class="color-palette">
@@ -622,6 +624,10 @@
         canvas.addEventListener('mousemove', draw);
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mouseout', stopDrawing);
+        let drawing = false;
+        let history = [];
+        let redoStack = [];
+
         function drawGrid() {
             if (!showGrid) return; // Only draw if the grid is enabled
             ctx.save();
@@ -659,13 +665,22 @@
         function startDrawing(e) {
             isDrawing = true;
             [startX, startY] = [e.offsetX, e.offsetY];
+            saveState();
+            redoStack = [];
+            draw(e);
         }
 
         function draw(e) {
             if (!isDrawing) return;
 
+
             const x = e.offsetX;
             const y = e.offsetY;
+
+            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
 
             switch (currentTool) {
                 case 'pencil':
@@ -708,6 +723,7 @@
         function stopDrawing(e) {
             if (!isDrawing) return;
             isDrawing = false;
+            ctx.beginPath();
 
             const x = e.offsetX;
             const y = e.offsetY;
@@ -764,6 +780,50 @@
                     break;
             }
         }
+
+// Save the current state to history
+        function saveState() {
+        history.push(canvas.toDataURL());
+    }
+
+     // Undo function
+        function undo() {
+        if (history.length > 0) {
+            redoStack.push(history.pop());
+            restoreState(history[history.length - 1]);
+    }
+}
+
+    // Redo function
+    function redo() {
+    if (redoStack.length > 0) {
+        const redoState = redoStack.pop();
+        history.push(redoState);  // Move redo state back to history
+        restoreState(redoState);  // Restore the redo state
+    }
+}
+
+// Restore the canvas state
+    function restoreState(dataUrl) {
+        if (dataUrl) {
+            const img = new Image();
+            img.src = dataUrl;
+            img.onload = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0);
+        };
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas if no history
+    }
+}
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseout', stopDrawing);
+document.getElementById('undoButton').addEventListener('click', undo);
+document.getElementById('redoButton').addEventListener('click', redo);
+
 
         window.embeddedChatbotConfig = {
             chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
