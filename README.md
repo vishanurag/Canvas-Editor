@@ -109,6 +109,7 @@
 ├── about.html
 ├── auth.css
 ├── auth.html
+├── basictemp.html
 ├── blog.html
 ├── canva.css
 ├── canva.html
@@ -139,7 +140,6 @@
 ├── src/
 │   ├── Contributor.css
 │   ├── Contributor.html
-|   ├── Contact.html
 │   ├── Contributor.js
 │   ├── Scripts/
 │   │   ├── BacktoTop.js
@@ -152,6 +152,7 @@
 │   │   ├── Style.css
 │   │   ├── Style_Blog_page.css
 │   │   ├── contact.css
+│   │   ├── contact.html
 │   │   ├── contributor.css
 │   │   ├── scroll.css
 │   │   └── signup.css
