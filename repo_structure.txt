@@ -9,6 +9,7 @@
 ├── about.html
 ├── auth.css
 ├── auth.html
+├── basictemp.html
 ├── blog.html
 ├── canva.css
 ├── canva.html
@@ -50,7 +51,8 @@
 │   │   ├── Responsive.css
 │   │   ├── Style.css
 │   │   ├── Style_Blog_page.css
-│   │   ├── contact_us_style.css
+│   │   ├── contact.css
+│   │   ├── contact.html
 │   │   ├── contributor.css
 │   │   ├── scroll.css
 │   │   └── signup.css
