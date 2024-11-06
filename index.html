@@ -22,9 +22,9 @@
             left: 10px;
             background-color: rgba(255, 255, 255, 0.8);
             /* Slightly opaque background for better visibility */
-            height: 100px;
-            width: 100px;
-            color: #333;
+            height: 80px;
+            width: 80px;
+            color: blue;
             /* Darker text for better contrast */
             font-weight: 700;
             font-size: 18px;
@@ -33,16 +33,17 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 12px;
+            border-radius: 50%;
             /* Softer corners */
             backdrop-filter: blur(10px);
             /* Increased blur for a modern touch */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
+            box-shadow: 0 6px 12px rgba(239, 237, 237, 0.15),
                 /* Slightly more pronounced shadow */
-                0 2px 4px rgba(0, 0, 0, 0.1);
+                0 2px 4px rgba(244, 242, 242, 0.1);
             z-index: 1000;
             transition: all 0.3s ease;
             /* Smooth transition for hover effect */
+            
         }
 
         .visitor-counter:hover {
@@ -145,7 +146,7 @@
             background-color: #0f0f10;
             color: white;
             padding: 17px;
-            padding-top: 100px;
+            padding-top: 25px;
         }
 
         .sidebar button {
@@ -215,25 +216,27 @@
 
         .tools {
             display: flex;
-            gap: 10px;
-            padding-left: 40px;
-            padding-bottom: 10px;
-            background-color: #34313b;
+    gap: 10px;
+    padding-left: 15px;
+    padding-bottom: 0px;
+    background-color: #34313b;
         }
 
         .tool {
             background-color: #0000FF;
-            border: none;
-            color: white;
-            /* padding: 10px; */
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 0px 0px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+    border: none;
+    color: white;
+    /* padding: 10px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    height: 50px;
+    width: 85px;
         }
 
         .tool:hover {
