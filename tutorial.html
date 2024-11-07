@@ -13,37 +13,41 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
+        
+        /* Navbar */
         .navbar {
-        background-color: #f0adfb;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* Center aligns the navbar */
-        position: fixed; /* Sticks to the top */
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .navbar h1 {
-        color: rgb(255, 255, 255);
-        margin: 0;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-links a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        padding: 6px 4px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover {
-        background-color: #541058;
-    }
+            background-color: #f0adfb;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar h1 {
+            color: rgb(255, 255, 255);
+            margin: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 6px 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: #541058;
+        }
+        
+        /* Logo */
         .logo {
             color: white;
             font-size: 24px;
@@ -52,53 +56,28 @@
             display: flex;
             align-items: center;
         }
+        
         .logo::after {
             content: '✏️';
             margin-left: 5px;
             font-size: 20px;
         }
-        .navbar {
-        background-color: #f0adfb;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* Center aligns the navbar */
-        position: fixed; /* Sticks to the top */
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .navbar h1 {
-        color: rgb(255, 255, 255);
-        margin: 0;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-links a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        padding: 6px 4px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover {
-        background-color: #541058;
-    }
+        
+        /* Content */
         .content {
             max-width: 800px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
+        
         .heading {
             font-size: 2.5rem;
             color: #353047;
             margin-bottom: 2rem;
             text-align: center;
         }
+        
+        /* Tutorial Section */
         .tutorial-section {
             background-color: rgba(255, 255, 255, 0.3);
             border-radius: 8px;
@@ -106,11 +85,13 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        
         h2 {
             color: #353047;
             border-bottom: 2px solid #353047;
             padding-bottom: 10px;
         }
+        
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -120,6 +101,12 @@
             font-weight: bold;
             text-align: center;
         }
+        
+        .green { background-color: #28b864; }
+        .purple { background-color: #9b59b6; }
+        .red { background-color: #e74c3c; }
+        
+        /* Call to Action */
         .cta {
             text-align: center;
             margin-top: 3rem;
@@ -128,10 +115,11 @@
             color: #fff;
             border-radius: 10px;
         }
+        
         .cta h2 {
             color: #f5f5f5;
-            border-bottom: none;
         }
+        
         .cta-button {
             display: inline-block;
             background-color: #353047;
@@ -143,12 +131,12 @@
             transition: background-color 0.3s ease;
             margin-top: 1rem;
         }
+        
         .cta-button:hover {
             background-color: #1a252f;
         }
-        .green { background-color: #28b864; }
-        .purple { background-color: #9b59b6; }
-        .red { background-color: #e74c3c; }
+        
+        /* Floating Circles */
         .circle {
             height: 24px;
             width: 24px;
@@ -158,50 +146,95 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: 99999999;
+            z-index: 9999;
             transition: transform 0.1s ease-out;
+        }
+        
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            outline: none;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+        
+        #scrollToTopBtn span {
+            font-size: 24px;
+            color: white;
+        }
+        
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 36px;
+            height: 36px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        
+        .ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+        }
+        
+        .ring-progress {
+            fill: none;
+            stroke: white;
+            stroke-width: 4;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.3s;
         }
     </style>
 </head>
 <body>
-    <!-- Circles -->
+    <!-- Circles for Mouse Effect -->
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    
+    <!-- Navbar -->
     <nav class="navbar">
-            <div class="nav-links">
-                <h1 class="canvas">Canvas Editor</h1>
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="review.html">Review</a>
-                <a href="testimonial.html">Testimonial</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="tutorial.html">Tutorial</a>
-                <a href="Blog_page.html">Blog</a>
-                <a href="Faq.html">FAQ</a>
-                <a href="./Feedback.html">Feedback</a>
-                <!-- <a href="signup.html">Sign Up</a> -->
-                <a href="contributors.html">Contributors</a>
-            
-            </div>
-
+        <div class="nav-links">
+            <h1 class="canvas">Canvas Editor</h1>
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="./Feedback.html">Feedback</a>
+            <a href="contributors.html">Contributors</a>
+        </div>
+    </nav>
+    
     <h1 class="heading">Canvas Editor Tutorial</h1>
 
     <div class="content">
@@ -247,181 +280,31 @@
         </div>
         
         <div class="tutorial-section">
-            <h2>5. Background Options</h2>
-            <p>Customize your canvas background:</p>
-            <ul>
-                <li><strong>Background Image:</strong> Upload an image to use as your canvas background.</li>
-                <li><strong>Background Color:</strong> Choose a solid color for your canvas background.</li>
-            </ul>
-        </div>
-        
-        <div class="tutorial-section">
-            <h2>6. Saving Your Work</h2>
-            <p>When you're done, save your masterpiece:</p>
-            <span class="button green">Save</span>
-            <span class="button red">Clear</span>
-            <span class="button purple">Download</span>
-            <span class="button purple">Save Image</span>
-            <ul>
-                <li><strong>Save:</strong> Store your work for later editing.</li>
-                <li><strong>Clear:</strong> Start over with a blank canvas.</li>
-                <li><strong>Download:</strong> Save your work to your device.</li>
-                <li><strong>Save Image:</strong> Export your canvas as an image file.</li>
-            </ul>
-        </div>
-        <div class="cta">
-            <h2>Ready to unleash your creativity?</h2>
-            <p>Join thousands of satisfied users and start designing today!</p> 
-            <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
+            <h2>5. Export Options</h2>
+            <p>Save your work in various formats:</p>
+            <span class="button green">PNG</span>
+            <span class="button purple">JPEG</span>
+            <span class="button red">PDF</span>
+            <p>Choose a format, then download your masterpiece.</p>
         </div>
     </div>
-    <script>
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
 
-        // Colors for the circles
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
+    <!-- Call to Action -->
+    <div class="cta">
+        <h2>Ready to Create?</h2>
+        <p>Try the Canvas Editor now and start creating amazing artwork!</p>
+        <a href="editor.html" class="cta-button">Launch Canvas Editor</a>
+    </div>
 
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
-        });
-
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
-
-        // Animation function to move the circles
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-
-            circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-
-                circle.x = x;
-                circle.y = y;
-
-                // Get the next circle in the sequence
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
-            });
-
-            // Repeat the animation
-            requestAnimationFrame(animateCircles);
-        }
-
-        // Start the animation
-        animateCircles();
-    </script>
+    <!-- Scroll to Top Button -->
     <button id="scrollToTopBtn">
+        <span>↑</span>
         <div class="progress-ring">
-            <svg viewBox="0 0 36 36">
-                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            <svg>
+                <circle class="ring-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="ring-progress" cx="18" cy="18" r="16"></circle>
             </svg>
         </div>
-        <span>&uarr;</span>
     </button>
-    <style>
-/* Scroll to Top Button */
-#scrollToTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            outline: none;
-            border: none;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        #scrollToTopBtn.show {
-            opacity: 1;
-        }
-
-        #scrollToTopBtn span {
-            font-size: 24px;
-            color: white;
-        }
-
-        /* Progress Ring */
-        .progress-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 36px;
-            height: 36px;
-            transform: translate(-50%, -50%);
-        }
-
-        .progress-ring svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .ring-bg {
-            fill: none;
-            stroke: rgba(255, 255, 255, 0.2);
-            stroke-width: 4;
-        }
-
-        .ring-progress {
-            fill: none;
-            stroke: white;
-            stroke-width: 4;
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-            transition: stroke-dashoffset 0.3s;
-        }
-    </style>
-
-    <!-- JavaScript for Scroll to Top Button -->
-    <script>
-        // Show button and update progress ring on scroll
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        const ringProgress = document.querySelector(".ring-progress");
-
-        window.addEventListener("scroll", () => {
-            // Show/hide button
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add("show");
-            } else {
-                scrollToTopBtn.classList.remove("show");
-            }
-
-            // Update progress ring
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
-        });
-
-        // Scroll to top when button clicked
-        scrollToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
 </body>
 </html>
