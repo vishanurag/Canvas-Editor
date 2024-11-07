@@ -5,8 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool</title>
+    <meta name="description" content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
+    <meta name="keywords" content="canvas editor, drawing tool, image editor, interactive editor, digital canvas, online drawing, image editing features, paint tool, art editor, graphic design tool, photo editing, vector editor, HTML5 canvas, JavaScript drawing, online sketch, freehand drawing, digital art tool, custom brushes, canvas manipulation, web-based editor, graphics editor, color palette, shape editor, text overlay, photo effects, pixel art, raster editor, online image editor, creative tools, visual editor">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/vishanurag/Canvas-Editor">
+    <meta property="og:title" content="Canvas Editor - Interactive Drawing & Editing Tool">
+    <meta property="og:description" content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
+    <meta property="og:image" content="resources/favicon.ico"> 
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/vishanurag/Canvas-Editor">
+    <meta property="twitter:title" content="Canvas Editor - Interactive Drawing & Editing Tool">
+    <meta property="twitter:description" content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
+    <meta property="twitter:image" content="resources/favicon.ico"> 
+    
+    <!-- Additional SEO Tags -->
+    <meta name="keywords" content="canvas editor, drawing tool, image editor, interactive editor, digital canvas, online drawing, image editing features">
+    <meta name="author" content="Vishanurag">
+    <link rel="canonical" href="https://github.com/vishanurag/Canvas-Editor">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
+    
     <div class="visitor-counter">
         <div>Visitor</div>
         <div class="website-counter"></div>
@@ -48,7 +70,7 @@
         .visitor-counter:hover {
             transform: scale(1.05);
             /* Slightly enlarge on hover */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(197, 56, 215, 0.2);
             /* Enhance shadow on hover */
         }
 
@@ -101,7 +123,7 @@
         }
 
         .dark-mode .visitor-counter {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(185, 66, 196, 0.7);
             /* Darker background for dark mode */
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
                 0 2px 4px rgba(255, 255, 255, 0.05);
@@ -142,7 +164,7 @@
 
         .sidebar {
             width: 100px;
-            background-color: #0f0f10;
+            background-color: #eca6f4;
             color: white;
             padding: 17px;
             padding-top: 100px;
@@ -153,9 +175,9 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            background-color: #0000FF;
+            background-color: #63077f;
             border: none;
-            color: white;
+            color: rgb(248, 249, 249);
             text-align: left;
             cursor: pointer;
             border-radius: 5px;
@@ -164,7 +186,7 @@
         }
 
         .sidebar button:hover {
-            background-color: #340c90;
+            background-color: #911da1;
         }
 
         .canvas{
@@ -180,7 +202,7 @@
         }
 
         .navbar {
-            background-color: #34313b;
+            background-color: #f0adfb;
             padding: 10px;
             display: flex;
             justify-content: space-between;
@@ -210,7 +232,7 @@
         }
 
         .nav-links a:hover {
-            background-color: #8a7ba8;
+            background-color: #541058;
         }
 
         .tools {
@@ -218,11 +240,11 @@
             gap: 10px;
             padding-left: 40px;
             padding-bottom: 10px;
-            background-color: #34313b;
+            background-color: #e76af5;
         }
 
         .tool {
-            background-color: #0000FF;
+            background-color: #460346;
             border: none;
             color: white;
             /* padding: 10px; */
@@ -237,15 +259,15 @@
         }
 
         .tool:hover {
-            background-color: #340c90;
+            background-color: #87087c;
         }
 
         .tool.active {
-            background-color: #090874;
+            background-color: #5e044f;
         }
 
         #canvas {
-            border: 1px solid #000000;
+            border: 1px solid #e049e8;
             background-color: white;
             cursor: crosshair;
             width: 100%;
@@ -275,7 +297,7 @@
             background: white;
             padding: 10px;
             border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(187, 60, 178, 0.1);
             display: none;
             grid-template-columns: repeat(5, 1fr);
             gap: 5px;
@@ -295,7 +317,7 @@
         }
 
         .footer {
-            background-color: #34313b;
+            background-color: #fb99f8;
             color: rgb(255, 255, 255);
 
         }
@@ -318,7 +340,7 @@
         }
 
         .newsletter-section button {
-            background-color: #0000ff;
+            background-color: #d426d7;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -329,7 +351,7 @@
         }
 
         .newsletter-section button:hover {
-            background-color: #340c90;
+            background-color: #a008b7;
         }
 
         .text-size-control {
@@ -337,7 +359,7 @@
             align-items: center;
             gap: 10px;
             margin: 10px 0;
-            background-color: #0000FF;
+            background-color: #c350da;
             padding: 10px;
             border-radius: 5px;
             color: white;
@@ -352,7 +374,7 @@
         }
 
         .text-size-control:hover {
-            background-color: #090874;
+            background-color: #5d0874;
             transition: background-color 0.3s;
         }
 
@@ -439,12 +461,7 @@
                 <a href="./Feedback.html">Feedback</a>
                 <!-- <a href="signup.html">Sign Up</a> -->
                 <a href="contributors.html">Contributors</a>
-
-                <a href="login.html">Login</a>
-                
-
-              
-
+            
             </div>
             <a href="auth.html" class="profile">
                 <i class="fas fa-user-circle"></i>
