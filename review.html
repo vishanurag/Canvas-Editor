@@ -259,11 +259,12 @@
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Back to Top
-<!-- Footer Section -->
-<footer class="text-center text-md-left mt-5 pt-5">
-    <div class="container text-md-left">
+<!-- Back to Top -->
+<!-- Footer -->
+<footer class="text-center">
+    <div class="container">
         <div class="row">
             <!-- Footer Columns -->
             <div class="col-md-4">
@@ -293,3 +294,154 @@
         © 2024 Canvas Editor. All rights reserved.
     </div>
 </footer>
+<script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+            // Update the position and scale of each circle
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+
+            circle.x = x;
+            circle.y = y;
+
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
+
+    // Start the animation
+    animateCircles();
+</script>
+<button id="scrollToTopBtn">
+    <div class="progress-ring">
+        <svg viewBox="0 0 36 36">
+            <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+        </svg>
+    </div>
+    <span>&uarr;</span>
+</button>
+<style>
+/* Scroll to Top Button */
+#scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        outline: none;
+        border: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    #scrollToTopBtn.show {
+        opacity: 1;
+    }
+
+    #scrollToTopBtn span {
+        font-size: 24px;
+        color: white;
+    }
+
+    /* Progress Ring */
+    .progress-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 36px;
+        height: 36px;
+        transform: translate(-50%, -50%);
+    }
+
+    .progress-ring svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+
+    .ring-bg {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.2);
+        stroke-width: 4;
+    }
+
+    .ring-progress {
+        fill: none;
+        stroke: white;
+        stroke-width: 4;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transition: stroke-dashoffset 0.3s;
+    }
+</style>
+
+<!-- JavaScript for Scroll to Top Button -->
+<script>
+    // Show button and update progress ring on scroll
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const ringProgress = document.querySelector(".ring-progress");
+
+    window.addEventListener("scroll", () => {
+        // Show/hide button
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+
+        // Update progress ring
+        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+    });
+
+    // Scroll to top when button clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+</body>
+</html>
