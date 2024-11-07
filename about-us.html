@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
     <style>
         /* General Style */
         body {
@@ -16,6 +22,7 @@
             color: #333;
             overflow-x: hidden;
         }
+
         header {
             background: #fa9cfa;
             color: #fff;
@@ -25,6 +32,7 @@
             z-index: 1000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -33,6 +41,7 @@
             margin: 0 auto;
             padding: 0 1rem;
         }
+
         .site-name {
             font-size: 24px;
             font-weight: 700;
@@ -40,6 +49,11 @@
             letter-spacing: 1px;
         }
 
+
+        .navbar a {
+            color: #bbb;
+            font-size: 16px;
+=======
         .navbar .nav-links {
             display: flex;
             gap: 20px;
@@ -47,6 +61,7 @@
 
         .nav-links a {
             color: rgb(255, 255, 255);
+
             text-decoration: none;
             padding: 6px 4px;
             border-radius: 4px;
@@ -57,6 +72,22 @@
             background-color: #541058;
         }
 
+
+        .navbar a:hover {
+            color: #fff;
+        }
+
+        .navbar .auth a {
+            background: #ffb7fd;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        .navbar .auth a:hover {
+            background: #fff;
+            color: #ffb7fd;
+=======
         /* Responsive Navbar */
         .hamburger {
             display: none;
@@ -88,6 +119,7 @@
             .hamburger {
                 display: block;
             }
+
         }
 
         /* About Section */
@@ -95,12 +127,14 @@
             padding: 4rem 1rem;
             text-align: center;
         }
+
         .about-section h2 {
             font-size: 2.5rem;
             color: #353047;
             margin-bottom: 1rem;
             text-align: center;
         }
+
         .about-content {
             display: flex;
             flex-wrap: wrap;
@@ -111,7 +145,9 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .about-text, .about-image {
+
+        .about-text,
+        .about-image {
             flex: 1;
             max-width: 500px;
             padding: 20px;
@@ -119,35 +155,48 @@
             border-radius: 20px;
             transition: transform 0.3s;
         }
+
         .about-image {
             display: flex;
             justify-content: center;
         }
+
         .about-image img {
             width: 100%;
             border-radius: 20px;
         }
-        .about-text:hover, .about-image:hover {
+
+        .about-text:hover,
+        .about-image:hover {
             transform: scale(1.05);
         }
+
+
+        h3 {
+            font-size: 2rem;
+=======
         h1 {
             font-size: 1.2rem;
+
             color: #353047;
             margin-bottom: 1rem;
             text-align: center;
         }
+
         .desc {
             text-align: center;
             max-width: 800px;
             margin: 1.5rem auto;
             padding: 1rem;
         }
+
         .teams {
             max-width: 800px;
             margin: 1.5rem auto;
             padding: 1rem;
             text-align: center;
         }
+
         .team-member h4 {
             font-size: 1.5rem;
             margin-bottom: 0.3rem;
@@ -162,12 +211,14 @@
             text-align: center;
             font-size: 0.9rem;
         }
+
         footer a {
             color: #bbb;
             margin: 0 0.5rem;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         footer a:hover {
             color: #fff;
         }
@@ -176,7 +227,9 @@
             .about-content {
                 flex-direction: column;
             }
-            .about-text, .about-image {
+
+            .about-text,
+            .about-image {
                 width: 90%;
             }
         }
@@ -242,6 +295,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Circles -->
     <div class="circle"></div>
@@ -274,7 +328,11 @@
             </div>
             <div class="about-text">
                 <p>
-                    Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures, you can easily explore your creativity and experiment with different styles. Whether you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a seamless experience, allowing you to focus on what matters most—your art.
+                    Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive
+                    platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors,
+                    and textures, you can easily explore your creativity and experiment with different styles. Whether
+                    you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a
+                    seamless experience, allowing you to focus on what matters most—your art.
                 </p>
             </div>
         </div>
@@ -282,12 +340,14 @@
 
     <h3>Our Mission</h3>
     <p class="desc">
-        To empower creativity by making digital art accessible to everyone, fostering a global community of artists and innovators.
+        To empower creativity by making digital art accessible to everyone, fostering a global community of artists and
+        innovators.
     </p>
 
     <h3>Our Story</h3>
     <p class="desc">
-        Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing into a vibrant platform used by artists worldwide.
+        Founded in 2024, Creative Canvas Tool emerged from a passion project to revolutionize digital artistry, growing
+        into a vibrant platform used by artists worldwide.
     </p>
 
     <h3>Our Team</h3>
@@ -301,6 +361,99 @@
             <p>Project Mentor</p>
         </div>
     </div>
+    <style>
+        footer {
+            background-color: #2b2b3c;
+            padding: 30px 0;
+            color: #e4e4e7;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            /* Set a max width for the container */
+            margin: 0 auto;
+            /* Center the container */
+            padding: 0 15px;
+            /* Padding for smaller screens */
+        }
+
+        footer .row {
+            display: flex;
+            /* Use flexbox to arrange items */
+            justify-content: space-between;
+            /* Space between columns */
+            flex-wrap: wrap;
+            /* Allow items to wrap */
+        }
+
+        footer .col-md-4 {
+            flex: 1;
+            /* Each column takes equal space */
+            margin: 15px;
+            /* Margin around columns for spacing */
+            min-width: 250px;
+            /* Set a minimum width for responsiveness */
+        }
+
+        footer .footer-heading {
+            font-weight: 700;
+            color: #f05454;
+        }
+
+        footer a {
+            color: #e4e4e7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6b6b;
+        }
+
+        footer .social-icons i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #e4e4e7;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons i:hover {
+            color: #ff6b6b;
+        }
+
+        .copy {
+            text-align: center;
+            /* Center align the text */
+            margin-top: -15px;
+            /* Space above the copyright section */
+            font-size: 14px;
+            /* Font size for copyright text */
+            color: #e4e4e7;
+            /* Text color */
+            background-color: #333;
+        }
+
+        .copy p {
+            margin: 10px 0;
+            /* Margin around the paragraph */
+        }
+
+        .copy a {
+            color: #f05454;
+            /* Link color */
+            text-decoration: none;
+            /* Remove underline from links */
+            margin: 0 10px;
+            /* Space between links */
+            transition: color 0.3s ease;
+            /* Transition for hover effect */
+        }
+
+        .copy a:hover {
+            color: #ff6b6b;
+            /* Change color on hover */
+        }
+    </style>
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTopBtn">
@@ -314,11 +467,47 @@
     </button>
 
     <!-- Footer -->
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="footer-heading">About Us</h1>
+                    <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive
+                        platform that transforms ideas into stunning digital artwork. </p>
+                </div>
+                <div class="col-md-4">
+                    <h1 class="footer-heading">Quick Links</h1>
+                    <a href="index.html">Home</a><br>
+                    <a href="about-us.html">About-us</a><br>
+                    <a href="tutorial.html">Tutorial</a><br>
+                    <a href="Faq.html">FAQ</a>
+                </div>
+                <div class="col-md-4">
+                    <h1 class="footer-heading">Follow Us</h1>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>Contact us at: info@example.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copy">
+        <p>&copy; <span id="year"></span> Creative Canvas Tool. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+    </div>
+
+=======
     <footer>
         <p>© 2024 Creative Canvas Tool. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
     <!-- JavaScript for Scroll to Top Button -->
+
     <script>
         // Show button and update progress ring on scroll
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -342,5 +531,12 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+=======
+
 </body>
+
 </html>
