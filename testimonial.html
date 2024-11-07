@@ -22,6 +22,15 @@
         }
 
         /* Navbar styling */
+        .navbar {
+        background-color: #f0adfb;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Center aligns the navbar */
+        position: fixed; /* Sticks to the top */
+        width: 100%;
+        z-index: 1000;
+    }
         header {
             background: #333;
             color: #fff;
@@ -66,6 +75,27 @@
             color: #ffb7fd;
         }
 
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 6px 4px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #541058;
+    }
         /* Hero section */
         .hero {
             text-align: center;
@@ -425,6 +455,22 @@
     <div class="circle"></div>
 
     <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <h1 class="canvas">Canvas Editor</h1>
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="./Feedback.html">Feedback</a>
+            <!-- <a href="signup.html">Sign Up</a> -->
+            <a href="contributors.html">Contributors</a>
+        
+        </div>
     <header>
         <div class="navbar">
             <div class="site-name">Creative Canvas Tool</div>
