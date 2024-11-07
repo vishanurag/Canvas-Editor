@@ -2,6 +2,268 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f3e7ff, #e5d0ff, #f0e6ff);
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #2d1b4d;
+        }
+
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: all 0.2s ease-out;
+            opacity: 0.6;
+        }
+
+        .navbar {
+        background-color: #f0adfb;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Center aligns the navbar */
+        position: fixed; /* Sticks to the top */
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 6px 4px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #541058;
+    }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .site-name {
+            background: linear-gradient(45deg, #6b21a8, #9333ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #5b21b6;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(147, 51, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .banner {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 2rem 0;
+        }
+
+        .banner-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner-title span {
+            color: #6b21a8;
+        }
+
+        .search-input {
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50%;
+            max-width: 500px;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .search-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 2rem;
+            background: #7c3aed;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 0.5rem;
+        }
+
+        .search-btn:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .title {
+          display: flex;
+          flex-direction: column; /* Stacks h2 and p vertically */
+          align-items: center;
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .title h2 {
+            font-size: 2.5rem;
+            color: #4c1d95;
+            margin-bottom: 0.5rem;
+        }
+        .title p {
+          margin: 0;
+          font-size: 1rem; 
+        }
+
+        .design-content, .blog-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .design-item, .blog-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .design-item:hover, .blog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .design-img, .blog-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .design-img img, .blog-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .design-img span, .blog-img span {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(124, 58, 237, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .design-title, .blog-text {
+            padding: 1.5rem;
+        }
+
+        .design-title a, .blog-text h2 {
+            color: #4c1d95;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .blog-text span {
+            color: #6b21a8;
+            font-size: 0.9rem;
+        }
+
+        .blog-text p {
+            color: #4a5568;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .blog-text a {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #7c3aed;
+            color: white;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-text a:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #6b21a8;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+        }
+
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Section</title>
@@ -387,53 +649,42 @@
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
-  <!-- Previous HTML structure remains the same, just using placeholder images -->
-  <!-- Replace all image sources with placeholder API -->
-  <!-- For example: -->
-  <nav class="navbar">
-    <div class="title">
-      <a href="index.html" class="logo-link">
-        <h1 class="site-name">Canvas Editor</h1>
-        <i class="fa-solid fa-paintbrush"></i>
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about-us.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="Blog_page.html">Blogs</a>
-      <a href="Faq.html">FAQ</a>
-      <a href="contributors.html">Contributors</a>
-      <a href="testimonial.html">Testimonial</a>
-      <a href="auth.html">Login</a>
-    </div>
-  </nav>
-  <div id="progress-container">
-    <div id="progress-bar"></div>
-  </div>
 
-  <header>
-    <div class="banner">
-      <div class="container">
-        <h1 class="banner-title">
-          <span>Creative</span> Canvas Blog
-        </h1>
-        <p>everything that you want to know about creativity</p>
-        <form>
-          <input type="text" class="search-input" placeholder="search blogs and designs. . .">
-          <button type="submit" class="search-btn">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
+    <!-- Previous HTML structure remains the same, just using placeholder images -->
+    <!-- Replace all image sources with placeholder API -->
+    <!-- For example: -->
+    <nav class="navbar">
+      <div class="nav-links">
+          <h1 class="canvas">Canvas Editor</h1>
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="review.html">Review</a>
+          <a href="testimonial.html">Testimonial</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="tutorial.html">Tutorial</a>
+          <a href="Blog_page.html">Blog</a>
+          <a href="Faq.html">FAQ</a>
+          <a href="./Feedback.html">Feedback</a>
+          <!-- <a href="signup.html">Sign Up</a> -->
+          <a href="contributors.html">Contributors</a>
+      
       </div>
-    </div>
-  </header>
+    </nav>
+<header>
+      <div class = "banner">
+        <div class = "container">
+          <h1 class = "banner-title">
+            <span>Creative</span> Canvas Blog
+          </h1>
+          <p>everything that you want to know about creativity</p>
+          <form>
+            <input type = "text" class = "search-input" placeholder="search blogs and designs. . .">
+            <button type = "submit" class = "search-btn">
+              <i class = "fas fa-search"></i>
+            </button>
+          </form>
+        </div>
 
-  <section class="design" id="design">
-    <div class="container">
-      <div class="title">
-        <h2>Recent Designs</h2>
-        <p>recent arts & designs blogs</p>
       </div>
 
       <div class="design-content">
@@ -643,6 +894,35 @@
     <span style="color: #333; font-size: 14px;">Creative Canvas Blog Page</span>
   </footer>
 
+  
+  
+     <!-- Back to Top Button -->
+    <script>
+      // Coordinates for the cursor
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      // Colors for the circles
+      const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+      ];
+
+      // Assign colors and initial position to each circle
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
+
+      // Update the coordinates when the mouse moves
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+
 
   <!-- Back to Top Button -->
   <button id="BacktoTop">
@@ -745,6 +1025,7 @@
             break;
           }
         }
+
       }
     });
 
