@@ -243,7 +243,7 @@
         </div>
         <div class="credit" style="font-size: 1rem; text-align: center;">
             <p style="color: white;">
-                Created by <span><a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a></span> | All rights reserved © 2024
+                Created by <span><a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a></span> | All rights reserved © <span id="year"></span>
 
             </p>
         </div>
@@ -318,5 +318,8 @@
         // Start the animation
         animateCircles();
     </script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>

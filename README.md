@@ -107,7 +107,13 @@
 ├── README.md
 ├── about-us.html
 ├── about.html
+├── auth.css
+├── auth.html
 ├── blog.html
+├── canva.css
+├── canva.html
+├── canva.js
+├── canva.md
 ├── community.html
 ├── contributors.html
 ├── download (1).webp
@@ -133,6 +139,7 @@
 ├── src/
 │   ├── Contributor.css
 │   ├── Contributor.html
+|   ├── Contact.html
 │   ├── Contributor.js
 │   ├── Scripts/
 │   │   ├── BacktoTop.js
@@ -144,7 +151,7 @@
 │   │   ├── Responsive.css
 │   │   ├── Style.css
 │   │   ├── Style_Blog_page.css
-│   │   ├── contact_us_style.css
+│   │   ├── contact.css
 │   │   ├── contributor.css
 │   │   ├── scroll.css
 │   │   └── signup.css

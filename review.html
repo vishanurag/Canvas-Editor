@@ -14,26 +14,25 @@
 <style>
     body {
         font-family: "Poppins", sans-serif;
-        background: #1e1e2f;
-        color: #e4e4e7;
+        background: #fafafa;
+        color: #333;
         padding: 0;
         margin: 0;
     }
 
-    h2 {
-        font-size: 28px;
+    h1, h2 {
+        font-size: 32px;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
-        margin-top: 50px;
-        margin-bottom: 40px;
-        color: #f05454;
+        margin: 60px 0 40px;
+        color: #6a0dad;
         position: relative;
     }
 
-    h2::after {
+    h1::after, h2::after {
         content: "";
-        width: 80px;
+        width: 100px;
         height: 4px;
         background-color: #ff6b6b;
         position: absolute;
@@ -43,11 +42,12 @@
     }
 
     .carousel-item {
-        padding: 20px;
-        background-color: #2b2b3c;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        transition: all 0.3s ease;
+        padding: 30px;
+        background-color: #f4f4f9;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        margin-bottom: 40px;
     }
 
     .carousel-item:hover {
@@ -55,75 +55,57 @@
     }
 
     .media img {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
         border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .testimonial {
-        margin-left: 20px;
+        margin-left: 25px;
         font-style: italic;
-        color: #ccc;
+        color: #666;
     }
 
     .overview {
         margin-top: 10px;
         font-weight: 600;
-        color: #f05454;
-    }
-
-    .progress-bar {
-        background-color: #f05454;
-    }
-
-    .services img {
-        width: 100%;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        color: #ff6b6b;
     }
 
     .services h3 {
-        color: #f05454;
+        color: #6a0dad;
         font-weight: 700;
+        margin-top: 20px;
     }
 
     .services h5 {
-        margin-top: 10px;
+        margin-top: 15px;
         font-size: 18px;
-        color: #ccc;
+        color: #555;
         display: flex;
         align-items: center;
     }
 
     .services h5 i {
-        margin-right: 10px;
+        margin-right: 12px;
         color: #ff6b6b;
     }
 
-    .carousel-indicators li {
-        background-color: #444;
-        border-radius: 50%;
-        width: 12px;
-        height: 12px;
-    }
-
-    .carousel-indicators li.active {
-        background-color: #f05454;
+    .progress-bar {
+        background-color: #6a0dad;
     }
 
     #BacktoTop {
         position: fixed;
-        bottom: 50px;
-        right: 20px;
-        background-color: #f05454;
+        bottom: 60px;
+        right: 25px;
+        background-color: #6a0dad;
         color: white;
         padding: 15px;
         border-radius: 50%;
         font-size: 18px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        transition: all 0.3s ease;
-        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         cursor: pointer;
     }
 
@@ -131,40 +113,55 @@
         background-color: #ff6b6b;
     }
 
-    .nav {
-        background-color: #2b2b3c;
+    .navbar {
+        background-color: #e588e7;
         padding: 15px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .nav a {
-        color: #e4e4e7;
-        font-weight: 600;
-        margin: 0 15px;
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
         text-decoration: none;
-        transition: color 0.3s ease;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
     }
 
-    .nav a:hover {
-        color: #ff6b6b;
+    .nav-links a:hover {
+        background-color: #ef9ef5;
     }
 
     footer {
-        background-color: #2b2b3c;
-        padding: 30px 0;
-        color: #e4e4e7;
+        background-color: #333;
+        padding: 40px 0;
+        color: #fafafa;
     }
 
     footer .footer-heading {
         font-weight: 700;
-        color: #f05454;
+        color: #ff6b6b;
     }
 
     footer a {
-        color: #e4e4e7;
+        color: #fafafa;
         text-decoration: none;
-        transition: color 0.3s ease;
     }
 
     footer a:hover {
@@ -174,159 +171,127 @@
     footer .social-icons i {
         font-size: 24px;
         margin-right: 15px;
-        color: #e4e4e7;
-        transition: color 0.3s ease;
+        color: #fafafa;
     }
 
     footer .social-icons i:hover {
         color: #ff6b6b;
     }
 
-    .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: #ff6b6b;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 99999999;
-    }
 </style>
-
 </head>
 <body>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="canvas">Canvas Editor</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="contributors.html">Contributors</a>
+        </div>
+    </nav>
 
-<div class="nav">
-    <a href="index.html">Home</a>
-    <a href="about-us.html">About-us</a>
-    <a href="tutorial.html">Tutorial</a>
-    <a href="testimonial.html">Testimonial</a>
-	<a href="signup.html">Sign up</a>
-	<a href="login.html">Login</a>
-</div>
-
-<!-- Review Section -->
-<div class="container pt-5">
-    <h2>What <b>Our Customers</b> Are Saying</h2>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="media">
-                            <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
-                            <div class="media-body testimonial">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
+    <!-- Review Section -->
+    <div class="container pt-5">
+        <h2>What <b>Our Customers</b> Are Saying</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="media">
+                                <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
+                                <div class="media-body testimonial">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="media">
-                            <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
-                            <div class="media-body testimonial">
-                                <p>Vestibulum quis quam ut magna consequat faucibus.</p>
-                                <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
+                        <div class="col-sm-6">
+                            <div class="media">
+                                <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
+                                <div class="media-body testimonial">
+                                    <p>Vestibulum quis quam ut magna consequat faucibus.</p>
+                                    <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Repeat for other carousel items -->
             </div>
-
-            <!-- Repeat for other carousel items -->
         </div>
     </div>
-</div>
 
-<!-- Services Section -->
-<div class="container pt-5">
-    <h2>SERVICES LOVED THE MOST</h2>
-    <div class="row services">
-        <!-- <div class="col-sm-6">
-            <img src="feature.webp" alt="">
-        </div> -->
-        <div class="col-sm-6" style ="margin-left: 20vw;">
-            <h3>Excellent Features</h3>
-            <h5><i class="fa-solid fa-pencil"></i> Draw Tool</h5>
-            <div class="progress">
-                <div class="progress-bar" style="width: 50%;"></div>
-            </div>
-            <h5><i class="fa-solid fa-paintbrush"></i> Brush Tool</h5>
-            <div class="progress">
-                <div class="progress-bar" style="width: 25%;"></div>
-            </div>
-            <h5><i class="fa-solid fa-eraser"></i> Eraser Tool</h5>
-            <div class="progress">
-                <div class="progress-bar" style="width: 50%;"></div>
-            </div>
-            <h5><i class="fa-solid fa-shapes"></i> Shapes</h5>
-            <div class="progress">
-                <div class="progress-bar" style="width: 75%;"></div>
-            </div>
-            <h5><i class="fa-solid fa-text-height"></i> Text Tool</h5>
-            <div class="progress">
-                <div class="progress-bar" style="width: 100%;"></div>
+    <!-- Services Section -->
+    <div class="container pt-5">
+        <h2>Services Loved the Most</h2>
+        <div class="row services">
+            <div class="col-sm-6 mx-auto">
+                <h3>Excellent Features</h3>
+                <h5><i class="fa-solid fa-pencil"></i> Draw Tool</h5>
+                <div class="progress mb-3">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <h5><i class="fa-solid fa-paintbrush"></i> Brush Tool</h5>
+                <div class="progress mb-3">
+                    <div class="progress-bar" style="width: 25%;"></div>
+                </div>
+                <h5><i class="fa-solid fa-eraser"></i> Eraser Tool</h5>
+                <div class="progress mb-3">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <h5><i class="fa-solid fa-shapes"></i> Shapes</h5>
+                <div class="progress mb-3">
+                    <div class="progress-bar" style="width: 75%;"></div>
+                </div>
+                <h5><i class="fa-solid fa-text-height"></i> Text Tool</h5>
+                <div class="progress mb-3">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Back to Top -->
-<a id="BacktoTop" href="#">&#9650;</a>
-
 <!-- Footer -->
 <footer class="text-center">
     <div class="container">
         <div class="row">
+            <!-- Footer Columns -->
             <div class="col-md-4">
-                <h4 class="footer-heading">About Us</h4>
-                <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. </p>
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
             </div>
             <div class="col-md-4">
-                <h4 class="footer-heading">Quick Links</h4>
-                <a href="index.html">Home</a><br>
-				<a href="about-us.html">About-us</a><br>
-                <a href="tutorial.html">Tutorial</a><br>
-                <a href="Faq.html">FAQ</a>
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
             </div>
             <div class="col-md-4">
-                <h4 class="footer-heading">Follow Us</h4>
+                <h5 class="footer-heading">Follow Us</h5>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <p>Contact us at: info@example.com</p>
             </div>
         </div>
+    </div>
+    <div class="text-center py-3">
+        © 2024 Canvas Editor. All rights reserved.
     </div>
 </footer>
 <script>
@@ -381,6 +346,101 @@
 
     // Start the animation
     animateCircles();
+</script>
+<button id="scrollToTopBtn">
+    <div class="progress-ring">
+        <svg viewBox="0 0 36 36">
+            <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+        </svg>
+    </div>
+    <span>&uarr;</span>
+</button>
+<style>
+/* Scroll to Top Button */
+#scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        outline: none;
+        border: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    #scrollToTopBtn.show {
+        opacity: 1;
+    }
+
+    #scrollToTopBtn span {
+        font-size: 24px;
+        color: white;
+    }
+
+    /* Progress Ring */
+    .progress-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 36px;
+        height: 36px;
+        transform: translate(-50%, -50%);
+    }
+
+    .progress-ring svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+
+    .ring-bg {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.2);
+        stroke-width: 4;
+    }
+
+    .ring-progress {
+        fill: none;
+        stroke: white;
+        stroke-width: 4;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transition: stroke-dashoffset 0.3s;
+    }
+</style>
+
+<!-- JavaScript for Scroll to Top Button -->
+<script>
+    // Show button and update progress ring on scroll
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const ringProgress = document.querySelector(".ring-progress");
+
+    window.addEventListener("scroll", () => {
+        // Show/hide button
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+
+        // Update progress ring
+        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+    });
+
+    // Scroll to top when button clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 </script>
 
 </body>
