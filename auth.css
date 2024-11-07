@@ -138,7 +138,7 @@ form.sign-in-form {
 
 /* Hover effects for social icons */
 .social-icon:hover {
-  color: white; /* Change icon color on hover */
+  color: rgb(247, 238, 238); /* Change icon color on hover */
   border-color: white; /* Change border color on hover */
   background-color: black; /* Change background on hover */
 }
