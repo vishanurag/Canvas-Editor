@@ -107,7 +107,7 @@ form.sign-in-form {
 }
 
 .social-text {
-  margin:5px 0;
+  margin: 5px 0;
   padding: 0.7rem 0;
   font-size: 1rem;
   text-align: center;
@@ -116,7 +116,7 @@ form.sign-in-form {
 .social-media {
   display: flex;
   justify-content: center;
-  gap:15px;
+  gap: 15px;
 }
 
 .social-icon {
@@ -136,15 +136,28 @@ form.sign-in-form {
   cursor: pointer;
 }
 
-#github:hover {
-  color: white ;
-  border-color: white;
-  background-color: black;
+/* Hover effects for social icons */
+.social-icon:hover {
+  color: rgb(247, 238, 238); /* Change icon color on hover */
+  border-color: white; /* Change border color on hover */
+  background-color: black; /* Change background on hover */
 }
-#google:hover {
-  color:  #EA4335;
-  background-color: black;
-  border-color: white;
+
+#google-icon:hover {
+  color: #EA4335; /* Google specific hover color */
+  background-color: black; /* Consistent background */
+  border-color: white; /* Consistent border on hover */
+}
+
+#githubSignInBtn:hover {
+  color: white; /* Change GitHub icon color on hover */
+  border-color: white; /* Change border color on hover */
+  background-color: black; /* Change background on hover */
+}
+
+#githubSignInBtn {
+  /* Ensuring the GitHub button has a consistent style */
+  font-size: 1.5rem; /* Keep icon size consistent */
 }
 
 .btn {
@@ -163,8 +176,9 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #161618;
+  background-color: #161618; /* Button hover effect */
 }
+
 
 .panels-container {
   position: absolute;
