@@ -329,5 +329,126 @@
         // Start the animation
         animateCircles();
       </script>
+       <footer class="footer">
+        <div class="footer-content">
+            <!-- <div class="footer-image">
+                <img src="popup.jpg" alt="Newsletter signup" width="100">
+            </div> -->
+            <div class="newsletter-section">
+                <h3>Subscribe to our Newsletter</h3>
+                <input type="email" id="newsletter-email" placeholder="Enter your email address"><br>
+                <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
+            </div>
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
+
+                    © <span id="year"></span>
+
+                </p>
+                <div style="margin: 20px;" class="share">
+                    <i class="fab fa-github" style="margin-right: 10px;"></i>
+                    <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+    </footer>
+    <style>
+      #canvas {
+            border: 1px solid #000000;
+            background-color: white;
+            cursor: crosshair;
+            width: 100%;
+            height: calc(100vh - 280px);
+            /* Adjusted for footer */
+        }
+
+      .footer {
+            background-color: #34313b;
+            color: rgb(255, 255, 255);
+            margin-right: 100px;
+
+        }
+        .footer-content{
+          margin-right: 650px;
+        }
+
+        .newsletter-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+          
+        }
+
+        .newsletter-section input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .newsletter-section button {
+            background-color: #0000ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+        }
+
+        .newsletter-section button:hover {
+            background-color: #340c90;
+        }
+
+        .text-size-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            background-color: #0000FF;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .text-size-control input {
+            width: 60px;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .text-size-control:hover {
+            background-color: #090874;
+            transition: background-color 0.3s;
+        }
+
+        .credit {
+            text-align: center;
+        }
+
+        .share {
+            font-size: 25px;
+        }
+
+        .share i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .share i:hover {
+            cursor: pointer;
+            color: #5c2872;
+        }
+        .profile{
+            font-size: 2rem;
+            padding-right: 1rem;
+        }
+    </style>
   </body>
 </html>
