@@ -34,24 +34,25 @@
                     </a>
                     <p class="social-text">OR<br>Sign in with social platforms</p>
 
-                    <div class="social-media">
-                        <button class="social-icon" id="microsoft-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" style="
-                            height: 35px;">
-                                <path fill="#ff5722" d="M6 6H22V22H6z" transform="rotate(-180 14 14)"></path><path fill="#4caf50" d="M26 6H42V22H26z" transform="rotate(-180 34 14)"></path><path fill="#ffc107" d="M26 26H42V42H26z" transform="rotate(-180 34 34)"></path><path fill="#03a9f4" d="M6 26H22V42H6z" transform="rotate(-180 14 34)"></path>
-                                </svg>
-                        </button>
-                        <button class="social-icon" id="google-icon">
+                    
+                   <div class="social-media">
+                    <button type="button" class="btn btn-microsoft" onclick=" window.location.href='https://login.microsoftonline.com/' ">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                            alt="Microsoft Logo" style="width: 25px; height: 25px; margin-right: 5px;">
+                    </button>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" style="
-                            height: 35px;">
-                                <path fill="#fbc02d" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#e53935" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1565c0" d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
-                                </svg>
+                        <button type="button" class="btn btn-google" onclick=" window.location.href='https://accounts.google.com' ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
+                                alt="Google Icon" style="width: 30px; height: 30px; margin-right: 7px;"> 
                         </button>
-                        <button class="social-icon" id="githubSignInBtn">
-                            <i class="fa-brands fa-github" style="color: #b10aff;"></i>
+
+                        <button type="button" class="btn btn-github" onclick=" window.location.href='https://github.com/login' ">
+                            <i class="fa-brands fa-github" style="font-size: 30px; margin-right: 7px; color: #b10aff;"></i> 
                         </button>
+
                     </div>
+                </form>
+                                        
                 </form>
                 
                 <form action="#" class="sign-up-form" onsubmit="return validateForm()">
@@ -207,16 +208,6 @@
                 element.classList.remove('active');
             }
         }
-    </script>
-    <script type="module" src="auth.js" defer></script>
-
-    <script type="module" src="SignUpWithGoogle.js"></script>
-
-    <script type="module" src="SignIn-Up-withGithub.js"></script>
-
-    <div class="gtranslate_wrapper"></div>
-
-    <script>
 
         window.gtranslateSettings = {
             "default_language": "en",
