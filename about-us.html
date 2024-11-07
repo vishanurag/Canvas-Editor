@@ -17,7 +17,7 @@
             overflow-x: hidden;
         }
         header {
-            background: #333;
+            background: #fa9cfa;
             color: #fff;
             padding: 1rem 0;
             position: sticky;
@@ -39,25 +39,55 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .navbar a {
-            color: #bbb;
-            font-size: 16px;
-            text-decoration: none;
-            margin: 0 0.8rem;
-            transition: color 0.3s ease;
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
         }
-        .navbar a:hover {
+
+        .nav-links a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 6px 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #541058;
+        }
+
+        /* Responsive Navbar */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
             color: #fff;
         }
-        .navbar .auth a {
-            background: #ffb7fd;
-            color: #333;
-            padding: 8px 16px;
-            border-radius: 5px;
+
+        .nav-links {
+            display: flex;
         }
-        .navbar .auth a:hover {
-            background: #fff;
-            color: #ffb7fd;
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #fa9cfa;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
         }
 
         /* About Section */
@@ -100,8 +130,8 @@
         .about-text:hover, .about-image:hover {
             transform: scale(1.05);
         }
-        h3 {
-            font-size: 2rem;
+        h1 {
+            font-size: 1.2rem;
             color: #353047;
             margin-bottom: 1rem;
             text-align: center;
@@ -150,61 +180,89 @@
                 width: 90%;
             }
         }
-    </style>
-    <style>
-        /* Circle styles */
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
             position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            outline: none;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Progress Ring */
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 36px;
+            height: 36px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: white;
+            stroke-width: 4;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.3s;
         }
     </style>
 </head>
 <body>
     <!-- Circles -->
     <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
     <!-- Navbar -->
     <header>
-        <div class="navbar">
-            <div class="site-name">Creative Canvas Tool</div>
-            <nav>
+        <nav class="navbar">
+            <h1 class="canvas">Canvas Editor</h1>
+            <div class="hamburger" onclick="toggleNav()">☰</div>
+            <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="blog.html">Blogs</a>
-                <a href="Faq.html">FAQ</a>
-                <a href="contributors.html">Contributors</a>
+                <a href="about-us.html">About Us</a>
+                <a href="review.html">Review</a>
                 <a href="testimonial.html">Testimonial</a>
-            </nav>
-            <div class="auth">
-                <a href="auth.html">Sign up/Sign in</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="Blog_page.html">Blog</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="./Feedback.html">Feedback</a>
+                <a href="contributors.html">Contributors</a>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- About Section -->
@@ -244,67 +302,45 @@
         </div>
     </div>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 36 36">
+                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            </svg>
+        </div>
+        <span>&uarr;</span>
+    </button>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; <span id="year"></span> Creative Canvas Tool. All rights reserved.</p>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <p>© 2024 Creative Canvas Tool. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
+
+    <!-- JavaScript for Scroll to Top Button -->
     <script>
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
+        // Show button and update progress ring on scroll
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
 
-        // Colors for the circles
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
+        window.addEventListener("scroll", () => {
+            // Show/hide button
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
 
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
+            // Update progress ring
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
         });
 
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
+        // Scroll to top when button clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
-
-        // Animation function to move the circles
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-
-            circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-
-                circle.x = x;
-                circle.y = y;
-
-                // Get the next circle in the sequence
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
-            });
-
-            // Repeat the animation
-            requestAnimationFrame(animateCircles);
-        }
-
-        // Start the animation
-        animateCircles();
     </script>
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
 </body>
 </html>
