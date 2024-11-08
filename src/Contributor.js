@@ -1,52 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
+const repoOwner = "vishanurag";
+const repoName = "Canvas-Editor";
+const contributorsUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contributors`;
+const repoUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
+
+async function fetchContributorData() {
+  try {
+    const [contributorsRes, repoRes] = await Promise.all([
+      fetch(contributorsUrl),
+      fetch(repoUrl)
+    ]);
+
+    const contributors = await contributorsRes.json();
+    const repoData = await repoRes.json();
+
+    const statsGrid = document.getElementById("statsGrid");
+
+    statsGrid.innerHTML = `
+      <div class="contributor-stat-card"><h3>${contributors.length}</h3><p>Contributors</p></div>
+      <div class="contributor-stat-card"><h3>${contributors.reduce((sum, { contributions }) => sum + contributions, 0)}</h3><p>Total Contributions</p></div>
+      <div class="contributor-stat-card"><h3>${repoData.stargazers_count}</h3><p>GitHub Stars</p></div>
+      <div class="contributor-stat-card"><h3>${repoData.forks_count}</h3><p>Forks</p></div>
+    `;
+
     const contributorsContainer = document.getElementById("contributors");
+    contributorsContainer.innerHTML = contributors.map(({ login, contributions, avatar_url, html_url }) => `
+      <div class="contributor-card">
+        <img src="${avatar_url}" alt="${login}'s avatar">
+        <p><strong>${login}</strong></p>
+        <p>Contributions: ${contributions}</p>
+        <a href="${html_url}" target="_blank">GitHub Profile</a>
+      </div>
+    `).join('');
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
 
-    async function fetchContributors() {
-      let contributors = [];
-      let page = 1;
-      let perPage = 100; // Max per page is 100
-      let moreContributors = true;
-
-      while (moreContributors) {
-        try {
-          const response = await fetch(
-            `https://api.github.com/repos/vishanurag/Canvas-Editor/contributors?page=${page}&per_page=${perPage}`
-          );
-          const data = await response.json();
-
-          // If no more contributors, stop fetching
-          if (data.length === 0) {
-            moreContributors = false;
-          } else {
-            contributors = contributors.concat(data);
-            page++;
-          }
-        } catch (error) {
-          console.error("Error fetching contributors:", error);
-          break; // Exit loop if there's an error
-        }
-      }
-
-      displayContributors(contributors);
-    }
-
-    function displayContributors(contributors) {
-      contributorsContainer.innerHTML = "";
-      contributors.forEach((contributor) => {
-        const contributorCard = document.createElement("div");
-        contributorCard.className = "contributor-card";
-
-        contributorCard.innerHTML = `
-          <a href="${contributor.html_url}" target="_blank" rel="noopener noreferrer">
-            <img src="${contributor.avatar_url}" alt="${contributor.login}">
-          </a>
-          <h3>${contributor.login}</h3>
-          <p>Contributions: ${contributor.contributions}</p>
-        `;
-
-        contributorsContainer.appendChild(contributorCard);
-      });
-    }
-
-    fetchContributors();
-  });
+fetchContributorData();
