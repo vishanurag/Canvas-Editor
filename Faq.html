@@ -268,17 +268,39 @@
 
     <script>
         // Accordion functionality
-        document.querySelectorAll('.accordion-title').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                button.classList.toggle('active');
-                if (button.classList.contains('active')) {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-            });
+const accordionTitles = document.querySelectorAll('.accordion-title');
+
+accordionTitles.forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Close all other accordion items
+        accordionTitles.forEach(item => {
+            if (item !== button) {
+                item.classList.remove('active');
+                item.nextElementSibling.style.display = 'none';
+            }
         });
+
+        // Toggle the clicked item
+        const content = button.nextElementSibling;
+        button.classList.toggle('active');
+        if (button.classList.contains('active')) {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+});
+
+// Close accordion when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInsideAccordion = event.target.closest('.accordion');
+    if (!isClickInsideAccordion) {
+        accordionTitles.forEach(item => {
+            item.classList.remove('active');
+            item.nextElementSibling.style.display = 'none';
+        });
+    }
+});
 
         // Cursor animation
         const coords = { x: 0, y: 0 };
