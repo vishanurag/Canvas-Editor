@@ -5,12 +5,19 @@ const repoUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
 
 async function fetchContributorData() {
   try {
-    const [contributorsRes, repoRes] = await Promise.all([
-      fetch(contributorsUrl),
-      fetch(repoUrl)
-    ]);
+    const contributors = [];
+    let page = 1;
+    let response;
 
-    const contributors = await contributorsRes.json();
+    // Fetch contributors across multiple pages
+    do {
+      response = await fetch(`${contributorsUrl}?page=${page}&per_page=100`);
+      const contributorsData = await response.json();
+      contributors.push(...contributorsData);
+      page++;
+    } while (response.headers.get('link') && response.headers.get('link').includes('rel="next"')); // Check for next page
+
+    const repoRes = await fetch(repoUrl);
     const repoData = await repoRes.json();
 
     const statsGrid = document.getElementById("statsGrid");
