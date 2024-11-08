@@ -209,11 +209,16 @@
             align-items: center;
             padding-bottom: 50px;
         }
-        .navbar h1 {
-            color: rgb(126, 36, 36);
-            margin: 0px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 30px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .logo img {
+            width: 320px;
+            height: 50px;
         }
 
         .nav-links {
@@ -449,8 +454,11 @@
     </div>
     <div class="main-content">
         <nav class="navbar">
+            <div class="logo">
+                <img src="CanvasEditor.png" alt="Logo">
+            </div>
             <div class="nav-links">
-                <h1 class="canvas">Canvas Editor</h1>
+                
                 <a href="index.html">Home</a>
                 <a href="about-us.html">About Us</a>
                 <a href="review.html">Review</a>
