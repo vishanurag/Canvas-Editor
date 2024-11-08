@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How-to Guide</title>
+  <style>
+    /* Global Styles */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    /* Title Styles */
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Step Box Styles */
+    .step-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transform: translateX(-50px);
+      opacity: 0;
+      animation: slideIn 0.5s ease forwards;
+      transition: all 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .step-box:nth-child(2) { animation-delay: 0.2s; }
+    .step-box:nth-child(3) { animation-delay: 0.4s; }
+    .step-box:nth-child(4) { animation-delay: 0.6s; }
+    .step-box:nth-child(5) { animation-delay: 0.8s; }
+
+    .step-box:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .step-box h3 {
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+    }
+
+    .step-box h3::before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      background: linear-gradient(45deg, #e73c7e, #23a6d5);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .step-box:hover h3::before {
+      transform: scale(1.2) rotate(360deg);
+    }
+
+    .step-box p {
+      line-height: 1.6;
+      margin: 0;
+      color: #34495e;
+    }
+
+    /* Visitor Counter Styles */
+    .visitor-counter {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #e73c7e, #23a6d5);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .visitor-counter:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Dark Mode Styles */
+    @media (prefers-color-scheme: dark) {
+      .step-box {
+        background-color: rgba(44, 62, 80, 0.95);
+      }
+
+      .step-box h3 {
+        color: #ecf0f1;
+      }
+
+      .step-box p {
+        color: #bdc3c7;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">How-to Guide</h1>
+
+    <div class="step-box">
+      <h3>Step 1: Creating a New Canvas</h3>
+      <p>To create a new canvas, simply click the "New Canvas" button in the top left corner of the editor. You can then select the desired canvas size or start with a blank canvas.</p>
+    </div>
+
+    <div class="step-box">
+      <h3>Step 2: Using the Brush Tool</h3>
+      <p>To use the brush tool, click the "Brush" icon in the toolbar. You can then select different brush styles, change the color by clicking the color swatch, and adjust the brush size using the slider.</p>
+    </div>
+
+    <div class="step-box">
+      <h3>Step 3: Adding Shapes and Text</h3>
+      <p>To add shapes, click the corresponding icon in the toolbar (rectangle, circle, etc.). You can then customize the shape's size, color, and other properties. To add text, click the "Text" icon and then click on the canvas to start typing.</p>
+    </div>
+
+    <div class="step-box">
+      <h3>Step 4: Saving and Exporting</h3>
+      <p>To save your canvas, click the "Save" button in the top right corner. You can choose to save the canvas as a PNG, JPEG, or SVG file. To export the canvas, click the "Export" button and select the desired file format.</p>
+    </div>
+  </div>
+
+  <div class="visitor-counter">
+    Visitors: 42
+  </div>
+</body>
+</html>
