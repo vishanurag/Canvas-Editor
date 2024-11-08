@@ -323,38 +323,6 @@
 
         }
 
-        .newsletter-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-          
-        }
-
-        .newsletter-section input {
-            padding: 10px;
-            width: 300px;
-            border: none;
-            border-radius: 4px;
-        }
-
-        .newsletter-section button {
-            background-color: #d426d7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            
-        }
-
-        .newsletter-section button:hover {
-            background-color: #a008b7;
-        }
-
         .text-size-control {
             display: flex;
             align-items: center;
@@ -607,11 +575,70 @@
                 <!-- <div class="footer-image">
                     <img src="popup.jpg" alt="Newsletter signup" width="100">
                 </div> -->
-                <div class="newsletter-section">
+                <!-- <div class="newsletter-section">
                     <h3>Subscribe to our Newsletter</h3>
                     <input type="email" id="newsletter-email" placeholder="Enter your email address"><br>
                     <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
-                </div>
+                </div> -->
+                
+    <div class="newsletter-section">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with the latest news and offers. Please fill out the form below:</p>
+        <form id="newsletterForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email Address" required>
+            <input type="tel" id="contact" placeholder="Your Contact Number" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        
+    </div>
+
+    <style>
+    .newsletter-section {
+        background-color: #f9f9f9;  /* Light background color */
+        padding: 20px;              /* Spacing inside the section */
+        border-radius: 8px;         /* Rounded corners */
+        text-align: center;         /* Center align text */
+        margin: 20px auto;         /* Center align the section */
+        max-width: 400px;          /* Max width for better responsiveness */
+    }
+    
+    .newsletter-section h2 {
+        font-size: 24px;            /* Header font size */
+        margin-bottom: 10px;        /* Space below header */
+        color:#000000;
+    }
+    
+    .newsletter-section p {
+        font-size: 16px;            /* Paragraph font size */
+        margin-bottom: 20px;        /* Space below paragraph */
+        color:black;
+    }
+    
+    .newsletter-section input[type="text"],
+    .newsletter-section input[type="email"],
+    .newsletter-section input[type="tel"] {
+        width: 80%;                 /* Input width */
+        padding: 10px;             /* Input padding */
+        border: 1px solid #ccc;    /* Border style */
+        border-radius: 4px;        /* Rounded input corners */
+        margin-bottom: 10px;        /* Space below input */
+    }
+    
+    .newsletter-section button {
+        padding: 10px 15px;         /* Button padding */
+        background-color: #007bff;  /* Button color */
+        color: white;               /* Text color */
+        border: none;               /* No border */
+        border-radius: 4px;        /* Rounded button corners */
+        cursor: pointer;            /* Pointer cursor on hover */
+    }
+    
+    .newsletter-section button:hover {
+        background-color: #0056b3;  /* Darker button color on hover */
+    }
+</style>
+    
                 <div class="credit" style="font-size: 0.6rem;">
                     <p>
                         Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
