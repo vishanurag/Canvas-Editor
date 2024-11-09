@@ -166,7 +166,7 @@
             color: var(--secondary-color);
         }
 
-        /* Footer Styles */
+        /* Footer Styles
         .footer {
             background: linear-gradient(135deg, var(--secondary-color), var(--dark-bg));
             color: white;
@@ -212,7 +212,7 @@
 
         .footer-credit a:hover {
             color: white;
-        }
+        } */
 
         /* Back to Top Button */
         #back-to-top {
@@ -373,20 +373,140 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- footer -->
+     <!-- Footer -->
+    <footer class="main-footer">
         <div class="container">
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/anuragvishwakarma/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
             </div>
-            <div class="footer-credit">
-                <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
+
+            <!-- Quick Links Section (Center) -->
+            <div class="footer-column center">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons Section (Right) -->
+            <div class="footer-column right">
+                <h5 class="footer-heading">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
+        <div class="text-center py-3" style="margin-top: 32px;margin-left: 43%;">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
     </footer>
+    <style>
+        /* Footer Styling */
+        .main-footer {
+            background-color: #333;
+            /* Dark background */
+            color: #f1f1f1;
+            /* Light text color */
+            padding: 18px 0;
+            font-size: 16px;
+        }
+
+        .footer-heading {
+            color: #e56767;
+            /* Red/pink heading color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .main-footer a {
+            color: #f1f1f1;
+            /* Link color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .main-footer a:hover {
+            color: #e56767;
+            /* Link hover color */
+        }
+
+        /* Footer Container Styling */
+        .main-footer .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Columns Styling */
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column.center {
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        .footer-column.right {
+            text-align: right;
+            margin-top: -51px;
+        }
+
+        /* Quick Links List */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled a {
+            color: #f1f1f1;
+            transition: color 0.3s ease;
+        }
+
+        .list-unstyled a:hover {
+            color: #e56767;
+            text-decoration: underline;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #e56767;
+        }
+    </style>
     <script>
         // Coordinates for the cursor
         const coords = { x: 0, y: 0 };
