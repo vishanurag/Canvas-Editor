@@ -98,6 +98,7 @@
 
 <!-- START_STRUCTURE -->
 ```
+├── 404.html
 ├── Blog_page.html
 ├── CODE_OF_CONDUCT.md
 ├── Contributing.md
@@ -109,6 +110,7 @@
 ├── about.html
 ├── auth.css
 ├── auth.html
+├── basictemp.html
 ├── blog.html
 ├── canva.css
 ├── canva.html
@@ -128,6 +130,7 @@
 ├── popup.jpg
 ├── popup.js
 ├── privacy.html
+├── profile.html
 ├── repo_structure.txt
 ├── repreviewfix.html
 ├── resources/
@@ -139,7 +142,6 @@
 ├── src/
 │   ├── Contributor.css
 │   ├── Contributor.html
-|   ├── Contact.html
 │   ├── Contributor.js
 │   ├── Scripts/
 │   │   ├── BacktoTop.js
@@ -152,6 +154,7 @@
 │   │   ├── Style.css
 │   │   ├── Style_Blog_page.css
 │   │   ├── contact.css
+│   │   ├── contact.html
 │   │   ├── contributor.css
 │   │   ├── scroll.css
 │   │   └── signup.css
@@ -204,9 +207,12 @@
 │       ├── blog-p-4.webp
 │       ├── blog-p-5.webp
 │       └── blog-p-6.webp
+├── story.jpg
 ├── style.css
 ├── style1.css
 ├── testimonial.html
+├── testp.css
+├── testp.js
 ├── tooltips.html
 ├── tutorial.html
 ├── visi.css
