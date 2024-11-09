@@ -741,13 +741,17 @@
             </a>
         </nav>
         <div class="tools">
+            <button id="toggleToolbar" class="arrow-button">
+                <i class="fas fa-arrow-left"></i>
+            </button>
             <button class="tool active" id="pencil"><i class="fas fa-pencil-alt" title="Pencil"></i></button>
             <button class="tool" id="marker"><i class="fas fa-highlighter" title="Marker"></i></button>
             <button class="tool" id="eraser"><i class="fas fa-eraser" title="Eraser"></i></button>
             <button class="tool" id="line"><i class="fas fa-minus" title="Line"></i></button>
             <button class="tool" id="rectangle"><i class="far fa-square" title="Rectangle"></i></button>
             <button class="tool" id="circle"><i class="far fa-circle" title="Circle"></i></button>
-            <button class="tool" id="text"><i class="fas fa-font" title="Text"></i></button>            <button class="tool" id="textarea"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Area"><path d="M256-240h84l44-122h192l44 122h84L522-720h-84L256-240Zm152-192 70-198h4l70 198H408ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0-640v640-640Z"/></svg></button>
+            <button class="tool" id="text"><i class="fas fa-font" title="Text"></i></button>            
+            <button class="tool" id="textarea"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Area"><path d="M256-240h84l44-122h192l44 122h84L522-720h-84L256-240Zm152-192 70-198h4l70 198H408ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0-640v640-640Z"/></svg></button>
             <button class="tool" id="undoButton"><i class="fa-solid fa-rotate-left" title="Undo"></i></button>
             <button class="tool" id="redoButton"><i class="fa-solid fa-rotate-right" title="Redo"></i></button>
             <div class="color-picker">
@@ -787,6 +791,104 @@
             </div>
             <button class="tool" id="clear"><i class="fas fa-trash-alt" title="Clear Canvas"></i></button>
             <button class="tool" id="toggleGridButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Toggle Grid"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"/></svg></button>
+            <style>
+                /* Styling for the toggle button */
+                #toggleToolbar {
+                    background-color: #460346;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                }
+        
+                #toggleToolbar i {
+                    margin-right: 5px;
+                }
+        
+                #toggleToolbar:hover {
+                    background-color: #5e044f;
+                }
+        
+                /* CSS for hiding and showing toolbar */
+                .sidebar.collapsed {
+                    width: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    transition: width 0.3s ease;
+                }
+                .arrow-button {
+                    background-color: #460346;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: transform 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                }
+                .arrow-button i {
+                    font-size: 20px;
+                    transition: transform 0.3s ease;
+                }
+                
+                .arrow-button:hover {
+                    background-color: #5e044f;
+                }
+                
+                /* Rotate arrow when sidebar is collapsed */
+                .sidebar.collapsed + .tools .arrow-button i {
+                    transform: rotate(180deg);
+                }
+                
+                /* CSS for hiding and showing toolbar */
+                .sidebar.collapsed {
+                    width: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    transition: width 0.3s ease;
+                }
+            </style>
+            <script>
+                const toolbarButton = document.getElementById('toggleToolbar');
+                const sidebar = document.querySelector('.sidebar');
+                const canva = document.getElementById('canvas');
+                const arrowIcon = toolbarButton.querySelector('i'); // Get the icon element
+                
+                toolbarButton.addEventListener('click', () => {
+                    sidebar.classList.toggle('collapsed');
+                    updateArrowIcon(); // Update the arrow direction
+                    resizeCanvas(); // Adjust canvas width when the sidebar toggles
+                });
+                
+                function updateArrowIcon() {
+                    if (sidebar.classList.contains('collapsed')) {
+                        arrowIcon.classList.remove('fa-arrow-left');
+                        arrowIcon.classList.add('fa-arrow-right'); // Right arrow when toolbar is minimized
+                    } else {
+                        arrowIcon.classList.remove('fa-arrow-right');
+                        arrowIcon.classList.add('fa-arrow-left'); // Left arrow when toolbar is expanded
+                    }
+                }
+                
+                function resizeCanvas() {
+                    const sidebarWidth = sidebar.classList.contains('collapsed') ? 0 : 200;
+                    canvas.width = window.innerWidth - sidebarWidth; // Adjust for sidebar
+                    canvas.height = window.innerHeight - 220; // Adjust for footer
+                }
+                
+                // Initial call to set the canvas size correctly
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+                
+
+            </script>
         </div>
         <canvas id="canvas"></canvas>
         <footer class="footer">
