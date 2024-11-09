@@ -83,7 +83,9 @@
         <form id="feedbackForm">
             <!-- Form elements -->
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required pattern="[a-zA-Z ]+"
+            oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+            oninput="this.setCustomValidity('')">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
             <label for="rating">Rating:</label>
