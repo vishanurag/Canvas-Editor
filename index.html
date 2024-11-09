@@ -27,6 +27,7 @@
     <meta name="author" content="Vishanurag">
     <link rel="canonical" href="https://github.com/vishanurag/Canvas-Editor">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
     
     <div class="visitor-counter">
@@ -130,6 +131,163 @@
             /* Darker background for dark mode */
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
                 0 2px 4px rgba(255, 255, 255, 0.05);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            width: 100px;
+            background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+            color: white;
+            padding: 20px;
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #63077f;
+            border: none;
+            color: #f8f9f9;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar button i {
+            margin-right: 8px;
+        }
+
+        .sidebar button:hover {
+            background: #f67280;
+            transform: scale(1.05);
+        }
+
+        .navbar {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: #7e2424;
+            margin: 0px;
+            font-size: 30px;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #f67280;
+        }
+
+        .tools {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background-color: #e76af5;
+            align-items: center;
+        }
+
+        .tool {
+            background-color: #460346;
+            border: none;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tool i {
+            font-size: 20px;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .tool:hover i {
+            color: #ff6b6b;
+            transform: scale(1.2);
+        }
+
+        .tool.active {
+            background-color: #5e044f;
+        }
+
+        #canvas {
+            border: 2px solid #e049e8;
+            background-color: white;
+            cursor: crosshair;
+            width: 100%;
+            height: calc(100vh - 220px);
+        }
+
+        .visitor-counter {
+            position: fixed;
+            top: 570px;
+            left: 10px;
+            background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 8px 20px rgba(255, 105, 135, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .visitor-counter:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer .subscribe {
+            background-color: #d426d7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .footer .subscribe:hover {
+            background-color: #a008b7;
         }
     </style>
     <script>
@@ -287,7 +445,6 @@
         #canvas {
             border: 1px solid #e049e8;
             background-color: white;
-            cursor: crosshair;
             width: 100%;
             height: calc(100vh - 280px);
             /* Adjusted for footer */
@@ -470,9 +627,9 @@
     <div class="circle"></div>
     <div class="sidebar">
      
-        <button id="tools-btn">Tools 🔧</button>
-        <button id="settings-btn">Settings ⚙️</button>
-        <button id="help-btn">Help ❓</button>
+        <button id="tools-btn"><i class="fas fa-wrench"></i> Tools</button>
+        <button id="settings-btn"><i class="fas fa-cogs"></i> Settings</button>
+        <button id="help-btn"><i class="fas fa-question-circle"></i> Help</button>
 
         
     </div>
@@ -577,8 +734,6 @@
 
                 
 
-              
-
 
             </div>
             <a href="auth.html" class="profile">
@@ -586,16 +741,15 @@
             </a>
         </nav>
         <div class="tools">
-            <button class="tool active" id="pencil">Pencil</button>
-            <button class="tool" id="marker">Marker</button>
-            <button class="tool" id="eraser">Eraser</button>
-            <button class="tool" id="line">Line</button>
-            <button class="tool" id="rectangle">Rectangle</button>
-            <button class="tool" id="circle">Circle</button>
-            <button class="tool" id="text">Text</button>
-            <button class="tool" id="textarea">Text Area</button>
-            <button class="tool" id="undoButton">Undo</button>
-            <button class="tool" id="redoButton">Redo</button>
+            <button class="tool active" id="pencil"><i class="fas fa-pencil-alt" title="Pencil"></i></button>
+            <button class="tool" id="marker"><i class="fas fa-highlighter" title="Marker"></i></button>
+            <button class="tool" id="eraser"><i class="fas fa-eraser" title="Eraser"></i></button>
+            <button class="tool" id="line"><i class="fas fa-minus" title="Line"></i></button>
+            <button class="tool" id="rectangle"><i class="far fa-square" title="Rectangle"></i></button>
+            <button class="tool" id="circle"><i class="far fa-circle" title="Circle"></i></button>
+            <button class="tool" id="text"><i class="fas fa-font" title="Text"></i></button>            <button class="tool" id="textarea"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Area"><path d="M256-240h84l44-122h192l44 122h84L522-720h-84L256-240Zm152-192 70-198h4l70 198H408ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0-640v640-640Z"/></svg></button>
+            <button class="tool" id="undoButton"><i class="fa-solid fa-rotate-left" title="Undo"></i></button>
+            <button class="tool" id="redoButton"><i class="fa-solid fa-rotate-right" title="Redo"></i></button>
             <div class="color-picker">
                 <input type="color" id="colorPicker">
                 <div class="color-palette">
@@ -628,11 +782,11 @@
             </div>
             <input type="range" id="lineWidth" min="1" max="50" value="5">
             <div class="text-size-control">
-                <label for="textSize">Text Size:</label>
+                <label for="textSize"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Size"><path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"/></svg>:</label>
                 <input type="number" id="textSize" min="8" max="72" value="20">
             </div>
-            <button class="tool" id="clear">Clear</button>
-            <button class="tool" id="toggleGridButton">Toggle Grid</button>
+            <button class="tool" id="clear"><i class="fas fa-trash-alt" title="Clear Canvas"></i></button>
+            <button class="tool" id="toggleGridButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Toggle Grid"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"/></svg></button>
         </div>
         <canvas id="canvas"></canvas>
         <footer class="footer">
