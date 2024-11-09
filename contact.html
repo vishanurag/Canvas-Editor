@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #ff007f; /* Accent color */
+      --secondary-color: #f2f2f2;
+      --background-gradient: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+      --highlight-gradient: linear-gradient(135deg, #ff007f, #ff007f);
+      --shadow-color: rgba(0, 0, 0, 0.15);
+      --input-hover-bg: #d0eaff;
+      --btn-hover-bg: #e60064;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: var(--background-gradient);
+      color: #fff;
+      padding: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .contact-container {
+      background: #fff;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 30px var(--shadow-color);
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary-color);
+      font-size: 32px;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #f8f8f8;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      background-color: var(--input-hover-bg);
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--btn-hover-bg);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      .contact-container {
+        padding: 20px;
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      if (name && email && subject && message) {
+        alert(`Thank you, ${name}! Your message has been sent.`);
+      } else {
+        alert('Please fill in all the fields.');
+      }
+    });
+  </script>
+</body>
+</html>
