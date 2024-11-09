@@ -1,4 +1,4 @@
-You said:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,46 +23,7 @@ You said:
             overflow-x: hidden;
         }
 
-        /* Navbar styling */
-        .navbar {
-            background-color: #f0adfb;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            width: 100%;
-            padding: 0 20px;
-        }
-        .navbar a {
-            color: #333;
-            font-size: 16px;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #fff;
-        }
-        .navbar .auth a {
-            background: #ffb7fd;
-            color: #333;
-            padding: 8px 16px;
-            border-radius: 5px;
-        }
-        .navbar .auth a:hover {
-            background: #fff;
-            color: #ffb7fd;
-        }
-
+        
         /* Hero section */
         .hero {
             text-align: center;
@@ -228,27 +189,64 @@ You said:
                 padding: 15px;
             }
         }
+
+                
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
+
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-links">
-            <h1 class="canvas">Canvas Editor</h1>
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="review.html">Review</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="tutorial.html">Tutorial</a>
-            <a href="Blog_page.html">Blog</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="./Feedback.html">Feedback</a>
-            <!-- <a href="signup.html">Sign Up</a> -->
-            <a href="contributors.html">Contributors</a>
-        
-        </div>
-      </nav>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
+  </nav>
     <!-- Hero Section -->
     <section class="hero">
         <h2>Welcome to Our Testimonials Page</h2>
