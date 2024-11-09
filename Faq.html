@@ -1,158 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>FAQ</title>
-    <link rel="stylesheet" href="src/Styles/scroll.css">
+    <title>FAQ - Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
 
         * {
             box-sizing: border-box;
-            &::before,
-            &::after {
-                box-sizing: border-box;
-            }
         }
 
         body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Hind', sans-serif;
-            background: rgb(24, 24, 24);
-            color: rgb(196, 191, 191);
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            color: #333;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            max-width:100vw;
-            overflow-y: hidden;
         }
 
-        /* Media query for mobile */
-        @media (max-width: 768px) {
-            body {
-                overflow-y: scroll; /* Enable vertical scrolling on mobile */
-            }
+        .header {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
         }
 
         .container {
-            margin: 0 auto;
-            padding: 4rem;
-            width: 90vw;
+            width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .accordion {
-            .accordion-item {
-                border-bottom: 1px solid lightgray;
-
-                button[aria-expanded='true'] {
-                    border-bottom: 1px solid rgb(203, 222, 232);
-                }
-            }
+        h2 {
+            color: #353047;
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        button {
-            position: relative;
-            display: block;
-            text-align: left;
-            width: 100%;
-            padding: 1em 0;
-            color: white;
-            font-size: 1.15rem;
-            font-weight: 400;
-            border: none;
-            background: none;
-            outline: none;
-
-            &:hover,
-            &:focus {
-                cursor: pointer;
-                color: rgb(205, 225, 250);
-
-                &::after {
-                    cursor: pointer;
-                    color: rgb(203, 222, 232);
-                    border: 1px solid rgb(203, 222, 232);
-                }
-            }
-
-            .accordion-title {
-                padding: 1em 1.5em 1em 0;
-            }
-
-            .icon {
-                display: inline-block;
-                position: absolute;
-                top: 18px;
-                right: 0;
-                width: 22px;
-                height: 22px;
-                border: 1px solid;
-                border-radius: 22px;
-
-                &::before {
-                    display: block;
-                    position: absolute;
-                    content: '';
-                    top: 9px;
-                    left: 5px;
-                    width: 10px;
-                    height: 2px;
-                    background: currentColor;
-                }
-
-                &::after {
-                    display: block;
-                    position: absolute;
-                    content: '';
-                    top: 5px;
-                    left: 9px;
-                    width: 2px;
-                    height: 10px;
-                    background: currentColor;
-                }
-            }
+        .accordion-item {
+            margin-bottom: 1rem;
         }
 
-        button[aria-expanded='true'] {
-            color: rgb(203, 222, 232);
+        .accordion-title {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-            .icon {
-                &::after {
-                    width: 0;
-                }
-            }
-
-            +.accordion-content {
-                opacity: 1;
-                max-height: 9em;
-                transition: all 200ms linear;
-                will-change: opacity, max-height;
-            }
+        .accordion-title:hover {
+            background-color: rgba(255, 255, 255, 0.7);
         }
 
         .accordion-content {
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 200ms linear, max-height 200ms linear;
-            will-change: opacity, max-height;
-
-            p {
-                font-size: 1rem;
-                font-weight: 300;
-                margin: 2em 0;
-            }
+            background-color: #f0f0f0;
+            padding: 1rem;
+            display: none;
+            border-radius: 0 0 5px 5px;
         }
-    </style>
-    <style>
-        /* Circle styles */
+
+        .contact-section {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            color: #353047;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #9b59b6;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #8e44ad;
+        }
+
+        .footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: auto;
+        }
+
+        .footer .share a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer .share a:hover {
+            color: #ffb7fd;
+        }
+
         .circle {
             height: 24px;
             width: 24px;
@@ -165,164 +168,10 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
-
-        .header {
-            padding: 10px 50px;
-            /* width: 100vw; */
-        }
-
-        .navbar {
-            padding: 0 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: none;
-        }
-
-        .navbar a {
-            color: white;
-            font-size: 1.2rem;
-            text-decoration: none;
-            padding: 0rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .nav-links a {
-            position: relative;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            color: #bdb5b5;
-        }
-
-        .nav-links a:after {
-            content: "";
-            position: absolute;
-            background-color: white;
-            height: 3px;
-            width: 0;
-            left: 0;
-            bottom: -10px;
-            transition: 0;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        .site-name {
-            margin: 0.5rem 0;
-        }
-
-        .title {
-            display: flex;
-            align-items: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            justify-content: center;
-        }
-
-        @media (max-width:900px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0 5px;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .nav-links {
-                gap: 0.3rem;
-                flex-wrap: wrap;
-            }
-        }
-
-        /* footer */
-        .footer {
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            top:100%;
-            padding: 10px 0;
-            width:100vw;
-            /* background: #333; */
-        }
-
-        .footer .share {
-            padding: 0.3rem 0;
-        }
-
-        .footer .icon-class {
-            border: none;
-            background: none;
-        }
-
-        .footer .share a {
-            height: 2.5rem;
-            width: 2.5rem;
-            line-height: 2.5rem;
-            font-size: 1rem;
-            color: #ffffff;
-            border: 0.1rem solid rgba(255, 255, 255, 0.3);
-            margin: 0.2rem;
-            border-radius: 50%;
-            text-decoration: none;
-        }
-
-        .footer .share a:hover {
-            background-color: #837667;
-        }
-
-        .footer .links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 10px 0;
-            gap: 10px;
-        }
-
-        .footer .links a {
-            padding: 0.7rem 2rem;
-            color: #fff;
-            border: 0.1rem solid rgba(255, 255, 255, 0.3);
-            font-size: 2rem;
-        }
-
-        .footer .links a:hover {
-            background-color: #837667;
-        }
-
-        footer .credit {
-            font-size: 2rem;
-            font-weight: lighter;
-            padding: 1rem;
-        }
-
-        .footer .credit p {
-            color: #f5f5f1;
-        }
-
-        .footer .credit span a {
-            color: #fdd09c;
-        }
     </style>
-    
 </head>
-
 <body>
-    <!-- Circles -->
+    <!-- Circles for cursor effect -->
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -346,10 +195,7 @@
 
     <header class="header">
         <nav class="navbar">
-            <div class="title">
-                <h1 class="site-name">Canvas</h1>
-                <i class="fa-solid fa-paintbrush"></i>
-            </div>
+            <div class="title">Creative Canvas Tool</div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about-us.html">About</a>
@@ -362,62 +208,37 @@
         </nav>
     </header>
 
-
-   
-
     <div class="container">
         <h2>Frequently Asked Questions</h2>
         <div class="accordion">
             <div class="accordion-item">
-                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">1. What is the
-                        Canvas Editor?</span><span class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-title">1. What is the Creative Canvas Tool?</div>
                 <div class="accordion-content">
-                    <p>Creative Canvas Tool empowers artists of all levels with an intuitive platform for digital art
-                        creation. Offering a variety of brushes, colors, and textures, it encourages creativity and
-                        style exploration. Whether sketching or perfecting a masterpiece, its user-friendly interface
-                        ensures a smooth experience, letting you focus on your art.</p>
+                    <p>Creative Canvas Tool empowers artists of all levels with an intuitive platform for digital art creation. Offering a variety of brushes, colors, and textures, it encourages creativity and style exploration. Whether sketching or perfecting a masterpiece, its user-friendly interface ensures a smooth experience, letting you focus on your art.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">2. How do I create
-                        an account using the "Sign Up" button in the navbar?</span><span class="icon"
-                        aria-hidden="true"></span></button>
+                <div class="accordion-title">2. How do I create an account using the "Sign Up" button in the navbar?</div>
                 <div class="accordion-content">
-                    <p>To create an account, click on the "Sign Up" button located in the navigation bar. A registration
-                        form will appear where you need to enter Username, email address, and password. After filling
-                        out the form submit the form. Otherwise You can Sign up Using Your Google Account.</p>
+                    <p>To create an account, click on the "Sign Up" button located in the navigation bar. A registration form will appear where you need to enter Username, email address, and password. After filling out the form submit the form. Otherwise You can Sign up Using Your Google Account.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">3. How do I log in
-                        using the "Login" button in the navbar?</span><span class="icon"
-                        aria-hidden="true"></span></button>
+                <div class="accordion-title">3. How do I log in using the "Login" button in the navbar?</div>
                 <div class="accordion-content">
-                    <p>To log in, click on the "Login" button in the navigation bar. Enter the email address or Username
-                        and
-                        password associated with your account, then click "Login." Once authenticated, you will be
-                        redirected to your account dashboard, where you can manage your profile or access other
-                        features.</p>
+                    <p>To log in, click on the "Login" button in the navigation bar. Enter the email address or Username and password associated with your account, then click "Login." Once authenticated, you will be redirected to your account dashboard, where you can manage your profile or access other features.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">4. How do I convert
-                        text to uppercase, lowercase, bold, or italic in the editor?</span><span class="icon"
-                        aria-hidden="true"></span></button>
+                <div class="accordion-title">4. How do I convert text to uppercase, lowercase, bold, or italic in the editor?</div>
                 <div class="accordion-content">
-                    <p>To convert text to uppercase,lowercase,bold and italic, just click on the button as your desire .
-                        There are buttons for uppercase,lowercase,bold and italic , write your text and convert it as
-                        your wish. </p>
+                    <p>To convert text to uppercase, lowercase, bold and italic, just click on the button as your desire. There are buttons for uppercase, lowercase, bold and italic, write your text and convert it as your wish.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">5. How do I choose a
-                        background image in the Canvas Editor?</span><span class="icon"
-                        aria-hidden="true"></span></button>
+                <div class="accordion-title">5. How do I choose a background image in the Canvas Editor?</div>
                 <div class="accordion-content">
-                    <p>To select a background image, navigate to the "Background" section in the toolbar. From there,
-                        you can either upload your own image or choose from a library of pre-loaded
-                        images. Once selected, the image will be applied to the entire canvas.</p>
+                    <p>To select a background image, navigate to the "Background" section in the toolbar. From there, you can either upload your own image or choose from a library of pre-loaded images. Once selected, the image will be applied to the entire canvas.</p>
                 </div>
             </div>
         </div>
@@ -427,99 +248,42 @@
         <h2>Contact Us</h2>
         <p>If you have any questions, feel free to reach out to us!</p>
         <form>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name">
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email">
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message" rows="4"></textarea>
-
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </div>
 
-    <footer class="footer" id="footer">
-        <div class="share" style="font-size: 0.9rem; text-align: center">
+    <footer class="footer">
+        <div class="share">
             <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fa-brands fa-x-twitter"></a>
+            <a href="#" class="fab fa-twitter"></a>
             <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fa-brands fa-linkedin-in"></a>
-            <a href="#" class="fa-brands fa-pinterest"></a>
+            <a href="#" class="fab fa-linkedin-in"></a>
+            <a href="#" class="fab fa-pinterest"></a>
         </div>
-        <style>
-            .footer .share a {
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-    color: #333; /* Default color */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover and click effects */
-}
-
-.footer .share a:hover {
-    transform: scale(1.3); /* Enlarge icon on hover */
-}
-
-/* Specific hover colors for each social media platform */
-.footer .share a.fa-facebook-f:hover {
-    color: #1877f2; /* Facebook blue */
-}
-
-.footer .share a.fa-x-twitter:hover {
-    color: #1da1f2; /* Twitter blue */
-}
-
-.footer .share a.fa-instagram:hover {
-    color: #e4405f; /* Instagram red */
-}
-
-.footer .share a.fa-linkedin-in:hover {
-    color: #0077b5; /* LinkedIn blue */
-}
-
-.footer .share a.fa-pinterest:hover {
-    color: #bd081c; /* Pinterest red */
-}
-
-/* Optional: Additional effect when clicked */
-.footer .share a:active {
-    transform: scale(1.15); /* Slightly reduce the size on click for a pressed effect */
-}
-
-     </style>        
-        <div class="credit" style="font-size: 1rem; text-align: center">
-            <p style="color: white">
-                Created by
-                <span><a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a></span>
-                | All rights reserved © <span id="year"></span>
-            </p>
-        </div>
+        <p>Created by <a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
     </footer>
 
-
     <script>
-        const items = document.querySelectorAll(".accordion button");
+        // Accordion functionality
+        document.querySelectorAll('.accordion-title').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (button.classList.contains('active')) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
 
-        function toggleAccordion() {
-            const itemToggle = this.getAttribute('aria-expanded');
-
-            for (i = 0; i < items.length; i++) {
-                items[i].setAttribute('aria-expanded', 'false');
-            }
-
-            if (itemToggle == 'false') {
-                this.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        items.forEach(item => item.addEventListener('click', toggleAccordion));
-    </script>
-    <script>
-        // Coordinates for the cursor
+        // Cursor animation
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
 
-        // Colors for the circles
         const colors = [
             "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
             "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
@@ -527,142 +291,40 @@
             "#680060", "#60005f", "#48005f", "#3d005e"
         ];
 
-        // Assign colors and initial position to each circle
         circles.forEach(function (circle, index) {
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
         });
 
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
+        window.addEventListener("mousemove", function(e){
             coords.x = e.clientX;
             coords.y = e.clientY;
         });
 
-        // Animation function to move the circles
         function animateCircles() {
             let x = coords.x;
             let y = coords.y;
 
             circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
                 circle.style.left = x - 12 + "px";
                 circle.style.top = y - 12 + "px";
                 circle.style.scale = (circles.length - index) / circles.length;
-
                 circle.x = x;
                 circle.y = y;
 
-                // Get the next circle in the sequence
                 const nextCircle = circles[index + 1] || circles[0];
                 x += (nextCircle.x - x) * 0.3;
                 y += (nextCircle.y - y) * 0.3;
             });
 
-            // Repeat the animation
             requestAnimationFrame(animateCircles);
         }
 
-        // Start the animation
         animateCircles();
-    </script>
-    <script>
-        window.gtranslateSettings = {
-            "default_language": "en",
-            "detect_browser_language": true,
-            "wrapper_selector": ".gtranslate_wrapper"
-        };
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-    <script>
+
+        // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
-
+    </script>
 </body>
-<style>
-     body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto; 
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    background-color: #121212; 
-    color: #f1f1f1; 
-    
-} 
-body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and other WebKit browsers: hide scrollbar */
-}
-.contact-section {
-    background-color: #1f1f1f; /* Dark container */
-    padding: 40px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-.contact-section h2 {
-    margin-bottom: 10px;
-    font-size: 2em;
-    color: #e0e0e0;
-}
-
-.contact-section p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    color: #b3b3b3;
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 0.9em;
-    color: #cccccc;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #333333;
-    border: none;
-    border-radius: 5px;
-    color: #f1f1f1;
-}
-
-form input::placeholder,
-form textarea::placeholder {
-    color: #aaaaaa;
-}
-
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border: 1px solid #555555;
-    background-color: #2a2a2a;
-}
-
-form button {
-    padding: 12px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    color: #f1f1f1;
-    background-color: #444444;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #555555;
-}
-
-</style>
-
 </html>

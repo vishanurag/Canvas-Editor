@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,42 +30,36 @@
         }
 
         .navbar {
-          backdrop-filter: blur(12px);
-          background: rgba(255, 255, 255, 0.15);
-          padding: 1rem 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          position: sticky;
-          top: 0;
-          z-index: 1000;
-        }
+        background-color: #f0adfb;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Center aligns the navbar */
+        position: fixed; /* Sticks to the top */
+        width: 100%;
+        z-index: 1000;
+    }
 
-        /* Title styling */
-        .navbar .title .site-name {
-            font-family: 'Poppins', sans-serif; /* Use Google Fonts for custom style */
-            font-size: 1.5rem;
-            color: #ffffff;
-            text-transform: uppercase;
-        }
+    .navbar h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
 
-        /* Navigation link styling */
-        .navbar .nav-links a {
-            color:#5b21b6;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
 
-        /* Hover effect on links */
-        .navbar .nav-links a:hover {
-            color:#6b21a8;
-            transform: scale(1.1);
-        }
+    .nav-links a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 6px 4px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #541058;
+    }
 
         .title {
             display: flex;
@@ -267,68 +262,371 @@
             transition: all 0.3s ease;
         }
 
-        .social-links a:hover {
-            color: #4c1d95;
-            transform: translateY(-2px);
-        }
 
-        #BacktoTop {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #7c3aed;
-            color: white;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            opacity: 0.8;
-        }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Section</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f3e7ff, #e5d0ff, #f0e6ff);
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #2d1b4d;
+    }
 
-        #BacktoTop:hover {
-            background: #6d28d9;
-            transform: translateY(-2px);
-            opacity: 1;
-        }
+    .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999;
+      transition: all 0.2s ease-out;
+      opacity: 0.6;
+    }
 
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 1rem;
-            }
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-            .nav-links {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    /* Title styling */
+    .navbar .title .site-name {
+      font-family: 'Poppins', sans-serif;
+      /* Use Google Fonts for custom style */
+      font-size: 1.5rem;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
 
-            .banner-title {
-                font-size: 2.5rem;
-            }
+    /* Navigation link styling */
+    .navbar .nav-links a {
+      color: #5b21b6;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
 
-            .search-input {
-                width: 100%;
-            }
-        }
-        .heart-icon {
-            cursor: pointer;
-            color: white; 
-            transition: color 0.3s ease; 
-          }
-          
-          .heart-icon.liked {
-            color: red; 
-          }
-          
-    </style>
+    /* Hover effect on links */
+    .navbar .nav-links a:hover {
+      color: #6b21a8;
+      transform: scale(1.1);
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .site-name {
+      background: linear-gradient(45deg, #6b21a8, #9333ea);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #5b21b6;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(147, 51, 234, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .banner {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 2rem 0;
+    }
+
+    .banner-title {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .banner-title span {
+      color: #6b21a8;
+    }
+
+    .search-input {
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      width: 50%;
+      max-width: 500px;
+      font-size: 1rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .search-btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 2rem;
+      background: #7c3aed;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-left: 0.5rem;
+    }
+
+    .search-btn:hover {
+      background: #6d28d9;
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      /* Stacks h2 and p vertically */
+      align-items: center;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .title h2 {
+      font-size: 2.5rem;
+      color: #4c1d95;
+      margin-bottom: 0.5rem;
+    }
+
+    .title p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .design-content,
+    .blog-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .design-item,
+    .blog-item {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .design-item:hover,
+    .blog-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .design-img,
+    .blog-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .design-img img,
+    .blog-img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .design-img span,
+    .blog-img span {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(124, 58, 237, 0.8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .design-title,
+    .blog-text {
+      padding: 1.5rem;
+    }
+
+    .design-title a,
+    .blog-text h2 {
+      color: #4c1d95;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .blog-text span {
+      color: #6b21a8;
+      font-size: 0.9rem;
+    }
+
+    .blog-text p {
+      color: #4a5568;
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+
+    .blog-text a {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #7c3aed;
+      color: white;
+      border-radius: 2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .blog-text a:hover {
+      background: #6d28d9;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .social-links {
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: #6b21a8;
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #4c1d95;
+      transform: translateY(-2px);
+    }
+
+    #BacktoTop {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #7c3aed;
+      color: white;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+
+    #BacktoTop:hover {
+      background: #6d28d9;
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .banner-title {
+        font-size: 2.5rem;
+      }
+
+      .search-input {
+        width: 100%;
+      }
+    }
+
+    .heart-icon {
+      cursor: pointer;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .heart-icon.liked {
+      color: red;
+    }
+
+    #progress-container {
+      position: fixed;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 15px;
+      z-index: 99990;
+      /* background: #f3f3f3; */
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 7px;
+      width: 0;
+      background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
+      box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+      transition: width 0.09s ease-in-out;
+      border-radius: 10px;
+    }
+  </style>
 </head>
+
 <body>
   <!-- Circles -->
   <div class="circle"></div>
@@ -351,26 +649,26 @@
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
+
     <!-- Previous HTML structure remains the same, just using placeholder images -->
     <!-- Replace all image sources with placeholder API -->
     <!-- For example: -->
     <nav class="navbar">
-        <div class="title">
-          <a href="index.html" class="logo-link">
-            <h1 class="site-name">Canvas Editor</h1>
-            <i class="fa-solid fa-paintbrush"></i>
-          </a>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="Blog_page.html">Blogs</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="contributors.html">Contributors</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="auth.html">Login</a>
-        </div>
+      <div class="nav-links">
+          <h1 class="canvas">Canvas Editor</h1>
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="review.html">Review</a>
+          <a href="testimonial.html">Testimonial</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="tutorial.html">Tutorial</a>
+          <a href="Blog_page.html">Blog</a>
+          <a href="Faq.html">FAQ</a>
+          <a href="./Feedback.html">Feedback</a>
+          <!-- <a href="signup.html">Sign Up</a> -->
+          <a href="contributors.html">Contributors</a>
+      
+      </div>
     </nav>
 <header>
       <div class = "banner">
@@ -386,223 +684,219 @@
             </button>
           </form>
         </div>
-      </div>
-    </header>
 
-    <section class = "design" id = "design">
-      <div class = "container">
-        <div class = "title">
-          <h2>Recent Designs</h2>
-          <p>recent arts & designs blogs</p>
+      </div>
+
+      <div class="design-content">
+
+        <div class="design-item">
+          <div class="design-img">
+            <img src="/src/images/art-design-1.webp" alt="">
+            <span><i class="far fa-heart"></i> 22</span>
+            </span>
+            <span>Creative Canvas</span>
+          </div>
+          <div class="design-title">
+            <a href="#">make an awesome design portfolio for college or university</a>
+          </div>
         </div>
 
-        <div class = "design-content">
-
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/src/images/art-design-1.webp" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-    </span>
-              <span>Creative Canvas</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">make an awesome design portfolio for college or university</a>
-            </div>
+        <div class="design-item">
+          <div class="design-img">
+            <img src="/src/images/art-design-2.webp" alt="">
+            <span><i class="far fa-heart"></i> 22</span>
+            <span>Creative Canvas</span>
           </div>
-
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/src/images/art-design-2.webp" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Creative Canvas</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">Enhance your creativity</a>
-            </div>
+          <div class="design-title">
+            <a href="#">Enhance your creativity</a>
           </div>
-          
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/src/images/art-design-3.webp" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Creative Canvas</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">Develop creative design and show the world</a>
-            </div>
-          </div>
-          
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/src/images/art-design-4.webp" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Creative Canvas</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">Think out of the box, enhance creativity</a>
-            </div>
-          </div>
-         
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/src/images/art-design-5.webp" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Creative Canvas</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">Document your work and stay motivated in process</a>
-            </div>
-          </div>
-          
-          <div class = "design-item">
-            <div class = "design-img">
-              <img src = "/src/images/art-design-6.webp" alt = "">
-              <span><i class = "far fa-heart"></i> 22</span>
-              <span>Creative Canvas</span>
-            </div>
-            <div class = "design-title">
-              <a href = "#">Show your work to others and teach them</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class = "blog" id = "blog">
-      <div class = "container">
-        <div class = "title">
-          <h2>Latest Blog</h2>
-          <p>recent blogs about art & design</p>
         </div>
 
-        <div class = "blog-content">
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-1.webp" alt = "">
-              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>20 January, 2020</span>
-              <h2>Organizing the environment for productive work</h2>
-              <p>Organizing the work place is very much important as it gives you the motivation to work for longer duration.</p>
-              <a href = "#">Read More</a>
-            </div>
+        <div class="design-item">
+          <div class="design-img">
+            <img src="/src/images/art-design-3.webp" alt="">
+            <span><i class="far fa-heart"></i> 22</span>
+            <span>Creative Canvas</span>
           </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-2.webp" alt = "">
-              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Enhancing Creativity by Drawing</h2>
-              <p>We can able to enhance our creativity only when we can able to visualize things properly and draw it.</p>
-              <a href = "#">Read More</a>
-            </div>
+          <div class="design-title">
+            <a href="#">Develop creative design and show the world</a>
           </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-3.webp" alt = "">
-              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Organizing other household stuffs</h2>
-              <p>Beside work we also have to organize our other household item to make house neat and clean.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-4.webp" alt = "">
-              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Spreading greenery in house</h2>
-              <p>Green plants spread greenery and make us feel fresh during through the day.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-5.webp" alt = "">
-              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Organizing the bed</h2>
-              <p>This is a very good habit of organizing the bed after waking up.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-
-          <div class = "blog-item">
-            <div class = "blog-img">
-              <img src = "/src/images/blog-p-6.webp" alt = "">
-              <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
-            </div>
-            <div class = "blog-text">
-              <span>05 October, 2024</span>
-              <h2>Exploring creative fields</h2>
-              <p>Art is something which helps us to be creative, so it's necessary to explore more and learn.</p>
-              <a href = "#">Read More</a>
-            </div>
-          </div>
-     
         </div>
-      </div>
-      
-    </section>
 
-    <footer style="text-align: center; padding: 20px; background-color: #f4f4f4;">
-      <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 10px;">
-          <!-- Facebook Icon -->
-          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
-             onmouseover="this.style.color='#3b5998'; this.style.transform='scale(1.2)';"
-             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
-              <i class="fab fa-facebook-f"></i>
-          </a>
-          <!-- Twitter (X) Icon -->
-          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
-             onmouseover="this.style.color='#1da1f2'; this.style.transform='scale(1.2)';"
-             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
-              <i class="fab fa-x-twitter"></i>
-          </a>
-          <!-- Instagram Icon -->
-          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
-             onmouseover="this.style.color='#e1306c'; this.style.transform='scale(1.2)';"
-             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
-              <i class="fab fa-instagram"></i>
-          </a>
-          <!-- LinkedIn Icon -->
-          <a href="https://www.linkedin.com/in/anuragvishwakarma/" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
-             onmouseover="this.style.color='#0077b5'; this.style.transform='scale(1.2)';"
-             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
-              <i class="fab fa-linkedin-in"></i>
-          </a>
-          <!-- Pinterest Icon -->
-          <a href="#" style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
-             onmouseover="this.style.color='#bd081c'; this.style.transform='scale(1.2)';"
-             onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
-              <i class="fab fa-pinterest"></i>
-          </a>
+        <div class="design-item">
+          <div class="design-img">
+            <img src="/src/images/art-design-4.webp" alt="">
+            <span><i class="far fa-heart"></i> 22</span>
+            <span>Creative Canvas</span>
+          </div>
+          <div class="design-title">
+            <a href="#">Think out of the box, enhance creativity</a>
+          </div>
+        </div>
+
+        <div class="design-item">
+          <div class="design-img">
+            <img src="/src/images/art-design-5.webp" alt="">
+            <span><i class="far fa-heart"></i> 22</span>
+            <span>Creative Canvas</span>
+          </div>
+          <div class="design-title">
+            <a href="#">Document your work and stay motivated in process</a>
+          </div>
+        </div>
+
+        <div class="design-item">
+          <div class="design-img">
+            <img src="/src/images/art-design-6.webp" alt="">
+            <span><i class="far fa-heart"></i> 22</span>
+            <span>Creative Canvas</span>
+          </div>
+          <div class="design-title">
+            <a href="#">Show your work to others and teach them</a>
+          </div>
+        </div>
+
       </div>
-      <span style="color: #333; font-size: 14px;">Creative Canvas Blog Page</span>
+    </div>
+  </section>
+
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="title">
+        <h2>Latest Blog</h2>
+        <p>recent blogs about art & design</p>
+      </div>
+
+      <div class="blog-content">
+
+        <div class="blog-item">
+          <div class="blog-img">
+            <img src="/src/images/blog-p-1.webp" alt="">
+            <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
+          </div>
+          <div class="blog-text">
+            <span>20 January, 2020</span>
+            <h2>Organizing the environment for productive work</h2>
+            <p>Organizing the work place is very much important as it gives you the motivation to work for longer
+              duration.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-item">
+          <div class="blog-img">
+            <img src="/src/images/blog-p-2.webp" alt="">
+            <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
+          </div>
+          <div class="blog-text">
+            <span>05 October, 2024</span>
+            <h2>Enhancing Creativity by Drawing</h2>
+            <p>We can able to enhance our creativity only when we can able to visualize things properly and draw it.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-item">
+          <div class="blog-img">
+            <img src="/src/images/blog-p-3.webp" alt="">
+            <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
+          </div>
+          <div class="blog-text">
+            <span>05 October, 2024</span>
+            <h2>Organizing other household stuffs</h2>
+            <p>Beside work we also have to organize our other household item to make house neat and clean.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-item">
+          <div class="blog-img">
+            <img src="/src/images/blog-p-4.webp" alt="">
+            <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
+          </div>
+          <div class="blog-text">
+            <span>05 October, 2024</span>
+            <h2>Spreading greenery in house</h2>
+            <p>Green plants spread greenery and make us feel fresh during through the day.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-item">
+          <div class="blog-img">
+            <img src="/src/images/blog-p-5.webp" alt="">
+            <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
+          </div>
+          <div class="blog-text">
+            <span>05 October, 2024</span>
+            <h2>Organizing the bed</h2>
+            <p>This is a very good habit of organizing the bed after waking up.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="blog-item">
+          <div class="blog-img">
+            <img src="/src/images/blog-p-6.webp" alt="">
+            <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
+          </div>
+          <div class="blog-text">
+            <span>05 October, 2024</span>
+            <h2>Exploring creative fields</h2>
+            <p>Art is something which helps us to be creative, so it's necessary to explore more and learn.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <footer style="text-align: center; padding: 20px; background-color: #f4f4f4;">
+    <div class="social-links" style="display: flex; justify-content: center; gap: 15px; margin-bottom: 10px;">
+      <!-- Facebook Icon -->
+      <a href="#"
+        style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+        onmouseover="this.style.color='#3b5998'; this.style.transform='scale(1.2)';"
+        onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <!-- Twitter (X) Icon -->
+      <a href="#"
+        style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+        onmouseover="this.style.color='#1da1f2'; this.style.transform='scale(1.2)';"
+        onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+      <!-- Instagram Icon -->
+      <a href="#"
+        style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+        onmouseover="this.style.color='#e1306c'; this.style.transform='scale(1.2)';"
+        onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <!-- LinkedIn Icon -->
+      <a href="https://www.linkedin.com/in/anuragvishwakarma/"
+        style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+        onmouseover="this.style.color='#0077b5'; this.style.transform='scale(1.2)';"
+        onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <!-- Pinterest Icon -->
+      <a href="#"
+        style="color: #6b21a8; font-size: 24px; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease;"
+        onmouseover="this.style.color='#bd081c'; this.style.transform='scale(1.2)';"
+        onmouseout="this.style.color='#6b21a8'; this.style.transform='scale(1)';">
+        <i class="fab fa-pinterest"></i>
+      </a>
+    </div>
+    <span style="color: #333; font-size: 14px;">Creative Canvas Blog Page</span>
   </footer>
+
   
   
      <!-- Back to Top Button -->
-     <button id="BacktoTop">
-      <span>↑</span>
-    </button>
-    <script src="src/Scripts/BacktoTop.js"></script>
     <script>
       // Coordinates for the cursor
       const coords = { x: 0, y: 0 };
@@ -629,79 +923,123 @@
         coords.y = e.clientY;
       });
 
-      // Animation function to move the circles
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
 
-        circles.forEach(function (circle, index) {
-          // Update the position and scale of each circle
-          circle.style.left = x - 12 + "px";
-          circle.style.top = y - 12 + "px";
-          circle.style.scale = (circles.length - index) / circles.length;
+  <!-- Back to Top Button -->
+  <button id="BacktoTop">
+    <span>↑</span>
+  </button>
+  <script src="src/Scripts/BacktoTop.js"></script>
+  <script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
 
-          circle.x = x;
-          circle.y = y;
+    // Colors for the circles
+    const colors = [
+      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+      "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+      "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+      "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
 
-          // Get the next circle in the sequence
-          const nextCircle = circles[index + 1] || circles[0];
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        // Update the position and scale of each circle
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        // Get the next circle in the sequence
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      // Repeat the animation
+      requestAnimationFrame(animateCircles);
+    }
+
+    // Start the animation
+    animateCircles();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const heartIcons = document.querySelectorAll('.heart-icon');
+      const likedBlogsList = document.getElementById('liked-blogs-list');
+      const popup = document.getElementById('liked-blogs-popup');
+      const closePopup = document.querySelector('.close-popup');
+
+      heartIcons.forEach(icon => {
+        icon.addEventListener('click', function () {
+          const isLiked = this.getAttribute('data-liked') === 'true';
+
+          if (isLiked) {
+            this.classList.remove('liked');
+            this.setAttribute('data-liked', 'false');
+            removeFromLikedBlogs(icon);
+          } else {
+            this.classList.add('liked');
+            this.setAttribute('data-liked', 'true');
+            addToLikedBlogs(icon);
+          }
         });
+      });
 
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
+      closePopup.addEventListener('click', () => {
+        popup.classList.add('hidden');
+      });
+
+      function addToLikedBlogs(icon) {
+        const blogTitle = icon.parentElement.nextElementSibling.innerText;
+        const listItem = document.createElement('li');
+        listItem.textContent = blogTitle;
+        likedBlogsList.appendChild(listItem);
       }
 
-      // Start the animation
-      animateCircles();
+      function removeFromLikedBlogs(icon) {
+        const blogTitle = icon.parentElement.nextElementSibling.innerText;
+        const items = likedBlogsList.getElementsByTagName('li');
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const heartIcons = document.querySelectorAll('.heart-icon');
-        const likedBlogsList = document.getElementById('liked-blogs-list');
-        const popup = document.getElementById('liked-blogs-popup');
-        const closePopup = document.querySelector('.close-popup');
-      
-        heartIcons.forEach(icon => {
-          icon.addEventListener('click', function () {
-            const isLiked = this.getAttribute('data-liked') === 'true';
-      
-            if (isLiked) {
-              this.classList.remove('liked');
-              this.setAttribute('data-liked', 'false');
-              removeFromLikedBlogs(icon);
-            } else {
-              this.classList.add('liked');
-              this.setAttribute('data-liked', 'true');
-              addToLikedBlogs(icon);
-            }
-          });
-        });
-      
-        closePopup.addEventListener('click', () => {
-          popup.classList.add('hidden');
-        });
-      
-        function addToLikedBlogs(icon) {
-          const blogTitle = icon.parentElement.nextElementSibling.innerText;
-          const listItem = document.createElement('li');
-          listItem.textContent = blogTitle;
-          likedBlogsList.appendChild(listItem);
-        }
-      
-        function removeFromLikedBlogs(icon) {
-          const blogTitle = icon.parentElement.nextElementSibling.innerText;
-          const items = likedBlogsList.getElementsByTagName('li');
-      
-          for (let i = 0; i < items.length; i++) {
-            if (items[i].textContent === blogTitle) {
-              likedBlogsList.removeChild(items[i]);
-              break;
-            }
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].textContent === blogTitle) {
+            likedBlogsList.removeChild(items[i]);
+            break;
           }
         }
-      });
-      
-    </script>
-  </body>
+
+      }
+    });
+
+  </script>
+  <script>
+
+    window.addEventListener('scroll', function () {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+  </script>
+</body>
+
 </html>
