@@ -291,100 +291,126 @@
         // Start the animation
         animateCircles();
       </script>
-      <button id="scrollToTopBtn">
-        <div class="progress-ring">
-            <svg viewBox="0 0 36 36">
-                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-            </svg>
-        </div>
-        <span>&uarr;</span>
-    </button>
+       <footer class="footer">
+        <div class="footer-content">
+            <!-- <div class="footer-image">
+                <img src="popup.jpg" alt="Newsletter signup" width="100">
+            </div> -->
+            <div class="newsletter-section">
+                <h3>Subscribe to our Newsletter</h3>
+                <input type="email" id="newsletter-email" placeholder="Enter your email address"><br>
+                <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
+            </div>
+            <div class="credit" style="font-size: 0.6rem;">
+                <p>
+                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
+
+                    © <span id="year"></span>
+
+                </p>
+                <div style="margin: 20px;" class="share">
+                    <i class="fab fa-github" style="margin-right: 10px;"></i>
+                    <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+    </footer>
     <style>
-/* Scroll to Top Button */
-#scrollToTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+      #canvas {
+            border: 1px solid #000000;
+            background-color: white;
+            cursor: crosshair;
+            width: 100%;
+            height: calc(100vh - 280px);
+            /* Adjusted for footer */
+        }
+
+      .footer {
+            background-color: #34313b;
+            color: rgb(255, 255, 255);
+            margin-right: 100px;
+
+        }
+        .footer-content{
+          margin-right: 650px;
+        }
+
+        .newsletter-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+          
+        }
+
+        .newsletter-section input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .newsletter-section button {
+            background-color: #0000ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+        }
+
+        .newsletter-section button:hover {
+            background-color: #340c90;
+        }
+
+        .text-size-control {
             display: flex;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            outline: none;
-            border: none;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        #scrollToTopBtn.show {
-            opacity: 1;
-        }
-
-        #scrollToTopBtn span {
-            font-size: 24px;
+            gap: 10px;
+            margin: 10px 0;
+            background-color: #0000FF;
+            padding: 10px;
+            border-radius: 5px;
             color: white;
         }
 
-        /* Progress Ring */
-        .progress-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 36px;
-            height: 36px;
-            transform: translate(-50%, -50%);
+        .text-size-control input {
+            width: 60px;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
         }
 
-        .progress-ring svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
+        .text-size-control:hover {
+            background-color: #090874;
+            transition: background-color 0.3s;
         }
 
-        .ring-bg {
-            fill: none;
-            stroke: rgba(255, 255, 255, 0.2);
-            stroke-width: 4;
+        .credit {
+            text-align: center;
         }
 
-        .ring-progress {
-            fill: none;
-            stroke: white;
-            stroke-width: 4;
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-            transition: stroke-dashoffset 0.3s;
+        .share {
+            font-size: 25px;
+        }
+
+        .share i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .share i:hover {
+            cursor: pointer;
+            color: #5c2872;
+        }
+        .profile{
+            font-size: 2rem;
+            padding-right: 1rem;
         }
     </style>
-
-    <!-- JavaScript for Scroll to Top Button -->
-    <script>
-        // Show button and update progress ring on scroll
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        const ringProgress = document.querySelector(".ring-progress");
-
-        window.addEventListener("scroll", () => {
-            // Show/hide button
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add("show");
-            } else {
-                scrollToTopBtn.classList.remove("show");
-            }
-
-            // Update progress ring
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
-        });
-
-        // Scroll to top when button clicked
-        scrollToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
   </body>
 </html>
