@@ -164,6 +164,7 @@ input:focus, textarea:focus {
     justify-content: center;
     gap: 5px;
     margin: 10px 0;
+    flex-direction: row-reverse;
 }
 
 .star-rating input[type="radio"] {
@@ -338,3 +339,13 @@ body {
         transform: translateY(0);
     }
 }
+
+.star-rating label {
+
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+
+}
+
