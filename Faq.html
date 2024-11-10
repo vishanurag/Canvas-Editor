@@ -23,44 +23,43 @@
             flex-direction: column;
         }
 
-        .header {
-            background-color: rgba(51, 51, 51, 0.8);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+ 
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
+                
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #fff;
-        }
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-        }
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
 
-        .nav-links a {
-            color: #bbb;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
 
-        .nav-links a:hover {
-            color: #fff;
-        }
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
 
         .container {
             width: 900px;
@@ -194,18 +193,22 @@
     <div class="circle"></div>
 
     <header class="header">
-        <nav class="navbar">
-            <div class="title">Creative Canvas Tool</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="#blogs">Blogs</a>
-                <a href="index.html#mainCanvas">Draw</a>
-                <a href="contributors.html">Contributors</a>
-                <a href="testimonial.html">Testimonial</a>
-            </div>
-        </nav>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
+  </nav>
     </header>
 
     <div class="container">
