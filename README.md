@@ -117,6 +117,7 @@
 ├── canva.js
 ├── canva.md
 ├── community.html
+├── contact.html
 ├── contributors.html
 ├── download (1).webp
 ├── edition.html
@@ -131,6 +132,7 @@
 ├── popup.js
 ├── privacy.html
 ├── profile.html
+├── profileedit.html
 ├── repo_structure.txt
 ├── repreviewfix.html
 ├── resources/
