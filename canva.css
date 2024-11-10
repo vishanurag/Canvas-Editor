@@ -62,3 +62,6 @@ canvas {
     background-color: white;
     cursor: crosshair;
 }
+.text-options #font-style , .text-options #font-size{
+    color:black;
+}
