@@ -33,70 +33,9 @@
             visibility: hidden; 
         }
 
-        .navbar {
-        background-color: #f0adfb;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* Center aligns the navbar */
-        position: fixed; /* Sticks to the top */
-        width: 100%;
-        z-index: 1000;
-    }
+        
 
-    .navbar h1 {
-        color: rgb(255, 255, 255);
-        margin: 0;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-links a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        padding: 6px 4px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover {
-        background-color: #541058;
-    }
-
-        .title {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .site-name {
-            background: linear-gradient(45deg, #6b21a8, #9333ea);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: #5b21b6;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background: rgba(147, 51, 234, 0.1);
-            transform: translateY(-2px);
-        }
+        
 
         .banner {
             text-align: center;
@@ -265,13 +204,15 @@
             margin: 0 1rem;
             transition: all 0.3s ease;
         }
-
+</style>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Section</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  
   <style>
     body {
       margin: 0;
@@ -295,45 +236,8 @@
       opacity: 0.6;
     }
 
-    .navbar {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.15);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    /* Title styling */
-    .navbar .title .site-name {
-      font-family: 'Poppins', sans-serif;
-      /* Use Google Fonts for custom style */
-      font-size: 1.5rem;
-      color: #ffffff;
-      text-transform: uppercase;
-    }
-
-    /* Navigation link styling */
-    .navbar .nav-links a {
-      color: #5b21b6;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Hover effect on links */
-    .navbar .nav-links a:hover {
-      color: #6b21a8;
-      transform: scale(1.1);
-    }
-
+    
+    
     .title {
       display: flex;
       align-items: center;
@@ -349,24 +253,7 @@
       font-size: 1.8rem;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      color: #5b21b6;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(147, 51, 234, 0.1);
-      transform: translateY(-2px);
-    }
-
+    
     .banner {
       text-align: center;
       padding: 4rem 2rem;
@@ -628,6 +515,41 @@
       transition: width 0.09s ease-in-out;
       border-radius: 10px;
     }
+
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
   </style>
 </head>
 
@@ -657,23 +579,22 @@
     <!-- Previous HTML structure remains the same, just using placeholder images -->
     <!-- Replace all image sources with placeholder API -->
     <!-- For example: -->
-    <nav class="navbar">
-      <div class="nav-links">
-          <h1 class="canvas">Canvas Editor</h1>
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About Us</a>
-          <a href="review.html">Review</a>
-          <a href="testimonial.html">Testimonial</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="tutorial.html">Tutorial</a>
-          <a href="Blog_page.html">Blog</a>
-          <a href="Faq.html">FAQ</a>
-          <a href="./Feedback.html">Feedback</a>
-          <!-- <a href="signup.html">Sign Up</a> -->
-          <a href="contributors.html">Contributors</a>
-      
-      </div>
-    </nav>
+ <!-- Navbar -->
+ <nav class="navbar">
+  <h1 class="canvas">Canvas Editor</h1>
+  <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="review.html">Review</a>
+      <a href="testimonial.html">Testimonial</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="Blog_page.html">Blog</a>
+      <a href="Faq.html">FAQ</a>
+      <a href="Feedback.html">Feedback</a>
+      <a href="contributors.html">Contributors</a>
+  </div>
+</nav>
 <header>
       <div class = "banner">
         <div class = "container">
@@ -695,7 +616,7 @@
 
         <div class="design-item">
           <div class="design-img">
-            <img src="/src/images/art-design-1.webp" alt="">
+            <img src="./src/images/art-design-1.webp" alt="">
             <span><i class="far fa-heart"></i> 22</span>
             </span>
             <span>Creative Canvas</span>
@@ -707,7 +628,7 @@
 
         <div class="design-item">
           <div class="design-img">
-            <img src="/src/images/art-design-2.webp" alt="">
+            <img src="./src/images/art-design-2.webp" alt="">
             <span><i class="far fa-heart"></i> 22</span>
             <span>Creative Canvas</span>
           </div>
@@ -718,7 +639,7 @@
 
         <div class="design-item">
           <div class="design-img">
-            <img src="/src/images/art-design-3.webp" alt="">
+            <img src="./src/images/art-design-3.webp" alt="">
             <span><i class="far fa-heart"></i> 22</span>
             <span>Creative Canvas</span>
           </div>
@@ -729,7 +650,7 @@
 
         <div class="design-item">
           <div class="design-img">
-            <img src="/src/images/art-design-4.webp" alt="">
+            <img src="./src/images/art-design-4.webp" alt="">
             <span><i class="far fa-heart"></i> 22</span>
             <span>Creative Canvas</span>
           </div>
@@ -740,7 +661,7 @@
 
         <div class="design-item">
           <div class="design-img">
-            <img src="/src/images/art-design-5.webp" alt="">
+            <img src="./src/images/art-design-5.webp" alt="">
             <span><i class="far fa-heart"></i> 22</span>
             <span>Creative Canvas</span>
           </div>
@@ -751,7 +672,7 @@
 
         <div class="design-item">
           <div class="design-img">
-            <img src="/src/images/art-design-6.webp" alt="">
+            <img src="./src/images/art-design-6.webp" alt="">
             <span><i class="far fa-heart"></i> 22</span>
             <span>Creative Canvas</span>
           </div>
@@ -775,7 +696,7 @@
 
         <div class="blog-item">
           <div class="blog-img">
-            <img src="/src/images/blog-p-1.webp" alt="">
+            <img src="./src/images/blog-p-1.webp" alt="">
             <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
           </div>
           <div class="blog-text">
@@ -789,7 +710,7 @@
 
         <div class="blog-item">
           <div class="blog-img">
-            <img src="/src/images/blog-p-2.webp" alt="">
+            <img src="./src/images/blog-p-2.webp" alt="">
             <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
           </div>
           <div class="blog-text">
@@ -802,7 +723,7 @@
 
         <div class="blog-item">
           <div class="blog-img">
-            <img src="/src/images/blog-p-3.webp" alt="">
+            <img src="./src/images/blog-p-3.webp" alt="">
             <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
           </div>
           <div class="blog-text">
@@ -815,7 +736,7 @@
 
         <div class="blog-item">
           <div class="blog-img">
-            <img src="/src/images/blog-p-4.webp" alt="">
+            <img src="./src/images/blog-p-4.webp" alt="">
             <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
           </div>
           <div class="blog-text">
@@ -828,7 +749,7 @@
 
         <div class="blog-item">
           <div class="blog-img">
-            <img src="/src/images/blog-p-5.webp" alt="">
+            <img src="./src/images/blog-p-5.webp" alt="">
             <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
           </div>
           <div class="blog-text">
@@ -841,7 +762,7 @@
 
         <div class="blog-item">
           <div class="blog-img">
-            <img src="/src/images/blog-p-6.webp" alt="">
+            <img src="./src/images/blog-p-6.webp" alt="">
             <span><i class="far fa-heart heart-icon" data-liked="false"></i></span>
           </div>
           <div class="blog-text">
@@ -898,40 +819,11 @@
     <span style="color: #333; font-size: 14px;">Creative Canvas Blog Page</span>
   </footer>
 
-  
-  
-     <!-- Back to Top Button -->
-    <script>
-      // Coordinates for the cursor
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-
-      // Colors for the circles
-      const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-        "#680060", "#60005f", "#48005f", "#3d005e"
-      ];
-
-      // Assign colors and initial position to each circle
-      circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-      });
-
-      // Update the coordinates when the mouse moves
-      window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-      });
-
 
   <!-- Back to Top Button -->
   <button id="BacktoTop">
     <span>↑</span>
-  </button>
+   </button>
   <script src="src/Scripts/BacktoTop.js"></script>
   <script>
     // Coordinates for the cursor
