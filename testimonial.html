@@ -1,4 +1,4 @@
-You said:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +24,11 @@ You said:
         }
 
         /* Navbar styling */
-        .navbar {
-            background-color: #f0adfb;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            position: fixed;
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000;
@@ -231,24 +230,46 @@ You said:
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-links">
-            <h1 class="canvas">Canvas Editor</h1>
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="review.html">Review</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="tutorial.html">Tutorial</a>
-            <a href="Blog_page.html">Blog</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="./Feedback.html">Feedback</a>
-            <!-- <a href="signup.html">Sign Up</a> -->
-            <a href="contributors.html">Contributors</a>
-        
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <div class="site-name">Creative Canvas Tool</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="blog.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+            <div class="auth">
+                <a href="auth.html">Sign up/Sign in</a>
+            </div>
         </div>
-      </nav>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <h2>Welcome to Our Testimonials Page</h2>
@@ -505,6 +526,6 @@ You said:
 
         // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+      </script>
 </body>
 </html>
