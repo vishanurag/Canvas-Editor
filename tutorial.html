@@ -15,6 +15,7 @@
             min-height: 100vh;
         }
         
+
                
     .navbar {
         background-color: #e588e7;
@@ -51,6 +52,7 @@
         background-color: #ef9ef5;
     }
         /* Logo */
+
         .logo {
             color: white;
             font-size: 24px;
@@ -65,8 +67,24 @@
             margin-left: 5px;
             font-size: 20px;
         }
-        
-        /* Content */
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: white;
+        }
         .content {
             max-width: 800px;
             margin: 2rem auto;
@@ -236,6 +254,7 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
+
     
   <!-- Navbar -->
   <nav class="navbar">
@@ -255,6 +274,7 @@
   </nav>
 
   
+
     <h1 class="heading">Canvas Editor Tutorial</h1>
 
     <div class="content">
@@ -511,7 +531,6 @@ const coords = { x: 0, y: 0 };
 
         // Start the animation
         animateCircles();
-
     </script>
 </body>
 </html>
