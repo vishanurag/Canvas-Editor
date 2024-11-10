@@ -137,7 +137,7 @@
             background-color: #8e44ad;
         }
 
-        .footer {
+        /* .footer {
             background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             text-align: center;
@@ -154,7 +154,7 @@
 
         .footer .share a:hover {
             color: #ffb7fd;
-        }
+        } */
 
         .circle {
             height: 24px;
@@ -255,30 +255,174 @@
         </form>
     </div>
 
-    <footer class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin-in"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+    <!-- footer -->
+     <!-- Footer -->
+    <footer class="main-footer">
+        <div class="containers">
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
+            </div>
+
+            <!-- Quick Links Section (Center) -->
+            <div class="footer-column center">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons Section (Right) -->
+            <div class="footer-column right">
+                <h5 class="footer-heading">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
-        <p>Created by <a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
+        <div class="text-center py-3" style="margin-top: 32px; margin-left:43%;">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
     </footer>
+    <style>
+        /* Footer Styling */
+        .main-footer {
+            background-color: #333;
+            /* Dark background */
+            color: #f1f1f1;
+            /* Light text color */
+            padding: 18px 0;
+            font-size: 16px;
+        }
+
+        .footer-heading {
+            color: #e56767;
+            /* Red/pink heading color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .main-footer a {
+            color: #f1f1f1;
+            /* Link color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .main-footer a:hover {
+            color: #e56767;
+            /* Link hover color */
+        }
+
+        /* Footer Container Styling */
+        .main-footer .containers {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Columns Styling */
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column.center {
+            text-align: center;
+        }
+
+        .footer-column.right {
+            text-align: right;
+            margin-top: -76px;
+        }
+
+        /* Quick Links List */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled a {
+            color: #f1f1f1;
+            transition: color 0.3s ease;
+        }
+
+        .list-unstyled a:hover {
+            color: #e56767;
+            text-decoration: underline;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #e56767;
+        }
+    </style>
 
     <script>
         // Accordion functionality
-        document.querySelectorAll('.accordion-title').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                button.classList.toggle('active');
-                if (button.classList.contains('active')) {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-            });
+const accordionTitles = document.querySelectorAll('.accordion-title');
+
+accordionTitles.forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Close all other accordion items
+        accordionTitles.forEach(item => {
+            if (item !== button) {
+                item.classList.remove('active');
+                item.nextElementSibling.style.display = 'none';
+            }
         });
+
+        // Toggle the clicked item
+        const content = button.nextElementSibling;
+        button.classList.toggle('active');
+        if (button.classList.contains('active')) {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    });
+});
+
+// Close accordion when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInsideAccordion = event.target.closest('.accordion');
+    if (!isClickInsideAccordion) {
+        accordionTitles.forEach(item => {
+            item.classList.remove('active');
+            item.nextElementSibling.style.display = 'none';
+        });
+    }
+});
 
         // Cursor animation
         const coords = { x: 0, y: 0 };
@@ -325,6 +469,101 @@
 
         // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 36 36">
+                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            </svg>
+        </div>
+        <span>&uarr;</span>
+    </button>
+    <style>
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            outline: none;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Progress Ring */
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 36px;
+            height: 36px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: white;
+            stroke-width: 4;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.3s;
+        }
+    </style>
+    <!-- JavaScript for Scroll to Top Button -->
+    <script>
+        // Show button and update progress ring on scroll
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
+
+        window.addEventListener("scroll", () => {
+            // Show/hide button
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+
+            // Update progress ring
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+        });
+
+        // Scroll to top when button clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
 </body>
 </html>

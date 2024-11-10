@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Canvas Editor Tutorial</title>
     <style>
         body {
@@ -13,6 +14,8 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
+        
+        /* Navbar */
         .navbar {
             background-color: #333;
             padding: 10px 20px;
@@ -28,6 +31,7 @@
             display: flex;
             align-items: center;
         }
+        
         .logo::after {
             content: '✏️';
             margin-left: 5px;
@@ -56,12 +60,15 @@
             margin: 2rem auto;
             padding: 0 1rem;
         }
+        
         .heading {
             font-size: 2.5rem;
             color: #353047;
             margin-bottom: 2rem;
             text-align: center;
         }
+        
+        /* Tutorial Section */
         .tutorial-section {
             background-color: rgba(255, 255, 255, 0.3);
             border-radius: 8px;
@@ -69,11 +76,13 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        
         h2 {
             color: #353047;
             border-bottom: 2px solid #353047;
             padding-bottom: 10px;
         }
+        
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -83,6 +92,12 @@
             font-weight: bold;
             text-align: center;
         }
+        
+        .green { background-color: #28b864; }
+        .purple { background-color: #9b59b6; }
+        .red { background-color: #e74c3c; }
+        
+        /* Call to Action */
         .cta {
             text-align: center;
             margin-top: 3rem;
@@ -91,10 +106,11 @@
             color: #fff;
             border-radius: 10px;
         }
+        
         .cta h2 {
             color: #f5f5f5;
-            border-bottom: none;
         }
+        
         .cta-button {
             display: inline-block;
             background-color: #353047;
@@ -106,12 +122,12 @@
             transition: background-color 0.3s ease;
             margin-top: 1rem;
         }
+        
         .cta-button:hover {
             background-color: #1a252f;
         }
-        .green { background-color: #28b864; }
-        .purple { background-color: #9b59b6; }
-        .red { background-color: #e74c3c; }
+        
+        /* Floating Circles */
         .circle {
             height: 24px;
             width: 24px;
@@ -121,8 +137,67 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: 99999999;
+            z-index: 9999;
             transition: transform 0.1s ease-out;
+        }
+        
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            outline: none;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+        
+        #scrollToTopBtn span {
+            font-size: 24px;
+            color: white;
+        }
+        
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 36px;
+            height: 36px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        
+        .ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+        }
+        
+        .ring-progress {
+            fill: none;
+            stroke: white;
+            stroke-width: 4;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.3s;
         }
     </style>
 </head>
@@ -159,6 +234,8 @@
         </ul>
     </nav>
 
+
+    
     <h1 class="heading">Canvas Editor Tutorial</h1>
 
     <div class="content">
@@ -204,37 +281,168 @@
         </div>
         
         <div class="tutorial-section">
-            <h2>5. Background Options</h2>
-            <p>Customize your canvas background:</p>
-            <ul>
-                <li><strong>Background Image:</strong> Upload an image to use as your canvas background.</li>
-                <li><strong>Background Color:</strong> Choose a solid color for your canvas background.</li>
-            </ul>
-        </div>
-        
-        <div class="tutorial-section">
-            <h2>6. Saving Your Work</h2>
-            <p>When you're done, save your masterpiece:</p>
-            <span class="button green">Save</span>
-            <span class="button red">Clear</span>
-            <span class="button purple">Download</span>
-            <span class="button purple">Save Image</span>
-            <ul>
-                <li><strong>Save:</strong> Store your work for later editing.</li>
-                <li><strong>Clear:</strong> Start over with a blank canvas.</li>
-                <li><strong>Download:</strong> Save your work to your device.</li>
-                <li><strong>Save Image:</strong> Export your canvas as an image file.</li>
-            </ul>
-        </div>
-        <div class="cta">
-            <h2>Ready to unleash your creativity?</h2>
-            <p>Join thousands of satisfied users and start designing today!</p> 
-            <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
+            <h2>5. Export Options</h2>
+            <p>Save your work in various formats:</p>
+            <span class="button green">PNG</span>
+            <span class="button purple">JPEG</span>
+            <span class="button red">PDF</span>
+            <p>Choose a format, then download your masterpiece.</p>
         </div>
     </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+        <h2>Ready to Create?</h2>
+        <p>Try the Canvas Editor now and start creating amazing artwork!</p>
+        <a href="editor.html" class="cta-button">Launch Canvas Editor</a>
+    </div>
+    <!-- footer -->
+     <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
+            </div>
+
+            <!-- Quick Links Section (Center) -->
+            <div class="footer-column center">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons Section (Right) -->
+            <div class="footer-column right">
+                <h5 class="footer-heading">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3" style="margin-top: 32px; margin-left: 43%;">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
+    </footer>
+    <style>
+        /* Footer Styling */
+        .main-footer {
+            background-color: #333;
+            /* Dark background */
+            color: #f1f1f1;
+            /* Light text color */
+            padding: 18px 0;
+            font-size: 16px;
+        }
+
+        .footer-heading {
+            color: #e56767;
+            /* Red/pink heading color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .main-footer a {
+            color: #f1f1f1;
+            /* Link color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .main-footer a:hover {
+            color: #e56767;
+            /* Link hover color */
+        }
+
+        /* Footer Container Styling */
+        .main-footer .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Columns Styling */
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column.center {
+            text-align: center;
+        }
+
+        .footer-column.right {
+            text-align: right;
+            margin-top: -76px;
+        }
+
+        /* Quick Links List */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled a {
+            color: #f1f1f1;
+            transition: color 0.3s ease;
+        }
+
+        .list-unstyled a:hover {
+            color: #e56767;
+            text-decoration: underline;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #e56767;
+        }
+    </style>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn">
+        <span>↑</span>
+        <div class="progress-ring">
+            <svg>
+                <circle class="ring-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="ring-progress" cx="18" cy="18" r="16"></circle>
+            </svg>
+        </div>
+    </button>
+
     <script>
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
+
+// Coordinates for the cursor
+const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
 
         // Colors for the circles

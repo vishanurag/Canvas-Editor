@@ -27,6 +27,7 @@
     <meta name="author" content="Vishanurag">
     <link rel="canonical" href="https://github.com/vishanurag/Canvas-Editor">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
     
     <div class="visitor-counter">
@@ -70,6 +71,7 @@
         .visitor-counter:hover {
             transform: scale(1.05);
             /* Slightly enlarge on hover */
+
             box-shadow: 0 8px 16px rgba(197, 56, 215, 0.2);
             /* Enhance shadow on hover */
         }
@@ -123,10 +125,169 @@
         }
 
         .dark-mode .visitor-counter {
+
             background-color: rgba(185, 66, 196, 0.7);
+
             /* Darker background for dark mode */
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
                 0 2px 4px rgba(255, 255, 255, 0.05);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            width: 100px;
+            background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+            color: white;
+            padding: 20px;
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #63077f;
+            border: none;
+            color: #f8f9f9;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar button i {
+            margin-right: 8px;
+        }
+
+        .sidebar button:hover {
+            background: #f67280;
+            transform: scale(1.05);
+        }
+
+        .navbar {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: #7e2424;
+            margin: 0px;
+            font-size: 30px;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #f67280;
+        }
+
+        .tools {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background-color: #e76af5;
+            align-items: center;
+        }
+
+        .tool {
+            background-color: #460346;
+            border: none;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tool i {
+            font-size: 20px;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .tool:hover i {
+            color: #ff6b6b;
+            transform: scale(1.2);
+        }
+
+        .tool.active {
+            background-color: #5e044f;
+        }
+
+        #canvas {
+            border: 2px solid #e049e8;
+            background-color: white;
+            cursor: crosshair;
+            width: 100%;
+            height: calc(100vh - 220px);
+        }
+
+        .visitor-counter {
+            position: fixed;
+            top: 570px;
+            left: 10px;
+            background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 8px 20px rgba(255, 105, 135, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .visitor-counter:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer .subscribe {
+            background-color: #d426d7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .footer .subscribe:hover {
+            background-color: #a008b7;
         }
     </style>
     <script>
@@ -164,7 +325,9 @@
 
         .sidebar {
             width: 100px;
+
             background-color: #eca6f4;
+
             color: white;
             padding: 17px;
             padding-top: 100px;
@@ -175,7 +338,9 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
+
             background-color: #63077f;
+
             border: none;
             color: rgb(248, 249, 249);
             text-align: left;
@@ -186,7 +351,9 @@
         }
 
         .sidebar button:hover {
+
             background-color: #911da1;
+
         }
 
         .canvas{
@@ -202,7 +369,9 @@
         }
 
         .navbar {
+
             background-color: #f0adfb;
+
             padding: 10px;
             display: flex;
             justify-content: space-between;
@@ -213,14 +382,16 @@
             color: rgb(126, 36, 36);
             margin: 0px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 30px;
+            font-size: 20px;
         }
 
         .nav-links {
             display: flex;
             gap: 20px;
             margin: auto;
+
             align-items: center;
+
             
         }
 
@@ -241,11 +412,13 @@
             gap: 10px;
             padding-left: 40px;
             padding-bottom: 10px;
+
             background-color: #e76af5;
         }
 
         .tool {
             background-color: #460346;
+
             border: none;
             color: white;
             /* padding: 10px; */
@@ -260,17 +433,18 @@
         }
 
         .tool:hover {
+
             background-color: #87087c;
         }
 
         .tool.active {
             background-color: #5e044f;
+
         }
 
         #canvas {
             border: 1px solid #e049e8;
             background-color: white;
-            cursor: crosshair;
             width: 100%;
             height: calc(100vh - 280px);
             /* Adjusted for footer */
@@ -298,7 +472,9 @@
             background: white;
             padding: 10px;
             border-radius: 4px;
+
             box-shadow: 0 2px 10px rgba(187, 60, 178, 0.1);
+
             display: none;
             grid-template-columns: repeat(5, 1fr);
             gap: 5px;
@@ -318,7 +494,9 @@
         }
 
         .footer {
+
             background-color: #fb99f8;
+
             color: rgb(255, 255, 255);
 
         }
@@ -341,7 +519,9 @@
         }
 
         .newsletter-section button {
+
             background-color: #d426d7;
+
             color: white;
             border: none;
             padding: 10px 20px;
@@ -352,7 +532,9 @@
         }
 
         .newsletter-section button:hover {
+
             background-color: #a008b7;
+
         }
 
         .text-size-control {
@@ -360,7 +542,9 @@
             align-items: center;
             gap: 10px;
             margin: 10px 0;
+
             background-color: #c350da;
+
             padding: 10px;
             border-radius: 5px;
             color: white;
@@ -375,7 +559,9 @@
         }
 
         .text-size-control:hover {
+
             background-color: #5d0874;
+
             transition: background-color 0.3s;
         }
 
@@ -441,9 +627,9 @@
     <div class="circle"></div>
     <div class="sidebar">
      
-        <button id="tools-btn">Tools 🔧</button>
-        <button id="settings-btn">Settings ⚙️</button>
-        <button id="help-btn">Help ❓</button>
+        <button id="tools-btn"><i class="fas fa-wrench"></i> Tools</button>
+        <button id="settings-btn"><i class="fas fa-cogs"></i> Settings</button>
+        <button id="help-btn"><i class="fas fa-question-circle"></i> Help</button>
 
         
     </div>
@@ -460,18 +646,44 @@
                 <a href="Blog_page.html">Blog</a>
                 <a href="Faq.html">FAQ</a>
                 <a href="./Feedback.html">Feedback</a>
+                <a href="./contact.html">contact us</a>
                 <!-- <a href="signup.html">Sign Up</a> -->
                 <a href="contributors.html">Contributors</a>
 
 
                 <a href="login.html">Login</a>
+                
 
-                 <!-- Profile Icon -->
-       
-                <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-top: -1px; align-items: center;">
-                </a>
-                </li>
+              
+
+                <!-- Profile Icon -->
+
+    <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+             alt="Profile Icon" 
+             style="width: 35px; height: 35px; border-radius: 50%; margin-top: -1px; align-items: center;">
+    </a>
+
+</li>
+
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the saved avatar from localStorage
+    const savedAvatar = localStorage.getItem("selectedAvatar");
+
+    // If an avatar is saved, update the profile image
+    if (savedAvatar) {
+        const homeProfileImage = document.getElementById("homeProfileImage");
+        if (homeProfileImage) {
+            homeProfileImage.src = savedAvatar;
+        }
+    }
+});
+
+</script>
 
                 <style>
 
@@ -544,8 +756,6 @@
 
                 
 
-              
-
 
             </div>
             <a href="auth.html" class="profile">
@@ -553,16 +763,19 @@
             </a>
         </nav>
         <div class="tools">
-            <button class="tool active" id="pencil">Pencil</button>
-            <button class="tool" id="marker">Marker</button>
-            <button class="tool" id="eraser">Eraser</button>
-            <button class="tool" id="line">Line</button>
-            <button class="tool" id="rectangle">Rectangle</button>
-            <button class="tool" id="circle">Circle</button>
-            <button class="tool" id="text">Text</button>
-            <button class="tool" id="textarea">Text Area</button>
-            <button class="tool" id="undoButton">Undo</button>
-            <button class="tool" id="redoButton">Redo</button>
+            <button id="toggleToolbar" class="arrow-button">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="tool active" id="pencil"><i class="fas fa-pencil-alt" title="Pencil"></i></button>
+            <button class="tool" id="marker"><i class="fas fa-highlighter" title="Marker"></i></button>
+            <button class="tool" id="eraser"><i class="fas fa-eraser" title="Eraser"></i></button>
+            <button class="tool" id="line"><i class="fas fa-minus" title="Line"></i></button>
+            <button class="tool" id="rectangle"><i class="far fa-square" title="Rectangle"></i></button>
+            <button class="tool" id="circle"><i class="far fa-circle" title="Circle"></i></button>
+            <button class="tool" id="text"><i class="fas fa-font" title="Text"></i></button>            
+            <button class="tool" id="textarea"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Area"><path d="M256-240h84l44-122h192l44 122h84L522-720h-84L256-240Zm152-192 70-198h4l70 198H408ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0-640v640-640Z"/></svg></button>
+            <button class="tool" id="undoButton"><i class="fa-solid fa-rotate-left" title="Undo"></i></button>
+            <button class="tool" id="redoButton"><i class="fa-solid fa-rotate-right" title="Redo"></i></button>
             <div class="color-picker">
                 <input type="color" id="colorPicker">
                 <div class="color-palette">
@@ -595,11 +808,109 @@
             </div>
             <input type="range" id="lineWidth" min="1" max="50" value="5">
             <div class="text-size-control">
-                <label for="textSize">Text Size:</label>
+                <label for="textSize"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Size"><path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"/></svg>:</label>
                 <input type="number" id="textSize" min="8" max="72" value="20">
             </div>
-            <button class="tool" id="clear">Clear</button>
-            <button class="tool" id="toggleGridButton">Toggle Grid</button>
+            <button class="tool" id="clear"><i class="fas fa-trash-alt" title="Clear Canvas"></i></button>
+            <button class="tool" id="toggleGridButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Toggle Grid"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"/></svg></button>
+            <style>
+                /* Styling for the toggle button */
+                #toggleToolbar {
+                    background-color: #460346;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                }
+        
+                #toggleToolbar i {
+                    margin-right: 5px;
+                }
+        
+                #toggleToolbar:hover {
+                    background-color: #5e044f;
+                }
+        
+                /* CSS for hiding and showing toolbar */
+                .sidebar.collapsed {
+                    width: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    transition: width 0.3s ease;
+                }
+                .arrow-button {
+                    background-color: #460346;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: transform 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                }
+                .arrow-button i {
+                    font-size: 20px;
+                    transition: transform 0.3s ease;
+                }
+                
+                .arrow-button:hover {
+                    background-color: #5e044f;
+                }
+                
+                /* Rotate arrow when sidebar is collapsed */
+                .sidebar.collapsed + .tools .arrow-button i {
+                    transform: rotate(180deg);
+                }
+                
+                /* CSS for hiding and showing toolbar */
+                .sidebar.collapsed {
+                    width: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    transition: width 0.3s ease;
+                }
+            </style>
+            <script>
+                const toolbarButton = document.getElementById('toggleToolbar');
+                const sidebar = document.querySelector('.sidebar');
+                const canva = document.getElementById('canvas');
+                const arrowIcon = toolbarButton.querySelector('i'); // Get the icon element
+                
+                toolbarButton.addEventListener('click', () => {
+                    sidebar.classList.toggle('collapsed');
+                    updateArrowIcon(); // Update the arrow direction
+                    resizeCanvas(); // Adjust canvas width when the sidebar toggles
+                });
+                
+                function updateArrowIcon() {
+                    if (sidebar.classList.contains('collapsed')) {
+                        arrowIcon.classList.remove('fa-arrow-left');
+                        arrowIcon.classList.add('fa-arrow-right'); // Right arrow when toolbar is minimized
+                    } else {
+                        arrowIcon.classList.remove('fa-arrow-right');
+                        arrowIcon.classList.add('fa-arrow-left'); // Left arrow when toolbar is expanded
+                    }
+                }
+                
+                function resizeCanvas() {
+                    const sidebarWidth = sidebar.classList.contains('collapsed') ? 0 : 200;
+                    canvas.width = window.innerWidth - sidebarWidth; // Adjust for sidebar
+                    canvas.height = window.innerHeight - 220; // Adjust for footer
+                }
+                
+                // Initial call to set the canvas size correctly
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+                
+
+            </script>
         </div>
         <canvas id="canvas"></canvas>
         <footer class="footer">
@@ -767,22 +1078,35 @@
         function startDrawing(e) {
             isDrawing = true;
             [startX, startY] = [e.offsetX, e.offsetY];
+
+            snapshot = ctx.getImageData(0,0,canvas.width,canvas.height);
+
             saveState();
             redoStack = [];
             draw(e);
+
         }
+
+        const drawRect = (e) => {
+            ctx.strokeRect(e.offsetX, e.offsetY, startX - e.offsetX, startY - e.offsetY);
+        }
+
+        const drawCircle = (e) => {
+             x = e.offsetX;
+             y = e.offsetY;
+            ctx.beginPath();
+            const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));      
+            ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
 
         function draw(e) {
             if (!isDrawing) return;
 
-
             const x = e.offsetX;
             const y = e.offsetY;
-
-            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            
 
             switch (currentTool) {
                 case 'pencil':
@@ -811,9 +1135,20 @@
                     [startX, startY] = [x, y];
                     break;
                 case 'line':
+                    ctx.putImageData(snapshot,0,0);
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                    break;
                 case 'rectangle':
+                    ctx.putImageData(snapshot,0,0);
+                    drawRect(e);
+                    break;
                 case 'circle':
-                    // These shapes are drawn on mouseup
+                   
+                    ctx.putImageData(snapshot,0,0);
+                    drawCircle(e);
                     break;
                 case 'text':
                 case 'textarea':
@@ -832,21 +1167,7 @@
             const fontSize = document.getElementById('textSize').value;
 
             switch (currentTool) {
-                case 'line':
-                    ctx.beginPath();
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(x, y);
-                    ctx.stroke();
-                    break;
-                case 'rectangle':
-                    ctx.strokeRect(startX, startY, x - startX, y - startY);
-                    break;
-                case 'circle':
-                    const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
-                    ctx.beginPath();
-                    ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
-                    ctx.stroke();
-                    break;
+        
                 case 'text':
                     const text = prompt('Enter text:');
                     if (text) {
@@ -1102,6 +1423,7 @@ document.getElementById('redoButton').addEventListener('click', redo);
         </div>
     </div>
 
+
     <script>
         // Show the poll popup 10 seconds after the page loads, if not already voted
         window.onload = function () {
@@ -1146,6 +1468,7 @@ document.getElementById('redoButton').addEventListener('click', redo);
 
         initializePoll();
 
+
     </script>
 
     <script>
@@ -1167,6 +1490,7 @@ document.getElementById('redoButton').addEventListener('click', redo);
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
 
+
         });
 
         // Update the coordinates when the mouse moves
@@ -1187,6 +1511,7 @@ document.getElementById('redoButton').addEventListener('click', redo);
                 circle.style.left = x - 12 + "px";
                 circle.style.top = y - 12 + "px";
                 circle.style.scale = (circles.length - index) / circles.length;
+
 
                 circle.x = x;
                 circle.y = y;
@@ -1211,4 +1536,6 @@ document.getElementById('redoButton').addEventListener('click', redo);
     </script>
 </body>
 
+
 </html>
+
