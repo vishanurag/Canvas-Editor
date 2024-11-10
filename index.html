@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
+    <link rel="manifest" href="/manifest.json">
     
     <div class="visitor-counter">
         <div>Visitor</div>
@@ -651,17 +652,39 @@
                 <a href="contributors.html">Contributors</a>
 
 
-                <a href="login.html">Login</a>
+                <a href="auth.html">Login</a>
                 
 
               
 
-                 <!-- Profile Icon -->
-       
-                <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-top: -1px; align-items: center;">
-                </a>
-                </li>
+                <!-- Profile Icon -->
+
+    <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+             alt="Profile Icon" 
+             style="width: 35px; height: 35px; border-radius: 50%; margin-top: -1px; align-items: center;">
+    </a>
+
+</li>
+
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the saved avatar from localStorage
+    const savedAvatar = localStorage.getItem("selectedAvatar");
+
+    // If an avatar is saved, update the profile image
+    if (savedAvatar) {
+        const homeProfileImage = document.getElementById("homeProfileImage");
+        if (homeProfileImage) {
+            homeProfileImage.src = savedAvatar;
+        }
+    }
+});
+
+</script>
 
                 <style>
 
@@ -736,9 +759,7 @@
 
 
             </div>
-            <a href="auth.html" class="profile">
-                <i class="fas fa-user-circle"></i>
-            </a>
+        
         </nav>
         <div class="tools">
             <button id="toggleToolbar" class="arrow-button">
@@ -1512,6 +1533,7 @@ document.getElementById('redoButton').addEventListener('click', redo);
 
 
     </script>
+    <script src="scripts.js"></script> <!-- Link to your service worker registration script -->
 </body>
 
 

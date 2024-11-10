@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,30 +51,30 @@
         z-index: 1000;
         margin-top: -509px;
 
-    }
+
 
     .navbar h1 {
-        color: rgb(255, 255, 255);
-        margin: 0;
+      color: rgb(255, 255, 255);
+      margin: 0;
     }
 
     .nav-links {
-        display: flex;
-        gap: 20px;
+      display: flex;
+      gap: 20px;
     }
 
     .nav-links a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        padding: 6px 4px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      padding: 6px 4px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
     }
 
     .nav-links a:hover {
-        background-color: #541058;
+      background-color: #541058;
     }
-/* navbar styling ends */
+
 
       body.dark-mode {
   background-color: #333;
@@ -154,176 +155,264 @@
   /* background: #f3f3f3; */
 }
 
-#progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 7px;
-  width: 0;
-  background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
-  box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
-  transition: width 0.09s ease-in-out;
-  border-radius: 10px;
+
+    body.dark-mode {
+      background-color: #333;
+      color: #ffffff;
+    }
+
+    .top-btn {
+      display: none;
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      bottom: 10px;
+      right: 0px;
+      background-color: #ab45e7;
+      color: #fff;
+      padding: 2px;
+      border: none;
+      margin-right: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .top-btn:hover {
+      background-color: #0056b3;
+    }
+
+    video#background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      background-size: cover;
+    }
+
+    .pagination-btns {
+      margin: 50px 0px;
+    }
+
+    .pagination-btns button.btn {
+      border-radius: 5px;
+      outline: none;
+      margin: 5px 10px;
+      border: 1px solid rgb(146, 110, 110);
+    }
+
+    .pagination-btns button.btn,
+    .pagination-btns button.btn i.bi {
+      font-size: 2rem;
+    }
+
+
+    #progress-container {
+      position: fixed;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 15px;
+      z-index: 99990;
+      /* background: #f3f3f3; */
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 7px;
+      width: 0;
+      background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
+      box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+      transition: width 0.09s ease-in-out;
+      border-radius: 10px;
+    }
+
+
+
+     /* Circle styles */
+     .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999;
+      transition: transform 0.1s ease-out;
+     }
+
+
+ /* Stats Section */
+ .contributor-stats {
+
+max-width: 1400px;
+margin: 0 auto;
+padding: 3rem 0;
+text-align: center;
+background-color: transparent;
+;
+margin-top: 70px;
+
 }
-</style>
-    <style>
-      /* Circle styles */
-      .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: black;
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 99999999;
-        transition: transform 0.1s ease-out;
-      }
-    </style>
-  </head>
 
+.contributor-stats h2 {
 
-  <style>
-  /* Stats Section */
-  .contributor-stats {
+font-size: 3rem;
+margin-bottom: 2rem;
+color: #2e06fb;
+text-shadow: 1px 1px 2px rgb(60, 0, 255), 0 0 1em rgba(0, 213, 255, 0.617), 0 0 0.2em rgba(0, 234, 255, 0.623);
 
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 0;
-  text-align: center;
-  background-color: transparent;;
-  margin-top: 70px;
+}
 
-  }
+.contributor-stats-grid {
 
-  .contributor-stats h2 {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
 
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #2e06fb;
-  text-shadow: 1px 1px 2px rgb(60, 0, 255), 0 0 1em rgba(0, 213, 255, 0.617), 0 0 0.2em rgba(0, 234, 255, 0.623);
+}
 
-  }
+.contributor-stat-card {
 
-  .contributor-stats-grid {
+border-radius: 10px;
+padding: 1.5rem;
+text-align: center;
+background-color: #eee1ee;
+border: 1px solid #ca74cf;
+border-radius: 8px;
+box-shadow: 0 0px 8px rgba(0, 0, 0, 1);
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+}
 
-  }
+.contributor-stat-card .contributor-icon {
 
-  .contributor-stat-card {
+font-size: 2rem;
+margin-bottom: 1rem;
 
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: center;
-  background-color: #eee1ee;
-  border: 1px solid #ca74cf;
-  border-radius: 8px;
-  box-shadow: 0 0px 8px rgba(0, 0, 0, 1);
+}
 
-  }
+.contributor-stat-card h3 {
 
-  .contributor-stat-card .contributor-icon {
+font-size: 2rem;
+margin-bottom: 0.5rem;
 
-  font-size: 2rem;
-  margin-bottom: 1rem;
+}
 
-  }
+.contributor-stat-card p {
 
-  .contributor-stat-card h3 {
+color: #1c0804;
 
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+}
 
-  }
-
-  .contributor-stat-card p {
-
-  color: #1c0804;
-
-  }
-
-      </style>
+  </style>
 </head>
 
-  <section class="contributor-stats">
-    <h2>Project Statistics</h2>
-    <div class="contributor-stats-grid" id="statsGrid">
-  <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+<nav class="navbar">
+  <div class="nav-links">
+    <h1 class="canvas">Canvas Editor</h1>
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About Us</a>
+    <a href="review.html">Review</a>
+    <a href="testimonial.html">Testimonial</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="tutorial.html">Tutorial</a>
+    <a href="Blog_page.html">Blog</a>
+    <a href="Faq.html">FAQ</a>
+    <a href="./Feedback.html">Feedback</a>
+    <!-- <a href="signup.html">Sign Up</a> -->
+    <a href="contributors.html">Contributors</a>
+
+  </div>
+  <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
+    <input id="themeToggle" class="toggle" type="checkbox">
+  </div>
+</nav>
+
+
+<section class="contributor-stats">
+  <h2>Project Statistics</h2>
+  <div class="contributor-stats-grid" id="statsGrid">
+    <div class="contributor-stat-card">
+      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg></div>
       <h3>154</h3>
       <p>Contributors</p>
-  </div>
+    </div>
 
-  <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg></div>
+    <div class="contributor-stat-card">
+      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="1.05" y1="12" x2="7" y2="12"></line>
+          <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+        </svg></div>
       <h3>770</h3>
       <p>Total Contributions</p>
-  </div>
+    </div>
 
-  <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+    <div class="contributor-stat-card">
+      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+          </polygon>
+        </svg></div>
       <h3>77</h3>
       <p>GitHub Stars</p>
-  </div>
+    </div>
 
-  <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" y="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg></div>
+    <div class="contributor-stat-card">
+      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="6" y1="3" x2="6" y2="15"></line>
+          <circle cx="18" cy="6" r="3"></circle>
+          <circle cx="6" y="18" r="3"></circle>
+          <path d="M18 9a9 9 0 0 1-9 9"></path>
+        </svg></div>
       <h3>316</h3>
       <p>Forks</p>
+    </div>
   </div>
-  </div>
-  </section>
+</section>
 
-  <body>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-      <nav class="navbar">
-          <div class="nav-links">
-              <h1 class="canvas">Canvas Editor</h1>
-              <a href="index.html">Home</a>
-              <a href="about-us.html">About Us</a>
-              <a href="review.html">Review</a>
-              <a href="testimonial.html">Testimonial</a>
-              <a href="privacy.html">Privacy</a>
-              <a href="tutorial.html">Tutorial</a>
-              <a href="Blog_page.html">Blog</a>
-              <a href="Faq.html">FAQ</a>
-              <a href="./Feedback.html">Feedback</a>
-              <!-- <a href="signup.html">Sign Up</a> -->
-              <a href="contributors.html">Contributors</a>
-          
-          </div>
-        <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
-          <input id="themeToggle" class="toggle" type="checkbox">
-        </div>
-      </nav>
-      
-      <div class="containerm">
-    
+<body>
+  <!-- Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+
+  <div class="containerm">
+
     <div id="progress-container">
       <div id="progress-bar"></div>
     </div>
@@ -331,9 +420,9 @@
       <source src="img/bg video terms2.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    
+
     <div class="container">
-      
+
       </header>
       <h1 class="title">Our Contributors</h1>
       <div id="contributors" class="contributors-grid"></div>
@@ -344,189 +433,192 @@
       </div>
     </div>
   </div>
-    <script src="src/Scripts/contributor.js"></script>
-    <script>
+  <script src="src/Scripts/contributor.js"></script>
+  <script>
 
-      window.addEventListener('scroll', function() {
-          const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          const scrolled = (winScroll / height) * 100;
-          document.getElementById('progress-bar').style.width = scrolled + '%';
+    window.addEventListener('scroll', function () {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+  </script>
+  <script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+      "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+      "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+      "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        // Update the position and scale of each circle
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        // Get the next circle in the sequence
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
       });
-      </script>
-      <script>
-        // Coordinates for the cursor
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
 
-        // Colors for the circles
-        const colors = [
-          "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-          "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-          "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-          "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
+      // Repeat the animation
+      requestAnimationFrame(animateCircles);
+    }
 
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-          circle.x = 0;
-          circle.y = 0;
-          circle.style.backgroundColor = colors[index % colors.length];
-        });
-
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-          coords.x = e.clientX;
-          coords.y = e.clientY;
-        });
-
-        // Animation function to move the circles
-        function animateCircles() {
-          let x = coords.x;
-          let y = coords.y;
-
-          circles.forEach(function (circle, index) {
-            // Update the position and scale of each circle
-            circle.style.left = x - 12 + "px";
-            circle.style.top = y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-
-            circle.x = x;
-            circle.y = y;
-
-            // Get the next circle in the sequence
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
-          });
-
-          // Repeat the animation
-          requestAnimationFrame(animateCircles);
-        }
-
-        // Start the animation
-        animateCircles();
-      </script>
-       <footer class="footer">
-        <div class="footer-content">
-            <!-- <div class="footer-image">
+    // Start the animation
+    animateCircles();
+  </script>
+  <footer class="footer">
+    <div class="footer-content">
+      <!-- <div class="footer-image">
                 <img src="popup.jpg" alt="Newsletter signup" width="100">
             </div> -->
-            <div class="newsletter-section">
-                <h3>Subscribe to our Newsletter</h3>
-                <input type="email" id="newsletter-email" placeholder="Enter your email address"><br>
-                <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
-            </div>
-            <div class="credit" style="font-size: 0.6rem;">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
+      <div class="newsletter-section">
+        <h3>Subscribe to our Newsletter</h3>
+        <input type="email" id="newsletter-email" placeholder="Enter your email address"><br>
+        <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
+      </div>
+      <div class="credit" style="font-size: 0.6rem;">
+        <p>
+          Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
 
-                    © <span id="year"></span>
+          © <span id="year"></span>
 
-                </p>
-                <div style="margin: 20px;" class="share">
-                    <i class="fab fa-github" style="margin-right: 10px;"></i>
-                    <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
-                    <i class="fab fa-twitter"></i>
-                </div>
-            </div>
-    </footer>
-    <style>
-      #canvas {
-            border: 1px solid #000000;
-            background-color: white;
-            cursor: crosshair;
-            width: 100%;
-            height: calc(100vh - 280px);
-            /* Adjusted for footer */
-        }
+        </p>
+        <div style="margin: 20px;" class="share">
+          <i class="fab fa-github" style="margin-right: 10px;"></i>
+          <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+  </footer>
+  <style>
+    #canvas {
+      border: 1px solid #000000;
+      background-color: white;
+      cursor: crosshair;
+      width: 100%;
+      height: calc(100vh - 280px);
+      /* Adjusted for footer */
+    }
 
-      .footer {
-            background-color: #34313b;
-            color: rgb(255, 255, 255);
-            margin-right: 100px;
+    .footer {
+      background-color: #34313b;
+      color: rgb(255, 255, 255);
+      margin-right: 100px;
 
-        }
-        .footer-content{
-          margin-right: 650px;
-        }
+    }
 
-        .newsletter-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-          
-        }
+    .footer-content {
+      margin-right: 650px;
+    }
 
-        .newsletter-section input {
-            padding: 10px;
-            width: 300px;
-            border: none;
-            border-radius: 4px;
-        }
+    .newsletter-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
 
-        .newsletter-section button {
-            background-color: #0000ff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            
-        }
+    }
 
-        .newsletter-section button:hover {
-            background-color: #340c90;
-        }
+    .newsletter-section input {
+      padding: 10px;
+      width: 300px;
+      border: none;
+      border-radius: 4px;
+    }
 
-        .text-size-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 0;
-            background-color: #0000FF;
-            padding: 10px;
-            border-radius: 5px;
-            color: white;
-        }
+    .newsletter-section button {
+      background-color: #0000ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
 
-        .text-size-control input {
-            width: 60px;
-            padding: 5px;
-            border: none;
-            border-radius: 4px;
-            background-color: white;
-        }
+    }
 
-        .text-size-control:hover {
-            background-color: #090874;
-            transition: background-color 0.3s;
-        }
+    .newsletter-section button:hover {
+      background-color: #340c90;
+    }
 
-        .credit {
-            text-align: center;
-        }
+    .text-size-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+      background-color: #0000FF;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+    }
 
-        .share {
-            font-size: 25px;
-        }
+    .text-size-control input {
+      width: 60px;
+      padding: 5px;
+      border: none;
+      border-radius: 4px;
+      background-color: white;
+    }
 
-        .share i {
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+    .text-size-control:hover {
+      background-color: #090874;
+      transition: background-color 0.3s;
+    }
 
-        .share i:hover {
-            cursor: pointer;
-            color: #5c2872;
-        }
-        .profile{
-            font-size: 2rem;
-            padding-right: 1rem;
-        }
-    </style>
-  </body>
+    .credit {
+      text-align: center;
+    }
+
+    .share {
+      font-size: 25px;
+    }
+
+    .share i {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .share i:hover {
+      cursor: pointer;
+      color: #5c2872;
+    }
+
+    .profile {
+      font-size: 2rem;
+      padding-right: 1rem;
+    }
+  </style>
+</body>
+
 </html>

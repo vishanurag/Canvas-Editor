@@ -23,9 +23,9 @@
     
             /* Header and Footer in Black */
             .header, .footer {
-                background-color: #000;
+                background-color: #2337c6;
                 color: white;
-                padding: 15px;
+                
             }
     
             .header h1, .header i {
@@ -33,11 +33,15 @@
                 margin-right: 10px;
                 color: #fff;
             }
+            .community-section ,.container,.card-container{
+                background: #fff;
+            }
     
             .card-container {
                 display: flex;
                 justify-content: space-around;
                 flex-wrap: wrap;
+                background-color: #fff;
                 gap: 30px;
                 margin: 50px auto;
             }
@@ -109,9 +113,48 @@
                 font-size: 1.5rem;
                 margin: 10px;
             }
+            .card-front p{
+                font-weight:400;
+            }
+            .nav-links{
+                display:flex;
+                justify-content: space-evenly;
+                position:relative;
+            }
+            .nav-links a{
+                text-decoration: none;
+                padding-right:10px;
+                padding-left:10px;
+                margin-right:20px;
+                margin-left: 20px;
+                color:white;
+                font-family: "Montserrat", sans-serif;
+                font-optical-sizing: auto;
+                font-weight:600;
+                font-style: normal;
+                text-transform:uppercase;
+                line-height:30px;
+                z-index:1;
+            }
+            .nav-links a:hover{
+                background-color: #a4d1fe6c ;
+                font-weight:700;
+                border-radius:8px;
+            }
+            .title{
+                background-color: #1575fe;
+            }
+            .title h1 {
+                margin-left:20px;
+            }
+    
     
             .card-back a:hover {
                 color: #0056b3;
+            }
+            .container h2{
+                color:#2337c6;
+                font-size: 2.5rem;
             }
 
             .community-section .container {
@@ -124,8 +167,29 @@
             /* Footer styles */
             .footer .share a {
                 color: white;
-                margin: 0 10px;
-                font-size: 1.5rem;
+                margin-top: 10px;
+                font-size: 2rem;
+                text-decoration: none;
+                opacity:1;
+            }
+            .footer .share a:hover{
+                opacity:0.7;
+            } 
+            .share{
+                display:flex;
+                justify-content: space-evenly;
+                align-items: center;
+                /*margin:20px;*/
+                
+            }
+            .credit a{
+                color:white;
+                text-decoration: none;
+                font-weight: 500;
+                margin-bottom: 3px;
+            }
+            .credit a:hover{
+                border-bottom:2px solid white;
             }
     
             .footer .credit {

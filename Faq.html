@@ -23,44 +23,43 @@
             flex-direction: column;
         }
 
-        .header {
-            background-color: rgba(51, 51, 51, 0.8);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+ 
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
+                
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #fff;
-        }
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-        }
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
 
-        .nav-links a {
-            color: #bbb;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
 
-        .nav-links a:hover {
-            color: #fff;
-        }
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
 
         .container {
             width: 900px;
@@ -137,7 +136,7 @@
             background-color: #8e44ad;
         }
 
-        .footer {
+        /* .footer {
             background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             text-align: center;
@@ -154,7 +153,7 @@
 
         .footer .share a:hover {
             color: #ffb7fd;
-        }
+        } */
 
         .circle {
             height: 24px;
@@ -194,18 +193,22 @@
     <div class="circle"></div>
 
     <header class="header">
-        <nav class="navbar">
-            <div class="title">Creative Canvas Tool</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="#blogs">Blogs</a>
-                <a href="index.html#mainCanvas">Draw</a>
-                <a href="contributors.html">Contributors</a>
-                <a href="testimonial.html">Testimonial</a>
-            </div>
-        </nav>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
+  </nav>
     </header>
 
     <div class="container">
@@ -255,16 +258,138 @@
         </form>
     </div>
 
-    <footer class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin-in"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+    <!-- footer -->
+     <!-- Footer -->
+    <footer class="main-footer">
+        <div class="containers">
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
+            </div>
+
+            <!-- Quick Links Section (Center) -->
+            <div class="footer-column center">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons Section (Right) -->
+            <div class="footer-column right">
+                <h5 class="footer-heading">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
-        <p>Created by <a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
+        <div class="text-center py-3" style="margin-top: 32px; margin-left:43%;">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
     </footer>
+    <style>
+        /* Footer Styling */
+        .main-footer {
+            background-color: #333;
+            /* Dark background */
+            color: #f1f1f1;
+            /* Light text color */
+            padding: 18px 0;
+            font-size: 16px;
+        }
+
+        .footer-heading {
+            color: #e56767;
+            /* Red/pink heading color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .main-footer a {
+            color: #f1f1f1;
+            /* Link color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .main-footer a:hover {
+            color: #e56767;
+            /* Link hover color */
+        }
+
+        /* Footer Container Styling */
+        .main-footer .containers {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Columns Styling */
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column.center {
+            text-align: center;
+        }
+
+        .footer-column.right {
+            text-align: right;
+            margin-top: -76px;
+        }
+
+        /* Quick Links List */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled a {
+            color: #f1f1f1;
+            transition: color 0.3s ease;
+        }
+
+        .list-unstyled a:hover {
+            color: #e56767;
+            text-decoration: underline;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #e56767;
+        }
+    </style>
 
     <script>
         // Accordion functionality
