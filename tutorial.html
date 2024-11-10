@@ -15,40 +15,44 @@
             min-height: 100vh;
         }
         
-        /* Navbar */
-        .navbar {
-            background-color: #f0adfb;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        .navbar h1 {
-            color: rgb(255, 255, 255);
-            margin: 0;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .nav-links a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            padding: 6px 4px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            background-color: #541058;
-        }
-        
+
+               
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
         /* Logo */
+
         .logo {
             color: white;
             font-size: 24px;
@@ -63,8 +67,24 @@
             margin-left: 5px;
             font-size: 20px;
         }
-        
-        /* Content */
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: white;
+        }
         .content {
             max-width: 800px;
             margin: 2rem auto;
@@ -234,24 +254,27 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
+
     
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-links">
-            <h1 class="canvas">Canvas Editor</h1>
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="review.html">Review</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="tutorial.html">Tutorial</a>
-            <a href="Blog_page.html">Blog</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="./Feedback.html">Feedback</a>
-            <a href="contributors.html">Contributors</a>
-        </div>
-    </nav>
-    
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
+  </nav>
+
+  
+
     <h1 class="heading">Canvas Editor Tutorial</h1>
 
     <div class="content">
@@ -508,7 +531,6 @@ const coords = { x: 0, y: 0 };
 
         // Start the animation
         animateCircles();
-
     </script>
 </body>
 </html>
