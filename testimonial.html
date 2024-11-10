@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
     <style>
         
         * {
@@ -303,7 +307,7 @@
     <section class="stats-section">
         <div class="stat-box">
             <i class="fas fa-users"></i>
-            <h3>1000+</h3>
+            <h3 id="client-count">0</h3>
             <p>Happy Clients</p>
         </div>
         
@@ -342,7 +346,7 @@
             </div>
         </div>
         <div class="text-center py-3" style="margin-top: 32px;">
-            © 2024 Canvas Editor. All rights reserved.
+            © <span id="year"></span> Canvas Editor. All rights reserved.
         </div>
     </footer>
     <style>
@@ -505,6 +509,48 @@
 
         // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
+
+
+
+// Function to animate the counting effect
+function animateCount(target, start, end, duration) {
+            let startTime = null;
+
+            const animate = (currentTime) => {
+                if (!startTime) startTime = currentTime;
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                target.innerText = Math.floor(progress * (end - start) + start);
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    target.innerText = end; // Ensure it ends at the final value
+                    setTimeout(() => {
+                        // After finishing, reset the count and start again
+                        animateCount(target, 0, end, duration);
+                    }, 1000); // Delay before restarting the animation
+                }
+            };
+
+            requestAnimationFrame(animate);
+        }
+
+        // Check if DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const clientCountElement = document.getElementById('client-count');
+            
+            // Log to verify element selection
+            if (clientCountElement) {
+                console.log("Element found:", clientCountElement);
+                animateCount(clientCountElement, 0, 2000, 3000); // Start the animation
+            } else {
+                console.error("Element with ID 'client-count' not found.");
+            }
+        });
+
+
       </script>
+
 </body>
 </html>
