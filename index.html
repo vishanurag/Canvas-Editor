@@ -5,31 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool</title>
-    <meta name="description" content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
-    <meta name="keywords" content="canvas editor, drawing tool, image editor, interactive editor, digital canvas, online drawing, image editing features, paint tool, art editor, graphic design tool, photo editing, vector editor, HTML5 canvas, JavaScript drawing, online sketch, freehand drawing, digital art tool, custom brushes, canvas manipulation, web-based editor, graphics editor, color palette, shape editor, text overlay, photo effects, pixel art, raster editor, online image editor, creative tools, visual editor">
+    <meta name="description"
+        content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
+    <meta name="keywords"
+        content="canvas editor, drawing tool, image editor, interactive editor, digital canvas, online drawing, image editing features, paint tool, art editor, graphic design tool, photo editing, vector editor, HTML5 canvas, JavaScript drawing, online sketch, freehand drawing, digital art tool, custom brushes, canvas manipulation, web-based editor, graphics editor, color palette, shape editor, text overlay, photo effects, pixel art, raster editor, online image editor, creative tools, visual editor">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/vishanurag/Canvas-Editor">
     <meta property="og:title" content="Canvas Editor - Interactive Drawing & Editing Tool">
-    <meta property="og:description" content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
-    <meta property="og:image" content="resources/favicon.ico"> 
+    <meta property="og:description"
+        content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
+    <meta property="og:image" content="resources/favicon.ico">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://github.com/vishanurag/Canvas-Editor">
     <meta property="twitter:title" content="Canvas Editor - Interactive Drawing & Editing Tool">
-    <meta property="twitter:description" content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
-    <meta property="twitter:image" content="resources/favicon.ico"> 
-    
+    <meta property="twitter:description"
+        content="Canvas Editor is an intuitive, interactive tool for drawing, editing, and enhancing digital images directly on a canvas. Supports a wide range of brushes, colors, and editing features.">
+    <meta property="twitter:image" content="resources/favicon.ico">
+
     <!-- Additional SEO Tags -->
-    <meta name="keywords" content="canvas editor, drawing tool, image editor, interactive editor, digital canvas, online drawing, image editing features">
+    <meta name="keywords"
+        content="canvas editor, drawing tool, image editor, interactive editor, digital canvas, online drawing, image editing features">
     <meta name="author" content="Vishanurag">
     <link rel="canonical" href="https://github.com/vishanurag/Canvas-Editor">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
-    
+
     <div class="visitor-counter">
         <div>Visitor</div>
         <div class="website-counter"></div>
@@ -132,6 +137,7 @@
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
                 0 2px 4px rgba(255, 255, 255, 0.05);
         }
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -320,7 +326,7 @@
             padding: 0;
             background-color: #f0f0f0;
             display: flex;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
         .sidebar {
@@ -356,7 +362,7 @@
 
         }
 
-        .canvas{
+        .canvas {
             padding-right: 50px;
             padding-left: 10px;
         }
@@ -378,6 +384,7 @@
             align-items: center;
             padding-bottom: 50px;
         }
+
         .navbar h1 {
             color: rgb(126, 36, 36);
             margin: 0px;
@@ -392,7 +399,7 @@
 
             align-items: center;
 
-            
+
         }
 
         .nav-links a {
@@ -508,7 +515,7 @@
             gap: 20px;
             max-width: 900px;
             margin: 0 auto;
-          
+
         }
 
         .newsletter-section input {
@@ -528,7 +535,7 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
-            
+
         }
 
         .newsletter-section button:hover {
@@ -581,7 +588,8 @@
             cursor: pointer;
             color: #5c2872;
         }
-        .profile{
+
+        .profile {
             font-size: 2rem;
             padding-right: 1rem;
         }
@@ -599,6 +607,11 @@
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
+        }
+
+        /* Hide cursor when the 'hidden' class is applied */
+        .circle.hidden {
+            visibility: hidden;
         }
     </style>
 </head>
@@ -626,12 +639,12 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="sidebar">
-     
+
         <button id="tools-btn"><i class="fas fa-wrench"></i> Tools</button>
         <button id="settings-btn"><i class="fas fa-cogs"></i> Settings</button>
         <button id="help-btn"><i class="fas fa-question-circle"></i> Help</button>
 
-        
+
     </div>
     <div class="main-content">
         <nav class="navbar">
@@ -652,87 +665,89 @@
 
 
                 <a href="login.html">Login</a>
-                
 
-              
+
+
 
                 <!-- Profile Icon -->
 
-    <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-        <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
-             alt="Profile Icon" 
-             style="width: 35px; height: 35px; border-radius: 50%; margin-top: -1px; align-items: center;">
-    </a>
+                <a href="./profile.html" class="profile-link"
+                    style="display: flex; align-items: center; text-decoration: none;">
+                    <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg"
+                        alt="Profile Icon"
+                        style="width: 35px; height: 35px; border-radius: 50%; margin-top: -1px; align-items: center;">
+                </a>
 
-</li>
+                </li>
 
 
 
-<script>
+                <script>
 
-    document.addEventListener("DOMContentLoaded", function() {
-    // Retrieve the saved avatar from localStorage
-    const savedAvatar = localStorage.getItem("selectedAvatar");
+                    document.addEventListener("DOMContentLoaded", function () {
+                        // Retrieve the saved avatar from localStorage
+                        const savedAvatar = localStorage.getItem("selectedAvatar");
 
-    // If an avatar is saved, update the profile image
-    if (savedAvatar) {
-        const homeProfileImage = document.getElementById("homeProfileImage");
-        if (homeProfileImage) {
-            homeProfileImage.src = savedAvatar;
-        }
-    }
-});
+                        // If an avatar is saved, update the profile image
+                        if (savedAvatar) {
+                            const homeProfileImage = document.getElementById("homeProfileImage");
+                            if (homeProfileImage) {
+                                homeProfileImage.src = savedAvatar;
+                            }
+                        }
+                    });
 
-</script>
+                </script>
 
                 <style>
-
-                /* Override the existing hover styles */
-                .navbar-nav .nav-item .profile-link:hover {
-                    background-color: transparent !important; /* Remove background color */
-                    border-radius: 0 !important; /* Reset border radius */
-                    transform: none !important; /* Prevent scaling */
-                }
-
-
-                .profile-icon {
-
-                border-radius: 50%;
-                position: relative;
-                margin-left: 20px; 
-                Margin-top: 100px;
-
-                }
-
-                .dropdown-menu {
-
-                display: none;
-                position: absolute;
-                top: 35px; /* Adjust based on the height of your navbar */
-                right: 0;
-                background-color: white;
-                color: black;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                z-index: 1;
-
-                }
-
-                .dropdown-menu a {
-
-                display: block;
-                padding: 10px 15px;
-                text-decoration: none;
-
-                }
-
-                .dropdown-menu a:hover {
-
-                background-color: #f1f1f1;
-
-                }
+                    /* Override the existing hover styles */
+                    .navbar-nav .nav-item .profile-link:hover {
+                        background-color: transparent !important;
+                        /* Remove background color */
+                        border-radius: 0 !important;
+                        /* Reset border radius */
+                        transform: none !important;
+                        /* Prevent scaling */
+                    }
 
 
+                    .profile-icon {
+
+                        border-radius: 50%;
+                        position: relative;
+                        margin-left: 20px;
+                        Margin-top: 100px;
+
+                    }
+
+                    .dropdown-menu {
+
+                        display: none;
+                        position: absolute;
+                        top: 35px;
+                        /* Adjust based on the height of your navbar */
+                        right: 0;
+                        background-color: white;
+                        color: black;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        z-index: 1;
+
+                    }
+
+                    .dropdown-menu a {
+
+                        display: block;
+                        padding: 10px 15px;
+                        text-decoration: none;
+
+                    }
+
+                    .dropdown-menu a:hover {
+
+                        background-color: #f1f1f1;
+
+                    }
                 </style>
 
                 <script>
@@ -743,7 +758,7 @@
                     }
 
                     // Close the dropdown if the user clicks outside of it
-                    window.onclick = function(event) {
+                    window.onclick = function (event) {
                         if (!event.target.matches('.profile-icon img')) {
                             const menu = document.getElementById('profileMenu');
                             if (menu.style.display === 'block') {
@@ -754,7 +769,7 @@
 
                 </script>
 
-                
+
 
 
             </div>
@@ -772,8 +787,12 @@
             <button class="tool" id="line"><i class="fas fa-minus" title="Line"></i></button>
             <button class="tool" id="rectangle"><i class="far fa-square" title="Rectangle"></i></button>
             <button class="tool" id="circle"><i class="far fa-circle" title="Circle"></i></button>
-            <button class="tool" id="text"><i class="fas fa-font" title="Text"></i></button>            
-            <button class="tool" id="textarea"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Area"><path d="M256-240h84l44-122h192l44 122h84L522-720h-84L256-240Zm152-192 70-198h4l70 198H408ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0-640v640-640Z"/></svg></button>
+            <button class="tool" id="text"><i class="fas fa-font" title="Text"></i></button>
+            <button class="tool" id="textarea"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                    viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Area">
+                    <path
+                        d="M256-240h84l44-122h192l44 122h84L522-720h-84L256-240Zm152-192 70-198h4l70 198H408ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0-640v640-640Z" />
+                </svg></button>
             <button class="tool" id="undoButton"><i class="fa-solid fa-rotate-left" title="Undo"></i></button>
             <button class="tool" id="redoButton"><i class="fa-solid fa-rotate-right" title="Redo"></i></button>
             <div class="color-picker">
@@ -808,11 +827,19 @@
             </div>
             <input type="range" id="lineWidth" min="1" max="50" value="5">
             <div class="text-size-control">
-                <label for="textSize"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Size"><path d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z"/></svg>:</label>
+                <label for="textSize"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="#ffff" title="Text Size">
+                        <path
+                            d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z" />
+                    </svg>:</label>
                 <input type="number" id="textSize" min="8" max="72" value="20">
             </div>
             <button class="tool" id="clear"><i class="fas fa-trash-alt" title="Clear Canvas"></i></button>
-            <button class="tool" id="toggleGridButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Toggle Grid"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z"/></svg></button>
+            <button class="tool" id="toggleGridButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                    viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Toggle Grid">
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z" />
+                </svg></button>
             <style>
                 /* Styling for the toggle button */
                 #toggleToolbar {
@@ -827,15 +854,15 @@
                     display: inline-flex;
                     align-items: center;
                 }
-        
+
                 #toggleToolbar i {
                     margin-right: 5px;
                 }
-        
+
                 #toggleToolbar:hover {
                     background-color: #5e044f;
                 }
-        
+
                 /* CSS for hiding and showing toolbar */
                 .sidebar.collapsed {
                     width: 0;
@@ -843,6 +870,7 @@
                     overflow: hidden;
                     transition: width 0.3s ease;
                 }
+
                 .arrow-button {
                     background-color: #460346;
                     color: white;
@@ -855,20 +883,21 @@
                     display: inline-flex;
                     align-items: center;
                 }
+
                 .arrow-button i {
                     font-size: 20px;
                     transition: transform 0.3s ease;
                 }
-                
+
                 .arrow-button:hover {
                     background-color: #5e044f;
                 }
-                
+
                 /* Rotate arrow when sidebar is collapsed */
-                .sidebar.collapsed + .tools .arrow-button i {
+                .sidebar.collapsed+.tools .arrow-button i {
                     transform: rotate(180deg);
                 }
-                
+
                 /* CSS for hiding and showing toolbar */
                 .sidebar.collapsed {
                     width: 0;
@@ -882,13 +911,13 @@
                 const sidebar = document.querySelector('.sidebar');
                 const canva = document.getElementById('canvas');
                 const arrowIcon = toolbarButton.querySelector('i'); // Get the icon element
-                
+
                 toolbarButton.addEventListener('click', () => {
                     sidebar.classList.toggle('collapsed');
                     updateArrowIcon(); // Update the arrow direction
                     resizeCanvas(); // Adjust canvas width when the sidebar toggles
                 });
-                
+
                 function updateArrowIcon() {
                     if (sidebar.classList.contains('collapsed')) {
                         arrowIcon.classList.remove('fa-arrow-left');
@@ -898,17 +927,17 @@
                         arrowIcon.classList.add('fa-arrow-left'); // Left arrow when toolbar is expanded
                     }
                 }
-                
+
                 function resizeCanvas() {
                     const sidebarWidth = sidebar.classList.contains('collapsed') ? 0 : 200;
                     canvas.width = window.innerWidth - sidebarWidth; // Adjust for sidebar
                     canvas.height = window.innerHeight - 220; // Adjust for footer
                 }
-                
+
                 // Initial call to set the canvas size correctly
                 resizeCanvas();
                 window.addEventListener('resize', resizeCanvas);
-                
+
 
             </script>
         </div>
@@ -1079,7 +1108,7 @@
             isDrawing = true;
             [startX, startY] = [e.offsetX, e.offsetY];
 
-            snapshot = ctx.getImageData(0,0,canvas.width,canvas.height);
+            snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
             saveState();
             redoStack = [];
@@ -1092,10 +1121,10 @@
         }
 
         const drawCircle = (e) => {
-             x = e.offsetX;
-             y = e.offsetY;
+            x = e.offsetX;
+            y = e.offsetY;
             ctx.beginPath();
-            const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));      
+            const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
             ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
             ctx.stroke();
         }
@@ -1106,7 +1135,7 @@
 
             const x = e.offsetX;
             const y = e.offsetY;
-            
+
 
             switch (currentTool) {
                 case 'pencil':
@@ -1135,19 +1164,19 @@
                     [startX, startY] = [x, y];
                     break;
                 case 'line':
-                    ctx.putImageData(snapshot,0,0);
+                    ctx.putImageData(snapshot, 0, 0);
                     ctx.beginPath();
                     ctx.moveTo(startX, startY);
                     ctx.lineTo(x, y);
                     ctx.stroke();
                     break;
                 case 'rectangle':
-                    ctx.putImageData(snapshot,0,0);
+                    ctx.putImageData(snapshot, 0, 0);
                     drawRect(e);
                     break;
                 case 'circle':
-                   
-                    ctx.putImageData(snapshot,0,0);
+
+                    ctx.putImageData(snapshot, 0, 0);
                     drawCircle(e);
                     break;
                 case 'text':
@@ -1167,7 +1196,7 @@
             const fontSize = document.getElementById('textSize').value;
 
             switch (currentTool) {
-        
+
                 case 'text':
                     const text = prompt('Enter text:');
                     if (text) {
@@ -1204,48 +1233,48 @@
             }
         }
 
-// Save the current state to history
+        // Save the current state to history
         function saveState() {
-        history.push(canvas.toDataURL());
-    }
+            history.push(canvas.toDataURL());
+        }
 
-     // Undo function
+        // Undo function
         function undo() {
-        if (history.length > 0) {
-            redoStack.push(history.pop());
-            restoreState(history[history.length - 1]);
-    }
-}
+            if (history.length > 0) {
+                redoStack.push(history.pop());
+                restoreState(history[history.length - 1]);
+            }
+        }
 
-    // Redo function
-    function redo() {
-    if (redoStack.length > 0) {
-        const redoState = redoStack.pop();
-        history.push(redoState);  // Move redo state back to history
-        restoreState(redoState);  // Restore the redo state
-    }
-}
+        // Redo function
+        function redo() {
+            if (redoStack.length > 0) {
+                const redoState = redoStack.pop();
+                history.push(redoState);  // Move redo state back to history
+                restoreState(redoState);  // Restore the redo state
+            }
+        }
 
-// Restore the canvas state
-    function restoreState(dataUrl) {
-        if (dataUrl) {
-            const img = new Image();
-            img.src = dataUrl;
-            img.onload = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0);
-        };
-    } else {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas if no history
-    }
-}
+        // Restore the canvas state
+        function restoreState(dataUrl) {
+            if (dataUrl) {
+                const img = new Image();
+                img.src = dataUrl;
+                img.onload = () => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0);
+                };
+            } else {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas if no history
+            }
+        }
 
-canvas.addEventListener('mousedown', startDrawing);
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', stopDrawing);
-canvas.addEventListener('mouseout', stopDrawing);
-document.getElementById('undoButton').addEventListener('click', undo);
-document.getElementById('redoButton').addEventListener('click', redo);
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        document.getElementById('undoButton').addEventListener('click', undo);
+        document.getElementById('redoButton').addEventListener('click', redo);
 
 
         window.embeddedChatbotConfig = {
@@ -1471,6 +1500,7 @@ document.getElementById('redoButton').addEventListener('click', redo);
 
     </script>
 
+
     <script>
         // Coordinates for the cursor
         const coords = { x: 0, y: 0 };
@@ -1489,22 +1519,44 @@ document.getElementById('redoButton').addEventListener('click', redo);
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
-
-
         });
 
         // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
+        document.addEventListener("mousemove", function (e) {
             coords.x = e.clientX;
             coords.y = e.clientY;
+
+            // Update the position of each circle
+            circles.forEach(function (circle, index) {
+                circle.style.left = coords.x - 12 + "px";
+                circle.style.top = coords.y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+            });
         });
 
+        // Add mouseleave event to hide cursor
+        document.addEventListener("mouseleave", () => {
+            circles.forEach(circle => circle.classList.add("hidden"));
+        });
+
+        // Add mouseenter event to show cursor
+        document.addEventListener("mouseenter", () => {
+            circles.forEach(circle => circle.classList.remove("hidden"));
+        });
+
+        // Add focus and blur events to hide/show cursor
+        document.addEventListener("focus", () => {
+            circles.forEach(circle => circle.classList.remove("hidden"));
+        });
+
+        document.addEventListener("blur", () => {
+            circles.forEach(circle => circle.classList.add("hidden"));
+        });
 
         // Animation function to move the circles
         function animateCircles() {
             let x = coords.x;
             let y = coords.y;
-
 
             circles.forEach(function (circle, index) {
                 // Update the position and scale of each circle
@@ -1528,8 +1580,6 @@ document.getElementById('redoButton').addEventListener('click', redo);
 
         // Start the animation
         animateCircles();
-
-
         document.getElementById("year").textContent = new Date().getFullYear();
 
 
@@ -1538,4 +1588,3 @@ document.getElementById('redoButton').addEventListener('click', redo);
 
 
 </html>
-
