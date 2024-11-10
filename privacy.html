@@ -6,134 +6,127 @@
     <title>Privacy Policy - Creative Canvas Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #cf8cff;  
-            --secondary-color: #e55ce7; 
-            --accent-color: #f1a4ff;    
-            --text-color: #2d2d2d;
-            --light-bg: #f8f5ff;        
-            --dark-bg: #d134d4;         
-            --transition: all 0.3s ease;
-            --hover-color: #e567f0;     
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-        }
-
-        /* Enhanced Navbar */
-        .navbar {
-            background: linear-gradient(135deg, var(--secondary-color), var(--dark-bg));
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(108, 92, 231, 0.2);
+            color: #333;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            min-height: 100vh;
         }
 
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: 900px;
             margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .navbar {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .nav-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-items: center;
-        }
-
-        .title {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            height: 40px;
         }
 
         .site-name {
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin: 0;
         }
 
-        .navbar {
-        background-color: #f0adfb;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* Center aligns the navbar */
-        position: fixed; /* Sticks to the top */
-        width: 100%;
-        z-index: 1000;
-    }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
 
-    .navbar h1 {
-        color: rgb(255, 255, 255);
-        margin: 0;
-    }
+        .nav-links a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-links a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        padding: 6px 4px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover {
-        background-color: #541058;
-    }
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .nav-links a:hover {
             color: white;
+        }
+
+        .hero-section {
+            background-color: rgba(255, 255, 255, 0.7);
             padding: 4rem 0;
             margin-bottom: 3rem;
             text-align: center;
-        }
-
-        /* Main Content Styles */
-        .about-section {
-            padding: 4rem 0;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-
-        .about-image {
-            width: 100%;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.15);
-            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
 
-        .about-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.2);
+        .hero-section h1 {
+            font-size: 2.5rem;
+            color: #333;
+            position: relative;
+            z-index: 2;
         }
 
-        .privacy-content {
-            background: white;
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #666;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            margin: 2rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.2) 10px,
+                rgba(255, 255, 255, 0.2) 20px
+            );
+            z-index: 1;
+        }
+
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.3);
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.1);
+            margin-bottom: 2rem;
         }
 
         .privacy-section {
@@ -141,64 +134,40 @@
         }
 
         .privacy-section h3 {
-            color: var(--secondary-color);
+            color: #353047;
             margin-bottom: 1rem;
         }
 
-        .privacy-list {
-            list-style-type: none;
-            padding-left: 0;
+        .gray-box {
+            background-color: rgba(128, 128, 128, 0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
         }
 
-        .privacy-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .privacy-list li::before {
-            content: "•";
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-
-        /* Team Section */
         .team-section {
-            margin-top: 4rem;
             text-align: center;
+            margin-top: 4rem;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .team-member {
-            background: white;
-            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 1rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.1);
-            transition: var(--transition);
         }
 
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.15);
-            background: linear-gradient(135deg, white, #f8f5ff);
-        }
-
-        .team-member h4 {
-            color: var(--secondary-color);
-        }
-
-        /* Footer Styles */
         .footer {
-            background: linear-gradient(135deg, var(--secondary-color), var(--dark-bg));
+            background-color: rgba(51, 51, 51, 0.8);
             color: white;
-            padding: 3rem 0 1rem;
+            text-align: center;
+            padding: 2rem 0;
             margin-top: 4rem;
         }
 
@@ -206,96 +175,19 @@
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .social-links a {
             color: white;
-            background: rgba(255,255,255,0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
+            font-size: 1.5rem;
+            transition: color 0.3s;
         }
 
         .social-links a:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-            color: var(--dark-bg);
+            color: #ffb7fd;
         }
 
-        .footer-credit {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-credit a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .footer-credit a:hover {
-            color: white;
-        }
-
-        /* Back to Top Button */
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--primary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            box-shadow: 0 3px 10px rgba(108, 92, 231, 0.3);
-        }
-
-        #back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #back-to-top:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <style>
-        /* Circle styles */
         .circle {
             height: 24px;
             width: 24px;
@@ -308,10 +200,28 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
+
+        /* Unique element: Floating shapes */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.6;
+            pointer-events: none;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .shape1 { top: 10%; left: 10%; font-size: 40px; }
+        .shape2 { top: 20%; right: 10%; font-size: 30px; animation-delay: 2s; }
+        .shape3 { bottom: 15%; left: 15%; font-size: 35px; animation-delay: 4s; }
+        .shape4 { bottom: 10%; right: 20%; font-size: 45px; animation-delay: 6s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
     </style>
 </head>
 <body>
-    <!-- Circles -->
+    <!-- Circles for cursor effect -->
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -332,122 +242,119 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
+
     <nav class="navbar">
         <div class="container nav-content">
-            <div class="title">
-                <h1 class="site-name">Canvas Editor</h1>
-                <i class="fa-solid fa-paintbrush"></i>
+            <h1 class="site-name">Canvas Editor</h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About Us</a>
+                <a href="review.html">Review</a>
+                <a href="testimonial.html">Testimonial</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="Blog_page.html">Blog</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="./Feedback.html">Feedback</a>
+                <a href="contributors.html">Contributors</a>
             </div>
-            <nav class="navbar">
-                <div class="nav-links">
-                    <h1 class="canvas">Canvas Editor</h1>
-                    <a href="index.html">Home</a>
-                    <a href="about-us.html">About Us</a>
-                    <a href="review.html">Review</a>
-                    <a href="testimonial.html">Testimonial</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="tutorial.html">Tutorial</a>
-                    <a href="Blog_page.html">Blog</a>
-                    <a href="Faq.html">FAQ</a>
-                    <a href="./Feedback.html">Feedback</a>
-                    <!-- <a href="signup.html">Sign Up</a> -->
-                    <a href="contributors.html">Contributors</a>
-                
-                </div>
         </div>
     </nav>
 
-    <div class="hero-section">
-        <div class="container">
+    <div class="container">
+        <div class="hero-section">
+            <div class="hero-background"></div>
             <h1>Privacy Policy</h1>
             <p>Your privacy is our priority</p>
+            <div class="hero-image">
+                <!-- Replace with your actual image -->
+                <img src="canvas.jpg" alt="Privacy illustration">
+            </div>
+            <!-- Floating shapes -->
+            <div class="floating-shape shape1">🔒</div>
+            <div class="floating-shape shape2">🛡️</div>
+            <div class="floating-shape shape3">📜</div>
+            <div class="floating-shape shape4">🔐</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Effective Date: 13/10/2024</h2>
+            <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles.</p>
+        </div>
+
+        <div class="content-section">
+            <div class="privacy-section">
+                <h3>1. Information We Collect</h3>
+                <p><strong>Personal Information:</strong> We may collect personal information that you provide directly to us when you register for an account, create or save a canvas, or contact us.</p>
+                <p><strong>Usage Data:</strong> We automatically collect certain information about your interaction with our Site, including your IP address, browser type, device information, pages viewed, and the time and date of your visit.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li>To provide, maintain, and improve our services</li>
+                    <li>To personalize your experience on our Site</li>
+                    <li>To communicate with you, including sending updates and promotional materials</li>
+                    <li>To respond to your comments, questions, and requests</li>
+                    <li>To monitor and analyze usage and trends to improve our Site</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>3. Sharing Your Information</h3>
+                <p><strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our Site.</p>
+                <div class="gray-box">
+                    <p><strong>Legal Compliance:</strong> We may disclose your information to comply with applicable laws, regulations, legal processes, or governmental requests.</p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h3>4. Security of Your Information</h3>
+                <p>We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>5. Changes to This Privacy Policy</h3>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page with a new effective date.</p>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Anurag</h4>
+                    <p>Founder & Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <h4>Somyadip Ghosh</h4>
+                    <p>Project Mentor</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <section class="about-section">
+    <!-- footer -->
+     <!-- Footer -->
+    <footer class="main-footer">
         <div class="container">
-            <div class="content-grid">
-                <div>
-                    <img src="https://media.istockphoto.com/id/636761588/photo/used-brushes-on-an-artists-palette-of-colorful-oil-paint.jpg?s=612x612&w=0&k=20&c=38YQxVJVWnNfvGtlb7AXMx_ItyHZMEdmWenNkWNQ91g=" alt="Creative Canvas Tool in action" class="about-image">
-                </div>
-                <div>
-                    <h2>Effective Date: 13/10/2024</h2>
-                    <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles.</p>
-                </div>
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
             </div>
-
-            <div class="privacy-content">
-                <div class="privacy-section">
-                    <h3>1. Information We Collect</h3>
-                    <p><strong>Personal Information:</strong> We may collect personal information that you provide directly to us when you register for an account, create or save a canvas, or contact us.</p>
-                    <p><strong>Usage Data:</strong> We automatically collect certain information about your interaction with our Site, including your IP address, browser type, device information, pages viewed, and the time and date of your visit.</p>
-                </div>
-
-                <div class="privacy-section">
-                    <h3>2. How We Use Your Information</h3>
-                    <ul class="privacy-list">
-                        <li>To provide, maintain, and improve our services</li>
-                        <li>To personalize your experience on our Site</li>
-                        <li>To communicate with you, including sending updates and promotional materials</li>
-                        <li>To respond to your comments, questions, and requests</li>
-                        <li>To monitor and analyze usage and trends to improve our Site</li>
-                    </ul>
-                </div>
-
-                <div class="privacy-section">
-                    <h3>3. Sharing Your Information</h3>
-                    <p><strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our Site.</p>
-                    <p><strong>Legal Compliance:</strong> We may disclose your information to comply with applicable laws, regulations, legal processes, or governmental requests.</p>
-                </div>
-
-                <div class="privacy-section">
-                    <h3>4. Security of Your Information</h3>
-                    <p>We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure.</p>
-                </div>
-
-                <div class="privacy-section">
-                    <h3>5. Changes to This Privacy Policy</h3>
-                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page with a new effective date.</p>
-                </div>
-            </div>
-
-            <div class="team-section">
-                <h2>Our Team</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <h4>Anurag</h4>
-                        <p>Founder & Lead Developer</p>
-                    </div>
-                    <div class="team-member">
-                        <h4>Somyadip Ghosh</h4>
-                        <p>Project Mentor</p>
-                    </div>
-                    
-                </div>
-            </div>
+            <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/anuragvishwakarma/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-            </div>
-            <div class="footer-credit">
-                <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
-            </div>
+        <div class="text-center py-3" style="margin-top: 32px;margin-left: 43%;">
+            © 2024 Canvas Editor. All rights reserved.
         </div>
     </footer>
     <script>
-        // Coordinates for the cursor
+        // Cursor animation
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
 
-        // Colors for the circles
         const colors = [
             "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
             "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
@@ -455,143 +362,40 @@
             "#680060", "#60005f", "#48005f", "#3d005e"
         ];
 
-        // Assign colors and initial position to each circle
         circles.forEach(function (circle, index) {
             circle.x = 0;
             circle.y = 0;
             circle.style.backgroundColor = colors[index % colors.length];
         });
 
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
+        window.addEventListener("mousemove", function(e){
             coords.x = e.clientX;
             coords.y = e.clientY;
         });
 
-        // Animation function to move the circles
         function animateCircles() {
             let x = coords.x;
             let y = coords.y;
 
             circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
                 circle.style.left = x - 12 + "px";
                 circle.style.top = y - 12 + "px";
                 circle.style.scale = (circles.length - index) / circles.length;
-
                 circle.x = x;
                 circle.y = y;
 
-                // Get the next circle in the sequence
                 const nextCircle = circles[index + 1] || circles[0];
                 x += (nextCircle.x - x) * 0.3;
                 y += (nextCircle.y - y) * 0.3;
             });
 
-            // Repeat the animation
             requestAnimationFrame(animateCircles);
         }
 
-        // Start the animation
         animateCircles();
-    </script>
-    <script>
+
+        // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
-      <button id="scrollToTopBtn">
-        <div class="progress-ring">
-            <svg viewBox="0 0 36 36">
-                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-            </svg>
-        </div>
-        <span>&uarr;</span>
-    </button>
-    <style>
-/* Scroll to Top Button */
-#scrollToTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            outline: none;
-            border: none;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        #scrollToTopBtn.show {
-            opacity: 1;
-        }
-
-        #scrollToTopBtn span {
-            font-size: 24px;
-            color: white;
-        }
-
-        /* Progress Ring */
-        .progress-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 36px;
-            height: 36px;
-            transform: translate(-50%, -50%);
-        }
-
-        .progress-ring svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .ring-bg {
-            fill: none;
-            stroke: rgba(255, 255, 255, 0.2);
-            stroke-width: 4;
-        }
-
-        .ring-progress {
-            fill: none;
-            stroke: white;
-            stroke-width: 4;
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-            transition: stroke-dashoffset 0.3s;
-        }
-    </style>
-
-    <!-- JavaScript for Scroll to Top Button -->
-    <script>
-        // Show button and update progress ring on scroll
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        const ringProgress = document.querySelector(".ring-progress");
-
-        window.addEventListener("scroll", () => {
-            // Show/hide button
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add("show");
-            } else {
-                scrollToTopBtn.classList.remove("show");
-            }
-
-            // Update progress ring
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
-        });
-
-        // Scroll to top when button clicked
-        scrollToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
     </script>
 </body>
 </html>

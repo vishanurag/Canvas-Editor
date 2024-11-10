@@ -1,4 +1,4 @@
-You said:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +24,11 @@ You said:
         }
 
         /* Navbar styling */
-        .navbar {
-            background-color: #f0adfb;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            position: fixed;
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000;
@@ -198,8 +197,8 @@ You said:
         }
 
         /* Footer */
-        .footer {
-            text-align: center;
+        /* .footer { */
+            /* text-align: center;
             padding: 20px;
             background-color: #333;
             color: #bdc3c7;
@@ -212,7 +211,7 @@ You said:
         }
         .footer .share a:hover {
             color: #f1c40f;
-        }
+        } */
 
         /* Media Queries */
         @media (max-width: 768px) {
@@ -231,24 +230,46 @@ You said:
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-links">
-            <h1 class="canvas">Canvas Editor</h1>
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="review.html">Review</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="tutorial.html">Tutorial</a>
-            <a href="Blog_page.html">Blog</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="./Feedback.html">Feedback</a>
-            <!-- <a href="signup.html">Sign Up</a> -->
-            <a href="contributors.html">Contributors</a>
-        
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <div class="site-name">Creative Canvas Tool</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="blog.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+            <div class="auth">
+                <a href="auth.html">Sign up/Sign in</a>
+            </div>
         </div>
-      </nav>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <h2>Welcome to Our Testimonials Page</h2>
@@ -310,16 +331,141 @@ You said:
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin-in"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+       <!-- Footer -->
+       <footer class="main-footer">
+        <div class="container">
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
+            </div>
+
+            <!-- Quick Links Section (Center) -->
+            <div class="footer-column center">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons Section (Right) -->
+            <div class="footer-column right">
+                <h5 class="footer-heading">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
-        <p>Created by <a href="https://github.com/vishanurag/" target="_blank">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
+        <div class="text-center py-3" style="margin-top: 32px;">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
     </footer>
+    <style>
+        /* Footer Styling */
+        .main-footer {
+            background-color: #333;
+            /* Dark background */
+            color: #f1f1f1;
+            /* Light text color */
+            padding: 18px 0;
+            font-size: 16px;
+            
+        }
+
+        .footer-heading {
+            color: #e56767;
+            /* Red/pink heading color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .main-footer a {
+            color: #f1f1f1;
+            /* Link color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .main-footer a:hover {
+            color: #e56767;
+            /* Link hover color */
+        }
+
+        /* Footer Container Styling */
+        .main-footer .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Columns Styling */
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column.center {
+            text-align: center;
+        }
+
+        .footer-column.right {
+            text-align: right;
+            margin-top: -76px;
+        }
+
+        /* Quick Links List */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled a {
+            color: #f1f1f1;
+            transition: color 0.3s ease;
+        }
+
+        .list-unstyled a:hover {
+            color: #e56767;
+            text-decoration: underline;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #e56767;
+        }
+    </style>
+
+
 
     <script>
         // Accordion functionality
@@ -380,6 +526,6 @@ You said:
 
         // Set current year in footer
         document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+      </script>
 </body>
 </html>
