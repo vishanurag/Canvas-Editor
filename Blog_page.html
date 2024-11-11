@@ -28,71 +28,14 @@
             transition: all 0.2s ease-out;
             opacity: 0.6;
         }
-
-        .navbar {
-        background-color: #f0adfb;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* Center aligns the navbar */
-        position: fixed; /* Sticks to the top */
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .navbar h1 {
-        color: rgb(255, 255, 255);
-        margin: 0;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-links a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        padding: 6px 4px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover {
-        background-color: #541058;
-    }
-
-        .title {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+         /* Hide cursor when the 'hidden' class is applied */
+         .cursor.hidden {
+            visibility: hidden; 
         }
 
-        .site-name {
-            background: linear-gradient(45deg, #6b21a8, #9333ea);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-            font-size: 1.8rem;
-        }
+        
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: #5b21b6;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background: rgba(147, 51, 234, 0.1);
-            transform: translateY(-2px);
-        }
+        
 
         .banner {
             text-align: center;
@@ -268,6 +211,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Section</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  
   <style>
     body {
       margin: 0;
@@ -291,45 +236,8 @@
       opacity: 0.6;
     }
 
-    .navbar {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.15);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    /* Title styling */
-    .navbar .title .site-name {
-      font-family: 'Poppins', sans-serif;
-      /* Use Google Fonts for custom style */
-      font-size: 1.5rem;
-      color: #ffffff;
-      text-transform: uppercase;
-    }
-
-    /* Navigation link styling */
-    .navbar .nav-links a {
-      color: #5b21b6;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Hover effect on links */
-    .navbar .nav-links a:hover {
-      color: #6b21a8;
-      transform: scale(1.1);
-    }
-
+    
+    
     .title {
       display: flex;
       align-items: center;
@@ -345,24 +253,7 @@
       font-size: 1.8rem;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      color: #5b21b6;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(147, 51, 234, 0.1);
-      transform: translateY(-2px);
-    }
-
+    
     .banner {
       text-align: center;
       padding: 4rem 2rem;
@@ -624,6 +515,41 @@
       transition: width 0.09s ease-in-out;
       border-radius: 10px;
     }
+
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
   </style>
 </head>
 
@@ -653,23 +579,22 @@
     <!-- Previous HTML structure remains the same, just using placeholder images -->
     <!-- Replace all image sources with placeholder API -->
     <!-- For example: -->
-    <nav class="navbar">
-      <div class="nav-links">
-          <h1 class="canvas">Canvas Editor</h1>
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About Us</a>
-          <a href="review.html">Review</a>
-          <a href="testimonial.html">Testimonial</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="tutorial.html">Tutorial</a>
-          <a href="Blog_page.html">Blog</a>
-          <a href="Faq.html">FAQ</a>
-          <a href="./Feedback.html">Feedback</a>
-          <!-- <a href="signup.html">Sign Up</a> -->
-          <a href="contributors.html">Contributors</a>
-      
-      </div>
-    </nav>
+ <!-- Navbar -->
+ <nav class="navbar">
+  <h1 class="canvas">Canvas Editor</h1>
+  <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="review.html">Review</a>
+      <a href="testimonial.html">Testimonial</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="Blog_page.html">Blog</a>
+      <a href="Faq.html">FAQ</a>
+      <a href="Feedback.html">Feedback</a>
+      <a href="contributors.html">Contributors</a>
+  </div>
+</nav>
 <header>
       <div class = "banner">
         <div class = "container">

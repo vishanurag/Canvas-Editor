@@ -28,42 +28,44 @@
             padding: 2rem;
         }
 
-        .navbar {
-            background-color: rgba(51, 51, 51, 0.8);
-            padding: 0.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+                
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .nav-content {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            height: 40px;
-        }
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+    }
 
-        .site-name {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0;
-        }
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
 
-        .nav-links a {
-            color: #bbb;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
+        /* Hero Section */
 
         .hero-section {
             background-color: rgba(255, 255, 255, 0.7);
@@ -188,6 +190,12 @@
             color: #ffb7fd;
         }
 
+
+
+    </style>
+    <style>
+        /* Circle styles */
+
         .circle {
             height: 24px;
             width: 24px;
@@ -243,23 +251,22 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
-    <nav class="navbar">
-        <div class="container nav-content">
-            <h1 class="site-name">Canvas Editor</h1>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="review.html">Review</a>
-                <a href="testimonial.html">Testimonial</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="tutorial.html">Tutorial</a>
-                <a href="Blog_page.html">Blog</a>
-                <a href="Faq.html">FAQ</a>
-                <a href="./Feedback.html">Feedback</a>
-                <a href="contributors.html">Contributors</a>
-            </div>
-        </div>
-    </nav>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
+  </nav>
 
     <div class="container">
         <div class="hero-section">

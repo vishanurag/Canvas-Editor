@@ -32,6 +32,10 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
+         /* Hide cursor when the 'hidden' class is applied */
+        .cursor.hidden {
+            visibility: hidden; 
+        }
 
         header {
             background: #fa9cfa;
@@ -43,71 +47,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
+       
+        
 
-        .site-name {
-            font-size: 24px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .navbar .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            padding: 6px 4px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: #541058;
-        }
-
-        /* Responsive Navbar */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: #fff;
-        }
-
-        .nav-links {
-            display: flex;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: #fa9cfa;
-                width: 100%;
-                text-align: center;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
 
         /* About Section */
         .about-section {
@@ -277,6 +219,42 @@
             stroke-dashoffset: 100;
             transition: stroke-dashoffset 0.3s;
         }
+
+        
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
     </style>
 </head>
 
@@ -305,24 +283,22 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <h1 class="canvas">Canvas Editor</h1>
-            <div class="hamburger" onclick="toggleNav()">☰</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="review.html">Review</a>
-                <a href="testimonial.html">Testimonial</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="tutorial.html">Tutorial</a>
-                <a href="Blog_page.html">Blog</a>
-                <a href="Faq.html">FAQ</a>
-                <a href="./Feedback.html">Feedback</a>
-                <a href="contributors.html">Contributors</a>
-            </div>
-        </nav>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
+  </nav>
     </header>
 
     <!-- About Section -->
@@ -557,48 +533,80 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-// Cursor animation
-const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
 
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    document.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+
+        // Update the position of each circle
+        circles.forEach(function (circle, index) {
+            circle.style.left = coords.x - 12 + "px";
+            circle.style.top = coords.y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+        });
+    });
+
+    // Add mouseleave event to hide cursor
+    document.addEventListener("mouseleave", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Add mouseenter event to show cursor
+    document.addEventListener("mouseenter", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    // Add focus and blur events to hide/show cursor
+    document.addEventListener("focus", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    document.addEventListener("blur", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
 
         circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
+            circle.x = x;
+            circle.y = y;
+
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
         });
 
-        window.addEventListener("mousemove", function(e){
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
 
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
+    // Start the animation
+    animateCircles();
 
-            circles.forEach(function (circle, index) {
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-                circle.x = x;
-                circle.y = y;
 
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
-            });
-
-            requestAnimationFrame(animateCircles);
-        }
-
-        animateCircles();
         
     </script>
 </body>
