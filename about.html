@@ -1,34 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Canvas Tool</title>
+
+    <!-- Single bootstrap inclusion -->
     
-    <!-- Single bootstrap inclusion to avoid redundancy -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="src/Styles/scroll.css">
     <!-- External styles -->
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+ 
 
+   
+ 
     <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
-          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+
+        
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+
     <style>
         body {
             background-color: #eef1f5;
             font-family: 'Arial', sans-serif;
+            color: #333;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            color: black;
+            padding: 20px;
         }
 
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header img {
+            height: 100px;
+            width: auto;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .header h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .header h3 {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        /* Canvas Container */
         .canvas-container {
             display: flex;
             flex-direction: column;
@@ -38,15 +81,16 @@
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            margin: 20px 0;
         }
 
         #mainCanvas {
             width: 100%;
-            height: 60vh; /* Responsive height */
+            height: 60vh;
             border: 2px solid #007bff;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            background-color: #f0f0f0; /* Default background color */
+            background-color: #f0f0f0;
         }
 
         .btn {
@@ -55,7 +99,7 @@
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #0056b3 !important;
             color: white;
             transform: scale(1.05);
         }
@@ -64,45 +108,284 @@
             transform: scale(0.95);
         }
 
-        .palette {
-            margin: 15px 0;
-            text-align: center;
-        }
-
         .form-control {
             border-radius: 5px;
+        }
+
+/* Scroll Up Button Styling */
+.scroll-up {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000; /* Added z-index to ensure it's above other elements */
+}
+
+.scroll-up.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-up:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.scroll-up:active {
+    transform: scale(0.95);
+}
+
+
+
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+         /* Hide cursor when the 'hidden' class is applied */
+         .cursor.hidden {
+            visibility: hidden; 
         }
     </style>
 </head>
 
 <body>
     <!-- Preloader HTML omitted for brevity -->
-    
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
     <div class="container">
         <div class="header text-center">
-            <h1 class="display-4">
-                <a href="/" style="color: inherit; text-decoration: none;">Creative Canvas Tool</a>
+               
+            <h1 class="display-4" ">
+                <img src="download (1).webp" style="height: 100px; width: auto; 
+                border-radius: 50px 50px 50px 50px ; margin-right: 70px;"> 
+     
+                <a href="/" style="color: inherit; text-decoration: none;margin-bottom: 50px;">Creative Canvas Tool Build the future</a>
+            <img src="download (1).png" alt="Logo">
+            <h1>
+                <a href="/">Creative Canvas Tool - Build the Future</a>
             </h1>
-            <p class="lead">Design and create stunning visuals effortlessly!</p>
+            <h3 class="lead">
+                Introducing Creative Canvas: a dynamic tool designed to unleash your imagination and elevate your
+                creative projects! Whether you’re an artist, designer, or simply someone who loves to explore ideas,
+                Creative Canvas provides a flexible platform where you can sketch, brainstorm, and bring your visions to
+                life. With intuitive features and an array of customizable templates, you can easily collaborate with
+                others or work solo to refine your concepts. Dive into a world of creativity and let your ideas flow
+                freely on your digital canvas!
+            </h3>
         </div>
 
-        <!-- Canvas Section -->
         <div class="canvas-container">
             <canvas id="mainCanvas"></canvas>
+            <div style="height: 1500px; background: lightgrey;">
+                <!-- Long content goes here -->
+            </div>
         </div>
     </div>
-    
+
+    <!-- Scroll Up Button -->
+    <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+        <div class="scroll-top-icon">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+        <svg class="progress-ring" width="60" height="60">
+            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
+                cy="30"></circle>
+        </svg>
+    </button>
+    <style>
+        .scroll-top {
+            position: fixed;
+            right: 1.6%;
+            background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+            overflow: visible;
+            z-index: 10;
+            /* Ensure button is on top */
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+            /* Subtle scaling instead of expanding */
+            box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
+            /* Slightly larger shadow */
+        }
+
+        .scroll-top:active {
+            transform: scale(1.05);
+            /* Minor scale reduction on click */
+        }
+
+        .scroll-top-icon {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-top:hover .scroll-top-icon {
+            transform: translateY(-3px);
+        }
+
+        /* Progress Ring Styling */
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+            /* To start from the top */
+        }
+
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform-origin: 50% 50%;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
+            }
+
+            100% {
+                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
+            }
+        }
+
+        .scroll-top:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+        .scroll-top.show {
+            animation: none;
+            /* No animation when showing the button */
+        }
+
+        .scroll-top.show:hover {
+            animation: pulse 1.5s infinite;
+            /* Pulse on hover */
+        }
+    </style>
+    <script>
+        // Get the button
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const progressCircle = document.querySelector(".progress-ring__circle");
+        const radius = progressCircle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+
+        // Set the circle progress properties
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressCircle.style.strokeDashoffset = circumference;
+
+        // Function to show or hide the button based on scroll position
+        function toggleScrollButton() {
+            if (window.scrollY > 100) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+        }
+
+        // Function to set the scroll progress on the button ring
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100) * circumference;
+            progressCircle.style.strokeDashoffset = offset;
+        }
+
+        // Listen for scroll events to update button visibility and progress
+        window.addEventListener("scroll", () => {
+            toggleScrollButton();
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            setProgress(scrollPercent);
+        });
+
+        // Smooth scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+    </script>
+
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const canvas = document.getElementById('mainCanvas');
             const ctx = canvas.getContext('2d');
-            
+
             // Set canvas dimensions dynamically based on window size
             function setCanvasSize() {
                 canvas.width = window.innerWidth * 0.8;
                 canvas.height = window.innerHeight * 0.5;
             }
-            
+
             window.addEventListener('resize', setCanvasSize);
             setCanvasSize(); // Set the initial canvas size
 
@@ -128,12 +411,12 @@
             bgColorPicker && setCanvasBackgroundColor(bgColorPicker.value);
 
             // Background color change event
-            bgColorPicker?.addEventListener('input', function() {
+            bgColorPicker?.addEventListener('input', function () {
                 setCanvasBackgroundColor(this.value);
             });
 
             // Add text functionality
-            document.getElementById('addText')?.addEventListener('click', function() {
+            document.getElementById('addText')?.addEventListener('click', function () {
                 const textData = document.getElementById('textData').value;
                 const textSize = document.getElementById('textSize').value;
                 const textColor = document.getElementById('colorPicker').value;
@@ -151,18 +434,18 @@
                 }
             });
 
-            // Upload image functionality (completed function)
-            document.getElementById('uploadImage')?.addEventListener('click', function() {
+            // Upload image functionality
+            document.getElementById('uploadImage')?.addEventListener('click', function () {
                 const input = document.createElement('input');
                 input.type = 'file';
                 input.accept = 'image/*';
-                input.onchange = function(e) {
+                input.onchange = function (e) {
                     const file = e.target.files[0];
                     const reader = new FileReader();
-                    
-                    reader.onload = function(event) {
+
+                    reader.onload = function (event) {
                         const img = new Image();
-                        img.onload = function() {
+                        img.onload = function () {
                             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                             saveCanvasState(); // Save state after uploading image
                         };
@@ -174,5 +457,89 @@
             });
         });
     </script>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+    
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+    
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+    
+        // Update the coordinates when the mouse moves
+        document.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+    
+            // Update the position of each circle
+            circles.forEach(function (circle, index) {
+                circle.style.left = coords.x - 12 + "px";
+                circle.style.top = coords.y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+            });
+        });
+    
+        // Add mouseleave event to hide cursor
+        document.addEventListener("mouseleave", () => {
+            circles.forEach(circle => circle.classList.add("hidden"));
+        });
+    
+        // Add mouseenter event to show cursor
+        document.addEventListener("mouseenter", () => {
+            circles.forEach(circle => circle.classList.remove("hidden"));
+        });
+    
+        // Add focus and blur events to hide/show cursor
+        document.addEventListener("focus", () => {
+            circles.forEach(circle => circle.classList.remove("hidden"));
+        });
+    
+        document.addEventListener("blur", () => {
+            circles.forEach(circle => circle.classList.add("hidden"));
+        });
+    
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+    
+            circles.forEach(function (circle, index) {
+                circle.x = x;
+                circle.y = y;
+    
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+    
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+    
+        // Start the animation
+        animateCircles();
+    </script>
+    
 </body>
+
 </html>

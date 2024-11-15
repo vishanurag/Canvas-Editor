@@ -1,118 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Creative Canvas Tool</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./src/Styles/Style.css" />
-    <link rel="stylesheet" href="./src/Styles/contact_us_style.css" />
-    <link rel="stylesheet" href="./src/Styles/Responsive.css" />
-    <link rel="stylesheet" href="src/Styles/scroll.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      .about-section {
-        padding: 50px 0;
-        background-color: #f8f9fa;
-      }
-      .team-member {
-        margin-bottom: 30px;
-      }
-      .team-member img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      .about-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .mission-icon,
-      .story-icon {
-        font-size: 3rem;
-        color: #007bff;
-        margin-bottom: 20px;
-      }
-      @keyframes appear {
-        from {
-          opacity: 0;
-          clip-path: inset(100% 100% 0 0);
+        /* General Style */
+        body {
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: #333;
+            overflow-x: hidden;
         }
-        to {
-          opacity: 1;
-          clip-path: inset(0 0 0 0);
+
+
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
         }
-      }
+         /* Hide cursor when the 'hidden' class is applied */
+        .cursor.hidden {
+            visibility: hidden; 
+        }
 
-      .block {
-        animation: appear linear;
-        animation-timeline: view();
-        animation-range: entry 0% cover 40%;
-      }
-      .logo {
-        font-size: 3rem;
-        font-family: "Poppins", sans-serif;
-        color: #353047;
-        font-weight: bolder;
-        text-decoration: none;
-      }
-      /* Styling for Join Community Section */
-      /* Adjust spacing between sections */
-      .community-section {
-        margin-top: 60px;
-        margin-bottom: 60px;
-      }
+        header {
+            background: #fa9cfa;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-      /* Styling for the Join Now Button */
-      .btn-primary {
-        background-color: #007bff;
-        border: none;
-        padding: 12px 24px; /* Larger button for better appearance */
-        font-size: 16px; /* Slightly larger text */
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
+       
+        
 
-      .btn-primary:hover {
-        background-color: #0056b3; /* Darker blue on hover */
-        cursor: pointer;
-      }
-    </style>
-    <style>
-      /* Circle styles */
-      .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: black;
-        position: fixed;
+
+        /* About Section */
+        .about-section {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #353047;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-text,
+        .about-image {
+            flex: 1;
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .about-text:hover,
+        .about-image:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            color: #353047;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .desc {
+            text-align: center;
+            max-width: 800px;
+            margin: 1.5rem auto;
+            padding: 1rem;
+        }
+
+        .teams {
+            max-width: 800px;
+            margin: 1.5rem auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .team-member h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #bbb;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #bbb;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text,
+            .about-image {
+                width: 90%;
+            }
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            outline: none;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Progress Ring */
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 36px;
+            height: 36px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: white;
+            stroke-width: 4;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.3s;
+        }
+
+        
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
         top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 99999999;
-        transition: transform 0.1s ease-out;
-      }
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
+    
     <!-- Circles -->
+    <!-- Circles for cursor effect -->
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -133,222 +282,333 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-    <header class="header">
-      <nav class="navbar">
-        <div class="title">
-          <h1 class="site-name">Canvas</h1>
-          <i class="fa-solid fa-paintbrush"></i>
-        </div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="#blogs">Blogs</a>
-          <a href="index.html#mainCanvas">Draw</a>
-          <a href="contributors.html">Contributors</a>
-          <a href="testimonial.html">Testimonial</a>
-        </div>
-      </nav>
+
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
+  </nav>
     </header>
 
+    <!-- About Section -->
     <section class="about-section">
-      <div class="container">
-        <h2 class="text-center mb-5">About Creative Canvas Tool</h2>
-        <div class="row align-items-center mb-5">
-          <div class="col-md-6">
-            <img
-              src="resources/painting_image.jpg"
-              alt="Creative Canvas Tool in action"
-              class="about-image"
-            />
-          </div>
-          <div class="col-md-6" style="text-align: justify">
-            <p>
-              Creative Canvas Tool is designed to empower artists of all skill
-              levels, offering an intuitive platform that transforms ideas into
-              stunning digital artwork. With a wide range of brushes, colors,
-              and textures at your fingertips, you can easily explore your
-              creativity and experiment with different styles. Whether you're
-              sketching a concept or finalizing a masterpiece, our user-friendly
-              interface ensures a seamless experience, allowing you to focus on
-              what matters most—your art.
-            </p>
-
-            <p>
-              Our Tool not only offers powerful creation tools but also fosters
-              a vibrant community for artists to share their work, seek
-              feedback, and collaborate. Engage in challenges and participate in
-              workshops to enhance your skills. With regular updates and new
-              features, our platform continually evolves to meet the needs of
-              both budding talents and seasoned professionals.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 text-center block">
-            <i class="fas fa-bullseye mission-icon"></i>
-            <h3>Our Mission</h3>
-            <p>
-              To empower creativity by making digital art accessible to
-              everyone, fostering a global community of artists and innovators.
-            </p>
-          </div>
-          <div class="col-md-6 text-center block">
-            <i class="fas fa-book-open story-icon"></i>
-            <h3>Our Story</h3>
-            <p>
-              Founded in 2024, Creative Canvas Tool emerged from a passion
-              project to revolutionize digital artistry, growing into a vibrant
-              platform used by artists worldwide.
-            </p>
-          </div>
-        </div>
-        <div class="row mt-5 block">
-          <div class="col-12">
-            <h3 class="text-center mb-4">Our Team</h3>
-          </div>
-          <div class="col-md-4 text-center team-member">
-            <h4 class="mt-3">Anurag</h4>
-            <p>Founder & Lead Developer</p>
-          </div>
-          <div class="col-md-4 text-center team-member">
-            <h4 class="mt-3">John Smith</h4>
-            <p>Creative Director</p>
-          </div>
-          <div class="col-md-4 text-center team-member">
-            <h4 class="mt-3">Emily Chen</h4>
-            <p>UX Designer</p>
-          </div>
-        </div>
-        <section class="community-section">
-          <div class="container">
-            <div class="row justify-content-center text-center mt-5">
-              <div class="col-lg-8 col-md-10">
-                <h3 class="mb-4">Join Our Community</h3>
-                <p class="lead">
-                  Be part of our growing community of artists. Share your
-                  creations, get inspired, and connect with fellow creatives
-                  from around the world.
-                </p>
-                <a href="community.html" class="btn btn-primary mt-3 px-4 py-2"
-                  >Join Now</a
-                >
-              </div>
+        <h2>About Creative Canvas Tool</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="resources/painting_image.webp" alt="Creative Canvas Tool in action">
             </div>
-          </div>
-        </section>
-      </div>
+            <div class="about-text">
+                <p>
+                    Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive
+                    platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors,
+                    and textures, you can easily explore your creativity and experiment with different styles. Whether
+                    you're sketching a concept or finalizing a masterpiece, our user-friendly interface ensures a
+                    seamless experience, allowing you to focus on what matters most—your art.
+                </p>
+            </div>
+        </div>
     </section>
-    <section class="footer" id="footer">
-      <div class="share" style="font-size: 0.9rem; text-align: center">
-        <!-- Added responsiveness to icons -->
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fa-brands fa-x-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-        <a href="#" class="fa-brands fa-pinterest"></a>
-      </div>
-      <div class="credit" style="font-size: 1rem; text-align: center">
-        <p style="color: white">
-          Created by
-          <span
-            ><a href="https://github.com/vishanurag/" target="_blank"
-              >ANURAG VISHWAKARMA</a
-            ></span
-          >
-          | All rights reserved © 2024
-        </p>
-      </div>
+
+    <section class="about-section">
+    <h2> Mission</h2>
+    <p class="desc">
+        Our mission is to empower creativity by making digital art accessible to everyone, regardless of skill level,
+        background, or resources. We believe that art should be a universal language, and we strive to break down the
+        barriers that prevent people from fully exploring their creative potential. By providing intuitive tools, rich
+        resources, and a supportive environment, we aim to foster a global community of artists, innovators, and
+        dreamers who inspire one another, share knowledge, and celebrate the joy of creation.
+    </p>
+
+      
+    <section class="about-section">
+        <h2>Story</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="./story.jpg" alt="Creative Canvas Tool in action">
+            </div>
+            <div class="about-text">
+                <p>
+                    Founded in 2024, Creative Canvas Tool began as a passion project with a bold vision: to
+                    revolutionize digital artistry by making it accessible and enjoyable for everyone. What started as a
+                    small idea has quickly grown into a dynamic platform embraced by artists worldwide. Driven by our
+                    commitment to innovation, inclusivity, and creativity, we have built a space where artists of all
+                    backgrounds can explore, create, and connect. Today, Creative Canvas Tool is more than a tool—it’s a
+                    community that inspires, supports, and celebrates the art and the artist behind each creation.
+                </p>
+                </p>
+            </div>
+        </div>
     </section>
+
+    <section class="about-section">
+    <h3>Our Team</h3>
+    <div class="teams">
+        <div class="team-member">
+            <h4>Anurag</h4>
+            <p>Founder & Lead Developer</p>
+        </div>
+        <div class="team-member">
+            <h4>Somyadip Ghosh</h4>
+            <p>Project Mentor</p>
+        </div>
+    </div>
+    </section>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 36 36">
+                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            </svg>
+        </div>
+        <span>&uarr;</span>
+    </button>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
+            </div>
+
+            <!-- Quick Links Section (Center) -->
+            <div class="footer-column center">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons Section (Right) -->
+            <div class="footer-column right">
+                <h5 class="footer-heading">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3" style="margin-top: 32px;">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
+    </footer>
+    <style>
+        /* Footer Styling */
+        .main-footer {
+            background-color: #333;
+            /* Dark background */
+            color: #f1f1f1;
+            /* Light text color */
+            padding: 18px 0;
+            font-size: 16px;
+        }
+
+        .footer-heading {
+            color: #e56767;
+            /* Red/pink heading color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .main-footer a {
+            color: #f1f1f1;
+            /* Link color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .main-footer a:hover {
+            color: #e56767;
+            /* Link hover color */
+        }
+
+        /* Footer Container Styling */
+        .main-footer .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Columns Styling */
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column.center {
+            text-align: center;
+        }
+
+        .footer-column.right {
+            text-align: right;
+            margin-top: -76px;
+        }
+
+        /* Quick Links List */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled a {
+            color: #f1f1f1;
+            transition: color 0.3s ease;
+        }
+
+        .list-unstyled a:hover {
+            color: #e56767;
+            text-decoration: underline;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #e56767;
+        }
+    </style>
+
+    <!-- JavaScript for Scroll to Top Button -->
     <script>
-      var typed = new Typed("#site-name", {
-        strings: ["Canvas Editor", "Build and shine!"],
-        loop: true,
-        typeSpeed: 80,
-        backSpeed: 25, // Speed for backspacing
-        backDelay: 1000, // Delay before starting to backspace
-        startDelay: 500, // Optional: Delay before starting the typing effect
-      });
-    </script>
+        // Show button and update progress ring on scroll
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/Canvas.js"></script>
-    <script>
-      // Coordinates for the cursor
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
+        window.addEventListener("scroll", () => {
+            // Show/hide button
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
 
-      // Colors for the circles
-      const colors = [
-        "#ffb56b",
-        "#fdaf69",
-        "#f89d63",
-        "#f59761",
-        "#ef865e",
-        "#ec805d",
-        "#e36e5c",
-        "#df685c",
-        "#d5585c",
-        "#d1525c",
-        "#c5415d",
-        "#c03b5d",
-        "#b22c5e",
-        "#ac265e",
-        "#9c155f",
-        "#950f5f",
-        "#830060",
-        "#7c0060",
-        "#680060",
-        "#60005f",
-        "#48005f",
-        "#3d005e",
-      ];
+            // Update progress ring
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+        });
 
-      // Assign colors and initial position to each circle
-      circles.forEach(function (circle, index) {
+        // Scroll to top when button clicked
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
         circle.x = 0;
         circle.y = 0;
         circle.style.backgroundColor = colors[index % colors.length];
-      });
+    });
 
-      // Update the coordinates when the mouse moves
-      window.addEventListener("mousemove", function (e) {
+    // Update the coordinates when the mouse moves
+    document.addEventListener("mousemove", function (e) {
         coords.x = e.clientX;
         coords.y = e.clientY;
-      });
 
-      // Animation function to move the circles
-      function animateCircles() {
+        // Update the position of each circle
+        circles.forEach(function (circle, index) {
+            circle.style.left = coords.x - 12 + "px";
+            circle.style.top = coords.y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+        });
+    });
+
+    // Add mouseleave event to hide cursor
+    document.addEventListener("mouseleave", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Add mouseenter event to show cursor
+    document.addEventListener("mouseenter", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    // Add focus and blur events to hide/show cursor
+    document.addEventListener("focus", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    document.addEventListener("blur", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
         let x = coords.x;
         let y = coords.y;
 
         circles.forEach(function (circle, index) {
-          // Update the position and scale of each circle
-          circle.style.left = x - 12 + "px";
-          circle.style.top = y - 12 + "px";
-          circle.style.scale = (circles.length - index) / circles.length;
+            circle.x = x;
+            circle.y = y;
 
-          circle.x = x;
-          circle.y = y;
-
-          // Get the next circle in the sequence
-          const nextCircle = circles[index + 1] || circles[0];
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
         });
 
         // Repeat the animation
         requestAnimationFrame(animateCircles);
-      }
+    }
 
-      // Start the animation
-      animateCircles();
+    // Start the animation
+    animateCircles();
+
+
+        
     </script>
-  </body>
+</body>
+
 </html>

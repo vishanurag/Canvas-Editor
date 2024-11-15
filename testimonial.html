@@ -1,354 +1,597 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Canvas Tool - Reviews, Testimonials & Popular Services</title>
-    <link rel="stylesheet" href="src/Styles/scroll.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Testimonials Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            width: 80%;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            margin-top: 60px;
+        }
+        .hero h2 {
+            font-size: 40px;
+            color: #353047;
+            font-weight: bold;
+        }
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #353047;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
         }
-        header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+
+        /* Testimonial section */
+        .testimonial-section {
             text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
+            padding: 50px 0;
+            margin: 0 auto;
+            max-width: 1200px;
         }
-        h1, h2 {
-            margin: 0;
-            padding: 1rem 0;
+        .testimonial-section h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            font-weight: bold;
         }
-        h1 {
-            font-size: 2.5rem;
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 0 20px;
         }
-        h2 {
-            font-size: 2rem;
-            color: #2c3e50;
+        .testimonial {
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+        .testimonial-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
             text-align: center;
-            margin-top: 3rem;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
         }
-        .subtitle {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-top: 0.5rem;
+        .testimonial:hover .testimonial-inner {
+            transform: rotateY(180deg);
         }
-        .testimonial-grid, .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        .testimonial-front, .testimonial-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 50%;
+            padding: 40px;
+            border: 3px solid gold;
         }
-        .testimonial, .service {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
+        .testimonial-front {
+            background: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .testimonial:hover, .service:hover {
-            transform: translateY(-5px);
+        .testimonial-back {
+            background-color: #FFF4B5;
+            font-weight: bold;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            border: 3px solid #9e09ee;
         }
-        .testimonial img, .service img {
+        .testimonial img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
+            margin-bottom: 15px;
             object-fit: cover;
-            margin-bottom: 1rem;
         }
-        .testimonial h3, .service h3 {
-            margin: 0 0 0.5rem 0;
-            color: #2c3e50;
-        }
-        .testimonial p, .service p {
-            font-style: italic;
-            color: #7f8c8d;
-        }
-        .rating {
-            color: #f1c40f;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .cta {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: #3498db;
+        .testimonial h3 {
             color: #fff;
-            border-radius: 10px;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #2c3e50;
-            color: #fff;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-top: 1rem;
-        }
-        .cta-button:hover {
-            background-color: #1a252f;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        .stat-item {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 1.5rem;
-            border-radius: 10px;
-            width: 200px;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .features {
-            background-color: #ecf0f1;
-            padding: 3rem 0;
-            margin: 3rem 0;
-        }
-        .feature-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .feature-item {
-            width: 30%;
-            min-width: 250px;
-            margin: 1rem;
-            text-align: center;
-        }
-        .feature-icon {
-            font-size: 3rem;
-            color: #3498db;
-            margin-bottom: 1rem;
+            margin: 10px 0;
+            font-size: 20px;
         }
 
-        .home-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+        /* Stats Section */
+        .stats-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 50px 20px;
         }
-        .home-button:hover {
-            background-color: #34495e;
+        .stat-box {
+            background-color: #444;
+            border-radius: 20px;
+            padding: 20px;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: transform 0.3s ease, border 0.3s ease;
+            border: 2px solid gold;
         }
-        .navbar-brand {
-            font-weight: bolder;
-            padding-top: 30px;
-            text-align: center; 
-            width: 100%; 
-            font-size: 2.5rem;
+        .stat-box:hover {
+            transform: translateY(-10px);
+            border: 3px solid gold;
         }
-        .navbar-nav .nav-link {
-            color: #e0e2e2; /* Default link color */
+        .stat-box i {
+            font-size: 50px;
+            margin-bottom: 10px;
         }
-        .navbar-nav .nav-link.active {
-            font-weight: bold; /* Bold active link */
+        .stat-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
+        .stat-box p {
+            font-size: 16px;
+            color: #b3b3b3;
+        }
+
+        /* Footer */
+        /* .footer { */
+            /* text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #bdc3c7;
+        }
+        .footer .share a {
+            font-size: 1rem;
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer .share a:hover {
+            color: #f1c40f;
+        } */
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .testimonial {
+                width: 100%;
+                max-width: 300px;
+            }
+            .stats-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer {
+                padding: 15px;
+            }
+        }
+
+                
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
+
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <!-- <a class="navbar-brand" href="#">Creative Canvas Tool</a> -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="review.html">Review</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="testimonial.html">Testimonial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="privacy.html">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog_page.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contributors.html">Contributors</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="text-center w-100"> <!-- Centering container -->
-            <h1 class="navbar-brand">Creative Canvas Tool</h1>
-            <p class="subtitle">Design and create stunning visuals effortlessly!</p>
-        </div>
-    </header>
-    <div class="container">
-        <section class="stats">
-            <div class="stat-item">
-                <div class="stat-number">10k+</div>
-                <div class="stat-label">Happy Users</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">1M+</div>
-                <div class="stat-label">Designs Created</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">4.8</div>
-                <div class="stat-label">Average Rating</div>
-            </div>
-        </section>
 
-        <h2>What Our Customers Are Saying</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Sarah J.</h3>
-                <div class="rating">★★★★★</div>
-                <p>"Creative Canvas Tool has revolutionized my design process. It's intuitive, powerful, and a joy to use!"</p>
-            </div>
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Mark T.</h3>
-                <div class="rating">★★★★☆</div>
-                <p>"As a marketing professional, this tool has saved me countless hours. The templates are top-notch!"</p>
-            </div>
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Emily R.</h3>
-                <div class="rating">★★★★★</div>
-                <p>"I'm not a designer, but Creative Canvas Tool makes me feel like one. It's so easy to create beautiful graphics!"</p>
-            </div>
-            <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                <h3>Alex K.</h3>
-                <div class="rating">★★★★☆</div>
-                <p>"The variety of templates and the ease of customization are unmatched. It's my go-to for all design needs!"</p>
-            </div>
-        </div>
+        <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    
+       
 
-        <h2>Services Loved The Most</h2>
-        <div class="services-grid">
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                    </svg>
-                </div>
-                <h3>Social Media Graphics</h3>
-                <p>"Perfect for creating eye-catching posts for all platforms. The pre-sized templates are a huge time-saver!"</p>
-            </div>
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
-                    </svg>
-                </div>
-                <h3>Logo Design</h3>
-                <p>"The logo maker is intuitive and offers a wide range of customization options. It's great for branding projects!"</p>
-            </div>
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                    </svg>
-                </div>
-                <h3>Infographic Creator</h3>
-                <p>"Turning complex data into visually appealing infographics has never been easier. Love the chart options!"</p>
-            </div>
-            <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                    </svg>
-                </div>
-                <h3>Photo Editor</h3>
-                <p>"The photo editing tools are powerful yet easy to use. I can enhance my images without any prior experience!"</p>
-            </div>
-        </div>
 
-        <section class="features">
-            <h2>Why Choose Creative Canvas Tool?</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <div class="feature-icon">🎨</div>
-                    <h3>User-Friendly Interface</h3>
-                    <p>Intuitive design that anyone can master, regardless of experience level.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Time-Saving Templates</h3>
-                    <p>Hundreds of professionally designed templates to jumpstart your creativity.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💡</div>
-                    <h3>Endless Customization</h3>
-                    <p>Flexible tools that allow you to bring your unique vision to life.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="cta">
-            <h2>Ready to unleash your creativity?</h2>
-            <p>Join thousands of satisfied users and start designing today!</p> 
-            <a href="index.html#mainCanvas" class="cta-button">Start Drawing Now ➡ </a>
-        </div>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to Our Testimonials Page</h2>
+        <p>Read what our customers have to say about our services.</p>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial">
+                <div class="testimonial-inner">
+                    <div class="testimonial-front">
+                        <img src="https://images.unsplash.com/flagged/photo-1579657831106-50315fcf3220?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NjR8OTQ1MjQ5NHx8ZW58MHx8fHx8" alt="Profile Picture">
+                        <h3>John Doe</h3>
+                    </div>
+                    <div class="testimonial-back">
+                        <p>Great service and friendly staff. Highly recommend!</p>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="testimonial">
+                <div class="testimonial-inner">
+                    <div class="testimonial-front">
+                        <img src="https://images.unsplash.com/photo-1587778082149-bd5b1bf5d3fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw5NDUyNDk0fHxlbnwwfHx8fHw%3D">
+                        <h3>John Smith</h3>
+                    </div>
+                    <div class="testimonial-back">
+                        <p>"A great experience from start to finish. Highly recommend this company for their professionalism and dedication."</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="testimonial">
+                <div class="testimonial-inner">
+                    <div class="testimonial-front">
+                        <img src="https://images.unsplash.com/photo-1575439462433-8e1969065df7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8OTQ1MjQ5NHx8ZW58MHx8fHx8" alt="Client Image">
+                        <h3>Emily White</h3>
+                    </div>
+                    <div class="testimonial-back">
+                        <p>"I couldn't be more pleased with the results. The team went above and beyond to meet my needs."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stat-box">
+            <i class="fas fa-users"></i>
+            <h3 id="client-count">0</h3>
+            <p>Happy Clients</p>
+        </div>
+        
+    </section>
+
+    <!-- Footer -->
+       <!-- Footer -->
+       <footer class="main-footer">
+        <div class="container">
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
+            </div>
+
+            <!-- Quick Links Section (Center) -->
+            <div class="footer-column center">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Icons Section (Right) -->
+            <div class="footer-column right">
+                <h5 class="footer-heading">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3" style="margin-top: 32px;">
+            © <span id="year"></span> Canvas Editor. All rights reserved.
+        </div>
+    </footer>
+    <style>
+        /* Footer Styling */
+        .main-footer {
+            background-color: #333;
+            /* Dark background */
+            color: #f1f1f1;
+            /* Light text color */
+            padding: 18px 0;
+            font-size: 16px;
+            
+        }
+
+        .footer-heading {
+            color: #e56767;
+            /* Red/pink heading color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .main-footer a {
+            color: #f1f1f1;
+            /* Link color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .main-footer a:hover {
+            color: #e56767;
+            /* Link hover color */
+        }
+
+        /* Footer Container Styling */
+        .main-footer .container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Columns Styling */
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-column.center {
+            text-align: center;
+        }
+
+        .footer-column.right {
+            text-align: right;
+            margin-top: -76px;
+        }
+
+        /* Quick Links List */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled a {
+            color: #f1f1f1;
+            transition: color 0.3s ease;
+        }
+
+        .list-unstyled a:hover {
+            color: #e56767;
+            text-decoration: underline;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #f1f1f1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #e56767;
+        }
+
+/* Circle styles */
+.circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+
+
+    </style>
+
+
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-title').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (button.classList.contains('active')) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+
+        // Cursor animation
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        window.addEventListener("mousemove", function(e){
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+
+
+// Function to animate the counting effect
+function animateCount(target, start, end, duration) {
+            let startTime = null;
+
+            const animate = (currentTime) => {
+                if (!startTime) startTime = currentTime;
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                target.innerText = Math.floor(progress * (end - start) + start);
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    target.innerText = end; // Ensure it ends at the final value
+                    setTimeout(() => {
+                        // After finishing, reset the count and start again
+                        animateCount(target, 0, end, duration);
+                    }, 1000); // Delay before restarting the animation
+                }
+            };
+
+            requestAnimationFrame(animate);
+        }
+
+        // Check if DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const clientCountElement = document.getElementById('client-count');
+            
+            // Log to verify element selection
+            if (clientCountElement) {
+                console.log("Element found:", clientCountElement);
+                animateCount(clientCountElement, 0, 2000, 3000); // Start the animation
+            } else {
+                console.error("Element with ID 'client-count' not found.");
+            }
+        });
+
+
+      </script>
+
 </body>
 </html>

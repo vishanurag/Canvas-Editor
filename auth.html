@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="auth.css" />
+
+    <link rel="icon" href="resources/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <div class="container">
+        <div class="forms-container">
+            <div class="sign-in-signup">
+                <form action="#" class="sign-in-form"  onsubmit="return validateSignInForm()">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="sign-in-password" />
+                        <i class="fas fa-eye password-toggle" onclick="togglePassword('sign-in-password', this)"></i>
+                    </div>
+                    <div class="login">
+                        <input type="submit" value="Login" class="btn solid" />
+                    </div>
+                    <a href="/forgot_password.html" style="text-decoration: none; color: black;">
+                        <p>Forgot Password?</p>
+                    </a>
+                    <p class="social-text">OR<br>Sign in with social platforms</p>
+
+                    
+                   <div class="social-media">
+                    <button type="button" class="btn btn-microsoft" onclick=" window.location.href='https://login.microsoftonline.com/' ">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                            alt="Microsoft Logo" style="width: 25px; height: 25px; margin-right: 5px;">
+                    </button>
+
+                        <button type="button" class="btn btn-google" onclick=" window.location.href='https://accounts.google.com' ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
+                                alt="Google Icon" style="width: 30px; height: 30px; margin-right: 7px;"> 
+                        </button>
+
+                        <button type="button" class="btn btn-github" onclick=" window.location.href='https://github.com/login' ">
+                            <i class="fa-brands fa-github" style="font-size: 30px; margin-right: 7px; color: #b10aff;"></i> 
+                        </button>
+
+                    </div>
+                </form>
+                                        
+                </form>
+                
+                <form action="#" class="sign-up-form" onsubmit="return validateForm()">
+                    <h2 class="title">Sign up</h2>
+
+                    <!-- Username Field -->
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" id="username" required />
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" id="email" required />
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="signup-password" required />
+                        <i class="fas fa-eye password-toggle" onclick="togglePassword('signup-password', this)"></i>
+                    </div>
+
+                    <!-- Password Strength Bars -->
+                    <div class="password-strength">
+                        <div id="strength-weak"></div>
+                        <div id="strength-medium"></div>
+                        <div id="strength-strong"></div>
+                    </div>
+
+                    <input type="submit" class="btn" value="Sign up" />
+                </form>
+                <p id="error-message" style="color: red; display: none;"></p>
+
+            </div>
+        </div>
+
+        <script>
+            function validateForm() {
+                const password = document.getElementById('signup-password').value;
+                const email = document.getElementById('email').value;
+                const username = document.getElementById('username').value;
+        
+                // Sign-up validation logic
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return false;
+                }
+        
+                const hexRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]+$/;
+                if (!hexRegex.test(password)) {
+                    alert("Password must contain at least one uppercase letter (A-Z), one number (0-9), and include only letters and numbers.");
+                    return false;
+                }
+        
+                if (username.trim() === "") {
+                    alert("Please enter a valid username.");
+                    return false;
+                }
+        
+                if (!email.includes("@")) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+        
+                return true;
+            }
+        
+            function validateSignInForm() {
+                const username = document.querySelector('.sign-in-form input[type="text"]').value;
+                const password = document.querySelector('.sign-in-form input[type="password"]').value;
+        
+                // Sign-in validation logic
+                if (username.trim() === "") {
+                    alert("Please enter your username.");
+                    return false;
+                }
+        
+                if (password.trim() === "") {
+                    alert("Please enter your password.");
+                    return false;
+                }
+        
+                // Simulate successful login 
+                alert("You have successfully logged in to the website!");
+        
+                // Redirect to the home screen after a short delay
+                setTimeout(function() {
+                    window.location.href = "index.html"; 
+                }, 2000); // Redirect after 2 seconds
+        
+                // If all validations pass, return true to allow form submission
+                return false; // Prevent form submission since we are handling the redirect
+            };
+        </script>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    <p>
+                        Discover new experiences with Canvas! <br> Create your account.
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
+                </div>
+                <img src="img/log.svg" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us ?</h3>
+                    <p>
+                        Welcome back to our community
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+                <img src="img/register.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="homeBtn">
+        <i class="fas fa-home"></i>
+    </a>
+    <div id="toast-container"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
+    <script src="firebase.js"></script>
+    <script>
+        const signUpBtn = document.getElementById('sign-up-btn');
+        const signInBtn = document.getElementById('sign-in-btn');
+        const container = document.querySelector('.container');
+
+        signUpBtn.addEventListener('click', () => {
+            container.classList.add('sign-up-mode');
+        });
+
+        signInBtn.addEventListener('click', () => {
+            container.classList.remove('sign-in-mode');
+        });
+
+        function togglePassword(id, element) {
+            const passwordInput = document.getElementById(id);
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                element.classList.add('active');
+            } else {
+                passwordInput.type = 'password';
+                element.classList.remove('active');
+            }
+        }
+
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        }
+
+    </script>
+
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+<!-- Dash eye Icon Script  -->
+    <script>
+        function togglePassword(passwordId, icon) {
+    const passwordField = document.getElementById(passwordId);
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        passwordField.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+
+
+// Coordinates for the cursor
+const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
+
+
+
+    </script>
+
+</body>
+
+</html>

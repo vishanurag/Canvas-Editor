@@ -1,381 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Creative Canvas Tool</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="src/Styles/scroll.css">
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./src/Styles/Style.css" />
-    <link rel="stylesheet" href="./src/Styles/contact_us_style.css" />
-    <link rel="stylesheet" href="./src/Styles/Responsive.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-      .about-section {
-        padding: 50px 0;
-        background-color: #f8f9fa;
-      }
-      .team-member {
-        margin-bottom: 30px;
-      }
-      .team-member img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      .about-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .mission-icon,
-      .story-icon {
-        font-size: 3rem;
-        color: #007bff;
-        margin-bottom: 20px;
-      }
-      @keyframes appear {
-        from {
-          opacity: 0;
-          clip-path: inset(100% 100% 0 0);
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        to {
-          opacity: 1;
-          clip-path: inset(0 0 0 0);
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+            min-height: 100vh;
         }
-      }
 
-      .block {
-        animation: appear linear;
-        animation-timeline: view();
-        animation-range: entry 0% cover 40%;
-      }
-      .logo {
-        font-size: 3rem;
-        font-family: "Poppins", sans-serif;
-        color: #353047;
-        font-weight: bolder;
-        text-decoration: none;
-      }
-      /* Styling for Join Community Section */
-      /* Adjust spacing between sections */
-      .community-section {
-        margin-top: 60px;
-        margin-bottom: 60px;
-      }
+        .container {
+            width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-      /* Styling for the Join Now Button */
-      .btn-primary {
-        background-color: #007bff;
-        border: none;
-        padding: 12px 24px; /* Larger button for better appearance */
-        font-size: 16px; /* Slightly larger text */
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
-
-      .btn-primary:hover {
-        background-color: #0056b3; /* Darker blue on hover */
-        cursor: pointer;
-      }
-    </style>
-    <style>
-      /* Circle styles */
-      .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: black;
-        position: fixed;
+                
+    .navbar {
+        background-color: #e588e7;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: sticky;
         top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 99999999;
-        transition: transform 0.1s ease-out;
-      }
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        color: #fff;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #ef9ef5;
+    }
+        /* Hero Section */
+
+        .hero-section {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            color: #333;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #666;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            margin: 2rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.2) 10px,
+                rgba(255, 255, 255, 0.2) 20px
+            );
+            z-index: 1;
+        }
+
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .privacy-section {
+            margin-bottom: 2rem;
+        }
+
+        .privacy-section h3 {
+            color: #353047;
+            margin-bottom: 1rem;
+        }
+
+        .gray-box {
+            background-color: rgba(128, 128, 128, 0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .team-section {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffb7fd;
+        }
+
+
+
     </style>
-  </head>
-  <body>
-    <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <header class="header">
-      <nav class="navbar">
-        <div class="title">
-          <h1 class="site-name">Canvas</h1>
-          <i class="fa-solid fa-paintbrush"></i>
-        </div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="Blog_page.html">Blogs</a>
-          <a href="index.html#mainCanvas">Draw</a>
-          <a href="contributors.html">Contributors</a>
-          <a href="testimonial.html">Testimonial</a>
-        </div>
-      </nav>
-    </header>
+    <style>
+        /* Circle styles */
 
-    <section class="about-section">
-      <div class="container">
-        <h2 class="text-center mb-5">Privacy Policy Creative Canvas Tool</h2>
-        <div class="row align-items-center mb-5">
-          <div class="col-md-6">
-            <img
-              src="resources/painting_image.jpg"
-              alt="Creative Canvas Tool in action"
-              class="about-image"
-            />
-          </div>
-          <div class="col-md-6" style="text-align: justify">
-            <p>
-              <h2>Effective Date: 13/10/2024<br></h2>
-              Creative Canvas Tool is designed to empower artists of all skill
-              levels, offering an intuitive platform that transforms ideas into
-              stunning digital artwork. With a wide range of brushes, colors,
-              and textures at your fingertips, you can easily explore your
-              creativity and experiment with different styles. Whether you're
-              sketching a concept or finalizing a masterpiece, our user-friendly
-              interface ensures a seamless experience, allowing you to focus on
-              what matters most—your art.
-            </p>
-            <p>
-                At Creative Canvas Tool, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
-            </p>
-          </div>
-        </div>
-    <div style="text-align: left">
-        <p style="font-size: 10px">
-           <ul style="display: block">
-            <li><h3>1. Information We Collect</h3><br>
-               <strong> Personal Information:</strong><br> We may collect personal information that you provide directly to us when you register for an account, create or save a canvas, or contact us. This may include your name, email address, and any other information you choose to provide.<br>
-               <strong> Usage Data:</strong><br>
-We automatically collect certain information about your interaction with our Site, including your IP address, browser type, device information, pages viewed, and the time and date of your visit.
-            </li>
-            <br>
-            <li><h3>2. How We Use Your Information</h3><br>
-                We may use the information we collect for various purposes, including:<br>
-                <ul>
-                    <li>
-                        To provide, maintain, and improve our services
-                    </li>
-                    <li>
-                        To personalize your experience on our Site
-                    </li>
-                    <li>
-                        To communicate with you, including sending updates and promotional materials
-                    </li>
-                    <li>
-                        To respond to your comments, questions, and requests
-                    </li>
-                    <li>
-                        To monitor and analyze usage and trends to improve our Site
-                    </li>
-                </ul>
-            </li>
-            <br>
-            <li><h3>3. Sharing Your Information</h3><br>
-                We do not sell, trade, or otherwise transfer your personal information to outside parties without your consent, except in the following circumstances:<br>
-                <strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our Site and providing services to you, so long as those parties agree to keep this information confidential.<br>
-                <strong>Legal Compliance: </strong>
-                We may disclose your information to comply with applicable laws, regulations, legal processes, or governmental requests.
-            </li>
-            <br>
-            <li>
-                <h3>4. Security of Your Information</h3><br> 
-                We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, while we strive to protect your personal information, we cannot guarantee its absolute security.
-            </li>
-            <br>
-            <li><h3>
-               5. Changes to This Privacy Policy
-            </h3>
-            <br>
-            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page with a new effective date. We encourage you to review this Privacy Policy periodically for any changes.
-        </li>
-           </ul>
-          </p>
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Unique element: Floating shapes */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.6;
+            pointer-events: none;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .shape1 { top: 10%; left: 10%; font-size: 40px; }
+        .shape2 { top: 20%; right: 10%; font-size: 30px; animation-delay: 2s; }
+        .shape3 { bottom: 15%; left: 15%; font-size: 35px; animation-delay: 4s; }
+        .shape4 { bottom: 10%; right: 20%; font-size: 45px; animation-delay: 6s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Circles for cursor effect -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+ <!-- Navbar -->
+ <nav class="navbar">
+    <h1 class="canvas">Canvas Editor</h1>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
     </div>
-        <div class="row mt-5 block">
-          <div class="col-12">
-            <h3 class="text-center mb-4">Our Team</h3>
-          </div>
-          <div class="col-md-4 text-center team-member">
-            <h4 class="mt-3">Anurag</h4>
-            <p>Founder & Lead Developer</p>
-          </div>
-          <div class="col-md-4 text-center team-member">
-            <h4 class="mt-3">John Smith</h4>
-            <p>Creative Director</p>
-          </div>
-          <div class="col-md-4 text-center team-member">
-            <h4 class="mt-3">Emily Chen</h4>
-            <p>UX Designer</p>
-          </div>
-        </div>
-        <section class="community-section">
-          <div class="container">
-            <div class="row justify-content-center text-center mt-5">
-              <div class="col-lg-8 col-md-10">
-                <h3 class="mb-4">Join Our Community</h3>
-                <p class="lead">
-                  Be part of our growing community of artists. Share your
-                  creations, get inspired, and connect with fellow creatives
-                  from around the world.
-                </p>
-                <a href="community.html" class="btn btn-primary mt-3 px-4 py-2"
-                  >Join Now</a
-                >
-              </div>
+  </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <div class="hero-background"></div>
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is our priority</p>
+            <div class="hero-image">
+                <!-- Replace with your actual image -->
+                <img src="canvas.jpg" alt="Privacy illustration">
             </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <section class="footer" id="footer">
-      <div class="share" style="font-size: 0.9rem; text-align: center">
-        <!-- Added responsiveness to icons -->
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fa-brands fa-x-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="https://www.linkedin.com/in/anuragvishwakarma/" class="fa-brands fa-linkedin-in"></a>
-        <a href="#" class="fa-brands fa-pinterest"></a>
-      </div>
-      <div class="credit" style="font-size: 1rem; text-align: center">
-        <p style="color: white">
-          Created by
-          <span
-            ><a href="https://github.com/vishanurag/" target="_blank"
-              >ANURAG VISHWAKARMA</a
-            ></span
-          >
-          | All rights reserved © 2024
-        </p>
-      </div>
-    </section>
+            <!-- Floating shapes -->
+            <div class="floating-shape shape1">🔒</div>
+            <div class="floating-shape shape2">🛡️</div>
+            <div class="floating-shape shape3">📜</div>
+            <div class="floating-shape shape4">🔐</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Effective Date: 13/10/2024</h2>
+            <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles.</p>
+        </div>
+
+        <div class="content-section">
+            <div class="privacy-section">
+                <h3>1. Information We Collect</h3>
+                <p><strong>Personal Information:</strong> We may collect personal information that you provide directly to us when you register for an account, create or save a canvas, or contact us.</p>
+                <p><strong>Usage Data:</strong> We automatically collect certain information about your interaction with our Site, including your IP address, browser type, device information, pages viewed, and the time and date of your visit.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li>To provide, maintain, and improve our services</li>
+                    <li>To personalize your experience on our Site</li>
+                    <li>To communicate with you, including sending updates and promotional materials</li>
+                    <li>To respond to your comments, questions, and requests</li>
+                    <li>To monitor and analyze usage and trends to improve our Site</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>3. Sharing Your Information</h3>
+                <p><strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our Site.</p>
+                <div class="gray-box">
+                    <p><strong>Legal Compliance:</strong> We may disclose your information to comply with applicable laws, regulations, legal processes, or governmental requests.</p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h3>4. Security of Your Information</h3>
+                <p>We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>5. Changes to This Privacy Policy</h3>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page with a new effective date.</p>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h4>Anurag</h4>
+                    <p>Founder & Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <h4>Somyadip Ghosh</h4>
+                    <p>Project Mentor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+     <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <!-- About Us Section (Left) -->
+            <div class="footer-column">
+                <h5 class="footer-heading">About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
+            </div>
+            <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
+        </div>
+        <div class="text-center py-3" style="margin-top: 32px;margin-left: 43%;">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
+    </footer>
     <script>
-      var typed = new Typed("#site-name", {
-        strings: ["Canvas Editor", "Build and shine!"],
-        loop: true,
-        typeSpeed: 80,
-        backSpeed: 25, // Speed for backspacing
-        backDelay: 1000, // Delay before starting to backspace
-        startDelay: 500, // Optional: Delay before starting the typing effect
-      });
-    </script>
+        // Cursor animation
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="./src/Scripts/Canvas.js"></script>
-    <script>
-      // Coordinates for the cursor
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-
-      // Colors for the circles
-      const colors = [
-        "#ffb56b",
-        "#fdaf69",
-        "#f89d63",
-        "#f59761",
-        "#ef865e",
-        "#ec805d",
-        "#e36e5c",
-        "#df685c",
-        "#d5585c",
-        "#d1525c",
-        "#c5415d",
-        "#c03b5d",
-        "#b22c5e",
-        "#ac265e",
-        "#9c155f",
-        "#950f5f",
-        "#830060",
-        "#7c0060",
-        "#680060",
-        "#60005f",
-        "#48005f",
-        "#3d005e",
-      ];
-
-      // Assign colors and initial position to each circle
-      circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-      });
-
-      // Update the coordinates when the mouse moves
-      window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-      });
-
-      // Animation function to move the circles
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
 
         circles.forEach(function (circle, index) {
-          // Update the position and scale of each circle
-          circle.style.left = x - 12 + "px";
-          circle.style.top = y - 12 + "px";
-          circle.style.scale = (circles.length - index) / circles.length;
-
-          circle.x = x;
-          circle.y = y;
-
-          // Get the next circle in the sequence
-          const nextCircle = circles[index + 1] || circles[0];
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
         });
 
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
-      }
+        window.addEventListener("mousemove", function(e){
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
 
-      // Start the animation
-      animateCircles();
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-  </body>
+</body>
 </html>

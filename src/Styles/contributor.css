@@ -1,4 +1,7 @@
-body {
+body{
+  margin: 0;
+}
+.containerm {
   font-family: "Poppins";
   /* background-color: #c10f0f; */
   color: #333;
@@ -17,6 +20,7 @@ body {
   display: inline-block;
   font-size: 3em;
   margin-bottom: 20px;
+  margin-top: 100px;
   padding: 10px;
   color: #2e06fb;
   text-shadow: 1px 1px 2px rgb(60, 0, 255), 0 0 1em rgba(0, 213, 255, 0.617),
@@ -137,9 +141,12 @@ body {
 /* dark mode */
 /* Toggle button styles */
 .toggle-container {
-  position: fixed; /* Change this as needed for positioning */
-  top: 25px;
-  right: 40px;
+  position: relative;
+  z-index: 101;
+  width: 50px;
+  height: 25px;
+  top:-27px;
+  left:20px;
 }
 
 .toggle {
@@ -164,10 +171,10 @@ body {
   transform: translateX(25px);
 }
 
-body {
+/* body {
   background-color: #f8f9fa;
   color: #212529;
-}
+} */
 
 .nav-container {
   background-color: #ffffff;
@@ -261,4 +268,25 @@ body.dark-mode .contributor-card p {
 }
 body.dark-mode .contributor-card h2 {
   color: white;
+}
+body.dark-mode .title{
+  color: #f77ee1;
+}
+/* Mobile-specific adjustments: One large card per row */
+@media (max-width: 768px) {
+  .contributor-container {
+    flex-direction: column; 
+    align-items: center;    
+  }
+
+  .contributor-card {
+    flex-basis: 30%;       
+    max-width: 80%;        
+    padding: 24px;         
+  }
+
+  .contributor-card img {
+    width: 90px;          
+    height: 90px;
+  }
 }
