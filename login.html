@@ -4,139 +4,338 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/Styles/Style.css">
     <link rel="stylesheet" href="./src/Styles/Responsive.css">
+    <link rel="stylesheet" href="./src/Styles/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
-            display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 105vh;
+            overflow-x: hidden;
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
         }
+        .site-name{
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
         .header-container {
-            width: 100vw; 
-            background-color: #f8f9fa;
-            padding: 20px 0; 
+            width: 100vw;
+            min-height: 100vh;
+            background-color: #f8f9fa; 
+            padding: 70px 0; 
             text-align: center;
             margin-bottom: 20px; 
+            background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
         }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #000;
+            padding: 10px 0;
+            height: 90px;
+            width: 100%; 
+            margin: 0 auto; 
+            padding: 10px 0; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        .navbar .nav-links a {
+            color: #000 !important; /* Changed to black */
+            margin: 0 10px;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            font-weight: normal; 
+            transition: color 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #000; 
+            background-color: #fff; 
+            border-radius: 5px;
+        }
+
+        /* Login form styling */
         .form-container {
             max-width: 400px; 
             margin: 0 auto; 
             padding: 20px;
-            border: 1px solid #dee2e6; 
+            background: rgba(255, 255, 255, 0.2); 
+            border: 1px solid rgba(255, 255, 255, 0.3); 
             border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px); 
         }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
+
+        .input-group .input-group-text {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #333;
+            border: none;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 8px 0 0 8px; 
         }
-        button {
-            width: 100%;
+
+        #input input.form-control {
+            height: 50px;
+            font-size: 16px;
+            padding-left: 10px;
+            border-radius: 0 8px 8px 0; 
+        }
+
+        #input input.form-control:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(50, 150, 250, 0.5);
+        }
+
+        .login-btn {
+            width: 50%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #000;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 30px;
             cursor: pointer;
+            transition: all 0.4s ease;
+            text-align: center;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .login-btn:hover {
+            background-color: #0d1321;
+            transform: scale(1.1);
         }
+
         .or {
             text-align: center;
-            margin: 20px 0;
-        }
-        .google-btn {
-            background-color: #db4437;
+            margin: 10px 0;
             color: white;
         }
-        .google-btn:hover {
-            background-color: #c23321;
-        }
+
         p {
             text-align: center;
+            color: white;
         }
-        a {
-            color: #007bff;
-            text-decoration: none;
+
+        .google-btn, .github-btn , .twitter-btn , .instagram-btn {
+            width: 36px;
+            height: 36px;
+            margin: 0 5px;
+            border-radius: 50%;
+            transition: transform 0.2s ease;
         }
-        .nav-tabs {
-            justify-content: center;
-            background-color: #ffffff;
-            border-bottom: 2px solid #dee2e6; 
+        .google-btn , .twitter-btn {
+            margin-right: 20px; 
         }
-        .nav-item .nav-link {
-            color: #000;
+        
+        .github-btn {
+            margin-left: 10px; 
+        }
+
+        .instagram-btn{
+            margin-left: 20px;
+        }
+
+        .twitter-btn{
+            margin-left: 20px;
+        }
+        
+        .google-btn:hover, .github-btn:hover {
+            transform: scale(1.1);
+        }
+        .typing-effect {
+            font-size: 24px; 
+            color: #333; 
+            text-align: center;
+            margin-top: 20px; 
+        }
+        
+        .input-group .input-group-text:last-child {
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+        }
+        
+        .input-group .input-group-text i {
             font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 0;
-            transition: background-color 0.3s, color 0.3s;
+            margin: 0 auto;
         }
-        .nav-link.active {
-            background-color: #3abe57;
-            color: white;
-        }
-        .nav-link:hover {
-            background-color: #3abe57;
-            color: white;
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
         }
     </style>
 </head>
 <body>
-    <div class="header-container">
-        
-        <div class="header">
-            <h1 class="display-4">Creative Canvas Tool</h1>
-            <p class="lead">Design and create stunning visuals effortlessly!</p>
-        </div>
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a></li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <header class="header">
+        <nav class="navbar">
+          <div class="title">
+            <h1 class="site-name">Canvas Editor</h1>
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="Blog_page.html">Blogs</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="contributors.html">Contributors</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Login</a>
+          </div>
+        </nav>
+    </header>
 
-            </li>
-        </ul>
-    </div>
-    <div class="form-container">
-        <h2>Log In</h2>
+    <h2 class="text-center typing-effect" id="typingEffect"></h2> <!-- Typing effect heading -->
+
+    
+    <div id="login" class="form-container mt-5">
+        <h3 class="pb-4">LOG IN</h3>
         <form action="/login" method="POST">
-            <input type="text" name="username_email" placeholder="Email or Username" required>
-            <input type="password" name="password" placeholder="Enter Password" required>
-            <button type="submit">Log In</button>
+            <div id="input" class="input-group mb-3">
+                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                <input type="text" name="username_email" class="form-control" placeholder="Email or Username" required>
+            </div>
+            <div id="input" class="input-group mb-3">
+                <span class="input-group-text"><i class="fa-solid fa-eye" id="togglePassword"></i></span>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" required>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="login-btn">Log In</button>
+            </div>
         </form>
         <div class="or">- OR -</div>
-        <button class="google-btn">Continue with Google</button>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p> <!-- This should link to signup.html -->
-
+        <div id="social" class="d-flex justify-content-center mb-3">
+            <a href="https://www.google.com/"><img class="logo google-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.svg.png?20230822192911"></a>
+            <a href="https://github.com/"><img class="logo github-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/640px-GitHub_Invertocat_Logo.svg.png"></a>
+            <a href="https://www.instagram.com/"><img class="logo instagram-btn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/180px-Instagram_logo_2016.svg.png"></a>
+            <a href="https://twitter.com/"><img class="logo twitter-btn"id="github" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/180px-Logo_of_Twitter.svg.png"></a>
+        </div>
+        <p>Don't have an account? <br><a href="signup.html">Sign up</a></p>
     </div>
+
+    <script src="src/Scripts/preloader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+        // Typing effect for the heading
+const text = "Design and create stunning visuals effortlessly!";
+const typingEffectElement = document.getElementById("typingEffect");
+let index = 0;
+
+function type() {
+    if (index < text.length) {
+        typingEffectElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 150);
+    }
+}
+
+// Start typing effect
+type();
+
+    </script>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
+    </script>
 </body>
-</html> 
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <div class="social-media">
+            <a href="#" class="icon twitter">Twitter</a>
+            <a href="#" class="icon facebook">Facebook</a>
+            <a href="#" class="icon google">Google</a>
+            <a href="#" class="icon instagram">Instagram</a>
+        </div>
+        <form class="contact-form">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <label for="email">Your Email</label>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" placeholder="Hi! What can I help you with?" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            alert('Form submitted successfully!'); // Show a message
+            this.reset(); // Clear the form
+        });
+    </script>
+</body>
+</html>

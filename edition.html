@@ -5,37 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draw and Erase Text on Canvas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/Styles/scroll.css">
     <style>
+
+        body {
+            background: linear-gradient(135deg, #ff8a00, #e52e71);
+            margin: 0; /* Removes default margin */
+            height: 100vh; /* Full height */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center content vertically */
+            color: white; /* Text color for better contrast */
+            font-family: Arial, sans-serif; /* Default font */
+        }
         canvas {
             width: 100%;
             height: 400px;
-            border: 1px solid #000;
+            border: 2px solid #000;
+            background-color: azure;
             cursor: crosshair; /* Default cursor */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            margin-top: 20px;
         }
-        
+
         .eraser {
             cursor: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Eraser_icon.png'), auto; /* Custom eraser cursor */
+        }
+    
+
+        /* Center and style the button container */
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Gradient button styles */
+        button {
+            background: linear-gradient(90deg, #ff8a00, #13eb22);
+            border: none;
+            height: 50px;
+            width: 200px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: white;
+            border-radius: 200rem !important;
+            transition: all 0.4s ease;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+         /* Hide cursor when the 'hidden' class is applied */
+         .cursor.hidden {
+            visibility: hidden; 
         }
     </style>
 </head>
 <body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
     <div class="container pt-2">
-        <div class="mt-2 mb-5">
+        <!-- Buttons aligned to the center -->
+        <div class="button-container">
             <input type="color" id="colorPicker" value="#000000" class="form-control" style="width: 100px; display: inline-block;"/>
             <button class="btn btn-primary" id="clearCanvas">Clear Canvas</button>
             <button class="btn btn-danger" id="eraserMode">Eraser Mode</button>
             <button class="btn btn-success" id="downloadCanvas">Download Canvas</button>
         </div>
         
+
         <canvas id="mainCanvas"></canvas>
     </div>
+
     <script>
         const mainCanvas = document.getElementById('mainCanvas');
         const ctx = mainCanvas.getContext('2d');
         let drawing = false;
         let eraserMode = false;
         let currentColor = '#000000'; // Default color
-
         // Resize the canvas to fit the container
         function resizeCanvas() {
             mainCanvas.width = mainCanvas.offsetWidth;
@@ -43,7 +127,6 @@
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
-
         // Function to get the mouse or touch position
         function getPosition(event) {
             const rect = mainCanvas.getBoundingClientRect();
@@ -51,7 +134,6 @@
             const y = (event.clientY || event.touches[0].clientY) - rect.top;
             return { x, y };
         }
-
         // Start drawing or erasing when the mouse or touch is pressed
         function startDrawing(event) {
             drawing = true;
@@ -59,7 +141,6 @@
             ctx.beginPath();
             ctx.moveTo(x, y);
         }
-
         // Draw on the canvas or erase as the mouse moves or touch moves
         function draw(event) {
             if (drawing) {
@@ -77,18 +158,15 @@
             }
             event.preventDefault(); // Prevent scrolling when touching the canvas
         }
-
         // Stop drawing or erasing when the mouse is released or touch ends
         function stopDrawing() {
             drawing = false;
             ctx.closePath();
         }
-
         // Event listeners for mouse interactions
         mainCanvas.addEventListener('mousedown', startDrawing);
         mainCanvas.addEventListener('mousemove', draw);
         mainCanvas.addEventListener('mouseup', stopDrawing);
-
         // Event listeners for touch interactions
         mainCanvas.addEventListener('touchstart', (event) => {
             startDrawing(event);
@@ -97,24 +175,20 @@
             draw(event);
         });
         mainCanvas.addEventListener('touchend', stopDrawing);
-
         // Clear the entire canvas
         document.getElementById('clearCanvas').addEventListener('click', () => {
             ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
         });
-
         // Toggle eraser mode
         document.getElementById('eraserMode').addEventListener('click', () => {
             eraserMode = !eraserMode;
             mainCanvas.classList.toggle('eraser', eraserMode);
             document.getElementById('eraserMode').textContent = eraserMode ? 'Drawing Mode' : 'Eraser Mode';
         });
-
         // Change the current color when the color picker changes
         document.getElementById('colorPicker').addEventListener('input', (event) => {
             currentColor = event.target.value;
         });
-
         // Download the canvas as an image
         document.getElementById('downloadCanvas').addEventListener('click', () => {
             const link = document.createElement('a');
@@ -123,5 +197,81 @@
             link.click();
         });
     </script>
+
+<script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    document.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+
+        // Update the position of each circle
+        circles.forEach(function (circle, index) {
+            circle.style.left = coords.x - 12 + "px";
+            circle.style.top = coords.y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+        });
+    });
+
+    // Add mouseleave event to hide cursor
+    document.addEventListener("mouseleave", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Add mouseenter event to show cursor
+    document.addEventListener("mouseenter", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    // Add focus and blur events to hide/show cursor
+    document.addEventListener("focus", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    document.addEventListener("blur", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+            circle.x = x;
+            circle.y = y;
+
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
+
+    // Start the animation
+    animateCircles();
+</script>
+
 </body>
 </html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/Styles/scroll.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            background-color: #f0f4f8; /* Light background color for better contrast */
+            font-family: 'Arial', sans-serif; /* Modern font style */
+            color: #333; /* Darker text color for readability */
+        }
+       
+        
+        h1, h4 {
+            color: #1a1a1a; /* Darker color for headings */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .card {
+            border: none; /* Remove border for a cleaner look */
+            transition: transform 0.2s; /* Animation effect on hover */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Slightly scale the card on hover */
+        }
+        footer {
+            background-color: #282c34; /* Dark footer color */
+            color: white; /* White text color for contrast */
+            padding: 20px 0;
+        }
+        footer .btn-link {
+            color: white; /* White icons in footer */
+        }
+        textarea {
+            width: 100%;
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding for better UX */
+        }
+        textarea:focus {
+            border-color: #007bff; /* Blue border on focus */
+            outline: none; /* Remove default outline */
+        }
+    </style>
+    
+
+</head>
+<body>
+ 
+    <header>
+        <div class="navbar">
+            <div class="site-name">Creative Canvas Tool</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="blog.html">Blogs</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="contributors.html">Contributors</a>
+                <a href="testimonial.html">Testimonial</a>
+            </nav>
+            <div class="auth">
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </header>
+
+        <div class="text-center pt-5">
+            <h1>Latest Blog Posts</h1>
+        </div>
+        <div class="row justify-content-center pt-4">
+            <div class="col-sm-4 col-md-3 m-4">
+                <div class="card">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQG03_cMJE7uIw/article-cover_image-shrink_720_1280/0/1685891111023?e=2147483647&v=beta&t=ApugyNhPbwf13VZN-Zv68y0iLnd_COOph8VMtvlH1Cw" class="card-img-top" alt="The Magic of Creativity">
+                    <div class="card-body">
+                        <h5 class="card-title">The Magic of Creativity</h5>
+                        <p class="card-text">Creativity is the spark that ignites new ideas, opens doors to innovation, and breaks through the ordinary.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 m-4">
+                <div class="card">
+                    <img src="https://d3mvlb3hz2g78.cloudfront.net/wp-content/uploads/2020/11/thumb_720_450_dreamstime_m_186895001.jpg" class="card-img-top" alt="The Power of Thinking">
+                    <div class="card-body">
+                        <h5 class="card-title">The Power of Thinking</h5>
+                        <p class="card-text">While creativity helps you generate ideas, critical thinking helps you refine them and ensures their practicality.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 m-4">
+                <div class="card">
+                    <img src="https://s29814.pcdn.co/wp-content/uploads/2022/12/shutterstock_1847661151.jpg.optimal.jpg" class="card-img-top" alt="Expanding Your Knowledge">
+                    <div class="card-body">
+                        <h5 class="card-title">Expanding Your Knowledge</h5>
+                        <p class="card-text">Knowledge is the foundation of creativity and critical thinking. Continuous learning keeps us relevant.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-auto pb-4">
+            <h4 class="text-center">Add Comments</h4>
+            <div class="col-md-4 mx-auto">
+            <textarea name="comment" placeholder="Leave a comment" col="4"></textarea>
+        </div>
+    </div>
+   <!-- Footer -->
+<footer class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="footer-heading">About Us</h4>
+                <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. </p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-heading">Quick Links</h4>
+                <a href="index.html">Home</a><br>
+				<a href="about-us.html">About-us</a><br>
+                <a href="tutorial.html">Tutorial</a><br>
+                <a href="Faq.html">FAQ</a>
+            </div>
+            <div class="col-md-4">
+                <h4 class="footer-heading">Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>Contact us at: info@example.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <style>
+    body {
+        background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        color: #333;
+        overflow-x: hidden;
+    }
+    header {
+        background: #333;
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .site-name {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .navbar a {
+        color: #bbb;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 0 0.8rem;
+        transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+        color: #fff;
+    }
+    .navbar .auth a {
+        background: #ffb7fd;
+        color: #333;
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+    .navbar .auth a:hover {
+        background: #fff;
+        color: #ffb7fd;
+    }
+
+   
+    footer {
+        background-color: #2b2b3c;
+        padding: 30px 0;
+        color: #e4e4e7;
+    }
+
+    footer .footer-heading {
+        font-weight: 700;
+        color: rgb(253, 249, 249);;
+    }
+
+    footer a {
+        color: #e4e4e7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        color: rgb(253, 249, 249);;
+    }
+
+    footer .social-icons i {
+        font-size: 24px;
+        margin-right: 15px;
+        color: #e4e4e7;
+        transition: color 0.3s ease;
+    }
+
+    footer .social-icons i:hover {
+        color: rgb(253, 249, 249);
+    }
+
+
+</style>
+
+<script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // Update the coordinates when the mouse moves
+    document.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+
+        // Update the position of each circle
+        circles.forEach(function (circle, index) {
+            circle.style.left = coords.x - 12 + "px";
+            circle.style.top = coords.y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+        });
+    });
+
+    // Add mouseleave event to hide cursor
+    document.addEventListener("mouseleave", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Add mouseenter event to show cursor
+    document.addEventListener("mouseenter", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    // Add focus and blur events to hide/show cursor
+    document.addEventListener("focus", () => {
+        circles.forEach(circle => circle.classList.remove("hidden"));
+    });
+
+    document.addEventListener("blur", () => {
+        circles.forEach(circle => circle.classList.add("hidden"));
+    });
+
+    // Animation function to move the circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+            circle.x = x;
+            circle.y = y;
+
+            // Get the next circle in the sequence
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+    }
+
+    // Start the animation
+    animateCircles();
+</script>
+
+<button id="scrollToTopBtn">
+    <div class="progress-ring">
+        <svg viewBox="0 0 36 36">
+            <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+        </svg>
+    </div>
+    <span>&uarr;</span>
+</button>
+<style>
+/* Scroll to Top Button */
+#scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        outline: none;
+        border: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    #scrollToTopBtn.show {
+        opacity: 1;
+    }
+
+    #scrollToTopBtn span {
+        font-size: 24px;
+        color: white;
+    }
+
+    /* Progress Ring */
+    .progress-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 36px;
+        height: 36px;
+        transform: translate(-50%, -50%);
+    }
+
+    .progress-ring svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+
+    .ring-bg {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.2);
+        stroke-width: 4;
+    }
+
+    .ring-progress {
+        fill: none;
+        stroke: white;
+        stroke-width: 4;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transition: stroke-dashoffset 0.3s;
+    }
+</style>
+
+<!-- JavaScript for Scroll to Top Button -->
+<script>
+    // Show button and update progress ring on scroll
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const ringProgress = document.querySelector(".ring-progress");
+
+    window.addEventListener("scroll", () => {
+        // Show/hide button
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+
+        // Update progress ring
+        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+    });
+
+    // Scroll to top when button clicked
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+
+</body>
+</html>

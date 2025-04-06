@@ -1,0 +1,91 @@
+#login {
+    padding: 0.75% 3%;
+    border: 1px solid #f87affad;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+}
+
+h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    justify-content: center;
+    color: #343232f0;
+}
+#login p a{
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 7px;
+    color :white;
+    font-size: 16px;
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: #141414;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+}
+
+#login p a:hover{
+    width: 150px;
+    transform: scale(1.05);
+}
+
+#input {
+    font-family: "Oswald", sans-serif;
+    border: 1px solid #f87affad;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    i{
+        color: #343232d4;
+    }
+}
+input[type="text"]{
+    font-size: 0.8rem;
+}
+
+input{
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#input input {
+    background: transparent;
+    width: 85%;
+    height: 90%;
+    border: none;
+    outline: none;
+    padding: 0.4rem 1rem;
+}
+
+#google {
+    padding-top: 0.5em;
+    width: 2.75em;
+}
+
+#git {
+    padding-top: 0.5em;
+    padding-left: 50%;
+    width: 2.75em;
+}
+
+.logo {
+    width: 2.75em;
+}
+
+#social {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

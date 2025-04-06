@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chela+One&family=Fascinate+Inline&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gwendolyn:wght@400;700&family=Oi&family=Pacifico&family=Princess+Sofia&family=Risque&family=Rubik+Puddles&family=Sigmar+One&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+  <link href="contact-style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top" style="top:0px;margin-top:0px"></div>
+   
+<div><button id="homebtn" style="border-color: transparent;" ><i class="fa-solid fa-house"></i></button></div>
+  <H1 ID="mainheading">CONTACT US</H1>
+  <div id="container">
+    <div class="heading" style="background-color: white;">
+      <h1>POST A QUERY?</h1>
+      <div class="form">
+        <div class="picholder">
+          <img class="pic" src="contact-pagePic1.jpeg">
+          </div>
+        <form>
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="contact-name" placeholder="Your Name" required>
+
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="contact-email" placeholder="Your Email" required>
+
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="contact-message" rows="4" placeholder="Your Message" required></textarea>
+
+          <button class="submitbtn" type="submit">Submit</button>
+      </form>
+
+        
+      </div>
+    </div>
+    <div class="heading">
+      <h1>GIVE FEEDBACK TO US</h1>
+      <div class="form">
+        <div class="picholder">
+          <img class="pic" src="contact-pagePic3.jpeg">
+          </div>
+        <form>
+          <label for="feedback-name">Name</label>
+          <input type="text" id="feedback-name" name="feedback-name" placeholder="Your Name">
+
+          <label for="feedback-email">Email</label>
+          <input type="email" id="feedback-email" name="feedback-email" placeholder="Your Email">
+
+          <label for="feedback-type">Type of Feedback</label>
+          <select id="feedback-type" name="feedback-type" required>
+              <option value="positive">Positive</option>
+              <option value="neutral">Neutral</option>
+              <option value="negative">Negative</option>
+          </select>
+
+          <label for="feedback-comments">Comments</label>
+          <textarea id="feedback-comments" name="feedback-comments" rows="4" placeholder="Your Feedback" required></textarea>
+
+          <button  class="submitbtn" type="submit">Submit</button>
+      </form>
+      </div>
+    </div>
+    <div class="heading">
+      <h1>WANNA SUGGEST ANY IDEA TO US?</h1>
+      <div class="form">
+        <div class="picholder">
+        <img class="pic" src="contact-pagePic2.jpeg">
+        </div>
+        <form>
+          <label for="idea-name">Name</label>
+          <input type="text" id="idea-name" name="idea-name" placeholder="Your Name">
+
+          <label for="idea-email">Email</label>
+          <input type="email" id="idea-email" name="idea-email" placeholder="Your Email">
+
+          <label for="idea-title">Idea Title</label>
+          <input type="text" id="idea-title" name="idea-title" placeholder="Your Idea Title" required>
+
+          <label for="idea-details">Details</label>
+          <textarea id="idea-details" name="idea-details" rows="4" placeholder="Describe Your Idea" required></textarea>
+
+          <button class="submitbtn"  type="submit">Submit</button>
+      </form>
+      </div>
+    </div>
+
+  </div>
+  <div id="rotateObj"><button id="topbtn">top</button></div>
+<div id="socialmedia">
+      <!-- Facebook Icon -->
+      <a href="#">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <!-- Twitter (X) Icon -->
+      <a href="#">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <!-- Instagram Icon -->
+      <a href="#">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <!-- LinkedIn Icon -->
+      <a href="https://www.linkedin.com/in/anuragvishwakarma/">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <!-- Pinterest Icon -->
+      <a href="#">
+        <i class="fa-brands fa-pinterest"></i>
+      </a>
+    </div>
+    <div style="font-size: 20px;text-align: center;background-color: white;">CANVAS CONTACT PAGE</span>
+
+  <script src="contact-app.js"></script>
+</body>
+</html>

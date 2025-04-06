@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Canvas Editor with Interactive Tooltips</title>
+    <style>
+        /* General Styling for Body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Canvas Editor Controls */
+        button {
+            margin: 10px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button Colors */
+        #brush { background-color: #3498db; }          /* Blue */
+        #eraser { background-color: #e74c3c; }         /* Red */
+        #colorPicker { background-color: #9b59b6; }    /* Purple */
+        #shapeSelector { background-color: #1abc9c; }  /* Green */
+        #undo { background-color: #f39c12; }           /* Orange */
+        #redo { background-color: #e67e22; }           /* Dark Orange */
+        #clearCanvas { background-color: #2ecc71; }    /* Emerald Green */
+
+        /* Hover Effects for Buttons */
+        button:hover {
+            transform: scale(1.1); /* Scale up on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+        }
+
+        /* Specific Color Adjustments on Hover */
+        #brush:hover { background-color: #2980b9; }          /* Darker Blue */
+        #eraser:hover { background-color: #c0392b; }         /* Darker Red */
+        #colorPicker:hover { background-color: #8e44ad; }    /* Darker Purple */
+        #shapeSelector:hover { background-color: #16a085; }  /* Darker Green */
+        #undo:hover { background-color: #e67e22; }           /* Darker Orange */
+        #redo:hover { background-color: #d35400; }           /* Darker Dark Orange */
+        #clearCanvas:hover { background-color: #27ae60; }    /* Darker Emerald Green */
+
+        /* Enhanced Tooltip Styling */
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            white-space: nowrap;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+        }
+
+        /* Tooltip Arrow */
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+        }
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <!-- Canvas Editor Controls with Tooltip Descriptions -->
+    <button id="brush" data-tooltip="Select Brush Tool">Brush</button>
+    <button id="eraser" data-tooltip="Select Eraser Tool">Eraser</button>
+    <button id="colorPicker" data-tooltip="Pick a Color for Drawing">Color Picker</button>
+    <button id="shapeSelector" data-tooltip="Choose Shape to Draw">Shape Selector</button>
+    <button id="undo" data-tooltip="Undo Last Action">Undo</button>
+    <button id="redo" data-tooltip="Redo Last Action">Redo</button>
+    <button id="clearCanvas" data-tooltip="Clear Canvas">Clear Canvas</button>
+
+    <script>
+        // Enhanced Tooltip functionality for Canvas Editor controls
+        document.addEventListener("DOMContentLoaded", () => {
+            const controls = document.querySelectorAll("[data-tooltip]");
+
+            controls.forEach(control => {
+                control.addEventListener("mouseenter", showTooltip);
+                control.addEventListener("mouseleave", hideTooltip);
+                control.addEventListener("mousemove", moveTooltip);
+            });
+
+            function showTooltip(event) {
+                const tooltipText = event.target.getAttribute("data-tooltip");
+                const tooltip = document.createElement("div");
+                tooltip.classList.add("tooltip");
+                tooltip.innerText = tooltipText;
+                document.body.appendChild(tooltip);
+
+                positionTooltip(event, tooltip);
+
+                // Show tooltip with fade-in and translate effect
+                requestAnimationFrame(() => {
+                    tooltip.style.opacity = "1";
+                    tooltip.style.transform = "translateY(0)";
+                });
+            }
+
+            function hideTooltip() {
+                const tooltip = document.querySelector(".tooltip");
+                if (tooltip) {
+                    tooltip.style.opacity = "0";
+                    tooltip.style.transform = "translateY(10px)";
+                    setTimeout(() => tooltip.remove(), 300);
+                }
+            }
+
+            function moveTooltip(event) {
+                const tooltip = document.querySelector(".tooltip");
+                if (tooltip) {
+                    positionTooltip(event, tooltip);
+                }
+            }
+
+            function positionTooltip(event, tooltip) {
+                const offset = 15; // Offset from the cursor
+                tooltip.style.left = `${event.pageX + offset}px`;
+                tooltip.style.top = `${event.pageY + offset}px`;
+            }
+        });
+    </script>
+    <script>
+        // Coordinates for the cursor
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        // Colors for the circles
+        const colors = [
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
+        ];
+
+        // Assign colors and initial position to each circle
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        // Update the coordinates when the mouse moves
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        // Animation function to move the circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            // Repeat the animation
+            requestAnimationFrame(animateCircles);
+        }
+
+        // Start the animation
+        animateCircles();
+    </script>
+</body>
+</html>

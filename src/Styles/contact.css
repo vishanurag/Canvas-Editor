@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+
+$font-size: 12pt;
+$font-face: 'Spartan';
+$form-bg: #f8f4e5;
+$form-border: #f45702;
+$form-focus: #6bd4b1;
+$font-color: #2A293E;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: $font-size;
+    font-family: $font-face;
+    color: $font-color;
+    height: 100vh;
+}
+
+.contact-container {
+    background: $form-bg;
+    padding: 50px 100px;
+    border-top: 10px solid $form-border;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.icon {
+    color: #0073e6;
+    font-size: 1.6em;
+}
+
+label, input, textarea {
+    display: block;
+    width: 100%;
+    font-size: $font-size;
+    line-height: 1.5;
+    font-family: $font-face;
+}
+
+input, textarea {
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 2px;
+    background: $form-bg;
+    padding: 10px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid $form-focus;
+}
+
+textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+button {
+    display: block;
+    line-height: $font-size * 2;
+    padding: 10px 20px;
+    border: none;
+    background: $form-border;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+button:hover {
+    background: inherit;
+    color: $form-border;
+    border-bottom: 2px solid $form-border;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    -webkit-text-fill-color: $font-color;
+    -webkit-box-shadow: 0 0 0px 1000px $form-bg inset;
+}
+
+::selection {
+    background: rgb(255, 199, 184);
+}
