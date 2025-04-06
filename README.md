@@ -2,6 +2,7 @@
 
 # 🎨 Canvas Editor 🖌️
 
+
 <img  src="https://readme-typing-svg.herokuapp.com?color=45ffaa&center=true&vCenter=true&size=40&width=900&height=80&lines=Welcome+to+Canvas+Editor!"/>
 </div>
 
@@ -105,6 +106,7 @@
 ├── Faq.html
 ├── Feedback.html
 ├── LICENSE
+├── Mini-canvas-painting-bird-of-paradise-1.jpg
 ├── README.md
 ├── about-us.html
 ├── about.html
@@ -116,16 +118,26 @@
 ├── canva.html
 ├── canva.js
 ├── canva.md
+├── canvas.jpg
 ├── community.html
+├── contact-app.js
+├── contact-pagePic1.jpeg
+├── contact-pagePic2.jpeg
+├── contact-pagePic3.jpeg
+├── contact-style.css
 ├── contact.html
 ├── contributors.html
 ├── download (1).webp
 ├── edition.html
 ├── feature.webp
 ├── gssocextd.webp
+├── icon-192x192.png
+├── icon-512x512.png
 ├── index.html
 ├── login.html
 ├── logo4.png
+├── m_gen_canvas-square-p1_72f6de51-aaf7-4177-b19a-c8aae91404be.avif
+├── manifest.json
 ├── package-lock.json
 ├── package.json
 ├── popup.jpg
@@ -140,6 +152,7 @@
 │   └── painting_image.webp
 ├── review.html
 ├── script1.js
+├── scripts.js
 ├── signup.html
 ├── src/
 │   ├── Contributor.css
@@ -212,6 +225,7 @@
 ├── story.jpg
 ├── style.css
 ├── style1.css
+├── sw.js
 ├── testimonial.html
 ├── testp.css
 ├── testp.js
