@@ -52,7 +52,7 @@ body:
       options:
         - label: "I agree to follow the Code of Conduct"
           required: true
-        - label: "I'm a GSSOC'24 Ext contributor"
+        - label: "I'm a GSSOC'25 contributor"
   - type: markdown
     attributes:
       value: |
