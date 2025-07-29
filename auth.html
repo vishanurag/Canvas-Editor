@@ -312,6 +312,38 @@ const coords = { x: 0, y: 0 };
 
     </script>
 
+    <script>
+        const passwordInput = document.getElementById("signup-password");
+        const weakBar = document.getElementById("strength-weak");
+        const mediumBar = document.getElementById("strength-medium");
+        const strongBar = document.getElementById("strength-strong");
+
+        passwordInput.addEventListener("input", () => {
+            const password = passwordInput.value;
+            let strength = 0;
+
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            weakBar.style.backgroundColor = "#ccc";
+            mediumBar.style.backgroundColor = "#ccc";
+            strongBar.style.backgroundColor = "#ccc";
+
+            if (strength === 1) {
+                weakBar.style.backgroundColor = "red";
+            } else if (strength === 2) {
+            weakBar.style.backgroundColor = "orange";
+            mediumBar.style.backgroundColor = "orange";
+        }    else if (strength >= 3) {
+                weakBar.style.backgroundColor = "green";
+                mediumBar.style.backgroundColor = "green";
+                strongBar.style.backgroundColor = "green";
+            }
+        });
+    </script>
+
 </body>
 
 </html>
