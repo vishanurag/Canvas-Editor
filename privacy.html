@@ -23,20 +23,17 @@
         }
 
         .container {
-            /*width: 900px;*/
             margin: 0 auto;
             padding: 2rem;
         }
-
 
         .navbar {
             background-color: #e588e7;
             padding: 15px;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             position: sticky;
-            overflow: hidden;
             top: 0;
             width: 100%;
             z-index: 1000;
@@ -46,8 +43,7 @@
         .navbar h1 {
             color: #fff;
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            font-size: 20px;
+            font-size: 28px; /* Increased font size */
         }
 
         .nav-links {
@@ -63,117 +59,50 @@
             transition: background-color 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links a.active {
             background-color: #ef9ef5;
         }
 
-        .navbar a:active {
-            background-color: #04AA6D;
-            color: white;
-        }
-
-        .icon {
-            display: none;
-        }
-
-        /* Hero Section */
-
         .hero-section {
-            background-color: rgba(255, 255, 255, 0.7);
+            background: url('hero-background.jpg') no-repeat center center/cover;
             padding: 4rem 0;
             margin-bottom: 3rem;
             text-align: center;
             border-radius: 10px;
             position: relative;
             overflow: hidden;
+            color: #fff;
         }
 
         .hero-section h1 {
-            font-size: 2.5rem;
-            color: #333;
-            position: relative;
-            z-index: 2;
+            font-size: 5rem; /* Increased font size */
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .hero-section p {
-            font-size: 1.2rem;
-            color: #666;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image {
-            width: 200px;
-            height: 200px;
-            background-color: #ddd;
-            margin: 2rem auto;
-            border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: fill;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                    45deg,
-                    rgba(255, 255, 255, 0.1),
-                    rgba(255, 255, 255, 0.1) 10px,
-                    rgba(255, 255, 255, 0.2) 10px,
-                    rgba(255, 255, 255, 0.2) 20px
-            );
-            z-index: 1;
+            font-size: 2rem; /* Increased font size */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .content-section {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 2rem;
             border-radius: 10px;
             margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
-        .privacy-section {
-            margin-bottom: 2rem;
+        .content-section:hover {
+            transform: scale(1.02);
         }
 
-        .privacy-section h3 {
-            color: #353047;
-            margin-bottom: 1rem;
-        }
-
-        .gray-box {
-            background-color: rgba(128, 128, 128, 0.2);
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-
-        .team-section {
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .team-member {
-            background-color: rgba(255, 255, 255, 0.3);
-            padding: 1rem;
-            border-radius: 10px;
+        .content-section h2, .content-section h3 {
+            font-weight: bold;
+            color: #e588e7; /* Color for headings */
+            font-size: 3rem; /* Increased font size */
         }
 
         .footer {
@@ -201,20 +130,41 @@
             color: #ffb7fd;
         }
 
+        .team-section {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for team member boxes */
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .team-member h4 {
+            color: #e588e7; /* Color for team member names */
+            font-size: 1.5rem; /* Increased font size */
+        }
 
         @media only screen and (max-width: 1100px) {
             .nav-links {
-                display: flex;
-                flex-wrap: wrap;
                 flex-direction: column;
-
             }
 
-            .nav-links a:not(:last-child) {
-                display: none;
-            }
-
-            .icon{
+            .icon {
                 display: unset;
             }
 
@@ -239,91 +189,9 @@
                 text-align: left;
             }
         }
-
-    </style>
-    <style>
-        /* Circle styles */
-
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
-
-        /* Unique element: Floating shapes */
-        .floating-shape {
-            position: absolute;
-            opacity: 0.6;
-            pointer-events: none;
-            animation: float 15s infinite ease-in-out;
-        }
-
-        .shape1 {
-            top: 10%;
-            left: 10%;
-            font-size: 40px;
-        }
-
-        .shape2 {
-            top: 20%;
-            right: 10%;
-            font-size: 30px;
-            animation-delay: 2s;
-        }
-
-        .shape3 {
-            bottom: 15%;
-            left: 15%;
-            font-size: 35px;
-            animation-delay: 4s;
-        }
-
-        .shape4 {
-            bottom: 10%;
-            right: 20%;
-            font-size: 45px;
-            animation-delay: 6s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
     </style>
 </head>
 <body>
-<!-- Circles for cursor effect -->
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
 
 <!-- Navbar -->
 <nav class="navbar" id="navBar">
@@ -333,7 +201,7 @@
         <a href="about-us.html">About Us</a>
         <a href="review.html">Review</a>
         <a href="testimonial.html">Testimonial</a>
-        <a href="privacy.html">Privacy</a>
+        <a href="privacy.html" class="active">Privacy</a>
         <a href="tutorial.html">Tutorial</a>
         <a href="Blog_page.html">Blog</a>
         <a href="Faq.html">FAQ</a>
@@ -343,74 +211,53 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
-    </div>
 </nav>
 
 <div class="container">
     <div class="hero-section">
-        <div class="hero-background"></div>
         <h1>Privacy Policy</h1>
         <p>Your privacy is our priority</p>
         <div class="hero-image">
-            <!-- Replace with your actual image -->
             <img src="canvas.jpg" alt="Privacy illustration">
         </div>
-        <!-- Floating shapes -->
-        <div class="floating-shape shape1">🔒</div>
-        <div class="floating-shape shape2">🛡️</div>
-        <div class="floating-shape shape3">📜</div>
-        <div class="floating-shape shape4">🔐</div>
     </div>
 
     <div class="content-section">
-        <h2>Effective Date: 13/10/2024</h2>
-        <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that
-            transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your
-            fingertips, you can easily explore your creativity and experiment with different styles.</p>
+        <h3>Effective Date: 13/10/2024</h2>
+        <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. 🎨</p>
     </div>
 
     <div class="content-section">
-        <div class="privacy-section">
-            <h3>1. Information We Collect</h3>
-            <p><strong>Personal Information:</strong> We may collect personal information that you provide directly to
-                us when you register for an account, create or save a canvas, or contact us.</p>
-            <p><strong>Usage Data:</strong> We automatically collect certain information about your interaction with our
-                Site, including your IP address, browser type, device information, pages viewed, and the time and date
-                of your visit.</p>
-        </div>
+        <h3>1. Information We Collect</h3>
+        <p><strong>Personal Information:</strong> We may collect personal information that you provide directly to us when you register for an account, create or save a canvas, or contact us. 📝</p>
+        <p><strong>Usage Data:</strong> We automatically collect certain information about your interaction with our Site, including your IP address, browser type, device information, pages viewed, and the time and date of your visit. 📊</p>
+    </div>
 
-        <div class="privacy-section">
-            <h3>2. How We Use Your Information</h3>
-            <ul>
-                <li>To provide, maintain, and improve our services</li>
-                <li>To personalize your experience on our Site</li>
-                <li>To communicate with you, including sending updates and promotional materials</li>
-                <li>To respond to your comments, questions, and requests</li>
-                <li>To monitor and analyze usage and trends to improve our Site</li>
-            </ul>
-        </div>
+    <div class="content-section">
+        <h3>2. How We Use Your Information</h3>
+        <ul>
+            <li>To provide, maintain, and improve our services</li>
+            <li>To personalize your experience on our Site</li>
+            <li>To communicate with you, including sending updates and promotional materials</li>
+            <li>To respond to your comments, questions, and requests</li>
+            <li>To monitor and analyze usage and trends to improve our Site</li>
+        </ul>
+    </div>
 
-        <div class="privacy-section">
-            <h3>3. Sharing Your Information</h3>
-            <p><strong>Service Providers:</strong> We may share your information with trusted third-party service
-                providers who assist us in operating our Site.</p>
-            <div class="gray-box">
-                <p><strong>Legal Compliance:</strong> We may disclose your information to comply with applicable laws,
-                    regulations, legal processes, or governmental requests.</p>
-            </div>
-        </div>
+    <div class="content-section">
+        <h3>3. Sharing Your Information</h3>
+        <p><strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our Site. 🤝</p>
+        <p><strong>Legal Compliance:</strong> We may disclose your information to comply with applicable laws, regulations, legal processes, or governmental requests. ⚖️</p>
+    </div>
 
-        <div class="privacy-section">
-            <h3>4. Security of Your Information</h3>
-            <p>We implement reasonable security measures to protect your personal information from unauthorized access,
-                use, or disclosure.</p>
-        </div>
+    <div class="content-section">
+        <h3>4. Security of Your Information</h3>
+        <p>We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure. 🔒</p>
+    </div>
 
-        <div class="privacy-section">
-            <h3>5. Changes to This Privacy Policy</h3>
-            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
-                Privacy Policy on this page with a new effective date.</p>
-        </div>
+    <div class="content-section">
+        <h3>5. Changes to This Privacy Policy</h3>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page with a new effective date. 📅</p>
     </div>
 
     <div class="team-section">
@@ -428,23 +275,23 @@
     </div>
 </div>
 
-<!-- footer -->
 <!-- Footer -->
-<footer class="main-footer">
+<footer class="footer">
     <div class="container">
-        <!-- About Us Section (Left) -->
         <div class="footer-column">
             <h5 class="footer-heading">About Us</h5>
-            <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
-                creativity through easy-to-use tools.</p>
+            <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
         </div>
-        <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG
-            VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
-    </div>
-    <div class="text-center py-3" style="margin-top: 32px;margin-left: 43%;">
-        © 2024 Canvas Editor. All rights reserved.
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
     </div>
 </footer>
+
 <script>
     // Cursor animation
     const coords = {x: 0, y: 0};
