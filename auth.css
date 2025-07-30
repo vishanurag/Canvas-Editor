@@ -540,3 +540,16 @@ form.sign-in-form {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
+.password-strength {
+    display: flex;
+    gap: 5px;
+    margin: 5px 0;
+}
+.password-strength div {
+    flex: 1;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
