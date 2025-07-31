@@ -3,55 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
-    <link rel="stylesheet" href="style1.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Feedback Form - Creative Canvas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Circle styles */
+        :root {
+            /* Balanced Theme Colors - Medium tone backgrounds */
+            --bg-primary: #1a1d23;
+            --bg-secondary: #222832;
+            --bg-tertiary: #2a2f3a;
+            --bg-quaternary: #323947;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(42, 47, 58, 0.8);
+            --glass-bg-light: rgba(52, 59, 71, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border-light: rgba(255, 255, 255, 0.18);
+            
+            /* Accent Colors - Softer, more muted */
+            --accent-primary: #4a9eff;
+            --accent-secondary: #e85d9a;
+            --accent-tertiary: #9d5ce8;
+            --accent-success: #4dd4ac;
+            --accent-warning: #f5a623;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #4ac6ff 0%, #9d5ce8 50%, #e85d9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+            
+            /* Text Colors */
+            --text-primary: #f8f9fa;
+            --text-secondary: #c8ced7;
+            --text-muted: #8892a3;
+            --text-accent: #4a9eff;
+            
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+            
+            /* Transitions */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--gradient-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem; /* Add padding around the whole page */
+        }
+
+        /* Hidden circles as per previous design decisions */
         .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
+            display: none;
         }
 
         /* Back to Home button */
         .home-button {
             position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: #f89d63;
-            color: white;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-primary);
+            color: var(--text-primary);
             border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-family: Arial, sans-serif;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
             z-index: 1000;
             text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+            display: inline-flex; /* Use flex for icon alignment */
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-soft);
         }
 
         .home-button:hover {
-            background-color: #d1525c;
+            background: var(--accent-tertiary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
         }
 
         /* Feedback Form styles */
         .feedback-container {
-            margin-top: 60px; /* Avoid overlap with the home button */
+            background: var(--glass-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-medium);
+            max-width: 600px;
+            width: 100%;
+            margin-top: 5rem; /* Space from fixed button */
+            text-align: center;
+        }
+
+        .feedback-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feedback-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feedback-container label {
+            text-align: left;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .feedback-container input[type="text"],
+        .feedback-container input[type="email"],
+        .feedback-container textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--glass-border-light);
+            border-radius: var(--radius-sm);
+            background: var(--bg-quaternary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .feedback-container input::placeholder,
+        .feedback-container textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .feedback-container input:focus,
+        .feedback-container textarea:focus {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            direction: rtl; /* For right-to-left star display */
+            margin-bottom: 1rem;
+        }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2.5rem;
+            color: var(--text-muted); /* Default star color */
+            cursor: pointer;
+            transition: color 0.2s ease;
+            padding: 0 0.2rem;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input[type="radio"]:checked ~ label {
+            color: var(--accent-warning); /* Yellow accent for stars */
+        }
+
+        .feedback-container button[type="submit"] {
+            background: var(--accent-primary);
+            color: var(--text-primary);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            margin-top: 1.5rem;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feedback-container button[type="submit"]:hover {
+            background: var(--accent-tertiary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .thankyou-message {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: var(--accent-success); /* Green for success */
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .thankyou-message.show {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .home-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .feedback-container {
+                padding: 2rem 1.5rem;
+                margin-top: 4rem;
+            }
+
+            .feedback-container h2 {
+                font-size: 2rem;
+            }
+
+            .star-rating label {
+                font-size: 2rem;
+            }
+
+            .feedback-container button[type="submit"] {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Circles for cursor effect -->
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -73,47 +280,49 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
-    <!-- Back to Home Button -->
-    <a href="index.html" class="home-button">Back to Home</a>
-    <div class="circle"></div>
-    <!-- Other circles... -->
+    <a href="index.html" class="home-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
 
     <div class="feedback-container">
         <h2>We Value Your Feedback</h2>
         <form id="feedbackForm">
-
-            <!-- Form elements -->
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required pattern="[a-zA-Z ]+"
-            oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-            oninput="this.setCustomValidity('')">
+            <input type="text" id="name" name="name" placeholder="Enter your name" required 
+                   pattern="[a-zA-Z ]+"
+                   oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                   oninput="this.setCustomValidity('')">
+            
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
             <label for="rating">Rating:</label>
             <div class="star-rating">
-                <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+                <input type="radio" name="rating" id="star5" value="5" required><label for="star5">★</label>
                 <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
                 <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
                 <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
-                <input type="radio" name="rating" id="star" value="1"><label for="star">★</label>
+                <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
             </div>
+            
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+            
             <button type="submit">Submit Feedback</button>
         </form>
         <p id="thankyouMessage" class="thankyou-message"></p>
     </div>
-    <script src="script1.js"></script>
+
     <script>
-        // Cursor animation
+        // Cursor animation (display: none via CSS, but logic remains if you enable it)
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
 
         const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
+            "#4a9eff", "#4ac6ff", "#4dd4ac", "#f5a623", "#e85d9a", "#9d5ce8",
+            "#4a9eff", "#4ac6ff", "#4dd4ac", "#f5a623", "#e85d9a", "#9d5ce8",
+            "#4a9eff", "#4ac6ff", "#4dd4ac", "#f5a623", "#e85d9a", "#9d5ce8",
+            "#4a9eff", "#4ac6ff"
         ];
 
         circles.forEach(function (circle, index) {
@@ -135,18 +344,48 @@
                 circle.style.left = x - 12 + "px";
                 circle.style.top = y - 12 + "px";
                 circle.style.scale = (circles.length - index) / circles.length;
-                circle.x = x;
-                circle.y = y;
-
+                
                 const nextCircle = circles[index + 1] || circles[0];
                 x += (nextCircle.x - x) * 0.3;
                 y += (nextCircle.y - y) * 0.3;
             });
-
             requestAnimationFrame(animateCircles);
         }
-
         animateCircles();
+
+        // Feedback form submission logic
+        const feedbackForm = document.getElementById('feedbackForm');
+        const thankyouMessage = document.getElementById('thankyouMessage');
+
+        feedbackForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Basic validation (browser's native validation for 'required', 'email', 'pattern' will handle most)
+            if (feedbackForm.checkValidity()) {
+                // In a real application, you'd send this data to a server
+                console.log('Feedback submitted:', {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    rating: document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : 'No rating',
+                    feedback: document.getElementById('feedback').value
+                });
+
+                thankyouMessage.textContent = "Thank you for your valuable feedback!";
+                thankyouMessage.classList.add('show');
+
+                // Optionally, clear the form after submission
+                feedbackForm.reset();
+
+                // Hide message after a few seconds
+                setTimeout(() => {
+                    thankyouMessage.classList.remove('show');
+                    thankyouMessage.textContent = "";
+                }, 5000);
+            } else {
+                // If validation fails, trigger native browser validation messages
+                feedbackForm.reportValidity();
+            }
+        });
     </script>
 </body>
 </html>

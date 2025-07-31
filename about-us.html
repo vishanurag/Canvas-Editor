@@ -7,195 +7,355 @@
     <title>About Us - Creative Canvas Tool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Style */
-        body {
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            color: #333;
-            overflow-x: hidden;
+        :root {
+            /* Balanced Theme Colors - Medium tone backgrounds */
+            --bg-primary: #1a1d23;
+            --bg-secondary: #222832;
+            --bg-tertiary: #2a2f3a;
+            --bg-quaternary: #323947;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(42, 47, 58, 0.8);
+            --glass-bg-light: rgba(52, 59, 71, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border-light: rgba(255, 255, 255, 0.18);
+            
+            /* Accent Colors - Softer, more muted */
+            --accent-primary: #4a9eff;
+            --accent-secondary: #e85d9a;
+            --accent-tertiary: #9d5ce8;
+            --accent-success: #4dd4ac;
+            --accent-warning: #f5a623;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+            
+            /* Text Colors */
+            --text-primary: #f8f9fa;
+            --text-secondary: #c8ced7;
+            --text-muted: #8892a3;
+            --text-accent: #4a9eff;
+            
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+            
+            /* Transitions */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
         }
 
+        /* General Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--gradient-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
         .circle {
-            height: 24px;
-            width: 24px;
+            height: 20px;
+            width: 20px;
             border-radius: 50%;
-            background-color: black;
+            background: var(--gradient-primary);
             position: fixed;
             top: 0;
             left: 0;
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
+            opacity: 0.8;
         }
-         /* Hide cursor when the 'hidden' class is applied */
+
         .cursor.hidden {
             visibility: hidden; 
         }
 
-        header {
-            background: #fa9cfa;
-            color: #fff;
-            padding: 1rem 0;
+        /* Navbar */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-soft);
         }
 
-       
-        
+        .navbar h1 {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg-light);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(232, 93, 154, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
 
         /* About Section */
         .about-section {
-            padding: 4rem 1rem;
-            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .about-section h2 {
+        .section-title {
             font-size: 2.5rem;
-            color: #353047;
-            margin-bottom: 1rem;
+            font-weight: 700;
             text-align: center;
+            margin-bottom: 3rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 6rem;
         }
 
-        .about-text,
-        .about-image {
-            flex: 1;
-            max-width: 500px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            transition: transform 0.3s;
+        .about-text, .about-image {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .about-text:hover, .about-image:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--glass-border-light);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
         }
 
         .about-image {
             display: flex;
             justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
         .about-image img {
             width: 100%;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
+            transition: var(--transition-smooth);
         }
 
-        .about-text:hover,
-        .about-image:hover {
-            transform: scale(1.05);
+        /* Mission Section */
+        .mission-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            margin: 4rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
         }
 
-        h1 {
+        .mission-text {
             font-size: 1.2rem;
-            color: #353047;
-            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 4rem 2rem;
             text-align: center;
         }
 
-        .desc {
-            text-align: center;
-            max-width: 800px;
-            margin: 1.5rem auto;
-            padding: 1rem;
-        }
-
-        .teams {
-            max-width: 800px;
-            margin: 1.5rem auto;
-            padding: 1rem;
+        .team-grid {
             display: flex;
             justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
             text-align: center;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-soft);
+            min-width: 280px;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
         }
 
         .team-member h4 {
             font-size: 1.5rem;
-            margin-bottom: 0.3rem;
-            text-align: center;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: #bbb;
-            padding: 1.5rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #bbb;
-            margin: 0 0.5rem;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-            }
-
-            .about-text,
-            .about-image {
-                width: 90%;
-            }
+        .team-member p {
+            color: var(--accent-primary);
+            font-weight: 500;
         }
 
         /* Scroll to Top Button */
         #scrollToTopBtn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-medium);
             outline: none;
-            border: none;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
         }
 
         #scrollToTopBtn.show {
             opacity: 1;
         }
 
-        #scrollToTopBtn span {
-            font-size: 24px;
-            color: white;
+        #scrollToTopBtn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
         }
 
-        /* Progress Ring */
         .progress-ring {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 36px;
-            height: 36px;
+            width: 50px;
+            height: 50px;
             transform: translate(-50%, -50%);
         }
 
@@ -207,103 +367,166 @@
 
         .ring-bg {
             fill: none;
-            stroke: rgba(255, 255, 255, 0.2);
-            stroke-width: 4;
+            stroke: var(--glass-border);
+            stroke-width: 3;
         }
 
         .ring-progress {
             fill: none;
-            stroke: white;
-            stroke-width: 4;
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
+            stroke: var(--accent-primary);
+            stroke-width: 3;
+            stroke-dasharray: 126;
+            stroke-dashoffset: 126;
             transition: stroke-dashoffset 0.3s;
         }
 
-        
-    .navbar {
-        background-color: #e588e7;
-        padding: 15px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        #scrollToTopBtn span {
+            font-size: 20px;
+            z-index: 1;
+        }
 
-    .navbar h1 {
-        color: #fff;
-        margin: 0;
-    }
+        /* Footer */
+        .main-footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem 2rem;
+            margin-top: 6rem;
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 25px;
-    }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
 
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        padding: 6px 8px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
+        .footer-column h5 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
 
-    .nav-links a:hover {
-        background-color: #ef9ef5;
-    }
+        .footer-column p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .team-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-section {
+                padding: 4rem 1rem 2rem;
+            }
+
+            .about-section {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     
-    <!-- Circles -->
-    <!-- Circles for cursor effect -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <!-- Cursor Effect Circles -->
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Canvas Editor</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="contributors.html">Contributors</a>
+        </div>
+    </nav>
 
- <!-- Navbar -->
- <nav class="navbar">
-    <h1 class="canvas">Canvas Editor</h1>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="review.html">Review</a>
-        <a href="testimonial.html">Testimonial</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="tutorial.html">Tutorial</a>
-        <a href="Blog_page.html">Blog</a>
-        <a href="Faq.html">FAQ</a>
-        <a href="Feedback.html">Feedback</a>
-        <a href="contributors.html">Contributors</a>
-    </div>
-  </nav>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">About Creative Canvas Tool</h1>
+        <p class="hero-subtitle">Empowering creativity through innovative digital art tools and fostering a global community of artists.</p>
+    </section>
 
     <!-- About Section -->
     <section class="about-section">
-        <h2>About Creative Canvas Tool</h2>
         <div class="about-content">
             <div class="about-image">
                 <img src="resources/painting_image.webp" alt="Creative Canvas Tool in action">
@@ -320,294 +543,118 @@
         </div>
     </section>
 
-    <section class="about-section">
-    <h2> Mission</h2>
-    <p class="desc">
-        Our mission is to empower creativity by making digital art accessible to everyone, regardless of skill level,
-        background, or resources. We believe that art should be a universal language, and we strive to break down the
-        barriers that prevent people from fully exploring their creative potential. By providing intuitive tools, rich
-        resources, and a supportive environment, we aim to foster a global community of artists, innovators, and
-        dreamers who inspire one another, share knowledge, and celebrate the joy of creation.
-    </p>
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <h2 class="section-title">Our Mission</h2>
+        <p class="mission-text">
+            Our mission is to empower creativity by making digital art accessible to everyone, regardless of skill level,
+            background, or resources. We believe that art should be a universal language, and we strive to break down the
+            barriers that prevent people from fully exploring their creative potential. By providing intuitive tools, rich
+            resources, and a supportive environment, we aim to foster a global community of artists, innovators, and
+            dreamers who inspire one another, share knowledge, and celebrate the joy of creation.
+        </p>
+    </section>
 
-      
+    <!-- Story Section -->
     <section class="about-section">
-        <h2>Story</h2>
+        <h2 class="section-title">Our Story</h2>
         <div class="about-content">
-            <div class="about-image">
-                <img src="./story.jpg" alt="Creative Canvas Tool in action">
-            </div>
             <div class="about-text">
                 <p>
                     Founded in 2024, Creative Canvas Tool began as a passion project with a bold vision: to
                     revolutionize digital artistry by making it accessible and enjoyable for everyone. What started as a
                     small idea has quickly grown into a dynamic platform embraced by artists worldwide. Driven by our
                     commitment to innovation, inclusivity, and creativity, we have built a space where artists of all
-                    backgrounds can explore, create, and connect. Today, Creative Canvas Tool is more than a tool—it’s a
+                    backgrounds can explore, create, and connect. Today, Creative Canvas Tool is more than a tool—it's a
                     community that inspires, supports, and celebrates the art and the artist behind each creation.
                 </p>
-                </p>
+            </div>
+            <div class="about-image">
+                <img src="./story.jpg" alt="Our Story">
             </div>
         </div>
     </section>
 
-    <section class="about-section">
-    <h3>Our Team</h3>
-    <div class="teams">
-        <div class="team-member">
-            <h4>Anurag</h4>
-            <p>Founder & Lead Developer</p>
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2 class="section-title">Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h4>Anurag</h4>
+                <p>Founder & Lead Developer</p>
+            </div>
+            <div class="team-member">
+                <h4>Somyadip Ghosh</h4>
+                <p>Project Mentor</p>
+            </div>
         </div>
-        <div class="team-member">
-            <h4>Somyadip Ghosh</h4>
-            <p>Project Mentor</p>
-        </div>
-    </div>
     </section>
     
     <!-- Scroll to Top Button -->
     <button id="scrollToTopBtn">
         <div class="progress-ring">
-            <svg viewBox="0 0 36 36">
-                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
+            <svg viewBox="0 0 40 40">
+                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
+                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
             </svg>
         </div>
-        <span>&uarr;</span>
+        <span>↑</span>
     </button>
 
     <!-- Footer -->
-    <!-- Footer -->
     <footer class="main-footer">
-        <div class="container">
-            <!-- About Us Section (Left) -->
+        <div class="footer-container">
             <div class="footer-column">
-                <h5 class="footer-heading">About Us</h5>
-                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
-                    creativity through easy-to-use tools.</p>
+                <h5>About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
             </div>
-
-            <!-- Quick Links Section (Center) -->
-            <div class="footer-column center">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul class="list-unstyled">
+            <div class="footer-column">
+                <h5>Quick Links</h5>
+                <ul>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-
-            <!-- Social Media Icons Section (Right) -->
-            <div class="footer-column right">
-                <h5 class="footer-heading">Follow Us</h5>
+            <div class="footer-column">
+                <h5>Follow Us</h5>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
-        <div class="text-center py-3" style="margin-top: 32px;">
+        <div class="footer-bottom">
             © 2024 Canvas Editor. All rights reserved.
         </div>
     </footer>
-    <style>
-        /* Footer Styling */
-        .main-footer {
-            background-color: #333;
-            /* Dark background */
-            color: #f1f1f1;
-            /* Light text color */
-            padding: 18px 0;
-            font-size: 16px;
-        }
 
-        .footer-heading {
-            color: #e56767;
-            /* Red/pink heading color */
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-size: 22px;
-            text-align: center;
-        }
-
-        .main-footer a {
-            color: #f1f1f1;
-            /* Link color */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .main-footer a:hover {
-            color: #e56767;
-            /* Link hover color */
-        }
-
-        /* Footer Container Styling */
-        .main-footer .container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-        }
-
-        /* Columns Styling */
-        .footer-column {
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        .footer-column.center {
-            text-align: center;
-        }
-
-        .footer-column.right {
-            text-align: right;
-            margin-top: -76px;
-        }
-
-        /* Quick Links List */
-        .list-unstyled {
-            padding-left: 0;
-            list-style-type: none;
-        }
-
-        .list-unstyled li {
-            margin-bottom: 10px;
-        }
-
-        .list-unstyled a {
-            color: #f1f1f1;
-            transition: color 0.3s ease;
-        }
-
-        .list-unstyled a:hover {
-            color: #e56767;
-            text-decoration: underline;
-        }
-
-        /* Social Icons Styling */
-        .social-icons {
-            display: flex;
-            gap: 4px;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            font-size: 24px;
-            color: #f1f1f1;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-            color: #e56767;
-        }
-    </style>
-
-    <!-- JavaScript for Scroll to Top Button -->
     <script>
-        // Show button and update progress ring on scroll
+        
+        // Scroll to Top Button with Progress Ring
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
         const ringProgress = document.querySelector(".ring-progress");
 
         window.addEventListener("scroll", () => {
-            // Show/hide button
             if (window.scrollY > 300) {
                 scrollToTopBtn.classList.add("show");
             } else {
                 scrollToTopBtn.classList.remove("show");
             }
 
-            // Update progress ring
             const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+            const circumference = 2 * Math.PI * 18;
+            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
         });
 
-        // Scroll to top when button clicked
         scrollToTopBtn.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-    // Coordinates for the cursor
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
-
-    // Colors for the circles
-    const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-        "#680060", "#60005f", "#48005f", "#3d005e"
-    ];
-
-    // Assign colors and initial position to each circle
-    circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-    });
-
-    // Update the coordinates when the mouse moves
-    document.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-
-        // Update the position of each circle
-        circles.forEach(function (circle, index) {
-            circle.style.left = coords.x - 12 + "px";
-            circle.style.top = coords.y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-        });
-    });
-
-    // Add mouseleave event to hide cursor
-    document.addEventListener("mouseleave", () => {
-        circles.forEach(circle => circle.classList.add("hidden"));
-    });
-
-    // Add mouseenter event to show cursor
-    document.addEventListener("mouseenter", () => {
-        circles.forEach(circle => circle.classList.remove("hidden"));
-    });
-
-    // Add focus and blur events to hide/show cursor
-    document.addEventListener("focus", () => {
-        circles.forEach(circle => circle.classList.remove("hidden"));
-    });
-
-    document.addEventListener("blur", () => {
-        circles.forEach(circle => circle.classList.add("hidden"));
-    });
-
-    // Animation function to move the circles
-    function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-            circle.x = x;
-            circle.y = y;
-
-            // Get the next circle in the sequence
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
-        });
-
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
-    }
-
-    // Start the animation
-    animateCircles();
-
-
-        
+        // Cursor Effect
+       
     </script>
 </body>
 

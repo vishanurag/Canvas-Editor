@@ -1,233 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Review</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews - Creative Canvas Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            /* Balanced Theme Colors - Medium tone backgrounds */
+            --bg-primary: #1a1d23;
+            --bg-secondary: #222832;
+            --bg-tertiary: #2a2f3a;
+            --bg-quaternary: #323947;
 
-<style>
-    body {
-        font-family: "Poppins", sans-serif;
-        background: #fafafa;
-        color: #333;
-        padding: 0;
-        margin: 0;
-    }
+            /* Glass Effects */
+            --glass-bg: rgba(42, 47, 58, 0.8);
+            --glass-bg-light: rgba(52, 59, 71, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border-light: rgba(255, 255, 255, 0.18);
 
+            /* Accent Colors - Softer, more muted */
+            --accent-primary: #4a9eff;
+            --accent-secondary: #e85d9a;
+            --accent-tertiary: #9d5ce8;
+            --accent-success: #4dd4ac;
+            --accent-warning: #f5a623;
 
-    /* Circle styles */
-    .circle {
-            height: 24px;
-            width: 24px;
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+
+            /* Text Colors */
+            --text-primary: #f8f9fa;
+            --text-secondary: #c8ced7;
+            --text-muted: #8892a3;
+            --text-accent: #4a9eff;
+
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+
+            /* Transitions */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
+        }
+
+        /* General Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--gradient-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .circle {
+            height: 20px;
+            width: 20px;
             border-radius: 50%;
-            background-color: black;
+            background: var(--gradient-primary);
             position: fixed;
             top: 0;
             left: 0;
             pointer-events: none;
             z-index: 99999999;
             transition: transform 0.1s ease-out;
+            opacity: 0.8;
         }
-        
-    h1, h2 {
-        font-size: 32px;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
-        margin: 60px 0 40px;
-        color: #6a0dad;
-        position: relative;
-    }
 
+        .cursor.hidden {
+            visibility: hidden;
+        }
 
+        /* Navbar */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
 
+        .navbar h1 {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    h1::after, h2::after {
-        content: "";
-        width: 100px;
-        height: 4px;
-        background-color: #ff6b6b;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -15px;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .carousel-item {
-        padding: 30px;
-        background-color: #f4f4f9;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-        margin-bottom: 40px;
-    }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            font-weight: 500;
+            position: relative;
+        }
 
-    .carousel-item:hover {
-        transform: translateY(-10px);
-    }
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg-light);
+            transform: translateY(-2px);
+        }
 
-    .media img {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
 
-    .testimonial {
-        margin-left: 25px;
-        font-style: italic;
-        color: #666;
-    }
+        .nav-links a:hover::after {
+            width: 80%;
+        }
 
-    .overview {
-        margin-top: 10px;
-        font-weight: 600;
-        color: #ff6b6b;
-    }
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
 
-    .services h3 {
-        color: #6a0dad;
-        font-weight: 700;
-        margin-top: 20px;
-    }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(232, 93, 154, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
 
-    .services h5 {
-        margin-top: 15px;
-        font-size: 18px;
-        color: #555;
-        display: flex;
-        align-items: center;
-    }
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
 
-    .services h5 i {
-        margin-right: 12px;
-        color: #ff6b6b;
-    }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
 
-    .progress-bar {
-        background-color: #6a0dad;
-    }
+        /* Reviews Carousel */
+        .reviews-section {
+            margin-bottom: 6rem;
+        }
 
-    #BacktoTop {
-        position: fixed;
-        bottom: 60px;
-        right: 25px;
-        background-color: #6a0dad;
-        color: white;
-        padding: 15px;
-        border-radius: 50%;
-        font-size: 18px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-    }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    #BacktoTop:hover {
-        background-color: #ff6b6b;
-    }
+        .reviews-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            max-width: 1200px; /* Added max-width for reviews section */
+            margin: 0 auto; /* Centered reviews section */
+        }
 
-           
-    .navbar {
-        background-color: #e588e7;
-        padding: 15px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        .reviews-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
 
-    .navbar h1 {
-        color: #fff;
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-    }
+        .review-card {
+            min-width: 100%;
+            padding: 3rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            margin: 0 1rem;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-smooth);
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 25px;
-    }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem; /* Added padding to review grid */
+            max-width: 1200px; /* Ensure content stays within max-width */
+            margin: 0 auto; /* Center the grid */
+        }
 
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        padding: 6px 8px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
+        .review-item {
+            background: var(--glass-bg-light);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border-light);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
 
-    .nav-links a:hover {
-        background-color: #ef9ef5;
-    }
-    footer {
-        background-color: #333;
-        padding: 40px 0;
-        color: #fafafa;
-    }
+        .review-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
 
-    footer .footer-heading {
-        font-weight: 700;
-        color: #ff6b6b;
-    }
+        .review-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-strong);
+            border-color: var(--glass-border-light);
+        }
 
-    footer a {
-        color: #fafafa;
-        text-decoration: none;
-    }
+        .review-item:hover::before {
+            opacity: 1;
+        }
 
-    footer a:hover {
-        color: #ff6b6b;
-    }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
 
-    footer .social-icons i {
-        font-size: 24px;
-        margin-right: 15px;
-        color: #fafafa;
-    }
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+        }
 
-    footer .social-icons i:hover {
-        color: #ff6b6b;
-    }
+        .review-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
 
-</style>
+        .review-info .role {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: var(--accent-warning);
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-style: italic;
+            position: relative;
+        }
+
+        .review-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-primary);
+            position: absolute;
+            top: -1rem;
+            left: -1rem;
+            opacity: 0.3;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            outline: none;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: var(--glass-border);
+            stroke-width: 3;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: var(--accent-primary);
+            stroke-width: 3;
+            stroke-dasharray: 126;
+            stroke-dashoffset: 126;
+            transition: stroke-dashoffset 0.3s;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-column h5 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .team-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-section {
+                padding: 4rem 1rem 2rem;
+            }
+
+            .about-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Circles -->
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-
-
-    <!-- Navbar -->
     <nav class="navbar">
-        <h1 class="canvas">Canvas Editor</h1>
+        <h1>Canvas Editor</h1>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about-us.html">About Us</a>
@@ -242,250 +535,209 @@
         </div>
     </nav>
 
-    <!-- Review Section -->
-    <div class="container pt-5">
-        <h2>What <b>Our Customers</b> Are Saying</h2>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="media">
-                                <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
-                                <div class="media-body testimonial">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
-                                </div>
+    <section class="hero-section">
+        <h1 class="hero-title">Reviews for Creative Canvas Tool</h1>
+        <p class="hero-subtitle">Hear what our users are saying about their creative experience.</p>
+    </section>
+
+    <div class="main-content">
+        <section class="reviews-section">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="reviews-carousel">
+                <div class="reviews-track">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">JD</div>
+                            <div class="review-info">
+                                <h4>Jane Doe</h4>
+                                <p class="role">Professional Artist</p>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="media">
-                                <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
-                                <div class="media-body testimonial">
-                                    <p>Vestibulum quis quam ut magna consequat faucibus.</p>
-                                    <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
-                                </div>
+                        <div class="review-stars">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                        <p class="review-text">
+                            "Creative Canvas Tool has transformed my digital art workflow. The brushes are incredibly
+                            responsive, and the interface is so intuitive. I've been able to bring my visions to life
+                            with ease!"
+                        </p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">SM</div>
+                            <div class="review-info">
+                                <h4>Sarah Miller</h4>
+                                <p class="role">Hobbyist Creator</p>
                             </div>
                         </div>
+                        <div class="review-stars">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                        <p class="review-text">
+                            "As a beginner, I was intimidated by digital art, but Creative Canvas Tool made it so
+                            approachable. The tutorials helped me get started quickly, and now I'm creating things I never
+                            thought possible!"
+                        </p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">RW</div>
+                            <div class="review-info">
+                                <h4>Robert Williams</h4>
+                                <p class="role">Graphic Designer</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                        <p class="review-text">
+                            "The collaboration features in Creative Canvas Tool are fantastic. My team can work on projects
+                            simultaneously, and the version history is a lifesaver. Highly recommend for any creative team."
+                        </p>
                     </div>
                 </div>
-                <!-- Repeat for other carousel items -->
             </div>
-        </div>
+
+            <div class="review-grid">
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">EL</div>
+                        <div class="review-info">
+                            <h4>Emily Lee</h4>
+                            <p class="role">Illustrator</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="review-text">
+                        "The color palette tools are amazing. I can easily create and save my custom palettes, which
+                        saves a lot of time and keeps my designs consistent."
+                    </p>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">MB</div>
+                        <div class="review-info">
+                            <h4>Michael Brown</h4>
+                            <p class="role">Student</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9734;</span>
+                    </div>
+                    <p class="review-text">
+                        "I use Creative Canvas Tool for all my school projects. It's much easier to use than other
+                        software, and the results always look professional."
+                    </p>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-avatar">CD</div>
+                        <div class="review-info">
+                            <h4>Chris Davis</h4>
+                            <p class="role">Animator</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                    <p class="review-text">
+                        "The export options are versatile, allowing me to easily transfer my work to other applications
+                        for animation. A crucial tool for my workflow."
+                    </p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- Services Section -->
-    <div class="container pt-5">
-        <h2>Services Loved the Most</h2>
-        <div class="row services">
-            <div class="col-sm-6 mx-auto">
-                <h3>Excellent Features</h3>
-                <h5><i class="fa-solid fa-pencil"></i> Draw Tool</h5>
-                <div class="progress mb-3">
-                    <div class="progress-bar" style="width: 50%;"></div>
-                </div>
-                <h5><i class="fa-solid fa-paintbrush"></i> Brush Tool</h5>
-                <div class="progress mb-3">
-                    <div class="progress-bar" style="width: 25%;"></div>
-                </div>
-                <h5><i class="fa-solid fa-eraser"></i> Eraser Tool</h5>
-                <div class="progress mb-3">
-                    <div class="progress-bar" style="width: 50%;"></div>
-                </div>
-                <h5><i class="fa-solid fa-shapes"></i> Shapes</h5>
-                <div class="progress mb-3">
-                    <div class="progress-bar" style="width: 75%;"></div>
-                </div>
-                <h5><i class="fa-solid fa-text-height"></i> Text Tool</h5>
-                <div class="progress mb-3">
-                    <div class="progress-bar" style="width: 100%;"></div>
-                </div>
-            </div>
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 40 40">
+                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
+                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
+            </svg>
         </div>
-    </div>
-</div>
+        <span>↑</span>
+    </button>
 
-<!-- Back to Top -->
-<!-- Footer -->
-<footer class="text-center">
-    <div class="container">
-        <div class="row">
-            <!-- Footer Columns -->
-            <div class="col-md-4">
-                <h5 class="footer-heading">About Us</h5>
-                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h5>About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
+                    creativity through easy-to-use tools.</p>
             </div>
-            <div class="col-md-4">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul class="list-unstyled">
+            <div class="footer-column">
+                <h5>Quick Links</h5>
+                <ul>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h5 class="footer-heading">Follow Us</h5>
+            <div class="footer-column">
+                <h5>Follow Us</h5>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="text-center py-3">
-        © 2024 Canvas Editor. All rights reserved.
-    </div>
-</footer>
-<script>
-    // Coordinates for the cursor
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
+        <div class="footer-bottom">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
+    </footer>
 
-    // Colors for the circles
-    const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-        "#680060", "#60005f", "#48005f", "#3d005e"
-    ];
+    <script>
+        // Scroll to Top Button with Progress Ring
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
 
-    // Assign colors and initial position to each circle
-    circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-    });
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
 
-    // Update the coordinates when the mouse moves
-    window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-    });
-
-    // Animation function to move the circles
-    function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-            // Update the position and scale of each circle
-            circle.style.left = x - 12 + "px";
-            circle.style.top = y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-
-            circle.x = x;
-            circle.y = y;
-
-            // Get the next circle in the sequence
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            const circumference = 2 * Math.PI * 18;
+            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
         });
 
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
-    }
-
-    // Start the animation
-    animateCircles();
-</script>
-<button id="scrollToTopBtn">
-    <div class="progress-ring">
-        <svg viewBox="0 0 36 36">
-            <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-            <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-        </svg>
-    </div>
-    <span>&uarr;</span>
-</button>
-<style>
-/* Scroll to Top Button */
-#scrollToTopBtn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        outline: none;
-        border: none;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    #scrollToTopBtn.show {
-        opacity: 1;
-    }
-
-    #scrollToTopBtn span {
-        font-size: 24px;
-        color: white;
-    }
-
-    /* Progress Ring */
-    .progress-ring {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 36px;
-        height: 36px;
-        transform: translate(-50%, -50%);
-    }
-
-    .progress-ring svg {
-        width: 100%;
-        height: 100%;
-        transform: rotate(-90deg);
-    }
-
-    .ring-bg {
-        fill: none;
-        stroke: rgba(255, 255, 255, 0.2);
-        stroke-width: 4;
-    }
-
-    .ring-progress {
-        fill: none;
-        stroke: white;
-        stroke-width: 4;
-        stroke-dasharray: 100;
-        stroke-dashoffset: 100;
-        transition: stroke-dashoffset 0.3s;
-    }
-</style>
-
-<!-- JavaScript for Scroll to Top Button -->
-<script>
-    // Show button and update progress ring on scroll
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const ringProgress = document.querySelector(".ring-progress");
-
-    window.addEventListener("scroll", () => {
-        // Show/hide button
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add("show");
-        } else {
-            scrollToTopBtn.classList.remove("show");
-        }
-
-        // Update progress ring
-        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
-    });
-
-    // Scroll to top when button clicked
-    scrollToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-</script>
-
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 </body>
+
 </html>
