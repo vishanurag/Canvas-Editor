@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Creative Canvas Tool</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
+        /* Color Theme Variables */
+        :root {
+            /* Balanced Theme Colors - Medium tone backgrounds */
+            --bg-primary: #1a1d23;
+            --bg-secondary: #222832;
+            --bg-tertiary: #2a2f3a;
+            --bg-quaternary: #323947;
 
+            /* Glass Effects */
+            --glass-bg: rgba(42, 47, 58, 0.8);
+            --glass-bg-light: rgba(52, 59, 71, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border-light: rgba(255, 255, 255, 0.18);
+
+            /* Accent Colors - Softer, more muted */
+            --accent-primary: #4a9eff;
+            --accent-secondary: #e85d9a;
+            --accent-tertiary: #9d5ce8;
+            --accent-success: #4dd4ac;
+            --accent-warning: #f5a623;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+
+            /* Text Colors */
+            --text-primary: #f8f9fa;
+            --text-secondary: #c8ced7;
+            --text-muted: #8892a3;
+            --text-accent: #4a9eff;
+
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+
+            /* Transitions */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
+        }
+
+        /* General Style */
         * {
             margin: 0;
             padding: 0;
@@ -15,338 +71,545 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            overflow-x: hidden;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
-            min-height: 100vh;
+            display: flex; /* Added for footer pushing to bottom */
+            flex-direction: column; /* Added for footer pushing to bottom */
+            min-height: 100vh; /* Added for footer pushing to bottom */
         }
 
-        .container {
-            margin: 0 auto;
-            padding: 2rem;
+        .circle {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+            opacity: 0.8;
         }
 
+        .cursor.hidden {
+            visibility: hidden;
+        }
+
+        /* Navbar */
         .navbar {
-            background-color: #e588e7;
-            padding: 15px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-soft);
         }
 
         .navbar h1 {
-            color: #fff;
-            margin: 0;
-            font-size: 28px; /* Increased font size */
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: #fff;
+            color: var(--text-secondary);
             text-decoration: none;
-            padding: 6px 8px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            background-color: #ef9ef5;
-        }
-
-        .hero-section {
-            background: url('hero-background.jpg') no-repeat center center/cover;
-            padding: 4rem 0;
-            margin-bottom: 3rem;
-            text-align: center;
-            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            font-weight: 500;
             position: relative;
-            overflow: hidden;
-            color: #fff;
         }
 
-        .hero-section h1 {
-            font-size: 5rem; /* Increased font size */
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg-light);
+            transform: translateY(-2px);
         }
 
-        .hero-section p {
-            font-size: 2rem; /* Increased font size */
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
         }
 
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(232, 93, 154, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        /* Content Section for Privacy Policy */
         .content-section {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 10px;
+            background-color: var(--bg-tertiary);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
             margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-smooth);
+            border: 1px solid var(--glass-border);
+            max-width: 1200px; /* Added for consistency */
+            margin: 3rem auto; /* Center the content */
+            flex-grow: 1; /* Allows content to expand and push footer down */
         }
 
         .content-section:hover {
-            transform: scale(1.02);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
         }
 
         .content-section h2, .content-section h3 {
-            font-weight: bold;
-            color: #e588e7; /* Color for headings */
-            font-size: 3rem; /* Increased font size */
+            font-weight: 700;
+            color: var(--accent-primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--glass-border-light);
+            padding-bottom: 10px;
         }
 
-        .footer {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
+        .content-section p {
+            color: var(--text-secondary);
             margin-bottom: 1rem;
+            font-size: 1.1em;
         }
 
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
+        .content-section ul {
+            list-style: none; /* Remove default bullet */
+            padding-left: 0;
         }
 
-        .social-links a:hover {
-            color: #ffb7fd;
+        .content-section ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 1.1em;
         }
 
-        .team-section {
-            text-align: center;
-            margin-top: 4rem;
+        .content-section ul li::before {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--accent-success);
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
-        .team-grid {
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            outline: none;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: var(--glass-border);
+            stroke-width: 3;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: var(--accent-primary);
+            stroke-width: 3;
+            stroke-dasharray: 126;
+            stroke-dashoffset: 126;
+            transition: stroke-dashoffset 0.3s;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 20px;
+            z-index: 1;
+        }
+
+
+        /* Footer */
+        .main-footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-column h5 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .footer-bottom {
+            text-align: center;
             margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
         }
 
-        .team-member {
-            background-color: rgba(255, 255, 255, 0.8); /* Light background for team member boxes */
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .team-member:hover {
-            transform: scale(1.05);
-        }
-
-        .team-member h4 {
-            color: #e588e7; /* Color for team member names */
-            font-size: 1.5rem; /* Increased font size */
-        }
-
-        @media only screen and (max-width: 1100px) {
-            .nav-links {
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
                 flex-direction: column;
+                gap: 1rem;
             }
 
-            .icon {
-                display: unset;
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .navbar a:not(:first-child) {display: none;}
-            .navbar a.icon {
-                float: right;
-                display: block;
+            .hero-section {
+                padding: 4rem 1rem 2rem;
             }
 
-            .navbar.responsive {
-                position: relative;
+            .content-section {
+                padding: 1.5rem;
             }
-
-            .navbar.responsive a.icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-            .navbar.responsive a {
-                float: none;
-                display: flex;
-                text-align: left;
+            .content-section h2, .content-section h3 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar" id="navBar">
-    <h1 class="canvas">Canvas Editor</h1>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="review.html">Review</a>
-        <a href="testimonial.html">Testimonial</a>
-        <a href="privacy.html" class="active">Privacy</a>
-        <a href="tutorial.html">Tutorial</a>
-        <a href="Blog_page.html">Blog</a>
-        <a href="Faq.html">FAQ</a>
-        <a href="Feedback.html">Feedback</a>
-        <a href="contributors.html">Contributors</a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
-</nav>
-
-<div class="container">
-    <div class="hero-section">
-        <h1>Privacy Policy</h1>
-        <p>Your privacy is our priority</p>
-        <div class="hero-image">
-            <img src="canvas.jpg" alt="Privacy illustration">
+    <nav class="navbar">
+        <h1>Canvas Editor</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="contributors.html">Contributors</a>
         </div>
-    </div>
+    </nav>
 
-    <div class="content-section">
-        <h3>Effective Date: 13/10/2024</h2>
-        <p>Creative Canvas Tool is designed to empower artists of all skill levels, offering an intuitive platform that transforms ideas into stunning digital artwork. With a wide range of brushes, colors, and textures at your fingertips, you can easily explore your creativity and experiment with different styles. 🎨</p>
-    </div>
+    <section class="hero-section">
+        <h1 class="hero-title">Privacy Policy</h1>
+        <p class="hero-subtitle">Your privacy is important to us. Learn how we handle your data.</p>
+    </section>
 
-    <div class="content-section">
-        <h3>1. Information We Collect</h3>
-        <p><strong>Personal Information:</strong> We may collect personal information that you provide directly to us when you register for an account, create or save a canvas, or contact us. 📝</p>
-        <p><strong>Usage Data:</strong> We automatically collect certain information about your interaction with our Site, including your IP address, browser type, device information, pages viewed, and the time and date of your visit. 📊</p>
-    </div>
-
-    <div class="content-section">
-        <h3>2. How We Use Your Information</h3>
-        <ul>
-            <li>To provide, maintain, and improve our services</li>
-            <li>To personalize your experience on our Site</li>
-            <li>To communicate with you, including sending updates and promotional materials</li>
-            <li>To respond to your comments, questions, and requests</li>
-            <li>To monitor and analyze usage and trends to improve our Site</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>3. Sharing Your Information</h3>
-        <p><strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our Site. 🤝</p>
-        <p><strong>Legal Compliance:</strong> We may disclose your information to comply with applicable laws, regulations, legal processes, or governmental requests. ⚖️</p>
-    </div>
-
-    <div class="content-section">
-        <h3>4. Security of Your Information</h3>
-        <p>We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure. 🔒</p>
-    </div>
-
-    <div class="content-section">
-        <h3>5. Changes to This Privacy Policy</h3>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page with a new effective date. 📅</p>
-    </div>
-
-    <div class="team-section">
-        <h2>Our Team</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <h4>Anurag</h4>
-                <p>Founder & Lead Developer</p>
-            </div>
-            <div class="team-member">
-                <h4>Somyadip Ghosh</h4>
-                <p>Project Mentor</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
     <div class="container">
-        <div class="footer-column">
-            <h5 class="footer-heading">About Us</h5>
-            <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
-        </div>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <p>Created by <a href="https://github.com/vishanurag/" target="_blank" rel="noopener noreferrer">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span></p>
+        <section class="content-section">
+            <h2>Introduction</h2>
+            <p>This Privacy Policy describes how Creative Canvas Tool collects, uses, and discloses your personal information when you visit or make a purchase from creativecanvas.com (the "Site").</p>
+
+            <h2>Information We Collect</h2>
+            <h3>Personal Information You Provide</h3>
+            <p>When you use our services, we may collect personal information that you voluntarily provide to us, such as:</p>
+            <ul>
+                <li><strong>Contact Information:</strong> Your name, email address, and any other contact details you provide when creating an account, subscribing to our newsletter, or contacting customer support.</li>
+                <li><strong>Account Information:</strong> If you create an account, we collect your username and password.</li>
+                <li><strong>Payment Information:</strong> When you make a purchase, we collect payment details (e.g., credit card number, billing address). This information is processed by secure third-party payment processors. We do not store full credit card numbers on our servers.</li>
+                <li><strong>Content Data:</strong> Any digital artwork, designs, or files you create, upload, or store using our tools.</li>
+                <li><strong>Communication Data:</strong> Records of your communications with us, including emails and customer support interactions.</li>
+            </ul>
+
+            <h3>Information Collected Automatically</h3>
+            <p>When you access and use the Site, we may automatically collect certain information about your device and usage, including:</p>
+            <ul>
+                <li><strong>Log Data:</strong> Your IP address, browser type, operating system, referring URLs, pages viewed, and access times.</li>
+                <li><strong>Usage Data:</strong> Information about how you interact with our services, such as features used, time spent on pages, and clicks.</li>
+                <li><strong>Device Information:</strong> Device type, unique device identifiers, and mobile network information.</li>
+                <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar tracking technologies to track activity on our Site and hold certain information.</li>
+            </ul>
+
+            <h2>How We Use Your Information</h2>
+            <p>We use the information we collect for various purposes, including:</p>
+            <ul>
+                <li>To provide, operate, and maintain our services.</li>
+                <li>To improve, personalize, and expand our services.</li>
+                <li>To understand and analyze how you use our services.</li>
+                <li>To develop new products, services, features, and functionality.</li>
+                <li>To communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the Site, and for marketing and promotional purposes.</li>
+                <li>To process your transactions and manage your orders.</li>
+                <li>To send you push notifications (if you opt-in).</li>
+                <li>To detect and prevent fraud and other illegal activities.</li>
+                <li>To comply with legal obligations.</li>
+            </ul>
+
+            <h2>Sharing Your Information</h2>
+            <p>We may share your information with third parties in the following situations:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> We may share your information with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf, such as payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</li>
+                <li><strong>Business Transfers:</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+                <li><strong>Legal Obligations:</strong> We may disclose your information where required to do so by law or in response to valid requests by public authorities (e.g., a court or a government agency).</li>
+                <li><strong>With Your Consent:</strong> We may disclose your personal information for any other purpose with your consent.</li>
+            </ul>
+
+            <h2>Data Retention</h2>
+            <p>We retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements).</p>
+
+            <h2>Your Data Protection Rights</h2>
+            <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+            <ul>
+                <li><strong>Access:</strong> The right to request copies of your personal data.</li>
+                <li><strong>Rectification:</strong> The right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</li>
+                <li><strong>Erasure:</strong> The right to request that we erase your personal data, under certain conditions.</li>
+                <li><strong>Restrict Processing:</strong> The right to request that we restrict the processing of your personal data, under certain conditions.</li>
+                <li><strong>Object to Processing:</strong> The right to object to our processing of your personal data, under certain conditions.</li>
+                <li><strong>Data Portability:</strong> The right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+            </ul>
+            <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at [Your Contact Email Address].</p>
+
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will let you know via email and/or a prominent notice on our Site, prior to the change becoming effective and update the "last updated" date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, you can contact us:</p>
+            <ul>
+                <li>By email: [Your Contact Email Address]</li>
+                <li>By visiting this page on our website: <a href="contact.html" style="color: var(--accent-primary); text-decoration: none;">contact.html</a></li>
+            </ul>
+        </section>
     </div>
-</footer>
 
-<script>
-    // Cursor animation
-    const coords = {x: 0, y: 0};
-    const circles = document.querySelectorAll(".circle");
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 40 40">
+                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
+                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
+            </svg>
+        </div>
+        <span>↑</span>
+    </button>
 
-    const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-        "#680060", "#60005f", "#48005f", "#3d005e"
-    ];
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h5>About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
+            </div>
+            <div class="footer-column">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
+    </footer>
 
-    circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-    });
+    <script>
+        // Scroll to Top Button with Progress Ring
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
 
-    window.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-    });
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
 
-    function toggleNav() {
-        let x = document.getElementById("navBar");
-        if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
-        }
-    }
-
-    function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-            circle.style.left = x - 12 + "px";
-            circle.style.top = y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-            circle.x = x;
-            circle.y = y;
-
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            const circumference = 2 * Math.PI * 18;
+            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
         });
 
-        requestAnimationFrame(animateCircles);
-    }
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
 
-    animateCircles();
+        // Cursor Effect (if you had this in your original script and want it, uncomment and copy here)
+        // document.addEventListener('mousemove', (e) => {
+        //     const circle = document.querySelector('.circle');
+        //     if (circle) {
+        //         circle.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+        //     }
+        // });
 
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+        // document.addEventListener('mouseleave', () => {
+        //     const circle = document.querySelector('.circle');
+        //     if (circle) {
+        //         circle.classList.add('hidden');
+        //     }
+        // });
+
+        // document.addEventListener('mouseenter', () => {
+        //     const circle = document.querySelector('.circle');
+        //     if (circle) {
+        //         circle.classList.remove('hidden');
+        //     }
+        // });
+    </script>
 </body>
+
 </html>
