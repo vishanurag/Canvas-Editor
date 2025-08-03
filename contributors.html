@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Contributors</title>
     <link rel="stylesheet" href="src/Styles/contributor.css" />
     <link
@@ -158,484 +158,751 @@
         margin-right: 36px;
         border-radius: 50%;
         cursor: pointer;
+    <title>Contributors - Creative Canvas</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Balanced Theme Colors - Medium tone backgrounds */
+            --bg-primary: #1a1d23;
+            --bg-secondary: #222832;
+            --bg-tertiary: #2a2f3a;
+            --bg-quaternary: #323947;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(42, 47, 58, 0.8);
+            --glass-bg-light: rgba(52, 59, 71, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border-light: rgba(255, 255, 255, 0.18);
+            
+            /* Accent Colors - Softer, more muted */
+            --accent-primary: #4a9eff;
+            --accent-secondary: #e85d9a;
+            --accent-tertiary: #9d5ce8;
+            --accent-success: #4dd4ac;
+            --accent-warning: #f5a623;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #4ac6ff 0%, #9d5ce8 50%, #e85d9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+            
+            /* Text Colors */
+            --text-primary: #f8f9fa;
+            --text-secondary: #c8ced7;
+            --text-muted: #8892a3;
+            --text-accent: #4a9eff;
+            
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+            
+            /* Transitions */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
+        }
+
+        /* Global Reset & Body Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 2rem; /* Added padding for footer */
+            position: relative;
+        }
+
+        /* Hidden Circles (kept for consistency with previous discussion) */
+        .circle {
+            display: none; 
+            /* Original styles for circles if re-enabled: */
+            /* height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out; */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--bg-tertiary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between; /* Space out items */
+            align-items: center;
+            position: sticky; /* Sticks to the top */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .navbar .canvas {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 0.8rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-fast);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--bg-quaternary);
+            color: var(--accent-primary);
+        }
+
+        .toggle-container {
+            /* Basic styling for the dark mode toggle, assuming it's handled by JS */
+            margin-left: 2rem;
+        }
         
-      }
+        /* Home Button (fixed top-left, for consistency with other pages if needed on this one) */
+        /* Removed as navbar serves as main navigation */
+
+        /* Project Statistics Section */
+        .contributor-stats {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 5rem; /* Space from navbar */
+        }
+
+        .contributor-stats h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .contributor-stats-grid {
+            display: flex;
+            flex-direction: row;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 4rem;
+            justify-content: center;
+        }
+
+        .contributor-stat-card {
+            background: var(--glass-bg-light);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 5rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contributor-stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            background: var(--glass-bg);
+        }
+
+        .contributor-stat-card .contributor-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+        }
+
+        .contributor-stat-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .contributor-stat-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Main Contributors Section */
+        .containerm { /* Renamed from original `container` for clarity with CSS Grid containers */
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .containerm .title {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Contributors Grid (Placeholder for JS-generated content) */
+        .contributors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Styles for individual contributor cards (assuming JS generates these) */
+        .contributor-card { /* Example style, adjust based on actual JS output */
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .contributor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contributor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--accent-primary);
+        }
+
+        .contributor-card h4 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contributor-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .contributor-card .social-links a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: var(--transition-fast);
+        }
+
+        .contributor-card .social-links a:hover {
+            color: var(--accent-primary);
+            transform: scale(1.1);
+        }
 
 
-#progress-container {
-  position: fixed ;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  height: 15px;
-  z-index: 99990;
-  /* background: #f3f3f3; */
-}
+        /* Pagination Buttons */
+        .pagination-btns {
+            margin: 3rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
 
+        .pagination-btns button.btn {
+            background-color: var(--accent-primary);
+            color: var(--text-primary);
+            border: none;
+            border-radius: var(--radius-full);
+            padding: 0.8rem 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    body.dark-mode {
-      background-color: #333;
-      color: #ffffff;
-    }
+        .pagination-btns button.btn:hover {
+            background-color: var(--accent-tertiary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
 
-    .top-btn {
-      display: none;
-      width: 50px;
-      height: 50px;
-      position: fixed;
-      bottom: 10px;
-      right: 0px;
-      background-color: #ab45e7;
-      color: #fff;
-      padding: 2px;
-      border: none;
-      margin-right: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
+        .pagination-btns button.btn i.bi { /* Assumed Bootstrap Icons based on original code, replaced with Font Awesome */
+            font-size: 1.2rem;
+        }
 
-    .top-btn:hover {
-      background-color: #0056b3;
-    }
+        #pageNoBox {
+            background-color: var(--bg-quaternary);
+            color: var(--text-primary);
+            pointer-events: none; /* Make page number unclickable */
+            box-shadow: none;
+        }
 
-    video#background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      background-size: cover;
-    }
+        /* Scroll Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 7px; /* Thinner progress bar */
+            z-index: 99990;
+            background-color: var(--bg-secondary); /* Background for the bar track */
+        }
 
-    .pagination-btns {
-      margin: 50px 0px;
-    }
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 7px;
+            background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-tertiary) 100%);
+            box-shadow: 0 0 8px rgba(74, 158, 255, 0.7); /* Stronger glow for visibility */
+            transition: width 0.09s ease-in-out;
+            border-radius: 0; /* Make it a sharp line */
+        }
 
-    .pagination-btns button.btn {
-      border-radius: 5px;
-      outline: none;
-      margin: 5px 10px;
-      border: 1px solid rgb(146, 110, 110);
-    }
+        /* Scroll to Top Button */
+        .top-btn {
+            display: none;
+            width: 55px;
+            height: 55px;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--accent-primary);
+            color: var(--text-primary);
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            z-index: 99;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .pagination-btns button.btn,
-    .pagination-btns button.btn i.bi {
-      font-size: 2rem;
-    }
+        .top-btn:hover {
+            background-color: var(--accent-tertiary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
+        }
 
+        /* Footer Styling */
+        .footer {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 2.5rem 2rem;
+            width: 100%;
+            text-align: center;
+            margin-top: auto; /* Push footer to the bottom */
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+        }
 
-    #progress-container {
-      position: fixed;
-      top: 0px;
-      left: 0;
-      width: 100%;
-      height: 15px;
-      z-index: 99990;
-      /* background: #f3f3f3; */
-    }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
 
-    #progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 7px;
-      width: 0;
-      background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
-      box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
-      transition: width 0.09s ease-in-out;
-      border-radius: 10px;
-    }
+        .newsletter-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
 
+        .newsletter-section h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
 
+        .newsletter-section input {
+            padding: 0.8rem 1.2rem;
+            width: 100%;
+            max-width: 350px;
+            border: 1px solid var(--glass-border-light);
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-quaternary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition-fast);
+        }
 
-     /* Circle styles */
-     .circle {
-      height: 24px;
-      width: 24px;
-      border-radius: 50%;
-      background-color: black;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99999999;
-      transition: transform 0.1s ease-out;
-     }
+        .newsletter-section input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-glow);
+        }
 
+        .newsletter-section .subscribe {
+            background-color: var(--accent-primary);
+            color: var(--text-primary);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            width: 100%;
+            max-width: 200px;
+        }
 
- /* Stats Section */
- .contributor-stats {
+        .newsletter-section .subscribe:hover {
+            background-color: var(--accent-tertiary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
 
-max-width: 1400px;
-margin: 0 auto;
-padding: 3rem 0;
-text-align: center;
-background-color: transparent;
-;
-margin-top: 70px;
+        .credit {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
 
-}
+        .credit a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
 
-.contributor-stats h2 {
+        .credit a:hover {
+            text-decoration: underline;
+        }
 
-font-size: 3rem;
-margin-bottom: 2rem;
-color: #2e06fb;
-text-shadow: 1px 1px 2px rgb(60, 0, 255), 0 0 1em rgba(0, 213, 255, 0.617), 0 0 0.2em rgba(0, 234, 255, 0.623);
+        .share {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.8rem;
+        }
 
-}
+        .share i {
+            color: var(--text-secondary);
+            transition: var(--transition-smooth);
+        }
 
-.contributor-stats-grid {
+        .share i:hover {
+            color: var(--accent-primary);
+            transform: scale(1.2);
+        }
 
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 2rem;
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            .navbar .canvas {
+                font-size: 1.5rem;
+            }
+            .nav-links a {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.95rem;
+            }
+            .contributor-stats h2, .containerm .title {
+                font-size: 3rem;
+            }
+            .contributor-stat-card h3 {
+                font-size: 2rem;
+            }
+        }
 
-}
-
-.contributor-stat-card {
-
-border-radius: 10px;
-padding: 1.5rem;
-text-align: center;
-background-color: #eee1ee;
-border: 1px solid #ca74cf;
-border-radius: 8px;
-box-shadow: 0 0px 8px rgba(0, 0, 0, 1);
-
-}
-
-.contributor-stat-card .contributor-icon {
-
-font-size: 2rem;
-margin-bottom: 1rem;
-
-}
-
-.contributor-stat-card h3 {
-
-font-size: 2rem;
-margin-bottom: 0.5rem;
-
-}
-
-.contributor-stat-card p {
-
-color: #1c0804;
-
-}
-
-  </style>
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .navbar .canvas {
+                margin-bottom: 1rem;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .contributor-stats {
+                padding: 2rem 1rem;
+                margin-top: 2rem;
+            }
+            .contributor-stats h2, .containerm .title {
+                font-size: 2.5rem;
+            }
+            .contributor-stats-grid, .contributors-grid {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+            }
+            .contributor-stat-card {
+                padding: 1.5rem;
+            }
+            .contributor-stat-card h3 {
+                font-size: 1.8rem;
+            }
+            .containerm {
+                padding: 1rem;
+            }
+            .pagination-btns {
+                gap: 0.5rem;
+            }
+            .pagination-btns button.btn {
+                padding: 0.6rem 1rem;
+                font-size: 1rem;
+                min-width: 40px;
+            }
+            .top-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+            .newsletter-section input {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 
-<nav class="navbar">
-  <div class="nav-links">
-    <h1 class="canvas">Canvas Editor</h1>
-    <a href="index.html">Home</a>
-    <a href="about-us.html">About Us</a>
-    <a href="review.html">Review</a>
-    <a href="testimonial.html">Testimonial</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="tutorial.html">Tutorial</a>
-    <a href="Blog_page.html">Blog</a>
-    <a href="Faq.html">FAQ</a>
-    <a href="./Feedback.html">Feedback</a>
-    <!-- <a href="signup.html">Sign Up</a> -->
-    <a href="contributors.html">Contributors</a>
-
-  </div>
-  <div class="toggle-container aos-init aos-animate" data-aos="fade-down">
-    <input id="themeToggle" class="toggle" type="checkbox">
-  </div>
-</nav>
-
-
-<section class="contributor-stats">
-  <h2>Project Statistics</h2>
-  <div class="contributor-stats-grid" id="statsGrid">
-    <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-      <h3>154</h3>
-      <p>Contributors</p>
-    </div>
-
-    <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="4"></circle>
-          <line x1="1.05" y1="12" x2="7" y2="12"></line>
-          <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
-        </svg></div>
-      <h3>770</h3>
-      <p>Total Contributions</p>
-    </div>
-
-    <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon
-            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-          </polygon>
-        </svg></div>
-      <h3>77</h3>
-      <p>GitHub Stars</p>
-    </div>
-
-    <div class="contributor-stat-card">
-      <div class="contributor-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="6" y1="3" x2="6" y2="15"></line>
-          <circle cx="18" cy="6" r="3"></circle>
-          <circle cx="6" y="18" r="3"></circle>
-          <path d="M18 9a9 9 0 0 1-9 9"></path>
-        </svg></div>
-      <h3>316</h3>
-      <p>Forks</p>
-    </div>
-  </div>
-</section>
-
 <body>
-  <!-- Circles -->
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-
-
-  <div class="containerm">
-
     <div id="progress-container">
-      <div id="progress-bar"></div>
+        <div id="progress-bar"></div>
     </div>
-    <video id="background-video" autoplay muted loop>
-      <source src="img/bg video terms2.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
 
-    <div class="container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
 
-      </header>
-      <h1 class="title">Our Contributors</h1>
-      <div id="contributors" class="contributors-grid"></div>
-      <div class="pagination-btns">
-        <button class="btn" id="prevBtn"> <i class="bi bi-arrow-left-circle"></i> </button>
-        <button class="btn" id="pageNoBox">1</button>
-        <button class="btn" id="nextBtn"> <i class="bi bi-arrow-right-circle"></i> </button>
-      </div>
-    </div>
-  </div>
-  <script src="src/Scripts/contributor.js"></script>
-  <script>
-
-    window.addEventListener('scroll', function () {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progress-bar').style.width = scrolled + '%';
-    });
-  </script>
-  <script>
-    // Coordinates for the cursor
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
-
-    // Colors for the circles
-    const colors = [
-      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-      "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-      "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-      "#680060", "#60005f", "#48005f", "#3d005e"
-    ];
-
-    // Assign colors and initial position to each circle
-    circles.forEach(function (circle, index) {
-      circle.x = 0;
-      circle.y = 0;
-      circle.style.backgroundColor = colors[index % colors.length];
-    });
-
-    // Update the coordinates when the mouse moves
-    window.addEventListener("mousemove", function (e) {
-      coords.x = e.clientX;
-      coords.y = e.clientY;
-    });
-
-    // Animation function to move the circles
-    function animateCircles() {
-      let x = coords.x;
-      let y = coords.y;
-
-      circles.forEach(function (circle, index) {
-        // Update the position and scale of each circle
-        circle.style.left = x - 12 + "px";
-        circle.style.top = y - 12 + "px";
-        circle.style.scale = (circles.length - index) / circles.length;
-
-        circle.x = x;
-        circle.y = y;
-
-        // Get the next circle in the sequence
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
-      });
-
-      // Repeat the animation
-      requestAnimationFrame(animateCircles);
-    }
-
-    // Start the animation
-    animateCircles();
-  </script>
-  <footer class="footer">
-    <div class="footer-content">
-      <!-- <div class="footer-image">
-                <img src="popup.jpg" alt="Newsletter signup" width="100">
-            </div> -->
-      <div class="newsletter-section">
-        <h3>Subscribe to our Newsletter</h3>
-        <input type="email" id="newsletter-email" placeholder="Enter your email address"><br>
-        <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
-      </div>
-      <div class="credit" style="font-size: 0.6rem;">
-        <p>
-          Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
-
-          © <span id="year"></span>
-
-        </p>
-        <div style="margin: 20px;" class="share">
-          <i class="fab fa-github" style="margin-right: 10px;"></i>
-          <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
-          <i class="fab fa-twitter"></i>
+    <nav class="navbar">
+        <h1 class="canvas">Canvas Editor</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="./Feedback.html">Feedback</a>
+            <a href="contributors.html">Contributors</a>
         </div>
-      </div>
-  </footer>
-  <style>
-    #canvas {
-      border: 1px solid #000000;
-      background-color: white;
-      cursor: crosshair;
-      width: 100%;
-      height: calc(100vh - 280px);
-      /* Adjusted for footer */
-    }
+        
+    </nav>
 
-    .footer {
-      background-color: #34313b;
-      color: rgb(255, 255, 255);
-      margin-right: 100px;
+    <section class="contributor-stats">
+        <h2>Project Statistics</h2>
+        <div class="contributor-stats-grid" id="statsGrid">
+            <div class="contributor-stat-card">
+                <div class="contributor-icon"><i class="fas fa-users"></i></div>
+                <h3>154</h3>
+                <p>Contributors</p>
+            </div>
 
-    }
+            <div class="contributor-stat-card">
+                <div class="contributor-icon"><i class="fas fa-code-branch"></i></div>
+                <h3>770</h3>
+                <p>Total Contributions</p>
+            </div>
 
-    .footer-content {
-      margin-right: 650px;
-    }
+            <div class="contributor-stat-card">
+                <div class="contributor-icon"><i class="fas fa-star"></i></div>
+                <h3>77</h3>
+                <p>GitHub Stars</p>
+            </div>
 
-    .newsletter-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
+            <div class="contributor-stat-card">
+                <div class="contributor-icon"><i class="fas fa-code-fork"></i></div>
+                <h3>316</h3>
+                <p>Forks</p>
+            </div>
+        </div>
+    </section>
 
-    }
+    <div class="containerm">
+        <h1 class="title">Our Contributors</h1>
+        <div id="contributors" class="contributors-grid">
+            </div>
+        <div class="pagination-btns">
+            <button class="btn" id="prevBtn"><i class="fas fa-arrow-left"></i></button>
+            <button class="btn" id="pageNoBox">1</button>
+            <button class="btn" id="nextBtn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
 
-    .newsletter-section input {
-      padding: 10px;
-      width: 300px;
-      border: none;
-      border-radius: 4px;
-    }
+    <button class="top-btn" id="scrollToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    .newsletter-section button {
-      background-color: #0000ff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="newsletter-section">
+                <h3>Subscribe to Our Newsletter</h3>
+                <input type="email" id="newsletter-email" placeholder="Enter your email address">
+                <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
+            </div>
+            <div class="credit">
+                <p>Created by <a href="https://github.com/vishanurag" target="_blank">ANURAG VISHWAKARMA</a> | All right reserved</p>
+                <p>&copy; <span id="year"></span> Creative Canvas</p>
+                <div class="share">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    }
+    <script src="src/Scripts/contributor.js"></script> 
+    
+    <script>
+        // Smooth scroll to top functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = "flex"; // Show the button
+            } else {
+                scrollToTopBtn.style.display = "none"; // Hide the button
+            }
+        });
 
-    .newsletter-section button:hover {
-      background-color: #340c90;
-    }
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
 
-    .text-size-control {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px 0;
-      background-color: #0000FF;
-      padding: 10px;
-      border-radius: 5px;
-      color: white;
-    }
+        // Scroll progress bar logic
+        window.addEventListener('scroll', function () {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
 
-    .text-size-control input {
-      width: 60px;
-      padding: 5px;
-      border: none;
-      border-radius: 4px;
-      background-color: white;
-    }
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-    .text-size-control:hover {
-      background-color: #090874;
-      transition: background-color 0.3s;
-    }
+        // Newsletter subscription placeholder
+        function subscribeNewsletter() {
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value;
+            if (email && email.includes('@') && email.includes('.')) {
+                alert(`Subscribed with: ${email}`);
+                emailInput.value = ''; // Clear input
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
 
-    .credit {
-      text-align: center;
-    }
-
-    .share {
-      font-size: 25px;
-    }
-
-    .share i {
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .share i:hover {
-      cursor: pointer;
-      color: #5c2872;
-    }
-
-    .profile {
-      font-size: 2rem;
-      padding-right: 1rem;
-    }
-  </style>
+        // Cursor animation (as discussed, CSS makes it hidden by default)
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+        const colors = [
+            "#4a9eff", "#4ac6ff", "#4dd4ac", "#f5a623", "#e85d9a", "#9d5ce8",
+            "#4a9eff", "#4ac6ff", "#4dd4ac", "#f5a623", "#e85d9a", "#9d5ce8",
+            "#4a9eff", "#4ac6ff", "#4dd4ac", "#f5a623", "#e85d9a", "#9d5ce8",
+            "#4a9eff", "#4ac6ff"
+        ];
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+                circle.x = x;
+                circle.y = y;
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+            requestAnimationFrame(animateCircles);
+        }
+        animateCircles();
+    </script>
 </body>
-
 </html>
