@@ -940,7 +940,8 @@
 
             </script>
         </div>
-        <canvas id="canvas"></canvas>
+        <canvas id="canvas" width="800" height="600">
+        <button id="clearCanvasButton" style="background-color: #e587b0; color: 333; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; transition: background-color 0.3s;">Clear Canvas</button></canvas>
         <footer class="footer">
             <div class="footer-content">
                 <!-- <div class="footer-image">
@@ -968,6 +969,18 @@
     </div>
 
     <script>
+      document.getElementById('clearCanvasButton').addEventListener('mouseover', function () {
+        this.style.backgroundColor = '#ffcce0';
+      });
+    // FIX: replaced getAnimations with getElementById
+      document.getElementById('clearCanvasButton').addEventListener('mouseout', function () {
+        this.style.backgroundColor = '#ffd6e8';
+      });
+      document.getElementById('clearCanvasButton').addEventListener('click', () => {
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
         function subscribeNewsletter() {
             const email = document.getElementById('newsletter-email').value;
             if (email) {
