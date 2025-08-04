@@ -35,7 +35,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
     <link rel="manifest" href="/manifest.json">
-    
+
     <div class="visitor-counter">
         <div>Visitor</div>
         <div class="website-counter"></div>
@@ -666,7 +666,7 @@
 
 
                 <a href="auth.html">Login</a>
-                
+
 
 
 
@@ -774,7 +774,7 @@
 
 
             </div>
-        
+
         </nav>
         <div class="tools">
             <button id="toggleToolbar" class="arrow-button">
@@ -940,8 +940,20 @@
 
             </script>
         </div>
-        <canvas id="canvas" width="800" height="600">
-        <button id="clearCanvasButton" style="background-color: #e587b0; color: 333; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; transition: background-color 0.3s;">Clear Canvas</button></canvas>
+<canvas id="canvas" width="800" height="600"></canvas>
+<button id="clearCanvasBtn" 
+        style="background-color: #ffd6e8;
+               color: #333;
+               border: none;
+               padding: 8px 14px;
+               border-radius: 6px;
+               cursor: pointer;
+               transition: background-color 0.3s;
+               margin-top: 10px;">
+    Clear Canvas
+</button>
+
+
         <footer class="footer">
             <div class="footer-content">
                 <!-- <div class="footer-image">
@@ -969,18 +981,6 @@
     </div>
 
     <script>
-      document.getElementById('clearCanvasButton').addEventListener('mouseover', function () {
-        this.style.backgroundColor = '#ffcce0';
-      });
-    // FIX: replaced getAnimations with getElementById
-      document.getElementById('clearCanvasButton').addEventListener('mouseout', function () {
-        this.style.backgroundColor = '#ffd6e8';
-      });
-      document.getElementById('clearCanvasButton').addEventListener('click', () => {
-        const canvas = document.querySelector('canvas');
-        const ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-      });
         function subscribeNewsletter() {
             const email = document.getElementById('newsletter-email').value;
             if (email) {
@@ -1594,6 +1594,25 @@
         animateCircles();
         document.getElementById("year").textContent = new Date().getFullYear();
 
+        // Clear Canvas Button functionality
+const clearBtn = document.getElementById('clearCanvasBtn');
+if (clearBtn) {
+    clearBtn.addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#ffcce0';  // darker pink
+    });
+
+    clearBtn.addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#ffd6e8';  // back to light pink
+    });
+
+    clearBtn.addEventListener('click', function() {
+        const canvas = document.querySelector('canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    });
+}
 
     </script>
     <script src="scripts.js"></script> <!-- Link to your service worker registration script -->

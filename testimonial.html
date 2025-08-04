@@ -1,126 +1,296 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
     <style>
-        
+        :root {
+            /* Balanced Theme Colors - Medium tone backgrounds */
+            --bg-primary: #1a1d23;
+            --bg-secondary: #222832;
+            --bg-tertiary: #2a2f3a;
+            --bg-quaternary: #323947;
+
+            /* Glass Effects */
+            --glass-bg: rgba(42, 47, 58, 0.8);
+            --glass-bg-light: rgba(52, 59, 71, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border-light: rgba(255, 255, 255, 0.18);
+
+            /* Accent Colors - Softer, more muted */
+            --accent-primary: #4a9eff;
+            --accent-secondary: #e85d9a;
+            --accent-tertiary: #9d5ce8;
+            --accent-success: #4dd4ac;
+            --accent-warning: #f5a623;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+
+            /* Text Colors */
+            --text-primary: #f8f9fa;
+            --text-secondary: #c8ced7;
+            --text-muted: #8892a3;
+            --text-accent: #4a9eff;
+
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+
+            /* Transitions */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
+        }
+
+        /* General Style */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
-            color: #333;
+            background: var(--gradient-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
             overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
+        .circle {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+            opacity: 0.8;
+        }
 
-        /* Hero section */
-        .hero {
+        .cursor.hidden {
+            visibility: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .navbar h1 {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg-light);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem 4rem;
             text-align: center;
-            padding: 120px 20px;
-            margin-top: 60px;
+            position: relative;
         }
-        .hero h2 {
-            font-size: 40px;
-            color: #353047;
-            font-weight: bold;
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(232, 93, 154, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
-        .hero p {
-            margin-top: 15px;
-            font-size: 18px;
-            color: #353047;
-            max-width: 800px;
-            margin: 0 auto;
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
         }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
 
         /* Testimonial section */
         .testimonial-section {
             text-align: center;
-            padding: 50px 0;
+            padding: 80px 0;
             margin: 0 auto;
-            max-width: 1200px;
+            max-width: 1400px;
         }
+
         .testimonial-section h2 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            font-weight: bold;
+            color: var(--text-primary);
+            font-size: 3em;
+            margin-bottom: 50px;
+            font-weight: 700;
+            text-shadow: var(--shadow-soft);
         }
+
         .testimonial-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
             padding: 0 20px;
         }
+
         .testimonial {
-            width: 300px;
-            height: 300px;
-            perspective: 1000px;
+            width: 320px;
+            height: 320px;
+            perspective: 1200px;
             margin-bottom: 30px;
         }
+
         .testimonial-inner {
             position: relative;
             width: 100%;
             height: 100%;
             text-align: center;
-            transition: transform 0.8s;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             transform-style: preserve-3d;
         }
+
         .testimonial:hover .testimonial-inner {
             transform: rotateY(180deg);
         }
-        .testimonial-front, .testimonial-back {
+
+        .testimonial-front,
+        .testimonial-back {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 50%;
-            padding: 40px;
-            border: 3px solid gold;
-        }
-        .testimonial-front {
-            background: #333;
+            border-radius: var(--radius-lg);
+            padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--glass-border);
+            transition: var(--transition-smooth);
         }
+
+        .testimonial-front {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
         .testimonial-back {
-            background-color: #FFF4B5;
-            font-weight: bold;
+            background-color: var(--bg-quaternary);
+            color: var(--text-secondary);
             transform: rotateY(180deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            border: 3px solid #9e09ee;
         }
+
         .testimonial img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 15px;
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-full);
+            margin-bottom: 20px;
             object-fit: cover;
+            border: 3px solid var(--accent-primary);
+            box-shadow: var(--shadow-glow);
         }
+
         .testimonial h3 {
-            color: #fff;
+            color: var(--text-accent);
             margin: 10px 0;
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .testimonial-back p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            padding: 0 10px;
         }
 
         /* Stats Section */
@@ -129,469 +299,392 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 50px;
-            padding: 50px 20px;
+            padding: 80px 20px;
+            background: radial-gradient(circle at bottom right, var(--bg-quaternary) 0%, transparent 70%);
         }
+
         .stat-box {
-            background-color: #444;
-            border-radius: 20px;
-            padding: 20px;
-            width: 250px;
-            height: 250px;
+            background-color: var(--bg-tertiary);
+            border-radius: var(--radius-xl);
+            padding: 30px;
+            width: 280px;
+            height: 280px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            transition: transform 0.3s ease, border 0.3s ease;
-            border: 2px solid gold;
+            color: var(--text-primary);
+            transition: var(--transition-smooth);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
         }
+
         .stat-box:hover {
-            transform: translateY(-10px);
-            border: 3px solid gold;
+            transform: translateY(-10px) scale(1.02);
+            border: 1px solid var(--accent-primary);
+            box-shadow: var(--shadow-glow);
         }
+
         .stat-box i {
-            font-size: 50px;
-            margin-bottom: 10px;
+            font-size: 60px;
+            margin-bottom: 15px;
+            color: var(--accent-success);
+            text-shadow: var(--shadow-soft);
         }
+
         .stat-box h3 {
-            font-size: 24px;
+            font-size: 3.5em;
             margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text-primary);
         }
+
         .stat-box p {
-            font-size: 16px;
-            color: #b3b3b3;
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            outline: none;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+        }
+
+        #scrollToTopBtn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: var(--glass-border);
+            stroke-width: 3;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: var(--accent-primary);
+            stroke-width: 3;
+            stroke-dasharray: 126;
+            stroke-dashoffset: 126;
+            transition: stroke-dashoffset 0.3s;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 20px;
+            z-index: 1;
         }
 
         /* Footer */
-        /* .footer { */
-            /* text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #bdc3c7;
+        .main-footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem 2rem;
+            margin-top: 6rem;
         }
-        .footer .share a {
-            font-size: 1rem;
-            color: #fff;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-        .footer .share a:hover {
-            color: #f1c40f;
-        } */
 
-        /* Media Queries */
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-column h5 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .testimonial {
-                width: 100%;
-                max-width: 300px;
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
             }
-            .stats-section {
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-section {
+                padding: 4rem 1rem 2rem;
+            }
+
+            .testimonial-container {
                 flex-direction: column;
                 align-items: center;
             }
-            .footer {
-                padding: 15px;
+
+            .stat-box {
+                width: 100%;
+                height: auto;
             }
         }
-
-                
-    .navbar {
-        background-color: #e588e7;
-        padding: 15px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar h1 {
-        color: #fff;
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 25px;
-    }
-
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        padding: 6px 8px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover {
-        background-color: #ef9ef5;
-    }
-
     </style>
 </head>
+
 <body>
 
-        <!-- Circles -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    
-       
+    <nav class="navbar">
+        <h1>Canvas Editor</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="contributors.html">Contributors</a>
+        </div>
+    </nav>
 
-
- <!-- Navbar -->
- <nav class="navbar">
-    <h1 class="canvas">Canvas Editor</h1>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="review.html">Review</a>
-        <a href="testimonial.html">Testimonial</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="tutorial.html">Tutorial</a>
-        <a href="Blog_page.html">Blog</a>
-        <a href="Faq.html">FAQ</a>
-        <a href="Feedback.html">Feedback</a>
-        <a href="contributors.html">Contributors</a>
-    </div>
-  </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Welcome to Our Testimonials Page</h2>
-        <p>Read what our customers have to say about our services.</p>
+    <section class="hero-section">
+        <h1 class="hero-title">What Our Users Say</h1>
+        <p class="hero-subtitle">Hear from our satisfied users about their experience with Creative Canvas Tool.</p>
     </section>
 
-    <!-- Testimonial Section -->
     <section class="testimonial-section">
-        <h2>What Our Clients Say</h2>
+        <h2>Customer Testimonials</h2>
         <div class="testimonial-container">
-            <!-- Testimonial 1 -->
             <div class="testimonial">
                 <div class="testimonial-inner">
                     <div class="testimonial-front">
-                        <img src="https://images.unsplash.com/flagged/photo-1579657831106-50315fcf3220?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NjR8OTQ1MjQ5NHx8ZW58MHx8fHx8" alt="Profile Picture">
+                        <img src="https://via.placeholder.com/100/4a9eff/FFFFFF?text=JD" alt="John Doe">
                         <h3>John Doe</h3>
+                        <p>Graphic Designer</p>
                     </div>
                     <div class="testimonial-back">
-                        <p>Great service and friendly staff. Highly recommend!</p>
+                        <p>"Creative Canvas Tool has transformed my workflow! The intuitive interface and powerful
+                            features make digital art a breeze."</p>
                     </div>
                 </div>
             </div>
-                
             <div class="testimonial">
                 <div class="testimonial-inner">
                     <div class="testimonial-front">
-                        <img src="https://images.unsplash.com/photo-1587778082149-bd5b1bf5d3fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw5NDUyNDk0fHxlbnwwfHx8fHw%3D">
-                        <h3>John Smith</h3>
+                        <img src="https://via.placeholder.com/100/e85d9a/FFFFFF?text=JA" alt="Jane Appleseed">
+                        <h3>Jane Appleseed</h3>
+                        <p>Illustrator</p>
                     </div>
                     <div class="testimonial-back">
-                        <p>"A great experience from start to finish. Highly recommend this company for their professionalism and dedication."</p>
+                        <p>"I love the versatility of this tool. It's perfect for both quick sketches and detailed
+                            illustrations. Highly recommended!"</p>
                     </div>
                 </div>
             </div>
-        
             <div class="testimonial">
                 <div class="testimonial-inner">
                     <div class="testimonial-front">
-                        <img src="https://images.unsplash.com/photo-1575439462433-8e1969065df7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8OTQ1MjQ5NHx8ZW58MHx8fHx8" alt="Client Image">
-                        <h3>Emily White</h3>
+                        <img src="https://via.placeholder.com/100/9d5ce8/FFFFFF?text=PS" alt="Peter Smith">
+                        <h3>Peter Smith</h3>
+                        <p>Hobbyist Artist</p>
                     </div>
                     <div class="testimonial-back">
-                        <p>"I couldn't be more pleased with the results. The team went above and beyond to meet my needs."</p>
+                        <p>"As a beginner, I found Creative Canvas Tool incredibly easy to learn. It's truly helped
+                            me unleash my inner artist."</p>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="testimonial">
+                <div class="testimonial-inner">
+                    <div class="testimonial-front">
+                        <img src="https://via.placeholder.com/100/4dd4ac/FFFFFF?text=EL" alt="Emily Lee">
+                        <h3>Emily Lee</h3>
+                        <p>Art Educator</p>
+                    </div>
+                    <div class="testimonial-back">
+                        <p>"This software is a fantastic resource for teaching digital art. My students find it
+                            engaging and straightforward to use."</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats-section">
         <div class="stat-box">
             <i class="fas fa-users"></i>
-            <h3 id="client-count">0</h3>
-            <p>Happy Clients</p>
+            <h3>5000+</h3>
+            <p>Happy Users</p>
         </div>
-        
+        <div class="stat-box">
+            <i class="fas fa-paint-brush"></i>
+            <h3>100k+</h3>
+            <p>Creations</p>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-star"></i>
+            <h3>4.9/5</h3>
+            <p>Average Rating</p>
+        </div>
     </section>
 
-    <!-- Footer -->
-       <!-- Footer -->
-       <footer class="main-footer">
-        <div class="container">
-            <!-- About Us Section (Left) -->
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 40 40">
+                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
+                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
+            </svg>
+        </div>
+        <span>↑</span>
+    </button>
+
+    <footer class="main-footer">
+        <div class="footer-container">
             <div class="footer-column">
-                <h5 class="footer-heading">About Us</h5>
+                <h5>About Us</h5>
                 <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
                     creativity through easy-to-use tools.</p>
             </div>
-
-            <!-- Quick Links Section (Center) -->
-            <div class="footer-column center">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul class="list-unstyled">
+            <div class="footer-column">
+                <h5>Quick Links</h5>
+                <ul>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms & Conditions</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-
-            <!-- Social Media Icons Section (Right) -->
-            <div class="footer-column right">
-                <h5 class="footer-heading">Follow Us</h5>
+            <div class="footer-column">
+                <h5>Follow Us</h5>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
-        <div class="text-center py-3" style="margin-top: 32px;">
-            © <span id="year"></span> Canvas Editor. All rights reserved.
+        <div class="footer-bottom">
+            © 2024 Canvas Editor. All rights reserved.
         </div>
     </footer>
-    <style>
-        /* Footer Styling */
-        .main-footer {
-            background-color: #333;
-            /* Dark background */
-            color: #f1f1f1;
-            /* Light text color */
-            padding: 18px 0;
-            font-size: 16px;
-            
-        }
-
-        .footer-heading {
-            color: #e56767;
-            /* Red/pink heading color */
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-size: 22px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .main-footer a {
-            color: #f1f1f1;
-            /* Link color */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .main-footer a:hover {
-            color: #e56767;
-            /* Link hover color */
-        }
-
-        /* Footer Container Styling */
-        .main-footer .container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-        }
-
-        /* Columns Styling */
-        .footer-column {
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        .footer-column.center {
-            text-align: center;
-        }
-
-        .footer-column.right {
-            text-align: right;
-            margin-top: -76px;
-        }
-
-        /* Quick Links List */
-        .list-unstyled {
-            padding-left: 0;
-            list-style-type: none;
-        }
-
-        .list-unstyled li {
-            margin-bottom: 10px;
-        }
-
-        .list-unstyled a {
-            color: #f1f1f1;
-            transition: color 0.3s ease;
-        }
-
-        .list-unstyled a:hover {
-            color: #e56767;
-            text-decoration: underline;
-        }
-
-        /* Social Icons Styling */
-        .social-icons {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            font-size: 24px;
-            color: #f1f1f1;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-            color: #e56767;
-        }
-
-/* Circle styles */
-.circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
-
-
-    </style>
-
-
 
     <script>
-        // Accordion functionality
-        document.querySelectorAll('.accordion-title').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                button.classList.toggle('active');
-                if (button.classList.contains('active')) {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-            });
-        });
 
-        // Cursor animation
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
+        // Scroll to Top Button with Progress Ring
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
 
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
-
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
-        });
-
-        window.addEventListener("mousemove", function(e){
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
-
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-
-            circles.forEach(function (circle, index) {
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-                circle.x = x;
-                circle.y = y;
-
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
-            });
-
-            requestAnimationFrame(animateCircles);
-        }
-
-        animateCircles();
-
-        // Set current year in footer
-        document.getElementById("year").textContent = new Date().getFullYear();
-
-
-
-// Function to animate the counting effect
-function animateCount(target, start, end, duration) {
-            let startTime = null;
-
-            const animate = (currentTime) => {
-                if (!startTime) startTime = currentTime;
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                target.innerText = Math.floor(progress * (end - start) + start);
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    target.innerText = end; // Ensure it ends at the final value
-                    setTimeout(() => {
-                        // After finishing, reset the count and start again
-                        animateCount(target, 0, end, duration);
-                    }, 1000); // Delay before restarting the animation
-                }
-            };
-
-            requestAnimationFrame(animate);
-        }
-
-        // Check if DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            const clientCountElement = document.getElementById('client-count');
-            
-            // Log to verify element selection
-            if (clientCountElement) {
-                console.log("Element found:", clientCountElement);
-                animateCount(clientCountElement, 0, 2000, 3000); // Start the animation
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add("show");
             } else {
-                console.error("Element with ID 'client-count' not found.");
+                scrollToTopBtn.classList.remove("show");
             }
+
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            const circumference = 2 * Math.PI * 18;
+            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
         });
 
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
 
-      </script>
+        // Cursor Effect
 
+    </script>
 </body>
+
 </html>

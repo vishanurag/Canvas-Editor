@@ -475,3 +475,15 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 ---
 
 Thank you for visiting! Feel free to reach out through any of the links above.
+
+## 📝 License
+
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
+<br>
+This project is licensed under the terms of the <strong><a href="./LICENSE">MIT License</a></strong>. <br>
+You are free to use, modify, and distribute this project with proper attribution.
+
+</div>

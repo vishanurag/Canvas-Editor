@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -37,7 +36,7 @@
     <div class="container">
         <div class="forms-container">
             <div class="sign-in-signup">
-                <form action="#" class="sign-in-form"  onsubmit="return validateSignInForm()">
+                <form action="#" class="sign-in-form" onsubmit="return validateSignInForm()">
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -51,55 +50,52 @@
                     <div class="login">
                         <input type="submit" value="Login" class="btn solid" />
                     </div>
-                    <a href="/forgot_password.html" style="text-decoration: none; color: black;">
+                    <a href="/forgot_password.html" class="forgot-password">
                         <p>Forgot Password?</p>
                     </a>
                     <p class="social-text">OR<br>Sign in with social platforms</p>
 
-                    
-                   <div class="social-media">
-                    <button type="button" class="btn btn-microsoft" onclick=" window.location.href='https://login.microsoftonline.com/' ">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
-                            alt="Microsoft Logo" style="width: 25px; height: 25px; margin-right: 5px;">
-                    </button>
 
-                        <button type="button" class="btn btn-google" onclick=" window.location.href='https://accounts.google.com' ">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
-                                alt="Google Icon" style="width: 30px; height: 30px; margin-right: 7px;"> 
+                    <div class="social-media">
+                        <button type="button" class="social-icon"
+                            onclick=" window.location.href='https://login.microsoftonline.com/' ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                                alt="Microsoft Logo" style="width: 25px; height: 25px;">
                         </button>
 
-                        <button type="button" class="btn btn-github" onclick=" window.location.href='https://github.com/login' ">
-                            <i class="fa-brands fa-github" style="font-size: 30px; margin-right: 7px; color: #b10aff;"></i> 
+                        <button type="button" class="social-icon"
+                            onclick=" window.location.href='https://accounts.google.com' ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                alt="Google Icon" style="width: 30px; height: 30px;">
+                        </button>
+
+                        <button type="button" class="social-icon"
+                            onclick=" window.location.href='https://github.com/login' ">
+                            <i class="fa-brands fa-github"></i>
                         </button>
 
                     </div>
                 </form>
-                                        
-                </form>
-                
+
                 <form action="#" class="sign-up-form" onsubmit="return validateForm()">
                     <h2 class="title">Sign up</h2>
 
-                    <!-- Username Field -->
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Username" id="username" required />
                     </div>
 
-                    <!-- Email Field -->
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input type="email" placeholder="Email" id="email" required />
                     </div>
 
-                    <!-- Password Field -->
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Password" id="signup-password" required />
                         <i class="fas fa-eye password-toggle" onclick="togglePassword('signup-password', this)"></i>
                     </div>
 
-                    <!-- Password Strength Bars -->
                     <div class="password-strength">
                         <div id="strength-weak"></div>
                         <div id="strength-medium"></div>
@@ -118,55 +114,55 @@
                 const password = document.getElementById('signup-password').value;
                 const email = document.getElementById('email').value;
                 const username = document.getElementById('username').value;
-        
+
                 // Sign-up validation logic
                 if (password.length < 6) {
                     alert("Password must be at least 6 characters long.");
                     return false;
                 }
-        
+
                 const hexRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]+$/;
                 if (!hexRegex.test(password)) {
                     alert("Password must contain at least one uppercase letter (A-Z), one number (0-9), and include only letters and numbers.");
                     return false;
                 }
-        
+
                 if (username.trim() === "") {
                     alert("Please enter a valid username.");
                     return false;
                 }
-        
+
                 if (!email.includes("@")) {
                     alert("Please enter a valid email address.");
                     return false;
                 }
-        
+
                 return true;
             }
-        
+
             function validateSignInForm() {
                 const username = document.querySelector('.sign-in-form input[type="text"]').value;
                 const password = document.querySelector('.sign-in-form input[type="password"]').value;
-        
+
                 // Sign-in validation logic
                 if (username.trim() === "") {
                     alert("Please enter your username.");
                     return false;
                 }
-        
+
                 if (password.trim() === "") {
                     alert("Please enter your password.");
                     return false;
                 }
-        
+
                 // Simulate successful login 
                 alert("You have successfully logged in to the website!");
-        
+
                 // Redirect to the home screen after a short delay
-                setTimeout(function() {
-                    window.location.href = "index.html"; 
+                setTimeout(function () {
+                    window.location.href = "index.html";
                 }, 2000); // Redirect after 2 seconds
-        
+
                 // If all validations pass, return true to allow form submission
                 return false; // Prevent form submission since we are handling the redirect
             };
@@ -217,17 +213,19 @@
         });
 
         signInBtn.addEventListener('click', () => {
-            container.classList.remove('sign-in-mode');
+            container.classList.remove('sign-up-mode'); // Corrected from 'sign-in-mode'
         });
 
         function togglePassword(id, element) {
             const passwordInput = document.getElementById(id);
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
-                element.classList.add('active');
+                element.classList.remove('fa-eye');
+                element.classList.add('fa-eye-slash');
             } else {
                 passwordInput.type = 'password';
-                element.classList.remove('active');
+                element.classList.remove('fa-eye-slash');
+                element.classList.add('fa-eye');
             }
         }
 
@@ -240,79 +238,8 @@
     </script>
 
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-<!-- Dash eye Icon Script  -->
     <script>
-        function togglePassword(passwordId, icon) {
-    const passwordField = document.getElementById(passwordId);
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
-        icon.classList.remove("fa-eye");
-        icon.classList.add("fa-eye-slash");
-    } else {
-        passwordField.type = "password";
-        icon.classList.remove("fa-eye-slash");
-        icon.classList.add("fa-eye");
-    }
-}
-
-
-// Coordinates for the cursor
-const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
-
-        // Colors for the circles
-        const colors = [
-            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-            "#680060", "#60005f", "#48005f", "#3d005e"
-        ];
-
-        // Assign colors and initial position to each circle
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
-        });
-
-        // Update the coordinates when the mouse moves
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
-        });
-
-        // Animation function to move the circles
-        function animateCircles() {
-            let x = coords.x;
-            let y = coords.y;
-
-            circles.forEach(function (circle, index) {
-                // Update the position and scale of each circle
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
-                circle.style.scale = (circles.length - index) / circles.length;
-
-                circle.x = x;
-                circle.y = y;
-
-                // Get the next circle in the sequence
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.3;
-            });
-
-            // Repeat the animation
-            requestAnimationFrame(animateCircles);
-        }
-
-        // Start the animation
-        animateCircles();
-
-
-
-    </script>
-
-    <script>
+        // Password strength logic (remains unchanged)
         const passwordInput = document.getElementById("signup-password");
         const weakBar = document.getElementById("strength-weak");
         const mediumBar = document.getElementById("strength-medium");
@@ -332,16 +259,18 @@ const coords = { x: 0, y: 0 };
             strongBar.style.backgroundColor = "#ccc";
 
             if (strength === 1) {
-                weakBar.style.backgroundColor = "red";
+                weakBar.style.backgroundColor = "var(--accent-secondary)";
             } else if (strength === 2) {
-            weakBar.style.backgroundColor = "orange";
-            mediumBar.style.backgroundColor = "orange";
-        }    else if (strength >= 3) {
-                weakBar.style.backgroundColor = "green";
-                mediumBar.style.backgroundColor = "green";
-                strongBar.style.backgroundColor = "green";
+                weakBar.style.backgroundColor = "var(--accent-warning)";
+                mediumBar.style.backgroundColor = "var(--accent-warning)";
+            } else if (strength >= 3) {
+                weakBar.style.backgroundColor = "var(--accent-success)";
+                mediumBar.style.backgroundColor = "var(--accent-success)";
+                strongBar.style.backgroundColor = "var(--accent-success)";
             }
         });
+
+       
     </script>
 
 </body>

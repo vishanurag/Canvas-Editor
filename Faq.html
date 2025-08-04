@@ -4,113 +4,299 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Creative Canvas Tool</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap');
+        :root {
+            /* Balanced Theme Colors - Medium tone backgrounds */
+            --bg-primary: #1a1d23;
+            --bg-secondary: #222832;
+            --bg-tertiary: #2a2f3a;
+            --bg-quaternary: #323947;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(42, 47, 58, 0.8);
+            --glass-bg-light: rgba(52, 59, 71, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-border-light: rgba(255, 255, 255, 0.18);
+            
+            /* Accent Colors - Softer, more muted */
+            --accent-primary: #4a9eff;
+            --accent-secondary: #e85d9a;
+            --accent-tertiary: #9d5ce8;
+            --accent-success: #4dd4ac;
+            --accent-warning: #f5a623;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
+            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+            
+            /* Text Colors */
+            --text-primary: #f8f9fa;
+            --text-secondary: #c8ced7;
+            --text-muted: #8892a3;
+            --text-accent: #4a9eff;
+            
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+            
+            /* Transitions */
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 50px;
+        }
 
+        /* General Style */
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 50%, #c58be5 100%);
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background: var(--gradient-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            display: flex; /* Added for sticky footer */
+            flex-direction: column; /* Added for sticky footer */
+            min-height: 100vh; /* Added for sticky footer */
         }
 
- 
+        .circle {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+            opacity: 0.8;
+        }
 
-                
-    .navbar {
-        background-color: #e588e7;
-        padding: 15px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        .cursor.hidden {
+            visibility: hidden; 
+        }
 
-    .navbar h1 {
-        color: #fff;
-        margin: 0;
-    }
+        /* Navbar */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
 
-    .nav-links {
-        display: flex;
-        gap: 25px;
-    }
+        .navbar h1 {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        padding: 6px 8px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .nav-links a:hover {
-        background-color: #ef9ef5;
-    }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            font-weight: 500;
+            position: relative;
+        }
 
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg-light);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(232, 93, 154, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        /* FAQ Content */
         .container {
-            width: 900px;
+            max-width: 900px;
             margin: 2rem auto;
             padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: var(--glass-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            flex-grow: 1; 
         }
 
-        h2 {
-            color: #353047;
+        h2.faq-title { /* Changed to faq-title to avoid conflict with section-title if it were present */
+            color: var(--accent-primary);
             text-align: center;
             margin-bottom: 2rem;
+            font-size: 2.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .accordion-item {
             margin-bottom: 1rem;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
         }
 
         .accordion-title {
-            background-color: rgba(255, 255, 255, 0.5);
-            color: #333;
-            padding: 1rem;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 1.2rem;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .accordion-title:hover {
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: var(--bg-quaternary);
+            color: var(--accent-primary);
+        }
+
+        .accordion-title.active {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: var(--accent-primary);
+            color: var(--text-primary);
+        }
+
+        .accordion-title.active i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-title i {
+            transition: transform 0.3s ease;
         }
 
         .accordion-content {
-            background-color: #f0f0f0;
-            padding: 1rem;
+            background-color: var(--bg-secondary);
+            padding: 1rem 1.2rem;
             display: none;
-            border-radius: 0 0 5px 5px;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .contact-section {
-            background-color: rgba(255, 255, 255, 0.3);
-            padding: 2rem;
-            border-radius: 10px;
-            width: 600px;
-            margin: 2rem auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: var(--glass-bg);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            margin: 2rem auto 4rem auto;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
         }
 
         .contact-section h2 {
-            color: #353047;
+            color: var(--accent-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
         form input,
@@ -118,445 +304,86 @@
             width: 100%;
             padding: 1rem;
             margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 1px solid var(--glass-border-light);
+            border-radius: var(--radius-sm);
+            background: var(--bg-quaternary);
+            font-size: 1rem;
+            color: var(--text-primary);
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        form input::placeholder,
+        form textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-glow);
         }
 
         form button {
-            background-color: #9b59b6;
-            color: #fff;
+            background: var(--accent-primary);
+            color: var(--text-primary);
             border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-full);
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: var(--transition-smooth);
+            font-size: 1rem;
+            font-weight: 600;
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
         }
 
         form button:hover {
-            background-color: #8e44ad;
+            background: var(--accent-tertiary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
         }
 
-        /* .footer {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: auto;
-        }
-
-        .footer .share a {
-            color: #fff;
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .footer .share a:hover {
-            color: #ffb7fd;
-        } */
-
-        .circle {
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-        }
-         /* Hide cursor when the 'hidden' class is applied */
-         .cursor.hidden {
-            visibility: hidden; 
-        }
-    </style>
-</head>
-<body>
-    <!-- Circles for cursor effect -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-
-    <header class="header">
- <!-- Navbar -->
- <nav class="navbar">
-    <h1 class="canvas">Canvas Editor</h1>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="review.html">Review</a>
-        <a href="testimonial.html">Testimonial</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="tutorial.html">Tutorial</a>
-        <a href="Blog_page.html">Blog</a>
-        <a href="Faq.html">FAQ</a>
-        <a href="Feedback.html">Feedback</a>
-        <a href="contributors.html">Contributors</a>
-    </div>
-  </nav>
-    </header>
-
-    <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="accordion">
-            <div class="accordion-item">
-                <div class="accordion-title">1. What is the Creative Canvas Tool?</div>
-                <div class="accordion-content">
-                    <p>Creative Canvas Tool empowers artists of all levels with an intuitive platform for digital art creation. Offering a variety of brushes, colors, and textures, it encourages creativity and style exploration. Whether sketching or perfecting a masterpiece, its user-friendly interface ensures a smooth experience, letting you focus on your art.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-title">2. How do I create an account using the "Sign Up" button in the navbar?</div>
-                <div class="accordion-content">
-                    <p>To create an account, click on the "Sign Up" button located in the navigation bar. A registration form will appear where you need to enter Username, email address, and password. After filling out the form submit the form. Otherwise You can Sign up Using Your Google Account.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-title">3. How do I log in using the "Login" button in the navbar?</div>
-                <div class="accordion-content">
-                    <p>To log in, click on the "Login" button in the navigation bar. Enter the email address or Username and password associated with your account, then click "Login." Once authenticated, you will be redirected to your account dashboard, where you can manage your profile or access other features.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-title">4. How do I convert text to uppercase, lowercase, bold, or italic in the editor?</div>
-                <div class="accordion-content">
-                    <p>To convert text to uppercase, lowercase, bold and italic, just click on the button as your desire. There are buttons for uppercase, lowercase, bold and italic, write your text and convert it as your wish.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-title">5. How do I choose a background image in the Canvas Editor?</div>
-                <div class="accordion-content">
-                    <p>To select a background image, navigate to the "Background" section in the toolbar. From there, you can either upload your own image or choose from a library of pre-loaded images. Once selected, the image will be applied to the entire canvas.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="contact-section">
-        <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to reach out to us!</p>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
-            oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-            oninput="this.setCustomValidity('')">
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
-    <!-- footer -->
-     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="containers">
-            <!-- About Us Section (Left) -->
-            <div class="footer-column">
-                <h5 class="footer-heading">About Us</h5>
-                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
-                    creativity through easy-to-use tools.</p>
-            </div>
-
-            <!-- Quick Links Section (Center) -->
-            <div class="footer-column center">
-                <h5 class="footer-heading">Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <!-- Social Media Icons Section (Right) -->
-            <div class="footer-column right">
-                <h5 class="footer-heading">Follow Us</h5>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href=" https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center py-3" style="margin-top: 32px; margin-left:43%;">
-            © 2024 Canvas Editor. All rights reserved.
-        </div>
-    </footer>
-    <style>
-        /* Footer Styling */
-        .main-footer {
-            background-color: #333;
-            /* Dark background */
-            color: #f1f1f1;
-            /* Light text color */
-            padding: 18px 0;
-            font-size: 16px;
-        }
-
-        .footer-heading {
-            color: #e56767;
-            /* Red/pink heading color */
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-size: 22px;
-            text-align: center;
-        }
-
-        .main-footer a {
-            color: #f1f1f1;
-            /* Link color */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .main-footer a:hover {
-            color: #e56767;
-            /* Link hover color */
-        }
-
-        /* Footer Container Styling */
-        .main-footer .containers {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-        }
-
-        /* Columns Styling */
-        .footer-column {
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        .footer-column.center {
-            text-align: center;
-        }
-
-        .footer-column.right {
-            text-align: right;
-            margin-top: -76px;
-        }
-
-        /* Quick Links List */
-        .list-unstyled {
-            padding-left: 0;
-            list-style-type: none;
-        }
-
-        .list-unstyled li {
-            margin-bottom: 10px;
-        }
-
-        .list-unstyled a {
-            color: #f1f1f1;
-            transition: color 0.3s ease;
-        }
-
-        .list-unstyled a:hover {
-            color: #e56767;
-            text-decoration: underline;
-        }
-
-        /* Social Icons Styling */
-        .social-icons {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            font-size: 24px;
-            color: #f1f1f1;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-            color: #e56767;
-        }
-    </style>
-
-    <script>
-        // Accordion functionality
-const accordionTitles = document.querySelectorAll('.accordion-title');
-
-accordionTitles.forEach(button => {
-    button.addEventListener('click', (event) => {
-        // Close all other accordion items
-        accordionTitles.forEach(item => {
-            if (item !== button) {
-                item.classList.remove('active');
-                item.nextElementSibling.style.display = 'none';
-            }
-        });
-
-        // Toggle the clicked item
-        const content = button.nextElementSibling;
-        button.classList.toggle('active');
-        if (button.classList.contains('active')) {
-            content.style.display = 'block';
-        } else {
-            content.style.display = 'none';
-        }
-    });
-});
-
-// Close accordion when clicking outside
-document.addEventListener('click', (event) => {
-    const isClickInsideAccordion = event.target.closest('.accordion');
-    if (!isClickInsideAccordion) {
-        accordionTitles.forEach(item => {
-            item.classList.remove('active');
-            item.nextElementSibling.style.display = 'none';
-        });
-    }
-});
-
-    // Coordinates for the cursor
-    const coords = { x: 0, y: 0 };
-    const circles = document.querySelectorAll(".circle");
-
-    // Colors for the circles
-    const colors = [
-        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-        "#680060", "#60005f", "#48005f", "#3d005e"
-    ];
-
-    // Assign colors and initial position to each circle
-    circles.forEach(function (circle, index) {
-        circle.x = 0;
-        circle.y = 0;
-        circle.style.backgroundColor = colors[index % colors.length];
-    });
-
-    // Update the coordinates when the mouse moves
-    document.addEventListener("mousemove", function (e) {
-        coords.x = e.clientX;
-        coords.y = e.clientY;
-
-        // Update the position of each circle
-        circles.forEach(function (circle, index) {
-            circle.style.left = coords.x - 12 + "px";
-            circle.style.top = coords.y - 12 + "px";
-            circle.style.scale = (circles.length - index) / circles.length;
-        });
-    });
-
-    // Add mouseleave event to hide cursor
-    document.addEventListener("mouseleave", () => {
-        circles.forEach(circle => circle.classList.add("hidden"));
-    });
-
-    // Add mouseenter event to show cursor
-    document.addEventListener("mouseenter", () => {
-        circles.forEach(circle => circle.classList.remove("hidden"));
-    });
-
-    // Add focus and blur events to hide/show cursor
-    document.addEventListener("focus", () => {
-        circles.forEach(circle => circle.classList.remove("hidden"));
-    });
-
-    document.addEventListener("blur", () => {
-        circles.forEach(circle => circle.classList.add("hidden"));
-    });
-
-    // Animation function to move the circles
-    function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-
-        circles.forEach(function (circle, index) {
-            circle.x = x;
-            circle.y = y;
-
-            // Get the next circle in the sequence
-            const nextCircle = circles[index + 1] || circles[0];
-            x += (nextCircle.x - x) * 0.3;
-            y += (nextCircle.y - y) * 0.3;
-        });
-
-        // Repeat the animation
-        requestAnimationFrame(animateCircles);
-    }
-
-    // Start the animation
-    animateCircles();
-
-
-        // Set current year in footer
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn">
-        <div class="progress-ring">
-            <svg viewBox="0 0 36 36">
-                <path class="ring-bg" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-                <path class="ring-progress" d="M18 2a16 16 0 1 1 0 32 16 16 0 0 1 0-32"></path>
-            </svg>
-        </div>
-        <span>&uarr;</span>
-    </button>
-    <style>
         /* Scroll to Top Button */
         #scrollToTopBtn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ffb7fd 0%, #abc0ef 100%);
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-medium);
             outline: none;
-            border: none;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
         }
 
         #scrollToTopBtn.show {
             opacity: 1;
         }
 
-        #scrollToTopBtn span {
-            font-size: 24px;
-            color: white;
+        #scrollToTopBtn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
         }
 
-        /* Progress Ring */
         .progress-ring {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 36px;
-            height: 36px;
+            width: 50px;
+            height: 50px;
             transform: translate(-50%, -50%);
         }
 
@@ -568,42 +395,331 @@ document.addEventListener('click', (event) => {
 
         .ring-bg {
             fill: none;
-            stroke: rgba(255, 255, 255, 0.2);
-            stroke-width: 4;
+            stroke: var(--glass-border);
+            stroke-width: 3;
         }
 
         .ring-progress {
             fill: none;
-            stroke: white;
-            stroke-width: 4;
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
+            stroke: var(--accent-primary);
+            stroke-width: 3;
+            stroke-dasharray: 126;
+            stroke-dashoffset: 126;
             transition: stroke-dashoffset 0.3s;
         }
+
+        #scrollToTopBtn span {
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-column h5 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-primary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-section {
+                padding: 4rem 1rem 2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .faq-title {
+                font-size: 2rem;
+            }
+        }
     </style>
-    <!-- JavaScript for Scroll to Top Button -->
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Canvas Editor</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about-us.html">About Us</a>
+            <a href="review.html">Review</a>
+            <a href="testimonial.html">Testimonial</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tutorial.html">Tutorial</a>
+            <a href="Blog_page.html">Blog</a>
+            <a href="Faq.html">FAQ</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="contributors.html">Contributors</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <h1 class="hero-title">Frequently Asked Questions</h1>
+        <p class="hero-subtitle">Find answers to common questions about Creative Canvas Tool and its features.</p>
+    </section>
+
+    <div class="container">
+        <h2 class="faq-title">General Questions</h2>
+
+        <div class="accordion-item">
+            <div class="accordion-title">
+                What is Creative Canvas Tool?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                Creative Canvas Tool is an intuitive online platform designed for digital artists of all levels. It offers a wide range of tools and features to create, edit, and enhance digital artwork, from basic sketches to complex illustrations.
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-title">
+                Is Creative Canvas Tool free to use?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                We offer a free tier with essential features, perfect for beginners and casual users. For advanced tools, larger canvas sizes, and premium brushes, we have various subscription plans available.
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-title">
+                Do I need to download any software?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                No! Creative Canvas Tool is a web-based application, meaning you can access it directly from your browser without any downloads or installations. Just open your browser, go to our website, and start creating.
+            </div>
+        </div>
+
+        <h2 class="faq-title" style="margin-top: 3rem;">Technical Questions</h2>
+
+        <div class="accordion-item">
+            <div class="accordion-title">
+                What file formats does Creative Canvas Tool support?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                Creative Canvas Tool supports popular image formats like JPEG, PNG, GIF, and TIFF for import and export. You can also save your projects in our native .CCT (Creative Canvas Tool) format for future editing.
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-title">
+                Is there a mobile version of Creative Canvas Tool?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                While Creative Canvas Tool is optimized for desktop browsers, it is responsive and can be accessed on tablets and modern smartphones. A dedicated mobile app is currently under development and will be released soon!
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-title">
+                How do I report a bug or suggest a feature?
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                We highly value user feedback! You can report bugs or suggest new features through our dedicated "Feedback" page, or by contacting our support team directly via email.
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section">
+        <h2>Still Have Questions?</h2>
+        <p>If you couldn't find the answer you're looking for, feel free to reach out to our support team.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 40 40">
+                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
+                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
+            </svg>
+        </div>
+        <span>↑</span>
+    </button>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h5>About Us</h5>
+                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
+            </div>
+            <div class="footer-column">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Canvas Editor. All rights reserved.
+        </div>
+    </footer>
+
     <script>
-        // Show button and update progress ring on scroll
+        // Scroll to Top Button with Progress Ring
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
         const ringProgress = document.querySelector(".ring-progress");
 
         window.addEventListener("scroll", () => {
-            // Show/hide button
             if (window.scrollY > 300) {
                 scrollToTopBtn.classList.add("show");
             } else {
                 scrollToTopBtn.classList.remove("show");
             }
 
-            // Update progress ring
             const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            ringProgress.style.strokeDashoffset = 100 - scrollPercentage;
+            const circumference = 2 * Math.PI * 18;
+            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
         });
 
-        // Scroll to top when button clicked
         scrollToTopBtn.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
+
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.accordion-title').forEach(item => {
+            item.addEventListener('click', event => {
+                const currentContent = item.nextElementSibling;
+                
+                // Close all other open accordions
+                document.querySelectorAll('.accordion-content').forEach(content => {
+                    if (content !== currentContent && content.style.display === 'block') {
+                        content.style.display = 'none';
+                        content.previousElementSibling.classList.remove('active');
+                    }
+                });
+
+                // Toggle the clicked accordion
+                if (currentContent.style.display === 'block') {
+                    currentContent.style.display = 'none';
+                    item.classList.remove('active');
+                } else {
+                    currentContent.style.display = 'block';
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Cursor Effect (uncomment if you want this functionality)
+        /*
+        document.addEventListener("DOMContentLoaded", () => {
+            const circle = document.querySelector(".circle");
+
+            document.addEventListener("mousemove", (e) => {
+                circle.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+            });
+
+            document.addEventListener("mouseenter", () => {
+                circle.classList.remove("hidden");
+            });
+
+            document.addEventListener("mouseleave", () => {
+                circle.classList.add("hidden");
+            });
+        });
+        */
     </script>
 </body>
 </html>
