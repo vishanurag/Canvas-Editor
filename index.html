@@ -33,931 +33,281 @@
     <link rel="canonical" href="https://github.com/vishanurag/Canvas-Editor">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="resources/favicon.ico" type="image/ico">
     <link rel="manifest" href="/manifest.json">
-    
+
     <div class="visitor-counter">
-        <div>Visitors</div>
+        <div>Visitor</div>
         <div class="website-counter"></div>
     </div>
-    
     <style>
-        :root {
-            /* Balanced Theme Colors - Medium tone backgrounds */
-            --bg-primary: #1a1d23;
-            --bg-secondary: #222832;
-            --bg-tertiary: #2a2f3a;
-            --bg-quaternary: #323947;
-            
-            /* Glass Effects */
-            --glass-bg: rgba(42, 47, 58, 0.8);
-            --glass-bg-light: rgba(52, 59, 71, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --glass-border-light: rgba(255, 255, 255, 0.18);
-            
-            /* Accent Colors - Softer, more muted */
-            --accent-primary: #4a9eff;
-            --accent-secondary: #e85d9a;
-            --accent-tertiary: #9d5ce8;
-            --accent-success: #4dd4ac;
-            --accent-warning: #f5a623;
-            
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, #4ac6ff 0%, #9d5ce8 50%, #e85d9a 100%);
-            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
-            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
-            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
-            
-            /* Text Colors */
-            --text-primary: #f8f9fa;
-            --text-secondary: #c8ced7;
-            --text-muted: #8892a3;
-            --text-accent: #4a9eff;
-            
-            /* Shadows */
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
-            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
-            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
-            
-            /* Transitions */
-            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            
-            /* Border Radius */
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-            --radius-full: 50px;
+        #toggleGridButton {
+            margin-top: 10px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--gradient-bg);
-            min-height: 100vh;
-            overflow-x: hidden;
-            color: var(--text-primary);
-        }
-
-        /* Animated Background Particles */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 60%, rgba(131, 56, 236, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Visitor Counter - Enhanced Dark Design */
         .visitor-counter {
             position: fixed;
-            top: 75vh;
-            left: 7px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-            color: var(--text-primary);
-            font-weight: 600;
+            top: 570px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Slightly opaque background for better visibility */
+            height: 100px;
+            width: 100px;
+            color: #333;
+            /* Darker text for better contrast */
+            font-weight: 700;
+            font-size: 18px;
             text-align: center;
-            box-shadow: var(--shadow-medium);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            /* Softer corners */
+            backdrop-filter: blur(10px);
+            /* Increased blur for a modern touch */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
+                /* Slightly more pronounced shadow */
+                0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            transition: var(--transition-smooth);
-            min-width: 120px;
+            transition: all 0.3s ease;
+            /* Smooth transition for hover effect */
         }
 
         .visitor-counter:hover {
-            transform: translateY(-6px) scale(1.05);
-            box-shadow: var(--shadow-strong), var(--shadow-glow);
-            border-color: var(--accent-primary);
+            transform: scale(1.05);
+            /* Slightly enlarge on hover */
+
+            box-shadow: 0 8px 16px rgba(197, 56, 215, 0.2);
+            /* Enhance shadow on hover */
         }
 
         .visitor-counter div:first-child {
-            font-size: 11px;
-            opacity: 0.7;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-secondary);
+            margin-bottom: 5px;
+            font-size: 14px;
+            /* Adjusted for clarity */
+            letter-spacing: 1px;
+            /* Increased spacing for readability */
         }
 
         .website-counter {
-            font-size: 28px;
-            font-weight: 800;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            /* Consistent font family */
         }
 
-        /* Sidebar - Enhanced Dark Design */
+        @media screen and (max-width: 768px) {
+            .visitor-counter {
+                height: 100px;
+                width: 100px;
+                font-size: 16px;
+            }
+
+            .website-counter {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .visitor-counter {
+                height: 80px;
+                width: 80px;
+                font-size: 14px;
+            }
+
+            .website-counter {
+                font-size: 18px;
+            }
+        }
+
+        .dark-mode .visitor-counter div {
+            color: #f0f0f0;
+            /* Lighter text for dark mode */
+        }
+
+        .dark-mode .visitor-counter .website-counter {
+            color: #f0f0f0;
+            /* Lighter color for consistency */
+        }
+
+        .dark-mode .visitor-counter {
+
+            background-color: rgba(185, 66, 196, 0.7);
+
+            /* Darker background for dark mode */
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
+                0 2px 4px rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
         .sidebar {
-            width: 140px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-right: 1px solid var(--glass-border);
-            padding: 24px 16px;
-            padding-top: 120px;
+            width: 100px;
+            background: linear-gradient(135deg, #f78ca0, #f9748f, #fd868c, #fe9a8b);
+            color: white;
+            padding: 20px;
+            padding-top: 100px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .sidebar.collapsed {
-            width: 0;
-            padding: 0;
-            overflow: hidden;
+            gap: 15px;
         }
 
         .sidebar button {
-            background: var(--glass-bg-light);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 14px 12px;
-            color: var(--text-primary);
-        
-            font-size: 13px;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sidebar button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+            display: block;
             width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: left 0.3s ease;
-            opacity: 0.1;
-        }
-
-        .sidebar button:hover::before {
-            left: 0;
-        }
-
-        .sidebar button:hover {
-            background: var(--bg-quaternary);
-            transform: translateY(-2px) translateX(4px);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
+            padding: 10px;
+            background-color: #63077f;
+            border: none;
+            color: #f8f9f9;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
         }
 
         .sidebar button i {
-            font-size: 16px;
-            transition: var(--transition-smooth);
+            margin-right: 8px;
         }
 
-        .sidebar button:hover i {
-            transform: scale(1.1);
+        .sidebar button:hover {
+            background: #f67280;
+            transform: scale(1.05);
         }
 
-        /* Navbar - Enhanced Dark Design */
         .navbar {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 20px 32px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-soft);
         }
 
         .navbar h1 {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 28px;
-            font-weight: 800;
-            margin-left:-3px;
-            letter-spacing: 1px;
+            color: #7e2424;
+            margin: 0px;
+            font-size: 30px;
         }
 
-        .nav-links {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 6px;
-            align-items: center;
-           
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
+        .navbar a {
+            color: #ffffff;
             text-decoration: none;
-            padding: 10px 16px;
-            border-radius: var(--radius-md);
-            font-weight: 500;
-            font-size: 14px;
-            transition: var(--transition-smooth);
-            background: var(--glass-bg-light);
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
         }
 
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-secondary);
-            transition: left 0.3s ease;
-            opacity: 0.1;
+        .navbar a:hover {
+            background-color: #f67280;
         }
 
-        .nav-links a:hover::before {
-            left: 0;
-        }
-
-        .nav-links a:hover {
-            background: var(--bg-quaternary);
-            transform: translateY(-2px);
-            border-color: var(--accent-primary);
-            color: var(--text-primary);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .profile-link img {
-            width: 36px;
-            height: 36px;
-            border-radius: var(--radius-full);
-            border: 2px solid var(--glass-border);
-            transition: var(--transition-smooth);
-        }
-
-        .profile-link:hover img {
-            border-color: var(--accent-primary);
-            transform: scale(1.1);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Tools - Enhanced Dark Design */
         .tools {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 20px 32px;
             display: flex;
-            gap: 12px;
+            gap: 10px;
+            padding: 10px;
+            background-color: #e76af5;
             align-items: center;
-            flex-wrap: wrap;
-            box-shadow: var(--shadow-soft);
         }
 
-        .tool, #toggleToolbar {
-            background: var(--glass-bg-light);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 14px;
-            color: var(--text-secondary);
+        .tool {
+            background-color: #460346;
+            border: none;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            padding: 10px;
             cursor: pointer;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 48px;
-            min-height: 48px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tool::before, #toggleToolbar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-accent);
-            transition: left 0.3s ease;
-            opacity: 0.1;
-        }
-
-        .tool:hover::before, #toggleToolbar:hover::before {
-            left: 0;
-        }
-
-        .tool:hover, #toggleToolbar:hover {
-            background: var(--bg-quaternary);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-medium), var(--shadow-glow);
-            border-color: var(--accent-primary);
-            color: var(--text-primary);
-        }
-
-        .tool.active {
-            background: var(--accent-primary);
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-            color: var(--bg-primary);
-            transform: translateY(-2px);
-        }
-
-        .tool.active::before {
-            display: none;
+            transition: all 0.3s;
         }
 
         .tool i {
-            font-size: 18px;
-            transition: var(--transition-smooth);
+            font-size: 20px;
+            transition: transform 0.2s ease, color 0.2s ease;
         }
 
         .tool:hover i {
+            color: #ff6b6b;
+            transform: scale(1.2);
+        }
+
+        .tool.active {
+            background-color: #5e044f;
+        }
+
+        #canvas {
+            border: 2px solid #e049e8;
+            background-color: white;
+            cursor: crosshair;
+            width: 100%;
+            height: calc(100vh - 220px);
+        }
+
+        .visitor-counter {
+            position: fixed;
+            top: 570px;
+            left: 10px;
+            background: linear-gradient(135deg, #fc5c7d, #6a82fb);
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 8px 20px rgba(255, 105, 135, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .visitor-counter:hover {
             transform: scale(1.1);
         }
 
-        /* Color Pickers - Enhanced Design */
-        .color-picker {
-            position: relative;
-            display: inline-block;
-        }
-
-        .color-picker input[type="color"] {
-            width: 48px;
-            height: 48px;
-            border: 2px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            background: var(--glass-bg-light);
-            padding: 4px;
-            transition: var(--transition-smooth);
-        }
-
-        .color-picker input[type="color"]:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .color-palette {
-            position: absolute;
-            top: 110%;
-            left: 0;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            padding: 16px;
-            display: none;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            z-index: 1000;
-            box-shadow: var(--shadow-strong);
-        }
-
-        .color-picker:hover .color-palette {
-            display: grid;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .color-swatch {
-            width: 28px;
-            height: 28px;
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            border: 2px solid var(--glass-border);
-            transition: var(--transition-smooth);
-        }
-
-        .color-swatch:hover {
-            transform: scale(1.15);
-            border-color: var(--text-primary);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Range Input - Enhanced Style */
-        input[type="range"] {
-            width: 140px;
-            height: 8px;
-            border-radius: var(--radius-sm);
-            background: var(--bg-quaternary);
-            outline: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        input[type="range"]:hover {
-            background: var(--bg-tertiary);
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            border-radius: var(--radius-full);
-            background: var(--gradient-accent);
-            cursor: pointer;
-            box-shadow: var(--shadow-medium);
-            transition: var(--transition-smooth);
-        }
-
-        input[type="range"]::-webkit-slider-thumb:hover {
-            transform: scale(1.15);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Text Size Control - Enhanced Design */
-        .text-size-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--glass-bg-light);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 10px 16px;
-            color: var(--text-primary);
-            transition: var(--transition-smooth);
-        }
-
-        .text-size-control:hover {
-            border-color: var(--accent-primary);
-            background: var(--bg-quaternary);
-        }
-
-        .text-size-control input {
-            width: 70px;
-            padding: 6px 10px;
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-sm);
-            background: var(--bg-quaternary);
-            color: var(--text-primary);
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition-smooth);
-        }
-
-        .text-size-control input:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
-        }
-
-        /* Canvas - Enhanced Design */
-        #canvas {
-            border: 2px solid var(--glass-border);
-            border-radius: var(--radius-lg);
-            background-color: #ffffff;
-            cursor: crosshair;
-            width: 100%;
-            height: calc(100vh - 300px);
-            box-shadow: var(--shadow-strong);
-            transition: var(--transition-smooth);
-        }
-
-        #canvas:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-strong), var(--shadow-glow);
-        }
-
-        .canvas {
-            padding: 32px;
-        }
-
-        /* Main Content */
-        .main-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Footer - Enhanced Dark Design */
         .footer {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-primary);
-            padding: 40px 32px;
+            background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+            color: white;
+            padding: 20px;
             text-align: center;
-            margin-top: auto;
-            box-shadow: var(--shadow-soft);
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .newsletter-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto 32px;
-            flex-wrap: wrap;
-        }
-
-        .newsletter-section h3 {
-            margin: 0;
-            font-weight: 700;
-            color: var(--text-primary);
-            font-size: 18px;
-        }
-
-        .newsletter-section input {
-            padding: 14px 20px;
-            min-width: 320px;
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            background: var(--glass-bg-light);
-            color: var(--text-primary);
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition-smooth);
-        }
-
-        .newsletter-section input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .newsletter-section input:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
-            background: var(--bg-quaternary);
-        }
-
-        .subscribe {
-            background: var(--gradient-primary);
-            color: var(--text-primary);
+        .footer .subscribe {
+            background-color: #d426d7;
+            color: white;
+            padding: 10px 20px;
             border: none;
-            padding: 14px 28px;
-            border-radius: var(--radius-md);
+            border-radius: 8px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 14px;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
+            transition: background-color 0.3s;
         }
 
-        .subscribe::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
-            transition: left 0.3s ease;
-        }
-
-        .subscribe:hover::before {
-            left: 0;
-        }
-
-        .subscribe:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-medium), var(--shadow-glow);
-        }
-
-        .credit {
-            font-size: 14px;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .credit a {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition-smooth);
-        }
-
-        .credit a:hover {
-            color: var(--text-primary);
-            text-shadow: 0 0 10px var(--accent-primary);
-        }
-
-        .share {
-            margin-top: 24px;
-        }
-
-        .share i {
-            font-size: 28px;
-            margin: 0 12px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            padding: 8px;
-            border-radius: var(--radius-full);
-        }
-
-        .share i:hover {
-            color: var(--accent-primary);
-            transform: translateY(-4px) scale(1.1);
-            background: rgba(0, 212, 255, 0.1);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 16px 20px;
-            }
-            
-            .navbar h1 {
-                font-size: 24px;
-            }
-            
-            .nav-links {
-                gap: 6px;
-            }
-            
-            .nav-links a {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-            
-            .tools {
-                padding: 16px 20px;
-                gap: 8px;
-            }
-            
-            .visitor-counter {
-                width: 100px;
-                padding: 16px;
-                left: 15px;
-            }
-            
-            .website-counter {
-                font-size: 24px;
-            }
-
-            .newsletter-section input {
-                min-width: 280px;
-            }
-        }
-
-        /* Circles Animation - Enhanced */
-        .circle {
-            height: 28px;
-            width: 28px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-            opacity: 0.7;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-        }
-
-        .circle.hidden {
-            visibility: hidden;
-        }
-
-        /* Popup - Enhanced Dark Design */
-        .popup {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(15px);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .popup-content {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-xl);
-            padding: 40px;
-            max-width: 550px;
-            text-align: center;
-            color: var(--text-primary);
-            box-shadow: var(--shadow-strong);
-            position: relative;
-        }
-
-        .popup-content::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-xl);
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        .popup-content h2 {
-            margin-bottom: 32px;
-            font-weight: 700;
-            font-size: 22px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        #pollOptions {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .poll-button {
-            background: var(--glass-bg-light);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius-md);
-            padding: 16px 20px;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            font-weight: 500;
-            font-size: 14px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .poll-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-secondary);
-            transition: left 0.3s ease;
-            opacity: 0.1;
-        }
-
-        .poll-button:hover::before {
-            left: 0;
-        }
-
-        .poll-button:hover {
-            background: var(--bg-quaternary);
-            transform: translateY(-2px);
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .poll-button.selected {
-            background: var(--accent-primary);
-            border-color: var(--accent-primary);
-            color: var(--bg-primary);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .poll-button.selected::before {
-            display: none;
-        }
-
-        .vote-button {
-            background: var(--gradient-secondary);
-            border: none;
-            border-radius: var(--radius-md);
-            padding: 16px 32px;
-            color: var(--text-primary);
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 16px;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .vote-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
-            transition: left 0.3s ease;
-        }
-
-        .vote-button:hover::before {
-            left: 0;
-        }
-
-        .vote-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-strong), var(--shadow-glow-pink);
-        }
-
-        #result {
-            margin-top: 20px;
-            font-weight: 600;
-            color: var(--accent-success);
-        }
-
-        /* Layout Container */
-        body {
-            display: flex;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--glass-border);
-            border-radius: var(--radius-sm);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-primary);
-        }
-
-        /* Loading Animation */
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .loading {
-            animation: pulse 2s infinite;
-        }
-
-        /* Glow Effects */
-        .glow-on-hover {
-            transition: var(--transition-smooth);
-        }
-
-        .glow-on-hover:hover {
-            box-shadow: 0 0 20px var(--accent-primary);
+        .footer .subscribe:hover {
+            background-color: #a008b7;
         }
     </style>
-
     <script>
-        // Function to get the count from memory (not localStorage in artifacts)
-        let visitorCount = 1247; // Starting with a demo number
-
+        // Function to get the count from localStorage or initialize it
         function getVisitorCount() {
-            return visitorCount;
+            return localStorage.getItem('visitorCount') || 0;
         }
 
         // Function to increment and save the count
         function incrementVisitorCount() {
-            visitorCount += 1;
-            return visitorCount;
+            let count = parseInt(getVisitorCount()) + 1;
+            localStorage.setItem('visitorCount', count);
+            return count;
         }
 
         // Function to display the count
@@ -970,6 +320,301 @@
         // Call the display function when the page loads
         document.addEventListener('DOMContentLoaded', displayVisitorCount);
     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            width: 100px;
+
+            background-color: #eca6f4;
+
+            color: white;
+            padding: 17px;
+            padding-top: 100px;
+        }
+
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+
+            background-color: #63077f;
+
+            border: none;
+            color: rgb(248, 249, 249);
+            text-align: left;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 15px;
+        }
+
+        .sidebar button:hover {
+
+            background-color: #911da1;
+
+        }
+
+        .canvas {
+            padding-right: 50px;
+            padding-left: 10px;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+
+            background-color: #f0adfb;
+
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+
+        .navbar h1 {
+            color: rgb(126, 36, 36);
+            margin: 0px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            margin: auto;
+
+            align-items: center;
+
+
+        }
+
+        .nav-links a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 6px 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #541058;
+        }
+
+        .tools {
+            display: flex;
+            gap: 10px;
+            padding-left: 40px;
+            padding-bottom: 10px;
+
+            background-color: #e76af5;
+        }
+
+        .tool {
+            background-color: #460346;
+
+            border: none;
+            color: white;
+            /* padding: 10px; */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 0px 0px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tool:hover {
+
+            background-color: #87087c;
+        }
+
+        .tool.active {
+            background-color: #5e044f;
+
+        }
+
+        #canvas {
+            border: 1px solid #e049e8;
+            background-color: white;
+            width: 100%;
+            height: calc(100vh - 280px);
+            /* Adjusted for footer */
+        }
+
+        .color-picker {
+            margin: 10px 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .color-picker input[type="color"] {
+            padding: 0;
+            width: 50px;
+            height: 40px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .color-palette {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+
+            box-shadow: 0 2px 10px rgba(187, 60, 178, 0.1);
+
+            display: none;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            z-index: 1000;
+        }
+
+        .color-picker:hover .color-palette {
+            display: grid;
+        }
+
+        .color-swatch {
+            width: 25px;
+            height: 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+
+        .footer {
+
+            background-color: #fb99f8;
+
+            color: rgb(255, 255, 255);
+
+        }
+
+        .newsletter-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+
+        }
+
+        .newsletter-section input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .newsletter-section button {
+
+            background-color: #d426d7;
+
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+        }
+
+        .newsletter-section button:hover {
+
+            background-color: #a008b7;
+
+        }
+
+        .text-size-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+
+            background-color: #c350da;
+
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .text-size-control input {
+            width: 60px;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .text-size-control:hover {
+
+            background-color: #5d0874;
+
+            transition: background-color 0.3s;
+        }
+
+        .credit {
+            text-align: center;
+        }
+
+        .share {
+            font-size: 25px;
+        }
+
+        .share i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .share i:hover {
+            cursor: pointer;
+            color: #5c2872;
+        }
+
+        .profile {
+            font-size: 2rem;
+            padding-right: 1rem;
+        }
+    </style>
+    <style>
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Hide cursor when the 'hidden' class is applied */
+        .circle.hidden {
+            visibility: hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -995,17 +640,19 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="sidebar">
+
         <button id="tools-btn"><i class="fas fa-wrench"></i> Tools</button>
         <button id="settings-btn"><i class="fas fa-cogs"></i> Settings</button>
         <button id="help-btn"><i class="fas fa-question-circle"></i> Help</button>
-    </div>
 
+
+    </div>
     <div class="main-content">
         <nav class="navbar">
-            <h1 class="canvas">Canvas Editor</h1>
             <div class="nav-links">
+                <h1 class="canvas">Canvas Editor</h1>
                 <a href="index.html">Home</a>
-                <a href="about-us.html">About</a>
+                <a href="about-us.html">About Us</a>
                 <a href="review.html">Review</a>
                 <a href="testimonial.html">Testimonial</a>
                 <a href="privacy.html">Privacy</a>
@@ -1013,15 +660,122 @@
                 <a href="Blog_page.html">Blog</a>
                 <a href="Faq.html">FAQ</a>
                 <a href="./Feedback.html">Feedback</a>
-                <a href="./contact.html">Contact</a>
+                <a href="./contact.html">contact us</a>
+                <!-- <a href="signup.html">Sign Up</a> -->
                 <a href="contributors.html">Contributors</a>
-                <a href="auth.html">Login</a>
-                <a href="./profile.html" class="profile-link">
-                    <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile">
-                </a>
-            </div>
-        </nav>
 
+
+                <a href="auth.html">Login</a>
+
+
+
+
+                <!-- Profile Icon -->
+
+                <a href="./profile.html" class="profile-link"
+                    style="display: flex; align-items: center; text-decoration: none;">
+                    <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg"
+                        alt="Profile Icon"
+                        style="width: 35px; height: 35px; border-radius: 50%; margin-top: -1px; align-items: center;">
+                </a>
+
+                </li>
+
+
+
+                <script>
+
+                    document.addEventListener("DOMContentLoaded", function () {
+                        // Retrieve the saved avatar from localStorage
+                        const savedAvatar = localStorage.getItem("selectedAvatar");
+
+                        // If an avatar is saved, update the profile image
+                        if (savedAvatar) {
+                            const homeProfileImage = document.getElementById("homeProfileImage");
+                            if (homeProfileImage) {
+                                homeProfileImage.src = savedAvatar;
+                            }
+                        }
+                    });
+
+                </script>
+
+                <style>
+                    /* Override the existing hover styles */
+                    .navbar-nav .nav-item .profile-link:hover {
+                        background-color: transparent !important;
+                        /* Remove background color */
+                        border-radius: 0 !important;
+                        /* Reset border radius */
+                        transform: none !important;
+                        /* Prevent scaling */
+                    }
+
+
+                    .profile-icon {
+
+                        border-radius: 50%;
+                        position: relative;
+                        margin-left: 20px;
+                        Margin-top: 100px;
+
+                    }
+
+                    .dropdown-menu {
+
+                        display: none;
+                        position: absolute;
+                        top: 35px;
+                        /* Adjust based on the height of your navbar */
+                        right: 0;
+                        background-color: white;
+                        color: black;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        z-index: 1;
+
+                    }
+
+                    .dropdown-menu a {
+
+                        display: block;
+                        padding: 10px 15px;
+                        text-decoration: none;
+
+                    }
+
+                    .dropdown-menu a:hover {
+
+                        background-color: #f1f1f1;
+
+                    }
+                </style>
+
+                <script>
+
+                    function toggleMenu() {
+                        const menu = document.getElementById('profileMenu');
+                        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                    }
+
+                    // Close the dropdown if the user clicks outside of it
+                    window.onclick = function (event) {
+                        if (!event.target.matches('.profile-icon img')) {
+                            const menu = document.getElementById('profileMenu');
+                            if (menu.style.display === 'block') {
+                                menu.style.display = 'none';
+                            }
+                        }
+                    }
+
+                </script>
+
+
+
+
+            </div>
+
+        </nav>
         <div class="tools">
             <button id="toggleToolbar" class="arrow-button">
                 <i class="fas fa-arrow-left"></i>
@@ -1034,7 +788,7 @@
             <button class="tool" id="circle"><i class="far fa-circle" title="Circle"></i></button>
             <button class="tool" id="text"><i class="fas fa-font" title="Text"></i></button>
             <button class="tool" id="textarea"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                    viewBox="0 -960 960 960" width="24px" fill="currentColor" title="Text Area">
+                    viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Text Area">
                     <path
                         d="M256-240h84l44-122h192l44 122h84L522-720h-84L256-240Zm152-192 70-198h4l70 198H408ZM160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm0-640v640-640Z" />
                 </svg></button>
@@ -1073,101 +827,184 @@
             <input type="range" id="lineWidth" min="1" max="50" value="5">
             <div class="text-size-control">
                 <label for="textSize"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                        width="24px" fill="currentColor" title="Text Size">
+                        width="24px" fill="#ffff" title="Text Size">
                         <path
                             d="M560-160v-520H360v-120h520v120H680v520H560Zm-360 0v-320H80v-120h360v120H320v320H200Z" />
-                    </svg></label>
+                    </svg>:</label>
                 <input type="number" id="textSize" min="8" max="72" value="20">
             </div>
             <button class="tool" id="clear"><i class="fas fa-trash-alt" title="Clear Canvas"></i></button>
             <button class="tool" id="toggleGridButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                    viewBox="0 -960 960 960" width="24px" fill="currentColor" title="Toggle Grid">
+                    viewBox="0 -960 960 960" width="24px" fill="#ffff" title="Toggle Grid">
                     <path
                         d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133ZM200-413h133v-134H200v134Zm213 0h134v-134H413v134Zm214 0h133v-134H627v134ZM200-627h133v-133H200v133Zm213 0h134v-133H413v133Zm214 0h133v-133H627v133Z" />
                 </svg></button>
-        </div>
+            <style>
+                /* Styling for the toggle button */
+                #toggleToolbar {
+                    background-color: #460346;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                }
 
-        <div class="canvas">
-            <canvas id="canvas"></canvas>
+                #toggleToolbar i {
+                    margin-right: 5px;
+                }
+
+                #toggleToolbar:hover {
+                    background-color: #5e044f;
+                }
+
+                /* CSS for hiding and showing toolbar */
+                .sidebar.collapsed {
+                    width: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    transition: width 0.3s ease;
+                }
+
+                .arrow-button {
+                    background-color: #460346;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: transform 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                }
+
+                .arrow-button i {
+                    font-size: 20px;
+                    transition: transform 0.3s ease;
+                }
+
+                .arrow-button:hover {
+                    background-color: #5e044f;
+                }
+
+                /* Rotate arrow when sidebar is collapsed */
+                .sidebar.collapsed+.tools .arrow-button i {
+                    transform: rotate(180deg);
+                }
+
+                /* CSS for hiding and showing toolbar */
+                .sidebar.collapsed {
+                    width: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    transition: width 0.3s ease;
+                }
+            </style>
+            <script>
+                const toolbarButton = document.getElementById('toggleToolbar');
+                const sidebar = document.querySelector('.sidebar');
+                const canva = document.getElementById('canvas');
+                const arrowIcon = toolbarButton.querySelector('i'); // Get the icon element
+
+                toolbarButton.addEventListener('click', () => {
+                    sidebar.classList.toggle('collapsed');
+                    updateArrowIcon(); // Update the arrow direction
+                    resizeCanvas(); // Adjust canvas width when the sidebar toggles
+                });
+
+                function updateArrowIcon() {
+                    if (sidebar.classList.contains('collapsed')) {
+                        arrowIcon.classList.remove('fa-arrow-left');
+                        arrowIcon.classList.add('fa-arrow-right'); // Right arrow when toolbar is minimized
+                    } else {
+                        arrowIcon.classList.remove('fa-arrow-right');
+                        arrowIcon.classList.add('fa-arrow-left'); // Left arrow when toolbar is expanded
+                    }
+                }
+
+                function resizeCanvas() {
+                    const sidebarWidth = sidebar.classList.contains('collapsed') ? 0 : 200;
+                    canvas.width = window.innerWidth - sidebarWidth; // Adjust for sidebar
+                    canvas.height = window.innerHeight - 220; // Adjust for footer
+                }
+
+                // Initial call to set the canvas size correctly
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+
+
+            </script>
         </div>
+<canvas id="canvas" width="800" height="600"></canvas>
+<button id="clearCanvasBtn" 
+        style="background-color: #ffd6e8;
+               color: #333;
+               border: none;
+               padding: 8px 14px;
+               border-radius: 6px;
+               cursor: pointer;
+               transition: background-color 0.3s;
+               margin-top: 10px;">
+    Clear Canvas
+</button>
+
 
         <footer class="footer">
-            <div class="newsletter-section">
-                <h3>Subscribe to our Newsletter</h3>
-                <input type="email" id="newsletter-email" placeholder="Enter your email address">
-                <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
-            </div>
-            <div class="credit">
-                <p>
-                    Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span>
-                </p>
-                <div class="share">
-                    <i class="fab fa-github"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-twitter"></i>
+            <div class="footer-content">
+                <!-- <div class="footer-image">
+                    <img src="popup.jpg" alt="Newsletter signup" width="100">
+                </div> -->
+                <div class="newsletter-section">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address"><br>
+                    <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
                 </div>
-            </div>
+                <div class="credit" style="font-size: 0.6rem;">
+                    <p>
+                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
+
+                        © <span id="year"></span>
+
+                    </p>
+                    <div style="margin: 20px;" class="share">
+                        <i class="fab fa-github" style="margin-right: 10px;"></i>
+                        <i class="fab fa-linkedin" style="margin-right: 10px;"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
         </footer>
     </div>
 
-    <!-- Poll Popup -->
-    <div class="popup" id="pollPopup">
-        <div class="popup-content">
-            <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
-            <div id="pollOptions">
-                <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
-                <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It's good but has room for growth.</button>
-                <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
-            </div>
-            <button id="voteButton" class="vote-button">Vote</button>
-            <p id="result"></p>
-        </div>
-    </div>
-
     <script>
-        // Profile image handling
-        document.addEventListener("DOMContentLoaded", function () {
-            // Demo avatar since we can't use localStorage in artifacts
-            const homeProfileImage = document.getElementById("homeProfileImage");
-            if (homeProfileImage) {
-                // Keep the existing image source
-            }
-        });
-
-        // Newsletter subscription
         function subscribeNewsletter() {
-            const emailInput = document.getElementById('newsletter-email');
-            const email = emailInput.value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (emailPattern.test(email)) {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
                 alert('Thank you for subscribing!');
-                emailInput.value = '';
+                document.getElementById('newsletter-email').value = '';
             } else {
-                alert('Please enter a valid email address.');
-                emailInput.focus();
+                alert('Please enter a valid email address');
             }
         }
 
-        // Canvas functionality
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         let isDrawing = false;
         let currentTool = 'pencil';
         let startX, startY;
         let showGrid = false;
-        let snapshot;
-        let history = [];
-        let redoStack = [];
-
         // Set canvas size
         function resizeCanvas() {
-            const sidebarWidth = document.querySelector('.sidebar').classList.contains('collapsed') ? 0 : 140;
-            canvas.width = window.innerWidth - sidebarWidth - 64; // Account for padding
-            canvas.height = window.innerHeight - 300;
+            canvas.width = window.innerWidth - 200; // Subtracting sidebar width
+            canvas.height = window.innerHeight - 220; // Adjusted for footer
             updateCanvasWithGrid();
         }
 
+        // Initial resize and add event listener for window resize
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
@@ -1228,16 +1065,27 @@
         // Clear canvas
         document.getElementById('clear').addEventListener('click', () => {
             if (confirm("Are you sure you want to clear the canvas? This action cannot be undone.")) {
+
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                updateCanvasWithGrid();
+            }
+            else {
+                console.log("Clear action canceled.");
             }
         });
 
-        // Grid functionality
+        // Drawing functions
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        let drawing = false;
+        let history = [];
+        let redoStack = [];
+
         function drawGrid() {
-            if (!showGrid) return;
+            if (!showGrid) return; // Only draw if the grid is enabled
             ctx.save();
-            ctx.strokeStyle = '#e0e0e0';
+            ctx.strokeStyle = '#c0c0c0';
             ctx.lineWidth = 0.5;
 
             const gridSpacing = 20;
@@ -1256,26 +1104,28 @@
             ctx.restore();
         }
 
+        // Function to clear and redraw the canvas, including the grid if enabled
         function updateCanvasWithGrid() {
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawGrid();
-            ctx.putImageData(imageData, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+            drawGrid(); // Draw grid if enabled
+            // Any other canvas drawing updates should go here if needed
         }
 
+        // Event listener to toggle the grid on and off
         document.getElementById('toggleGridButton').addEventListener('click', () => {
-            showGrid = !showGrid;
-            updateCanvasWithGrid();
+            showGrid = !showGrid; // Toggle grid state
+            updateCanvasWithGrid(); // Redraw canvas with or without grid
         });
-
-        // Drawing functions
         function startDrawing(e) {
             isDrawing = true;
             [startX, startY] = [e.offsetX, e.offsetY];
+
             snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
             saveState();
             redoStack = [];
             draw(e);
+
         }
 
         const drawRect = (e) => {
@@ -1283,19 +1133,21 @@
         }
 
         const drawCircle = (e) => {
-            const x = e.offsetX;
-            const y = e.offsetY;
+            x = e.offsetX;
+            y = e.offsetY;
             ctx.beginPath();
             const radius = Math.sqrt(Math.pow(x - startX, 2) + Math.pow(y - startY, 2));
             ctx.arc(startX, startY, radius, 0, 2 * Math.PI);
             ctx.stroke();
         }
 
+
         function draw(e) {
             if (!isDrawing) return;
 
             const x = e.offsetX;
             const y = e.offsetY;
+
 
             switch (currentTool) {
                 case 'pencil':
@@ -1335,8 +1187,13 @@
                     drawRect(e);
                     break;
                 case 'circle':
+
                     ctx.putImageData(snapshot, 0, 0);
                     drawCircle(e);
+                    break;
+                case 'text':
+                case 'textarea':
+                    // Text is added on mouseup
                     break;
             }
         }
@@ -1351,10 +1208,11 @@
             const fontSize = document.getElementById('textSize').value;
 
             switch (currentTool) {
+
                 case 'text':
                     const text = prompt('Enter text:');
                     if (text) {
-                        ctx.font = `${fontSize}px Inter`;
+                        ctx.font = `${fontSize}px Arial`;
                         ctx.fillText(text, x, y);
                     }
                     break;
@@ -1367,7 +1225,7 @@
                         let line = '';
                         let currentY = y;
 
-                        ctx.font = `${fontSize}px Inter`;
+                        ctx.font = `${fontSize}px Arial`;
 
                         for (let n = 0; n < words.length; n++) {
                             const testLine = line + words[n] + ' ';
@@ -1387,11 +1245,12 @@
             }
         }
 
-        // History functions
+        // Save the current state to history
         function saveState() {
             history.push(canvas.toDataURL());
         }
 
+        // Undo function
         function undo() {
             if (history.length > 0) {
                 redoStack.push(history.pop());
@@ -1399,14 +1258,16 @@
             }
         }
 
+        // Redo function
         function redo() {
             if (redoStack.length > 0) {
                 const redoState = redoStack.pop();
-                history.push(redoState);
-                restoreState(redoState);
+                history.push(redoState);  // Move redo state back to history
+                restoreState(redoState);  // Restore the redo state
             }
         }
 
+        // Restore the canvas state
         function restoreState(dataUrl) {
             if (dataUrl) {
                 const img = new Image();
@@ -1414,15 +1275,12 @@
                 img.onload = () => {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(img, 0, 0);
-                    updateCanvasWithGrid();
                 };
             } else {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                updateCanvasWithGrid();
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas if no history
             }
         }
 
-        // Event listeners
         canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mousemove', draw);
         canvas.addEventListener('mouseup', stopDrawing);
@@ -1430,36 +1288,192 @@
         document.getElementById('undoButton').addEventListener('click', undo);
         document.getElementById('redoButton').addEventListener('click', redo);
 
-        // Toolbar toggle
-        const toolbarButton = document.getElementById('toggleToolbar');
-        const sidebar = document.querySelector('.sidebar');
-        const arrowIcon = toolbarButton.querySelector('i');
 
-        toolbarButton.addEventListener('click', () => {
-            sidebar.classList.toggle('collapsed');
-            updateArrowIcon();
-            resizeCanvas();
-        });
+        window.embeddedChatbotConfig = {
+            chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
+            domain: "www.chatbase.co",
+            position: "right"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer>
+    </script>
 
-        function updateArrowIcon() {
-            if (sidebar.classList.contains('collapsed')) {
-                arrowIcon.classList.remove('fa-arrow-left');
-                arrowIcon.classList.add('fa-arrow-right');
+    <!-- script for adding valid email -->
+    <script>
+        function subscribeNewsletter() {
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value;
+
+            // Regular expression for basic email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailPattern.test(email)) {
+                alert('Thank you for subscribing!');
+                // Add your subscription logic here
             } else {
-                arrowIcon.classList.remove('fa-arrow-right');
-                arrowIcon.classList.add('fa-arrow-left');
+                alert('Please enter a valid email address.');
+                emailInput.focus();
             }
         }
+    </script>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "right" }</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-        // Poll functionality - using memory instead of sessionStorage
-        let hasVoted = false;
+    <style>
+        body {
 
+            font-family: Arial, sans-serif;
+
+        }
+
+        /* Popup Styles */
+        .popup {
+
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
+            justify-content: center;
+            /* Center the popup */
+            align-items: center;
+            /* Center the popup */
+            z-index: 1000;
+            /* Sit on top */
+
+        }
+
+        .popup-content {
+
+            background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            max-height: 500px;
+            min-height: 320px;
+            text-align: center;
+
+        }
+
+        /* Set poll options to stack vertically */
+        #pollOptions {
+
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            align-items: center;
+            /* Center the buttons */
+
+        }
+
+        .poll-button {
+
+            display: block;
+            /* Change to block for full-width */
+            margin: 5px 0;
+            /* Add vertical margin */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(58 30 86 / 40%);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            /* Full width */
+
+        }
+
+        .poll-button:hover {
+
+            background-color: #45a049;
+            /* Darker green */
+
+        }
+
+        .poll-button.selected {
+
+            background-color: #ad00c9;
+            /* Blue for selected */
+
+        }
+
+        /* New Vote Button Styles */
+        .vote-button {
+
+            display: block;
+            /* Change to block for full-width */
+            margin: 5px 0;
+            /* Add vertical margin */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f44336;
+            /* Red */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            /* Full width */
+
+        }
+
+        .vote-button:hover {
+
+            background-color: #d32f2f;
+            /* Darker red */
+
+        }
+
+        /* Result Text Styles */
+        #result {
+
+            margin-top: 10px;
+            /* Add space above result text */
+            word-wrap: break-word;
+            /* Allow long text to wrap within the box */
+            overflow: hidden;
+            /* Prevent overflow */
+            max-height: 50px;
+            /* Limit height to prevent overflow */
+            color: rgb(255, 255, 255);
+            /* Set text color to white */
+
+        }
+    </style>
+
+    <div class="popup" id="pollPopup">
+        <div class="popup-content">
+            <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
+            <div id="pollOptions">
+                <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
+                <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It’s good but has room for
+                    growth.</button>
+                <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
+            </div>
+            <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+
+    <script>
+        // Show the poll popup 10 seconds after the page loads, if not already voted
         window.onload = function () {
+            const hasVoted = sessionStorage.getItem('hasVoted');
             setTimeout(function () {
                 if (!hasVoted) {
                     document.getElementById('pollPopup').style.display = 'flex';
                 }
-            }, 10000);
+            }, 10000); // 10000 milliseconds = 10 seconds
         };
 
         const pollButtons = document.querySelectorAll('.poll-button[data-value]');
@@ -1467,7 +1481,9 @@
 
         pollButtons.forEach(button => {
             button.addEventListener('click', function () {
+                // Remove selected class from all buttons
                 pollButtons.forEach(btn => btn.classList.remove('selected'));
+                // Add selected class to the clicked button
                 button.classList.add('selected');
                 selectedValue = button.getAttribute('data-value');
             });
@@ -1476,7 +1492,9 @@
         document.getElementById('voteButton').addEventListener('click', function () {
             if (selectedValue) {
                 document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
-                hasVoted = true;
+                // Save voting status in session storage
+                sessionStorage.setItem('hasVoted', 'true');
+                // Hide the popup after voting
                 setTimeout(() => {
                     document.getElementById('pollPopup').style.display = 'none';
                 }, 2000);
@@ -1485,82 +1503,120 @@
             }
         });
 
-        // Cursor animation - Enhanced with different colors
+        function initializePoll() {
+            console.log("Poll initialized.");
+        }
+
+        initializePoll();
+
+
+    </script>
+
+
+    <script>
+        // Coordinates for the cursor
         const coords = { x: 0, y: 0 };
         const circles = document.querySelectorAll(".circle");
 
+        // Colors for the circles
         const colors = [
-            "#4a9eff", "#5ba4ff", "#6caeff", "#7db8ff", "#8ec2ff", "#9fccff",
-            "#b0d6ff", "#c1e0ff", "#d2eaff", "#e85d9a", "#ea6ba0", "#ec79a6",
-            "#ee87ac", "#f095b2", "#f2a3b8", "#f4b1be", "#f6bfc4", "#f8cdca",
-            "#9d5ce8", "#a56bea", "#ad7aec", "#b589ee", "#bd98f0", "#c5a7f2"
+            "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+            "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+            "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+            "#680060", "#60005f", "#48005f", "#3d005e"
         ];
 
+        // Assign colors and initial position to each circle
         circles.forEach(function (circle, index) {
             circle.x = 0;
             circle.y = 0;
-            circle.style.background = colors[index % colors.length];
+            circle.style.backgroundColor = colors[index % colors.length];
         });
 
+        // Update the coordinates when the mouse moves
         document.addEventListener("mousemove", function (e) {
             coords.x = e.clientX;
             coords.y = e.clientY;
+
+            // Update the position of each circle
+            circles.forEach(function (circle, index) {
+                circle.style.left = coords.x - 12 + "px";
+                circle.style.top = coords.y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+            });
         });
 
+        // Add mouseleave event to hide cursor
         document.addEventListener("mouseleave", () => {
             circles.forEach(circle => circle.classList.add("hidden"));
         });
 
+        // Add mouseenter event to show cursor
         document.addEventListener("mouseenter", () => {
             circles.forEach(circle => circle.classList.remove("hidden"));
         });
 
+        // Add focus and blur events to hide/show cursor
+        document.addEventListener("focus", () => {
+            circles.forEach(circle => circle.classList.remove("hidden"));
+        });
+
+        document.addEventListener("blur", () => {
+            circles.forEach(circle => circle.classList.add("hidden"));
+        });
+
+        // Animation function to move the circles
         function animateCircles() {
             let x = coords.x;
             let y = coords.y;
 
             circles.forEach(function (circle, index) {
-                circle.style.left = x - 10 + "px";
-                circle.style.top = y - 10 + "px";
+                // Update the position and scale of each circle
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
                 circle.style.scale = (circles.length - index) / circles.length;
-                circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
 
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (circle.x - x) * 0.3;
-                y += (circle.y - y) * 0.3;
-                
+
                 circle.x = x;
                 circle.y = y;
+
+                // Get the next circle in the sequence
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
             });
 
+            // Repeat the animation
             requestAnimationFrame(animateCircles);
         }
 
+        // Start the animation
         animateCircles();
-
-        // Set current year
         document.getElementById("year").textContent = new Date().getFullYear();
 
-        // Chatbot configuration (keeping original functionality)
-        window.embeddedChatbotConfig = {
-            chatbotId: "X6k1f9B5oxQr2T4-NzVxG",
-            domain: "www.chatbase.co",
-            position: "right"
-        }
-    </script>
+        // Clear Canvas Button functionality
+const clearBtn = document.getElementById('clearCanvasBtn');
+if (clearBtn) {
+    clearBtn.addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#ffcce0';  // darker pink
+    });
 
-    <script src="https://www.chatbase.co/embed.min.js" chatbotId="X6k1f9B5oxQr2T4-NzVxG" domain="www.chatbase.co" defer></script>
-    
-    <div class="gtranslate_wrapper"></div>
-    <script>
-        window.gtranslateSettings = { 
-            "default_language": "en", 
-            "detect_browser_language": true, 
-            "wrapper_selector": ".gtranslate_wrapper", 
-            "switcher_horizontal_position": "right" 
-        }
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    clearBtn.addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#ffd6e8';  // back to light pink
+    });
 
+    clearBtn.addEventListener('click', function() {
+        const canvas = document.querySelector('canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    });
+}
+
+    </script>
+    <script src="scripts.js"></script> <!-- Link to your service worker registration script -->
 </body>
+
+
 </html>
