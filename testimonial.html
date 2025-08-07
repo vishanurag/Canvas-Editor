@@ -1,690 +1,852 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testimonials Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <style>
-        :root {
-            /* Balanced Theme Colors - Medium tone backgrounds */
-            --bg-primary: #1a1d23;
-            --bg-secondary: #222832;
-            --bg-tertiary: #2a2f3a;
-            --bg-quaternary: #323947;
+      :root {
+        /* Balanced Theme Colors - Medium tone backgrounds */
+        --bg-primary: #1a1d23;
+        --bg-secondary: #222832;
+        --bg-tertiary: #2a2f3a;
+        --bg-quaternary: #323947;
 
-            /* Glass Effects */
-            --glass-bg: rgba(42, 47, 58, 0.8);
-            --glass-bg-light: rgba(52, 59, 71, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --glass-border-light: rgba(255, 255, 255, 0.18);
+        /* Glass Effects */
+        --glass-bg: rgba(42, 47, 58, 0.8);
+        --glass-bg-light: rgba(52, 59, 71, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --glass-border-light: rgba(255, 255, 255, 0.18);
 
-            /* Accent Colors - Softer, more muted */
-            --accent-primary: #4a9eff;
-            --accent-secondary: #e85d9a;
-            --accent-tertiary: #9d5ce8;
-            --accent-success: #4dd4ac;
-            --accent-warning: #f5a623;
+        /* Accent Colors - Softer, more muted */
+        --accent-primary: #4a9eff;
+        --accent-secondary: #e85d9a;
+        --accent-tertiary: #9d5ce8;
+        --accent-success: #4dd4ac;
+        --accent-warning: #f5a623;
 
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
-            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
-            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
-            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+        /* Gradients */
+        --gradient-primary: linear-gradient(
+          135deg,
+          #4a9eff 0%,
+          #9d5ce8 50%,
+          #e85d9a 100%
+        );
+        --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+        --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+        --gradient-bg: linear-gradient(
+          135deg,
+          #1a1d23 0%,
+          #2a2f3a 50%,
+          #323947 100%
+        );
 
-            /* Text Colors */
-            --text-primary: #f8f9fa;
-            --text-secondary: #c8ced7;
-            --text-muted: #8892a3;
-            --text-accent: #4a9eff;
+        /* Text Colors */
+        --text-primary: #f8f9fa;
+        --text-secondary: #c8ced7;
+        --text-muted: #8892a3;
+        --text-accent: #4a9eff;
 
-            /* Shadows */
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
-            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
-            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+        /* Shadows */
+        --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+        --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+        --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+        --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+        --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
 
-            /* Transitions */
-            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* Transitions */
+        --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-            /* Border Radius */
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-            --radius-full: 50px;
-        }
+        /* Border Radius */
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 20px;
+        --radius-full: 50px;
+      }
 
-        /* General Style */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* General Style */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            background: var(--gradient-bg);
-            font-family: 'Inter', sans-serif;
-            color: var(--text-primary);
-            overflow-x: hidden;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+      body {
+        background: var(--gradient-bg);
+        font-family: "Inter", sans-serif;
+        color: var(--text-primary);
+        overflow-x: hidden;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-        .circle {
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            position: fixed;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 99999999;
-            transition: transform 0.1s ease-out;
-            opacity: 0.8;
-        }
+      .circle {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: var(--gradient-primary);
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999999;
+        transition: transform 0.1s ease-out;
+        opacity: 0.8;
+      }
 
-        .cursor.hidden {
-            visibility: hidden;
-        }
+      .cursor.hidden {
+        visibility: hidden;
+      }
 
-        /* Navbar */
+      /* Navbar */
+      .navbar {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .navbar h1 {
+        color: var(--text-primary);
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-sm);
+        transition: var(--transition-smooth);
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: var(--text-primary);
+        background: var(--glass-bg-light);
+        transform: translateY(-2px);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-primary);
+        transition: var(--transition-smooth);
+        transform: translateX(-50%);
+      }
+
+      .nav-links a:hover::after {
+        width: 80%;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        padding: 6rem 2rem 4rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 20%,
+            rgba(74, 158, 255, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 70% 80%,
+            rgba(232, 93, 154, 0.1) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        text-align: center;
+      }
+
+      /* Testimonial section */
+      .testimonial-section {
+        text-align: center;
+        padding: 80px 0;
+        margin: 0 auto;
+        max-width: 1400px;
+      }
+
+      .testimonial-section h2 {
+        color: var(--text-primary);
+        font-size: 3em;
+        margin-bottom: 50px;
+        font-weight: 700;
+        text-shadow: var(--shadow-soft);
+      }
+
+      .testimonial-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
+
+      .testimonial {
+        width: 352px;
+        height: 329px;
+        perspective: 1200px;
+        margin-bottom: 30px;
+        /* add border radius */
+        box-shadow: 0 4px 23px #283037;
+        border-radius: inherit;
+      }
+
+      .testimonial-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform-style: preserve-3d;
+      }
+
+      .testimonial:hover .testimonial-inner {
+        transform: rotateY(180deg);
+      }
+
+      .testimonial-front,
+      .testimonial-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: var(--radius-lg);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-medium);
+        border: 1px solid var(--glass-border);
+        transition: var(--transition-smooth);
+      }
+
+      .testimonial-front {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+      }
+
+      .testimonial-back {
+        background-color: var(--bg-quaternary);
+        color: var(--text-secondary);
+        transform: rotateY(180deg);
+      }
+
+      .testimonial img {
+        width: 100px;
+        height: 100px;
+        border-radius: var(--radius-full);
+        margin-bottom: 20px;
+        object-fit: cover;
+        border: 3px solid var(--accent-primary);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .testimonial h3 {
+        color: var(--text-accent);
+        margin: 10px 0;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .testimonial-back p {
+        font-size: 1.1em;
+        line-height: 1.5;
+        padding: 0 10px;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        padding: 80px 20px;
+        background: radial-gradient(
+          circle at bottom right,
+          var(--bg-quaternary) 0%,
+          transparent 70%
+        );
+      }
+
+      .stat-box {
+        background-color: var(--bg-tertiary);
+        border-radius: var(--radius-xl);
+        padding: 30px;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-primary);
+        transition: var(--transition-smooth);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .stat-box:hover {
+        transform: translateY(-10px) scale(1.02);
+        border: 1px solid var(--accent-primary);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .stat-box i {
+        font-size: 60px;
+        margin-bottom: 15px;
+        color: var(--accent-success);
+        text-shadow: var(--shadow-soft);
+      }
+
+      .stat-box h3 {
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .stat-box p {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        text-align: center;
+      }
+
+      /* Scroll to Top Button */
+      #scrollToTopBtn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        border-radius: var(--radius-full);
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: var(--shadow-medium);
+        outline: none;
+        opacity: 0;
+        transition: var(--transition-smooth);
+        color: var(--text-primary);
+      }
+
+      #scrollToTopBtn.show {
+        opacity: 1;
+      }
+
+      #scrollToTopBtn:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-glow);
+        border-color: var(--accent-primary);
+      }
+
+      .progress-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+      }
+
+      .progress-ring svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+      }
+
+      .ring-bg {
+        fill: none;
+        stroke: var(--glass-border);
+        stroke-width: 3;
+      }
+
+      .ring-progress {
+        fill: none;
+        stroke: var(--accent-primary);
+        stroke-width: 3;
+        stroke-dasharray: 126;
+        stroke-dashoffset: 126;
+        transition: stroke-dashoffset 0.3s;
+      }
+
+      #scrollToTopBtn span {
+        font-size: 20px;
+        z-index: 1;
+      }
+
+      /* Footer */
+      .main-footer {
+        background: var(--bg-primary);
+        border-top: 1px solid var(--glass-border);
+        padding: 3rem 2rem 2rem;
+        margin-top: 6rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+      }
+
+      .footer-column h5 {
+        color: var(--accent-primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .footer-column p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-column a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: var(--transition-fast);
+      }
+
+      .footer-column a:hover {
+        color: var(--accent-primary);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-smooth);
+      }
+
+      .social-icons a:hover {
+        background: var(--accent-primary);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--glass-border);
+        color: var(--text-muted);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .navbar {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .navbar h1 {
-            color: var(--text-primary);
-            font-weight: 700;
-            font-size: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+          padding: 1rem;
+          flex-direction: column;
+          gap: 1rem;
         }
 
         .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
+          gap: 1rem;
+          flex-wrap: wrap;
+          justify-content: center;
         }
 
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-sm);
-            transition: var(--transition-smooth);
-            font-weight: 500;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-            background: var(--glass-bg-light);
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: var(--transition-smooth);
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 80%;
-        }
-
-        /* Hero Section */
         .hero-section {
-            padding: 6rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(232, 93, 154, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            text-align: center;
-        }
-
-
-        /* Testimonial section */
-        .testimonial-section {
-            text-align: center;
-            padding: 80px 0;
-            margin: 0 auto;
-            max-width: 1400px;
-        }
-
-        .testimonial-section h2 {
-            color: var(--text-primary);
-            font-size: 3em;
-            margin-bottom: 50px;
-            font-weight: 700;
-            text-shadow: var(--shadow-soft);
+          padding: 4rem 1rem 2rem;
         }
 
         .testimonial-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-
-        .testimonial {
-            width: 320px;
-            height: 320px;
-            perspective: 1200px;
-            margin-bottom: 30px;
-        }
-
-        .testimonial-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transform-style: preserve-3d;
-        }
-
-        .testimonial:hover .testimonial-inner {
-            transform: rotateY(180deg);
-        }
-
-        .testimonial-front,
-        .testimonial-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-medium);
-            border: 1px solid var(--glass-border);
-            transition: var(--transition-smooth);
-        }
-
-        .testimonial-front {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-        }
-
-        .testimonial-back {
-            background-color: var(--bg-quaternary);
-            color: var(--text-secondary);
-            transform: rotateY(180deg);
-        }
-
-        .testimonial img {
-            width: 100px;
-            height: 100px;
-            border-radius: var(--radius-full);
-            margin-bottom: 20px;
-            object-fit: cover;
-            border: 3px solid var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .testimonial h3 {
-            color: var(--text-accent);
-            margin: 10px 0;
-            font-size: 22px;
-            font-weight: 600;
-        }
-
-        .testimonial-back p {
-            font-size: 1.1em;
-            line-height: 1.5;
-            padding: 0 10px;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 50px;
-            padding: 80px 20px;
-            background: radial-gradient(circle at bottom right, var(--bg-quaternary) 0%, transparent 70%);
+          flex-direction: column;
+          align-items: center;
         }
 
         .stat-box {
-            background-color: var(--bg-tertiary);
-            border-radius: var(--radius-xl);
-            padding: 30px;
-            width: 280px;
-            height: 280px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            transition: var(--transition-smooth);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-soft);
+          width: 100%;
+          height: auto;
         }
+      }
 
-        .stat-box:hover {
-            transform: translateY(-10px) scale(1.02);
-            border: 1px solid var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-        }
+      /* swiper slide styles added */
+      .swiper {
+        width: 95%;
+        max-width: 600px;
+        height: 400px; 
+        border-radius: 16px;
+        background: #010713;
+      }
 
-        .stat-box i {
-            font-size: 60px;
-            margin-bottom: 15px;
-            color: var(--accent-success);
-            text-shadow: var(--shadow-soft);
-        }
+      .swiper-slide {
+        border-radius: 16px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.4;
+        overflow: hidden;
+      }
 
-        .stat-box h3 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #fff;
+      }
 
-        .stat-box p {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            text-align: center;
-        }
-
-        /* Scroll to Top Button */
-        #scrollToTopBtn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-full);
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-medium);
-            outline: none;
-            opacity: 0;
-            transition: var(--transition-smooth);
-            color: var(--text-primary);
-        }
-
-        #scrollToTopBtn.show {
-            opacity: 1;
-        }
-
-        #scrollToTopBtn:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--accent-primary);
-        }
-
-        .progress-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 50px;
-            height: 50px;
-            transform: translate(-50%, -50%);
-        }
-
-        .progress-ring svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .ring-bg {
-            fill: none;
-            stroke: var(--glass-border);
-            stroke-width: 3;
-        }
-
-        .ring-progress {
-            fill: none;
-            stroke: var(--accent-primary);
-            stroke-width: 3;
-            stroke-dasharray: 126;
-            stroke-dashoffset: 126;
-            transition: stroke-dashoffset 0.3s;
-        }
-
-        #scrollToTopBtn span {
-            font-size: 20px;
-            z-index: 1;
-        }
-
-        /* Footer */
-        .main-footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--glass-border);
-            padding: 3rem 2rem 2rem;
-            margin-top: 6rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer-column h5 {
-            color: var(--accent-primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .footer-column p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-column a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition-fast);
-        }
-
-        .footer-column a:hover {
-            color: var(--accent-primary);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-sm);
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-        }
-
-        .social-icons a:hover {
-            background: var(--accent-primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-muted);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-section {
-                padding: 4rem 1rem 2rem;
-            }
-
-            .testimonial-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stat-box {
-                width: 100%;
-                height: auto;
-            }
-        }
+      .swiper-pagination-bullet {
+        background: #fff;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <nav class="navbar">
-        <h1>Canvas Editor</h1>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="review.html">Review</a>
-            <a href="testimonial.html">Testimonial</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="tutorial.html">Tutorial</a>
-            <a href="Blog_page.html">Blog</a>
-            <a href="Faq.html">FAQ</a>
-            <a href="Feedback.html">Feedback</a>
-            <a href="contributors.html">Contributors</a>
-        </div>
+      <h1>Canvas Editor</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="review.html">Review</a>
+        <a href="testimonial.html">Testimonial</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="Blog_page.html">Blog</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Feedback.html">Feedback</a>
+        <a href="contributors.html">Contributors</a>
+      </div>
     </nav>
 
     <section class="hero-section">
-        <h1 class="hero-title">What Our Users Say</h1>
-        <p class="hero-subtitle">Hear from our satisfied users about their experience with Creative Canvas Tool.</p>
+      <h1 class="hero-title">What Our Users Say</h1>
+      <p class="hero-subtitle">
+        Hear from our satisfied users about their experience with Creative
+        Canvas Tool.
+      </p>
     </section>
 
     <section class="testimonial-section">
-        <h2>Customer Testimonials</h2>
-        <div class="testimonial-container">
-            <div class="testimonial">
+      <h2>Customer Testimonials</h2>
+      <div class="testimonial-container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial">
                 <div class="testimonial-inner">
-                    <div class="testimonial-front">
-                        <img src="https://via.placeholder.com/100/4a9eff/FFFFFF?text=JD" alt="John Doe">
-                        <h3>John Doe</h3>
-                        <p>Graphic Designer</p>
-                    </div>
-                    <div class="testimonial-back">
-                        <p>"Creative Canvas Tool has transformed my workflow! The intuitive interface and powerful
-                            features make digital art a breeze."</p>
-                    </div>
+                  <div class="testimonial-front">
+                    <!-- custom photo generator api added -->
+                    <img
+                      src="https://xsgames.co/randomusers/avatar.php?g=male&ts=${Date.now()}&uid=John Doe"
+                      alt="John Doe"
+                    />
+                    <h3>John Doe</h3>
+                    <p>Graphic Designer</p>
+                  </div>
+                  <div class="testimonial-back">
+                    <p>
+                      "Creative Canvas Tool has transformed my workflow! The
+                      intuitive interface and powerful features make digital art
+                      a breeze."
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="testimonial">
+            <div class="swiper-slide">
+              <div class="testimonial">
                 <div class="testimonial-inner">
-                    <div class="testimonial-front">
-                        <img src="https://via.placeholder.com/100/e85d9a/FFFFFF?text=JA" alt="Jane Appleseed">
-                        <h3>Jane Appleseed</h3>
-                        <p>Illustrator</p>
-                    </div>
-                    <div class="testimonial-back">
-                        <p>"I love the versatility of this tool. It's perfect for both quick sketches and detailed
-                            illustrations. Highly recommended!"</p>
-                    </div>
+                  <div class="testimonial-front">
+                    <!-- custom photo generator api added -->
+                    <img
+                      src="https://xsgames.co/randomusers/avatar.php?g=female&ts=${Date.now()}&uid=Jane Appleseed"
+                      alt="Jane Appleseed"
+                    />
+                    <h3>Jane Appleseed</h3>
+                    <p>Illustrator</p>
+                  </div>
+                  <div class="testimonial-back">
+                    <p>
+                      "I love the versatility of this tool. It's perfect for
+                      both quick sketches and detailed illustrations. Highly
+                      recommended!"
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="testimonial">
+            <div class="swiper-slide">
+              <div class="testimonial">
                 <div class="testimonial-inner">
-                    <div class="testimonial-front">
-                        <img src="https://via.placeholder.com/100/9d5ce8/FFFFFF?text=PS" alt="Peter Smith">
-                        <h3>Peter Smith</h3>
-                        <p>Hobbyist Artist</p>
-                    </div>
-                    <div class="testimonial-back">
-                        <p>"As a beginner, I found Creative Canvas Tool incredibly easy to learn. It's truly helped
-                            me unleash my inner artist."</p>
-                    </div>
+                  <div class="testimonial-front">
+                    <!-- custom photo generator api added -->
+                    <img
+                      src="https://xsgames.co/randomusers/avatar.php?g=male&ts=${Date.now()}&uid=Peter Smith"
+                      alt="Peter Smith"
+                    />
+                    <h3>Peter Smith</h3>
+                    <p>Hobbyist Artist</p>
+                  </div>
+                  <div class="testimonial-back">
+                    <p>
+                      "As a beginner, I found Creative Canvas Tool incredibly
+                      easy to learn. It's truly helped me unleash my inner
+                      artist."
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="testimonial">
+            <div class="swiper-slide">
+              <div class="testimonial">
                 <div class="testimonial-inner">
-                    <div class="testimonial-front">
-                        <img src="https://via.placeholder.com/100/4dd4ac/FFFFFF?text=EL" alt="Emily Lee">
-                        <h3>Emily Lee</h3>
-                        <p>Art Educator</p>
-                    </div>
-                    <div class="testimonial-back">
-                        <p>"This software is a fantastic resource for teaching digital art. My students find it
-                            engaging and straightforward to use."</p>
-                    </div>
+                  <div class="testimonial-front">
+                    <!-- custom photo generator api added -->
+                    <img
+                      src="https://xsgames.co/randomusers/avatar.php?g=female&ts=${Date.now()}&uid=Emily Lee"
+                      alt="Emily Lee"
+                    />
+                    <h3>Emily Lee</h3>
+                    <p>Art Educator</p>
+                  </div>
+                  <div class="testimonial-back">
+                    <p>
+                      "This software is a fantastic resource for teaching
+                      digital art. My students find it engaging and
+                      straightforward to use."
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="swiper-slide">
+              <!-- one more added -->
+              <div class="testimonial">
+                <div class="testimonial-inner">
+                  <div class="testimonial-front">
+                    <!-- custom photo generator api added -->
+                    <img
+                      src="https://xsgames.co/randomusers/avatar.php?g=male&ts=${Date.now()}&uid=Sam David"
+                      alt="Sam David"
+                    />
+                    <h3>Sam David</h3>
+                    <p>UI/UX Designer</p>
+                  </div>
+                  <div class="testimonial-back">
+                    <p>
+                      "This software is a fantastic resource for teaching
+                      digital art. The ease of Integration is mind Glowing"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
+      </div>
     </section>
 
     <section class="stats-section">
-        <div class="stat-box">
-            <i class="fas fa-users"></i>
-            <h3>5000+</h3>
-            <p>Happy Users</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-paint-brush"></i>
-            <h3>100k+</h3>
-            <p>Creations</p>
-        </div>
-        <div class="stat-box">
-            <i class="fas fa-star"></i>
-            <h3>4.9/5</h3>
-            <p>Average Rating</p>
-        </div>
+      <div class="stat-box">
+        <i class="fas fa-users"></i>
+        <h3>5000+</h3>
+        <p>Happy Users</p>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-paint-brush"></i>
+        <h3>100k+</h3>
+        <p>Creations</p>
+      </div>
+      <div class="stat-box">
+        <i class="fas fa-star"></i>
+        <h3>4.9/5</h3>
+        <p>Average Rating</p>
+      </div>
     </section>
 
     <button id="scrollToTopBtn">
-        <div class="progress-ring">
-            <svg viewBox="0 0 40 40">
-                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
-                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
-            </svg>
-        </div>
-        <span>↑</span>
+      <div class="progress-ring">
+        <svg viewBox="0 0 40 40">
+          <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
+          <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
+        </svg>
+      </div>
+      <span>↑</span>
     </button>
 
     <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h5>About Us</h5>
-                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower
-                    creativity through easy-to-use tools.</p>
-            </div>
-            <div class="footer-column">
-                <h5>Quick Links</h5>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h5>Follow Us</h5>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/anuragvishwakarma/"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h5>About Us</h5>
+          <p>
+            We provide high-quality canvas editing tools for creatives
+            worldwide. Our mission is to empower creativity through easy-to-use
+            tools.
+          </p>
         </div>
-        <div class="footer-bottom">
-            © 2024 Canvas Editor. All rights reserved.
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
         </div>
+        <div class="footer-column">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/anuragvishwakarma/"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2024 Canvas Editor. All rights reserved.
+      </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+      // Scroll to Top Button with Progress Ring
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      const ringProgress = document.querySelector(".ring-progress");
 
-        // Scroll to Top Button with Progress Ring
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        const ringProgress = document.querySelector(".ring-progress");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add("show");
-            } else {
-                scrollToTopBtn.classList.remove("show");
-            }
+        const scrollPercentage =
+          (window.scrollY /
+            (document.documentElement.scrollHeight - window.innerHeight)) *
+          100;
+        const circumference = 2 * Math.PI * 18;
+        ringProgress.style.strokeDashoffset =
+          circumference - (scrollPercentage / 100) * circumference;
+      });
 
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            const circumference = 2 * Math.PI * 18;
-            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
-        });
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
 
-        scrollToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+      // Cursor Effect
 
-        // Cursor Effect
-
+      //  Initialize Swiper
+      const swiper = new Swiper(".mySwiper", {
+        effect: "slide", // Try 'cards' or 'coverflow' for other styles
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
     </script>
-</body>
-
+  </body>
 </html>
