@@ -252,8 +252,8 @@
 
         .visitor-counter {
             position: fixed;
-            top: 570px;
-            left: 10px;
+            top: 34rem;
+            left: 14px;
             background: linear-gradient(135deg, #fc5c7d, #6a82fb);
             color: white;
             font-weight: 700;
@@ -940,9 +940,8 @@
 
             </script>
         </div>
-<canvas id="canvas" width="800" height="600"></canvas>
-<button id="clearCanvasBtn" 
-        style="background-color: #ffd6e8;
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <button id="clearCanvasBtn" style="background-color: #ffd6e8;
                color: #333;
                border: none;
                padding: 8px 14px;
@@ -950,8 +949,8 @@
                cursor: pointer;
                transition: background-color 0.3s;
                margin-top: 10px;">
-    Clear Canvas
-</button>
+            Clear Canvas
+        </button>
 
 
         <footer class="footer">
@@ -1595,24 +1594,24 @@
         document.getElementById("year").textContent = new Date().getFullYear();
 
         // Clear Canvas Button functionality
-const clearBtn = document.getElementById('clearCanvasBtn');
-if (clearBtn) {
-    clearBtn.addEventListener('mouseover', function() {
-        this.style.backgroundColor = '#ffcce0';  // darker pink
-    });
+        const clearBtn = document.getElementById('clearCanvasBtn');
+        if (clearBtn) {
+            clearBtn.addEventListener('mouseover', function () {
+                this.style.backgroundColor = '#ffcce0';  // darker pink
+            });
 
-    clearBtn.addEventListener('mouseout', function() {
-        this.style.backgroundColor = '#ffd6e8';  // back to light pink
-    });
+            clearBtn.addEventListener('mouseout', function () {
+                this.style.backgroundColor = '#ffd6e8';  // back to light pink
+            });
 
-    clearBtn.addEventListener('click', function() {
-        const canvas = document.querySelector('canvas');
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            clearBtn.addEventListener('click', function () {
+                const canvas = document.querySelector('canvas');
+                if (canvas) {
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            });
         }
-    });
-}
 
     </script>
     <script src="scripts.js"></script> <!-- Link to your service worker registration script -->
