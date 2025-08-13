@@ -82,6 +82,10 @@
 - [How to make a Pull Request](#how-to-make-a-pull-request)
 - [Troubleshooting](#troubleshooting)
 - [Contributors](#contributors)
+- [Stargazers](#stargazers)
+- [Forkers](#forkers)
+- [🌐 Connect with Me](#-connect-with-me)
+- [📝 License](#-license)
 
 ## Overview
 <ul>
@@ -439,7 +443,8 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 <br>
 
 
-### &#8627; Stargazers
+## Stargazers
+
 
 <div align='center'>
 
@@ -447,7 +452,7 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 
 </div>
 
-### &#8627; Forkers
+## Forkers
 
 <div align='center'>
 
@@ -455,7 +460,9 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 
 </div>
 
+<a id="-connect-with-me"></a>
 ## 🌐 Connect with Me
+
 
 <div align="center">
     <a href="https://www.linkedin.com/in/anuragvishwakarma/">
@@ -476,6 +483,7 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 
 Thank you for visiting! Feel free to reach out through any of the links above.
 
+<a id="-license"></a>
 ## 📝 License
 
 <div align="center">
