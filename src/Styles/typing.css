@@ -1,0 +1,31 @@
+.hero-title { 
+  /* adding text animation */
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0px solid #5c2872;
+  width: 0; /* start hidden */
+}
+.typing-active {
+  animation: typing 3s steps(25, end) forwards, blink 0.6s step-end 3s,
+    /* blink for 5 times after typing */ hideCursor 0s forwards 2s; /* remove cursor after blinking */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes hideCursor {
+  to {
+    border-right: none;
+  }
+}
