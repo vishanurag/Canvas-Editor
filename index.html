@@ -572,22 +572,57 @@
 
             transition: background-color 0.3s;
         }
-
-        .credit {
-            text-align: center;
+        /* add styles on footer */
+        .credit { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            margin-top: 1rem;
+            gap: 1rem;
+            position: relative;
+            top: 0.5rem;
+        }
+        .credit p{
+            font-size: 1.3rem;
+            margin: 0 0;
+        }
+        #name{
+            padding: 0 7px;
+            color: #772f96;
+            font-weight: bold;
+            font-size: 1.4rem;
+            text-decoration: none;
         }
 
         .share {
             font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
         }
 
         .share i {
+            color: #5c2872; 
+            animation: pulse 1.5s infinite;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
         .share i:hover {
-            cursor: pointer;
-            color: #5c2872;
+            cursor: pointer; 
+            color: #541058;  
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1); 
+            }
+            70% {
+                transform: scale(1.05); 
+            }
+            100% {
+                transform: scale(1); 
+            }
         }
 
         .profile {
@@ -964,17 +999,20 @@
                     <button onclick="subscribeNewsletter()" class="subscribe">Subscribe</button>
                 </div>
                 <div class="credit" style="font-size: 0.6rem;">
+                    <div class="share">
+                        <p>Contact Us</p>
+                        <div class="linkUs">
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github" style="margin-right: 10px;"></i></a>
+                            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin" style="margin-right: 10px;"></i></a>
+                            <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
                     <p>
-                        Created by <a href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
+                        Created by <a id="name" href="https://github.com/vishanurag">ANURAG VISHWAKARMA </a> | All rights reserved
 
                         © <span id="year"></span>
 
                     </p>
-                    <div style="margin: 20px;" class="share">
-                        <a href="https://github.com/" target="_blank"><i class="fab fa-github" style="margin-right: 10px;"></i></a>
-                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin" style="margin-right: 10px;"></i></a>
-                        <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </div>
                 </div>
         </footer>
     </div>
