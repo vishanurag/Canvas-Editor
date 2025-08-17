@@ -174,13 +174,23 @@
             background: linear-gradient(135deg, var(--bg-primary) 0%, #111827 100%);
             color: var(--text-primary);
             min-height: 100vh;
+            /* @media (max-width: 768px) {
+               .navbar{
+                flex-direction: column;
+                align-items: center;
+                background-color:#09f915; 
+            }
+            } */
             overflow-x: hidden;
             line-height: 1.6;
         }
 
         /* Navigation Bar */
         .navbar {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+           
+            background: linear-gradient(217deg,#a855f7,#fc5c7d );
+            /* linear-gradient(127deg, rgb(0 255 0 / 0.8),transparent 70.71% ),
+            linear-gradient(336deg, rgb(0 0 255/ 0.8),transparent 70.71% ); */
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -541,6 +551,7 @@
         @media (max-width: 768px) {
             .app-container {
                 flex-direction: column;
+               
             }
 
             .sidebar {
@@ -553,6 +564,7 @@
                 flex-direction: column;
                 gap: 1rem;
                 padding: 1rem;
+                
             }
 
             .nav-links {
