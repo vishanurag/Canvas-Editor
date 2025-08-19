@@ -1227,192 +1227,88 @@
             font-family: Arial, sans-serif;
 
         }
+     </style>
 
-        /* Popup Styles */
-        .popup {
+    <!-- Popup Container -->
+<div id="popup" class="popup" style="display:none;">
+  <!-- Close Button -->
+  <span class="close-btn" onclick="closePopup()">×</span>
 
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black background with opacity */
-            justify-content: center;
-            /* Center the popup */
-            align-items: center;
-            /* Center the popup */
-            z-index: 1000;
-            /* Sit on top */
+  <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
 
-        }
+  <button onclick="vote('very')">Very likely – I love it!</button>
+  <button onclick="vote('somewhat')">Somewhat likely – It’s good but has room for growth.</button>
+  <button onclick="vote('not')">Not likely – I prefer other tools.</button>
+  <button class="vote-btn" onclick="vote('none')">Vote</button>
+</div>
 
-        .popup-content {
+<!-- CSS -->
+<style>
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, #f8b6f0, #854a8d);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  max-width: 500px;
+  max-height: 500px;
+  text-align: center;
+}
 
-            background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
-            padding: 20px;
-            border-radius: 5px;
-            max-width: 500px;
-            max-height: 500px;
-            min-height: 320px;
-            text-align: center;
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
 
-        }
+button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-        /* Set poll options to stack vertically */
-        #pollOptions {
+.vote-btn {
+  background: red;
+  color: white;
+}
+</style>
 
-            display: flex;
-            flex-direction: column;
-            /* Stack buttons vertically */
-            align-items: center;
-            /* Center the buttons */
+<!-- JS -->
+<script>
+// Show popup after 10 seconds if not voted
+window.onload = function () {
+  if (!localStorage.getItem("popupVoted")) {   // ✅ check correctly
+    setTimeout(function () {
+      document.getElementById("popup").style.display = "block";
+    }, 10000); // 10 sec
+  }
+};
 
-        }
+// Close popup (without voting)
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
 
-        .poll-button {
-
-            display: block;
-            /* Change to block for full-width */
-            margin: 5px 0;
-            /* Add vertical margin */
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: rgb(58 30 86 / 40%);
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            /* Full width */
-
-        }
-
-        .poll-button:hover {
-
-            background-color: #45a049;
-            /* Darker green */
-
-        }
-
-        .poll-button.selected {
-
-            background-color: #ad00c9;
-            /* Blue for selected */
-
-        }
-
-        /* New Vote Button Styles */
-        .vote-button {
-
-            display: block;
-            /* Change to block for full-width */
-            margin: 5px 0;
-            /* Add vertical margin */
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #f44336;
-            /* Red */
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            /* Full width */
-
-        }
-
-        .vote-button:hover {
-
-            background-color: #d32f2f;
-            /* Darker red */
-
-        }
-
-        /* Result Text Styles */
-        #result {
-
-            margin-top: 10px;
-            /* Add space above result text */
-            word-wrap: break-word;
-            /* Allow long text to wrap within the box */
-            overflow: hidden;
-            /* Prevent overflow */
-            max-height: 50px;
-            /* Limit height to prevent overflow */
-            color: rgb(255, 255, 255);
-            /* Set text color to white */
-
-        }
-    </style>
-
-    <div class="popup" id="pollPopup">
-        <div class="popup-content">
-            <h2>How likely are you to recommend the Creative Canvas Tool to others?</h2>
-            <div id="pollOptions">
-                <button class="poll-button" data-value="Very likely">Very likely – I love it!</button>
-                <button class="poll-button" data-value="Somewhat likely">Somewhat likely – It’s good but has room for
-                    growth.</button>
-                <button class="poll-button" data-value="Not likely">Not likely – I prefer other tools.</button>
-            </div>
-            <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
-            <p id="result"></p>
-        </div>
-    </div>
-
-
-    <script>
-        // Show the poll popup 10 seconds after the page loads, if not already voted
-        window.onload = function () {
-            const hasVoted = sessionStorage.getItem('hasVoted');
-            setTimeout(function () {
-                if (!hasVoted) {
-                    document.getElementById('pollPopup').style.display = 'flex';
-                }
-            }, 10000); // 10000 milliseconds = 10 seconds
-        };
-
-        const pollButtons = document.querySelectorAll('.poll-button[data-value]');
-        let selectedValue = '';
-
-        pollButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                // Remove selected class from all buttons
-                pollButtons.forEach(btn => btn.classList.remove('selected'));
-                // Add selected class to the clicked button
-                button.classList.add('selected');
-                selectedValue = button.getAttribute('data-value');
-            });
-        });
-
-        document.getElementById('voteButton').addEventListener('click', function () {
-            if (selectedValue) {
-                document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
-                // Save voting status in session storage
-                sessionStorage.setItem('hasVoted', 'true');
-                // Hide the popup after voting
-                setTimeout(() => {
-                    document.getElementById('pollPopup').style.display = 'none';
-                }, 2000);
-            } else {
-                alert("Please select an option!");
-            }
-        });
-
-        function initializePoll() {
-            console.log("Poll initialized.");
-        }
-
-        initializePoll();
-
-
-    </script>
-
+// Vote handler
+function vote(choice) {
+  localStorage.setItem("popupVoted", choice); // ✅ mark as voted
+  closePopup();
+  alert("Thanks for your feedback!");
+}
+</script>
 
     <script>
         // Coordinates for the cursor
