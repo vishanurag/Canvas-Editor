@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- added typinf css -->
+    <link rel="stylesheet" href="./src/Styles/typing.css">
+    <script src="./src/Scripts/typing.js"></script>
     <style>
         :root {
             /* Balanced Theme Colors - Medium tone backgrounds */
@@ -611,9 +614,9 @@
         <h2>Still Have Questions?</h2>
         <p>If you couldn't find the answer you're looking for, feel free to reach out to our support team.</p>
         <form>
-            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Your Name" required minlength="3">
             <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <textarea rows="5" placeholder="Your Message" required minlength="10"></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
