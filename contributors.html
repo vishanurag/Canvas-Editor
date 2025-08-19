@@ -360,33 +360,74 @@
             border-radius: 0; /* Make it a sharp line */
         }
 
+
         /* Scroll to Top Button */
-        .top-btn {
-            display: none;
-            width: 55px;
-            height: 55px;
+        #scrollToTopBtn {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background-color: var(--accent-primary);
-            color: var(--text-primary);
-            border: none;
+            width: 60px;
+            height: 60px;
             border-radius: var(--radius-full);
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-medium);
-            z-index: 99;
-            transition: var(--transition-smooth);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            outline: none;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            color: var(--text-primary);
         }
 
-        .top-btn:hover {
-            background-color: var(--accent-tertiary);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-strong);
+        #scrollToTopBtn.show {
+            opacity: 1;
         }
+
+        #scrollToTopBtn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-bg {
+            fill: none;
+            stroke: var(--glass-border);
+            stroke-width: 3;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: var(--accent-primary);
+            stroke-width: 3;
+            stroke-dasharray: 126;
+            stroke-dashoffset: 126;
+            transition: stroke-dashoffset 0.3s;
+        }
+
+        #scrollToTopBtn span {
+            font-size: 20px;
+            z-index: 1;
+        }
+
 
         /* Footer Styling */
         .footer {
@@ -465,6 +506,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            align-items: center;
         }
 
         .credit a {
@@ -649,8 +691,14 @@
         </div>
     </div>
 
-    <button class="top-btn" id="scrollToTopBtn">
-        <i class="fas fa-arrow-up"></i>
+    <button id="scrollToTopBtn">
+        <div class="progress-ring">
+            <svg viewBox="0 0 40 40">
+                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
+                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
+            </svg>
+        </div>
+        <span>↑</span>
     </button>
 
     <footer class="footer">
@@ -664,10 +712,10 @@
                 <p>Created by <a href="https://github.com/vishanurag" target="_blank">ANURAG VISHWAKARMA</a> | All right reserved</p>
                 <p>&copy; <span id="year"></span> Creative Canvas</p>
                 <div class="share">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/anuragvishwakarma/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -678,13 +726,27 @@
     <script>
         // Smooth scroll to top functionality
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const ringProgress = document.querySelector(".ring-progress");
+
         
         window.addEventListener("scroll", () => {
             if (window.scrollY > 300) {
-                scrollToTopBtn.style.display = "flex"; // Show the button
+                scrollToTopBtn.classList.add("show");
+
+                // scrollToTopBtn.style.display = "flex"; // Show the button
             } else {
-                scrollToTopBtn.style.display = "none"; // Hide the button
+                scrollToTopBtn.classList.remove("show");
+
+                // scrollToTopBtn.style.display = "none"; // Hide the button
             }
+
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            const circumference = 2 * Math.PI * 18;
+            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
         scrollToTopBtn.addEventListener("click", () => {
