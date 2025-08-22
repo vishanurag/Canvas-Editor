@@ -22,6 +22,8 @@
     />
     <!-- typing CSS -->
     <link rel="stylesheet" href="./src/Styles/typing.css">
+    <!-- dropdown css -->
+     <link rel="stylesheet" href="src/Styles/dropdown.css">
     <script src="./src/Scripts/typing.js"></script>
     <style>
       :root {
@@ -595,15 +597,46 @@
       <h1>Canvas Editor</h1>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="review.html">Review</a>
-        <a href="testimonial.html">Testimonial</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="tutorial.html">Tutorial</a>
-        <a href="Blog_page.html">Blog</a>
-        <a href="Faq.html">FAQ</a>
-        <a href="Feedback.html">Feedback</a>
-        <a href="contributors.html">Contributors</a>
+        <!-- 1 drop-down  -> company -> About , contributer , privacy-->
+            <li class="nav-item">
+                <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <div class="dropdown">
+                    <a href="about-us.html">About Us</a> 
+                    <a href="contributors.html">Contributors</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+            </li>
+
+            <!-- 2 drop-down -> Resources -> Blog ,Tutorial ,FAQ -->
+            <li class="nav-item">
+                <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <div class="dropdown">
+                    <a href="Blog_page.html">Blog</a>
+                    <a href="tutorial.html">Tutorial</a>
+                    <a href="Faq.html">FAQ</a>
+                </div>
+            </li>
+            <!-- 2 drop-down -> Community -> Review ,Testimonial ,Feedback -->
+            <li class="nav-item">
+                <a href="#" class="dropdown-toggle">Community <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <div class="dropdown">
+                    <a href="review.html">Review</a>
+                    <a href="testimonial.html">Testimonial</a>
+                    <a href="./Feedback.html">Feedback</a>
+                </div>
+            </li>   
+            <a href="./contact.html">Contact Us</a> 
+            <!-- 3 drop down ->Account -->
+            <li class="nav-item">
+                <a href="#" class="dropdown-toggle">Account <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <div class="dropdown">
+                    <a href="auth.html">Login</a>  
+                    <a href="./profile.html" class="profile-link">
+                        <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon"
+                            style="width: 32px; height: 32px;"><p>Profile</p>
+                    </a>
+                </div>
+            </li>   
       </div>
     </nav>
 
@@ -849,5 +882,6 @@
         },
       });
     </script>
+    <script src="src/Scripts/dropdown.js"></script>
   </body>
 </html>
