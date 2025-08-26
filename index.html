@@ -249,6 +249,23 @@
             width: 100%;
             height: calc(100vh - 220px);
         }
+        
+        #dark-mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        background: #ddd;
+        font-size: 18px;
+        }
+
+        .dark-mode #dark-mode-toggle {
+        background: #333;
+        color: white;
+        }
 
         .visitor-counter {
             position: fixed;
@@ -984,6 +1001,7 @@
                cursor: pointer;
                transition: background-color 0.3s;
                margin-top: 10px;">
+               
             Clear Canvas
         </button>
 
@@ -1358,15 +1376,98 @@
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
     <style>
-        body {
-
+        body{
             font-family: Arial, sans-serif;
-
+        }
+        /* body{
+            background-color: white;
+            color:black;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: Arial, sans-serif;
+        } */
+        /* Canvas specific styles */
+        /* canvas {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        } */
+        .dark-mode {
+        background-color:black;
+        color: white;
         }
 
-        /* Popup Styles */
-        .popup {
+        .light-mode {
+        background-color: rgb(193, 30, 30);
+        color: black;
+        
+        }
 
+       body.dark-mode #canvas {
+            background-color: #2d2d2d;
+            border: 1px solid #555;
+        }
+        /* Toggle button styling */
+        #theme-toggle {
+        /* position: fixed;
+        top: 20px;
+        right: 20px; */
+        /* padding: 10px 15px; */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        }
+/* 
+        body.dark-mode #theme-toggle {
+        background-color: #ffc107;
+        color: black;
+        } */
+     </style>
+
+     <script>
+        // Get current theme from localStorage on page load
+        let darkMode = localStorage.getItem('darkMode');
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // On page load, set theme
+        if (darkMode === 'enabled') {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+        // Enable dark mode function
+        function enableDarkMode() {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+        themeToggle.innerHTML = '☀️';
+        }
+
+        // Disable dark mode function  
+        function disableDarkMode() {
+        document.body.classList.add('light-mode');
+        localStorage.setItem('darkMode', 'disabled');
+        themeToggle.innerHTML = '🌙 ';
+        }
+
+        
+        function toggleDarkMode() {
+        darkMode = localStorage.getItem('darkMode');
+        console.log("darkMode",darkMode)
+        
+        if (darkMode !== 'enabled') {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+        }
+     </script>
+
+    <!-- Popup Container -->
+<div id="popup" class="popup" style="display:none;">
+  <!-- Close Button -->
+  <span class="close-btn" onclick="closePopup()">×</span>
+/* Popup Styles */
+        .popup {
             display: none;
             /* Hidden by default */
             position: fixed;
@@ -1388,10 +1489,27 @@
 
         }
 
-        .popup-content {
+<!-- CSS -->
+<style>
+.popup {
+ position :fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, #f8b6f0, #854a8d);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  max-width: 500px;
+  max-height: 500px;
+  text-align: center;
+}
 
-            background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
-            padding: 20px;
+           .popup-content {
+             background: linear-gradient(#ffc0fc, rgb(102 51 100)), url(your-image-url.jpg);
+            padding:20px;
             border-radius: 5px;
             max-width: 500px;
             max-height: 500px;
