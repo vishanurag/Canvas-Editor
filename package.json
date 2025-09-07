@@ -5,8 +5,9 @@
   "main": "visi.js",
   "scripts": {
     "start": "node visi.js",
+    "dev": "node visi.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC"
-}
+}  
