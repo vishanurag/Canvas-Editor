@@ -229,6 +229,45 @@
             opacity: 1;
         }
 
+        /* Error message styles */
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+            text-align: left;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Invalid field styles */
+        .feedback-container input:invalid,
+        .feedback-container textarea:invalid {
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+        }
+
+        .feedback-container input:invalid:focus,
+        .feedback-container textarea:invalid:focus {
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+        }
+
+        /* Rating error styles */
+
+
+        .star-rating.error {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .home-button {
@@ -288,25 +327,29 @@
         <h2>We Value Your Feedback</h2>
         <form id="feedbackForm">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required 
+            <input type="text" id="name" name="name" placeholder="Enter your name" required
                    pattern="[a-zA-Z ]+"
                    oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
                    oninput="this.setCustomValidity('')">
-            
+            <div id="nameError" class="error-message"></div>
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            
+            <div id="emailError" class="error-message"></div>
+
             <label for="rating">Rating:</label>
-            <div class="star-rating">
-                <input type="radio" name="rating" id="star5" value="5" required><label for="star5">★</label>
+            <div class="star-rating" id="starRating">
+                <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
                 <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
                 <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
                 <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
                 <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
             </div>
-            
+            <div id="ratingError" class="error-message"></div>
+
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+            <div id="feedbackError" class="error-message"></div>
             
             <button type="submit">Submit Feedback</button>
         </form>
@@ -353,20 +396,125 @@
         }
         animateCircles();
 
-        // Feedback form submission logic
+        // Enhanced form validation and submission logic
         const feedbackForm = document.getElementById('feedbackForm');
         const thankyouMessage = document.getElementById('thankyouMessage');
 
+        // Error message elements
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const ratingError = document.getElementById('ratingError');
+        const feedbackError = document.getElementById('feedbackError');
+        const starRating = document.getElementById('starRating');
+
+        // Real-time validation functions
+        function showError(element, message) {
+            element.textContent = message;
+            element.classList.add('show');
+        }
+
+        function hideError(element) {
+            element.textContent = '';
+            element.classList.remove('show');
+        }
+
+        function validateName() {
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                showError(nameError, 'Name is required');
+                return false;
+            } else if (!/^[a-zA-Z ]+$/.test(name.value)) {
+                showError(nameError, 'Numbers and symbols are not allowed');
+                return false;
+            } else {
+                hideError(nameError);
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            const email = document.getElementById('email');
+            if (email.value.trim() === '') {
+                showError(emailError, 'Email is required');
+                return false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                showError(emailError, 'Please enter a valid email address');
+                return false;
+            } else {
+                hideError(emailError);
+                return true;
+            }
+        }
+
+        function validateRating() {
+    const rating = document.querySelector('input[name="rating"]:checked');
+    if (!rating) {
+        showError(ratingError, 'Please provide a rating');
+        starRating.classList.add('error');
+        return false;
+    } else {
+        hideError(ratingError);
+        starRating.classList.remove('error');
+        return true;
+    }
+}
+
+        function validateFeedback() {
+            const feedback = document.getElementById('feedback');
+            if (feedback.value.trim() === '') {
+                showError(feedbackError, 'Feedback is required');
+                return false;
+            } else if (feedback.value.trim().length < 10) {
+                showError(feedbackError, 'Feedback must be at least 10 characters long');
+                return false;
+            } else {
+                hideError(feedbackError);
+                return true;
+            }
+        }
+
+        // Add event listeners for real-time validation
+        document.getElementById('name').addEventListener('input', validateName);
+        document.getElementById('email').addEventListener('input', validateEmail);
+        document.getElementById('feedback').addEventListener('input', validateFeedback);
+
+        // Add change listener for rating
+        document.querySelectorAll('input[name="rating"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    validateRating();
+                }
+            });
+        });
+
+        // Form submission logic
         feedbackForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
 
-            // Basic validation (browser's native validation for 'required', 'email', 'pattern' will handle most)
-            if (feedbackForm.checkValidity()) {
+            console.log('Form submitted - starting validation...');
+
+            // Validate all fields
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isRatingValid = validateRating();
+            const isFeedbackValid = validateFeedback();
+
+            console.log('Validation results:', {
+                name: isNameValid,
+                email: isEmailValid,
+                rating: isRatingValid,
+                feedback: isFeedbackValid
+            });
+
+            // Check if all validations pass
+            if (isNameValid && isEmailValid && isRatingValid && isFeedbackValid) {
+                console.log('All validations passed - submitting form');
+
                 // In a real application, you'd send this data to a server
                 console.log('Feedback submitted:', {
                     name: document.getElementById('name').value,
                     email: document.getElementById('email').value,
-                    rating: document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : 'No rating',
+                    rating: document.querySelector('input[name="rating"]:checked').value,
                     feedback: document.getElementById('feedback').value
                 });
 
@@ -376,14 +524,31 @@
                 // Optionally, clear the form after submission
                 feedbackForm.reset();
 
+                // Hide all error messages
+                hideError(nameError);
+                hideError(emailError);
+                hideError(ratingError);
+                hideError(feedbackError);
+                starRating.classList.remove('error');
+
                 // Hide message after a few seconds
                 setTimeout(() => {
                     thankyouMessage.classList.remove('show');
                     thankyouMessage.textContent = "";
                 }, 5000);
             } else {
-                // If validation fails, trigger native browser validation messages
-                feedbackForm.reportValidity();
+                console.log('Validation failed - showing errors');
+
+                // Focus on the first invalid field
+                if (!isNameValid) {
+                    document.getElementById('name').focus();
+                } else if (!isEmailValid) {
+                    document.getElementById('email').focus();
+                } else if (!isRatingValid) {
+                    document.querySelector('input[name="rating"]').focus();
+                } else if (!isFeedbackValid) {
+                    document.getElementById('feedback').focus();
+                }
             }
         });
     </script>
