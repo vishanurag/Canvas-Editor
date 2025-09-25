@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions - Creative Canvas Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <style>
+    :root {
+      --bg-primary: #1a1d23;
+      --bg-secondary: #222832;
+      --bg-tertiary: #2a2f3a;
+      --accent-primary: #4a9eff;
+      --accent-secondary: #a855f7;
+      --text-primary: #f8f9fa;
+      --text-secondary: #c8ced7;
+      --text-muted: #8892a3;
+      --transition-smooth: all 0.3s ease;
+      --radius-sm: 12px;
+      --border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    body {
+      background: var(--bg-primary);
+      font-family: "Inter", sans-serif;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+   .navbar {
+           
+            background: linear-gradient(217deg, #a855f7, #e5e2f1);
+            /* linear-gradient(127deg, rgb(0 255 0 / 0.8),transparent 70.71% ),
+            linear-gradient(336deg, rgb(0 0 255/ 0.8),transparent 70.71% ); */
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: var(--transition-smooth);
+      display: inline-block;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    /* Dropdown */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 2.8rem;
+      left: 0;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      min-width: 150px;
+      flex-direction: column;
+      z-index: 100;
+    }
+
+    .nav-links li:hover .dropdown {
+      display: flex;
+    }
+
+    .dropdown a {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    /* Profile */
+    .profile-link img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-primary);
+      transition: all 0.3s ease;
+    }
+
+    .profile-link:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+
+    /* TERMS SECTION */
+    .terms-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .term-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      transition: var(--transition-smooth);
+    }
+
+    .term-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    .term-card h2 {
+      color: var(--accent-primary);
+      margin-bottom: 1rem;
+    }
+
+    .term-card p, .term-card ul {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .term-card ul {
+      padding-left: 1.5rem;
+      list-style: none;
+    }
+
+    .term-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .term-card li i {
+      margin-right: 0.5rem;
+      color: var(--accent-primary);
+    }
+
+    .term-card a {
+      color: var(--accent-primary);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .newsletter-section {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .newsletter-input {
+      padding: 0.75rem 1rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      color: var(--text-primary);
+      width: 300px;
+      max-width: 100%;
+    }
+
+    .newsletter-button {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      border: none;
+      border-radius: 0.5rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .newsletter-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-primary);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .terms-container {
+        margin: 2rem 1rem;
+      }
+    }
+    .nav-links li {
+  position: relative;
+}
+
+/* Dropdown styles */
+.nav-links .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  flex-direction: column;
+  padding: 0.5rem 0;
+  z-index: 1000;
+}
+
+.nav-links li:hover > .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-links .dropdown li {
+  width: 100%;
+}
+
+.nav-links .dropdown li a {
+  padding: 0.5rem 1rem;
+  color: var(--text-primary);
+}
+
+.nav-links .dropdown li a:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+  <div class="navbar-brand">Canvas Editor</div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+
+    <li class="nav-item">
+      <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
+      <ul class="dropdown">
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contributors.html">Contributors</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a href="#">Resources <i class="fa-solid fa-chevron-down"></i></a>
+      <ul class="dropdown">
+        <li><a href="Blog_page.html">Blog</a></li>
+        <li><a href="tutorial.html">Tutorial</a></li>
+        <li><a href="Faq.html">FAQ</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a href="#">Community <i class="fa-solid fa-chevron-down"></i></a>
+      <ul class="dropdown">
+        <li><a href="review.html">Review</a></li>
+        <li><a href="testimonial.html">Testimonial</a></li>
+        <li><a href="Feedback.html">Feedback</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+
+    <li class="nav-item">
+      <a href="#">Account <i class="fa-solid fa-chevron-down"></i></a>
+      <ul class="dropdown">
+        <li><a href="auth.html">Login</a></li>
+        <li><a href="profile.html" class="profile-link">
+          <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon">
+          Profile
+        </a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  <!-- TERMS SECTION -->
+  <section class="terms-container">
+    <div class="term-card">
+      <h2><i class="fas fa-file-contract"></i> Use of the Project</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> This project is open-source and provided for educational purposes.</li>
+        <li><i class="fas fa-check-circle"></i> You may use, modify, and distribute under the <a href="LICENSE">MIT License</a>.</li>
+        <li><i class="fas fa-check-circle"></i> You agree not to use this project for unlawful activities.</li>
+      </ul>
+    </div>
+
+    <div class="term-card">
+      <h2><i class="fas fa-users"></i> Contributions</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Contributions will be licensed under the MIT License.</li>
+        <li><i class="fas fa-check-circle"></i> All contributions should follow the <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>.</li>
+      </ul>
+    </div>
+
+    <div class="term-card">
+      <h2><i class="fas fa-exclamation-triangle"></i> Disclaimer</h2>
+      <p>This project is provided "as-is" without warranties of any kind.</p>
+    </div>
+
+    <div class="term-card">
+      <h2><i class="fas fa-envelope"></i> Contact</h2>
+      <p>If you have any questions, reach out via <br>
+        <a href="mailto:anuraga2005@gmail.com"><i class="fas fa-envelope"></i> Email</a> or on our
+        <a href="https://github.com/vishanurag/Canvas-Editor"><i class="fab fa-github"></i> GitHub Repository</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="newsletter-section">
+        <h3>Stay Updated</h3>
+        <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Enter your email address">
+        <button class="newsletter-button" onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+
+      <div class="footer-links">
+        <a href="about-us.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="Faq.html">FAQ</a>
+      </div>
+
+      <p>
+        Created by <a href="https://github.com/vishanurag" style="color: var(--accent-primary);">ANURAG VISHWAKARMA</a> | All rights reserved © <span id="year"></span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function subscribeNewsletter() {
+      const email = document.getElementById('newsletter-email').value;
+      if(email) alert(`Subscribed with ${email}`);
+      else alert('Please enter a valid email.');
+    }
+  </script>
+</body>
+</html>
