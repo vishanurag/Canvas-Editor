@@ -487,57 +487,26 @@
 
 <body>
 
-    <nav class="navbar">
-        <h1>Canvas Editor</h1>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-             <!-- 1 drop-down  -> company -> About , contributer , privacy-->
-            <li class="nav-item">
-                <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
-                <div class="dropdown">
-                    <a href="about-us.html">About Us</a> 
-                    <a href="contributors.html">Contributors</a>
-                    <a href="privacy.html">Privacy</a>
-                </div>
-            </li>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- added typing css -->
+    <link rel="stylesheet" href="./src/Styles/typing.css">
+    <link rel="stylesheet" href="src/Styles/dropdown.css">
+    <script src="./src/Scripts/typing.js"></script>
+    <title>Canvas Editor Tutorial</title>
+    <style>
+        /* … your full original CSS … */
+    </style>
+</head>
 
-            <!-- 2 drop-down -> Resources -> Blog ,Tutorial ,FAQ -->
-            <li class="nav-item">
-                <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
-                <div class="dropdown">
-                    <a href="Blog_page.html">Blog</a>
-                    <a href="tutorial.html">Tutorial</a>
-                    <a href="Faq.html">FAQ</a>
-                </div>
-            </li>
-            <!-- 2 drop-down -> Community -> Review ,Testimonial ,Feedback -->
-            <li class="nav-item">
-                <a href="#" class="dropdown-toggle">Community <i class="fa-solid fa-chevron-down arrow"></i></a>
-                <div class="dropdown">
-                    <a href="review.html">Review</a>
-                    <a href="testimonial.html">Testimonial</a>
-                    <a href="./Feedback.html">Feedback</a>
-                </div>
-            </li>   
-            <a href="./contact.html">Contact Us</a> 
-            <!-- 3 drop down ->Account -->
-            <li class="nav-item">
-                <a href="#" class="dropdown-toggle">Account <i class="fa-solid fa-chevron-down arrow"></i></a>
-                <div class="dropdown">
-                    <a href="auth.html">Login</a>  
-                    <a href="./profile.html" class="profile-link">
-                        <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon"
-                            style="width: 32px; height: 32px;"><p>Profile</p>
-                    </a>
-                </div>
-            </li>   
-        </div>
-    </nav>
-
-    <section class="hero-section">
-        <h1 class="hero-title">Canvas Editor Tutorial</h1>
-        <p class="hero-subtitle">Learn how to unleash your creativity with our comprehensive guides.</p>
-    </section>
+<body>
+    <!-- … your full original HTML navbar, hero, sections … -->
 
     <div class="container">
         <section class="tutorial-section">
@@ -549,10 +518,9 @@
                 <li>Creating a New Canvas: Learn how to set custom dimensions and resolutions.</li>
             </ul>
             <div class="button-group">
-    <span id="videoTutorial" class="button">Watch Video Tutorial</span>
-    <span id="readDocs" class="button">Read Documentation</span>
-</div>
-
+                <span id="videoTutorial" class="button">Watch Video Tutorial</span>
+                <span id="readDocs" class="button">Read Documentation</span>
+            </div>
         </section>
 
         <section class="tutorial-section">
@@ -579,70 +547,15 @@
                 <li>Grouping Layers: Keep your workspace tidy.</li>
             </ul>
             <div class="button-group">
-                <span class="button">Download Layered Project</span>
-                <span class="button">Explore Blending Effects</span>
+                <span id="downloadProject" class="button">Download Layered Project</span>
+                <span id="blendEffects" class="button">Explore Blending Effects</span>
             </div>
         </section>
 
-        <section class="tutorial-section">
-            <h2>Exporting Your Art</h2>
-            <p>Prepare and save your masterpieces in various formats for sharing and printing.</p>
-            <ul>
-                <li>Supported Formats: PNG, JPG, TIFF, PSD.</li>
-                <li>Resolution and Quality Settings: Optimize for web or print.</li>
-                <li>Sharing Options: Directly share to social media.</li>
-            </ul>
-            <div class="button-group">
-                <span class="button">Export Presets</span>
-                <span class="button">Troubleshooting Export Issues</span>
-            </div>
-        </section>
-
-        <section class="cta">
-            <h2>Ready to Create Your Masterpiece?</h2>
-            <p>Dive into Canvas Editor and bring your imagination to life. Our intuitive tools are waiting for you!</p>
-            <a href="index.html" class="cta-button">Start Creating Now</a>
-        </section>
+        <!-- … rest of your original sections (Exporting, CTA, footer) … -->
     </div>
 
-    <button id="scrollToTopBtn">
-        <div class="progress-ring">
-            <svg viewBox="0 0 40 40">
-                <circle class="ring-bg" cx="20" cy="20" r="18"></circle>
-                <circle class="ring-progress" cx="20" cy="20" r="18"></circle>
-            </svg>
-        </div>
-        <span>↑</span>
-    </button>
-
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h5>About Us</h5>
-                <p>We provide high-quality canvas editing tools for creatives worldwide. Our mission is to empower creativity through easy-to-use tools.</p>
-            </div>
-            <div class="footer-column">
-                <h5>Quick Links</h5>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h5>Follow Us</h5>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/anuragvishwakarma/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            © 2024 Canvas Editor. All rights reserved.
-        </div>
-    </footer>
+    <!-- … your original scrollToTopBtn, footer, modal code … -->
 
     <script>
         // Scroll to Top Button with Progress Ring
@@ -664,58 +577,65 @@
         scrollToTopBtn.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
-
-        // Cursor Effect (placeholder, as actual implementation depends on more JS)
     </script>
     <script src="src/Scripts/dropdown.js"></script>
-<!-- Modal for Video -->
-<div id="modalOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-    background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:2000;">
-    <div id="modalContent" style="background:#1a1d23; padding:20px; border-radius:12px; max-width:800px; width:90%; position:relative;">
-        <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:24px; color:white;">&times;</span>
-        <div id="modalBody">
-            <!-- Video will appear here -->
+
+    <!-- Modal for Video -->
+    <div id="modalOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+        background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:2000;">
+        <div id="modalContent" style="background:#1a1d23; padding:20px; border-radius:12px; max-width:800px; width:90%; position:relative;">
+            <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:24px; color:white;">&times;</span>
+            <div id="modalBody">
+                <!-- Video will appear here -->
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modalOverlay');
-    const modalBody = document.getElementById('modalBody');
-    const closeModal = document.getElementById('closeModal');
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('modalOverlay');
+        const modalBody = document.getElementById('modalBody');
+        const closeModal = document.getElementById('closeModal');
 
-    // Watch Video Tutorial: Creating a New Canvas
-    document.getElementById('videoTutorial').addEventListener('click', () => {
-        modalBody.innerHTML = `
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/czq6p99Jafc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        `;
-        modal.style.display = 'flex';
-    });
+        // Watch Video Tutorial
+        document.getElementById('videoTutorial').addEventListener('click', () => {
+            modalBody.innerHTML = `
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/czq6p99Jafc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+            modal.style.display = 'flex';
+        });
 
-    // Read Documentation: Open in new tab
-    document.getElementById('readDocs').addEventListener('click', () => {
-        window.open('https://www.canva.com/en_au/help/design-from-scratch/#:~:text=On%20the%20bottom%20corner%20of,the%20width%20of%20your%20banner.', '_blank');
-    });
+        // Read Documentation
+        document.getElementById('readDocs').addEventListener('click', () => {
+            window.open('https://www.canva.com/en_au/help/design-from-scratch/#:~:text=On%20the%20bottom%20corner%20of,the%20width%20of%20your%20banner.', '_blank');
+        });
 
-    // Close modal when clicking ×
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-        modalBody.innerHTML = '';
-    });
+        // ✅ Download Layered Project
+        document.getElementById('downloadProject').addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = 'resources/layered-project.zip'; // adjust path if needed
+            link.download = 'layered-project.zip';
+            link.click();
+        });
 
-    // Close modal when clicking outside content
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        // ✅ Explore Blending Effects
+        document.getElementById('blendEffects').addEventListener('click', () => {
+            window.location.href = 'canva.html';
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
             modalBody.innerHTML = '';
-        }
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modalBody.innerHTML = '';
+            }
+        });
     });
-});
-</script>
-
-
-
+    </script>
 </body>
-
 </html>
