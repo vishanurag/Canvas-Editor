@@ -2,640 +2,377 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- added typing css -->
-    <link rel="stylesheet" href="./src/Styles/typing.css">
-    <link rel="stylesheet" href="src/Styles/dropdown.css">
-    <script src="./src/Scripts/typing.js"></script>
-    <title>Canvas Editor Tutorial</title>
-    <style>
-        /* Color Theme Variables */
-        :root {
-            /* Balanced Theme Colors - Medium tone backgrounds */
-            --bg-primary: #1a1d23;
-            --bg-secondary: #222832;
-            --bg-tertiary: #2a2f3a;
-            --bg-quaternary: #323947;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- extra css -->
+  <link rel="stylesheet" href="./src/Styles/typing.css">
+  <link rel="stylesheet" href="src/Styles/dropdown.css">
+  <script src="./src/Scripts/typing.js"></script>
+  <title>Canvas Editor Tutorial</title>
+  <style>
+    /* ===================
+       Color Theme
+    =================== */
+    :root {
+      --bg-primary: #1a1d23;
+      --bg-secondary: #222832;
+      --bg-tertiary: #2a2f3a;
+      --bg-quaternary: #323947;
+      --glass-bg: rgba(42, 47, 58, 0.8);
+      --glass-bg-light: rgba(52, 59, 71, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-border-light: rgba(255, 255, 255, 0.18);
+      --accent-primary: #4a9eff;
+      --accent-secondary: #e85d9a;
+      --accent-tertiary: #9d5ce8;
+      --accent-success: #4dd4ac;
+      --accent-warning: #f5a623;
+      --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
+      --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
+      --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
+      --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+      --text-primary: #f8f9fa;
+      --text-secondary: #c8ced7;
+      --text-muted: #8892a3;
+      --text-accent: #4a9eff;
+      --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+      --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
+      --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+      --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-full: 50px;
+    }
 
-            /* Glass Effects */
-            --glass-bg: rgba(42, 47, 58, 0.8);
-            --glass-bg-light: rgba(52, 59, 71, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --glass-border-light: rgba(255, 255, 255, 0.18);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            /* Accent Colors - Softer, more muted */
-            --accent-primary: #4a9eff;
-            --accent-secondary: #e85d9a;
-            --accent-tertiary: #9d5ce8;
-            --accent-success: #4dd4ac;
-            --accent-warning: #f5a623;
+    body {
+      background: var(--gradient-bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, #4a9eff 0%, #9d5ce8 50%, #e85d9a 100%);
-            --gradient-secondary: linear-gradient(135deg, #e85d9a 0%, #9d5ce8 100%);
-            --gradient-accent: linear-gradient(135deg, #4dd4ac 0%, #4a9eff 100%);
-            --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2a2f3a 50%, #323947 100%);
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex-grow: 1;
+    }
 
-            /* Text Colors */
-            --text-primary: #f8f9fa;
-            --text-secondary: #c8ced7;
-            --text-muted: #8892a3;
-            --text-accent: #4a9eff;
+    /* ===================
+       Tutorial Sections
+    =================== */
+    .tutorial-section {
+      background-color: var(--bg-tertiary);
+      border-radius: var(--radius-md);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-medium);
+      transition: var(--transition-smooth);
+      border: 1px solid var(--glass-border);
+    }
 
-            /* Shadows */
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
-            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.25);
-            --shadow-glow-pink: 0 0 20px rgba(232, 93, 154, 0.25);
+    .tutorial-section:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-strong);
+    }
 
-            /* Transitions */
-            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    .tutorial-section h2 {
+      font-weight: 700;
+      color: var(--accent-primary);
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--glass-border-light);
+      padding-bottom: 10px;
+    }
 
-            /* Border Radius */
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-            --radius-full: 50px;
-        }
+    .tutorial-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 1.1em;
+    }
 
-        /* General Style */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    .tutorial-section ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
 
-        body {
-            background: var(--gradient-bg);
-            font-family: 'Inter', sans-serif;
-            color: var(--text-primary);
-            overflow-x: hidden;
-            line-height: 1.6;
-            min-height: 100vh; /* Ensure body takes full height for footer to stick */
-            display: flex;
-            flex-direction: column;
-        }
+    .tutorial-section ul li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      color: var(--text-secondary);
+      font-size: 1.1em;
+    }
 
-  
+    .tutorial-section ul li::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--accent-success);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
 
-        /* Navbar */
-        .navbar {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-soft);
-        }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 8px 5px;
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-weight: 600;
+      text-align: center;
+      background: var(--gradient-accent);
+      box-shadow: var(--shadow-soft);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
 
-        .navbar h1 {
-            color: var(--text-primary);
-            font-weight: 700;
-            font-size: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-glow);
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+    /* ===================
+       Modal
+    =================== */
+    #modalOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
 
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-sm);
-            transition: var(--transition-smooth);
-            font-weight: 500;
-            position: relative;
-        }
+    #modalContent {
+      background: #1a1d23;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 90%;
+      position: relative;
+      box-shadow: var(--shadow-strong);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
-            background: var(--glass-bg-light);
-            transform: translateY(-2px);
-        }
+    #closeModal {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+    }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: var(--transition-smooth);
-            transform: translateX(-50%);
-        }
+    .quiz-option {
+      display: block;
+      margin: 6px 0;
+      padding: 10px;
+      border-radius: 8px;
+      background: var(--bg-quaternary);
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
 
-        .nav-links a:hover::after {
-            width: 80%;
-        }
+    .quiz-option:hover {
+      background: var(--accent-primary);
+      color: #fff;
+    }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 6rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-        }
+    .correct {
+      background: #2e7d32 !important;
+      color: #fff;
+    }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(232, 93, 154, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            text-align: center;
-        }
-
-        /* Tutorial Section */
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            flex-grow: 1; /* Allows content to push footer down */
-        }
-
-        .tutorial-section {
-            background-color: var(--bg-tertiary);
-            border-radius: var(--radius-md);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-medium);
-            transition: var(--transition-smooth);
-            border: 1px solid var(--glass-border);
-        }
-
-        .tutorial-section:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-strong);
-        }
-
-        .tutorial-section h2 {
-            font-weight: 700;
-            color: var(--accent-primary);
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--glass-border-light);
-            padding-bottom: 10px;
-        }
-
-        .tutorial-section p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 1.1em;
-        }
-
-        .tutorial-section ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-
-        .tutorial-section ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            color: var(--text-secondary);
-            font-size: 1.1em;
-        }
-
-        .tutorial-section ul li::before {
-            content: "\f058";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--accent-success);
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 8px 5px;
-            border-radius: var(--radius-sm);
-            color: var(--text-primary);
-            font-weight: 600;
-            text-align: center;
-            background: var(--gradient-accent);
-            box-shadow: var(--shadow-soft);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            transition: var(--transition-smooth);
-            cursor: default;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Call to Action */
-        .cta {
-            text-align: center;
-            margin-top: 4rem;
-            padding: 3rem;
-            background-color: var(--bg-quaternary);
-            color: var(--text-primary);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-strong);
-            border: 1px solid var(--glass-border);
-        }
-
-        .cta h2 {
-            color: var(--text-primary);
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: var(--shadow-medium);
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--gradient-primary);
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 1rem 2.5rem;
-            border-radius: var(--radius-full);
-            font-weight: 700;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-glow);
-            border: none;
-            cursor: pointer;
-            font-size: 1.1em;
-        }
-
-        .cta-button:hover {
-            background: var(--gradient-secondary);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-strong);
-        }
-
-        /* Scroll to Top Button */
-        #scrollToTopBtn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-full);
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-medium);
-            outline: none;
-            opacity: 0;
-            transition: var(--transition-smooth);
-            color: var(--text-primary);
-        }
-
-        #scrollToTopBtn.show {
-            opacity: 1;
-        }
-
-        #scrollToTopBtn:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--accent-primary);
-        }
-
-        .progress-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 50px;
-            height: 50px;
-            transform: translate(-50%, -50%);
-        }
-
-        .progress-ring svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .ring-bg {
-            fill: none;
-            stroke: var(--glass-border);
-            stroke-width: 3;
-        }
-
-        .ring-progress {
-            fill: none;
-            stroke: var(--accent-primary);
-            stroke-width: 3;
-            stroke-dasharray: 126;
-            stroke-dashoffset: 126;
-            transition: stroke-dashoffset 0.3s;
-        }
-
-        #scrollToTopBtn span {
-            font-size: 20px;
-            z-index: 1;
-        }
-
-        /* Footer */
-        .main-footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--glass-border);
-            padding: 3rem 2rem 2rem;
-            margin-top: 6rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer-column h5 {
-            color: var(--accent-primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .footer-column p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-column a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition-fast);
-        }
-
-        .footer-column a:hover {
-            color: var(--accent-primary);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-sm);
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-        }
-
-        .social-icons a:hover {
-            background: var(--accent-primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-muted);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-section {
-                padding: 4rem 1rem 2rem;
-            }
-
-            .about-section {
-                padding: 2rem 1rem;
-            }
-        }
-    </style>
+    .incorrect {
+      background: #c62828 !important;
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
+    <!-- Section 1 -->
+    <section class="tutorial-section">
+      <h2>Getting Started</h2>
+      <p>Welcome to Canvas Editor! This guide will help you set up and start your first project.</p>
+      <ul>
+        <li>Download and Install: Get the latest version from our official website.</li>
+        <li>First Launch: Familiarize yourself with the interface layout.</li>
+        <li>Creating a New Canvas: Learn how to set custom dimensions and resolutions.</li>
+      </ul>
+      <div class="button-group">
+        <span id="videoTutorial" class="button">Watch Video Tutorial</span>
+        <span id="readDocs" class="button">Read Documentation</span>
+      </div>
+    </section>
 
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- added typing css -->
-    <link rel="stylesheet" href="./src/Styles/typing.css">
-    <link rel="stylesheet" href="src/Styles/dropdown.css">
-    <script src="./src/Scripts/typing.js"></script>
-    <title>Canvas Editor Tutorial</title>
-    <style>
-        /* … your full original CSS … */
-    </style>
-</head>
+    <!-- Section 2 -->
+    <section class="tutorial-section">
+      <h2>Basic Tools Explained</h2>
+      <p>Master the fundamental tools for drawing, painting, and editing.</p>
+      <ul>
+        <li>Brush Tool: Adjust size, opacity, and hardness.</li>
+        <li>Color Picker: Select and manage your color palette.</li>
+        <li>Eraser Tool: Correct mistakes with precision.</li>
+        <li>Selection Tools: Isolate areas for specific edits.</li>
+      </ul>
+      <div class="button-group">
+        <span id="practiceExercises" class="button">Practice Exercises</span>
+        <span id="advancedBrush" class="button">Advanced Brush Techniques</span>
+      </div>
+    </section>
 
-<body>
-    <!-- … your full original HTML navbar, hero, sections … -->
+    <!-- Section 3 -->
+    <section class="tutorial-section">
+      <h2>Layers and Blending Modes</h2>
+      <p>Learn to use layers for non-destructive editing and experiment with blending modes.</p>
+      <ul>
+        <li>Adding and Deleting Layers: Organize your artwork efficiently.</li>
+        <li>Layer Opacity and Blending: Control how layers interact.</li>
+        <li>Grouping Layers: Keep your workspace tidy.</li>
+      </ul>
+      <div class="button-group">
+        <span id="downloadProject" class="button">Download Layered Project</span>
+        <span id="blendEffects" class="button">Explore Blending Effects</span>
+      </div>
+    </section>
+  </div>
 
-    <div class="container">
-        <section class="tutorial-section">
-            <h2>Getting Started</h2>
-            <p>Welcome to Canvas Editor! This guide will help you set up and start your first project.</p>
-            <ul>
-                <li>Download and Install: Get the latest version from our official website.</li>
-                <li>First Launch: Familiarize yourself with the interface layout.</li>
-                <li>Creating a New Canvas: Learn how to set custom dimensions and resolutions.</li>
-            </ul>
-            <div class="button-group">
-                <span id="videoTutorial" class="button">Watch Video Tutorial</span>
-                <span id="readDocs" class="button">Read Documentation</span>
-            </div>
-        </section>
-
-        <section class="tutorial-section">
-            <h2>Basic Tools Explained</h2>
-            <p>Master the fundamental tools for drawing, painting, and editing.</p>
-            <ul>
-                <li>Brush Tool: Adjust size, opacity, and hardness.</li>
-                <li>Color Picker: Select and manage your color palette.</li>
-                <li>Eraser Tool: Correct mistakes with precision.</li>
-                <li>Selection Tools: Isolate areas for specific edits.</li>
-            </ul>
-            <div class="button-group">
-                <span class="button">Practice Exercises</span>
-                <span class="button">Advanced Brush Techniques</span>
-            </div>
-        </section>
-
-        <section class="tutorial-section">
-            <h2>Layers and Blending Modes</h2>
-            <p>Learn to use layers for non-destructive editing and experiment with blending modes.</p>
-            <ul>
-                <li>Adding and Deleting Layers: Organize your artwork efficiently.</li>
-                <li>Layer Opacity and Blending: Control how layers interact.</li>
-                <li>Grouping Layers: Keep your workspace tidy.</li>
-            </ul>
-            <div class="button-group">
-                <span id="downloadProject" class="button">Download Layered Project</span>
-                <span id="blendEffects" class="button">Explore Blending Effects</span>
-            </div>
-        </section>
-
-        <!-- … rest of your original sections (Exporting, CTA, footer) … -->
+  <!-- Modal -->
+  <div id="modalOverlay">
+    <div id="modalContent">
+      <span id="closeModal">&times;</span>
+      <div id="modalBody"></div>
     </div>
+  </div>
 
-    <!-- … your original scrollToTopBtn, footer, modal code … -->
-
-    <script>
-        // Scroll to Top Button with Progress Ring
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        const ringProgress = document.querySelector(".ring-progress");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add("show");
-            } else {
-                scrollToTopBtn.classList.remove("show");
-            }
-
-            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            const circumference = 2 * Math.PI * 18;
-            ringProgress.style.strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
-        });
-
-        scrollToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-    <script src="src/Scripts/dropdown.js"></script>
-
-    <!-- Modal for Video -->
-    <div id="modalOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-        background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:2000;">
-        <div id="modalContent" style="background:#1a1d23; padding:20px; border-radius:12px; max-width:800px; width:90%; position:relative;">
-            <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:24px; color:white;">&times;</span>
-            <div id="modalBody">
-                <!-- Video will appear here -->
-            </div>
-        </div>
-    </div>
-
-    <script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('modalOverlay');
-        const modalBody = document.getElementById('modalBody');
-        const closeModal = document.getElementById('closeModal');
+      const modal = document.getElementById('modalOverlay');
+      const modalBody = document.getElementById('modalBody');
+      const closeModal = document.getElementById('closeModal');
 
-        // Watch Video Tutorial
-        document.getElementById('videoTutorial').addEventListener('click', () => {
-            modalBody.innerHTML = `
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/czq6p99Jafc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            `;
-            modal.style.display = 'flex';
-        });
+      function openModal(content) {
+        modalBody.innerHTML = content;
+        modal.style.display = 'flex';
+      }
 
-        // Read Documentation
-        document.getElementById('readDocs').addEventListener('click', () => {
-            window.open('https://www.canva.com/en_au/help/design-from-scratch/#:~:text=On%20the%20bottom%20corner%20of,the%20width%20of%20your%20banner.', '_blank');
-        });
+      closeModal.addEventListener('click', () => modal.style.display = 'none');
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
 
-        // ✅ Download Layered Project
-        document.getElementById('downloadProject').addEventListener('click', () => {
-            const link = document.createElement('a');
-            link.href = 'resources/layered-project.zip'; // adjust path if needed
-            link.download = 'layered-project.zip';
-            link.click();
-        });
+      // Video Tutorial
+      document.getElementById('videoTutorial').addEventListener('click', () => {
+        openModal(`<iframe width="100%" height="400" 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          frameborder="0" allowfullscreen></iframe>`);
+      });
 
-        // ✅ Explore Blending Effects
-        document.getElementById('blendEffects').addEventListener('click', () => {
-            window.location.href = 'canva.html';
-        });
+      // Read Docs
+      document.getElementById('readDocs').addEventListener('click', () => {
+        openModal(`<iframe src="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" 
+          width="100%" height="500"></iframe>`);
+      });
 
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-            modalBody.innerHTML = '';
-        });
+      // Download Project
+      document.getElementById('downloadProject').addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = 'sample-project.zip';
+        link.download = 'sample-project.zip';
+        link.click();
+      });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                modalBody.innerHTML = '';
+      // Blend Effects
+      document.getElementById('blendEffects').addEventListener('click', () => {
+        openModal(`<img src="https://dummyimage.com/600x400/4a9eff/ffffff&text=Blending+Effects+Demo" 
+          alt="Blending Effects Demo" style="width:100%; border-radius:8px;">`);
+      });
+
+      // ✅ Practice Exercises (interactive quiz)
+      document.getElementById('practiceExercises').addEventListener('click', () => {
+        openModal(`
+          <h2 style="color:#4a9eff; margin-bottom:10px;">Practice Exercises</h2>
+          <div class="quiz-question">
+            <p><b>1. Which tool is best for selecting a specific area of an image?</b></p>
+            <div class="quiz-option" data-correct="false">Brush Tool</div>
+            <div class="quiz-option" data-correct="true">Selection Tool</div>
+            <div class="quiz-option" data-correct="false">Eraser Tool</div>
+          </div>
+          <div class="quiz-question">
+            <p><b>2. What does opacity control in the brush tool?</b></p>
+            <div class="quiz-option" data-correct="true">Transparency of strokes</div>
+            <div class="quiz-option" data-correct="false">Size of the brush</div>
+            <div class="quiz-option" data-correct="false">Shape of the brush</div>
+          </div>
+          <div class="quiz-question">
+            <p><b>3. Which tool would you use to remove unwanted parts of a drawing?</b></p>
+            <div class="quiz-option" data-correct="false">Brush Tool</div>
+            <div class="quiz-option" data-correct="true">Eraser Tool</div>
+            <div class="quiz-option" data-correct="false">Color Picker</div>
+          </div>
+        `);
+
+        // add option click handlers
+        document.querySelectorAll('.quiz-option').forEach(option => {
+          option.addEventListener('click', () => {
+            if (option.dataset.correct === "true") {
+              option.classList.add('correct');
+            } else {
+              option.classList.add('incorrect');
             }
+          });
         });
+      });
+
+      // ✅ Advanced Brush Techniques
+      document.getElementById('advancedBrush').addEventListener('click', () => {
+        openModal(`
+          <h2 style="color:#e85d9a; margin-bottom:10px;">Advanced Brush Techniques</h2>
+          <p>Take your brush skills further:</p>
+          <ul style="color:#c8ced7; margin-top:10px; line-height:1.6;">
+            <li>Custom brush presets</li>
+            <li>Blending and smudging effects</li>
+            <li>Dynamic stroke pressure (pen tablets)</li>
+            <li>Texture overlays and dual brush</li>
+          </ul>
+        `);
+      });
     });
-    </script>
+  </script>
 </body>
+
 </html>
