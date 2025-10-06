@@ -894,6 +894,9 @@
                 <button class="sidebar-button" onclick="showSettings()">
                     <i class="fas fa-cogs"></i> Settings
                 </button>
+                <button class="sidebar-button" onclick="showKeyboardShortcuts()">
+                    <i class="fas fa-keyboard"></i> Keyboard Shortcuts
+                </button>
                 <button class="sidebar-button" onclick="showHelp()">
                     <i class="fas fa-question-circle"></i> Help
                 </button>
@@ -1610,6 +1613,58 @@ function vote(choice) {
             </div>
         </div>
     </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="keyboardShortcutsModal" class="quick-action-modal">
+        <div class="quick-action-content" style="max-width: 450px;">
+            <span class="quick-action-close" onclick="closeModal('keyboardShortcutsModal')">&times;</span>
+            <h2><i class="fas fa-keyboard"></i> Keyboard Shortcuts</h2>
+            <div style="color: #fff; padding: 10px 0; text-align: left;">
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #03e9f4; font-size: 16px; margin-bottom: 10px;">🎨 Tools</h3>
+                    <div style="display: grid; grid-template-columns: 60px 1fr; gap: 8px; font-size: 14px;">
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">P</kbd>
+                        <span>Pencil</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">M</kbd>
+                        <span>Marker</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">E</kbd>
+                        <span>Eraser</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">L</kbd>
+                        <span>Line</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">R</kbd>
+                        <span>Rectangle</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">C</kbd>
+                        <span>Circle</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">T</kbd>
+                        <span>Text</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">G</kbd>
+                        <span>Toggle Grid</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: #03e9f4; font-size: 16px; margin-bottom: 10px;">⚡ Actions</h3>
+                    <div style="display: grid; grid-template-columns: 60px 1fr; gap: 8px; font-size: 14px;">
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center; font-size: 11px;">Ctrl+Z</kbd>
+                        <span>Undo</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center; font-size: 11px;">Ctrl+Y</kbd>
+                        <span>Redo</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center; font-size: 11px;">Delete</kbd>
+                        <span>Clear Canvas</span>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding: 10px; background: rgba(3, 233, 244, 0.1); border-radius: 6px; font-size: 12px; color: #b0b0b0;">
+                    <i class="fas fa-info-circle" style="color: #03e9f4;"></i> Press any key to activate the shortcut. Feedback will appear at top-right.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/Scripts/keyboard-shortcuts.js"></script>
+    <script>
+        function showKeyboardShortcuts() {
+            document.getElementById('keyboardShortcutsModal').style.display = 'flex';
+        }
+    </script>
 
 </body>
 
