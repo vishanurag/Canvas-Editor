@@ -170,6 +170,7 @@
 │   │   ├── Save.js
 │   │   ├── contributor.js
 │   │   ├── dropdown.js
+│   │   ├── keyboard-shortcuts.js
 │   │   ├── preloader.js
 │   │   └── typing.js
 │   ├── Styles/
