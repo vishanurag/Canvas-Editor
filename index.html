@@ -664,6 +664,128 @@
         .circle.hidden {
             visibility: hidden;
         }
+
+        .quick-action-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quick-action-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 12px;
+            padding: 30px;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            animation: modalSlideIn 0.3s ease-out;
+            position: relative;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .quick-action-content h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .quick-action-content h2 i {
+            margin-right: 10px;
+            color: #03e9f4;
+        }
+
+        .quick-action-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #888;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .quick-action-close:hover {
+            color: #fff;
+        }
+
+        .modal-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .modal-item:hover {
+            background: rgba(3, 233, 244, 0.1);
+            border-color: #03e9f4;
+            transform: translateX(5px);
+        }
+
+        .modal-item i {
+            color: #03e9f4;
+            font-size: 20px;
+            margin-right: 15px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .modal-item span {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .modal-items a {
+            text-decoration: none;
+        }
+
+        .modal-items a.modal-item:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 768px) {
+            .quick-action-content {
+                width: 95%;
+                padding: 25px 20px;
+            }
+
+            .quick-action-content h2 {
+                font-size: 20px;
+            }
+
+            .modal-item span {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <script>
@@ -771,6 +893,9 @@
                 </button>
                 <button class="sidebar-button" onclick="showSettings()">
                     <i class="fas fa-cogs"></i> Settings
+                </button>
+                <button class="sidebar-button" onclick="showKeyboardShortcuts()">
+                    <i class="fas fa-keyboard"></i> Keyboard Shortcuts
                 </button>
                 <button class="sidebar-button" onclick="showHelp()">
                     <i class="fas fa-question-circle"></i> Help
@@ -1155,15 +1280,25 @@
         }
 
         function showTools() {
-            alert('Tools panel functionality would be implemented here');
+            document.getElementById('toolsModal').style.display = 'flex';
         }
 
         function showSettings() {
-            alert('Settings panel functionality would be implemented here');
+            document.getElementById('settingsModal').style.display = 'flex';
         }
 
         function showHelp() {
-            alert('Help panel functionality would be implemented here');
+            document.getElementById('helpModal').style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('quick-action-modal')) {
+                event.target.style.display = 'none';
+            }
         }
 
         function saveCanvas() {
@@ -1400,6 +1535,137 @@ function vote(choice) {
 
     </script>
     <script src="src/Scripts/dropdown.js"></script>
+
+    <!-- Tools Modal -->
+    <div id="toolsModal" class="quick-action-modal">
+        <div class="quick-action-content">
+            <span class="quick-action-close" onclick="closeModal('toolsModal')">&times;</span>
+            <h2><i class="fas fa-wrench"></i> Tools</h2>
+            <div class="modal-items">
+                <a href="canva.html" class="modal-item">
+                    <i class="fas fa-brush"></i>
+                    <span>Canvas Editor</span>
+                </a>
+                <a href="edition.html" class="modal-item">
+                    <i class="fas fa-edit"></i>
+                    <span>Edition Tools</span>
+                </a>
+                <a href="tooltips.html" class="modal-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Tooltips Guide</span>
+                </a>
+                <div class="modal-item">
+                    <i class="fas fa-shapes"></i>
+                    <span>Shape Tools</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="quick-action-modal">
+        <div class="quick-action-content">
+            <span class="quick-action-close" onclick="closeModal('settingsModal')">&times;</span>
+            <h2><i class="fas fa-cogs"></i> Settings</h2>
+            <div class="modal-items">
+                <a href="profile.html" class="modal-item">
+                    <i class="fas fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="profileedit.html" class="modal-item">
+                    <i class="fas fa-user-edit"></i>
+                    <span>Edit Profile</span>
+                </a>
+                <a href="privacy.html" class="modal-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Settings</span>
+                </a>
+                <a href="terms.html" class="modal-item">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms & Conditions</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="quick-action-modal">
+        <div class="quick-action-content">
+            <span class="quick-action-close" onclick="closeModal('helpModal')">&times;</span>
+            <h2><i class="fas fa-question-circle"></i> Help</h2>
+            <div class="modal-items">
+                <a href="tutorial.html" class="modal-item">
+                    <i class="fas fa-book"></i>
+                    <span>Tutorials</span>
+                </a>
+                <a href="Faq.html" class="modal-item">
+                    <i class="fas fa-question"></i>
+                    <span>FAQ</span>
+                </a>
+                <a href="contact.html" class="modal-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact Support</span>
+                </a>
+                <a href="about.html" class="modal-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About Us</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="keyboardShortcutsModal" class="quick-action-modal">
+        <div class="quick-action-content" style="max-width: 450px;">
+            <span class="quick-action-close" onclick="closeModal('keyboardShortcutsModal')">&times;</span>
+            <h2><i class="fas fa-keyboard"></i> Keyboard Shortcuts</h2>
+            <div style="color: #fff; padding: 10px 0; text-align: left;">
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #03e9f4; font-size: 16px; margin-bottom: 10px;">🎨 Tools</h3>
+                    <div style="display: grid; grid-template-columns: 60px 1fr; gap: 8px; font-size: 14px;">
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">P</kbd>
+                        <span>Pencil</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">M</kbd>
+                        <span>Marker</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">E</kbd>
+                        <span>Eraser</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">L</kbd>
+                        <span>Line</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">R</kbd>
+                        <span>Rectangle</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">C</kbd>
+                        <span>Circle</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">T</kbd>
+                        <span>Text</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center;">G</kbd>
+                        <span>Toggle Grid</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: #03e9f4; font-size: 16px; margin-bottom: 10px;">⚡ Actions</h3>
+                    <div style="display: grid; grid-template-columns: 60px 1fr; gap: 8px; font-size: 14px;">
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center; font-size: 11px;">Ctrl+Z</kbd>
+                        <span>Undo</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center; font-size: 11px;">Ctrl+Y</kbd>
+                        <span>Redo</span>
+                        <kbd style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; text-align: center; font-size: 11px;">Delete</kbd>
+                        <span>Clear Canvas</span>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding: 10px; background: rgba(3, 233, 244, 0.1); border-radius: 6px; font-size: 12px; color: #b0b0b0;">
+                    <i class="fas fa-info-circle" style="color: #03e9f4;"></i> Press any key to activate the shortcut. Feedback will appear at top-right.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/Scripts/keyboard-shortcuts.js"></script>
+    <script>
+        function showKeyboardShortcuts() {
+            document.getElementById('keyboardShortcutsModal').style.display = 'flex';
+        }
+    </script>
+
 </body>
 
 </html>

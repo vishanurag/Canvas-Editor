@@ -134,6 +134,7 @@
 ├── download (1).webp
 ├── edition.html
 ├── feature.webp
+├── forgot_password.html
 ├── gssocextd.webp
 ├── icon-192x192.png
 ├── icon-512x512.png
@@ -153,6 +154,7 @@
 ├── repreviewfix.html
 ├── resources/
 │   ├── favicon.ico
+│   ├── layered-project.zip
 │   └── painting_image.webp
 ├── review.html
 ├── script1.js
@@ -167,7 +169,10 @@
 │   │   ├── Canvas.js
 │   │   ├── Save.js
 │   │   ├── contributor.js
-│   │   └── preloader.js
+│   │   ├── dropdown.js
+│   │   ├── keyboard-shortcuts.js
+│   │   ├── preloader.js
+│   │   └── typing.js
 │   ├── Styles/
 │   │   ├── Responsive.css
 │   │   ├── Style.css
@@ -175,8 +180,10 @@
 │   │   ├── contact.css
 │   │   ├── contact.html
 │   │   ├── contributor.css
+│   │   ├── dropdown.css
 │   │   ├── scroll.css
-│   │   └── signup.css
+│   │   ├── signup.css
+│   │   └── typing.css
 │   ├── bootstrap/
 │   │   └── css/
 │   │       ├── bootstrap-grid.css
@@ -230,6 +237,7 @@
 ├── style.css
 ├── style1.css
 ├── sw.js
+├── terms.html
 ├── testimonial.html
 ├── testp.css
 ├── testp.js
